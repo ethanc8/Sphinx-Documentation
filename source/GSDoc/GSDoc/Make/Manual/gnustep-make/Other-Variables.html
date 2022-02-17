@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Other Variables (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Other Variables (GNUstep Makefile Package)">
+<meta name="keywords" content="Other Variables (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Overridable-Flags.html" rel="prev" title="Overridable Flags">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Other-Variables"></span><div class="header">
+<p>
+Previous: <a href="Common-Variables.html" accesskey="p" rel="prev">Common Variables</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Other-Variables-1"></span><h3 class="section">1.8 Other Variables</h3>
+
+<p>Since gnustep-make is a system of scripts rather than compiled code,
+all the source is always present and available to read, so the main
+documentation is intentionally provided as comments within that source.
+</p>
+<p>In particular, gnustep-make variables are documented at the head of the
+project-type files in which they are used.
+eg $GNUSTEP_MAKEFILES/Instance/library.make for the variables
+used to build a library.
+</p>
+<p>However, there are some variables which, while not in provided in
+<samp>common.make</samp> are of more general use, and therefore may reasonably
+be documented here:
+</p>
+<dl>
+<dt id="index-GS_005fWITH_005fARC">Variable: <strong>GS_WITH_ARC</strong></dt>
+<dd><p><code>GS_WITH_ARC</code> may be set to 1 to turns on ARC for the current build if using the Next Generation runtime setting.  This variable may be defined as an environment variable, or on the make command line, or (usually) in the GNUmakefile.  The library-combo needs to specify the next generation runtime (eg ng-gnu-gnu) for this variable to take effect.  When the ng runtme is used, setting this variable causes the the flags specified in ARC_OBJCFLAGS to be used when compiling any Objective-C source files).  If no value is defined for <code>ARC_OBJCFLAGS</code> it is assumed to be &rsquo;-fobjc-arc -fobjc-arc-exceptions&rsquo; so that code is built with ARC enabled and with support for exceptions (objects are not leaked when an exception occurs).  Alternatively, to switch on ARC for individual files, you can have a makefile fragment like this:
+</p></dd></dl>
+<div class="example">
+<pre class="example">ifeq ($(OBJC_RUNTIME_LIB), ng)
+file1.m_FILE_FLAGS += -DGS_WITH_ARC=1 -fobjc-arc -fobjc-arc-exceptions
+file2.m_FILE_FLAGS += -DGS_WITH_ARC=1 -fobjc-arc -fobjc-arc-exceptions
+file9.m_FILE_FLAGS += -DGS_WITH_ARC=1 -fobjc-arc -fobjc-arc-exceptions
+endif
+</pre></div>
+
+<dl>
+<dt id="index-ARC_005fCPPFLAGS">Variable: <strong>ARC_CPPFLAGS</strong></dt>
+<dd><p><code>ARC_CPPFLAGS</code> sets the flags to defien preprocessor values be used when building code for ARC. This variable is used only if ng runtime is used and the <code>GS_WITH_ARC</code> variable is set to say that ARC is used.
+</p></dd></dl>
+
+<dl>
+<dt id="index-ARC_005fOBJCFLAGS">Variable: <strong>ARC_OBJCFLAGS</strong></dt>
+<dd><p><code>ARC_OBJCFLAGS</code> sets the compiler/linker flags to be used when building code for ARC. This variable is used only if ng runtime is used and the &rsquo;GS_WITH_ARC&rsquo; variable is set to say that ARC is used.  The -fobjc-arc flag enables ARC, but by default ARC_OBJCFLAGS is assumed to be -fobjc-arc -fobjc-arc-exceptions, which adds support for exceptions (reducing performance, but preventing leaked memory when an exception occurs).
+</p></dd></dl>
+
+<dl>
+<dt id="index-xxx_005fFILE_005fFILTER_005fOUT_005fFLAGS">Variable: <strong>xxx_FILE_FILTER_OUT_FLAGS</strong></dt>
+<dd><p><code>xxx_FILE_FILTER_OUT_FLAGS</code> (where xxx is the file name, such as mframe.m)
+is a filter-out make pattern of flags to be filtered out 
+from the compilation flags when compiling xxx.
+In exceptional conditions, you might need to want to use different compiler
+flags for a file (for example, if a file doesn&rsquo;t compile with optimization
+turned on, you might want to compile that single file with optimizations
+turned off).
+</p></dd></dl>
+<div class="example">
+<pre class="example">file.m_FILE_FILTER_OUT_FLAGS = -O% -fomit-frame-pointer
+</pre></div>
+<p>This says that when compiling file.m we should disable optimization flags,
+and also remove frame pointer information.
+</p>
+<dl>
+<dt id="index-xxx_005fFILE_005fFLAGS">Variable: <strong>xxx_FILE_FLAGS</strong></dt>
+<dd><p><code>xxx_FILE_FLAGS</code> (where xxx is the file name, such as main.m) 
+add special compilation flags to be used when compiling xxx.
+In exceptional conditions, you might need to want to use different compiler
+flags for a file (for example, if ou want to turn on automated reference
+counting for that file)
+</p></dd></dl>
+<div class="example">
+<pre class="example">file.m_FILE_FLAGS = -fobjc-arc
+</pre></div>
+<p>This says that when compiling file.m we should turn on ARC.
+</p>
+<hr>
+<div class="header">
+<p>
+Previous: <a href="Common-Variables.html" accesskey="p" rel="prev">Common Variables</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

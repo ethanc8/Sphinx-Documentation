@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DKStruct documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DKStruct">DKStruct documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Niels Grewe (<a href="mailto:niels.grewe@halbordnung.de"><code>niels.grewe@halbordnung.de</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2014 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the DKMutableStructArray
+        class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the DKStructArray class</a>
+        </li>
+        <li>
+          <a href="#003000000000">Software documentation for the NSArray(DBusKit)
+        category</a>
+        </li>
+        <li>
+          <a href="#004000000000">Software documentation for the DKStruct protocol</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DKMutableStructArray
+        class
+      </a></h1>
+    <h2><a name="class$DKMutableStructArray">DKMutableStructArray</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSMutableArray">NSMutableArray</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DBusKit/DKStruct.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_DKMutableStructArray_ivars">Instance Variables</a>
+    <br/><br/>
+<a name="_DKMutableStructArray_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for DKMutableStructArray Class</h2>
+    <h3><a name="ivariable$DKMutableStructArray*backingStore">backingStore</a></h3>
+    @protected NSMutableArray* <b>backingStore</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the DKStructArray class
+      </a></h1>
+    <h2><a name="class$DKStructArray">DKStructArray</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DBusKit/DKStruct.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_DKStructArray_ivars">Instance Variables</a>
+    <br/><br/>
+<a name="_DKStructArray_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for DKStructArray Class</h2>
+    <h3><a name="ivariable$DKStructArray*backingStore">backingStore</a></h3>
+    @protected NSArray* <b>backingStore</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="003000000000">
+        Software documentation for the NSArray(DBusKit)
+        category
+      </a></h1>
+    <h2><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>(<a name="category$NSArray(DBusKit)">DBusKit</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DBusKit/DKStruct.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="#protocol$(DKStruct)">DKStruct</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+
+          <h1><a name="004000000000">
+        Software documentation for the DKStruct protocol
+      </a></h1>
+    <h2><a name="protocol$(DKStruct)">DKStruct</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DBusKit/DKStruct.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          The DKStruct protocol should be adopted by all collection
+          classes that are required to be converted to D-Bus
+          structures. A default implementation is provided
+          for NSArray, which just returns <code>NO</code>. The
+          object also needs to implement
+          
+            -objectEnumerator
+          
+
+          .
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DKStruct.html#method$(DKStruct)-isDBusStruct">-isDBusStruct</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(DKStruct)-isDBusStruct">isDBusStruct&nbsp;</a></h3>
+    - (BOOL) <b>isDBusStruct</b>;<br />
+    <div class="desc">
+      
+            Return <code>YES</code> from this method if the
+            D-Bus representation of the receiver should be a
+            struct instead of an array.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

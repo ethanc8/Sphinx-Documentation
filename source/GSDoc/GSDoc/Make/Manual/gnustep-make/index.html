@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Top (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Top (GNUstep Makefile Package)">
+<meta name="keywords" content="Top (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="#Top" rel="start" title="Top">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="../dir/index.html" rel="up" title="(dir)">
+<link href="Makefile-Introduction.html" rel="next" title="Makefile Introduction">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<h1 class="settitle" align="center">GNUstep Makefile Package</h1>
+
+
+
+
+
+<span id="SEC_Contents"></span>
+<h2 class="contents-heading">Table of Contents</h2>
+
+<div class="contents">
+<li><a id="toc-Makefile-Package" href="#Top">1 Makefile Package</a>
+<ul class="no-bullet">
+  <li><a id="toc-Introduction" href="Makefile-Introduction.html#Makefile-Introduction">1.1 Introduction</a></li>
+  <li><a id="toc-Structure-of-a-Makefile" href="Makefile-Structure.html#Makefile-Structure">1.2 Structure of a Makefile</a></li>
+  <li><a id="toc-Running-Make-1" href="Running-Make.html#Running-Make">1.3 Running Make</a>
+  <ul class="no-bullet">
+    <li><a id="toc-Debug-Information-1" href="Debug-Information.html#Debug-Information">1.3.1 Debug Information</a></li>
+    <li><a id="toc-Profile-Information-1" href="Profile-Information.html#Profile-Information">1.3.2 Profile Information</a></li>
+    <li><a id="toc-Static_002c-Shared_002c-and-Dynamic-Link-Libraries" href="Library-Types.html#Library-Types">1.3.3 Static, Shared, and Dynamic Link Libraries</a></li>
+  </ul></li>
+  <li><a id="toc-Project-Types-1" href="Project-Types.html#Project-Types">1.4 Project Types</a>
+  <ul class="no-bullet">
+    <li><a id="toc-Aggregate-_0028aggregate_002emake_0029" href="aggregate_002emake.html#aggregate_002emake">1.4.1 Aggregate (<samp>aggregate.make</samp>)</a></li>
+    <li><a id="toc-Graphical-Applications-_0028application_002emake_0029" href="application_002emake.html#application_002emake">1.4.2 Graphical Applications (<samp>application.make</samp>)</a></li>
+    <li><a id="toc-Bundles-_0028bundle_002emake_0029" href="bundle_002emake.html#bundle_002emake">1.4.3 Bundles (<samp>bundle.make</samp>)</a></li>
+    <li><a id="toc-Command-Line-C-Tools-_0028ctool_002emake_0029" href="ctool_002emake.html#ctool_002emake">1.4.4 Command Line C Tools (<samp>ctool.make</samp>)</a></li>
+    <li><a id="toc-Documentation-_0028documentation_002emake_0029" href="documentation_002emake.html#documentation_002emake">1.4.5 Documentation (<samp>documentation.make</samp>)</a></li>
+    <li><a id="toc-Frameworks-_0028framework_002emake_0029" href="framework_002emake.html#framework_002emake">1.4.6 Frameworks (<samp>framework.make</samp>)</a></li>
+    <li><a id="toc-Java-_0028java_002emake_0029" href="java_002emake.html#java_002emake">1.4.7 Java (<samp>java.make</samp>)</a>
+    <ul class="no-bullet">
+      <li><a id="toc-Project-Variables" href="java_002emake.html#Project-Variables">1.4.7.1 Project Variables</a></li>
+    </ul></li>
+    <li><a id="toc-Libraries-_0028library_002emake_0029" href="library_002emake.html#library_002emake">1.4.8 Libraries (<samp>library.make</samp>)</a>
+    <ul class="no-bullet">
+      <li><a id="toc-Project-Variables-1" href="library_002emake-variables.html#library_002emake-variables">1.4.8.1 Project Variables</a></li>
+      <li><a id="toc-Example-Makefile" href="Example-Library-Makefile.html#Example-Library-Makefile">1.4.8.2 Example Makefile</a></li>
+    </ul></li>
+    <li><a id="toc-Native-Library-_0028native_002dlibrary_002emake_0029" href="native_002dlibrary_002emake.html#native_002dlibrary_002emake">1.4.9 Native Library (<samp>native-library.make</samp>)</a></li>
+    <li><a id="toc-NSIS-Installer-_0028nsis_002emake_0029" href="nsis_002emake.html#nsis_002emake">1.4.10 NSIS Installer (<samp>nsis.make</samp>)</a></li>
+    <li><a id="toc-Objective_002dC-Programs-_0028objc_002emake_0029" href="objc_002emake.html#objc_002emake">1.4.11 Objective-C Programs (<samp>objc.make</samp>)</a>
+    <ul class="no-bullet">
+      <li><a id="toc-Project-Variables-2" href="objc_002emake-variables.html#objc_002emake-variables">1.4.11.1 Project Variables</a></li>
+      <li><a id="toc-Example-Makefile-1" href="Example-ObjC-Makefile.html#Example-ObjC-Makefile">1.4.11.2 Example Makefile</a></li>
+    </ul></li>
+    <li><a id="toc-Palettes-_0028palette_002emake_0029" href="palette_002emake.html#palette_002emake">1.4.12 Palettes (<samp>palette.make</samp>)</a></li>
+    <li><a id="toc-RPMs-_0028rpm_002emake_0029" href="rpm_002emake.html#rpm_002emake">1.4.13 RPMs (<samp>rpm.make</samp>)</a></li>
+    <li><a id="toc-Services-_0028service_002emake_0029" href="service_002emake.html#service_002emake">1.4.14 Services (<samp>service.make</samp>)</a></li>
+    <li><a id="toc-Subprojects-_0028subproject_002emake_0029" href="subproject_002emake.html#subproject_002emake">1.4.15 Subprojects (<samp>subproject.make</samp>)</a></li>
+    <li><a id="toc-Command-Line-Tools-_0028tool_002emake_0029" href="tool_002emake.html#tool_002emake">1.4.16 Command Line Tools (<samp>tool.make</samp>)</a></li>
+  </ul></li>
+  <li><a id="toc-Global-Variables-_0028GNUmakefile_002epreamble_0029" href="GNUmakefile_002epreamble.html#GNUmakefile_002epreamble">1.5 Global Variables (<samp>GNUmakefile.preamble</samp>)</a></li>
+  <li><a id="toc-Global-Rules-_0028GNUmakefile_002epostamble_0029" href="GNUmakefile_002epostamble.html#GNUmakefile_002epostamble">1.6 Global Rules (<samp>GNUmakefile.postamble</samp>)</a></li>
+  <li><a id="toc-Common-Variables-_0028common_002emake_0029" href="Common-Variables.html#Common-Variables">1.7 Common Variables (<samp>common.make</samp>)</a>
+  <ul class="no-bullet">
+    <li><a id="toc-Directory-Paths-1" href="Directory-Paths.html#Directory-Paths">1.7.1 Directory Paths</a></li>
+    <li><a id="toc-Scripts-1" href="Scripts.html#Scripts">1.7.2 Scripts</a></li>
+    <li><a id="toc-Host-and-Target-Platform-Information" href="Platform-Information.html#Platform-Information">1.7.3 Host and Target Platform Information</a></li>
+    <li><a id="toc-Library-Combination-1" href="Library-Combination.html#Library-Combination">1.7.4 Library Combination</a></li>
+    <li><a id="toc-Overridable-Flags-1" href="Overridable-Flags.html#Overridable-Flags">1.7.5 Overridable Flags</a></li>
+  </ul></li>
+  <li><a id="toc-Other-Variables-1" href="Other-Variables.html#Other-Variables">1.8 Other Variables</a></li>
+</ul>
+</div>
+
+
+
+<span id="Top"></span><div class="header">
+<p>
+Next: <a href="Makefile-Introduction.html" accesskey="n" rel="next">Makefile Introduction</a>, Previous: <a href="../dir/index.html" accesskey="p" rel="prev">(dir)</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Makefile-Package"></span><h2 class="chapter">1 Makefile Package</h2>
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="Makefile-Introduction.html" accesskey="1">Makefile Introduction</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Makefile-Structure.html" accesskey="2">Makefile Structure</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Running-Make.html" accesskey="3">Running Make</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Project-Types.html" accesskey="4">Project Types</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="GNUmakefile_002epreamble.html" accesskey="5">GNUmakefile.preamble</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="GNUmakefile_002epostamble.html" accesskey="6">GNUmakefile.postamble</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Common-Variables.html" accesskey="7">Common Variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Other-Variables.html" accesskey="8">Other Variables</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Makefile-Introduction.html" accesskey="n" rel="next">Makefile Introduction</a>, Previous: <a href="../dir/index.html" accesskey="p" rel="prev">(dir)</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

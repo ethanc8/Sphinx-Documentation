@@ -1,0 +1,639 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="GSTable" up="GuiAdditions">
+  <head>
+    <title>GSTable class documentation</title>
+    <author name="Nicola Pero">
+      <email address="n.pero@mi.flashnet.it">
+        n.pero@mi.flashnet.it
+      </email>
+    </author>
+    <abstract>The GSTable class (a GNU extension)</abstract>
+    <copy>1999 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>GSTable</heading>
+      <p>
+        A GSTable object is used to control the disposition (position
+        and size) of a group of NSViews. The GSTable object offers
+        two main facilities to the programmer:
+      </p>
+      <list>
+        <item>
+          with a GSTable object, you do not need to specify the
+          exact position and size of each view. You only specify
+          the logical position, relative to the other views in the
+          table. The actual frame of each view is then computed
+          by the GSTable at run time.
+        </item>
+        <item>
+          when the GSTable is resized (for example, because the
+          user has resized the window in which the GSTable is),
+          the GSTable takes care of moving and resizing all its
+          views automatically. This is done in much a advanced
+          and customizable way than in the usual standard NSView's
+          autoresizing mechanism.
+        </item>
+      </list>
+      <p>
+        You create a GSTable instance with a certain number of rows
+        and columns. The GSTable object itself is invisible; it is
+        only a logical device used to specify the subview
+        position. Then, you place one by one the views you
+        want to control in the GSTable, by calling a method of the
+        family
+        <ref type="method" id="-putView:atRow:column:">
+          -putView:atRow:column:
+        </ref>
+        . Before placing a view in the table, you should resize it to
+        the minimum comfortable size you want it to have. The table
+        then automatically places the views, organizing them in
+        well-ordered columns and rows.
+      </p>
+      <p>
+        The initial size of the GSTable is zero; each time you put
+        a view in the GSTable, the GSTable recomputes sizes and as a
+        result resizes itself so that it exactly fits the views
+        it contains. You should not force a GSTable in a size
+        different from the one it has automatically computed.
+        The only acceptable, reasonable and meaningful way of
+        resizing a GSTable is through the appropriate
+        <ref type="method" id="-resizeWithOldSuperviewSize:" class="NSView">[NSView -resizeWithOldSuperviewSize:]</ref> message when the GSTable is in the view hierarchy.
+      </p>
+      <p>
+        When you add a view, you may specify some particular
+        margins to be used for that view. If nothing is
+        specified, the view is added to the table with the
+        margins of 0. You should think of each view and its
+        margins as a whole. A position in the GSTable is free
+        or filled with a view and its margins.
+      </p>
+      <p>
+        The GSTable itself knows what is the minimum size it needs
+        to have in order to comfortably display the views it
+        contains. You may get this size by calling the method
+        <ref type="method" id="-minimumSize">
+          -minimumSize
+        </ref>
+        . When first filled, the table has this minimum size. If in
+        any moment you want the table to restore itself to this
+        size, you should invoke the method
+        <ref type="method" id="-sizeToFit">
+          -sizeToFit
+        </ref>
+        .
+      </p>
+      <p>
+        When the GSTable receives a
+        <ref type="method" id="-resizeWithOldSuperviewSize:" class="NSView">[NSView -resizeWithOldSuperviewSize:]</ref> message, it automatically rearranges the views it contains:
+      </p>
+      <list>
+        <item>
+          If the new width or height is equal or less than the
+          table's minimum width or height, the GSTable simply
+          arranges its views in the initial position. In other
+          words, the GSTable refuse to resize below its minimum
+          width or height. If you do that, part of the GSTable is
+          clipped.
+        </item>
+        <item>
+          If the new width or height is bigger than the table's
+          minimum width or height, the space in excess is
+          equally distributed between the columns or rows which
+          have X (or Y) resizing enabled. When a column or a row
+          is resized, each view in the column or row is resized
+          together with its margins. By setting the
+          autoresizingMask of each view, you may
+          decide how the resizing operation will act on that
+          particular view and its margins. For example,
+          setting the autoresizingMask to
+          <code>NSViewWidthSizable | NSViewHeightSizable</code>
+          will always leave the margins fixed to their initial
+          dimensions, and expand/reduce only the view, in
+          all directions. Setting the autoresizingMask to
+          <code>NSViewMinXMargin | NSViewMaxXMargin</code>
+          <code>| NSViewSizable | NSViewHeightSizable</code>
+          will instead expand/reduce both the margins and the view
+          in the horizontal direction, but leave the margins fixed
+          and expand/reduce only the view in the vertical
+          direction. Whatever the autoresizingMask and the
+          amount of the resizing, views and margins are never
+          resized below their minimum comfortable size, as
+          explained above. For more information on the
+          autoresizingMask, please refer to the
+          description of the
+          <ref type="method" id="-setAutoresizingMask:">
+            -setAutoresizingMask:
+          </ref>
+          method of the NSView class.
+        </item>
+      </list>
+      <section>
+        <heading>Advanced Description of GSTable</heading>
+        <p>
+          We call any view which is added to the GSTable a
+          <var>prisoner</var>. The purpose of the GSTable is to
+          effectively manage its prisoners. To do so, the
+          GSTable creates a special view, called a
+          <var>jail</var>, for each prisoner. The jails are
+          subviews of the GSTable; each prisoner, when added
+          to the GSTable, is made a subview of its jail. The GSTable
+          always moves and resizes directly the jails. The
+          moving is automatically transmitted to the prisoners,
+          which are subviews of the jails; the resizing is
+          transmitted through the usual autoresizing
+          machinery, because the jails always have
+          autoresizing of subviews turned on. This works
+          because if a prisoner sends to its superview an
+          <ref type="method" id="-frame" class="NSView">
+            [NSView -frame]
+          </ref>
+          message, the frame of the jail (and <em>not</em> the
+          frame of the GSTable) is returned, so that each
+          prisoner will autoresize itself in its jail frame.
+          Moreover, any prisoner, being a subview of its
+          jail, is clipped in its jail frame. If a prisoner draws
+          something out of its jail frame, the output is
+          discarded by the usual subview/view clipping
+          machinery. This prevents the prisoners from
+          disturbing each other. The dimension of the jail
+          is the dimension of the prisoner plus its margins. Since
+          the GSTable manages directly the jails, each prisoner is
+          managed together with its margins. When the jail is
+          resized, the prisoner receives a
+          <ref type="method" id="-resizeWithOldSuperviewSize:" class="NSView">[NSView -resizeWithOldSuperviewSize:]</ref>, which makes it resize itself and its margins in the new jail size, according to its autoresizingMask.
+        </p>
+      </section>
+      <section>
+        <heading>Setting Row and Column Expand Flag</heading>
+        <p>
+          When the GSTable is resized, the extra space is equally
+          divided between the Rows and Columns which have the X
+          (or Y) resizing enabled. The following methods let you
+          enable/disable the X (or Y) resizing of each
+          row and column in the GSTable. Note that when the GSTable
+          is first created, all its columns and rows have by default
+          resizing enabled.
+          <ref type="method" id="-setXResizingEnabled:forColumn:">
+            -setXResizingEnabled:forColumn:
+          </ref>
+          ,
+          <ref type="method" id="-setYResizingEnabled:forRow:">
+            -setYResizingEnabled:forRow:
+          </ref>
+          .
+        </p>
+      </section>
+      <class name="GSTable" super="NSView" ovadd="1.0.0">
+        <declared>GNUstepGUI/GSTable.h</declared>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+        <ivariable type="float*" name="_columnDimension" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float*" name="_columnXOrigin" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL*" name="_expandColumn" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL*" name="_expandRow" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="_expandingColumnNumber" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="_expandingRowNumber" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL*" name="_havePrisoner" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSView**" name="_jails" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float" name="_maxXBorder" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float" name="_maxYBorder" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float*" name="_minColumnDimension" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float*" name="_minRowDimension" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float" name="_minXBorder" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float" name="_minYBorder" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSSize" name="_minimumSize" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="_numberOfColumns" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="_numberOfRows" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float*" name="_rowDimension" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="float*" name="_rowYOrigin" validity="protected" ovadd="1.0.0">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <method type="void" ovadd="1.0.0">
+          <sel>addColumn</sel>
+          <desc>
+            Add a column to the GSTable. The column is added
+            <strong>void</strong>, with zero width and X
+            Resizing enabled.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>addRow</sel>
+          <desc>
+            Add a row to the GSTable. The row is added
+            <strong>void</strong>, with zero height and Y
+            Resizing enabled.
+          </desc>
+        </method>
+        <method type="id" ovadd="1.0.0">
+          <sel>init</sel>
+          <desc>
+            Initialize with a default of 2 columns and 2
+            rows.
+          </desc>
+        </method>
+        <method type="id" ovadd="1.0.0">
+          <sel>initWithNumberOfRows:</sel>
+          <arg type="int">rows</arg>
+          <sel>numberOfColumns:</sel>
+          <arg type="int">columns</arg>
+          <desc>
+            Initialize a GSTable with <var>columns</var>
+            <var>columns</var> and <var>rows</var>
+            <var>rows</var>. If <var>columns</var> or
+            <var>rows</var> is negative or null, a warning is
+            issued and a default of 2 is used instead.
+          </desc>
+        </method>
+        <method type="BOOL" ovadd="1.0.0">
+          <sel>isXResizingEnabledForColumn:</sel>
+          <arg type="int">aColumn</arg>
+          <desc>
+            Return whether X resizing is enabled for the column
+            <var>aColumn</var>.
+          </desc>
+        </method>
+        <method type="BOOL" ovadd="1.0.0">
+          <sel>isYResizingEnabledForRow:</sel>
+          <arg type="int">aRow</arg>
+          <desc>
+            Return whether Y resizing is enabled for the row
+            <var>aRow</var>.
+          </desc>
+        </method>
+        <method type="NSSize" ovadd="1.0.0">
+          <sel>minimumSize</sel>
+          <desc>
+            This returns the minimum size the GSTable should be
+            resized to. Trying to resize the GSTable below this
+            size will only result in clipping (ie, making it
+            disappear) part of the GSTable.
+          </desc>
+        </method>
+        <method type="int" ovadd="1.0.0">
+          <sel>numberOfColumns</sel>
+          <desc>
+            Return the number of columns in the GSTable.
+          </desc>
+        </method>
+        <method type="int" ovadd="1.0.0">
+          <sel>numberOfRows</sel>
+          <desc>
+            Return the number of rows in the GSTable.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>putView:</sel>
+          <arg type="NSView*">aView</arg>
+          <sel>atRow:</sel>
+          <arg type="int">row</arg>
+          <sel>column:</sel>
+          <arg type="int">column</arg>
+          <desc>
+            Put <var>aView</var> in the GSTable, in the specified
+            <var>row</var> and <var>column</var>. Zero (0)
+            margins are used. If the <var>column</var>
+            <var>column</var> (or the <var>row</var>
+            <var>row</var>}) is not enough big to fully display
+            <var>aView</var> and its margins, the
+            <var>column</var> (or the <var>row</var>) is resized
+            (regardless of the fact that X or Y Resizing is
+            Enabled or not). It is understood that this will
+            affect each view (and its margins) in the
+            <var>column</var> (or <var>row</var>) according to
+            the autoresizing mask of each view.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>putView:</sel>
+          <arg type="NSView*">aView</arg>
+          <sel>atRow:</sel>
+          <arg type="int">row</arg>
+          <sel>column:</sel>
+          <arg type="int">column</arg>
+          <sel>withMargins:</sel>
+          <arg type="float">margins</arg>
+          <desc>
+            Put <var>aView</var> in the GSTable, using
+            <var>margins</var> as margin in all directions: left,
+            right, top, bottom.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>putView:</sel>
+          <arg type="NSView*">aView</arg>
+          <sel>atRow:</sel>
+          <arg type="int">row</arg>
+          <sel>column:</sel>
+          <arg type="int">column</arg>
+          <sel>withMinXMargin:</sel>
+          <arg type="float">minXMargin</arg>
+          <sel>maxXMargin:</sel>
+          <arg type="float">maxXMargin</arg>
+          <sel>minYMargin:</sel>
+          <arg type="float">minYMargin</arg>
+          <sel>maxYMargin:</sel>
+          <arg type="float">maxYMargin</arg>
+          <desc>
+            <p>
+              Put <var>aView</var> in the GSTable, using the
+              specified margins. The names for the margins
+              are chosen as to be as close as possible to the
+              autoresizingMask convention. The margins
+              are to be interpreted as follows:
+            </p>
+            <deflist>
+              <term><var>minXMargin</var></term>
+              <desc>Left Margin</desc>
+              <term><var>maxXMargin</var></term>
+              <desc>Right Margin</desc>
+              <term><var>minYMargin</var></term>
+              <desc>
+                Lower Margin (Upper if view is flipped)
+              </desc>
+              <term><var>maxYMargin</var></term>
+              <desc>
+                Upper Margin (Lower if view is flipped)
+              </desc>
+            </deflist>
+            <p>
+              Each view which is added to the GSTable can have
+              some margins set. The GSTable treats the view and
+              its margins as a whole. They are given (as a whole)
+              some space, which is reduced or increased (but only
+              if X or Y Resizing is Enabled for the
+              <var>column</var> or the <var>row</var> in which
+              the view resides) when the GSTable is resized. When
+              this happens, the space is added (or subtracted) to
+              the view or to the margins according to the
+              autoResizeMask of the view.
+            </p>
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>putView:</sel>
+          <arg type="NSView*">aView</arg>
+          <sel>atRow:</sel>
+          <arg type="int">row</arg>
+          <sel>column:</sel>
+          <arg type="int">column</arg>
+          <sel>withXMargins:</sel>
+          <arg type="float">xMargins</arg>
+          <sel>yMargins:</sel>
+          <arg type="float">yMargins</arg>
+          <desc>
+            Put <var>aView</var> in the GSTable, using
+            <var>xMargins</var> as the left and right margins,
+            and <var>yMargins</var> as the top and bottom margins.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setBorder:</sel>
+          <arg type="float">aBorder</arg>
+          <desc>
+            Set the GSTable up, bottom, left and right borders to
+            the same value <var>aBorder</var>. The GSTable is
+            immediately updated. If <var>aBorder</var> is
+            negative, the border is reset to the default,
+            which is zero (0). The border is simply unfilled
+            space; it is measured in the GSTable coordinate
+            system.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setMaxXBorder:</sel>
+          <arg type="float">aBorder</arg>
+          <desc>
+            Same as setXBorder: but set only the right border.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setMaxYBorder:</sel>
+          <arg type="float">aBorder</arg>
+          <desc>
+            Same as setXBorder: but set only the upper border
+            (lower if the GSTable is flipped).
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setMinXBorder:</sel>
+          <arg type="float">aBorder</arg>
+          <desc>
+            Same as setXBorder: but set only the left border.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setMinYBorder:</sel>
+          <arg type="float">aBorder</arg>
+          <desc>
+            Same as setXBorder: but set only the lower border
+            (upper if the GSTable is flipped).
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setXBorder:</sel>
+          <arg type="float">aBorder</arg>
+          <desc>
+            Set the GSTable left and right borders to
+            <var>aBorder</var>. If <var>aBorder</var> is
+            negative, the border is reset to zero. The
+            GSTable is immediately updated.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setXResizingEnabled:</sel>
+          <arg type="BOOL">aFlag</arg>
+          <sel>forColumn:</sel>
+          <arg type="int">aColumn</arg>
+          <desc>
+            Enable/disable X Resizing for the column
+            <var>aColumn</var>} according to <var>aFlag</var>.
+            Note: at present, enabling/disabling X resizing after
+            the table has been put in the view hierarchy is not
+            supported.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setYBorder:</sel>
+          <arg type="float">aBorder</arg>
+          <desc>
+            Same as setXBorder: but set the up and bottom borders.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>setYResizingEnabled:</sel>
+          <arg type="BOOL">aFlag</arg>
+          <sel>forRow:</sel>
+          <arg type="int">aRow</arg>
+          <desc>
+            Enable/disable Y Resizing for the row
+            <var>aRow</var> according to <var>aFlag</var>. Note:
+            at present, enabling/disabling Y resizing after the
+            table has been put in the view hierarchy is not
+            supported.
+          </desc>
+        </method>
+        <method type="void" ovadd="1.0.0">
+          <sel>sizeToFit</sel>
+          <desc>
+            If for any reason you need the GSTable to be redrawn
+            (with minimum size), invoke the following.
+          </desc>
+        </method>
+      </class>
+    </chapter>
+  </body>
+</gsdoc>

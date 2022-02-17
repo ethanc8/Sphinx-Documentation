@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GNUmakefile.postamble (GNUstep Makefile Package)</title>
+
+<meta name="description" content="GNUmakefile.postamble (GNUstep Makefile Package)">
+<meta name="keywords" content="GNUmakefile.postamble (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Common-Variables.html" rel="next" title="Common Variables">
+<link href="GNUmakefile_002epreamble.html" rel="prev" title="GNUmakefile.preamble">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="GNUmakefile_002epostamble"></span><div class="header">
+<p>
+Next: <a href="Common-Variables.html" accesskey="n" rel="next">Common Variables</a>, Previous: <a href="GNUmakefile_002epreamble.html" accesskey="p" rel="prev">GNUmakefile.preamble</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Global-Rules-_0028GNUmakefile_002epostamble_0029"></span><h3 class="section">1.6 Global Rules (<samp>GNUmakefile.postamble</samp>)</h3>
+
+<p>The <samp>GNUmakefile.postamble</samp> file is an optional file you may
+include in your package to define additional rules that should be
+executed when making and/or installing the project. There is a template
+<samp>GNUmakefile.postamble</samp> file in the Makefile package that you can
+use as an example. Most of the rules are self explanatory. The
+&lsquo;<samp>before-</samp>&rsquo; rules define things that should happen before a process
+is executed (e.g. &lsquo;<samp>before-all</samp>&rsquo; for before compilation,
+&lsquo;<samp>before-install</samp>&rsquo; for before installation). The &lsquo;<samp>after-</samp>&rsquo; rules
+define things that should happen after a process is complete.
+</p>
+<p>You can even define additional rules such as ones that a particular to
+your specific package or that are to be used by developers only.
+</p>
+
+
+
+</body>
+</html>

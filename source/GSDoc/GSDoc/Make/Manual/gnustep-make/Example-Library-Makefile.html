@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Example Library Makefile (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Example Library Makefile (GNUstep Makefile Package)">
+<meta name="keywords" content="Example Library Makefile (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="library_002emake.html" rel="up" title="library.make">
+<link href="native_002dlibrary_002emake.html" rel="next" title="native-library.make">
+<link href="library_002emake-variables.html" rel="prev" title="library.make variables">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Example-Library-Makefile"></span><div class="header">
+<p>
+Previous: <a href="library_002emake-variables.html" accesskey="p" rel="prev">library.make variables</a>, Up: <a href="library_002emake.html" accesskey="u" rel="up">library.make</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Example-Makefile"></span><h4 class="subsubsection">1.4.8.2 Example Makefile</h4>
+
+<p>This example makefile illustrates two libraries, <samp>libone</samp> and
+<samp>libtwo</samp>, that are to be generated.
+</p>
+<div class="example">
+<pre class="example">#
+# An example GNUmakefile
+#
+
+# Include the common variables defined by the Makefile Package
+include $(GNUSTEP_MAKEFILES)/common.make
+
+# Two libraries
+LIBRARY_NAME = libone libtwo
+
+#
+# The files for the libone library
+#
+# The Objective-C files to compile
+libone_OBJC_FILES = one.m draw.m
+
+# The C source files to be compiled
+libone_C_FILES = parse.c
+
+# The PostScript wrap source files to be compiled
+libone_PSWRAP_FILES = drawing.psw
+
+# The header files for the library
+libone_HEADER_FILES_DIR = ./one
+libone_HEADER_FILES_INSTALL_DIR = one
+libone_HEADER_FILES = one.h draw.h
+
+#
+# The files for the libtwo library
+#
+# The Objective-C files to compile
+libtwo_OBJC_FILES = two.m another.m test.m
+
+# The header files for the library
+libtwo_HEADER_FILES_DIR = ./two
+libtwo_HEADER_FILES_INSTALL_DIR = two
+libtwo_HEADER_FILES = two.h another.h test.h common.h
+
+# Option include to set any additional variables
+-include GNUmakefile.preamble
+
+# Include in the rules for making libraries
+include $(GNUSTEP_MAKEFILES)/library.make
+
+# Option include to define any additional rules
+-include GNUmakefile.postamble
+
+</pre></div>
+
+<p>Notice that the <samp>libone</samp> library has Objective-C, C, and PostScript
+wrap files to be compiled; while, the <samp>libtwo</samp> library only has
+some Objective-C files.
+</p>
+<p>The header files for the <samp>libone</samp> library reside in the <samp>one</samp>
+subdirectory from where the sources are located, and the header files
+will be installed into the <samp>one</samp> subdirectory within
+<code>GNUSTEP_HEADERS</code>.  Likewise the header files for the <samp>libtwo</samp>
+library reside in the <samp>two</samp> subdirectory from where the sources are
+located, and the header files will be installed into the <samp>two</samp>
+subdirectory within <code>GNUSTEP_HEADERS</code>.
+</p>
+
+
+
+</body>
+</html>

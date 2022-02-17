@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Library Combination (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Library Combination (GNUstep Makefile Package)">
+<meta name="keywords" content="Library Combination (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Common-Variables.html" rel="up" title="Common Variables">
+<link href="Overridable-Flags.html" rel="next" title="Overridable Flags">
+<link href="Platform-Information.html" rel="prev" title="Platform Information">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Library-Combination"></span><div class="header">
+<p>
+Next: <a href="Overridable-Flags.html" accesskey="n" rel="next">Overridable Flags</a>, Previous: <a href="Platform-Information.html" accesskey="p" rel="prev">Platform Information</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Library-Combination-1"></span><h4 class="subsection">1.7.4 Library Combination</h4>
+
+<dl>
+<dt id="index-OBJC_005fRUNTIME_005fLIB">Variable: <strong>OBJC_RUNTIME_LIB</strong></dt>
+<dd><p><code>OBJC_RUNTIME_LIB</code> is assigned the code that indicates the
+Objective-C Runtime library which compiled Objective-C programs will
+use; the four possible values are: &lsquo;<samp>ng</samp>&rsquo; for the GNUstep Runtime
+with latest language features turned on at acompile time, &lsquo;<samp>gnu</samp>&rsquo;
+for the GNU Runtime (or the GNUstep runtime with traditional
+language features compiled), &lsquo;<samp>nx</samp>&rsquo; for the NeXT Runtime,
+and &lsquo;<samp>sun</samp>&rsquo; for the Sun Microsystems Runtime.
+The Objective-C Runtime library can be changed
+to use a library other than the default with the &lsquo;<samp>library_combo</samp>&rsquo;
+make parameter, see <a href="Running-Make.html">Running Make</a> for more details.  Read
+<a href="#Library-Combination">Library Combination</a> for more information on how the Makefile
+Package handles different library combinations.  If a makefile must
+perform specific operations dependent upon the Objective-C Runtime
+library then this variable is the one to check.
+</p></dd></dl>
+
+<dl>
+<dt id="index-RUNTIME_005fVERSION">Variable: <strong>RUNTIME_VERSION</strong></dt>
+<dd><p><code>RUNTIME_VERSION</code> is set to and allows you to override the Objective-C
+runtime ABI in use by the clang compiler. Generally, gnustep-make will provide
+a sane default for you.Please be aware that mixing different ABIs in the same
+binary is not generally supported. Possible values:
+</p>
+<dl compact="compact">
+<dt>&lsquo;<samp>gcc</samp>&rsquo;</dt>
+<dd><p>This is the classic ABI also implemented by GCC which does not support advanced
+features such as ARC or non-fragile instance variables.
+</p>
+</dd>
+<dt>&lsquo;<samp>gnustep-1.8</samp>&rsquo;</dt>
+<dd><p>This is the first iteration of the GNUstep Objective-C ABI, which supports the
+advanced features while remaining compatible with the GCC ABI. Requires the
+GNUstep Objective-C runtime (libobjc2) 1.8 or later.
+</p>
+</dd>
+<dt>&lsquo;<samp>gnustep-2.0</samp>&rsquo;</dt>
+<dd><p>This version breaks compatibility with the older runtime ABIs in order to 
+provide better introspection metadata, reduced memory usage and smaller 
+binaries. Requires the GNUstep Objective-C runtime (libobjc2) 2.0 or later.
+</p></dd>
+</dl>
+</dd></dl>
+
+<dl>
+<dt id="index-RUNTIME_005fDEFINE">Variable: <strong>RUNTIME_DEFINE</strong></dt>
+<dd><p><code>RUNTIME_DEFINE</code> is assigned a preprocessor flag that can be
+passed to the compiler which defines a macro based upon the
+Objective-C Runtime library that compiled Objective-C programs will
+use.  This macro is useful if the compiled program must execute
+different code based upon the Objective-C Runtime being used.  See
+<a href="GNUmakefile_002epreamble.html">GNUmakefile.preamble</a> for an example on how to pass this
+preprocessor flag when compiling.  The four possible values are:
+&lsquo;<samp>-DGNUSTEP_RUNTIME=1</samp>&rsquo; for the GNUstep ObjectiveC-2 Runtime,
+&lsquo;<samp>-DGNU_RUNTIME=1</samp>&rsquo; for the GNU Runtime, &lsquo;<samp>-DNeXT_RUNTIME=1</samp>&rsquo;
+for the NeXT Runtime, and &lsquo;<samp>-DSun_RUNTIME=1</samp>&rsquo; for the Sun
+Microsystems Runtime.
+</p></dd></dl>
+
+<dl>
+<dt id="index-FOUNDATION_005fLIB">Variable: <strong>FOUNDATION_LIB</strong></dt>
+<dd><p><code>FOUNDATION_LIB</code> is assigned the code that indicates the
+Foundation Kit library, as specified by the OpenStep specification,
+which compiled Objective-C programs will use; the four possible values
+are: &lsquo;<samp>gnu</samp>&rsquo; for the GNUstep Base Library, &lsquo;<samp>nx</samp>&rsquo; for the NeXT
+Foundation Kit Library, &lsquo;<samp>sun</samp>&rsquo; for the Sun Microsystems Foundation
+Kit Library, and &lsquo;<samp>fd</samp>&rsquo; for the libFoundation Library.  The
+Foundation Kit library can be changed to use a library other than the
+default with the &lsquo;<samp>library_combo</samp>&rsquo; make parameter, see <a href="Running-Make.html">Running Make</a> for more details.  Read <a href="#Library-Combination">Library Combination</a> for more
+information on how the Makefile Package handles different library
+combinations.  If a makefile must perform specific operations
+dependent upon the Foundation Kit library then this variable is the
+one to check.
+</p></dd></dl>
+
+<dl>
+<dt id="index-FND_005fDEFINE">Variable: <strong>FND_DEFINE</strong></dt>
+<dd><p><code>FND_DEFINE</code> is assigned a preprocessor flag that can be passed
+to the compiler which defines a macro based upon the Foundation Kit
+library, as specified by the OpenStep specification, which compiled
+Objective-C programs will use.  This macro is useful if the compiled
+program must execute different code based upon the Foundation Kit
+library being used.  See <a href="GNUmakefile_002epreamble.html">GNUmakefile.preamble</a> for an example on
+how to pass this preprocessor flag when compiling.  The four possible
+values are: &lsquo;<samp>-DGNUSTEP_BASE_LIBRARY=1</samp>&rsquo; for the GNUstep Base
+Library, &lsquo;<samp>-DNeXT_Foundation_LIBRARY=1</samp>&rsquo; for the NeXT Foundation
+Kit Library, &lsquo;<samp>-DSun_Foundation_LIBRARY=1</samp>&rsquo; for the Sun
+Microsystems Foundation Kit Library, and
+&lsquo;<samp>-DLIB_FOUNDATION_LIBRARY=1</samp>&rsquo; for the libFoundation Library.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GUI_005fLIB">Variable: <strong>GUI_LIB</strong></dt>
+<dd><p><code>GUI_LIB</code> is assigned the code that indicates the Application Kit
+library, as specified by the OpenStep specification, which compiled
+Objective-C programs will use; the two possible values are: &lsquo;<samp>gnu</samp>&rsquo;
+for the GNUstep GUI Library and &lsquo;<samp>nx</samp>&rsquo; for the NeXT Application Kit
+Library.  The Application Kit library can be changed to use a library
+other than the default with the &lsquo;<samp>library_combo</samp>&rsquo; make parameter,
+see <a href="Running-Make.html">Running Make</a> for more details.  Read <a href="#Library-Combination">Library Combination</a> for more information on how the Makefile Package handles
+different library combinations.  If a makefile must perform specific
+operations dependent upon the Application Kit library then this
+variable is the one to check.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GUI_005fDEFINE">Variable: <strong>GUI_DEFINE</strong></dt>
+<dd><p><code>GUI_DEFINE</code> is assigned a preprocessor flag that can be passed
+to the compiler which defines a macro based upon the Application Kit
+library, as specified by the OpenStep specification, which compiled
+Objective-C programs will use.  This macro is useful if the compiled
+program must execute different code based upon the Application Kit
+library being used.  See <a href="GNUmakefile_002epreamble.html">GNUmakefile.preamble</a> for an example on
+how to pass this preprocessor flag when compiling.  The two possible
+values are: &lsquo;<samp>-DGNUSTEP_GUI_LIBRARY=1</samp>&rsquo; for the GNUstep GUI Library
+and &lsquo;<samp>-DNeXT_Application_LIBRARY=1</samp>&rsquo; for the NeXT Application Kit
+Library.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GUI_005fBACKEND_005fLIB">Variable: <strong>GUI_BACKEND_LIB</strong></dt>
+<dd><p><code>GUI_BACKEND_LIB</code> is assigned the code that indicates the backend
+library which compiled Objective-C programs will use in conjunction
+with the GNUstep GUI Library.  The three possible values are:
+&lsquo;<samp>xdps</samp>&rsquo; for the GNUstep X/DPS GUI Backend Library, &lsquo;<samp>nsx</samp>&rsquo; for
+the NSKit GUI Backend Library, and &lsquo;<samp>w32</samp>&rsquo; for the MediaBook WIN32
+GUI Backend Library.  <code>GUI_BACKEND_LIB</code> is only relevant when
+<code>GUI_LIB</code> is set to &lsquo;<samp>gnu</samp>&rsquo;; otherwise, <code>GUI_BACKEND_LIB</code>
+will be set to &lsquo;<samp>nil</samp>&rsquo; to indicate that there is no backend
+library.  <code>GUI_BACKEND_LIB</code> can be changed to use a library other
+than the default with the &lsquo;<samp>library_combo</samp>&rsquo; make parameter, see
+<a href="Running-Make.html">Running Make</a> for more details.  Read <a href="#Library-Combination">Library Combination</a>
+for more information on how the Makefile Package handles different
+library combinations.  If a makefile must perform specific operations
+dependent upon the backend library then this variable is the one to
+check.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GUI_005fBACKEND_005fDEFINE">Variable: <strong>GUI_BACKEND_DEFINE</strong></dt>
+<dd><p><code>GUI_BACKEND_DEFINE</code> is assigned a preprocessor flag that can be
+passed to the compiler which defines a macro based upon the backend
+library which compiled Objective-C programs will use in conjunction
+with the GNUstep GUI Library.  This macro is useful if the compiled
+program must execute different code based upon the backend library
+being used.  See <a href="GNUmakefile_002epreamble.html">GNUmakefile.preamble</a> for an example on how to
+pass this preprocessor flag when compiling.  The three possible values
+are: &lsquo;<samp>-DXDPS_BACKEND_LIBRARY=1</samp>&rsquo; for the GNUstep X/DPS GUI Backend
+Library, &lsquo;<samp>-DNSX_BACKEND_LIBRARY=1</samp>&rsquo; for the NSKit GUI Backend
+Library, and &lsquo;<samp>-DW32_BACKEND_LIBRARY=1</samp>&rsquo; for the MediaBook WIN32
+GUI Backend Library.  <code>GUI_BACKEND_DEFINE</code> is not defined if
+there is not backend library; i.e. <code>GUI_BACKEND_LIB</code> is
+&lsquo;<samp>nil</samp>&rsquo;.
+</p></dd></dl>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Overridable-Flags.html" accesskey="n" rel="next">Overridable Flags</a>, Previous: <a href="Platform-Information.html" accesskey="p" rel="prev">Platform Information</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

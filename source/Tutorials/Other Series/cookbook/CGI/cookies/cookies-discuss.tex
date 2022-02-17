@@ -1,0 +1,455 @@
+
+\subsubsection{Idea}
+
+Cookies are a mechanism by which the {\tt HTTP} protocol, which is
+stateless, can add persistence to a session. This is initiated by the
+server, which sends a cookie that the client stores locally. The
+client subsequently includes the cookie in its HTTP headers when it
+requests a page from the server (precisely what servers will receive a
+cookie is controlled by the path and domain properties of the cookie;
+cookies are sent with requests whose URL matches the path and the
+domain). The server could use cookies to store information that it has
+received from the client through a form submission. Usually just one
+cookie is used, however, namely the session id. The server maps the
+session id to the session state data.
+
+We add a category to {\tt NSMutableDictionary} that contains a method
+that initializes the dictionary with the variables that were passed in
+through the environment variable  {\tt HTTP\_COOKIE.} We also implement
+a method that outputs the content of a dictionary as a series of HTTP
+{\tt Set-Cookie} headers.
+
+Our test application adds two cookies to the set of cookies it has
+received from the client. These cookies have a lifetime of thirty
+seconds. The value of each cookie is the time since the Epoch
+(00:00:00 UTC, January 1, 1970), measured in seconds, so that the
+server can output the remaining time for each cookie it receives.
+
+The syntax of the {\tt Set-Cookie} header is like this (all of it on
+one line):
+\begin{verbatim}
+            Set-Cookie: KEY=VALUE
+            [; expires=DATE] [; path=PATH]
+            [; domain=DOMAIN_NAME] [; secure]
+\end{verbatim}
+
+The date is required to have the format {\tt Wdy, DD-Mon-YYYY HH:MM:SS
+GMT.} 
+
+The {\tt Cookie} header that is returned by the client looks like
+this: 
+\begin{verbatim}
+            KEY1=VALUE1; KEY2=VALUE2; ...
+\end{verbatim}
+
+Note that the protocol as we use it here lets the server receive
+multiple key-value pairs in a single {\tt Cookie} header, whereas we
+must send one {\tt Set-Cookie} header for each pair we wish to set.
+
+\subsubsection{Preliminaries}
+
+We use a shell script as a wrapper; it should go into the CGI-BIN
+directory of your webserver, e.g. you could save it as {\tt
+/cgi-bin/cookies.sh.}
+
+\begin{verbatim}
+#! /bin/sh
+#
+
+export GNUSTEP_SYSTEM_ROOT=/usr/GNUstep
+export TZ=Europe/Berlin
+. $GNUSTEP_SYSTEM_ROOT/System/Makefiles/GNUstep.sh
+
+/home/gnustep/cookies/shared_obj/ix86/linux-gnu/gnu-gnu-gnu/cookies
+\end{verbatim} %%$
+
+\subsubsection{Implementation}
+
+Start by declaring {\tt PERSIST}, a constant that defines the
+persistence of the cookies we produce. The method {\tt initWithCookie}
+parses {\tt HTTP\_COOKIE} and stores the key-value pairs in the
+dictionary. The method {\tt cookieToString} returns a string that is
+suitable for inclusion among the headers sent to the client. The
+special keys {\tt expires, domain, path} and {\tt secure} can be used
+to set the properties of the cookie.
+
+\begin{lstlisting}{}
+#include <Foundation/Foundation.h>
+
+#define PERSIST 30
+
+@interface NSMutableDictionary (Cookies)
+
+- (NSMutableDictionary *)initWithCookie;
+- (NSString *)cookieToString;
+
+@end
+\end{lstlisting}
+
+The first step is to retrieve the cookie from the process
+environment. There is work to be done if {\tt HTTP\_COOKIE} was not
+empty.
+
+\begin{lstlisting}{}
+@implementation NSMutableDictionary (Cookies)
+
+- (id)initWithCookie
+{
+    NSString *cookie = 
+        [[[NSProcessInfo processInfo] environment]
+            objectForKey:@"HTTP_COOKIE"];
+
+    [self initWithCapacity:1];
+
+    if(cookie!=nil){
+\end{lstlisting}
+
+The algorithm works works like this: scan up to the first semicolon
+and split the key-value pair on the equal sign. Skip whatever
+whitespace you may find. Repeat until you reach the end of the string.
+
+We need a character set for whitespace so that we may skip those
+characters. We intialize the scanner with the cookie and start a loop
+that ends when the scanner reaches the end of the string.
+
+\begin{lstlisting}{}
+        NSCharacterSet *space =
+            [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        NSScanner *scn = 
+            [NSScanner scannerWithString:cookie];
+
+        while([scn isAtEnd]==NO){
+\end{lstlisting}
+
+We scan up to the first semicolon; {\tt pair} holds those characters,
+but does not include the semicolon. We split the pair on the equal
+sign.
+
+\begin{lstlisting}{}
+            NSString *pair;
+            if([scn scanUpToString:@";" intoString:&pair]==YES){
+                NSArray *entry = 
+                    [pair componentsSeparatedByString:@"="];
+                NSString *key, *value;
+\end{lstlisting}
+
+We do some error checking. There should be exactly two fields: a key
+and a value. We raise an exception if this is not the case.
+
+\begin{lstlisting}{}
+                if([entry count]!=2){
+                    [NSException 
+                        raise:NSRangeException 
+                        format:@"cookie \"%@\""
+                        @"contains bad key-value pair; "
+                        @"%d fields, should be 2; ",
+                        cookie, [entry count]];
+                }
+\end{lstlisting}
+
+Neither the key nor the value may be empty.
+
+\begin{lstlisting}{}
+                key = [entry objectAtIndex:0];
+                value = [entry objectAtIndex:1];
+
+                if(![key length] || ![value length]){
+                    [NSException 
+                        raise:NSRangeException 
+                        format:@"cookie \"%@\":"
+                        @"key and value must not be empty;"
+                        @"got lengths %d (key) and %d (value).", 
+                        cookie, [key length], [value length]];
+                }
+\end{lstlisting}
+
+If we pass the two checks then we have found a good key-value pair and
+add it to the dictionary. We skip over the semicolon and any
+whitespace. This takes us to the first character of the next pair or
+to the end of the string.
+
+\begin{lstlisting}{}
+                [self setObject:value forKey:key];
+
+                [scn scanString:@";" intoString:NULL];
+                [scn scanCharactersFromSet:space  
+                     intoString:NULL];
+            }
+        }
+    }
+\end{lstlisting}
+
+We return the dictionary when we are done scanning.
+
+\begin{lstlisting}{}
+    return self;
+}
+\end{lstlisting}
+
+The method {\tt cookieToString} builds a set of {\tt Set-Cookie}
+headers from the contents of the dictionary. It takes special care to
+process the cookie properties properly. There are two steps: first,
+processs all keys in the dictionary to build the cookie's properties
+as well as an array of key-value assignments and second, output a {\tt
+Set-Cookie} header for each pair, using the properties from the first
+step.
+
+The array {\tt data} holds key-value pairs and the array {\tt
+properties} holds properties. There is a boolean to indicate whether
+the cookie is marked secure or not. The variable {\tt field} holds a
+single item being added to one of the arrays. We iterate over all keys
+of the dictionary.
+
+\begin{lstlisting}{}
+- (NSString *)cookieToString
+{
+    NSMutableArray *data = 
+        [NSMutableArray arrayWithCapacity:1];
+    NSMutableArray *properties =
+        [NSMutableArray arrayWithCapacity:1];
+    BOOL secure = NO;
+    
+    NSString *field;
+
+    NSEnumerator *keyEnum = [self keyEnumerator];
+    NSString *key;
+    while((key=[keyEnum nextObject])!=nil){
+\end{lstlisting}
+
+The properties {\tt domain} and {\tt path} are easy: we build the
+key-value pair and add it to the array of properties.
+
+\begin{lstlisting}{}
+        if([key isEqualToString:@"domain"]==YES ||
+           [key isEqualToString:@"path"]==YES){
+            field = 
+                [NSString stringWithFormat:@"%@=%@;",
+                          key, [self objectForKey:key]];
+            [properties addObject:field];
+        }
+\end{lstlisting}
+
+The property {\tt expires} is assumed to be a date object. We require
+a date string in the format that the protocol uses. We use a calendar
+format to obtain the result; note that we must use {\tt GMT} for the
+time zone.
+
+\begin{lstlisting}{}
+        else if([key isEqualToString:@"expires"]==YES){
+           NSString *dateStr =
+               [[self objectForKey:key] 
+                   descriptionWithCalendarFormat:@"%a, %d-%b-%Y "
+                   @"%H:%M:%S GMT" 
+                   timeZone:[NSTimeZone timeZoneWithName:@"GMT"]
+                   locale:nil];
+            field = 
+                [NSString stringWithFormat:@"%@=%@;",
+                          key, dateStr];
+            [properties addObject:field];
+        }
+\end{lstlisting}
+
+We set the boolean indicator for the property {\tt secure} if it is
+among the keys in the dictionary. All other entries of the dictionary
+are assumed to be data, i.e. key-value pairs. We format each pair
+according to the requirements and store it in the array {\tt
+data}. This completes the first step.
+
+\begin{lstlisting}{}
+        else if([key isEqualToString:@"secure"]==YES){
+            secure = YES;
+        }
+        else{
+            field =  
+                [NSString stringWithFormat:@"%@=%@;",
+                          key, [self objectForKey:key]];
+            [data addObject:field];
+        }
+    }
+\end{lstlisting}
+
+We now have all the properties. This means that we can construct the
+property string, which stays the same for all pairs. We build a
+string that contains all properties separated by single spaces. If
+the property {\tt secure} has been set, than it is included at the
+end of the property string.
+
+\begin{lstlisting}{}
+    NSString *props = 
+        [properties componentsJoinedByString:@" "];
+    if(secure==YES){
+        props = [props stringByAppendingString:@" secure"];
+    }
+\end{lstlisting}
+
+The second step is to build the result string, which starts out
+empty. We iterate over all data lines and construct a {\tt Set-Cookie}
+header by including first the data, and then the properties. We return
+the result when we are done.
+
+\begin{lstlisting}{}
+    NSString *result = @"", *line;
+    NSEnumerator *lineEnum = [data objectEnumerator];
+    while((line=[lineEnum nextObject])!=nil){
+        NSString *allFields =
+            [NSString 
+                stringWithFormat:@"Set-Cookie: %@ %@\r\n", 
+                line, props];
+        result = 
+            [result stringByAppendingString:allFields];
+    }
+
+    return result;
+}
+\end{lstlisting}
+
+The remainder of this section shows how we test the code that we
+discussed above. Recall that our test program should add two new
+cookies each time it is invoked and display the cookies that it
+received and the time that remains until they expire. 
+
+We begin by obtaining the cookies that may have been passed in
+through {\tt HTTP\_COOKIE}. We also obtain a date that is thirty
+seconds in the future, or some other defined value. It determines the
+expiry of the new cookies that we are about to set.
+
+\begin{lstlisting}{}
+#define NEWKEYS 2
+
+int main(int argc, char** argv, char **env)
+{
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
+
+    NSMutableDictionary *cookieValues =
+        [[NSMutableDictionary alloc] initWithCookie];
+
+    NSDate *date = 
+        [NSDate dateWithTimeIntervalSinceNow:PERSIST];
+\end{lstlisting}
+
+The new cookie set starts out containing two properties, the date and
+the path.
+
+\begin{lstlisting}{}
+    NSMutableDictionary *newCookie = 
+        [NSMutableDictionary 
+            dictionaryWithObjectsAndKeys:date, @"expires",
+            @"/cgi-bin/cookies.sh", @"path", nil];
+\end{lstlisting}
+
+We must now add the key-value pairs, {\tt NEWKEYS} items to be
+precise. The key should be a string containing the character 'k', the
+last four digits of the time, and a three digit index to make it
+unique, and its value, most importantly, should be the current time,
+i.e. the time when it was created.
+
+\begin{lstlisting}{}
+    long now = time(NULL); int k;
+    srand48(now);
+
+    for(k=0; k<NEWKEYS; k++){
+        NSString 
+            *key = 
+            [NSString stringWithFormat:@"k%04ld%03d",
+                      now%10000, k],
+            *value = 
+            [NSString stringWithFormat:@"%ld",
+                      now];
+        [newCookie setObject:value forKey:key];
+    }
+\end{lstlisting}
+
+We are now ready to output HTML code. There are two sections: a list
+of all cookies that we received and how much longer each will last,
+some auxiliary information and a button that invokes {\tt cookies.sh.}
+The set of cookies comes first, followed by the header and the
+beginning of the body of the document.
+
+\begin{lstlisting}{}
+    printf("%s", [[newCookie cookieToString] cString]);
+    printf("Content-type: text/html\r\n\r\n");
+
+    printf("<HTML><HEAD><TITLE>Cookies</TITLE></HEAD><BODY>\n");
+\end{lstlisting}
+
+We prepare to iterate over the key-value pairs that we received. There
+is an enumerator and a counter. The data will not use HTML markup, so
+we output a PRE tag.
+
+\begin{lstlisting}{}
+    NSEnumerator *en;
+    NSString *key, *value;
+
+    int count = 1;
+    long rem;
+
+    puts("<PRE>");
+\end{lstlisting}
+
+First we print the data (key-value pairs) that we received; this helps
+to debug the program. We sort the keys in lexical order and prepare to
+iterate over the array thus obtained.
+
+\begin{lstlisting}{}
+    printf("Received:\n%s\n\n\n", 
+           [[cookieValues cookieToString] cString]);
+
+    en = [[[cookieValues allKeys]
+              sortedArrayUsingSelector:@selector(compare:)]
+             objectEnumerator];
+    while((key = [en nextObject])!=nil){
+\end{lstlisting}
+
+We lookup up the value associated to each key. The remaining time for
+this key is the difference between the time that has elapsed since its
+creation and the total persistence time. Note that differences between
+the clocks of the server and the client can cause the client to remove
+the cookie a bit sooner or a bit later than required. We construct a
+string that contains the key, the value, and the remaining time, print
+it and increment the counter.
+
+\begin{lstlisting}{}
+        value =  [cookieValues objectForKey:key];
+	rem = (long)PERSIST-(now-atol([value cString]));
+
+        NSString *item =
+	    [NSString stringWithFormat:@"key %d: %@\n"
+                      @"value %d: %@\n"
+                      @"remaining %d: %lds\n",
+		      count, key, count, value,
+                      count, rem];
+
+	printf("%s\n", [item cString]);
+	count++;
+    }
+\end{lstlisting}
+
+We output an indicator phrase that shows whether a cookie was received. We
+also print the {\tt Set-}{\tt Cookie} headers that we sent earlier, so
+the user knows what cookies to expect when he submits the form.
+
+\begin{lstlisting}{}
+
+    printf("%s receive a cookie.\n\n\n",
+           ([cookieValues count]? "Did" : "Did not"));
+    printf("%s\n", [[newCookie cookieToString] cString]);
+\end{lstlisting}
+
+The second section of the document contains a button that reloads the
+script, thereby forcing the client to send the current set of cookies
+to the server.
+
+\begin{lstlisting}{}
+    puts("</PRE>");
+
+    printf("<FORM ACTION=cookies.sh METHOD=GET>\n"
+           "<INPUT TYPE=SUBMIT VALUE=Submit>\n"
+           "</FORM>\n");
+
+    printf("</BODY></HTML>\n");
+
+    [pool release];
+    exit(0);
+}
+\end{lstlisting}
+

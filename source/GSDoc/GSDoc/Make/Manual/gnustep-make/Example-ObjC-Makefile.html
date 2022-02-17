@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Example ObjC Makefile (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Example ObjC Makefile (GNUstep Makefile Package)">
+<meta name="keywords" content="Example ObjC Makefile (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="objc_002emake.html" rel="up" title="objc.make">
+<link href="palette_002emake.html" rel="next" title="palette.make">
+<link href="objc_002emake-variables.html" rel="prev" title="objc.make variables">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Example-ObjC-Makefile"></span><div class="header">
+<p>
+Previous: <a href="objc_002emake-variables.html" accesskey="p" rel="prev">objc.make variables</a>, Up: <a href="objc_002emake.html" accesskey="u" rel="up">objc.make</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Example-Makefile-1"></span><h4 class="subsubsection">1.4.11.2 Example Makefile</h4>
+
+<p>This makefile illustrates two Objective-C programs, <samp>simple</samp> and
+<samp>list</samp> that are to be generated.
+</p>
+<div class="example">
+<pre class="example">#
+# An example GNUmakefile
+#
+
+# Include the common variables defined by the Makefile Package
+include $(GNUSTEP_MAKEFILES)/common.make
+
+# Build a simple Objective-C program
+OBJC_PROGRAM_NAME = simple list
+
+# Have the Objective-C runtime macro be defined for simple program
+simple_CPPFLAGS = $(RUNTIME_DEFINE)
+
+# The Objective-C files to compile for simple program
+simple_OBJC_FILES = simple.m
+
+# The Objective-C files to compile for list program
+list_OBJC_FILES = list.m linkedlist.m
+
+# The C files to compile for list program
+list_C_FILES = sort.c
+
+# Option include to set any additional variables
+-include GNUmakefile.preamble
+
+# Include in the rules for making Objective-C programs
+include $(GNUSTEP_MAKEFILES)/objc.make
+
+# Option include to define any additional rules
+-include GNUmakefile.postamble
+</pre></div>
+
+<p>The <samp>simple</samp> Objective-C program only consists of single
+Objective-C file; while, the <samp>list</samp> Objective-C program consists of
+two Objective-C files and one C file.  The <samp>simple</samp> Objective-C
+program use the variable defined by the Makefile Package,
+<code>RUNTIME_DEFINE</code>, to define a macro based upon the Objective-C
+Runtime library; presumably <samp>simple.m</samp> has code which is dependent
+upon the Objective-C Runtime.
+</p>
+
+
+
+</body>
+</html>

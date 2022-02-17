@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>objc.make variables (GNUstep Makefile Package)</title>
+
+<meta name="description" content="objc.make variables (GNUstep Makefile Package)">
+<meta name="keywords" content="objc.make variables (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="objc_002emake.html" rel="up" title="objc.make">
+<link href="Example-ObjC-Makefile.html" rel="next" title="Example ObjC Makefile">
+<link href="objc_002emake.html" rel="prev" title="objc.make">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="objc_002emake-variables"></span><div class="header">
+<p>
+Next: <a href="Example-ObjC-Makefile.html" accesskey="n" rel="next">Example ObjC Makefile</a>, Previous: <a href="objc_002emake.html" accesskey="p" rel="prev">objc.make</a>, Up: <a href="objc_002emake.html" accesskey="u" rel="up">objc.make</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Project-Variables-2"></span><h4 class="subsubsection">1.4.11.1 Project Variables</h4>
+
+<p>Most of the project variables work the same as in Library
+projects (see <a href="library_002emake.html">library.make</a>).
+</p>
+<dl>
+<dt id="index-OBJC_005fPROGRAM_005fNAME">Objective-C program project: <strong>OBJC_PROGRAM_NAME</strong></dt>
+<dd><p><code>OBJC_PROGRAM_NAME</code> is the list of names of Objective-C programs
+that are to be built; each name should be unique as it is the name of
+the executable file that will be generated.
+</p></dd></dl>
+
+<dl>
+<dt id="index-OBJC_005fLIBS">Objective-C program project: <strong>OBJC_LIBS</strong></dt>
+<dd><p><code>xxx_OBJC_LIBS</code> is the list of additional libraries that the linker
+will use when linking to create the <strong>xxx</strong> Objective-C program
+executable file.  These libraries are specific to the <strong>xxx</strong>
+Objective-C program, see <a href="GNUmakefile_002epreamble.html">ADDITIONAL_OBJC_LIBS</a>,
+to see how to specify additional global libraries.  These libraries are
+placed before all of the Objective-C Runtime and system libraries, and
+before the global libraries specified with <code>ADDITIONAL_OBJC_LIBS</code>,
+so that they will be searched first when linking.  The additional
+libraries should be specified as &lsquo;<samp>-l</samp>&rsquo; flags to the linker as the
+following example illustrates.  Replace the <strong>xxx</strong> with the name
+of the program as listed by the <code>OBJC_PROGRAM_NAME</code> variable.
+</p></dd></dl>
+
+
+
+
+</body>
+</html>
