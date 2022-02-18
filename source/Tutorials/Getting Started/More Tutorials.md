@@ -38,6 +38,10 @@
 
 [http://gnustep.it](https://web.archive.org/web/20211006234718if_/http://www.gnustep.it/)
 
+[GNUstep Developer Guide](https://web.archive.org/web/20190926110154if_/http://www.gnustep-developer.guide/)
+
+[`[objc retain]` podcast](https://objc-retain.com/posts/)
+
 [Cocoa Dev Central](https://www.cocoadevcentral.com/) ([Archived with working external links](https://web.archive.org/web/20090831052617if_/http://www.cocoadevcentral.com/))
 
 [StepWise](https://web.archive.org/web/20060427115521if_/http://www.stepwise.com/)
