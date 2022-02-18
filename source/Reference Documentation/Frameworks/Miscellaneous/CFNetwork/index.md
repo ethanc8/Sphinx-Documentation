@@ -8,7 +8,7 @@ Official description:
 
 ## Apple implementation
 
-* [API documentation](https://developer.apple.com/documentation/cfnetwork?language=objc)
+* [API reference](https://developer.apple.com/documentation/cfnetwork?language=objc)
 * [Manual](https://developer.apple.com/library/archive/documentation/Networking/Conceptual/CFNetwork/Concepts/Concepts.html)
 
 ## Apple implementation open-source forks

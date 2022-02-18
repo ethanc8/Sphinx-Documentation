@@ -2,12 +2,12 @@
 
 The Foundation Kit provides key data types for working in Objective-C, such as strings, dictionaries, and lists. It also provides networking, configuration storage, file manipulation, and more.
 
-**<a href="../../../../GSDoc/Base/Reference/index.html">👉 Browse the API Documentation</a>**  
+**<a href="../../../../GSDoc/Base/Reference/index.html">👉 Browse the API reference</a>**  
 **<a href="../../../../GSDoc/Base/ProgrammingManual/gs-base/index.html">📖 Read the Manual</a>**
 
 ## Apple Foundation
 
-[API documentation](https://developer.apple.com/documentation/foundation?language=objc)  
+[API reference](https://developer.apple.com/documentation/foundation?language=objc)  
 [Header files](https://github.com/phracker/MacOSX-SDKs/tree/master/MacOSX11.3.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers)
 
 ## GNUstep Base Library

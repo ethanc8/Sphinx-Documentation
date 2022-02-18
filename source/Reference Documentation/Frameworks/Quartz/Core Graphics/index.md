@@ -13,7 +13,7 @@ Official description:
 ## Core Graphics (Apple implementation)
 
 * [Info from CocoaDev.com](https://web.archive.org/web/20111105175048if_/http://www.cocoadev.com/index.pl?CoreGraphics)
-* [API documentation](https://developer.apple.com/documentation/coregraphics?language=objc)
+* [API reference](https://developer.apple.com/documentation/coregraphics?language=objc)
 * [Manual](https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/Introduction/Introduction.html?language=objc#//apple_ref/doc/uid/TP30001066)
 
 ## Opal - GNUstep implementation

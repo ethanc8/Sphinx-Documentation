@@ -2,7 +2,7 @@
 
 ## Core Animation - Apple implementation
 
-* [API documentation](https://developer.apple.com/documentation/quartzcore?language=objc)
+* [API reference](https://developer.apple.com/documentation/quartzcore?language=objc)
 * [Manual](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html)
 
 ## QuartzCore - GNUstep implementation

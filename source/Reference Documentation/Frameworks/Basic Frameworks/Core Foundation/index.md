@@ -15,7 +15,7 @@ Core Foundation includes C-based object-oriented APIs, with a similar focus to t
 
 ## Apple CoreFoundation
 
-[API documentation](https://developer.apple.com/documentation/foundation?language=objc)  
+[API reference](https://developer.apple.com/documentation/foundation?language=objc)  
 [Header files](https://github.com/phracker/MacOSX-SDKs/tree/master/MacOSX11.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Versions/A/Headers)
 
 ## GNUstep CoreBase

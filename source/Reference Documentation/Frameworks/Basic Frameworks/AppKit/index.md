@@ -11,12 +11,12 @@ NSImageName.md
 
 AppKit allows you to build graphical applications, using a powerful and extensible set of widgets. You can build your UI entirely in code, but you might want to design it using the drag-and-drop editor [Gorm](/Reference%20Documentation/Tools/Gorm%20ProjectCenter.md).
 
-**<a href="../../../../GSDoc/Gui/Reference/index.html">👉 Browse the API Documentation</a>**  
+**<a href="../../../../GSDoc/Gui/Reference/index.html">👉 Browse the API reference</a>**  
 **<a href="../../../../GSDoc/Gui/ProgrammingManual/AppKit/index.html">📖 Read the Manual</a>**
 
 ## Apple AppKit
 
-* [API documentation](https://developer.apple.com/documentation/appkit?language=objc)
+* [API reference](https://developer.apple.com/documentation/appkit?language=objc)
 
 ## Historical
 
