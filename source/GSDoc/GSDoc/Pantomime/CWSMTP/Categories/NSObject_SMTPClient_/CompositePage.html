@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>NSObject (SMTPClient)</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">NSObject (SMTPClient)</font></h1><br>
+<a name="//apple_ref/doc/class/NSObject%32(SMTPClient)" title="NSObject (SMTPClient)"></a>
+<h2>Discussion</h2>
+ This informal protocol defines methods that can implemented in
+SMTP's delegate to control the behavior of the class 
+or to obtain status information.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionInitiationCompleted%58" target="_top">transactionInitiationCompleted:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionInitiationFailed%58" target="_top">transactionInitiationFailed:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/recipientIdentificationCompleted%58" target="_top">recipientIdentificationCompleted:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/recipientIdentificationFailed%58" target="_top">recipientIdentificationFailed:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionResetCompleted%58" target="_top">transactionResetCompleted:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionResetFailed%58" target="_top">transactionResetFailed:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/recipientIdentificationCompleted%58; name=NSObject(SMTPClient)::recipientIdentificationCompleted: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/recipientIdentificationCompleted%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="recipientIdentificationCompleted%58">recipientIdentificationCompleted:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) recipientIdentificationCompleted:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+after the SMTP RCPT TO command has completed. The userInfo's
+part of the notification contains the recipients (CWInternetAddress
+instances) that were sucessfully sent. The key to obtain it is "Recipients".
+A PantomimeRecipientIdentificationCompleted notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/recipientIdentificationFailed%58; name=NSObject(SMTPClient)::recipientIdentificationFailed: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/recipientIdentificationFailed%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="recipientIdentificationFailed%58">recipientIdentificationFailed:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) recipientIdentificationFailed:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+after the SMTP RCPT TO command has failed. The userInfo's
+part of the notification contains the recipient (CWInternetAddress
+instance) that was not sucessfully sent. The key to obtain it is "Recipient".
+A PantomimeRecipientIdentificationFailed notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionInitiationCompleted%58; name=NSObject(SMTPClient)::transactionInitiationCompleted: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionInitiationCompleted%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="transactionInitiationCompleted%58">transactionInitiationCompleted:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) transactionInitiationCompleted:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+after the SMTP MAIL FROM command has completed. The userInfo's
+part of the notification contains the message that has
+been sent. The key to obtain it is "Message".
+A PantomimeTransactionInitiationCompleted notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionInitiationFailed%58; name=NSObject(SMTPClient)::transactionInitiationFailed: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionInitiationFailed%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="transactionInitiationFailed%58">transactionInitiationFailed:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) transactionInitiationFailed:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+after the SMTP MAIL FROM command has failed. The userInfo's
+part of the notification contains the message that has
+not been sent. The key to obtain it is "Message".
+A PantomimeTransactionInitiatioFailed notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionResetCompleted%58; name=NSObject(SMTPClient)::transactionResetCompleted: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionResetCompleted%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="transactionResetCompleted%58">transactionResetCompleted:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) transactionResetCompleted:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+after the SMTP RSET command has completed.
+A PantomimeTransactionResetCompleted notification is
+also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionResetFailed%58; name=NSObject(SMTPClient)::transactionResetFailed: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/NSObject(SMTPClient)/transactionResetFailed%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="transactionResetFailed%58">transactionResetFailed:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) transactionResetFailed:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+after the SMTP RSET command has completed and failed.
+This should never really happen but this method could
+be invoked, if the SMTP server isnt RFC-strict.
+A PantomimeTransactionResetFailed notification is
+also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

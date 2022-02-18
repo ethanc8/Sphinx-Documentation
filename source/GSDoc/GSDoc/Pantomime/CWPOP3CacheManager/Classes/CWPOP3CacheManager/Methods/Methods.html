@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWPOP3CacheManager/dateForUID%58" target="doc">dateForUID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWPOP3CacheManager/writeRecord%58" target="doc">writeRecord:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWPOP3CacheManager/dateForUID%58; name=CWPOP3CacheManager::dateForUID: -->
+<a name="//apple_ref/occ/instm/CWPOP3CacheManager/dateForUID%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="dateForUID%58">dateForUID:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSCalendarDate *) dateForUID:
+        (NSString *) theUID;
+</pre></blockquote>
+<p>This method is used to verify if the specific cache
+record with the POP3 UID <i>theUID</i> is present
+in the cache. It also returns the date associated
+to this specific UID.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUID</em></tt></dt><dd>The UID to verify.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The date of the associated UID, nil if not present in
+the cache..
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWPOP3CacheManager/writeRecord%58; name=CWPOP3CacheManager::writeRecord: -->
+<a name="//apple_ref/occ/instm/CWPOP3CacheManager/writeRecord%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="writeRecord%58">writeRecord:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) writeRecord:
+        (cache_record *) theRecord;
+</pre></blockquote>
+<p>This method is used to write a cache record to disk.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theRecord</em></tt></dt><dd>The record to write.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWPOP3Folder</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWPOP3Folder</font></h1><br>
+<a name="//apple_ref/doc/class/CWPOP3Folder" title="CWPOP3Folder"></a>
+<h2>Discussion</h2>
+ This class, which extends the Folder class, is used to
+implement POP3-specific features.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetchMessageAtIndex%58%32numberOfLines%58" target="_top">prefetchMessageAtIndex: numberOfLines:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetchMessageAtIndex%58numberOfLines%58" target="_top">prefetchMessageAtIndex:numberOfLines:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetch" target="_top">prefetch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/leaveOnServer" target="_top">leaveOnServer</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/setLeaveOnServer%58" target="_top">setLeaveOnServer:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/retainPeriod" target="_top">retainPeriod</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/setRetainPeriod%58" target="_top">setRetainPeriod:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/leaveOnServer; name=CWPOP3Folder::leaveOnServer -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/leaveOnServer"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="leaveOnServer">leaveOnServer</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) leaveOnServer;
+</pre></blockquote>
+<p>This method is used to verify if the receiver leaves the messages
+on server after retrieve them.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetch; name=CWPOP3Folder::prefetch -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetch"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="prefetch">prefetch</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) prefetch;
+</pre></blockquote>
+<p>This method is used to cache a certain amount of information from
+the POP3 server, for all messages. It caches the number of messages,
+their size and UID. On completion, it posts a PantomimeFolderPrefetchCompleted
+notification (and calls -folderPrefetchCompleted: on the delegate, if any).
+This method is also fully asynchronous.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetchMessageAtIndex%58%32numberOfLines%58; name=CWPOP3Folder::prefetchMessageAtIndex:numberOfLines: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetchMessageAtIndex%58%32numberOfLines%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="prefetchMessageAtIndex%58%32numberOfLines%58">prefetchMessageAtIndex: numberOfLines:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) prefetchMessageAtIndex:
+        (NSUInteger ) theIndex  numberOfLines:
+        (NSUInteger ) theNumberOfLines;
+</pre></blockquote>
+<p>This method is used to fetch a certain amount of lines of
+the message, at the specified index. On completion, this method posts
+the PantomimeMessagePrefetchCompleted (and calls -messagePrefetchCompleted:
+on the delegate, if any). This method is fully asynchronous. Since
+this method can be used to partially fetch the message, it is the
+responsability of the caller to verify if the message's data
+is fully loaded. One can verify the lenght of the message's data
+and compare it to the message's size.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theIndex</em></tt></dt><dd>The index of the message, which is 1-based in POP3.</dd>
+<dt><tt><em>theNumberOfLines</em></tt></dt><dd>The number of lines to fetch. Specifying 0
+will only fetch the headers.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetchMessageAtIndex%58numberOfLines%58; name=CWPOP3Folder::prefetchMessageAtIndex:numberOfLines: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/prefetchMessageAtIndex%58numberOfLines%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="prefetchMessageAtIndex%58numberOfLines%58">prefetchMessageAtIndex:numberOfLines:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) prefetchMessageAtIndex:
+        (NSUInteger ) theIndex  numberOfLines:
+        (NSUInteger ) theNumberOfLines;
+</pre></blockquote>
+<p>This method is used to fetch a certain amount of lines of
+the message, at the specified index. On completion, this method posts
+the PantomimeMessagePrefetchCompleted (and calls -messagePrefetchCompleted:
+on the delegate, if any). This method is fully asynchronous. Since
+this method can be used to partially fetch the message, it is the
+responsability of the caller to verify if the message's data
+is fully loaded. One can verify the lenght of the message's data
+and compare it to the message's size.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theIndex</em></tt></dt><dd>The index of the message, which is 1-based in POP3.</dd>
+<dt><tt><em>theNumberOfLines</em></tt></dt><dd>The number of lines to fetch. Specifying 0
+will only fetch the headers.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/retainPeriod; name=CWPOP3Folder::retainPeriod -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/retainPeriod"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="retainPeriod">retainPeriod</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) retainPeriod;
+</pre></blockquote>
+<p>This method is used to obtain the retain period for the messages,
+if left on the server.
+</p>
+<dl><dt><i>method result</i></dt><dd>The retain period. A value of 0 means that the messages will always
+be retained.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/setLeaveOnServer%58; name=CWPOP3Folder::setLeaveOnServer: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/setLeaveOnServer%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setLeaveOnServer%58">setLeaveOnServer:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setLeaveOnServer:
+        (BOOL ) theBOOL;
+</pre></blockquote>
+<p>This method is used to set the flag to leave or not the messages on the POP3
+server after fetching them.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theBOOL</em></tt></dt><dd>YES if we want to leave them on the server after a fetch. If NO, the
+messages will be automatically deleted after being fetched.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/setRetainPeriod%58; name=CWPOP3Folder::setRetainPeriod: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Folder/setRetainPeriod%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setRetainPeriod%58">setRetainPeriod:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setRetainPeriod:
+        (unsigned int ) theRetainPeriod;
+</pre></blockquote>
+<p>This method is used to set the retain period (in days) before
+the messages are deleted from the server. In order for this
+to work, the receiver must have a cache (instance of CWPOP3CacheManager).
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theRetainPeriod</em></tt></dt><dd>The retain period to use, in number of days.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

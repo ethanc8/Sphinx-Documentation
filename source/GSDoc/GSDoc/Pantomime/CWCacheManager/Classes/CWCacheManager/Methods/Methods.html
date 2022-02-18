@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCacheManager/initWithPath%58" target="doc">initWithPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCacheManager/path" target="doc">path</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCacheManager/setPath%58" target="doc">setPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCacheManager/invalidate" target="doc">invalidate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCacheManager/synchronize" target="doc">synchronize</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCacheManager/count" target="doc">count</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCacheManager/count; name=CWCacheManager::count -->
+<a name="//apple_ref/occ/instm/CWCacheManager/count"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="count">count</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSUInteger ) count;
+</pre></blockquote>
+<p>This method returns the number of cache_record
+entries present in the cache.
+</p>
+<dl><dt><i>method result</i></dt><dd>The count;
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCacheManager/initWithPath%58; name=CWCacheManager::initWithPath: -->
+<a name="//apple_ref/occ/instm/CWCacheManager/initWithPath%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithPath%58">initWithPath:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithPath:
+        (NSString *) thePath;
+</pre></blockquote>
+<p>This method is the designated initializer for the
+CWCacheManager class.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePath</em></tt></dt><dd>The complete path where the cache will be eventually
+saved to.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWCacheManager subclass instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCacheManager/invalidate; name=CWCacheManager::invalidate -->
+<a name="//apple_ref/occ/instm/CWCacheManager/invalidate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="invalidate">invalidate</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) invalidate;
+</pre></blockquote>
+<p>This method is used to invalide all cache entries.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCacheManager/path; name=CWCacheManager::path -->
+<a name="//apple_ref/occ/instm/CWCacheManager/path"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="path">path</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) path;
+</pre></blockquote>
+<p>This method is used to obtain the path where the
+cache has been loaded for or where it'll be saved to.
+</p>
+<dl><dt><i>method result</i></dt><dd>The path.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCacheManager/setPath%58; name=CWCacheManager::setPath: -->
+<a name="//apple_ref/occ/instm/CWCacheManager/setPath%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setPath%58">setPath:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setPath:
+        (NSString *) thePath;
+</pre></blockquote>
+<p>This method is used to set the path where the
+cache will be loaded from or where it'll be saved to.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePath</em></tt></dt><dd>The complete path.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCacheManager/synchronize; name=CWCacheManager::synchronize -->
+<a name="//apple_ref/occ/instm/CWCacheManager/synchronize"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="synchronize">synchronize</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) synchronize;
+</pre></blockquote>
+<p>This method is used to save the cache on disk.
+If the cache is empty, this method does not
+write it on disk and returns YES.
+</p>
+<dl><dt><i>method result</i></dt><dd>YES on success, NO otherwise.
+</dd>
+</dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

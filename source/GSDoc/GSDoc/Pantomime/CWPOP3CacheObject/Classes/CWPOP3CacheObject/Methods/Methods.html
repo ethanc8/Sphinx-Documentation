@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWPOP3CacheObject/initWithUID%58%32date%58" target="doc">initWithUID: date:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWPOP3CacheObject/initWithUID%58date%58" target="doc">initWithUID:date:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWPOP3CacheObject/date" target="doc">date</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWPOP3CacheObject/setDate%58" target="doc">setDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWPOP3CacheObject/setUID%58" target="doc">setUID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWPOP3CacheObject/UID" target="doc">UID</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWPOP3CacheObject/UID; name=CWPOP3CacheObject::UID -->
+<a name="//apple_ref/occ/instm/CWPOP3CacheObject/UID"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="UID">UID</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) UID;
+</pre></blockquote>
+<p>This method to obtain the POP3 unique
+identifier of the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>The unique identifier.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWPOP3CacheObject/date; name=CWPOP3CacheObject::date -->
+<a name="//apple_ref/occ/instm/CWPOP3CacheObject/date"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="date">date</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSCalendarDate *) date;
+</pre></blockquote>
+<p>This method is used to obtain the date value
+of when the message has been downloaded from
+the POP3 server.
+</p>
+<dl><dt><i>method result</i></dt><dd>The date value, nil if none was set.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWPOP3CacheObject/initWithUID%58%32date%58; name=CWPOP3CacheObject::initWithUID:date: -->
+<a name="//apple_ref/occ/instm/CWPOP3CacheObject/initWithUID%58%32date%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithUID%58%32date%58">initWithUID: date:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithUID:
+        (NSString *) theUID  date:
+        (NSCalendarDate *) theDate;
+</pre></blockquote>
+<p>This method is the designated initializer for
+the CWPOP3CacheObject class.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUID</em></tt></dt><dd>The POP3 UID of the message</dd>
+<dt><tt><em>theDate</em></tt></dt><dd>The date value of when the message
+has been downloaded from the POP3 server.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWPOP3CacheObject/initWithUID%58date%58; name=CWPOP3CacheObject::initWithUID:date: -->
+<a name="//apple_ref/occ/instm/CWPOP3CacheObject/initWithUID%58date%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithUID%58date%58">initWithUID:date:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithUID:
+        (NSString *) theUID  date:
+        (NSCalendarDate *) theDate;
+</pre></blockquote>
+<p>This method is the designated initializer for
+the CWPOP3CacheObject class.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUID</em></tt></dt><dd>The POP3 UID of the message</dd>
+<dt><tt><em>theDate</em></tt></dt><dd>The date value of when the message
+has been downloaded from the POP3 server.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWPOP3CacheObject/setDate%58; name=CWPOP3CacheObject::setDate: -->
+<a name="//apple_ref/occ/instm/CWPOP3CacheObject/setDate%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setDate%58">setDate:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setDate:
+        (NSCalendarDate *) theDate;
+</pre></blockquote>
+<p>This method is used to set the date value
+of when the message has been downloaded from
+the POP3 server.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theDate</em></tt></dt><dd>The new date value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWPOP3CacheObject/setUID%58; name=CWPOP3CacheObject::setUID: -->
+<a name="//apple_ref/occ/instm/CWPOP3CacheObject/setUID%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setUID%58">setUID:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setUID:
+        (NSString *) theUID;
+</pre></blockquote>
+<p>This method is used to set the POP3 unique
+identifier of the receiver.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUID</em></tt></dt><dd>The new UID value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

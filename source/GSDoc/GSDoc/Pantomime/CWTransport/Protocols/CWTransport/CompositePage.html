@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWTransport</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWTransport</font></h1><br>
+<a name="//apple_ref/doc/protocol/CWTransport" title="CWTransport"></a>
+<h2>Discussion</h2>
+ This protocol defines a generic interface for sending messages.
+The CWSMTP and CWSendmail classes fully implement this protocol.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWTransport/sendMessage" target="_top">sendMessage</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWTransport/setMessage%58" target="_top">setMessage:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWTransport/message" target="_top">message</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWTransport/setMessageData%58" target="_top">setMessageData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWTransport/messageData" target="_top">messageData</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWTransport/setRecipients%58" target="_top">setRecipients:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWTransport/recipients" target="_top">recipients</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWTransport/message; name=CWTransport::message -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWTransport/message"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="message">message</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWMessage *) message;
+</pre></blockquote>
+<p>This method is used to obtain the Message instance
+previously set by calling -setMessage:
+</p>
+<dl><dt><i>method result</i></dt><dd>The CWMessage instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWTransport/messageData; name=CWTransport::messageData -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWTransport/messageData"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="messageData">messageData</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSData *) messageData;
+</pre></blockquote>
+<p>This method is used to obtain the message (its raw representation)
+previously set by calling -setMessageData:
+</p>
+<dl><dt><i>method result</i></dt><dd>The message's raw representation.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWTransport/recipients; name=CWTransport::recipients -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWTransport/recipients"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="recipients">recipients</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSArray *) recipients;
+</pre></blockquote>
+<p>This method is used to obtain the recipients set when
+calling -setRecipients:.
+</p>
+<dl><dt><i>method result</i></dt><dd>The array of recipients.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWTransport/sendMessage; name=CWTransport::sendMessage -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWTransport/sendMessage"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="sendMessage">sendMessage</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) sendMessage;
+</pre></blockquote>
+<p>This method sends the message previously set with -setMessage:
+or -setMessageData:. It posts a PantomimeTransportMessageNotSent
+notification (and calls -messageNotSent: on the delegate, if any)
+if the message could not be sent. It ports a PantomimeTransportMessageSent
+notification (and calls -messageSent: on the delegate, if any)
+if the message has been successfully sent. This method is
+fully asynchronous.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWTransport/setMessage%58; name=CWTransport::setMessage: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWTransport/setMessage%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setMessage%58">setMessage:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setMessage:
+        (CWMessage *) theMessage;
+</pre></blockquote>
+<p>This method is used to set the message (instance of the CWMessage class)
+that the transport class will eventually send (by calling -sendMessage).
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessage</em></tt></dt><dd>The message to send.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWTransport/setMessageData%58; name=CWTransport::setMessageData: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWTransport/setMessageData%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setMessageData%58">setMessageData:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setMessageData:
+        (NSData *) theData;
+</pre></blockquote>
+<p>This method is used to set the message (as raw source) that the transport
+class will eventually send (by calling -sendMessage).
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessage</em></tt></dt><dd>The message to send.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWTransport/setRecipients%58; name=CWTransport::setRecipients: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWTransport/setRecipients%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setRecipients%58">setRecipients:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setRecipients:
+        (NSArray *) theRecipients;
+</pre></blockquote>
+<p>This method is used to specify the recipients of the
+message.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theRecipients</em></tt></dt><dd>An NSArray instance which contains CWInternetAddress
+instances for all recipients.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

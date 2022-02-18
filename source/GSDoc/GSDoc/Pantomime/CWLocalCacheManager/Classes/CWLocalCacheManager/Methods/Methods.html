@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalCacheManager/initWithPath%58folder%58" target="doc">initWithPath:folder:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalCacheManager/modificationDate" target="doc">modificationDate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalCacheManager/setModificationDate%58" target="doc">setModificationDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalCacheManager/fileSize" target="doc">fileSize</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalCacheManager/setFileSize%58" target="doc">setFileSize:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalCacheManager/writeRecord%58" target="doc">writeRecord:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalCacheManager/fileSize; name=CWLocalCacheManager::fileSize -->
+<a name="//apple_ref/occ/instm/CWLocalCacheManager/fileSize"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="fileSize">fileSize</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) fileSize;
+</pre></blockquote>
+<p>This method is used to obtain the size of the
+associated CWLocalFolder's mailbox.
+</p>
+<dl><dt><i>method result</i></dt><dd>The size.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalCacheManager/initWithPath%58folder%58; name=CWLocalCacheManager::initWithPath:folder: -->
+<a name="//apple_ref/occ/instm/CWLocalCacheManager/initWithPath%58folder%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithPath%58folder%58">initWithPath:folder:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithPath:
+        (NSString *) thePath folder:
+        (id ) theFolder;
+</pre></blockquote>
+<p>This is the designated initialization method
+for the local cache manager.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePath</em></tt></dt><dd>The path where the cache file is.</dd>
+<dt><tt><em>theFolder</em></tt></dt><dd>The CWLocalFolder instance to be used together
+with the cache file.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWLocalCacheManager instance, nil otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalCacheManager/modificationDate; name=CWLocalCacheManager::modificationDate -->
+<a name="//apple_ref/occ/instm/CWLocalCacheManager/modificationDate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="modificationDate">modificationDate</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSDate *) modificationDate;
+</pre></blockquote>
+<p>This method is used to obtain the modification date
+of the receiver. That is, the last time the cache
+was written to disk.
+</p>
+<dl><dt><i>method result</i></dt><dd>The date.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalCacheManager/setFileSize%58; name=CWLocalCacheManager::setFileSize: -->
+<a name="//apple_ref/occ/instm/CWLocalCacheManager/setFileSize%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFileSize%58">setFileSize:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFileSize:
+        (unsigned int ) theSize;
+</pre></blockquote>
+<p>This method is used to set the size of the
+associated LocalFolder's mailbox.
+Normally you should not invoke
+this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theSize</em></tt></dt><dd>The new size value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalCacheManager/setModificationDate%58; name=CWLocalCacheManager::setModificationDate: -->
+<a name="//apple_ref/occ/instm/CWLocalCacheManager/setModificationDate%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setModificationDate%58">setModificationDate:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setModificationDate:
+        (NSDate *) theDate;
+</pre></blockquote>
+<p>This method is used to set the modification date
+of the receiver. Normally you should not invoke
+this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theDate</em></tt></dt><dd>The new date value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalCacheManager/writeRecord%58; name=CWLocalCacheManager::writeRecord: -->
+<a name="//apple_ref/occ/instm/CWLocalCacheManager/writeRecord%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="writeRecord%58">writeRecord:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) writeRecord:
+        (cache_record *) theRecord;
+</pre></blockquote>
+<p>This method is used to write a cache record to disk.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theRecord</em></tt></dt><dd>The record to write.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

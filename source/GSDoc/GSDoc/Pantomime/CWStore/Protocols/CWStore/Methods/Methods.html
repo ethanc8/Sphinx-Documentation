@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/initWithURL%58" target="doc">initWithURL:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/defaultFolder" target="doc">defaultFolder</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/folderForName%58" target="doc">folderForName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/folderForURL%58" target="doc">folderForURL:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/folderEnumerator" target="doc">folderEnumerator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/subscribedFolderEnumerator" target="doc">subscribedFolderEnumerator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/openFoldersEnumerator" target="doc">openFoldersEnumerator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/removeFolderFromOpenFolders%58" target="doc">removeFolderFromOpenFolders:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/folderForNameIsOpen%58" target="doc">folderForNameIsOpen:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/folderTypeForFolderName%58" target="doc">folderTypeForFolderName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/folderSeparator" target="doc">folderSeparator</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/close" target="doc">close</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/createFolderWithName%58type%58contents%58" target="doc">createFolderWithName:type:contents:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/deleteFolderWithName%58" target="doc">deleteFolderWithName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWStore/renameFolderWithName%58toName%58" target="doc">renameFolderWithName:toName:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/close; name=CWStore::close -->
+<a name="//apple_ref/occ/instm/CWStore/close"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="close">close</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) close;
+</pre></blockquote>
+<p>This method is used to close the receiver.
+Classes implementing the CWStore protocol will
+also release all resources, like open folders,
+CWConnection instances, etc.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/createFolderWithName%58type%58contents%58; name=CWStore::createFolderWithName:type:contents: -->
+<a name="//apple_ref/occ/instm/CWStore/createFolderWithName%58type%58contents%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="createFolderWithName%58type%58contents%58">createFolderWithName:type:contents:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) createFolderWithName:
+        (NSString *) theName  type:
+        (PantomimeFolderFormat ) theType  contents:
+        (NSData *) theContents;
+</pre></blockquote>
+<p>This method is used to create a new folder
+with the specified name, type and contents.
+On success, it posts the PantomimeFolderCreateCompleted notification
+and calls -folderCreateCompleted: on the delegate.
+On failure, it posts the PantomimeFolderCreateFailed notification
+and calls -folderCreateFailed: on the delegate.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder to create. It must be a full path.</dd>
+<dt><tt><em>theType</em></tt></dt><dd>The folder type. Accepted values are part of the PantomimeFolderFormat enum.</dd>
+<dt><tt><em>theContents</em></tt></dt><dd>The initial content of the folder. It must be in mbox format.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/defaultFolder; name=CWStore::defaultFolder -->
+<a name="//apple_ref/occ/instm/CWStore/defaultFolder"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="defaultFolder">defaultFolder</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) defaultFolder;
+</pre></blockquote>
+<p>This method is used to obtain the default folder
+of the receiver. For example, CWPOP3Store will always
+return the "INBOX" folder as no other folder is
+accessible in POP3.
+</p>
+<dl><dt><i>method result</i></dt><dd>A CWFolder subclass instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/deleteFolderWithName%58; name=CWStore::deleteFolderWithName: -->
+<a name="//apple_ref/occ/instm/CWStore/deleteFolderWithName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="deleteFolderWithName%58">deleteFolderWithName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) deleteFolderWithName:
+        (NSString *) theName;
+</pre></blockquote>
+<p>This method is used to delete the folder
+specified by <i>theName</i>. On success, it posts the
+PantomimeFolderDeleteCompleted notification. On error, it posts
+the PantomimeFolderDeleteFailed notification.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder to delete.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/folderEnumerator; name=CWStore::folderEnumerator -->
+<a name="//apple_ref/occ/instm/CWStore/folderEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderEnumerator">folderEnumerator</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSEnumerator *) folderEnumerator;
+</pre></blockquote>
+<p>This method is used to get the list of all available
+folders on the receiver. The name of the folders
+are returned, not actual CWFolder subclass instances.
+</p>
+<dl><dt><i>method result</i></dt><dd>The list of folder names.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/folderForName%58; name=CWStore::folderForName: -->
+<a name="//apple_ref/occ/instm/CWStore/folderForName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderForName%58">folderForName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) folderForName:
+        (NSString *) theName;
+</pre></blockquote>
+<p>This method is used to obtain a CWFolder instance
+with the specifed name.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder to obtain.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWFolder subclass instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/folderForNameIsOpen%58; name=CWStore::folderForNameIsOpen: -->
+<a name="//apple_ref/occ/instm/CWStore/folderForNameIsOpen%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderForNameIsOpen%58">folderForNameIsOpen:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) folderForNameIsOpen:
+        (NSString *) theName;
+</pre></blockquote>
+<p>This method is used to verify if the folder
+with the specified name is in an open state
+in the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>YES if it is in an open state, NO otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/folderForURL%58; name=CWStore::folderForURL: -->
+<a name="//apple_ref/occ/instm/CWStore/folderForURL%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderForURL%58">folderForURL:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) folderForURL:
+        (NSString *) theURL;
+</pre></blockquote>
+<p>This method is used to obtain a Folder instance
+with the specifed URL. <i>theURL</i> must be in form which
+is understood by the CWURLName class.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theURL</em></tt></dt><dd>The URL, as a NSString instance.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWFolder subclass instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/folderSeparator; name=CWStore::folderSeparator -->
+<a name="//apple_ref/occ/instm/CWStore/folderSeparator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderSeparator">folderSeparator</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unichar ) folderSeparator;
+</pre></blockquote>
+<p>This method is used to obtain the folder separator
+of the receiver. The separator hierarchically
+separates folders. Returned values are generatlly
+either '/' or '.'.
+</p>
+<dl><dt><i>method result</i></dt><dd>The folder separator, 0 if none was set. For example,
+in CWIMAPStore, this method will return NULL if -folderEnumerator
+or -subscribedFolderEnumerator was not invoked before
+calling this method.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/folderTypeForFolderName%58; name=CWStore::folderTypeForFolderName: -->
+<a name="//apple_ref/occ/instm/CWStore/folderTypeForFolderName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderTypeForFolderName%58">folderTypeForFolderName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( PantomimeFolderType ) folderTypeForFolderName:
+        (NSString *) theName;
+</pre></blockquote>
+<p>This method is used to obtain the folder type
+of the specified folder name. The returned value
+is part of the folderTypeForFolderName enum.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The type of the folder.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/initWithURL%58; name=CWStore::initWithURL: -->
+<a name="//apple_ref/occ/instm/CWStore/initWithURL%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithURL%58">initWithURL:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithURL:
+        (CWURLName *) theURL;
+</pre></blockquote>
+<p>This method is used to initialize a Store instance using
+the specified URL. <i>theURL</i>.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theURL</em></tt></dt><dd>The URL, as a CWURLName instance.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWStore subclass instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/openFoldersEnumerator; name=CWStore::openFoldersEnumerator -->
+<a name="//apple_ref/occ/instm/CWStore/openFoldersEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="openFoldersEnumerator">openFoldersEnumerator</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSEnumerator *) openFoldersEnumerator;
+</pre></blockquote>
+<p>This method is used to obtain all the CWFolder subclass
+instance which are in the open state in the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>The list of open folders.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/removeFolderFromOpenFolders%58; name=CWStore::removeFolderFromOpenFolders: -->
+<a name="//apple_ref/occ/instm/CWStore/removeFolderFromOpenFolders%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="removeFolderFromOpenFolders%58">removeFolderFromOpenFolders:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) removeFolderFromOpenFolders:
+        (CWFolder *) theFolder;
+</pre></blockquote>
+<p>This method is used to remove the specified folder
+from the list of open folders in the receiver.
+Normally, you should never invoke this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theFolder</em></tt></dt><dd>The CWFolder subclass instance to remove from the
+list of open folders.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/renameFolderWithName%58toName%58; name=CWStore::renameFolderWithName:toName: -->
+<a name="//apple_ref/occ/instm/CWStore/renameFolderWithName%58toName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="renameFolderWithName%58toName%58">renameFolderWithName:toName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) renameFolderWithName:
+        (NSString *) theName  toName:
+        (NSString *) theNewName;
+</pre></blockquote>
+<p>This method is used to rename a folder. On success, this method
+posts a PantomimeFolderRenameCompleted notification. On error,
+it posts a PantomimeFolderRenameFailed notification.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder to rename.</dd>
+<dt><tt><em>theNewName</em></tt></dt><dd>The name of the folder to rename it to.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWStore/subscribedFolderEnumerator; name=CWStore::subscribedFolderEnumerator -->
+<a name="//apple_ref/occ/instm/CWStore/subscribedFolderEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="subscribedFolderEnumerator">subscribedFolderEnumerator</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSEnumerator *) subscribedFolderEnumerator;
+</pre></blockquote>
+<p>This method is used to get the list of subscribed
+folders on the receiver. The name of the folders
+are returned, not actual CWFolder subclass instances.
+This generally returns a subset of the list
+returned by -folderEnumerator.
+</p>
+<dl><dt><i>method result</i></dt><dd>The list of folder names.
+</dd>
+</dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

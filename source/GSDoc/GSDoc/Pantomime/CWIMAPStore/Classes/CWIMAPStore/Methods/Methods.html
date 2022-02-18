@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/folderForName%58mode%58prefetch%58" target="doc">folderForName:mode:prefetch:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/folderForName%58select%58" target="doc">folderForName:select:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/nextTag" target="doc">nextTag</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/lastTag" target="doc">lastTag</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/subscribeToFolderWithName%58" target="doc">subscribeToFolderWithName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/unsubscribeToFolderWithName%58" target="doc">unsubscribeToFolderWithName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/folderStatus%58" target="doc">folderStatus:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/sendCommand%58info%58arguments%58%32%46%46%46" target="doc">sendCommand:info:arguments: ...</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPStore/sendCommand%58info%58arguments%58" target="doc">sendCommand:info:arguments:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/folderForName%58mode%58prefetch%58; name=CWIMAPStore::folderForName:mode:prefetch: -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/folderForName%58mode%58prefetch%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderForName%58mode%58prefetch%58">folderForName:mode:prefetch:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWIMAPFolder *) folderForName:
+        (NSString *) theName  mode:
+        (PantomimeFolderMode ) theMode  prefetch:
+        (BOOL ) aBOOL;
+</pre></blockquote>
+<p>This method is used to get the folder with
+the specified name and mode.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder to obtain.</dd>
+<dt><tt><em>theMode</em></tt></dt><dd>The mode to use. The value is one of the PantomimeFolderMode enum.</dd>
+<dt><tt><em>aBOOL</em></tt></dt><dd>YES if prefetch should be done on the folder, NO otherwise.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWIMAPFolder instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/folderForName%58select%58; name=CWIMAPStore::folderForName:select: -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/folderForName%58select%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderForName%58select%58">folderForName:select:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWIMAPFolder *) folderForName:
+        (NSString *) theName  select:
+        (BOOL ) aBOOL;
+</pre></blockquote>
+<p>This method is used to obtain the folder with
+the specified name. If <i>aBOOL</i> is YES,
+the folder will be selected. Otherwise, a non-selected
+folder will be returned which is used to proceed with
+an append operation. Note that when <i>aBOOL</i> is
+equal to NO, the returned folder is NOT part of the
+list of opened folders.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder to obtain.</dd>
+<dt><tt><em>aBOOL</em></tt></dt><dd>YES to select the folder, NO otherwise.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWIMAPFolder instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/folderStatus%58; name=CWIMAPStore::folderStatus: -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/folderStatus%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folderStatus%58">folderStatus:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSDictionary *) folderStatus:
+        (NSArray *) theArray;
+</pre></blockquote>
+<p>This method is used to obtain the status of the specified
+folder names in <i>theArray</i>. It is fully asynchronous.
+The first time it is invoked, it'll perform its work asynchronously
+and post a PantomimeFolderStatusCompleted notification (and call
+-folderStatusCompleted on the delegate, if any) if succeeded. If not,
+it will post a PantomimeFolderStatusFailed notification (and call
+-folderStatusFailed: on the delegate, if any). Further calls
+of this method on the same set of folders will immediately return
+the status information.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theArray</em></tt></dt><dd>The array of folder names.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A NSDictionary instance for which the keys are the folder names (NSString instance)
+and the values are CWFolderInformation instance if the information was
+loaded, nil otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/lastTag; name=CWIMAPStore::lastTag -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/lastTag"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="lastTag">lastTag</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSData *) lastTag;
+</pre></blockquote>
+<p>This method is used to obtain the last IMAP tag
+sent to the IMAP server.
+</p>
+<dl><dt><i>method result</i></dt><dd>The tag as a NSData instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/nextTag; name=CWIMAPStore::nextTag -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/nextTag"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="nextTag">nextTag</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSData *) nextTag;
+</pre></blockquote>
+<p>This method is used to obtain the next IMAP tag
+that will be sent to the IMAP server. Normally
+you shouldn't call this method directly.
+</p>
+<dl><dt><i>method result</i></dt><dd>The tag as a NSData instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/sendCommand%58info%58arguments%58; name=CWIMAPStore::sendCommand:info:arguments: -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/sendCommand%58info%58arguments%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="sendCommand%58info%58arguments%58">sendCommand:info:arguments:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) sendCommand:
+        (IMAPCommand ) theCommand info:
+        (NSDictionary *) theInfo arguments:
+        (NSString *) theFormat, .
+    .
+    .
+    ;
+</pre></blockquote>
+<p>This method is used to send commands to the IMAP server.
+Normally, you should not call this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theCommand</em></tt></dt><dd>The IMAP command to send.</dd>
+<dt><tt><em>theInfo</em></tt></dt><dd>The addition info to pass.</dd>
+<dt><tt><em>theFormat</em></tt></dt><dd>The format defining the variable arguments list.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/sendCommand%58info%58arguments%58%32%46%46%46; name=CWIMAPStore::sendCommand:info:arguments:... -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/sendCommand%58info%58arguments%58%32%46%46%46"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="sendCommand%58info%58arguments%58%32%46%46%46">sendCommand:info:arguments: ...</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) sendCommand:
+        (IMAPCommand ) theCommand info:
+        (NSDictionary *) theInfo arguments:
+        (NSString *) theFormat, .
+    .
+    .
+    ;
+</pre></blockquote>
+<p>This method is used to send commands to the IMAP server.
+Normally, you should not call this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theCommand</em></tt></dt><dd>The IMAP command to send.</dd>
+<dt><tt><em>theInfo</em></tt></dt><dd>The addition info to pass.</dd>
+<dt><tt><em>theFormat</em></tt></dt><dd>The format defining the variable arguments list.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/subscribeToFolderWithName%58; name=CWIMAPStore::subscribeToFolderWithName: -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/subscribeToFolderWithName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="subscribeToFolderWithName%58">subscribeToFolderWithName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) subscribeToFolderWithName:
+        (NSString *) theName;
+</pre></blockquote>
+<p>This method is used to subscribe to the specified folder.
+The method will post a PantomimeFolderSubscribeCompleted notification
+(and call -folderSubscribeCompleted: on the delegate, if any) if
+it succeeded. If not, it will post a PantomimeFolderSubscribeFailed
+notification (and call -folderSubscribeFailed: on the delegate, if any)
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder to subscribe to.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPStore/unsubscribeToFolderWithName%58; name=CWIMAPStore::unsubscribeToFolderWithName: -->
+<a name="//apple_ref/occ/instm/CWIMAPStore/unsubscribeToFolderWithName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="unsubscribeToFolderWithName%58">unsubscribeToFolderWithName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) unsubscribeToFolderWithName:
+        (NSString *) theName;
+</pre></blockquote>
+<p>This method is used to unsubscribe to the specified folder.
+The method will post a PantomimeFolderUnsubscribeCompleted notification
+(and call -folderUnsubscribeCompleted: on the delegate, if any) if
+it succeeded. If not, it will post a PantomimeFolderUnsubscribeFailed
+notification (and call -folderUnsubscribeFailed: on the delegate, if any)
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder to subscribe to.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/initWithPath%58" target="doc">initWithPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/parse%58" target="doc">parse:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/fd" target="doc">fd</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/setFD%58" target="doc">setFD:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/path" target="doc">path</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/setPath%58" target="doc">setPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/stream" target="doc">stream</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/setStream%58" target="doc">setStream:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/type" target="doc">type</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWLocalFolder/setType%58" target="doc">setType:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/fd; name=CWLocalFolder::fd -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/fd"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="fd">fd</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( int ) fd;
+</pre></blockquote>
+<p>This method is used to get the associated file descriptor
+of the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>The file descriptor, -1 if none was set.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/initWithPath%58; name=CWLocalFolder::initWithPath: -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/initWithPath%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithPath%58">initWithPath:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithPath:
+        (NSString *) thePath;
+</pre></blockquote>
+<p>This method is used to initialize the receiver
+with the folder at the specified path. Normally,
+you should not invoke this method directly. You
+should rather use one of the -folderForName:...
+method found in CWLocalStore. This method
+will open the mailbox at the specified path.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePath</em></tt></dt><dd>The path of the folder.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>An instance of CWLocalFolder, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/parse%58; name=CWLocalFolder::parse: -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/parse%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="parse%58">parse:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) parse:
+        (BOOL ) theBOOL;
+</pre></blockquote>
+<p>This method is used to parse some or message headers (and only that)
+of the receiver. On completion, it posts a PantomimeFolderPrefetchCompleted
+notification (and calls -folderPrefetchCompleted: on the delegate, if any).
+This method call is blocking. Among the headers that are always parsed are:
+Cc, Date, From, In-Reply-To, Message-ID, References, Status, Subject,
+To and X-Status.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theBOOL</em></tt></dt><dd>If YES, all headers are parsed. Otherwise, only some are.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/path; name=CWLocalFolder::path -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/path"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="path">path</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) path;
+</pre></blockquote>
+<p>This method is used to obtain the full path of the folder.
+</p>
+<dl><dt><i>method result</i></dt><dd>The full path.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/setFD%58; name=CWLocalFolder::setFD: -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/setFD%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFD%58">setFD:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFD:
+        (int ) theFD;
+</pre></blockquote>
+<p>This method is used to set the associated file descriptor
+of the receiver. Normally, you should never invoke this
+method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theFD</em></tt></dt><dd>The associated file descriptor.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/setPath%58; name=CWLocalFolder::setPath: -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/setPath%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setPath%58">setPath:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setPath:
+        (NSString *) thePath;
+</pre></blockquote>
+<p>This method is used to set the full path of the folder.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePath</em></tt></dt><dd>The full path.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/setStream%58; name=CWLocalFolder::setStream: -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/setStream%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setStream%58">setStream:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setStream:
+        (FILE *) theStream;
+</pre></blockquote>
+<p>This method is used to set the associated stream
+of the receiver. Normally, you should never invoke this
+method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theStream</em></tt></dt><dd>The associated stream.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/setType%58; name=CWLocalFolder::setType: -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/setType%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setType%58">setType:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setType:
+        (PantomimeFolderFormat ) theType;
+</pre></blockquote>
+<p>This method is used to set the type of the receiver.
+Accepted values are part of the PantomimeFolderFormat enum.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theType</em></tt></dt><dd>The type of the receiver.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/stream; name=CWLocalFolder::stream -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/stream"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="stream">stream</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( FILE *) stream;
+</pre></blockquote>
+<p>This method is used to get the associated stream
+of the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>The stream, NULL if none was set.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWLocalFolder/type; name=CWLocalFolder::type -->
+<a name="//apple_ref/occ/instm/CWLocalFolder/type"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="type">type</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( PantomimeFolderFormat ) type;
+</pre></blockquote>
+<p>This method is used to get the type of folder
+the receiver is. Possible values are part of the
+PantomimeFolderFormat enum.
+</p>
+<dl><dt><i>method result</i></dt><dd>The type of the folder.
+</dd>
+</dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

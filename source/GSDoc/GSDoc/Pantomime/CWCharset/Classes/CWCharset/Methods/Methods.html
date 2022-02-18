@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCharset/initWithCodeCharTable%58%32length%58" target="doc">initWithCodeCharTable: length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCharset/initWithCodeCharTable%58length%58" target="doc">initWithCodeCharTable:length:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCharset/codeForCharacter%58" target="doc">codeForCharacter:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCharset/characterIsInCharset%58" target="doc">characterIsInCharset:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWCharset/name" target="doc">name</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/clm/CWCharset/allCharsets" target="doc">allCharsets</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/clm/CWCharset/charsetForName%58" target="doc">charsetForName:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/occ/clm/CWCharset/allCharsets; name=CWCharset::allCharsets -->
+<a name="//apple_ref/occ/clm/CWCharset/allCharsets"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="allCharsets">allCharsets</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( NSDictionary *) allCharsets;
+</pre></blockquote>
+<p>This method is used to obtain a dictionary of all supported
+charsets by Pantomime. The keys are the name of the charsets
+(NSString instances) and the values are a description 
+of the charset (NSString instances).
+</p>
+<dl><dt><i>method result</i></dt><dd>The dictionary of all supported character sets.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCharset/characterIsInCharset%58; name=CWCharset::characterIsInCharset: -->
+<a name="//apple_ref/occ/instm/CWCharset/characterIsInCharset%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="characterIsInCharset%58">characterIsInCharset:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) characterIsInCharset:
+        (unichar ) theCharacter;
+</pre></blockquote>
+<p>This method is used to verify if <i>theCharacter</i>
+is present in the receiver.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theCharacter</em></tt></dt><dd>The Unicode character to verify the availability.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>YES if it is present, NO otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/occ/clm/CWCharset/charsetForName%58; name=CWCharset::charsetForName: -->
+<a name="//apple_ref/occ/clm/CWCharset/charsetForName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="charsetForName%58">charsetForName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( CWCharset *) charsetForName:
+        (NSString *) theName;
+</pre></blockquote>
+<p>This method is used to obtain a CWCharset subclass instance
+from the Internet name of a charset.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The Internet name of a charset, like "iso-8859-1".</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The CWCharset instance. If a non-supported name was specified,
+an instance of CWISO8859_1 is returned.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCharset/codeForCharacter%58; name=CWCharset::codeForCharacter: -->
+<a name="//apple_ref/occ/instm/CWCharset/codeForCharacter%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="codeForCharacter%58">codeForCharacter:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( int ) codeForCharacter:
+        (unichar ) theCharacter;
+</pre></blockquote>
+<p>This method is used to obtain the right code from
+a Unicode character, in the code table.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theCharacter</em></tt></dt><dd>The Unicode character to use.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The code from the code table.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCharset/initWithCodeCharTable%58%32length%58; name=CWCharset::initWithCodeCharTable:length: -->
+<a name="//apple_ref/occ/instm/CWCharset/initWithCodeCharTable%58%32length%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithCodeCharTable%58%32length%58">initWithCodeCharTable: length:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithCodeCharTable:
+        (const struct charset_code *) codes  length:
+        (int ) num_codes;
+</pre></blockquote>
+<p>This method is used to initialize a CWCharset instance
+based on the charset code table. You should never
+call this initializer directly. You should rather
+invoke directly -init on CWCharset's subclasses.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>codes</em></tt></dt><dd>The charset code table which must be sorted by code.</dd>
+<dt><tt><em>num_codes</em></tt></dt><dd>The size of the table.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCharset/initWithCodeCharTable%58length%58; name=CWCharset::initWithCodeCharTable:length: -->
+<a name="//apple_ref/occ/instm/CWCharset/initWithCodeCharTable%58length%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithCodeCharTable%58length%58">initWithCodeCharTable:length:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithCodeCharTable:
+        (const struct charset_code *) codes  length:
+        (int ) num_codes;
+</pre></blockquote>
+<p>This method is used to initialize a CWCharset instance
+based on the charset code table. You should never
+call this initializer directly. You should rather
+invoke directly -init on CWCharset's subclasses.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>codes</em></tt></dt><dd>The charset code table which must be sorted by code.</dd>
+<dt><tt><em>num_codes</em></tt></dt><dd>The size of the table.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWCharset/name; name=CWCharset::name -->
+<a name="//apple_ref/occ/instm/CWCharset/name"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="name">name</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) name;
+</pre></blockquote>
+<p>This method is used to get the name of the receiver.
+Values returned are like "iso-8859-1", "koi8-r" and
+so on.
+</p>
+<dl><dt><i>method result</i></dt><dd>The Internet name of the charset.
+</dd>
+</dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

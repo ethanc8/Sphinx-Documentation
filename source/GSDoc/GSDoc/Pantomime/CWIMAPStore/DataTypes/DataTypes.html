@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Defined Types</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Defined Types</font></h1><br>
+<hr><!-- headerDoc=tdef; uid=//apple_ref/c/tdef/IMAPCommand; name=IMAPCommand -->
+<a name="//apple_ref/c/tdef/IMAPCommand"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="IMAPCommand">IMAPCommand</a></h2>
+</td></tr></table><dl>Supported IMAP commands.
+
+</dl><blockquote><pre>typedef enum {
+    IMAP_APPEND = 0x1,
+    IMAP_AUTHENTICATE_CRAM_MD5,
+    IMAP_AUTHENTICATE_LOGIN,
+    IMAP_AUTHORIZATION,
+    IMAP_CAPABILITY,
+    IMAP_CLOSE,
+    IMAP_CREATE,
+    IMAP_DELETE,
+    IMAP_EXAMINE,
+    IMAP_EXPUNGE,
+    IMAP_LIST,
+    IMAP_LOGIN,
+    IMAP_LOGOUT,
+    IMAP_LSUB,
+    IMAP_NOOP,
+    IMAP_RENAME,
+    IMAP_SELECT,
+    IMAP_STARTTLS,
+    IMAP_STATUS,
+    IMAP_SUBSCRIBE,
+    IMAP_UID_COPY,
+    IMAP_UID_FETCH_BODY_TEXT,
+    IMAP_UID_FETCH_HEADER_FIELDS,
+    IMAP_UID_FETCH_HEADER_FIELDS_NOT,
+    IMAP_UID_FETCH_RFC822,
+    IMAP_UID_SEARCH,
+    IMAP_UID_SEARCH_ALL,
+    IMAP_UID_SEARCH_ANSWERED,
+    IMAP_UID_SEARCH_FLAGGED,
+    IMAP_UID_SEARCH_UNSEEN,
+    IMAP_UID_STORE,
+    IMAP_UNSUBSCRIBE,
+    IMAP_EMPTY_QUEUE  } IMAPCommand;
+</pre></blockquote>
+<p>This enum lists the supported IMAP commands available in Pantomime's IMAP client code.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Constants</font></h5>
+<blockquote>
+<dl>
+<dt><a name="//apple_ref/c/econst/IMAP_APPEND"><tt>IMAP_APPEND</tt></a></dt><dd>The IMAP APPEND command - see 6.3.11. APPEND Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_AUTHENTICATE_CRAM_MD5"><tt>IMAP_AUTHENTICATE_CRAM_MD5</tt></a></dt><dd>CRAM-MD5 authentication.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_AUTHENTICATE_LOGIN"><tt>IMAP_AUTHENTICATE_LOGIN</tt></a></dt><dd>LOGIN authentication</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_AUTHORIZATION"><tt>IMAP_AUTHORIZATION</tt></a></dt><dd>Special command so that we know we are in the authorization state.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_CAPABILITY"><tt>IMAP_CAPABILITY</tt></a></dt><dd>The IMAP CAPABILITY command - see 6.1.1. CAPABILITY Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_CLOSE"><tt>IMAP_CLOSE</tt></a></dt><dd>The IMAP CLOSE command - see 6.4.2. CLOSE Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_CREATE"><tt>IMAP_CREATE</tt></a></dt><dd>The IMAP CREATE command - see 6.3.3. CREATE Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_DELETE"><tt>IMAP_DELETE</tt></a></dt><dd>The IMAP DELETE command - see 6.3.4. DELETE Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_EXAMINE"><tt>IMAP_EXAMINE</tt></a></dt><dd>The IMAP EXAMINE command - see 6.3.2. EXAMINE Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_EXPUNGE"><tt>IMAP_EXPUNGE</tt></a></dt><dd>The IMAP EXPUNGE command - see 6.4.3. EXPUNGE Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_LIST"><tt>IMAP_LIST</tt></a></dt><dd>The IMAP LIST command - see 6.3.8. LIST Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_LOGIN"><tt>IMAP_LOGIN</tt></a></dt><dd>The IMAP LOGIN command - see 6.2.3. LOGIN Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_LOGOUT"><tt>IMAP_LOGOUT</tt></a></dt><dd>The IMAP LOGOUT command - see 6.1.3. LOGOUT Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_LSUB"><tt>IMAP_LSUB</tt></a></dt><dd>The IMAP LSUB command - see 6.3.9. LSUB Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_NOOP"><tt>IMAP_NOOP</tt></a></dt><dd>The IMAP NOOP command - see 6.1.2. NOOP Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_RENAME"><tt>IMAP_RENAME</tt></a></dt><dd>The IMAP RENAME command - see 6.3.5. RENAME Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_SELECT"><tt>IMAP_SELECT</tt></a></dt><dd>The IMAP SELECT command - see 6.3.1. SELECT Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_STARTTLS"><tt>IMAP_STARTTLS</tt></a></dt><dd>The STARTTLS IMAP command - see RFC2595.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_STATUS"><tt>IMAP_STATUS</tt></a></dt><dd>The IMAP STATUS command - see 6.3.10. STATUS Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_SUBSCRIBE"><tt>IMAP_SUBSCRIBE</tt></a></dt><dd>The IMAP SUBSCRIBE command - see 6.3.6. SUBSCRIBE Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_COPY"><tt>IMAP_UID_COPY</tt></a></dt><dd>The IMAP COPY command - see 6.4.7. COPY Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_FETCH_BODY_TEXT"><tt>IMAP_UID_FETCH_BODY_TEXT</tt></a></dt><dd>The IMAP FETCH command - see 6.4.5. FETCH Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_FETCH_HEADER_FIELDS"><tt>IMAP_UID_FETCH_HEADER_FIELDS</tt></a></dt><dd>The IMAP FETCH command - see 6.4.5. FETCH Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_FETCH_HEADER_FIELDS_NOT"><tt>IMAP_UID_FETCH_HEADER_FIELDS_NOT</tt></a></dt><dd>The IMAP FETCH command - see 6.4.5. FETCH Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_FETCH_RFC822"><tt>IMAP_UID_FETCH_RFC822</tt></a></dt><dd>The IMAP FETCH command - see 6.4.5. FETCH Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_SEARCH"><tt>IMAP_UID_SEARCH</tt></a></dt><dd>The IMAP SEARCH command - see 6.4.4. SEARCH Command of RFC 3501.
+Used to update the IMAP Folder cache.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_SEARCH_ALL"><tt>IMAP_UID_SEARCH_ALL</tt></a></dt><dd>The IMAP SEARCH command - see 6.4.4. SEARCH Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_SEARCH_ANSWERED"><tt>IMAP_UID_SEARCH_ANSWERED</tt></a></dt><dd>Special command used to update the IMAP Folder cache.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_SEARCH_FLAGGED"><tt>IMAP_UID_SEARCH_FLAGGED</tt></a></dt><dd>Special command used to update the IMAP Folder cache.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_SEARCH_UNSEEN"><tt>IMAP_UID_SEARCH_UNSEEN</tt></a></dt><dd>Special command used to update the IMAP Folder cache.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UID_STORE"><tt>IMAP_UID_STORE</tt></a></dt><dd>The IMAP STORE command - see 6.4.6. STORE Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_UNSUBSCRIBE"><tt>IMAP_UNSUBSCRIBE</tt></a></dt><dd>The IMAP UNSUBSCRIBE command - see 6.3.7. UNSUBSCRIBE Command of RFC 3501.</dd>
+<dt><a name="//apple_ref/c/econst/IMAP_EMPTY_QUEUE"><tt>IMAP_EMPTY_QUEUE</tt></a></dt><dd>Special command to empty the command queue.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWPOP3Message</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWPOP3Message</font></h1><br>
+<a name="//apple_ref/doc/class/CWPOP3Message" title="CWPOP3Message"></a>
+<h2>Discussion</h2>
+ This class, which extends CWMessage, adds POP3 specific information.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/UID" target="_top">UID</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/setUID%58" target="_top">setUID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/rawSource" target="_top">rawSource</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/setFlags%58" target="_top">setFlags:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/UID; name=CWPOP3Message::UID -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/UID"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="UID">UID</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) UID;
+</pre></blockquote>
+<p>This method is used to obtain the UID of a message.
+</p>
+<dl><dt><i>method result</i></dt><dd>The UID of the message. RFC 1939 says:
+"The unique-id of a message is an arbitrary server-determined
+string, consisting of one to 70 characters in the range 0x21
+to 0x7E, which uniquely identifies a message within a
+maildrop and which persists across sessions.".
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/rawSource; name=CWPOP3Message::rawSource -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/rawSource"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="rawSource">rawSource</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSData *) rawSource;
+</pre></blockquote>
+<p>POP3 specific implementation of the rawSource method. This method
+is always non-blocking. It might return nil if the raw source of the
+message hasn't yet been fetched from the POP3 server. The POP3Store
+notifies the delegate when the fetch has been completed using the
+PantomimeMessagePrefetchCompleted notification. It also calls 
+-messagePrefetchCompleted on the delegate, if any.
+</p>
+<dl><dt><i>method result</i></dt><dd>The raw source of the message, nil if not yet fully fetched.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/setFlags%58; name=CWPOP3Message::setFlags: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/setFlags%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFlags%58">setFlags:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFlags:
+        (CWFlags *) theFlags;
+</pre></blockquote>
+<p>This method, which overrides the one found in
+CWMessage, can be used to delete message on the
+POP3 server. The only fact that is honored
+from this method is PantomimeDeleted. If not
+specified in theFlags, this method does nothing.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theIndex</em></tt></dt><dd>The flags to use.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/setUID%58; name=CWPOP3Message::setUID: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWPOP3Message/setUID%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setUID%58">setUID:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setUID:
+        (NSString *) theUID;
+</pre></blockquote>
+<p>This method is used to set the UID of a message.
+Normally, you shouldn't invoke this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUID</em></tt></dt><dd>The UID of the message.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

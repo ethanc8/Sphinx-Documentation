@@ -8,6 +8,7 @@ caption: Tools
 GNUstep Make/index.md
 Gorm ProjectCenter.md
 Buildtool.md
-Autogsdoc.md
 BaseTools.md
+Autogsdoc.md
+HeaderDoc.md
 ```

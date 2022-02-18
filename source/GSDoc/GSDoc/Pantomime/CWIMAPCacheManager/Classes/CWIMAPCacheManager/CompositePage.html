@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWIMAPCacheManager</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWIMAPCacheManager</font></h1><br>
+<a name="//apple_ref/doc/class/CWIMAPCacheManager" title="CWIMAPCacheManager"></a>
+<h2>Discussion</h2>
+ This class provides trivial extensions to the
+CWCacheManager superclass for CWIMAPFolder instances.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/messageWithUID%58" target="_top">messageWithUID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/removeMessageWithUID%58" target="_top">removeMessageWithUID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/UIDValidity" target="_top">UIDValidity</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/setUIDValidity%58" target="_top">setUIDValidity:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/writeRecord%58message%58" target="_top">writeRecord:message:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/UIDValidity; name=CWIMAPCacheManager::UIDValidity -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/UIDValidity"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="UIDValidity">UIDValidity</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) UIDValidity;
+</pre></blockquote>
+<p>This method is used to obtain the UID validity
+value of the receiver's cache. If it doesn't
+match the UID validity of its associated
+CWIMAPFolder instance, you should invalidate the cache.
+</p>
+<dl><dt><i>method result</i></dt><dd>The UID validity.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/messageWithUID%58; name=CWIMAPCacheManager::messageWithUID: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/messageWithUID%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="messageWithUID%58">messageWithUID:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWIMAPMessage *) messageWithUID:
+        (NSUInteger ) theUID;
+</pre></blockquote>
+<p>This method is used to obtain the CWIMAPMessage instance
+from the receiver's cache.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUID</em></tt></dt><dd>The UID of the message to obtain from the cache.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The instance, nil if not present in the receiver's cache.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/removeMessageWithUID%58; name=CWIMAPCacheManager::removeMessageWithUID: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/removeMessageWithUID%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="removeMessageWithUID%58">removeMessageWithUID:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) removeMessageWithUID:
+        (NSUInteger ) theUID;
+</pre></blockquote>
+<p>This method is used to remove the associated
+message from the cache based on the supplied UID.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUID</em></tt></dt><dd>The UID of the message to remove from the cache.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/setUIDValidity%58; name=CWIMAPCacheManager::setUIDValidity: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/setUIDValidity%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setUIDValidity%58">setUIDValidity:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setUIDValidity:
+        (unsigned int ) theUIDValidity;
+</pre></blockquote>
+<p>This method is used to set the UID validity value
+of the receiver's cache.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUIDValidity</em></tt></dt><dd>The value to set.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/writeRecord%58message%58; name=CWIMAPCacheManager::writeRecord:message: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWIMAPCacheManager/writeRecord%58message%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="writeRecord%58message%58">writeRecord:message:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) writeRecord:
+        (cache_record *) theRecord message:
+        (id ) theMessage;
+</pre></blockquote>
+<p>This method is used to write a cache record to disk.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theRecord</em></tt></dt><dd>The record to write.</dd>
+<dt><tt><em>theMessage</em></tt></dt><dd>The message associated to the record <i>theRecord</i>.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

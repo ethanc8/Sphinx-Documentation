@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPMessage/UID" target="doc">UID((cache_record))</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPMessage/initWithCacheRecord%58" target="doc">initWithCacheRecord:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPMessage/UID" target="doc">UID</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPMessage/setUID%58" target="doc">setUID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPMessage/rawSource" target="doc">rawSource</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPMessage/setFlags%58" target="doc">setFlags:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPMessage/UID; name=CWIMAPMessage::UID -->
+<a name="//apple_ref/occ/instm/CWIMAPMessage/UID"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="UID">UID</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSUInteger ) UID;
+</pre></blockquote>
+<p>This method is used to obtain the UID of a message.
+See 2.3.1.1. Unique Identifier (UID) Message Attribute
+of RFC 3501 for a detailed description of the UID
+attribute of a message.
+</p>
+<dl><dt><i>method result</i></dt><dd>The UID, 0 if the receiver has no UID.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPMessage/UID; name=CWIMAPMessage::UID -->
+<a name="//apple_ref/occ/instm/CWIMAPMessage/UID"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="UID((cache_record))">UID((cache_record))</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithCacheRecord:
+        (cache_record ) r;
+</pre></blockquote>
+<p>This method is used to initialize a message given a cache_record,
+as it can be read from CWIMAPCacheManager
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>a</em></tt></dt><dd>cache_record with the fields set for an IMAP message</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A Message instance, nil on error.
+ </dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPMessage/initWithCacheRecord%58; name=CWIMAPMessage::initWithCacheRecord: -->
+<a name="//apple_ref/occ/instm/CWIMAPMessage/initWithCacheRecord%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithCacheRecord%58">initWithCacheRecord:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithCacheRecord:
+        (cache_record ) r;
+</pre></blockquote>
+<p>This method is used to initialize a message given a cache_record,
+as it can be read from CWIMAPCacheManager
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>a</em></tt></dt><dd>cache_record with the fields set for an IMAP message</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPMessage/rawSource; name=CWIMAPMessage::rawSource -->
+<a name="//apple_ref/occ/instm/CWIMAPMessage/rawSource"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="rawSource">rawSource</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSData *) rawSource;
+</pre></blockquote>
+<p>IMAP specific implementation of the rawSource method. This method
+is always non-blocking. It might return nil if the raw source of the
+message hasn't yet been fetched from the IMAP server. The IMAPStore
+notifies the delegate when the fetch has been completed.
+</p>
+<dl><dt><i>method result</i></dt><dd>The raw source of the message, nil if not yet fully fetched.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPMessage/setFlags%58; name=CWIMAPMessage::setFlags: -->
+<a name="//apple_ref/occ/instm/CWIMAPMessage/setFlags%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFlags%58">setFlags:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFlags:
+        (CWFlags *) theFlags;
+</pre></blockquote>
+<p>This method overrides the one found in CWMessage.
+It will replace all the flags on the server
+for this message with the flags specified in the argument.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theFlags</em></tt></dt><dd>The new flags for the receiver.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPMessage/setUID%58; name=CWIMAPMessage::setUID: -->
+<a name="//apple_ref/occ/instm/CWIMAPMessage/setUID%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setUID%58">setUID:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setUID:
+        (NSUInteger ) theUID;
+</pre></blockquote>
+<p>This method is used to set the UID of the receiver.
+Normally, you shouldn't invoke this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUID</em></tt></dt><dd>The UID of the message.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

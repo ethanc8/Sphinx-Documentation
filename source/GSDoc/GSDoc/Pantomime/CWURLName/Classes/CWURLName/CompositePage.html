@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWURLName</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWURLName</font></h1><br>
+<a name="//apple_ref/doc/class/CWURLName" title="CWURLName"></a>
+<h2>Discussion</h2>
+ This class provides support for handling POP3, IMAP and
+local URL schemes. The POP3 URL scheme is described in
+RFC 2384. The IMAP URL scheme is described in RFC 2192
+while the local URL scheme is a simple Pantomime scheme
+to refer to local mailboxes.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58" target="_top">initWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58%32path%58" target="_top">initWithString: path:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58path%58" target="_top">initWithString:path:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/protocol" target="_top">protocol</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/foldername" target="_top">foldername</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/path" target="_top">path</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/host" target="_top">host</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/host" target="_top">host</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/port" target="_top">port</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/username" target="_top">username</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/password" target="_top">password</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWURLName/stringValue" target="_top">stringValue</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/foldername; name=CWURLName::foldername -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/foldername"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="foldername">foldername</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) foldername;
+</pre></blockquote>
+<p>This method is used to obtain the name of the
+folder of the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>The name of the folder.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/host; name=CWURLName::host -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/host"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="host">host</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) host;
+</pre></blockquote>
+<p>This method is used to obtain the host name part
+of an URL.
+</p>
+<dl><dt><i>method result</i></dt><dd>The host name.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/host; name=CWURLName::host -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/host"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="host">host</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) port;
+</pre></blockquote>
+<p>This method is used to obtain the port part
+of an URL.
+</p>
+<dl><dt><i>method result</i></dt><dd>The port.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58; name=CWURLName::initWithString: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithString%58">initWithString:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithString:
+        (NSString *) theString;
+</pre></blockquote>
+<p>This method invokes -initWithString: path:
+with a <i>nil</i> path.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theString</em></tt></dt><dd>The URL.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWURLName instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58%32path%58; name=CWURLName::initWithString:path: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58%32path%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithString%58%32path%58">initWithString: path:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithString:
+        (NSString *) theString  path:
+        (NSString *) thePath;
+</pre></blockquote>
+<p>This is the designated initializer for the
+URLName class.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theString</em></tt></dt><dd>The URL.</dd>
+<dt><tt><em>thePath</em></tt></dt><dd>The path to the local mailstore.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWURLName instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58path%58; name=CWURLName::initWithString:path: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/initWithString%58path%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithString%58path%58">initWithString:path:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithString:
+        (NSString *) theString  path:
+        (NSString *) thePath;
+</pre></blockquote>
+<p>This is the designated initializer for the
+URLName class.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theString</em></tt></dt><dd>The URL.</dd>
+<dt><tt><em>thePath</em></tt></dt><dd>The path to the local mailstore.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/password; name=CWURLName::password -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/password"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="password">password</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) password;
+</pre></blockquote>
+<p>This method is used to obtain the password part
+of an URL.
+</p>
+<dl><dt><i>method result</i></dt><dd>The password.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/path; name=CWURLName::path -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/path"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="path">path</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) path;
+</pre></blockquote>
+<p>This method is used to obtain the path to the mailstore.
+</p>
+<dl><dt><i>method result</i></dt><dd>The full path.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/port; name=CWURLName::port -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/port"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="port">port</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) port;
+</pre></blockquote>
+<p>This method is used to obtain the port part
+of an URL.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/protocol; name=CWURLName::protocol -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/protocol"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="protocol">protocol</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) protocol;
+</pre></blockquote>
+<p>This method is used to obtain the protocol part
+of an URL.
+</p>
+<dl><dt><i>method result</i></dt><dd>POP3, IMAP or LOCAL.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/stringValue; name=CWURLName::stringValue -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/stringValue"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="stringValue">stringValue</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) stringValue;
+</pre></blockquote>
+<p>This method is used to obtain the string
+representation of the receiver. The returned
+format is the same as one that could be
+used by an initializer.
+</p>
+<dl><dt><i>method result</i></dt><dd>The string value.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWURLName/username; name=CWURLName::username -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWURLName/username"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="username">username</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) username;
+</pre></blockquote>
+<p>This method is used to obtain the username part
+of an URL.
+</p>
+<dl><dt><i>method result</i></dt><dd>The username.
+</dd>
+</dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

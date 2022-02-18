@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWInternetAddress</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWInternetAddress</font></h1><br>
+<a name="//apple_ref/doc/class/CWInternetAddress" title="CWInternetAddress"></a>
+<h2>Abstract</h2>
+ Class that wraps support around email addresses.
+<h2>Discussion</h2>
+ This class is used to decode an email address,
+as described in RFC2821, and to hold the information
+with regard to it.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithString%58" target="_top">initWithString:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithPersonal%58%32address%58" target="_top">initWithPersonal: address:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithPersonal%58address%58" target="_top">initWithPersonal:address:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/address" target="_top">address</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setAddress%58" target="_top">setAddress:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/personal" target="_top">personal</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setPersonal%58" target="_top">setPersonal:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/type" target="_top">type</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setType%58" target="_top">setType:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/stringValue" target="_top">stringValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/dataValue" target="_top">dataValue</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/compare%58" target="_top">compare:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/isEqualToAddress%58" target="_top">isEqualToAddress:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/container" target="_top">container</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setContainer%58" target="_top">setContainer:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/address; name=CWInternetAddress::address -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/address"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="address">address</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) address;
+</pre></blockquote>
+<p>This method is used to obtain the address part
+of the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>The address part, as a NSString instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/compare%58; name=CWInternetAddress::compare: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/compare%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="compare%58">compare:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSComparisonResult ) compare:
+        (id ) theAddress;
+</pre></blockquote>
+<p>This method is used to compare anAddress with the receiver
+(using -stringValue).
+</p>
+<dl><dt><i>method result</i></dt><dd>The NSComparisonResult value.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/container; name=CWInternetAddress::container -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/container"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="container">container</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) container;
+</pre></blockquote>
+<p>This method is used to get the container for scripting.
+</p>
+<dl><dt><i>method result</i></dt><dd>The container.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/dataValue; name=CWInternetAddress::dataValue -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/dataValue"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="dataValue">dataValue</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSData *) dataValue;
+</pre></blockquote>
+<p>This method is used to return the receiver's personal
+and address parts in a correctly (ie., RFC2821 safe)
+formatted way. Encoding (ie., using quoted-printable)
+will be performed on the receiver's personal part).
+</p>
+<dl><dt><i>method result</i></dt><dd>The formatted object.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithPersonal%58%32address%58; name=CWInternetAddress::initWithPersonal:address: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithPersonal%58%32address%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithPersonal%58%32address%58">initWithPersonal: address:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithPersonal:
+        (NSString *) thePersonal  address:
+        (NSString *) theAddress;
+</pre></blockquote>
+<p>This method is used to initialize a CWInternetAddress
+instance using the specified personal and address
+part of an Internet address.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePersonal</em></tt></dt><dd>The personal part of the Internet address.</dd>
+<dt><tt><em>theAddress</em></tt></dt><dd>The address part of the Internet address.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The CWInternetAddress instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithPersonal%58address%58; name=CWInternetAddress::initWithPersonal:address: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithPersonal%58address%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithPersonal%58address%58">initWithPersonal:address:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithPersonal:
+        (NSString *) thePersonal  address:
+        (NSString *) theAddress;
+</pre></blockquote>
+<p>This method is used to initialize a CWInternetAddress
+instance using the specified personal and address
+part of an Internet address.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePersonal</em></tt></dt><dd>The personal part of the Internet address.</dd>
+<dt><tt><em>theAddress</em></tt></dt><dd>The address part of the Internet address.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithString%58; name=CWInternetAddress::initWithString: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/initWithString%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithString%58">initWithString:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithString:
+        (NSString *) theString;
+</pre></blockquote>
+<p>This method initializes a CWInternetAddress instance
+using <i>theString</i> and decodes from it the
+personal and address parts of an Internet address.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theString</em></tt></dt><dd>The string from which to decode the information.
+If nil is passed, the instance is autoreleased
+and nil will be returned.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The CWInternetAddress instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/isEqualToAddress%58; name=CWInternetAddress::isEqualToAddress: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/isEqualToAddress%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="isEqualToAddress%58">isEqualToAddress:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) isEqualToAddress:
+        (CWInternetAddress *) theAddress;
+</pre></blockquote>
+<p>This method is used to compare anAddress with the receiver's
+address only.
+</p>
+<dl><dt><i>method result</i></dt><dd>A boolean value
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/personal; name=CWInternetAddress::personal -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/personal"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="personal">personal</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) personal;
+</pre></blockquote>
+<p>This method is used to obtain the personal part
+of the receiver. The personal part is generally
+the name of a person, like John Doe.
+</p>
+<dl><dt><i>method result</i></dt><dd>The personal part, as a NSString instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setAddress%58; name=CWInternetAddress::setAddress: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setAddress%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setAddress%58">setAddress:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setAddress:
+        (NSString *) theAddress;
+</pre></blockquote>
+<p>This method is used to set the address part
+of the receiver, replacing the previous
+value, if any.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theAddress</em></tt></dt><dd>The new address part.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setContainer%58; name=CWInternetAddress::setContainer: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setContainer%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setContainer%58">setContainer:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setContainer:
+        (id ) theContainer;
+</pre></blockquote>
+<p>This method is used to set the container for scripting.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theContainer</em></tt></dt><dd>The container for scripting.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setPersonal%58; name=CWInternetAddress::setPersonal: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setPersonal%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setPersonal%58">setPersonal:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setPersonal:
+        (NSString *) thePersonal;
+</pre></blockquote>
+<p>This method is used to set the personal part
+of the receiver, replacing the previous
+value, if any. The personal part is generally
+the name of a person, like John Doe.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePersonal</em></tt></dt><dd>The new personal part.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setType%58; name=CWInternetAddress::setType: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/setType%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setType%58">setType:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setType:
+        (PantomimeRecipientType ) theType;
+</pre></blockquote>
+<p>This method is used to set the receiver's type.
+The accepted values are the one of the
+PantomimeRecipientType enum.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theType</em></tt></dt><dd>The new type, which replaces the previous value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/stringValue; name=CWInternetAddress::stringValue -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/stringValue"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="stringValue">stringValue</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) stringValue;
+</pre></blockquote>
+<p>This method is used to return the receiver's personal
+and address parts in a correctly (ie., RFC2821 safe)
+formatted way. No encoding (ie., using quoted-printable)
+will be performed on the receiver's personal part).
+</p>
+<dl><dt><i>method result</i></dt><dd>The formatted object.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/type; name=CWInternetAddress::type -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWInternetAddress/type"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="type">type</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( PantomimeRecipientType ) type;
+</pre></blockquote>
+<p>This method is used to obtain the type of
+the receiver. Values can be one of the
+PantomimeRecipientType enum.
+</p>
+<dl><dt><i>method result</i></dt><dd>The type.
+</dd>
+</dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

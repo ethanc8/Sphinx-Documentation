@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWContainer</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWContainer</font></h1><br>
+<a name="//apple_ref/doc/class/CWContainer" title="CWContainer"></a>
+<h2>Discussion</h2>
+ This class is a simple placeholder used when doing message threading.
+A container is composed of a CWMessage instance which might be nil, a parent,
+child and next CWContainer instances. For a full description of the implemented
+algorithm, see <a href="http://www.jwz.org/doc/threading.html" target="_top">message threading</a>.
+Instance variables of this class must be accessed directly (ie., without
+an accessor) - for performance reasons.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWContainer/setParent%58" target="_top">setParent:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWContainer/setChild%58" target="_top">setChild:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWContainer/childAtIndex%58" target="_top">childAtIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWContainer/count" target="_top">count</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWContainer/setNext%58" target="_top">setNext:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWContainer/childrenEnumerator" target="_top">childrenEnumerator</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWContainer/childAtIndex%58; name=CWContainer::childAtIndex: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWContainer/childAtIndex%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="childAtIndex%58">childAtIndex:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWContainer *) childAtIndex:
+        (unsigned int ) theIndex;
+</pre></blockquote>
+<p>This method is used to get the child at the specified index.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theIndex</em></tt></dt><dd>The index of the child, which is 0 based.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The CWContainer instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWContainer/childrenEnumerator; name=CWContainer::childrenEnumerator -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWContainer/childrenEnumerator"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="childrenEnumerator">childrenEnumerator</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSEnumerator *) childrenEnumerator;
+</pre></blockquote>
+<p>This method is used to obtain all children of the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>All children, as a NSEnumerator instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWContainer/count; name=CWContainer::count -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWContainer/count"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="count">count</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) count;
+</pre></blockquote>
+<p>This method is used to obtain the number of children of
+the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>The number of children.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWContainer/setChild%58; name=CWContainer::setChild: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWContainer/setChild%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setChild%58">setChild:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setChild:
+        (CWContainer *) theChild;
+</pre></blockquote>
+<p>This method is used to add the specified child to the list
+of children.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theChild</em></tt></dt><dd>The child to add which can be nil to remove the first child.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWContainer/setNext%58; name=CWContainer::setNext: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWContainer/setNext%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setNext%58">setNext:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setNext:
+        (CWContainer *) theNext;
+</pre></blockquote>
+<p>This method is used to set the next element in
+sibling list.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNext</em></tt></dt><dd>The next element, or nil if there's none.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWContainer/setParent%58; name=CWContainer::setParent: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWContainer/setParent%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setParent%58">setParent:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setParent:
+        (CWContainer *) theParent;
+</pre></blockquote>
+<p>This method is used to set the parent CWContainer of the receiver.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theParent</em></tt></dt><dd>The parent CWContainer, which might be nil if the receiver
+is part of the root set.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

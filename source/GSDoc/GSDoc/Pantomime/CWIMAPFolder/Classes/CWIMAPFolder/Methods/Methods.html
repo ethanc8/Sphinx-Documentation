@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/initWithName%58%32mode%58" target="doc">initWithName: mode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/initWithName%58mode%58" target="doc">initWithName:mode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/appendMessageFromRawSource%58flags%58internalDate%58" target="doc">appendMessageFromRawSource:flags:internalDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/copyMessages%58%32toFolder%58" target="doc">copyMessages: toFolder:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/copyMessages%58toFolder%58" target="doc">copyMessages:toFolder:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/prefetch" target="doc">prefetch</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/UIDValidity" target="doc">UIDValidity</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/setUIDValidity%58" target="doc">setUIDValidity:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/selected" target="doc">selected</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/CWIMAPFolder/setSelected%58" target="doc">setSelected:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/UIDValidity; name=CWIMAPFolder::UIDValidity -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/UIDValidity"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="UIDValidity">UIDValidity</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) UIDValidity;
+</pre></blockquote>
+<p>This method is used to obtain the UID validity of an IMAP folder.
+Refer to "2.3.1.1. Unique Identifier (UID) Message Attribute" of
+RFC 3501 for a detailed description of this parameter.
+</p>
+<dl><dt><i>method result</i></dt><dd>The UID validity of the folder.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/appendMessageFromRawSource%58flags%58internalDate%58; name=CWIMAPFolder::appendMessageFromRawSource:flags:internalDate: -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/appendMessageFromRawSource%58flags%58internalDate%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="appendMessageFromRawSource%58flags%58internalDate%58">appendMessageFromRawSource:flags:internalDate:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) appendMessageFromRawSource:
+        (NSData *) theData  flags:
+        (CWFlags *) theFlags  internalDate:
+        (NSCalendarDate *) theDate;
+</pre></blockquote>
+<p>This method is used to append a message from its raw source
+representation (RFC2822 compliant) to the underlying store. It differs from
+-appendMessageFromRawSource:flags: in that this method supplies the
+given date to the server to use as the INTERNALDATE. Not supplying this
+date will cause some servers and clients to report the date of the message
+as the current date and time, rather than that specified in the Received
+header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The raw representation of the message to append.</dd>
+<dt><tt><em>theFlags</em></tt></dt><dd>The flags of the message, nil if no flags need to be kept.</dd>
+<dt><tt><em>theDate</em></tt></dt><dd>The INTERNALDATE of the message, or nil to use the current date.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/copyMessages%58%32toFolder%58; name=CWIMAPFolder::copyMessages:toFolder: -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/copyMessages%58%32toFolder%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="copyMessages%58%32toFolder%58">copyMessages: toFolder:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) copyMessages:
+        (NSArray *) theMessages  toFolder:
+        (NSString *) theFolder;
+</pre></blockquote>
+<p>This method copies the messages in <i>theMessages</i> array from
+the receiver to the destination folder's name, <i>theFolder</i>.
+On success, this method posts a PantomimeMessagesCopyCompleted notification
+(and calls -messagesCopyCompleted: on the delegate, if any). On failure,
+it posts a PantomimeMessagesCopyFailed notification (and calls
+-messagesCopyFailed: on the delegate, if any). This method is
+fully asynchronous.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessages</em></tt></dt><dd>The messages to copy.</dd>
+<dt><tt><em>theFolder</em></tt></dt><dd>The name of the target folder. The name must include
+hierarchy separators if the target folder is a subfolder.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/copyMessages%58toFolder%58; name=CWIMAPFolder::copyMessages:toFolder: -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/copyMessages%58toFolder%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="copyMessages%58toFolder%58">copyMessages:toFolder:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) copyMessages:
+        (NSArray *) theMessages  toFolder:
+        (NSString *) theFolder;
+</pre></blockquote>
+<p>This method copies the messages in <i>theMessages</i> array from
+the receiver to the destination folder's name, <i>theFolder</i>.
+On success, this method posts a PantomimeMessagesCopyCompleted notification
+(and calls -messagesCopyCompleted: on the delegate, if any). On failure,
+it posts a PantomimeMessagesCopyFailed notification (and calls
+-messagesCopyFailed: on the delegate, if any). This method is
+fully asynchronous.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessages</em></tt></dt><dd>The messages to copy.</dd>
+<dt><tt><em>theFolder</em></tt></dt><dd>The name of the target folder. The name must include
+hierarchy separators if the target folder is a subfolder.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/initWithName%58%32mode%58; name=CWIMAPFolder::initWithName:mode: -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/initWithName%58%32mode%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithName%58%32mode%58">initWithName: mode:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithName:
+        (NSString *) theName  mode:
+        (PantomimeFolderMode ) theMode;
+</pre></blockquote>
+<p>This method is used to initialize the receiver
+with <i>theName</i> using <i>theMode</i>. Normally,
+you should not invoke this method directly.
+You must rather use one of CWIMAPStore's folderForName: ...
+method.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder.</dd>
+<dt><tt><em>theMode</em></tt></dt><dd>The mode to use. Accepted values are part of the
+PantomimeFolderMode enum.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>An CWIMAPFolder instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/initWithName%58mode%58; name=CWIMAPFolder::initWithName:mode: -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/initWithName%58mode%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithName%58mode%58">initWithName:mode:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithName:
+        (NSString *) theName  mode:
+        (PantomimeFolderMode ) theMode;
+</pre></blockquote>
+<p>This method is used to initialize the receiver
+with <i>theName</i> using <i>theMode</i>. Normally,
+you should not invoke this method directly.
+You must rather use one of CWIMAPStore's folderForName: ...
+method.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder.</dd>
+<dt><tt><em>theMode</em></tt></dt><dd>The mode to use. Accepted values are part of the
+PantomimeFolderMode enum.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/prefetch; name=CWIMAPFolder::prefetch -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/prefetch"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="prefetch">prefetch</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) prefetch;
+</pre></blockquote>
+<p>This method is used to cache part of the message headers
+from the IMAP server. On completion, it posts the PantomimeFolderPrefetchCompleted
+notification (and calls -folderPrefetchCompleted: on the delegate, if any).
+This method is fully asynchronous.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/selected; name=CWIMAPFolder::selected -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/selected"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="selected">selected</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) selected;
+</pre></blockquote>
+<p>This method is used to verify if the folder is in
+a selected state.
+</p>
+<dl><dt><i>method result</i></dt><dd>YES if it is in a selected state, NO otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/setSelected%58; name=CWIMAPFolder::setSelected: -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/setSelected%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setSelected%58">setSelected:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setSelected:
+        (BOOL ) theBOOL;
+</pre></blockquote>
+<p>This method is used to specify if the folder is in
+a selected state or not. You should never call
+this method directly. Instead, call IMAPStore:
+-folderForName: select:.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theBOOL</em></tt></dt><dd>YES if it is in a selected state, NO otherwise.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/CWIMAPFolder/setUIDValidity%58; name=CWIMAPFolder::setUIDValidity: -->
+<a name="//apple_ref/occ/instm/CWIMAPFolder/setUIDValidity%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setUIDValidity%58">setUIDValidity:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setUIDValidity:
+        (unsigned int ) theUIDValidity;
+</pre></blockquote>
+<p>This method is used to set the UID validity of the receiver.
+If the receiver has a cache (instance of CWIMAPCacheManager) and
+the UID validity of its cache differs from <i>theUIDValidity</i>,
+all cache entries are invalidated.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theUIDValidity</em></tt></dt><dd>The UID validity value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

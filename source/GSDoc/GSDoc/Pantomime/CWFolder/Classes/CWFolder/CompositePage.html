@@ -1,0 +1,675 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWFolder</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWFolder</font></h1><br>
+<a name="//apple_ref/doc/class/CWFolder" title="CWFolder"></a>
+<h2>Abstract</h2>
+ A CWFolder object holds CWMessage instances.
+<h2>Discussion</h2>
+ This abstract class is used to represent a folder which holds messages.
+A folder is a synonym for mailbox. Normally, you should never create
+an instance of CWFolder directly but rather use the subclasses which
+are CWIMAPFolder, CWLocalFolder and CWPOP3Folder. Futhermore, the corresponding
+CWStore classes will instanciate the CWFolder subclasses for you.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/initWithName%58" target="_top">initWithName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/name" target="_top">name</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setName%58" target="_top">setName:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/appendMessage%58" target="_top">appendMessage:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/appendMessageFromRawSource%58flags%58" target="_top">appendMessageFromRawSource:flags:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/allMessages" target="_top">allMessages</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setMessages%58" target="_top">setMessages:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/messageAtIndex%58" target="_top">messageAtIndex:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/count" target="_top">count</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/close" target="_top">close</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/expunge" target="_top">expunge</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/expunge" target="_top">expunge</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/store" target="_top">store</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setStore%58" target="_top">setStore:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/removeMessage%58" target="_top">removeMessage:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/showDeleted" target="_top">showDeleted</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setShowDeleted%58" target="_top">setShowDeleted:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/showRead" target="_top">showRead</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setShowRead%58" target="_top">setShowRead:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/numberOfDeletedMessages" target="_top">numberOfDeletedMessages</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/numberOfUnreadMessages" target="_top">numberOfUnreadMessages</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/size" target="_top">size</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/updateCache" target="_top">updateCache</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/allContainers" target="_top">allContainers</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/thread" target="_top">thread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/unthread" target="_top">unthread</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/search%58%32mask%58%32options%58" target="_top">search: mask: options:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/search%58mask%58options%58" target="_top">search:mask:options:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/cacheManager" target="_top">cacheManager</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setCacheManager%58" target="_top">setCacheManager:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/mode" target="_top">mode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setMode%58" target="_top">setMode:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setFlags%58%32messages%58" target="_top">setFlags: messages:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setFlags%58messages%58" target="_top">setFlags:messages:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/propertyForKey%58" target="_top">propertyForKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setProperty%58%32forKey%58" target="_top">setProperty: forKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWFolder/setProperty%58forKey%58" target="_top">setProperty:forKey:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/allContainers; name=CWFolder::allContainers -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/allContainers"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="allContainers">allContainers</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSArray *) allContainers;
+</pre></blockquote>
+<p>This method returns the list of root containers when using
+message threading.
+</p>
+<dl><dt><i>method result</i></dt><dd>Root containers if using message threading, nil otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/allMessages; name=CWFolder::allMessages -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/allMessages"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="allMessages">allMessages</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSArray *) allMessages;
+</pre></blockquote>
+<p>This method is used to obtain all visible messages
+in the CWFolder instance. It hides messages marked
+as Deleted if -setShowDeleted: was invoked with
+NO as the parameter and the the same for messages
+marked as read (see -setShowRead:). Note that the
+messages MIGHT NOT been all completely initialized.
+</p>
+<dl><dt><i>method result</i></dt><dd>An array of all visible messages.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/appendMessage%58; name=CWFolder::appendMessage: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/appendMessage%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="appendMessage%58">appendMessage:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) appendMessage:
+        (CWMessage *) theMessage;
+</pre></blockquote>
+<p>This method is used to add a message to
+a CWFolder instance. This method will NOT add
+the message to the underlying store. You MUST
+use -appendMessageFromRawSource: flags: if you
+want the message to be saved to the underlying
+store. Generally, you should not use this
+method directly. If the folder was threaded,
+this method will NOT thread the appended message.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessage</em></tt></dt><dd>The message to append to the folder.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/appendMessageFromRawSource%58flags%58; name=CWFolder::appendMessageFromRawSource:flags: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/appendMessageFromRawSource%58flags%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="appendMessageFromRawSource%58flags%58">appendMessageFromRawSource:flags:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) appendMessageFromRawSource:
+        (NSData *) theData  flags:
+        (CWFlags *) theFlags;
+</pre></blockquote>
+<p>This method is used to append a message
+from its raw source representation (RFC2822 compliant)
+to the underlying store. This method will raise an
+exception if it's invoked on an instance of CWFolder or
+CWPOP3Folder instead of an instance of CWIMAPFolder and CWLocalFolder.
+If the folder was threaded, this method will NOT thread the appended message.
+Methods will be invoked on the delegate and notifications
+will be posted. See the PantomimeFolderDelegate informal
+protocol for more details.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The raw representation of the message to append.</dd>
+<dt><tt><em>theFlags</em></tt></dt><dd>The flags of the message, nil if no flags need to be kept.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/cacheManager; name=CWFolder::cacheManager -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/cacheManager"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="cacheManager">cacheManager</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) cacheManager;
+</pre></blockquote>
+<p>This method returns the associated cache manager for this folder.
+For a CWIMAPFolder, a CWIMAPCacheManager instance will be returned.
+For a CWLocalFolder, a CWLocalFolderCacheManager instance will be returned.
+For a CWPOP3Folder, a CWPOP3CacheManager instance will be returned.
+</p>
+<dl><dt><i>method result</i></dt><dd>The associated cache manager instance, nil otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/close; name=CWFolder::close -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/close"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="close">close</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) close;
+</pre></blockquote>
+<p>This method is used to close the folder. 
+The subclasses of CWFolder MUST this method.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/count; name=CWFolder::count -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/count"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="count">count</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSUInteger ) count;
+</pre></blockquote>
+<p>This method is used to obtain the number of messages
+present in the folder. Hidden messages will NOT
+be part of the value returned. So, for example, if
+a folder has 10 messages, 2 of them have the
+PantomimeDeleted flag set and -setShowDeleted: NO was
+invoked on the folder, this method will return
+8 as the messages count.
+</p>
+<dl><dt><i>method result</i></dt><dd>The number of messages in the folder.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/expunge; name=CWFolder::expunge -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/expunge"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="expunge">expunge</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) expunge;
+</pre></blockquote>
+<p>This method is used to permanently remove
+messages marked as deleted in the folder.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/expunge; name=CWFolder::expunge -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/expunge"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="expunge">expunge</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) expunge;
+</pre></blockquote>
+<p>This method is used to permanently remove
+messages marked as deleted in the folder.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/initWithName%58; name=CWFolder::initWithName: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/initWithName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithName%58">initWithName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithName:
+        (NSString *) theName;
+</pre></blockquote>
+<p>This method initialize a folder with the
+specified name. The name can contain folder
+separators in order to create subfolders.
+The separator can be obtained from a
+class that implements the CWStore protocol.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The full path of the folder.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The folder, nil in case of an error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/messageAtIndex%58; name=CWFolder::messageAtIndex: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/messageAtIndex%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="messageAtIndex%58">messageAtIndex:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWMessage *) messageAtIndex:
+        (NSUInteger ) theIndex;
+</pre></blockquote>
+<p>This method is used to obtain the message at the
+specified index (which is zero-based). If the index
+is out of bounds, nil is returned.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theIndex</em></tt></dt><dd>The index of the message.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The message at the specified index, nil otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/mode; name=CWFolder::mode -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/mode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="mode">mode</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( PantomimeFolderMode ) mode;
+</pre></blockquote>
+<p>This method is used to get the mode of the folders. The returned
+values can be either PantomimeUnknownMode, PantomimeReadOnlyMode
+or PantomimeReadWriteMode. Calling this method on an instance
+of Folder (ie., not a subclass) will raise an exception.
+</p>
+<dl><dt><i>method result</i></dt><dd>The mode of the folder.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/name; name=CWFolder::name -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/name"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="name">name</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) name;
+</pre></blockquote>
+<p>This method returns the name of the folder.
+</p>
+<dl><dt><i>method result</i></dt><dd>The full name of the folder.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/numberOfDeletedMessages; name=CWFolder::numberOfDeletedMessages -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/numberOfDeletedMessages"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="numberOfDeletedMessages">numberOfDeletedMessages</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSUInteger ) numberOfDeletedMessages;
+</pre></blockquote>
+<p>This method returns the number of messages in this
+folder that have the PantomimeDeleted flag set.
+</p>
+<dl><dt><i>method result</i></dt><dd>The number of message marked has deleted, 0 if none.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/numberOfUnreadMessages; name=CWFolder::numberOfUnreadMessages -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/numberOfUnreadMessages"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="numberOfUnreadMessages">numberOfUnreadMessages</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSUInteger ) numberOfUnreadMessages;
+</pre></blockquote>
+<p>This method returns the number of messages in this
+folder that do not have the PantomimeSeen flag set.
+</p>
+<dl><dt><i>method result</i></dt><dd>The number of unread messages, 0 if none.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/propertyForKey%58; name=CWFolder::propertyForKey: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/propertyForKey%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="propertyForKey%58">propertyForKey:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) propertyForKey:
+        (id ) theKey;
+</pre></blockquote>
+<p>This method is used to get an extra property for the
+specified key.
+</p>
+<dl><dt><i>method result</i></dt><dd>The property for the specified key, nil if key isn't found.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/removeMessage%58; name=CWFolder::removeMessage: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/removeMessage%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="removeMessage%58">removeMessage:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) removeMessage:
+        (CWMessage *) theMessage;
+</pre></blockquote>
+<p>This method removes permenantly a message from 
+the folder. It is used when transferring message 
+between folders in order to update the view or 
+when expunge deletes messages from a view. If the
+folder is threaded, this method will rethread the
+folder before returning.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessage</em></tt></dt><dd>The CWMessage instance to remove from the folder.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/search%58%32mask%58%32options%58; name=CWFolder::search:mask:options: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/search%58%32mask%58%32options%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="search%58%32mask%58%32options%58">search: mask: options:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) search:
+        (NSString *) theString  mask:
+        (PantomimeSearchMask ) theMask  options:
+        (PantomimeSearchOption ) theOptions;
+</pre></blockquote>
+<p>This method is used to search this folder using a criteria,
+mask and options. This method will post a PantomimeFolderSearchCompleted
+(or invoked -folderSearchCompleted: on the delegate) once it has
+completed its execution (or post PantomimeFolderSearchFailed or invoke
+-folderSearchFailed on the delegate if it failed). This method will
+do absolutely nothing on CWPOP3Folder instances as search operations
+are not supported in POP3.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theString</em></tt></dt><dd>The string to search for. This can be a regex for LocalFolder instances.</dd>
+<dt><tt><em>theMask</em></tt></dt><dd>The mask to use. The values can be either one of the
+PantomimeSearchMask enum. This parameter is ignored for IMAPFolder instances.</dd>
+<dt><tt><em>theOptions</em></tt></dt><dd>The search options. Can be either PantomimeRegularExpression
+or PantomimeCaseInsensitiveSearch. This parameter is ignored for
+CWIMAPFolder instances.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/search%58mask%58options%58; name=CWFolder::search:mask:options: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/search%58mask%58options%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="search%58mask%58options%58">search:mask:options:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) search:
+        (NSString *) theString  mask:
+        (PantomimeSearchMask ) theMask  options:
+        (PantomimeSearchOption ) theOptions;
+</pre></blockquote>
+<p>This method is used to search this folder using a criteria,
+mask and options. This method will post a PantomimeFolderSearchCompleted
+(or invoked -folderSearchCompleted: on the delegate) once it has
+completed its execution (or post PantomimeFolderSearchFailed or invoke
+-folderSearchFailed on the delegate if it failed). This method will
+do absolutely nothing on CWPOP3Folder instances as search operations
+are not supported in POP3.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theString</em></tt></dt><dd>The string to search for. This can be a regex for LocalFolder instances.</dd>
+<dt><tt><em>theMask</em></tt></dt><dd>The mask to use. The values can be either one of the
+PantomimeSearchMask enum. This parameter is ignored for IMAPFolder instances.</dd>
+<dt><tt><em>theOptions</em></tt></dt><dd>The search options. Can be either PantomimeRegularExpression
+or PantomimeCaseInsensitiveSearch. This parameter is ignored for
+CWIMAPFolder instances.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setCacheManager%58; name=CWFolder::setCacheManager: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setCacheManager%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setCacheManager%58">setCacheManager:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setCacheManager:
+        (id ) theCacheManager;
+</pre></blockquote>
+<p>This method is used to set the respective cache manager instance
+for this folder. Instance of CWIMAPCacheManager, CWLocalFolderCacheManager
+or CWPOP3CacheManager will generally be used.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theCacheManager</em></tt></dt><dd>The cache manager instance for this folder.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setFlags%58%32messages%58; name=CWFolder::setFlags:messages: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setFlags%58%32messages%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFlags%58%32messages%58">setFlags: messages:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFlags:
+        (CWFlags *) theFlags  messages:
+        (NSArray *) theMessages;
+</pre></blockquote>
+<p>This method is used to set the same flags to a set of messages.
+This can be useful, especially when dealing with CWIMAPFolder
+instances in order to NOT send many IMAP commands to the server
+but rather send just one.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theFlags</em></tt></dt><dd>The flags to set to all messages.</dd>
+<dt><tt><em>theMessages</em></tt></dt><dd>The array of messages to which flags will be applied.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setFlags%58messages%58; name=CWFolder::setFlags:messages: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setFlags%58messages%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFlags%58messages%58">setFlags:messages:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFlags:
+        (CWFlags *) theFlags  messages:
+        (NSArray *) theMessages;
+</pre></blockquote>
+<p>This method is used to set the same flags to a set of messages.
+This can be useful, especially when dealing with CWIMAPFolder
+instances in order to NOT send many IMAP commands to the server
+but rather send just one.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theFlags</em></tt></dt><dd>The flags to set to all messages.</dd>
+<dt><tt><em>theMessages</em></tt></dt><dd>The array of messages to which flags will be applied.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setMessages%58; name=CWFolder::setMessages: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setMessages%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setMessages%58">setMessages:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setMessages:
+        (NSArray *) theMessages;
+</pre></blockquote>
+<p>This method is used to replace all messages in the
+CWFolder instance by the ones specified in the array.
+Normally, you shouldn't use this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessages</em></tt></dt><dd>The array of messages.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setMode%58; name=CWFolder::setMode: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setMode%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setMode%58">setMode:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setMode:
+        (PantomimeFolderMode ) theMode;
+</pre></blockquote>
+<p>This method is used to adjust the mode on the specified folder.
+If has no impact on how the mailbox was open. For example,
+if a mailbox was open as read-only, the mailbox will not
+be re-opened as read-write after this method call.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMode</em></tt></dt><dd>The new mode.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setName%58; name=CWFolder::setName: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setName%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setName%58">setName:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setName:
+        (NSString *) theName;
+</pre></blockquote>
+<p>Sets the name of a folder.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The name of the folder.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setProperty%58%32forKey%58; name=CWFolder::setProperty:forKey: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setProperty%58%32forKey%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setProperty%58%32forKey%58">setProperty: forKey:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setProperty:
+        (id ) theProperty  forKey:
+        (id ) theKey;
+</pre></blockquote>
+<p>This method is used to set an extra property for the
+specified key on this folder. If nil is passed for
+theProperty parameter, the value will actually be
+REMOVED for theKey.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theProperty</em></tt></dt><dd>The value of the property.</dd>
+<dt><tt><em>theKey</em></tt></dt><dd>The key of the property.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setProperty%58forKey%58; name=CWFolder::setProperty:forKey: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setProperty%58forKey%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setProperty%58forKey%58">setProperty:forKey:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setProperty:
+        (id ) theProperty  forKey:
+        (id ) theKey;
+</pre></blockquote>
+<p>This method is used to set an extra property for the
+specified key on this folder. If nil is passed for
+theProperty parameter, the value will actually be
+REMOVED for theKey.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theProperty</em></tt></dt><dd>The value of the property.</dd>
+<dt><tt><em>theKey</em></tt></dt><dd>The key of the property.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setShowDeleted%58; name=CWFolder::setShowDeleted: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setShowDeleted%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setShowDeleted%58">setShowDeleted:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setShowDeleted:
+        (BOOL ) theBOOL;
+</pre></blockquote>
+<p>This method is used to specify if we want to show or
+hide messages marked as deleted in this folder.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theBOOL</em></tt></dt><dd>YES if we want to hide messages marked as deleted,
+NO otherwise.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setShowRead%58; name=CWFolder::setShowRead: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setShowRead%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setShowRead%58">setShowRead:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setShowRead:
+        (BOOL ) theBOOL;
+</pre></blockquote>
+<p>This method is used to specify if we want to show or
+hide messages marked as read in this folder.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theBOOL</em></tt></dt><dd>YES if we want to hide messages marked as read,
+NO otherwise.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/setStore%58; name=CWFolder::setStore: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/setStore%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setStore%58">setStore:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setStore:
+        (id ) theStore;
+</pre></blockquote>
+<p>This method is used to set the associated store
+to this folder. The store will NOT be retained
+since it is the store which holds and retains
+the CWFolder instances.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theStore</em></tt></dt><dd>The associated store.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/showDeleted; name=CWFolder::showDeleted -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/showDeleted"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="showDeleted">showDeleted</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) showDeleted;
+</pre></blockquote>
+<p>This method returns YES if messages marked as deleted
+are shown in this folder, NO otherwise.
+</p>
+<dl><dt><i>method result</i></dt><dd>A BOOL corresponding to the value.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/showRead; name=CWFolder::showRead -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/showRead"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="showRead">showRead</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) showRead;
+</pre></blockquote>
+<p>This method returns YES if messages marked as read
+are shown in this folder, NO otherwise.
+</p>
+<dl><dt><i>method result</i></dt><dd>A BOOL corresponding to the value.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/size; name=CWFolder::size -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/size"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="size">size</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned long ) size;
+</pre></blockquote>
+<p>This method returns the size of the folder. That is,
+it returns the sum of the size of all visible messages in
+the folder.
+</p>
+<dl><dt><i>method result</i></dt><dd>The size of the folder.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/store; name=CWFolder::store -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/store"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="store">store</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) store;
+</pre></blockquote>
+<p>This method returns the associated store
+to this folder. This will generally be an instance
+of CWIMAPStore, CWLocalStore or CWPOP3Store.
+</p>
+<dl><dt><i>method result</i></dt><dd>The associated store.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/thread; name=CWFolder::thread -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/thread"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="thread">thread</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) thread;
+</pre></blockquote>
+<p>This method implements Jamie Zawinski's message threading algorithm.
+The full algorithm is available here: http://www.jwz.org/doc/threading.html
+After calling this method, -allContainers can be called to obtain the
+root set of CWContainer instances.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/unthread; name=CWFolder::unthread -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/unthread"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="unthread">unthread</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) unthread;
+</pre></blockquote>
+<p>This method is used to release all resources taken by the
+message threading code. After calling this method,
+-allContainers will return nil.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWFolder/updateCache; name=CWFolder::updateCache -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWFolder/updateCache"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="updateCache">updateCache</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) updateCache;
+</pre></blockquote>
+<p>This method is used to update our cache (_allVisibleMessages).
+Applications can call this method if they set the PantomimeDeleted flags to
+messages inside this folder. If not called, the cache won't be updated
+the messages having the flag PantomimeDeleted will still be visible.
+</p>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

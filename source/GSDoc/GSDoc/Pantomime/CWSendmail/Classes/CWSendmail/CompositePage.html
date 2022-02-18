@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWSendmail</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWSendmail</font></h1><br>
+<a name="//apple_ref/doc/class/CWSendmail" title="CWSendmail"></a>
+<h2>Discussion</h2>
+ This class, which implements the CWTransport protocol, is used
+to provide an interface to the "sendmail" command found on
+most UNIX system in order to submit messages directly
+instead of using SMTP.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSendmail/initWithPath%58" target="_top">initWithPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSendmail/setDelegate%58" target="_top">setDelegate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSendmail/delegate" target="_top">delegate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSendmail/setPath%58" target="_top">setPath:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSendmail/path" target="_top">path</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSendmail/delegate; name=CWSendmail::delegate -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSendmail/delegate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="delegate">delegate</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) delegate;
+</pre></blockquote>
+<p>This method is used to obtain the delegate of the CWSendmail's instance.
+</p>
+<dl><dt><i>method result</i></dt><dd>The delegate, nil if none was previously set.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSendmail/initWithPath%58; name=CWSendmail::initWithPath: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSendmail/initWithPath%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithPath%58">initWithPath:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithPath:
+        (NSString *) thePath;
+</pre></blockquote>
+<p>This is the designated initializer for the CWSendmail class.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePath</em></tt></dt><dd>The complete path to the "sendmail" binary.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>An instance of Sendmail, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSendmail/path; name=CWSendmail::path -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSendmail/path"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="path">path</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) path;
+</pre></blockquote>
+<p>This method is used to get the path to the "sendmail" binary
+previously set by calling -setPath:.
+</p>
+<dl><dt><i>method result</i></dt><dd>The path to the "sendmail" binary.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSendmail/setDelegate%58; name=CWSendmail::setDelegate: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSendmail/setDelegate%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setDelegate%58">setDelegate:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setDelegate:
+        (id ) theDelegate;
+</pre></blockquote>
+<p>This method is used to set the CWSendmail instance's delegate.
+The delegate will not be retained. The CWSendmail class
+(and its subclasses) will invoke methods on the delegate
+based on actions performed.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theDelegate</em></tt></dt><dd>The delegate, which implements various callback methods.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSendmail/setPath%58; name=CWSendmail::setPath: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSendmail/setPath%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setPath%58">setPath:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setPath:
+        (NSString *) thePath;
+</pre></blockquote>
+<p>This method is used to set the path to the "sendmail" binary.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePath</em></tt></dt><dd>The full path to the binary.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

@@ -1,0 +1,350 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Functions</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Functions</font></h1><br>
+<a name="HeaderDoc_functions"></a>
+<dl>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/read_block" target="doc">read_block</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/safe_close" target="doc">safe_close</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/safe_read" target="doc">safe_read</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/safe_recv" target="doc">safe_recv</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/read_data_memory" target="doc">read_data_memory</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/read_string_memory" target="doc">read_string_memory</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/read_unsigned_int_memory" target="doc">read_unsigned_int_memory</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/read_unsigned_short" target="doc">read_unsigned_short</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/write_unsigned_short" target="doc">write_unsigned_short</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/read_string" target="doc">read_string</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/write_string(int%44unsignedchar*%44uint16_t)" target="doc">write_string(int, unsigned char *, uint16_t)</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/write_string(int%44NSData*)" target="doc">write_string(int, NSData *)</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/write_data" target="doc">write_data</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/read_unsigned_int" target="doc">read_unsigned_int</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Functions.html#//apple_ref/c/func/write_unsigned_int" target="doc">write_unsigned_int</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/read_block; name=read_block -->
+<a name="//apple_ref/c/func/read_block"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="read_block">read_block</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>ssize_t read_block(
+    int fd,
+    void *buf,
+    size_t count );
+</pre></blockquote>
+<p>This function is used to read <i>count</i> bytes
+from <i>fd</i> and store them in <i>buf</i>. This
+method blocks until it read all bytes or if
+an error different from EINTR occurs.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to read bytes from.</dd>
+<dt><tt><em>buf</em></tt></dt><dd>The buffer where to store the read bytes.</dd>
+<dt><tt><em>count</em></tt></dt><dd>The number of bytes to read.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>The number of bytes that have been read.
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/read_data_memory; name=read_data_memory -->
+<a name="//apple_ref/c/func/read_data_memory"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="read_data_memory">read_data_memory</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>NSData *read_data_memory(
+    unsigned char *m,
+    uint16_t *count );
+</pre></blockquote>
+<p>This function is used to read a string from <i>m</i>
+and return it as a NSData objectand adjust the <i>count</i> on how
+long the read data is. The data must NOT be longer than 65535 bytes.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>m</em></tt></dt><dd>The buffer to read from.</dd>
+<dt><tt><em>count</em></tt></dt><dd>The lenght of the data returned</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>The read NSData* (autoreleased)
+ </dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/read_string; name=read_string -->
+<a name="//apple_ref/c/func/read_string"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="read_string">read_string</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>ssize_t read_string(
+    int fd,
+    char *buf,
+    uint16_t *count );
+</pre></blockquote>
+<p>This function is used to read a string from a
+file descriptor, store it into a buffer and adjust
+the number of bytes that has been read.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to read from.</dd>
+<dt><tt><em>buf</em></tt></dt><dd>The buf to write to.</dd>
+<dt><tt><em>count</em></tt></dt><dd>The number of bytes that have been declared as string length.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>actual bytes of string read
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/read_string_memory; name=read_string_memory -->
+<a name="//apple_ref/c/func/read_string_memory"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="read_string_memory">read_string_memory</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>NSString *read_string_memory(
+    unsigned char *m,
+    uint16_t *count );
+</pre></blockquote>
+<p>This function is used to read a string from <i>m</i>
+and adjust the <i>count</i> on how long the string is.
+The string must NOT be longer than 65535 bytes.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>m</em></tt></dt><dd>The buffer to read from.</dd>
+<dt><tt><em>count</em></tt></dt><dd>The lenght of the string stored in <i>buf</i></dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>The allocated string (autoreleased)
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/read_unsigned_int; name=read_unsigned_int -->
+<a name="//apple_ref/c/func/read_unsigned_int"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="read_unsigned_int">read_unsigned_int</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>int read_unsigned_int(
+    int fd,
+    uint32_t *val );
+</pre></blockquote>
+<p>This function is used to read an unsigned int from
+the file descriptor in network byte-order.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to read from.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>The unsigned int read from the file descriptor.
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/read_unsigned_int_memory; name=read_unsigned_int_memory -->
+<a name="//apple_ref/c/func/read_unsigned_int_memory"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="read_unsigned_int_memory">read_unsigned_int_memory</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>uint32_t read_unsigned_int_memory(
+    unsigned char *m );
+</pre></blockquote>
+<p>This function is used to read an unsigned int from
+the memory in network byte-order.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>m</em></tt></dt><dd>The buffer to read from.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>The unsigned integer read from memory.
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/read_unsigned_short; name=read_unsigned_short -->
+<a name="//apple_ref/c/func/read_unsigned_short"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="read_unsigned_short">read_unsigned_short</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>uint16_t read_unsigned_short(
+    int fd );
+</pre></blockquote>
+<p>This function is used to read an unsigned short from
+the file descriptor in network byte-order.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to read from.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>The unsigned short read from the file descriptor.
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/safe_close; name=safe_close -->
+<a name="//apple_ref/c/func/safe_close"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="safe_close">safe_close</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>int safe_close(
+    int fd );
+</pre></blockquote>
+<p>This function is used to safely close a file descriptor.
+This function will block until the file descriptor
+is close, or if the error is different from EINTR.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to close.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>Returns 0 on success, -1 if an error occurs.
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/safe_read; name=safe_read -->
+<a name="//apple_ref/c/func/safe_read"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="safe_read">safe_read</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>ssize_t safe_read(
+    int fd,
+    void *buf,
+    size_t count );
+</pre></blockquote>
+<p>This function is used to read <i>count</i> bytes
+from <i>fd</i> and store them in <i>buf</i>. This
+method might not block when reading if there are
+no bytes available to be read.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to read bytes from.</dd>
+<dt><tt><em>buf</em></tt></dt><dd>The buffer where to store the read bytes.</dd>
+<dt><tt><em>count</em></tt></dt><dd>The number of bytes to read.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>The number of bytes that have been read.
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/safe_recv; name=safe_recv -->
+<a name="//apple_ref/c/func/safe_recv"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="safe_recv">safe_recv</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>ssize_t safe_recv(
+    int fd,
+    void *buf,
+    size_t count,
+    int flags );
+</pre></blockquote>
+<p>This function is used to read <i>count</i> bytes
+from <i>fd</i> and store them in <i>buf</i>. This
+method might not block when reading if there are
+no bytes available to be read. Options can be
+passed through <i>flags</i>.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to read bytes from.</dd>
+<dt><tt><em>buf</em></tt></dt><dd>The buffer where to store the read bytes.</dd>
+<dt><tt><em>count</em></tt></dt><dd>The number of bytes to read.</dd>
+<dt><tt><em>flags</em></tt></dt><dd>The flags to use.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>function result</i></dt><dd>The number of bytes that have been read.
+</dd>
+</dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/write_data; name=write_data -->
+<a name="//apple_ref/c/func/write_data"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="write_data">write_data</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>void write_data(
+    int fd,
+    NSData *d );
+</pre></blockquote>
+<p>This function is used to write NSData as a string to a
+file descriptor. The whole length is written
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to write to.</dd>
+<dt><tt><em>d</em></tt></dt><dd>The NSData that needs to be written.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/write_string(int%44NSData*); name=write_string -->
+<a name="//apple_ref/c/func/write_string(int%44NSData*)"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="write_string(int%44%32NSData%32*)">write_string(int, NSData *)</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>void write_data(
+    int fd,
+    NSData *d );
+</pre></blockquote>
+<p>This function is used to write NSData as a string to a
+file descriptor. The whole length is written
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to write to.</dd>
+<dt><tt><em>d</em></tt></dt><dd>The NSData that needs to be written.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/write_string(int%44unsignedchar*%44uint16_t); name=write_string -->
+<a name="//apple_ref/c/func/write_string(int%44unsignedchar*%44uint16_t)"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="write_string(int%44%32unsigned%32char%32*%44%32uint16_t)">write_string(int, unsigned char *, uint16_t)</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>void write_string(
+    int fd,
+    unsigned char *s,
+    uint16_t len );
+</pre></blockquote>
+<p>This function is used to string a string to a
+file descriptor.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to write to.</dd>
+<dt><tt><em>buf</em></tt></dt><dd>The buf that needs to be written.</dd>
+<dt><tt><em>count</em></tt></dt><dd>The number of bytes that we have to write.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/write_unsigned_int; name=write_unsigned_int -->
+<a name="//apple_ref/c/func/write_unsigned_int"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="write_unsigned_int">write_unsigned_int</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>void write_unsigned_int(
+    int fd,
+    uint32_t value );
+</pre></blockquote>
+<p>This function is used to write the specified
+unsigned int <i>value</i> to the file descriptor
+</i>fd</i>. The written value is in network byte-order.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to write to.</dd>
+<dt><tt><em>value</em></tt></dt><dd>The unsigned value to write.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=func; uid=//apple_ref/c/func/write_unsigned_short; name=write_unsigned_short -->
+<a name="//apple_ref/c/func/write_unsigned_short"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="write_unsigned_short">write_unsigned_short</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>void write_unsigned_short(
+    int fd,
+    uint16_t value );
+</pre></blockquote>
+<p>This function is used to write the specified
+unsigned short <i>value</i> to the file descriptor
+</i>fd</i>. The written value is in network byte-order.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>fd</em></tt></dt><dd>The file descriptor to write to.</dd>
+<dt><tt><em>value</em></tt></dt><dd>The unsigned value to write.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

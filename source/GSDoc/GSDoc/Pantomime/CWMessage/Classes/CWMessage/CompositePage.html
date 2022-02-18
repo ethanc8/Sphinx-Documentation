@@ -1,0 +1,962 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWMessage</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWMessage</font></h1><br>
+<a name="//apple_ref/doc/class/CWMessage" title="CWMessage"></a>
+<h2>Discussion</h2>
+ This class is used to describe Internet messages. This class
+extends the CWPart class and inherit all its methods.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/initWithHeaders%58" target="_top">initWithHeaders:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/initWithHeadersFromData%58" target="_top">initWithHeadersFromData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/from" target="_top">from</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setFrom%58" target="_top">setFrom:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/messageNumber" target="_top">messageNumber</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setMessageNumber%58" target="_top">setMessageNumber:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/messageID" target="_top">messageID</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setMessageID%58" target="_top">setMessageID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/inReplyTo" target="_top">inReplyTo</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setInReplyTo%58" target="_top">setInReplyTo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/receivedDate" target="_top">receivedDate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setReceivedDate%58" target="_top">setReceivedDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/addRecipient%58" target="_top">addRecipient:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/removeRecipient%58" target="_top">removeRecipient:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/recipients" target="_top">recipients</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setRecipients%58" target="_top">setRecipients:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/recipientsCount" target="_top">recipientsCount</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/removeAllRecipients" target="_top">removeAllRecipients</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/removeAllRecipients" target="_top">removeAllRecipients</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/replyTo" target="_top">replyTo</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setReplyTo%58" target="_top">setReplyTo:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/subject" target="_top">subject</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setSubject%58" target="_top">setSubject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/baseSubject" target="_top">baseSubject</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setBaseSubject%58" target="_top">setBaseSubject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/isInitialized" target="_top">isInitialized</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setInitialized%58" target="_top">setInitialized:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/flags" target="_top">flags</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setFlags%58" target="_top">setFlags:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/MIMEVersion" target="_top">MIMEVersion</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setMIMEVersion%58" target="_top">setMIMEVersion:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/reply%58" target="_top">reply:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/forward%58" target="_top">forward:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeader%58%32withValue%58" target="_top">addHeader: withValue:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeader%58withValue%58" target="_top">addHeader:withValue:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/folder" target="_top">folder</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setFolder%58" target="_top">setFolder:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/rawSource" target="_top">rawSource</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setRawSource%58" target="_top">setRawSource:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/organization" target="_top">organization</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setOrganization%58" target="_top">setOrganization:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/propertyForKey%58" target="_top">propertyForKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setProperty%58%32forKey%58" target="_top">setProperty: forKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setProperty%58forKey%58" target="_top">setProperty:forKey:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/resentDate" target="_top">resentDate</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentDate%58" target="_top">setResentDate:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/resentFrom" target="_top">resentFrom</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentFrom%58" target="_top">setResentFrom:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/resentMessageID" target="_top">resentMessageID</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentMessageID%58" target="_top">setResentMessageID:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/resentSubject" target="_top">resentSubject</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentSubject%58" target="_top">setResentSubject:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/allReferences" target="_top">allReferences</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setReferences%58" target="_top">setReferences:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeadersFromData%58record%58" target="_top">addHeadersFromData:record:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWMessage/setHeadersFromData%58record%58" target="_top">setHeadersFromData:record:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/MIMEVersion; name=CWMessage::MIMEVersion -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/MIMEVersion"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="MIMEVersion">MIMEVersion</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) MIMEVersion;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"MIME-Version" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the header, nil if none was set.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeader%58%32withValue%58; name=CWMessage::addHeader:withValue: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeader%58%32withValue%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="addHeader%58%32withValue%58">addHeader: withValue:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) addHeader:
+        (NSString *) theName  withValue:
+        (NSString *) theValue;
+</pre></blockquote>
+<p>This method is used to add an extra header to the list of headers
+of the message.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The header name, which should normally begin with an "X-".</dd>
+<dt><tt><em>theValue</em></tt></dt><dd>The header value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeader%58withValue%58; name=CWMessage::addHeader:withValue: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeader%58withValue%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="addHeader%58withValue%58">addHeader:withValue:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) addHeader:
+        (NSString *) theName  withValue:
+        (NSString *) theValue;
+</pre></blockquote>
+<p>This method is used to add an extra header to the list of headers
+of the message.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theName</em></tt></dt><dd>The header name, which should normally begin with an "X-".</dd>
+<dt><tt><em>theValue</em></tt></dt><dd>The header value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeadersFromData%58record%58; name=CWMessage::addHeadersFromData:record: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/addHeadersFromData%58record%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="addHeadersFromData%58record%58">addHeadersFromData:record:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) addHeadersFromData:
+        (NSData *) theHeaders record:
+        (cache_record *) theRecord;
+</pre></blockquote>
+<p>This method is used to add addionnal headers
+from their raw representation. It will not erase the
+currently defined headers. It also updates
+the cache record <i>theRecord</i> with the decoded
+information.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>The</em></tt></dt><dd>additional headers, in their raw representation.</dd>
+<dt><tt><em>theRecord</em></tt></dt><dd>The cache_record to update.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/addRecipient%58; name=CWMessage::addRecipient: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/addRecipient%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="addRecipient%58">addRecipient:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) addRecipient:
+        (CWInternetAddress *) theAddress;
+</pre></blockquote>
+<p>This method is used to add a recipient to the
+list of all recipients for the receiver. The
+recipient type is determined by calling the
+-type method on the CWInternetAddress's instance.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theAddress</em></tt></dt><dd>The CWInternetAddress instance holding the
+recipient to add to the list.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/allReferences; name=CWMessage::allReferences -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/allReferences"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="allReferences">allReferences</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSArray *) allReferences;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"References" header. The values are particularly
+useful for message threading.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "References" header. This corresponds
+to a NSArray of NSString instances. Each instance is normally
+a Message-ID.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/baseSubject; name=CWMessage::baseSubject -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/baseSubject"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="baseSubject">baseSubject</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) baseSubject;
+</pre></blockquote>
+<p>This method is used to obtain the base subject. The base
+subject is basically the value of the "Subject" header
+but without the "re" or "fwd" (or whatever) prefix.
+</p>
+<dl><dt><i>method result</i></dt><dd>The base subject.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/flags; name=CWMessage::flags -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/flags"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="flags">flags</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWFlags *) flags;
+</pre></blockquote>
+<p>This method is used to obtain the flags associated to
+the receiver.
+</p>
+<dl><dt><i>method result</i></dt><dd>The CWFlags instance of the receiver.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/folder; name=CWMessage::folder -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/folder"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="folder">folder</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWFolder *) folder;
+</pre></blockquote>
+<p>This method is used to get the associated
+receiver's folder.
+</p>
+<dl><dt><i>method result</i></dt><dd>The CWFolder instance in which the message is
+stored, nil if no folder holds the receiver.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/forward%58; name=CWMessage::forward: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/forward%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="forward%58">forward:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWMessage *) forward:
+        (PantomimeForwardMode ) theMode;
+</pre></blockquote>
+<p>This method is used to contruct a new CWMessage
+instance to be used when forward a message.
+The returned message will always use
+the UTF-8 charset.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMode</em></tt></dt><dd>The type of forward operation to do.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWMessage instance used for forwarding.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/from; name=CWMessage::from -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/from"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="from">from</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWInternetAddress *) from;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"From" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "From" header, as an CWInternetAddress instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/inReplyTo; name=CWMessage::inReplyTo -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/inReplyTo"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="inReplyTo">inReplyTo</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) inReplyTo;
+</pre></blockquote>
+<p>This method is used to obtain the value of
+the "In-Reply-To" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "In-Reply-To" header.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/initWithHeaders%58; name=CWMessage::initWithHeaders: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/initWithHeaders%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithHeaders%58">initWithHeaders:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithHeaders:
+        (NSDictionary *) theHeaders;
+</pre></blockquote>
+<p>This method is used to initialize the receiver with
+a predefined set of headers. The headers are specified
+in a NSDictionary instance where the keys are the header
+names (for example, "Content-Type") and the values are
+the respective values of for each keys. This method class
+-setHeaders:.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theHeaders</em></tt></dt><dd>The NSDictionary instance holding all headers / values.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A Message instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/initWithHeadersFromData%58; name=CWMessage::initWithHeadersFromData: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/initWithHeadersFromData%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="initWithHeadersFromData%58">initWithHeadersFromData:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) initWithHeadersFromData:
+        (NSData *) theHeaders;
+</pre></blockquote>
+<p>This method is used to initialize the receiver with
+a predefined set of headers in their raw representation.
+This method calls -setHeadersFromData:.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theHeaders</em></tt></dt><dd>The headers in their raw represnetation.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A Message instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/isInitialized; name=CWMessage::isInitialized -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/isInitialized"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="isInitialized">isInitialized</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( BOOL ) isInitialized;
+</pre></blockquote>
+<p>This method is used to verify if a message has been
+initialized or not. An inititalized message is a message
+for which all parts have been initilized. A message
+for which only the headers are set is not an
+initialized message.
+</p>
+<dl><dt><i>method result</i></dt><dd>YES if the message is initialized, NO otherwise.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/messageID; name=CWMessage::messageID -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/messageID"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="messageID">messageID</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) messageID;
+</pre></blockquote>
+<p>This method is used to obtain the value of
+the "Message-ID" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Message-ID" header.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/messageNumber; name=CWMessage::messageNumber -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/messageNumber"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="messageNumber">messageNumber</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) messageNumber;
+</pre></blockquote>
+<p>This method is used to obtain the message sequence number (MSN)
+of the receiver. MSN have a special meaning for IMAP
+messages (see 2.3.1.2. of RFC3501 for details).
+</p>
+<dl><dt><i>method result</i></dt><dd>The MSN, 0 if none was previously set.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/organization; name=CWMessage::organization -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/organization"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="organization">organization</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) organization;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"Organization" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Organization" header.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/propertyForKey%58; name=CWMessage::propertyForKey: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/propertyForKey%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="propertyForKey%58">propertyForKey:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( id ) propertyForKey:
+        (id ) theKey;
+</pre></blockquote>
+<p>This method is used to get an extra property for the
+specified key.
+</p>
+<dl><dt><i>method result</i></dt><dd>The property for the specified key, nil if key isn't found.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/rawSource; name=CWMessage::rawSource -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/rawSource"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="rawSource">rawSource</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSData *) rawSource;
+</pre></blockquote>
+<p>This method is used to obtain the raw
+representation of the receiver. Subclasses
+will overwrite this method so it's not
+blocking (see the documentation of this
+method for CWIMAPMessage, for example).
+</p>
+<dl><dt><i>method result</i></dt><dd>The raw representation, or nil if it has not
+been loaded.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/receivedDate; name=CWMessage::receivedDate -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/receivedDate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="receivedDate">receivedDate</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSCalendarDate *) receivedDate;
+</pre></blockquote>
+<p>This method is used to obtain the value of
+the "Date" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Date" header, as a NSCalendarDate instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/recipients; name=CWMessage::recipients -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/recipients"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="recipients">recipients</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSArray *) recipients;
+</pre></blockquote>
+<p>This method is used to obtain the list of recipients
+of the receiver. All recipient types are returned.
+</p>
+<dl><dt><i>method result</i></dt><dd>The array of recipients which are all CWInternetAddress instances.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/recipientsCount; name=CWMessage::recipientsCount -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/recipientsCount"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="recipientsCount">recipientsCount</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( unsigned int ) recipientsCount;
+</pre></blockquote>
+<p>This method is used to obtain the number of recipients
+the receiver has.
+</p>
+<dl><dt><i>method result</i></dt><dd>The count.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/removeAllRecipients; name=CWMessage::removeAllRecipients -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/removeAllRecipients"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="removeAllRecipients">removeAllRecipients</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) removeAllRecipients;
+</pre></blockquote>
+<p>This method is used to remove all recipients from
+the receiver.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/removeAllRecipients; name=CWMessage::removeAllRecipients -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/removeAllRecipients"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="removeAllRecipients">removeAllRecipients</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) removeAllRecipients;
+</pre></blockquote>
+<p>This method is used to remove all recipients from
+the receiver.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/removeRecipient%58; name=CWMessage::removeRecipient: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/removeRecipient%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="removeRecipient%58">removeRecipient:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) removeRecipient:
+        (CWInternetAddress *) theAddress;
+</pre></blockquote>
+<p>This method is used to remove the specified
+recipient from the receiver's list of recipients.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theAddress</em></tt></dt><dd>The recipient to remove.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/reply%58; name=CWMessage::reply: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/reply%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="reply%58">reply:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWMessage *) reply:
+        (PantomimeReplyMode ) theMode;
+</pre></blockquote>
+<p>This method is used to contruct a new CWMessage
+instance to be used when replying to a
+message. The returned message will always
+use the UTF-8 charset. The message will NOT have a
+content other than the plain text one(s).
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMode</em></tt></dt><dd>The type of reply operation to do.
+The default mode is PantomimeNormalReplyMode.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWMessage instance used for replying.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/replyTo; name=CWMessage::replyTo -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/replyTo"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="replyTo">replyTo</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSArray *) replyTo;
+</pre></blockquote>
+<p>This method is used to obtain the value of the "Reply-To" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Reply-To" header, as an array of CWInternetAddress instances.
+If there are none, nil is returned.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/resentDate; name=CWMessage::resentDate -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/resentDate"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="resentDate">resentDate</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSCalendarDate *) resentDate;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"Resent-Date" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Resent-Date" header.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/resentFrom; name=CWMessage::resentFrom -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/resentFrom"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="resentFrom">resentFrom</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( CWInternetAddress *) resentFrom;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"Resent-From" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Resent-From" header.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/resentMessageID; name=CWMessage::resentMessageID -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/resentMessageID"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="resentMessageID">resentMessageID</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) resentMessageID;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"Resent-Message-ID" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Resent-Message-ID" header.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/resentSubject; name=CWMessage::resentSubject -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/resentSubject"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="resentSubject">resentSubject</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) resentSubject;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"Resent-Subject" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Resent-Subject" header.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setBaseSubject%58; name=CWMessage::setBaseSubject: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setBaseSubject%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setBaseSubject%58">setBaseSubject:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setBaseSubject:
+        (NSString *) theBaseSubject;
+</pre></blockquote>
+<p>This method is used to set the base subject of
+the receiver.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theBaseSubject</em></tt></dt><dd>The base subject to set.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setFlags%58; name=CWMessage::setFlags: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setFlags%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFlags%58">setFlags:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFlags:
+        (CWFlags *) theFlags;
+</pre></blockquote>
+<p>This method is used to set the flags of the receiver,
+replacing any previous values set. Subclasses of
+CWMessage sometimes overwrite this method.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theFlags</em></tt></dt><dd>The new flags for the receiver.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setFolder%58; name=CWMessage::setFolder: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setFolder%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFolder%58">setFolder:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFolder:
+        (CWFolder *) theFolder;
+</pre></blockquote>
+<p>This method is used to set the associated folder
+to the message.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theFolder</em></tt></dt><dd>The folder which holds the receiver.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setFrom%58; name=CWMessage::setFrom: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setFrom%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setFrom%58">setFrom:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setFrom:
+        (CWInternetAddress *) theInternetAddress;
+</pre></blockquote>
+<p>This method is used to set the value of the "From:" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theInternetAddress</em></tt></dt><dd>The CWInternetAddress instance.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setHeadersFromData%58record%58; name=CWMessage::setHeadersFromData:record: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setHeadersFromData%58record%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setHeadersFromData%58record%58">setHeadersFromData:record:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setHeadersFromData:
+        (NSData *) theHeaders record:
+        (cache_record *) theRecord;
+</pre></blockquote>
+<p>This method initalize all the headers of a message
+from the raw data source. It replaces previously 
+defined values of headers found in <i>theHeaders</i>.
+It also updates the cache record <i>theRecord</i> with
+the decoded information.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theHeaders</em></tt></dt><dd>The bytes to use.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setInReplyTo%58; name=CWMessage::setInReplyTo: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setInReplyTo%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setInReplyTo%58">setInReplyTo:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setInReplyTo:
+        (NSString *) theInReplyTo;
+</pre></blockquote>
+<p>This method is used to set the value of
+the "In-Reply-To" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theInReplyTo</em></tt></dt><dd>The value of the "In-Reply-To" header.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setInitialized%58; name=CWMessage::setInitialized: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setInitialized%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setInitialized%58">setInitialized:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setInitialized:
+        (BOOL ) theBOOL;
+</pre></blockquote>
+<p>This method is used to initialize the message or
+free the resources taken by its content. Subclasses
+of CWMessage sometimes overwrite this method.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theBOOL</em></tt></dt><dd>YES if we want to load the content of the message
+and initialize the receiver with it. NO if we
+want to free the resources taken by the decoded content.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setMIMEVersion%58; name=CWMessage::setMIMEVersion: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setMIMEVersion%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setMIMEVersion%58">setMIMEVersion:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setMIMEVersion:
+        (NSString *) theMIMEVersion;
+</pre></blockquote>
+<p>This method is used to set the value of the
+"MIME-Version" header, replacing any values
+previously set.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMIMEVersion</em></tt></dt><dd>The new value for the header.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setMessageID%58; name=CWMessage::setMessageID: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setMessageID%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setMessageID%58">setMessageID:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setMessageID:
+        (NSString *) theMessageID;
+</pre></blockquote>
+<p>This method is used to set the value of
+the "Message-ID" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessageID</em></tt></dt><dd>The value of the "Message-ID" header.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setMessageNumber%58; name=CWMessage::setMessageNumber: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setMessageNumber%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setMessageNumber%58">setMessageNumber:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setMessageNumber:
+        (unsigned int ) theMessageNumber;
+</pre></blockquote>
+<p>This method is used to set the message number value
+of the receiver.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theMessageNumber</em></tt></dt><dd>The value.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setOrganization%58; name=CWMessage::setOrganization: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setOrganization%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setOrganization%58">setOrganization:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setOrganization:
+        (NSString *) theOrganization;
+</pre></blockquote>
+<p>This method is used to set the value of the
+"Organization" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theOrganization</em></tt></dt><dd>The new value of the header.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setProperty%58%32forKey%58; name=CWMessage::setProperty:forKey: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setProperty%58%32forKey%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setProperty%58%32forKey%58">setProperty: forKey:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setProperty:
+        (id ) theProperty  forKey:
+        (id ) theKey;
+</pre></blockquote>
+<p>This method is used to set an extra property for the
+specified key on this folder. If nil is passed for
+theProperty parameter, the value will actually be
+REMOVED for theKey.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theProperty</em></tt></dt><dd>The value of the property.</dd>
+<dt><tt><em>theKey</em></tt></dt><dd>The key of the property.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setProperty%58forKey%58; name=CWMessage::setProperty:forKey: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setProperty%58forKey%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setProperty%58forKey%58">setProperty:forKey:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setProperty:
+        (id ) theProperty  forKey:
+        (id ) theKey;
+</pre></blockquote>
+<p>This method is used to set an extra property for the
+specified key on this folder. If nil is passed for
+theProperty parameter, the value will actually be
+REMOVED for theKey.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theProperty</em></tt></dt><dd>The value of the property.</dd>
+<dt><tt><em>theKey</em></tt></dt><dd>The key of the property.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setRawSource%58; name=CWMessage::setRawSource: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setRawSource%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setRawSource%58">setRawSource:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setRawSource:
+        (NSData *) theRawSource;
+</pre></blockquote>
+<p>This method is used to set the raw representation
+of the receiver. No specific actions are taken
+when invoking this method.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theRawSource</em></tt></dt><dd>The raw source of the message.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setReceivedDate%58; name=CWMessage::setReceivedDate: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setReceivedDate%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setReceivedDate%58">setReceivedDate:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setReceivedDate:
+        (NSCalendarDate *) theDate;
+</pre></blockquote>
+<p>This method is used to set the value of
+the "Date" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theDate</em></tt></dt><dd>The NSCalendarDate instance.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setRecipients%58; name=CWMessage::setRecipients: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setRecipients%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setRecipients%58">setRecipients:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setRecipients:
+        (NSArray *) theRecipients;
+</pre></blockquote>
+<p>This method is used to add <i>theRecipients</i> to the
+list of the receiver's recipients.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theRecipients</em></tt></dt><dd>The array of CWInternetAddress instances to add
+to the receiver's list of recipients.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setReferences%58; name=CWMessage::setReferences: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setReferences%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setReferences%58">setReferences:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setReferences:
+        (NSArray *) theReferences;
+</pre></blockquote>
+<p>This method is used to the value of the "References"
+header, replacing any previously defined value.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theReferences</em></tt></dt><dd>The array of references.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setReplyTo%58; name=CWMessage::setReplyTo: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setReplyTo%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setReplyTo%58">setReplyTo:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setReplyTo:
+        (NSArray *) theAddressList;
+</pre></blockquote>
+<p>This method is used to set the value of the "Reply-To:" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theAddressList</em></tt></dt><dd>An array of CWInternetAddress instances.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentDate%58; name=CWMessage::setResentDate: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentDate%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setResentDate%58">setResentDate:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setResentDate:
+        (NSCalendarDate *) theResentDate;
+</pre></blockquote>
+<p>This method is used to set the value of the
+"Resent-Date" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theResentDate</em></tt></dt><dd>The new value of the header.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentFrom%58; name=CWMessage::setResentFrom: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentFrom%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setResentFrom%58">setResentFrom:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setResentFrom:
+        (CWInternetAddress *) theInternetAddress;
+</pre></blockquote>
+<p>This method is used to set the value of the
+"Resent-From" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theInternetAddress</em></tt></dt><dd>The new value of the header.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentMessageID%58; name=CWMessage::setResentMessageID: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentMessageID%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setResentMessageID%58">setResentMessageID:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setResentMessageID:
+        (NSString *) theResentMessageID;
+</pre></blockquote>
+<p>This method is used to set the value of the
+"Resent-Message-ID" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theResentMessageID</em></tt></dt><dd>The new value of the header.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentSubject%58; name=CWMessage::setResentSubject: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setResentSubject%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setResentSubject%58">setResentSubject:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setResentSubject:
+        (NSString *) theResentSubject;
+</pre></blockquote>
+<p>This method is used to set the value of the
+"Resent-Subject" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theResentSubject</em></tt></dt><dd>The new value of the header.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/setSubject%58; name=CWMessage::setSubject: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/setSubject%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setSubject%58">setSubject:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) setSubject:
+        (NSString *) theSubject;
+</pre></blockquote>
+<p>This method is used to set the value of the "Subject" header.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theSubject</em></tt></dt><dd>The value to set.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWMessage/subject; name=CWMessage::subject -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWMessage/subject"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="subject">subject</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSString *) subject;
+</pre></blockquote>
+<p>This method is used to obtain the value of the
+"Subject" header.
+</p>
+<dl><dt><i>method result</i></dt><dd>The value of the "Subject" header.
+</dd>
+</dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

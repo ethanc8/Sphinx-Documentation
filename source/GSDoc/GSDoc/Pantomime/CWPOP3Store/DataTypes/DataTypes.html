@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Defined Types</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Defined Types</font></h1><br>
+<hr><!-- headerDoc=tdef; uid=//apple_ref/c/tdef/POP3Command; name=POP3Command -->
+<a name="//apple_ref/c/tdef/POP3Command"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="POP3Command">POP3Command</a></h2>
+</td></tr></table><dl>Supported POP3 commands.
+
+</dl><blockquote><pre>typedef enum {
+    POP3_APOP = 0x100,
+    POP3_AUTHORIZATION,
+    POP3_CAPA,
+    POP3_DELE,
+    POP3_LIST,
+    POP3_NOOP,
+    POP3_PASS,
+    POP3_QUIT,
+    POP3_RETR,
+    POP3_RETR_AND_INITIALIZE,
+    POP3_STAT,
+    POP3_STLS,
+    POP3_TOP,
+    POP3_UIDL,
+    POP3_USER,
+    POP3_EMPTY_QUEUE,
+    POP3_EXPUNGE_COMPLETED  } POP3Command;
+</pre></blockquote>
+<p>This enum lists the supported POP3 commands available
+in Pantomime's POP3 client code.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Constants</font></h5>
+<blockquote>
+<dl>
+<dt><a name="//apple_ref/c/econst/POP3_APOP"><tt>POP3_APOP</tt></a></dt><dd>APOP authentication command.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_AUTHORIZATION"><tt>POP3_AUTHORIZATION</tt></a></dt><dd>Special command so that we know we are
+in the authorization state.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_DELE"><tt>POP3_DELE</tt></a></dt><dd>The POP3 DELE command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_LIST"><tt>POP3_LIST</tt></a></dt><dd>The POP3 LIST command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_NOOP"><tt>POP3_NOOP</tt></a></dt><dd>The POP3 NOOP command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_PASS"><tt>POP3_PASS</tt></a></dt><dd>The POP3 PASS command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_QUIT"><tt>POP3_QUIT</tt></a></dt><dd>The POP3 QUIT command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_RETR"><tt>POP3_RETR</tt></a></dt><dd>The POP3 RETR command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_RETR_AND_INITIALIZE"><tt>POP3_RETR_AND_INITIALIZE</tt></a></dt><dd>Same as POP3_RETR but also initialize the message with the received content.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_STAT"><tt>POP3_STAT</tt></a></dt><dd>The POP3 STAT command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_STLS"><tt>POP3_STLS</tt></a></dt><dd>The STLS POP3 command - see RFC2595.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_TOP"><tt>POP3_TOP</tt></a></dt><dd>The POP3 TOP command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_UIDL"><tt>POP3_UIDL</tt></a></dt><dd>The POP3 UIDL command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_USER"><tt>POP3_USER</tt></a></dt><dd>The POP3 USER command. See RFC 1939 for details.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_EMPTY_QUEUE"><tt>POP3_EMPTY_QUEUE</tt></a></dt><dd>Special command to empty the command queue.</dd>
+<dt><a name="//apple_ref/c/econst/POP3_EXPUNGE_COMPLETED"><tt>POP3_EXPUNGE_COMPLETED</tt></a></dt><dd>Special command to indicate we are 
+done expunging the deleted messages.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

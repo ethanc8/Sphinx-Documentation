@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWMIMEUtility</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWMIMEUtility</font></h1><br>
+<a name="//apple_ref/doc/class/CWMIMEUtility" title="CWMIMEUtility"></a>
+<h2>Abstract</h2>
+ MIME utility class.
+<h2>Discussion</h2>
+ This class provides static methods to deal with the MIME standard.
+Normally, you should not invoke any of those methods directly.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/decodeHeader%58%32charset%58" target="_top">decodeHeader: charset:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/decodeHeader%58charset%58" target="_top">decodeHeader:charset:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/encodeHeader%58%32charset%58%32encoding%58" target="_top">encodeHeader: charset: encoding:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/encodeHeader%58charset%58encoding%58" target="_top">encodeHeader:charset:encoding:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/globallyUniqueBoundary" target="_top">globallyUniqueBoundary</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/globallyUniqueID" target="_top">globallyUniqueID</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/compositeMessageContentFromRawSource%58" target="_top">compositeMessageContentFromRawSource:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/compositeMultipartContentFromRawSource%58boundary%58" target="_top">compositeMultipartContentFromRawSource:boundary:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/discreteContentFromRawSource%58%32encoding%58%32charset%58%32part%58" target="_top">discreteContentFromRawSource: encoding: charset: part:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/discreteContentFromRawSource%58encoding%58" target="_top">discreteContentFromRawSource:encoding:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/setContentFromRawSource%58%32inPart%58" target="_top">setContentFromRawSource: inPart:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/setContentFromRawSource%58inPart%58" target="_top">setContentFromRawSource:inPart:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/plainTextContentFromPart%58" target="_top">plainTextContentFromPart:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/compositeMessageContentFromRawSource%58; name=CWMIMEUtility::compositeMessageContentFromRawSource: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/compositeMessageContentFromRawSource%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="compositeMessageContentFromRawSource%58">compositeMessageContentFromRawSource:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( CWMessage *) compositeMessageContentFromRawSource:
+        (NSData *) theData;
+</pre></blockquote>
+<p>This method is used to obtain a composite type (message)
+from <i>theData</i>.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The bytes to use.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A Message instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/compositeMultipartContentFromRawSource%58boundary%58; name=CWMIMEUtility::compositeMultipartContentFromRawSource:boundary: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/compositeMultipartContentFromRawSource%58boundary%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="compositeMultipartContentFromRawSource%58boundary%58">compositeMultipartContentFromRawSource:boundary:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( CWMIMEMultipart *) 
+    compositeMultipartContentFromRawSource:
+    (NSData *) theData  boundary:
+    (NSData *) theBoundary;
+</pre></blockquote>
+<p>This method is used to obtain a composity type (multipart)
+from <i>theData</i>, using <i>theBoundary</i>.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The bytes to use.</dd>
+<dt><tt><em>theBoundary</em></tt></dt><dd>The boundary to use.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A CWMIMEMultipart instance, nil on error.
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/decodeHeader%58%32charset%58; name=CWMIMEUtility::decodeHeader:charset: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/decodeHeader%58%32charset%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="decodeHeader%58%32charset%58">decodeHeader: charset:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( NSString *) decodeHeader:
+        (NSData *) theData  charset:
+        (NSString *) theCharset;
+</pre></blockquote>
+<p>This method is used to decode a header value
+encoded in base64 or quoted-printable. RFC 2047
+describes how those headers should be encoded
+(in particular, "2. Syntax of encoded-words").
+If <i>theCharset</i> is not nil, it is used to
+decode the header. Otherwise, the charset used
+in the header is used.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The data to decode.</dd>
+<dt><tt><em>theCharset</em></tt></dt><dd>The charset to force.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The decoded header.
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/decodeHeader%58charset%58; name=CWMIMEUtility::decodeHeader:charset: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/decodeHeader%58charset%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="decodeHeader%58charset%58">decodeHeader:charset:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( NSString *) decodeHeader:
+        (NSData *) theData  charset:
+        (NSString *) theCharset;
+</pre></blockquote>
+<p>This method is used to decode a header value
+encoded in base64 or quoted-printable. RFC 2047
+describes how those headers should be encoded
+(in particular, "2. Syntax of encoded-words").
+If <i>theCharset</i> is not nil, it is used to
+decode the header. Otherwise, the charset used
+in the header is used.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The data to decode.</dd>
+<dt><tt><em>theCharset</em></tt></dt><dd>The charset to force.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/discreteContentFromRawSource%58%32encoding%58%32charset%58%32part%58; name=CWMIMEUtility::discreteContentFromRawSource:encoding:charset:part: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/discreteContentFromRawSource%58%32encoding%58%32charset%58%32part%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="discreteContentFromRawSource%58%32encoding%58%32charset%58%32part%58">discreteContentFromRawSource: encoding: charset: part:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( id ) discreteContentFromRawSource:
+        (NSData *) theData  encoding:
+        (PantomimeEncoding ) theEncoding;
+</pre></blockquote>
+<p>This method is used to obtain discrete types such as
+text/, application/, image/, etc. It might return a NSString
+or a NSData object (if the encoding is PantomimeEncodingBase64).
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The bytes to use.</dd>
+<dt><tt><em>theEncoding</em></tt></dt><dd>The encoding to use. Valid values are
+part of the PantomimeEncoding enum.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>A NSData instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/discreteContentFromRawSource%58encoding%58; name=CWMIMEUtility::discreteContentFromRawSource:encoding: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/discreteContentFromRawSource%58encoding%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="discreteContentFromRawSource%58encoding%58">discreteContentFromRawSource:encoding:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( id ) discreteContentFromRawSource:
+        (NSData *) theData  encoding:
+        (PantomimeEncoding ) theEncoding;
+</pre></blockquote>
+<p>This method is used to obtain discrete types such as
+text/, application/, image/, etc. It might return a NSString
+or a NSData object (if the encoding is PantomimeEncodingBase64).
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The bytes to use.</dd>
+<dt><tt><em>theEncoding</em></tt></dt><dd>The encoding to use. Valid values are
+part of the PantomimeEncoding enum.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/encodeHeader%58%32charset%58%32encoding%58; name=CWMIMEUtility::encodeHeader:charset:encoding: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/encodeHeader%58%32charset%58%32encoding%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="encodeHeader%58%32charset%58%32encoding%58">encodeHeader: charset: encoding:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( NSData *) encodeHeader:
+        (NSString *) theText  charset:
+        (NSString *) theCharset  encoding:
+        (PantomimeEncoding ) theEncoding;
+</pre></blockquote>
+<p>This method is used to encode a header value
+in the format specified by RFC 2047 (in particular,
+"2. Syntax of encoded-words").
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theText</em></tt></dt><dd>The text to encode.</dd>
+<dt><tt><em>theCharset</em></tt></dt><dd>The charset to use. For example, "iso-8859-1".</dd>
+<dt><tt><em>theEncoding</em></tt></dt><dd>The encoding to use. Valid values are
+part of the PantomimeEncoding enum.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The encoded data.
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/encodeHeader%58charset%58encoding%58; name=CWMIMEUtility::encodeHeader:charset:encoding: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/encodeHeader%58charset%58encoding%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="encodeHeader%58charset%58encoding%58">encodeHeader:charset:encoding:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( NSData *) encodeHeader:
+        (NSString *) theText  charset:
+        (NSString *) theCharset  encoding:
+        (PantomimeEncoding ) theEncoding;
+</pre></blockquote>
+<p>This method is used to encode a header value
+in the format specified by RFC 2047 (in particular,
+"2. Syntax of encoded-words").
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theText</em></tt></dt><dd>The text to encode.</dd>
+<dt><tt><em>theCharset</em></tt></dt><dd>The charset to use. For example, "iso-8859-1".</dd>
+<dt><tt><em>theEncoding</em></tt></dt><dd>The encoding to use. Valid values are
+part of the PantomimeEncoding enum.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/globallyUniqueBoundary; name=CWMIMEUtility::globallyUniqueBoundary -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/globallyUniqueBoundary"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="globallyUniqueBoundary">globallyUniqueBoundary</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( NSData *) globallyUniqueBoundary;
+</pre></blockquote>
+<p>This method is used to generate a unique MIME boundary
+(or any kind of boundary).
+</p>
+<dl><dt><i>method result</i></dt><dd>The boundary, as a NSData instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/globallyUniqueID; name=CWMIMEUtility::globallyUniqueID -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/globallyUniqueID"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="globallyUniqueID">globallyUniqueID</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( NSData *) globallyUniqueID;
+</pre></blockquote>
+<p>This method is used to generate a unique ID that CWMessage (or CWPart)
+instances use as their unique ID. (Message-ID, Content-ID, etc.)
+</p>
+<dl><dt><i>method result</i></dt><dd>The unique ID, as a NSData instance.
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/plainTextContentFromPart%58; name=CWMIMEUtility::plainTextContentFromPart: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/plainTextContentFromPart%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="plainTextContentFromPart%58">plainTextContentFromPart:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( NSData *) plainTextContentFromPart:
+        (CWPart *) thePart;
+</pre></blockquote>
+<p>This method is used to obtain a pure "text" part.
+For example, it can be used to strip any
+HTML content from a part in order to get only
+the text.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>thePart</em></tt></dt><dd>The Part instance from which to obtain the text.</dd>
+</dl>
+</blockquote>
+<dl><dt><i>method result</i></dt><dd>The pure "text".
+</dd>
+</dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/setContentFromRawSource%58%32inPart%58; name=CWMIMEUtility::setContentFromRawSource:inPart: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/setContentFromRawSource%58%32inPart%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setContentFromRawSource%58%32inPart%58">setContentFromRawSource: inPart:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( void ) setContentFromRawSource:
+        (NSData *) theData  inPart:
+        (CWPart *) thePart;
+</pre></blockquote>
+<p>This method is used to initialize a message, or a part
+of the message using <i>theData</i>. The CWPart's Content-Type
+MUST be defined BEFORE calling this function otherwise
+the content will be considered as a pure string.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The bytes to use.</dd>
+<dt><tt><em>thePart</em></tt></dt><dd>The part to use, which can be a Part or a Message instance.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=clm; uid=//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/setContentFromRawSource%58inPart%58; name=CWMIMEUtility::setContentFromRawSource:inPart: -->
+<a name="//apple_ref/doc/compositePage/occ/clm/CWMIMEUtility/setContentFromRawSource%58inPart%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="setContentFromRawSource%58inPart%58">setContentFromRawSource:inPart:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>+ ( void ) setContentFromRawSource:
+        (NSData *) theData  inPart:
+        (CWPart *) thePart;
+</pre></blockquote>
+<p>This method is used to initialize a message, or a part
+of the message using <i>theData</i>. The CWPart's Content-Type
+MUST be defined BEFORE calling this function otherwise
+the content will be considered as a pure string.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theData</em></tt></dt><dd>The bytes to use.</dd>
+<dt><tt><em>thePart</em></tt></dt><dd>The part to use, which can be a Part or a Message instance.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

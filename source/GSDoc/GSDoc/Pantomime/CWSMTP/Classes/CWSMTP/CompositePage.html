@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>CWSMTP</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">CWSMTP</font></h1><br>
+<a name="//apple_ref/doc/class/CWSMTP" title="CWSMTP"></a>
+<h2>Abstract</h2>
+ Pantomime SMTP client code.
+<h2>Discussion</h2>
+ This class, which extends the CWService class and implements
+the CWTransport protocol, is Pantomime's SMTP client code.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSMTP/lastResponse" target="_top">lastResponse</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSMTP/lastResponseCode" target="_top">lastResponseCode</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSMTP/reset" target="_top">reset</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSMTP/sendCommand%58%32arguments%58%32%46%46%46" target="_top">sendCommand: arguments: ...</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/CWSMTP/sendCommand%58arguments%58" target="_top">sendCommand:arguments:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSMTP/lastResponse; name=CWSMTP::lastResponse -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSMTP/lastResponse"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="lastResponse">lastResponse</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( NSData *) lastResponse;
+</pre></blockquote>
+<p>This method is used to obtain the last response
+received from the SMTP server. If the server
+sent a multi-line response, only the last line
+will be returned.
+</p>
+<dl><dt><i>method result</i></dt><dd>The last response in its complete form, nil if no
+response was read.
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSMTP/lastResponseCode; name=CWSMTP::lastResponseCode -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSMTP/lastResponseCode"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="lastResponseCode">lastResponseCode</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( int ) lastResponseCode;
+</pre></blockquote>
+<p>This method is used to obtain the last response code
+received from the SMTP server. If the server
+sent a multi-line response, only the code of the
+last line will be returned.
+</p>
+<dl><dt><i>method result</i></dt><dd>The last response code in its complete form, 0 if
+no response was read.         
+</dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSMTP/reset; name=CWSMTP::reset -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSMTP/reset"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="reset">reset</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) reset;
+</pre></blockquote>
+<p>This method is used to send the RSET SMTP command.
+See 4.1.1.5 RESET (RSET) of RFC 2821 for a full description
+of this command. It will NOT reset to nil the previously
+used recipients, message or message data. If you wish
+to change either of them, call the corresponding
+accessor method between your -sendMessage calls.
+</p>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSMTP/sendCommand%58%32arguments%58%32%46%46%46; name=CWSMTP::sendCommand:arguments:... -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSMTP/sendCommand%58%32arguments%58%32%46%46%46"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="sendCommand%58%32arguments%58%32%46%46%46">sendCommand: arguments: ...</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) sendCommand:
+        (SMTPCommand ) theCommand arguments:
+        (NSString *) theFormat, .
+    .
+    .
+    ;
+</pre></blockquote>
+<p>This method is used to send commands to the SMTP server.
+Normally, you should not call this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theCommand</em></tt></dt><dd>The SMTP command to send.</dd>
+<dt><tt><em>theFormat</em></tt></dt><dd>The format defining the variable arguments list.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/CWSMTP/sendCommand%58arguments%58; name=CWSMTP::sendCommand:arguments: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/CWSMTP/sendCommand%58arguments%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="sendCommand%58arguments%58">sendCommand:arguments:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) sendCommand:
+        (SMTPCommand ) theCommand arguments:
+        (NSString *) theFormat, .
+    .
+    .
+    ;
+</pre></blockquote>
+<p>This method is used to send commands to the SMTP server.
+Normally, you should not call this method directly.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theCommand</em></tt></dt><dd>The SMTP command to send.</dd>
+<dt><tt><em>theFormat</em></tt></dt><dd>The format defining the variable arguments list.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>NSObject (TransportClient)</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">NSObject (TransportClient)</font></h1><br>
+<a name="//apple_ref/doc/class/NSObject%32(TransportClient)" title="NSObject (TransportClient)"></a>
+<h2>Discussion</h2>
+ This informal protocol defines methods that can implemented in
+CWTransport's delegate (CWSMTP or CWSendmail instances) to control 
+the behavior of the class or to obtain status information.
+<hr><br><h2>Methods</h2>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(TransportClient)/messageSent%58" target="_top">messageSent:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="CompositePage.html#//apple_ref/doc/compositePage/occ/instm/NSObject(TransportClient)/messageNotSent%58" target="_top">messageNotSent:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/NSObject(TransportClient)/messageNotSent%58; name=NSObject(TransportClient)::messageNotSent: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/NSObject(TransportClient)/messageNotSent%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="messageNotSent%58">messageNotSent:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) messageNotSent:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+if any error occurs when trying to send a message
+(like if a SMTP server won't relay our mails). The userInfo's
+part of the notification contains the message that has
+not been sent. The key to obtain it is "Message".
+A PantomimeMessageNotSent notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/doc/compositePage/occ/instm/NSObject(TransportClient)/messageSent%58; name=NSObject(TransportClient)::messageSent: -->
+<a name="//apple_ref/doc/compositePage/occ/instm/NSObject(TransportClient)/messageSent%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="messageSent%58">messageSent:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) messageSent:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+after the SMTP DATA command has completed. The userInfo's
+part of the notification contains the message that has
+been sent. The key to obtain it is "Message".
+A PantomimeMessageSent notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>

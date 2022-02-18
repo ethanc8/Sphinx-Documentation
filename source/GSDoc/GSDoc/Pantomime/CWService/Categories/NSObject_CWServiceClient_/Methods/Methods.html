@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+    "http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<html><style type="text/css"><!--a:link {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #0000ff;}a:visited:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:active {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}a:hover {text-decoration: underline; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: small; color: #ff6600;}h4 {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: tiny; font-weight: bold;}body {text-decoration: none; font-family: lucida grande, geneva, helvetica, arial, sans-serif; font-size: 10pt;}--></style><head>
+    <title>Methods</title>
+	 <meta name="generator" content="HeaderDoc">
+</head><body bgcolor="#ffffff">
+<h1><font face="Geneva,Arial,Helvtica">Methods</font></h1><br>
+<a name="HeaderDoc_methods"></a>
+<dl>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/authenticationCompleted%58" target="doc">authenticationCompleted:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/authenticationFailed%58" target="doc">authenticationFailed:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionEstablished%58" target="doc">connectionEstablished:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionLost%58" target="doc">connectionLost:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionTerminated%58" target="doc">connectionTerminated:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionTimedOut%58" target="doc">connectionTimedOut:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58%32receivedData%58" target="doc">service: receivedData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58receivedData%58" target="doc">service:receivedData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58%32sentData%58" target="doc">service: sentData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58sentData%58" target="doc">service:sentData:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/requestCancelled%58" target="doc">requestCancelled:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/serviceInitialized%58" target="doc">serviceInitialized:</a></tt></dt>
+<dd></dd>
+<dt><tt><a href="Methods.html#//apple_ref/occ/instm/NSObject(CWServiceClient)/serviceReconnected%58" target="doc">serviceReconnected:</a></tt></dt>
+<dd></dd>
+</dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/authenticationCompleted%58; name=NSObject(CWServiceClient)::authenticationCompleted: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/authenticationCompleted%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="authenticationCompleted%58">authenticationCompleted:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) authenticationCompleted:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically called on the delegate
+when the authentication has sucessfully completed
+on the underlying Service's instance.
+A PantomimeAuthenticationCompleted notification is also posted.
+The authentication mechanism that was used can be obtained
+from the notification's userInfo using the "Mechanism" key.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/authenticationFailed%58; name=NSObject(CWServiceClient)::authenticationFailed: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/authenticationFailed%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="authenticationFailed%58">authenticationFailed:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) authenticationFailed:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically called on the delegate
+when the authentication has failed on the underlying Service's instance.
+A PantomimeAuthenticationCompleted notification is also posted.
+The authentication mechanism that was used can be obtained
+from the notification's userInfo using the "Mechanism" key.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionEstablished%58; name=NSObject(CWServiceClient)::connectionEstablished: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionEstablished%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="connectionEstablished%58">connectionEstablished:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) connectionEstablished:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>Invoked once the connection has been established with the peer.
+A PantomimeConnectionEstablished notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionLost%58; name=NSObject(CWServiceClient)::connectionLost: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionLost%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="connectionLost%58">connectionLost:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) connectionLost:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>Invoked when the connection to the peer has been 
+lost without the "user's" intervention.
+A PantomimeConnectionLost notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionTerminated%58; name=NSObject(CWServiceClient)::connectionTerminated: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionTerminated%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="connectionTerminated%58">connectionTerminated:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) connectionTerminated:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>Invoked when the connection has been cleanly terminated
+with the peer.
+A PantomimeConnectionTerminated notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionTimedOut%58; name=NSObject(CWServiceClient)::connectionTimedOut: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/connectionTimedOut%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="connectionTimedOut%58">connectionTimedOut:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) connectionTimedOut:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>Invoked when connecting to a peer on a non-blocking
+fashion but the associated timeout has expired. It is also
+invoked when we try to read bytes from the peer or when
+trying send bytes to it. The method <i>isConnected</i> can
+be invoked in order if we got this timeout when trying to
+connect (the value will be set to "NO") or when we are
+connected but can't read or write anymore.
+A PantomimeConnectionTimedOut notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/requestCancelled%58; name=NSObject(CWServiceClient)::requestCancelled: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/requestCancelled%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="requestCancelled%58">requestCancelled:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) requestCancelled:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically called after
+a request has been cancelled. The connection
+was automatically closed PRIOR to calling this delegate method.
+A PantomimeRequestCancelled notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58%32receivedData%58; name=NSObject(CWServiceClient)::service:receivedData: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58%32receivedData%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="service%58%32receivedData%58">service: receivedData:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) service:
+        (CWService *) theService receivedData:
+        (NSData *) theData;
+</pre></blockquote>
+<p>Invoked when bytes have been received by the underlying
+CWService's connection. No notification is posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theService</em></tt></dt><dd>The CWService instance that generated network activity.</dd>
+<dt><tt><em>theData</em></tt></dt><dd>The received bytes.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58%32sentData%58; name=NSObject(CWServiceClient)::service:sentData: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58%32sentData%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="service%58%32sentData%58">service: sentData:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) service:
+        (CWService *) theService sentData:
+        (NSData *) theData;
+</pre></blockquote>
+<p>Invoked when bytes have been sent using the underlying
+CWService's connection. No notification is posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theService</em></tt></dt><dd>The CWService instance that generated network activity.</dd>
+<dt><tt><em>theData</em></tt></dt><dd>The sent bytes.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58receivedData%58; name=NSObject(CWServiceClient)::service:receivedData: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58receivedData%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="service%58receivedData%58">service:receivedData:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) service:
+        (CWService *) theService receivedData:
+        (NSData *) theData;
+</pre></blockquote>
+<p>Invoked when bytes have been received by the underlying
+CWService's connection. No notification is posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theService</em></tt></dt><dd>The CWService instance that generated network activity.</dd>
+<dt><tt><em>theData</em></tt></dt><dd>The received bytes.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58sentData%58; name=NSObject(CWServiceClient)::service:sentData: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/service%58sentData%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="service%58sentData%58">service:sentData:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) service:
+        (CWService *) theService sentData:
+        (NSData *) theData;
+</pre></blockquote>
+<p>Invoked when bytes have been sent using the underlying
+CWService's connection. No notification is posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theService</em></tt></dt><dd>The CWService instance that generated network activity.</dd>
+<dt><tt><em>theData</em></tt></dt><dd>The sent bytes.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/serviceInitialized%58; name=NSObject(CWServiceClient)::serviceInitialized: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/serviceInitialized%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="serviceInitialized%58">serviceInitialized:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) serviceInitialized:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>This method is automatically invoked on the delegate
+when the Service is fully initialized. This method
+is invoked after -connectionEstablished: is called.
+A PantomimeServiceInitialized notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<hr><!-- headerDoc=instm; uid=//apple_ref/occ/instm/NSObject(CWServiceClient)/serviceReconnected%58; name=NSObject(CWServiceClient)::serviceReconnected: -->
+<a name="//apple_ref/occ/instm/NSObject(CWServiceClient)/serviceReconnected%58"></a>
+<table border="0"  cellpadding="2" cellspacing="2" width="300"><tr><td valign="top" height="12" colspan="5"><h2><a name="serviceReconnected%58">serviceReconnected:</a></h2>
+</td></tr></table><dl></dl><blockquote><pre>- ( void ) serviceReconnected:
+        (NSNotification *) theNotification;
+</pre></blockquote>
+<p>When a service lost its connection, -connectionWasLost: is
+called. Usually, -reconnect is called to re-establish the
+connection with the remote host. Once it has completed,
+-serviceReconnected: is invoked on the delegate.
+A PantomimeServiceReconnected notification is also posted.
+</p>
+<h5><font face="Lucida Grande,Helvetica,Arial">Parameter Descriptions</font></h5>
+<blockquote>
+<dl>
+<dt><tt><em>theNotification</em></tt></dt><dd>The notification holding the information.</dd>
+</dl>
+</blockquote>
+<dl></dl>
+<p>(Last Updated 2/17/2022)
+</p></body></html>
