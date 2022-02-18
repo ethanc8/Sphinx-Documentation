@@ -1,37 +1,22 @@
-# <big> OS-based Object System </big>
-## Table of Contents
-<!-- TOC -->
+# `<os/object.h>`-based object system
 
-* [<big> OS-based Object System </big>](#big-os-based-object-system-big)
-    * [Table of Contents](#table-of-contents)
-* [Frameworks using](#frameworks-using)
-    * [Official Apple](#official-apple)
-* [Base class](#base-class)
-* [Memory management](#memory-management)
-* [Subclassing](#subclassing)
-* [Lists of...](#lists-of)
-    * [Runtime functions](#runtime-functions)
-    * [Base classes](#base-classes)
-
-<!-- /TOC -->
-
-# Frameworks using
-## Official Apple
+## Frameworks using this object model
+### Official Apple
 
 * [OS](https://developer.apple.com/documentation/os?language=objc)
     * [Header files](https://github.com/phracker/MacOSX-SDKs/tree/master/MacOSX11.3.sdk/usr/include/os)
 * [Network](https://developer.apple.com/documentation/network?language=objc)
 * [XPC](https://developer.apple.com/documentation/xpc)
 
-# Base class
+## Base class
 
 The base class varies by framework.
 
-# Memory management
+## Memory management
 
-OS-based objects are managed by ARC in Swift and the Apple Objective-C runtime. They also can be retained/released by the *framework name*`_retain` and *framework name*`_release` functions.
+`<os/object.h>`-based objects are managed by ARC in Swift and the Apple Objective-C runtime. They also can be retained/released by the *framework name*`_retain` and *framework name*`_release` functions.
 
-# Subclassing
+## Subclassing
 
 Declaring a root class:
 ```objc
@@ -54,13 +39,13 @@ Which turns into:
 typedef NSObject<OS_my_foobar>* my_foobar_t;
 ```
 
-# Lists of...
-## Runtime functions
+## Lists of...
+### Runtime functions
 
 * [XPC objects](https://developer.apple.com/documentation/xpc/xpc_objects?language=objc)
 * [Dispatch objects](https://developer.apple.com/documentation/dispatch/dispatch_objects)
 
-## Base classes
+### Base classes
 
 * [`nw_object_t`](https://developer.apple.com/documentation/network/nw_object_t?language=objc)
 * [`xpc_object_t`](https://developer.apple.com/documentation/xpc/xpc_object_t?language=objc)
