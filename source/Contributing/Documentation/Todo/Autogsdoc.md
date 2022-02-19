@@ -19,5 +19,7 @@ The following frameworks need Autogsdoc documentation to be added:
 - [ ] GNUstep QuartzCore
 - [ ] GDL2
 - [ ] GSWeb
-- [ ] libobjc2
+- [X] libobjc2
 - [ ] GCC Objective-C runtime
+- [X] Pantomime
+    * Used HeaderDoc instead, since it's already written in HeaderDoc.
