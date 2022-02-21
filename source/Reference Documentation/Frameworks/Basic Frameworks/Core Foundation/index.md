@@ -15,14 +15,14 @@ Core Foundation includes C-based object-oriented APIs, with a similar focus to t
 
 ## Apple CoreFoundation
 
-[API reference](https://developer.apple.com/documentation/foundation?language=objc)  
-[Header files](https://github.com/phracker/MacOSX-SDKs/tree/master/MacOSX11.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Versions/A/Headers)
+* [API reference](https://developer.apple.com/documentation/foundation?language=objc)
+* [Header files](https://github.com/phracker/MacOSX-SDKs/tree/master/MacOSX11.3.sdk/System/Library/Frameworks/CoreFoundation.framework/Versions/A/Headers)
 
 ## GNUstep CoreBase
 Version 1.2.2 (There were a lot of commits after this release)
 
 * [Source code](https://github.com/gnustep/libs-corebase)
-* [API documentation](../../../../GSDoc/CoreBase/index.html)
+* <a href="../../../../GSDoc/CoreBase/index.html">API reference</a>
 
 **Highly incomplete** -- you should probably use Swift CoreFoundation.
 

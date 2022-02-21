@@ -1,5 +1,4 @@
-1 - Programming under GNUstep
-=============================
+# 1 - Programming under GNUstep
 
  This article was originally published in Linux Magazine France n°49, April 2003
 
@@ -43,12 +42,9 @@ This separation into three parts allows a cleaner conception: nothing stops you 
 
 In our case the graphic interface with which the user will interact with will be the View part. This graphic interface will be created with Gorm.
 
-<figure>
-
-![Figure 1 - The Model-View-Controller Pattern](Figure%201.png)
-<figcaption>Figure 1 - The Model-View-Controller Pattern</figcaption>
-
-</figure>
+```{figure} fig1.png
+Figure 1 - The Model-View-Controller Pattern
+```
 
 ## Delegation
 
@@ -234,23 +230,17 @@ openapp Gorm.app
 
 Create a new application: Document &rarr; New Application.
 
-<figure>
-
-![Figure 2 - Creating an application](Figure%202.png)
-<figcaption>Figure 2 - Creating an application</figcaption>
-
-</figure>
+```{figure} fig2.png
+Figure 2 - Creating an application
+```
 
 In the "Tools" menu click on "Palettes" and "Inspector".
 
 The palettes window contains various needed objects that make up an interface (windows, buttons, textfields...).
 
-<figure>
-
-![Figure 3 - the Pallettes window](Figure%203.png)
-<figcaption>Figure 3 - the Pallettes window</figcaption>
-
-</figure>
+```{figure} fig3.png
+Figure 3 - the Palettes window
+```
 
 In this window (see figure), by clicking on the different sections, we have in order from left to right:
 

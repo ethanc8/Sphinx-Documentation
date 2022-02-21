@@ -1,6 +1,6 @@
 Translated with Google Translate
 
-## NSWindowController and Design Pattern MVC
+# NSWindowController and Design Pattern MVC
 GNUstep has an NSWindowController class which will facilitate the implementation of the MVC Design Pattern.
 NSWindowController notably manages:
 
@@ -13,11 +13,11 @@ NSWindowController notably manages:
 
 Automatically saving the size and position of used windows is an example of the user approach in GNUstep; we can cite the NeXT UI Guide:
 
-*“The similarity of graphical to real objects is at a fundamental rather than a superficial level. Graphical objects don’t
+> “The similarity of graphical to real objects is at a fundamental rather than a superficial level. Graphical objects don’t
 need to resemble physical objects in every detail. But they do
 need to behave in ways that our experience with real objects
 would lead us to expect.For example, objects in the real world
-stay where we put them.”*
+stay where we put them.”
 
 ## Some classes and widgets ...
 
@@ -66,7 +66,9 @@ In the Palettes panel choose the window section and drag & drop a panel onto the
 
 </figure>
 
-> **Note**: It is important to choose a panel rather than a window because in GNUstep (and OPENSTEP), when an application loses focus, these panels become invisible (this avoids cluttering the workspace).
+```{note}
+It is important to choose a panel rather than a window because in GNUstep (and OPENSTEP), when an application loses focus, these panels become invisible (this avoids cluttering the workspace).
+```
 
 Place two boxes there. In the first we will put a “Matrix” (an NSMatrix object) of buttons.
 
@@ -399,12 +401,12 @@ The `#gnustep` irc channel on the LibreraChat network, and the `gnu.gnustep.disc
 
 Do not hesitate to contact us if you have any comments or suggestions for us.
 
-> ### Contact the authors
-> Nicolas Roard, <nicolas@roard.com>  
-> Fabien Vallon, <fabien@tuxfamily.org>  
+### Contact the authors
+Nicolas Roard, <nicolas@roard.com>  
+Fabien Vallon, <fabien@tuxfamily.org>  
 
-> ### More reading
-> * [Apple NSUserDefaults documentation](https://developer.apple.com/documentation/foundation/nsuserdefaults?language=objc)
-> * [GNUstep NSUserDefaults documentation](http://gnustep.org/resources/documentation/Developer/Base/Reference/NSUserDefaults.html#class$NSUserDefaults)
-> * [Notification Programming Topics](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Notifications/Introduction/introNotifications.html#//apple_ref/doc/uid/10000043i)
-> * [Preferences and Settings Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
+### More reading
+* [Apple NSUserDefaults documentation](https://developer.apple.com/documentation/foundation/nsuserdefaults?language=objc)
+* [GNUstep NSUserDefaults documentation](http://gnustep.org/resources/documentation/Developer/Base/Reference/NSUserDefaults.html#class$NSUserDefaults)
+* [Notification Programming Topics](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Notifications/Introduction/introNotifications.html#//apple_ref/doc/uid/10000043i)
+* [Preferences and Settings Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
