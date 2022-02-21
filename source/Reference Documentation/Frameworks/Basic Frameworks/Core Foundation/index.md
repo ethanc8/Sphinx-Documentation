@@ -21,7 +21,8 @@ Core Foundation includes C-based object-oriented APIs, with a similar focus to t
 ## GNUstep CoreBase
 Version 1.2.2 (There were a lot of commits after this release)
 
-[Source code](https://github.com/gnustep/libs-corebase)
+* [Source code](https://github.com/gnustep/libs-corebase)
+* [API documentation](../../../../GSDoc/CoreBase/index.html)
 
 **Highly incomplete** -- you should probably use Swift CoreFoundation.
 

@@ -25,6 +25,14 @@ Version 1.28.0
 
 [Source code](https://github.com/gnustep/libs-base)
 
+```{eval-rst}
++-----------------+-----------------+
+| Current version | 1.28.0          |
++-----------------+-----------------+
+| License         | LGPLv3 or GPLv2 |
++-----------------+-----------------+
+```
+
 ### Download current release
 
 ```bash

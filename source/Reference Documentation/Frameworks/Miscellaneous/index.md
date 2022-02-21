@@ -15,4 +15,5 @@ PDFKit/index.md
 WebKit/index.md
 Xcode/index.md
 Pantomime/index.md
+GWorkspace/index.md
 ```
