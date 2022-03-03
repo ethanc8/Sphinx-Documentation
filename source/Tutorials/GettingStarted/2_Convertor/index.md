@@ -1,13 +1,21 @@
-# Reference Documentation
+# 2 - Convertor
 
-This section contains API references and other information about the frameworks and developer tools. The API references are currently not searchable.
+This guide introduces you to the GNUstep IDE, which is composed of **ProjectCenter** and **Gorm**.
+
+This section is **not** under an open-source license -- we hope to fix this undersight soon.
+
+This section was written by Pierre-Yves Rivaille, and [posted to gnustep.org](http://www.gnustep.org/experience/PierresDevTutorial/index.html). This copy is still incomplete.
 
 ```{toctree}
 ---
-maxdepth: 2
+maxdepth: 1
 caption: Contents
----     
-Frameworks/index.md
-Tools/index.md
-Languages/index.md
+2.1.md
 ```
+
+## Copyright
+
+Initial writing 07-07-2001 by Pierre-Yves Rivaille  
+Modified 02-Feb-2005 by Alex Perez  
+Updated 13-Nov-2010 Riccardo Mottola  
+Copyright © 2001, 2005 Pierre-Yves Rivaille
