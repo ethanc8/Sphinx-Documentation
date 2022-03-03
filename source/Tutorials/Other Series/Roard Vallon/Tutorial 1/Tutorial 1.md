@@ -5,6 +5,8 @@ This article was originally published in Linux Magazine France n°49, April 2003
 **Authors:** Nicolas Roard and Fabien Vallon
 **Translation:** Gerold Rupprecht and Nicolas Roard
 
+This section is currently **not** under an open-source license.
+
 Cleaned up by Ethan C
 
 > This article needs to be cleaned up.
@@ -15,21 +17,19 @@ Cleaned up by Ethan C
 > * [ ] Download pictures into this directory
 > * [ ] Add captions to pictures
 
-_Following the GNUstep project presentation [in issue number 47](https://web.archive.org/web/20190926105521/http://www.roard.com/docs/lmf1.article/), we will start a small application project that we will evolve and extend throughout the year_
+_Following the GNUstep project presentation [in issue number 47](https://web.archive.org/web/20190926105521/http://www.roard.com/docs/lmf1.article/), we will start a small application project that we will evolve and extend throughout the year._
 
 ## Application description
-
 
 This month we are going to start with something simple. The objective of the program that we are going to make is to note and manage tasks to be done; the application name will be "Todo.app".
 
 The interface for the time being will be very simple, displaying the task list in the upper part and the task contents (description, date, etc.) in the lower part. It will of course be possible to add or delete a task, and even to save them all into a file.
 
-This allows us to present the RAD (Rapid Application Development) [^1] tool supplied with GNUstep, Gorm, and to introduce some of the currently used Design Patterns [^2] in a GNUstep application.
+This allows us to present the RAD (Rapid Application Development)[^1] tool supplied with GNUstep, Gorm, and to introduce some of the currently used Design Patterns[^2] in a GNUstep application.
 
 You will notice over the course of these articles that the GNUstep framework itself makes heavy use of a number of known patterns.
 
-## Model - View - Controller
-
+## Model-View-Controller
 
 Lets start with the very classic Model-View-Controller, which we can see in the following figure.
 
@@ -50,15 +50,15 @@ Figure 1 - The Model-View-Controller Pattern
 ## Delegation
 
 
-This pattern consists of sending to helper object, called delegate, certain work. The classic approach in object programming to improve or specialise an object is to sub-class it. The delegate consists not of modifying the object, but simply asking certain information or certain actions from the helper object. This pattern often helps to eliminate the necessity for a sub-class and thus simplifies the program.
+This pattern consists of sending certain work to a helper object called the delegate. The classic approach in object programming to improve or specialise an object is to sub-class it. The delegate consists not of modifying the object, but simply asking certain information or certain actions from the helper object. This pattern often helps to eliminate the necessity for a sub-class and thus simplifies the program.
 
-To return to the analogy given by Aaron Hillegass [^3], the sub-class falls back on the "Robocop" approach: to improve the policeman, we employ dozens of surgeons, and you must know perfectly how the human body functions. It is a powerful tool, but can be complex to manipulate.
+To return to the analogy given by Aaron Hillegass[^3], the sub-class falls back on the "Robocop" approach: to improve the policeman, we employ dozens of surgeons, and you must know perfectly how the human body functions. It is a powerful tool, but can be complex to manipulate.
 
 Delegation returns to the "Knight Rider" approach: to improve Michael, we simply use a tool created for him, the car Kitt, which has all the indespensible gadgets required for the difficult (!) life of a policeman on roller skates.
 
-For example, when a NSTableView widget (displays a table or a list) should display itself, instead of subclassing it so that it responds to our needs, we can supply it with a delegate object.
+For example, when a NSTableView widget (which displays a table or a list) needs to display itself, instead of subclassing it so that it responds to our needs, we can supply it with a delegate object.
 
-When the NSTableView wants to draw itself, it will simply ask its delegate something like "How many lines do I have ?" or "What should be displayed in the first column on the third line ?".
+When the NSTableView wants to draw itself, it will simply ask its delegate something like "How many lines do I have?" or "What should be displayed in the first column on the third line?".
 
 ## Implementation
 
@@ -85,7 +85,7 @@ Here is the interface of our model (placed in a `Todo.h` file):
   NSString *_note;
   NSString *_description;
   int _progress;
-  NSMutableArray *_childs;
+  NSMutableArray *_children;
   id _parent;
 }
 // Constructor
@@ -94,7 +94,7 @@ Here is the interface of our model (placed in a `Todo.h` file):
 -(void) setDescription: (NSString *) description;
 -(void) setNote: (NSString *) note;
 -(void) setProgress: (int) progress;
--(void) setChilds: (id) childs;
+-(void) setChildren: (id) children;
 -(void) addChild: (id) child;
 -(void) setParent: (id) parent;
 -(void) removeChild: (id) child;
@@ -103,13 +103,13 @@ Here is the interface of our model (placed in a `Todo.h` file):
 -(NSString *) note;
 -(int)  progress;
 -(id) parent;
--(NSArray*) childs;
+-(NSArray*) children;
 @end
 
 #endif
 ```
 
-Each Todo object could eventually contain subtasks (stored in the `_childs` table); we can access the parent task if it exists by sending the parent message:  
+Each `Todo` object could eventually contain subtasks (stored in the `_children` table); we can access the parent task if it exists by sending the parent message:  
 ```objc
 id ParentTask = [myTask parent];
 ```
@@ -127,7 +127,7 @@ Here is the code for our model (placed in the Todo.m file) :
   self = [super init];
   _note = [[NSString alloc] init];
   _description = [[NSString alloc] init];
-  _childs = [[NSMutableArray alloc] init];
+  _children = [[NSMutableArray alloc] init];
   _parent = nil;
   _progress = 0;
   return self;
@@ -137,7 +137,7 @@ Here is the code for our model (placed in the Todo.m file) :
   self = [super init];
   _description = [[NSString alloc] initWithString: description];
   _note = [[NSString alloc] initWithString: note];
-  _childs = [[NSMutableArray alloc] init];
+  _children = [[NSMutableArray alloc] init];
   _parent = nil;
   _progress = 0;
   return self;
@@ -146,7 +146,7 @@ Here is the code for our model (placed in the Todo.m file) :
 /* Destructor */
 
 -(void) dealloc {
-  RELEASE(_childs);
+  RELEASE(_children);
   RELEASE(_note);
   RELEASE(_description);
   [super dealloc];
@@ -157,7 +157,7 @@ Here is the code for our model (placed in the Todo.m file) :
 -(NSString *) desc { return _description; }
 -(NSString *) note { return _note; }
 -(int) progress; { return _progress; }
--(NSArray *) childs { return _childs; }
+-(NSArray *) children { return _children; }
 -(id) parent { return _parent; }
 
 /* Modifiers */
@@ -180,19 +180,19 @@ Here is the code for our model (placed in the Todo.m file) :
 }
 
 -(void) addChild: (id) child {
-  [_childs addObject: child];
+  [_children addObject: child];
 }
 
 -(void) setParent: (id) parent {
   ASSIGN (_parent, parent);
 }
 
--(void) setChilds: (id) childs {
-  ASSIGN (_childs, childs);
+-(void) setChildren: (id) children {
+  ASSIGN (_children, children);
 }
 
 -(void) removeChild: (id) child {
-  [_childs removeObject: child];
+  [_children removeObject: child];
 }
 
 @end
@@ -200,7 +200,7 @@ Here is the code for our model (placed in the Todo.m file) :
 
 #### The View
 
-Even it it is absolutely possible to manually develop the interface, a RAD tool exists as part of the GNUstep development platform, a clone of the OPENSTEP/MacOSX Interface Builder named Gorm [^4].
+Even it it is absolutely possible to manually develop the interface, a RAD tool exists as part of the GNUstep development platform, a clone of the OPENSTEP/MacOSX Interface Builder named Gorm[^4].
 
 Even if the version number is only 0.2.6, Gorm is already very usable (and used) for the development of graphical interfaces.
 
@@ -252,7 +252,7 @@ In this window (see figure), by clicking on the different sections, we have in o
 
 The Inspector window represents the different object views that we can manipulate; Figure 2 shows for example in the attribute inspector the window attributes (`NSWindow`) of our application.
 
-The inspectors are often found in \*step applications; they allow the display when needed additional details on a document for example instead of uselessly encumbering the screen with this information when it is not necessary.
+The inspectors are often found in GNUstep, OpenStep, and Cocoa applications; they allow, for example, to display additional details on a document when needed, instead of uselessly encumbering the screen with this information when it is not necessary.
 
 In Gorm's inspector, we have the following views (by manipulating the drop down list):
 
@@ -297,31 +297,27 @@ We have now a View (our graphical interface), and a model (our Todo class). We m
 What will be the controller actions ? We want to :
 
 *   view a task
-    
-*   add a task : addTodo
-    
-*   add a sub-task : addSubTodo
-    
-*   remove a task : removeTodo
-    
-*   update a task : updateTodo
+*   add a task: `addTodo:`
+*   add a sub-task: `addSubTodo:`
+*   remove a task: `removeTodo:`
+*   update a task: updateTodo
     
 
-Our controller will stock the task list in an array (NSMutableArray), the different actions will be directly linked to the buttons of our GUI. A clic on a line in our task list will update the fields Note, Description, in order to view the contents of the selected task.
+Our controller will stock the task list in an array (`NSMutableArray`), the different actions will be directly linked to the buttons of our GUI. A click on a line in our task list will update the fields Note, Description, in order to view the contents of the selected task.
 
-The controller will then have access to the fields Note and Description, and to the NSOutlineView listing the tasks, in order to update their state. The controller will then have "pointers" to theses widgets; thoses types of pointers are called "outlet" in the GNUstep terminology.
+The controller will then have access to the fields Note and Description, and to the `NSOutlineView` listing the tasks, in order to update their state. The controller will then have "pointers" to theses widgets; thoses types of pointers are called "outlet" in the GNUstep terminology.
 
-Let us create our controller. Under Gorm, in the Document panel, go in the Class Manager (following figure). We will subclass the NSObject class. Click on NSObject for selecting it if that's not done.
+Let us create our controller. Under Gorm, in the Document panel, go in the Class Manager (following figure). We will subclass the `NSObject` class. Click on `NSObject` for selecting it if that's not done.
 
 ![](https://web.archive.org/web/20190926105521im_/http://www.roard.com/docs/lmf2.article/ClassManager.png)
 
-Under the "Classes" menu in Gorm (I advice you to detach it and put it near the Document panel), select "Create Subclass...". A new class is created, called "NewClass". Double-click on it to change its name in "TodoController", then press enter to validate the name's modification.
+Under the "Classes" menu in Gorm (I advice you to detach it and put it near the Document panel), select "Create Subclass...". A new class is created, called `NewClass`. Double-click on it to change its name in `TodoController`, then press enter to validate the name's modification.
 
 Click on the gray circle in the "Outlet" column (the one similar to an electric connector), and add an Outlet (Classes->Add Outlet/Action). Rename the outlet in "descriptionText". Add then successively the outlets "noteTextView" and "todolistView".
 
 ![](https://web.archive.org/web/20190926105521im_/http://www.roard.com/docs/lmf2.article/ClassManager2.png)
 
-Deselect the class and click on the second gray point of TodoController representing the Actions, and add (again with Classes->Add Outlet/Action) the addTodo, addSubTodo, removeTodo and updateTodo actions.
+Deselect the class and click on the second gray point of TodoController representing the Actions, and add (again with Classes->Add Outlet/Action) the `addTodo:`, `addSubTodo:`, `removeTodo:` and `updateTodo:` actions.
 
 ![](https://web.archive.org/web/20190926105521im_/http://www.roard.com/docs/lmf2.article/ClassManager3.png)
 
@@ -387,9 +383,9 @@ If our TodoController object responds to this messages, the outline view will us
 
 *   The first must return the child placed at the index position of the item object.
     
-*   The second must return the number of childs that an item object will contains.
+*   The second must return the number of children that an item object will contains.
     
-*   The third method must return YES (true) if the object passed in parameters item contains -- or not -- childs.
+*   The third method must return YES (true) if the object passed in parameters item contains -- or not -- children.
     
 *   The fourth method must return the cell value for a column, for the object given in parameter (so, for a line of the outline view). We could use "tags" (like thoses we entered earlier in Gorm) to do the selection
     
@@ -520,18 +516,18 @@ We just need to add the corresponding code (in a TodoController.m file) :
     {
       return [todoArray objectAtIndex: index];
     }
-  return [[item childs] objectAtIndex: index];
+  return [[item children] objectAtIndex: index];
 }
 
 - (int)outlineView: (NSOutlineView *) outlineView numberOfChildrenOfItem: (id) item
 {
   if (item == nil) return [todoArray count];
-  return [[item childs] count];
+  return [[item children] count];
 }
 
 - (BOOL)outlineView: (NSOutlineView *) outlineView isItemExpandable: (id) item
 {
-  if ([[item childs] count] > 0) return YES;
+  if ([[item children] count] > 0) return YES;
   return NO;
 }
 
@@ -660,7 +656,7 @@ We thus add the functions encodeWithCoder: and initWithCoder: to our Todo object
         [coder encodeObject: _note];
         [coder encodeValueOfObjCType: @encode(int) at: &_progress];
         [coder encodeObject: _parent];
-        [coder encodeObject: _childs];
+        [coder encodeObject: _children];
 }
 
 - (id) initWithCoder: (NSCoder*) coder {
@@ -670,7 +666,7 @@ We thus add the functions encodeWithCoder: and initWithCoder: to our Todo object
                 [self setNote: [coder decodeObject]];
                 [coder decodeValueOfObjCType: @encode (int) at: &_progress];
                 [self setParent: [coder decodeObject]];
-                [self setChilds: [coder decodeObject]];
+                [self setChildren: [coder decodeObject]];
         }
         return self;
 }
