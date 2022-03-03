@@ -23,6 +23,9 @@ Dynamic literals.rst
 
 Message Forwarding without NSObject.md
 Modules.rst
+
+Getting Environment Information.md
+Versions.md
 ```
 
 ## Notation of grammar in this section
