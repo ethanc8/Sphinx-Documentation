@@ -10,6 +10,7 @@ This section was written by Pierre-Yves Rivaille, and [posted to gnustep.org](ht
 ---
 maxdepth: 1
 caption: Contents
+---
 2.1.md
 ```
 
