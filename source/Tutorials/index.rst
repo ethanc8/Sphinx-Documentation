@@ -5,5 +5,5 @@ Tutorials
     :maxdepth: 2
     :caption: Contents
 
-    Getting Started/index.rst
+    GettingStarted/index.md
     Other Series/Roard Vallon/index.rst

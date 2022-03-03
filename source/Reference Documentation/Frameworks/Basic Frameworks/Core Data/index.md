@@ -7,4 +7,4 @@ No stable release yet. Most recent commit [`1cd3eae`](https://github.com/gnustep
 * [Website](http://gscoredata.nongnu.org/)
 * [Wiki page](http://wiki.gnustep.org/index.php/GSCoreData)
 
-API documentation coming soon -- using Autogsdoc.
+Unfortunately, an API reference cannot be generated at this time.

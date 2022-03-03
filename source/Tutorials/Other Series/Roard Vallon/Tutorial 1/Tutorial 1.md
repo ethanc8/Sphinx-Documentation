@@ -1,8 +1,9 @@
 # 1 - Programming under GNUstep
 
- This article was originally published in Linux Magazine France n°49, April 2003
+This article was originally published in Linux Magazine France n°49, April 2003
 
-Authors : Nicolas Roard and Fabien Vallon, Translation : Gerold Rupprecht and Nicolas Roard
+**Authors:** Nicolas Roard and Fabien Vallon
+**Translation:** Gerold Rupprecht and Nicolas Roard
 
 Cleaned up by Ethan C
 

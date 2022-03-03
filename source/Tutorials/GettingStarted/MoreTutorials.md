@@ -38,7 +38,8 @@
 
 [http://gnustep.it](https://web.archive.org/web/20211006234718if_/http://www.gnustep.it/)
 
-[GNUstep Developer Guide](https://web.archive.org/web/20190926110154if_/http://www.gnustep-developer.guide/)
+[GNUstep Developer Guide](https://web.archive.org/web/20190926110154if_/http://www.gnustep-developer.guide/)  
+[Archived repository](https://archive.softwareheritage.org/browse/origin/directory/?origin_url=https://bitbucket.org/iamleeg/gnustep-devguide)
 
 [`[objc retain]` podcast](https://objc-retain.com/posts/)
 
