@@ -2,8 +2,8 @@
 
 DBusKit is a framework that allows you to use the [D-Bus inter-process communication system](https://www.freedesktop.org/wiki/Software/dbus/), which is standard on Unix-like operating systems excluding Mac OS X.
 
-**<a href="../../../../GSDoc/DBusKit/Reference/index.html">👉 Browse the API reference</a>**  
-**<a href="../../../../GSDoc/DBusKit/ProgrammingManual/DBusKit/Introduction.html">📖 Read the Manual</a>**
+**<a href="../../../../RawHTML/DBusKit/Reference/index.html">👉 Browse the API reference</a>**  
+**<a href="../../../../RawHTML/DBusKit/ProgrammingManual/DBusKit/Introduction.html">📖 Read the Manual</a>**
 
 ## Install
 Download [version 2.0](https://github.com/gnustep/libs-dbuskit/commit/5d69a35357f6e32fc2e1194194e176bf48588120)

@@ -1,4 +1,4 @@
-# More Tutorials
+# Helpful Websites
 
 ## GNUstep
 

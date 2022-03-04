@@ -11,13 +11,13 @@ Release Notes.md
 
 GNUstep Make is a simple build system. 
 
-**<a href="../../../GSDoc/Make/Manual/gnustep-make/index.html">📖 Read the Manual</a>**
+**<a href="../../../RawHTML/Make/Manual/gnustep-make/index.html">📖 Read the Manual</a>**
 
 ## GNUstep Make
 
 Version 2.9.0
 
-<a href="../../../GSDoc/Make/Manual/gnustep-make/index.html">Manual</a> (<a href="../../../GSDoc/Make/Manual/gnustep-make.pdf">PDF</a>)
+<a href="../../../RawHTML/Make/Manual/gnustep-make/index.html">Manual</a> (<a href="../../../RawHTML/Make/Manual/gnustep-make.pdf">PDF</a>)
 
 [Tutorial: Writing Makefiles](https://web.archive.org/web/20211006234718if_/http://www.gnustep.it//nicola/Tutorials/WritingMakefiles/index.html)  
 [Tutorial: More on Makefiles (Libraries, Aggregate projects)](https://web.archive.org/web/20211006234718if_/http://www.gnustep.it//nicola/Tutorials/MoreOnMakefiles/index.html)  
