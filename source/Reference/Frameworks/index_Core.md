@@ -10,6 +10,6 @@ caption: Frameworks
 AppKit/index.md
 Foundation/index.md
 
-Core Data/index.md
-Core Foundation/index.md
+CoreData/index.md
+CoreFoundation/index.md
 ```

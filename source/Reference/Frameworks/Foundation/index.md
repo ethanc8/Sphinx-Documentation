@@ -12,8 +12,8 @@ AppleReleaseNotes.md
 
 The Foundation Kit provides key data types for working in Objective-C, such as strings, dictionaries, and lists. It also provides networking, configuration storage, file manipulation, and more.
 
-**<a href="../../../../RawHTML/Base/Reference/index.html">👉 Browse the API reference</a>**  
-**<a href="../../../../RawHTML/Base/ProgrammingManual/gs-base/index.html">📖 Read the Manual</a>**
+**<a href="../../../RawHTML/Base/Reference/index.html">👉 Browse the API reference</a>**  
+**<a href="../../../RawHTML/Base/ProgrammingManual/gs-base/index.html">📖 Read the Manual</a>**
 
 ## Apple Foundation
 
@@ -23,15 +23,15 @@ The Foundation Kit provides key data types for working in Objective-C, such as s
 ## GNUstep Base Library
 Version 1.28.0
 
-<a href="../../../../RawHTML/Base/Reference/index.html">API Documentation</a>  
-<a href="../../../../RawHTML/BaseAdditions/Reference/index.html">Base Additions API</a>  
+<a href="../../../RawHTML/Base/Reference/index.html">API Documentation</a>  
+<a href="../../../RawHTML/BaseAdditions/Reference/index.html">Base Additions API</a>  
 <!-- [Command-Line Tools](Documentation/BaseTools/index.html) -->
 
-<a href="../../../../RawHTML/Base/ProgrammingManual/gs-base/index.html">Manual</a> (<a href="../../../../RawHTML/Base/ProgrammingManual/gs-base.pdf">PDF</a>)
+<a href="../../../RawHTML/Base/ProgrammingManual/gs-base/index.html">Manual</a> (<a href="../../../RawHTML/Base/ProgrammingManual/gs-base.pdf">PDF</a>)
 
 [Tutorial: Basic Classes of the GNUstep Base Library](https://web.archive.org/web/20211006234718if_/http://www.gnustep.it//nicola/Tutorials/BasicClasses/index.html)
 
-<a href="../../../../RawHTML/Gui/ReleaseNotes/ReleaseNotes.html">Release Notes</a>
+<a href="../../../RawHTML/Gui/ReleaseNotes/ReleaseNotes.html">Release Notes</a>
 
 [Source code](https://github.com/gnustep/libs-base)
 

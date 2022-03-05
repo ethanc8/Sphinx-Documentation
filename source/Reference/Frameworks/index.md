@@ -7,8 +7,8 @@ Here are the frameworks, organized by their original (Apple/Cocoa) names.
 maxdepth: 2
 caption: Frameworks
 ---     
-Basic Frameworks/index.md
-Miscellaneous/index.md
-Quartz/index.md
-WebObjects 4 Stack/index.md
+index_Core.md
+index_Miscellaneous.md
+index_Quartz.md
+index_WebObjects.md
 ```

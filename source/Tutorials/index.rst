@@ -6,4 +6,4 @@ Tutorials
     :caption: Contents
 
     GettingStarted/index.md
-    Other Series/Roard Vallon/index.rst
+    Other/Roard/index.rst

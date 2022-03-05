@@ -5,7 +5,7 @@
 maxdepth: 2
 caption: Tools
 ---     
-GNUstep Make/index.md
+Make/index.md
 Gorm ProjectCenter.md
 Buildtool.md
 BaseTools.md

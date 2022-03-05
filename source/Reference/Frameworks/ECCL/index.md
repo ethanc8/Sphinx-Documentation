@@ -2,7 +2,7 @@
 
 Classes and tools for building and administering 24*7 server processes for large scale software systems. 
 
-**<a href="../../../../RawHTML/ECCL/index.html">👉 Browse the API reference</a>**  
+**<a href="../../../RawHTML/ECCL/index.html">👉 Browse the API reference</a>**  
 
 No release since 2014, but it's in active development. It appears to be used in Mr. Casamento's current job.
 

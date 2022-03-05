@@ -7,6 +7,6 @@ Quartz is the Mac OS X graphics layer, which is only partially implemented in GN
 maxdepth: 1
 caption: Frameworks
 ---     
-Core Animation/index.md
-Core Graphics/index.md
+CoreAnimation/index.md
+CoreGraphics/index.md
 ```
