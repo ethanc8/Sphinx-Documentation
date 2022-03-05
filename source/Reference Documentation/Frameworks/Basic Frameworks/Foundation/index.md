@@ -1,5 +1,15 @@
 # Foundation Kit
 
+```{toctree}
+---
+maxdepth: 2
+caption: Contents
+hidden: true
+---
+Missing.md
+AppleReleaseNotes.md
+```
+
 The Foundation Kit provides key data types for working in Objective-C, such as strings, dictionaries, and lists. It also provides networking, configuration storage, file manipulation, and more.
 
 **<a href="../../../../RawHTML/Base/Reference/index.html">👉 Browse the API reference</a>**  

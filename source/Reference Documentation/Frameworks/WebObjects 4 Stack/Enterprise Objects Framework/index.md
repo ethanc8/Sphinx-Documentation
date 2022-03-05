@@ -1,5 +1,14 @@
 # Enterprise Objects Framework
 
+```{toctree}
+---
+maxdepth: 2
+caption: Contents
+hidden: true
+---
+AppleReleaseNotes.md
+```
+
 ## NeXT implementation
 
 * [Introduction](https://web.archive.org/web/19970412202332if_/http://www.next.com/OPENSTEP/WhitePapers/EOFWhitePaper/EOF.html)
@@ -22,3 +31,10 @@ API:
 * [Git repository](https://github.com/gnustep/libs-gdl2)
 * [Wiki page](http://wiki.gnustep.org/index.php/GDL2)
 * [Website](http://www.gnustep.org/experience/GDL2.html)
+
+## SOPE GDL1
+
+GDL1 implements EOF 1.1, which has no documentation available online.
+
+* [Git repo folder](https://github.com/inverse-inc/sope/tree/master/sope-gdl1)
+* [Website](http://sope.opengroupware.org/en/sope_gdl1/index.html)

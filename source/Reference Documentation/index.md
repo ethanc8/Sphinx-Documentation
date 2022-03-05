@@ -10,4 +10,5 @@ caption: Contents
 Frameworks/index.md
 Tools/index.md
 Languages/index.md
+HIG.md
 ```

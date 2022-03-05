@@ -8,7 +8,7 @@ hidden: true
 ---
 Missing.md
 Object Model.md
-Release Notes.md
+AppleReleaseNotes.md
 ```
 
 Core Foundation includes C-based object-oriented APIs, with a similar focus to the [Foundation Kit](../Foundation/index.md). However, it also includes many classes that don't have a direct correspondent in Foundation, and many Foundation classes are missing. 
