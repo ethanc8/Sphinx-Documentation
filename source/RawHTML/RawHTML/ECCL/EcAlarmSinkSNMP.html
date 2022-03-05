@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcAlarmSinkSNMP class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcAlarmSinkSNMP">EcAlarmSinkSNMP class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the EcAlarmSinkSNMP class
+      </a></h1>
+    <h2><a name="class$EcAlarmSinkSNMP">EcAlarmSinkSNMP</a> : <a rel="gsdoc" href="EcAlarmDestination.html#class$EcAlarmDestination">EcAlarmDestination</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcAlarmSinkSNMP.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            The EcAlarmSinkSNMP class implements an alarm
+            destination which terminates a chain of
+            destinations by delivering alarms to an SNMP
+            monitoring system rather than forwarding them to
+            another EcAlarmDestination object.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            The SNMP functionality of the EcAlarmSinkSNMP is
+            essentially to maintain a table of active
+            alarms and to send out traps indicating changes of
+            state of that table as follows:
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Alarms in the table are each identified by a unique
+            numeric identifier, the &apos;notificationID&apos; and traps
+            concerning the alarms carry that ID. <br /> For
+            each alarm trap sent out, there is a corresponding
+            trap sent when the alarm is cleared and removed from
+            the table. The clear trap carries the same notification
+            identifier as that of the alarm being cleared,
+            and the pair (alarm/clear) is known as a correlation.
+            <br /> A clear trap is never sent without a
+            corresponding alarm trap having first been
+            sent. <br /> Each trap carries a sequence number so
+            that the SNMP manager is able to detect lost traps.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            For purposes of establishing a correlation between any
+            alarms coming in to the system, the managed object,
+            event type, specific problem, and probable cause
+            values must be the same. When this occurs, any
+            matching alarms are given the same notification
+            identifier as the first alarm. <br /> When an
+            alarm is added to the table, only one trap will to
+            notify about it, and no further traps will be sent
+            for any correlated alarms arriving unless those alarms
+            have new perceived severity values. <br /> If an alarm
+            changes its severity, a trap will be sent to clear
+            the alarm (removing it from the table) and the alarm
+            with new severity will be added to the table and its
+            trap sent.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            To allow an SNMP manager to resynchronize with the
+            agent, the manager may examine the table of active
+            alarms. This may be needed where there is an agent
+            error, manager error, or loss of connectivity/traps
+            (jumps in the trap sequence number). <br /> The
+            entries in the table contain all the same
+            information as the alarm traps, apart from the
+            trap sequence number.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            After a crash/shutdown and subsequent start-up of the
+            agent, the active alarm table is updated with the
+            current situation of the system before the manager
+            is able to respond to the coldstart (see RFC 1157). When
+            the manager receives the agent&apos;s coldstart it may being
+            a resynchronization process gathering alarms related to
+            the current situation of the system by examining the
+            alarm table. <br /> There is a resync flag variable
+            which indicates whether a resynchronization process
+            is being carried out or not (set to 1 if resync is in
+            progress, 0 otherwise). Before sending a trap,
+            the variable is checked to know whether the
+            resynchronization process is active or
+            not. The traps will only be sent to the manager if
+            there is no resync in progress, otherwise they will
+            be deferred until the resync has completed. <br /> The
+            manager may therefore set the resync flag to 1,
+            read the contents of the active alarms table, and then
+            set the resync flag to zero to resume active operation.
+            <br /> As a safety measure to protect against
+            manager failure, the resync flag is automatically
+            reset to zero if it is left set to 1 for more than
+            five minutes.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            In addition to the traps and the alarms table, a table
+            of managed objects is also maintained. The system
+            guarantees that any managed object referred to
+            in a trap is present in the table before the trap is
+            sent.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            In order for the manager to know that the agent is
+            running, a heartbeat trap is sent periodically.
+            The heartbeat contains a notification identifier of
+            zero (never used other than for a heartbeat). <br /> A
+            poll heartbeat interval variable is provided to allow
+            the manager to control the time between heartbeats (in
+            minutes) and may be set to a positive integer
+            value, or queried.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            The class works by connecting to an SNMP agent using
+            the Agent-X protocol, and registering as the &apos;owner&apos; of
+            various OIDs in an SNMP MIB so that SNMP requests
+            made to the agent for those OIDs are forwarded to the
+            EcAlarmSinkSNMP, and so that the
+            EcAlarmSinkSNMP can send SNMP &apos;traps&apos; via
+            the agent. <br /> To do this, the agent must be
+            configured to accept incoming Agent-X
+            connections from the host on which the
+            EcAlarmSinkSNMP is running, and the alarm
+            sink object must be initialized using the
+            <a rel="gsdoc" href="#method$EcAlarmSinkSNMP-initWithHost$name$">
+              -initWithHost:name:
+            </a>
+
+            method to specify the host and port on which the
+            agent is listening. <br /> If the EcAlarmSinkSNMP
+            object is initialized without a specific host and
+            name then it assumes that the agent is running on
+            localhost and the standard Agent-X tcp/ip port
+            (705).
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            To configure a net-snmp agent to work with this software
+            you need to:
+              </p>
+    <p>
+      
+          Edit /etc/snmp/snmpd.conf to get it to send traps to
+          snmptrapd...
+
+<pre>
+ rwcommunity     public
+ trap2sink       localhost public
+ </pre>
+      
+          and to accept agentx connections via tcp...
+
+<pre>
+ agentxsocket    tcp:localhost:705
+ master          agentx
+ </pre>
+      
+          Then restart with &apos;/etc/rc.d/init.d/snmpd restart&apos;
+          
+    </p>
+    <p>
+
+            All alarming is done a based on three OIDs which may be
+            defined within the user defaults system. The
+            EcAlarmSinkSNMP instance is responsible for
+            managing those OIDs (and anything below them in
+            the OID hierarchy). <br /> By default the OIDs used are
+            those specified in the GNUstep MIB (GNUSTEP-MIB.txt),
+            but you may override them as specified below:
+              </p>
+    <p>
+      
+          
+      <dl>
+        <dt>AlarmsOID</dt>
+        <dd>
+          
+              All SNMP alarm data is in a fixed structure relative
+              to this OID in the MIB. <br /> The table of current
+              alarms is at the OID 1 relative to AlarmsOID, so
+              you can interrogate the table using;
+
+<pre>snmpwalk -v 1 -c public localhost {AlarmsOID}.1
+   </pre>
+          
+          The resync flag is at OID 2 relative to AlarmsOID and can
+          be queried or set using:
+
+<pre>snmpget -v 1 -c public localhost {AlarmsOID}.2.0
+   </pre>
+          
+
+<pre>snmpset -v 1 -c public localhost {AlarmsOID}.2.0 i 1
+   </pre>
+          
+          The current trap sequence number is at OID 3 relative to
+          AlarmsOID and can be queried using:
+
+<pre>snmpget -v 1 -c public localhost {AlarmsOID}.3.0
+   </pre>
+          
+          The heartbeat poll interval is at OID 4 relative to
+          AlarmsOID and can be queried or set using:
+
+<pre>snmpget -v 1 -c public localhost {AlarmsOID}.4.0
+   </pre>
+          
+
+<pre>snmpset -v 1 -c public localhost {AlarmsOID}.4.0 i 5
+   </pre>
+          
+        
+        </dd>
+        <dt>ObjectsOID</dt>
+        <dd>
+          
+          All SNMP managed object values are in a table relative to
+          this OID in the MIB. <br /> SNMP tools are able to
+          interrogate the table at this OID to see which
+          managed objects are currently registered:
+
+<pre>snmpwalk -v 1 -c public localhost {ObjectsOID}
+   </pre>
+          
+        
+        </dd>
+        <dt>TrapOID</dt>
+        <dd>
+          
+          The definition of the trap which carries alarms to any
+          monitoring system is at this OID.
+        
+        </dd>
+      </dl>
+      
+      
+    </p>
+    <p>
+
+        Each of these OID strings must be a representation of an
+        OID in the integer dotted format (eg.
+        1.3.6.1.4.1.37374.3.0.1).
+          </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcAlarmSinkSNMP.html#method$EcAlarmSinkSNMP+alarmSinkSNMP">+alarmSinkSNMP</a></li>
+      <li><a rel="gsdoc" href="EcAlarmSinkSNMP.html#method$EcAlarmSinkSNMP-initWithHost$name$">-initWithHost:name:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcAlarmSinkSNMP+alarmSinkSNMP">alarmSinkSNMP&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$EcAlarmSinkSNMP">EcAlarmSinkSNMP</a>*) <b>alarmSinkSNMP</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the singleton alarm sink instance. <br />
+              This instance is the link between the Objective-C
+              world and the net-snmp world which runs in a
+              separate thread. You should stop the SNMP system
+              by calling
+              <a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-shutdown">
+                -shutdown
+              </a>
+
+              before process termination.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              If the agent is on another host and/or is using a
+              non-standard port, you need to call
+              <a rel="gsdoc" href="#method$EcAlarmSinkSNMP-initWithHost$name$">
+                -initWithHost:name:
+              </a>
+
+              before and/or instead of calling this method.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmSinkSNMP-initWithHost$name$">initWithHost:&nbsp;name:&nbsp;</a></h3>
+    - (id) <b>initWithHost:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)host<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Overrides the default behavior to specify a
+              <var>host</var> and <var>name</var> for the SNMP
+              agent this instance is to connect to. <br /> The
+              <var>host</var> must be the machine the agent is
+              running on and the <var>name</var> must be the
+              tcp/ip port on which that agent is listening for
+              Agent-X connections.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              If an instance has already been created/initialized,
+              this method returns the existing instance and its
+              arguments are ignored.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

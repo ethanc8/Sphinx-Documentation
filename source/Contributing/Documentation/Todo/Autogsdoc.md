@@ -35,7 +35,7 @@ The following frameworks need Autogsdoc documentation to be added:
     * Autogsdoc - build with the library
 - [ ] GSWeb
     * Autogsdoc
-- [X] PDFKit
+- [ ] PDFKit
     * Doesn't conform to any system -- partially documented, using `/**` and `/*`
 - [X] libobjc2
 - [ ] GCC Objective-C runtime

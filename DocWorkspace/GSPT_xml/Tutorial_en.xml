@@ -1,0 +1,105 @@
+<?xml version='1.0'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V4.2//EN" [
+<!ENTITY intro SYSTEM "en/intro.xml">
+<!ENTITY devtools SYSTEM "en/devtools.xml">
+<!ENTITY objc SYSTEM "en/objc.xml">
+<!ENTITY startintro SYSTEM "en/startintro.xml">
+<!ENTITY toolapp SYSTEM "en/toolapp.xml">
+<!ENTITY free SYSTEM "en/free.xml">
+<!ENTITY headers SYSTEM "en/headers.xml">
+<!ENTITY strings SYSTEM "en/strings.xml">
+<!ENTITY arrays SYSTEM "en/arrays.xml">
+<!ENTITY debug SYSTEM "en/debug.xml">
+<!ENTITY basicmemory SYSTEM "en/BasicMemory_en.xml">
+
+<!ENTITY fileio SYSTEM "en/fileio.xml">
+<!ENTITY bresources SYSTEM "en/base-resources.xml">
+<!ENTITY hellowindow SYSTEM "en/hellowindow.xml">
+<!ENTITY gorm SYSTEM "en/gorm.xml">
+
+<!ENTITY basictimemachine SYSTEM "en/BasicTimeMachine_en.xml">
+<!ENTITY timemachineoutletaction SYSTEM "en/TimeMachineOutletAction_en.xml">
+<!ENTITY timemachinecustomview SYSTEM "en/TimeMachineCustomView_en.xml">
+<!ENTITY timemachinedrawing SYSTEM "en/TimeMachineDrawing_en.xml">
+<!ENTITY timemachinepanel SYSTEM "en/TimeMachinePanel_en.xml">
+<!ENTITY timemachinenotification SYSTEM "en/TimeMachineNotification_en.xml">
+<!ENTITY basicmoney SYSTEM "en/BasicMoney_en.xml">
+<!ENTITY moneytable SYSTEM "en/MoneyTable_en.xml">
+<!ENTITY moneyloadsave SYSTEM "en/MoneyLoadSave_en.xml">
+<!ENTITY moneydragdropintable SYSTEM "en/MoneyDragDropInTable_en.xml">
+<!ENTITY basicoverview SYSTEM "en/BasicOverview_en.xml">
+<!ENTITY basiclunarcalendar SYSTEM "en/BasicLunarCalendar_en.xml">
+<!ENTITY basicnslookupservice SYSTEM "en/BasicNSLookupService_en.xml">
+<!ENTITY basicregex SYSTEM "en/BasicRegEx_en.xml">
+<!ENTITY basiclocalization SYSTEM "en/BasicLocalization_en.xml">
+<!ENTITY basicsearch SYSTEM "en/BasicSearch_en.xml">
+<!ENTITY advancedprogramming SYSTEM "en/AdvancedProgramming_en.xml">
+]>
+<book>
+<bookinfo>
+  <title>A GNUstep Programming Tutorial</title>
+  <subtitle>Time is on our side...</subtitle>
+  <author><firstname>Yen-Ju</firstname><surname>Chen</surname></author>
+  <author><firstname>Dennis</firstname><surname>Leeuw</surname></author>
+  <edition>GNUstep Tutorial version 1.5</edition>
+  <copyright><year>2003</year>
+  	<holder>Yen-Ju Chen</holder>
+  	<holder>Dennis Leeuw</holder>
+	</copyright>
+  <legalnotice><para>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.</para></legalnotice>
+</bookinfo>
+
+<chapter>
+<title>Before we start</title>
+   &intro;
+   &devtools;
+   &objc;
+</chapter>
+
+<chapter>
+<title>How to start GNUstep programming</title>
+   &startintro;
+   &toolapp;
+   &free;
+   &headers;
+   &strings;
+   &arrays;
+   &debug;
+   &basicmemory;
+   &fileio;
+   &bresources;
+</chapter>
+
+<chapter>
+<title>The GUI</title>
+   &hellowindow;
+   &gorm;
+</chapter>
+
+<chapter>
+<title>Unknown 1</title>
+   &basictimemachine;
+   &basicmoney;
+   &basicoverview;
+   &basiclunarcalendar;
+</chapter>
+
+<chapter>
+<title>Services</title>
+   &basicnslookupservice;
+</chapter>
+
+<chapter>
+<title>Regular expressions</title>
+   &basicregex;
+</chapter>
+
+<chapter>
+<title>Language support</title>
+   &basiclocalization;
+   &basicsearch;
+</chapter>
+
+&advancedprogramming;
+
+</book>

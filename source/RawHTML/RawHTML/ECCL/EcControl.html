@@ -1,0 +1,919 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcControl documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcControl">EcControl documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the CommandInfo class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the ConsoleInfo class</a>
+        </li>
+        <li>
+          <a href="#003000000000">Software documentation for the EcControl class</a>
+        </li>
+        <li>
+          <a href="#004000000000">EcControl variables</a>
+        </li>
+        <li>
+          <a href="#005000000000">EcControl functions</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the CommandInfo class
+      </a></h1>
+    <h2><a name="class$CommandInfo">CommandInfo</a> : EcClientI</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcControl.m</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_CommandInfo_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcControl.html#method$CommandInfo-serverByAbbreviation$">-serverByAbbreviation:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$CommandInfo-servers">-servers</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$CommandInfo-setServers$">-setServers:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$CommandInfo-serverByAbbreviation$">serverByAbbreviation:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>serverByAbbreviation:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$CommandInfo-servers">servers&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>servers</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$CommandInfo-setServers$">setServers:&nbsp;</a></h3>
+    - (void) <b>setServers:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_CommandInfo_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for CommandInfo Class</h2>
+    <h3><a name="ivariable$CommandInfo*servers">servers</a></h3>
+    @protected NSArray* <b>servers</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the ConsoleInfo class
+      </a></h1>
+    <h2><a name="class$ConsoleInfo">ConsoleInfo</a> : EcClientI</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcControl.m</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_ConsoleInfo_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-chost">-chost</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-cserv">-cserv</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-getAlerts">-getAlerts</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-getAudits">-getAudits</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-getErrors">-getErrors</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-getGeneral">-getGeneral</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-getWarnings">-getWarnings</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-initFor$name$with$pass$">-initFor:name:with:pass:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-pass">-pass</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-promptAfter$">-promptAfter:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-setAlerts$">-setAlerts:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-setAudits$">-setAudits:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-setConnectedHost$">-setConnectedHost:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-setConnectedServ$">-setConnectedServ:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-setErrors$">-setErrors:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-setGeneral$">-setGeneral:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$ConsoleInfo-setWarnings$">-setWarnings:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$ConsoleInfo-chost">chost&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>chost</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-cserv">cserv&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>cserv</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-getAlerts">getAlerts&nbsp;</a></h3>
+    - (BOOL) <b>getAlerts</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-getAudits">getAudits&nbsp;</a></h3>
+    - (BOOL) <b>getAudits</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-getErrors">getErrors&nbsp;</a></h3>
+    - (BOOL) <b>getErrors</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-getGeneral">getGeneral&nbsp;</a></h3>
+    - (BOOL) <b>getGeneral</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-getWarnings">getWarnings&nbsp;</a></h3>
+    - (BOOL) <b>getWarnings</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-initFor$name$with$pass$">initFor:&nbsp;name:&nbsp;with:&nbsp;pass:&nbsp;</a></h3>
+    - (id) <b>initFor:</b> (id)o<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> with:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdClient)">CmdClient</a>>)s<b> pass:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)p;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-pass">pass&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>pass</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-promptAfter$">promptAfter:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>promptAfter:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-setAlerts$">setAlerts:&nbsp;</a></h3>
+    - (void) <b>setAlerts:</b> (BOOL)flag;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-setAudits$">setAudits:&nbsp;</a></h3>
+    - (void) <b>setAudits:</b> (BOOL)flag;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-setConnectedHost$">setConnectedHost:&nbsp;</a></h3>
+    - (void) <b>setConnectedHost:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-setConnectedServ$">setConnectedServ:&nbsp;</a></h3>
+    - (void) <b>setConnectedServ:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-setErrors$">setErrors:&nbsp;</a></h3>
+    - (void) <b>setErrors:</b> (BOOL)flag;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-setGeneral$">setGeneral:&nbsp;</a></h3>
+    - (void) <b>setGeneral:</b> (BOOL)flag;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$ConsoleInfo-setWarnings$">setWarnings:&nbsp;</a></h3>
+    - (void) <b>setWarnings:</b> (BOOL)flag;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_ConsoleInfo_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for ConsoleInfo Class</h2>
+    <h3><a name="ivariable$ConsoleInfo*alerts">alerts</a></h3>
+    @protected BOOL <b>alerts</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$ConsoleInfo*audits">audits</a></h3>
+    @protected BOOL <b>audits</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$ConsoleInfo*chost">chost</a></h3>
+    @protected NSString* <b>chost</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$ConsoleInfo*cserv">cserv</a></h3>
+    @protected NSString* <b>cserv</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$ConsoleInfo*errors">errors</a></h3>
+    @protected BOOL <b>errors</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$ConsoleInfo*general">general</a></h3>
+    @protected BOOL <b>general</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$ConsoleInfo*pass">pass</a></h3>
+    @protected NSString* <b>pass</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$ConsoleInfo*warnings">warnings</a></h3>
+    @protected BOOL <b>warnings</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="003000000000">
+        Software documentation for the EcControl class
+      </a></h1>
+    <h2><a name="class$EcControl">EcControl</a> : <a rel="gsdoc" href="EcProcess.html#class$EcProcess">EcProcess</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcControl.m</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="EcProcess.html#protocol$(Control)">Control</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_EcControl_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-cmdGnip$sequence$extra$">-cmdGnip:sequence:extra:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-cmdPing$sequence$extra$">-cmdPing:sequence:extra:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-cmdQuit$">-cmdQuit:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-command$from$">-command:from:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-connection$shouldMakeNewConnection$">-connection:shouldMakeNewConnection:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-connectionBecameInvalid$">-connectionBecameInvalid:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-findIn$byAbbreviation$">-findIn:byAbbreviation:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-findIn$byName$">-findIn:byName:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-findIn$byObject$">-findIn:byObject:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-getInclude$">-getInclude:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-information$type$to$from$">-information:type:to:from:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-messageForAlarm$">-messageForAlarm:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-openLog$">-openLog:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-recursiveInclude$">-recursiveInclude:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-registerCommand$name$">-registerCommand:name:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-registerConsole$name$pass$">-registerConsole:name:pass:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-reply$to$from$">-reply:to:from:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-reportAlarm$withMessage$isCleared$reminder$">-reportAlarm:withMessage:isCleared:reminder:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-reportAlarms">-reportAlarms</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-servers$on$">-servers:on:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-timedOut$">-timedOut:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-tryInclude$multi$">-tryInclude:multi:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-unregister$">-unregister:</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-update">-update</a></li>
+      <li><a rel="gsdoc" href="EcControl.html#method$EcControl-updateConfig$">-updateConfig:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcControl-cmdGnip$sequence$extra$">cmdGnip:&nbsp;sequence:&nbsp;extra:&nbsp;</a></h3>
+    - (oneway void) <b>cmdGnip:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdPing)">CmdPing</a>>)from<b> sequence:</b> (unsigned)num<b> extra:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-cmdPing$sequence$extra$">cmdPing:&nbsp;sequence:&nbsp;extra:&nbsp;</a></h3>
+    - (oneway void) <b>cmdPing:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdPing)">CmdPing</a>>)from<b> sequence:</b> (unsigned)num<b> extra:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-cmdQuit$">cmdQuit:&nbsp;</a></h3>
+    - (oneway void) <b>cmdQuit:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSInteger">NSInteger</a>)status;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-command$from$">command:&nbsp;from:&nbsp;</a></h3>
+    - (void) <b>command:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)dat<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)f;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-connection$shouldMakeNewConnection$">connection:&nbsp;shouldMakeNewConnection:&nbsp;</a></h3>
+    - (BOOL) <b>connection:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSConnection.html#class$NSConnection">NSConnection</a>*)ancestor<b> shouldMakeNewConnection:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSConnection.html#class$NSConnection">NSConnection</a>*)newConn;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-connectionBecameInvalid$">connectionBecameInvalid:&nbsp;</a></h3>
+    - (id) <b>connectionBecameInvalid:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSNotification.html#class$NSNotification">NSNotification</a>*)notification;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-findIn$byAbbreviation$">findIn:&nbsp;byAbbreviation:&nbsp;</a></h3>
+    - (EcClientI*) <b>findIn:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)a<b> byAbbreviation:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-findIn$byName$">findIn:&nbsp;byName:&nbsp;</a></h3>
+    - (EcClientI*) <b>findIn:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)a<b> byName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-findIn$byObject$">findIn:&nbsp;byObject:&nbsp;</a></h3>
+    - (EcClientI*) <b>findIn:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)a<b> byObject:</b> (id)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-getInclude$">getInclude:&nbsp;</a></h3>
+    - (id) <b>getInclude:</b> (id)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-information$type$to$from$">information:&nbsp;type:&nbsp;to:&nbsp;from:&nbsp;</a></h3>
+    - (void) <b>information:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)inf<b> type:</b> (<a rel="gsdoc" href="EcProcess.html#type$EcLogType">EcLogType</a>)t<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)to<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)from;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-messageForAlarm$">messageForAlarm:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>messageForAlarm:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-openLog$">openLog:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSFileHandle.html#class$NSFileHandle">NSFileHandle</a>*) <b>openLog:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)lname;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-recursiveInclude$">recursiveInclude:&nbsp;</a></h3>
+    - (id) <b>recursiveInclude:</b> (id)o;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-registerCommand$name$">registerCommand:&nbsp;name:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*) <b>registerCommand:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(Command)">Command</a>>)c<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-registerConsole$name$pass$">registerConsole:&nbsp;name:&nbsp;pass:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>registerConsole:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(Console)">Console</a>>)c<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> pass:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)p;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-reply$to$from$">reply:&nbsp;to:&nbsp;from:&nbsp;</a></h3>
+    - (void) <b>reply:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-reportAlarm$withMessage$isCleared$reminder$">reportAlarm:&nbsp;withMessage:&nbsp;isCleared:&nbsp;reminder:&nbsp;</a></h3>
+    - (void) <b>reportAlarm:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm<b> withMessage:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)message<b> isCleared:</b> (BOOL)cleared<b> reminder:</b> (int)reminder;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-reportAlarms">reportAlarms&nbsp;</a></h3>
+    - (void) <b>reportAlarms</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-servers$on$">servers:&nbsp;on:&nbsp;</a></h3>
+    - (void) <b>servers:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)d<b> on:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(Command)">Command</a>>)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-timedOut$">timedOut:&nbsp;</a></h3>
+    - (void) <b>timedOut:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSTimer.html#class$NSTimer">NSTimer</a>*)t;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-tryInclude$multi$">tryInclude:&nbsp;multi:&nbsp;</a></h3>
+    - (id) <b>tryInclude:</b> (id)s<b> multi:</b> (BOOL*)flag;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-unregister$">unregister:&nbsp;</a></h3>
+    - (void) <b>unregister:</b> (id)obj;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-update">update&nbsp;</a></h3>
+    - (BOOL) <b>update</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcControl-updateConfig$">updateConfig:&nbsp;</a></h3>
+    - (void) <b>updateConfig:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)dummy;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_EcControl_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for EcControl Class</h2>
+    <h3><a name="ivariable$EcControl*alarmFilter">alarmFilter</a></h3>
+    @protected NSRegularExpression* <b>alarmFilter</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*alerter">alerter</a></h3>
+    @protected EcAlerter* <b>alerter</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*commandPingPosition">commandPingPosition</a></h3>
+    @protected unsigned int <b>commandPingPosition</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*commands">commands</a></h3>
+    @protected NSMutableArray* <b>commands</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*config">config</a></h3>
+    @protected NSDictionary* <b>config</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*configFailed">configFailed</a></h3>
+    @protected NSString* <b>configFailed</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*configIncludeFailed">configIncludeFailed</a></h3>
+    @protected NSString* <b>configIncludeFailed</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*consolePingPosition">consolePingPosition</a></h3>
+    @protected unsigned int <b>consolePingPosition</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*consoles">consoles</a></h3>
+    @protected NSMutableArray* <b>consoles</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*fileBodies">fileBodies</a></h3>
+    @protected NSMutableDictionary* <b>fileBodies</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*fileDates">fileDates</a></h3>
+    @protected NSMutableDictionary* <b>fileDates</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*logname">logname</a></h3>
+    @protected NSString* <b>logname</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*mgr">mgr</a></h3>
+    @protected NSFileManager* <b>mgr</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*operators">operators</a></h3>
+    @protected NSMutableDictionary* <b>operators</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*terminating">terminating</a></h3>
+    @protected NSTimer* <b>terminating</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcControl*timer">timer</a></h3>
+    @protected NSTimer* <b>timer</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="004000000000">EcControl variables</a></h1>
+    <p>
+    </p>
+    <h3><a name="variable$alarmsAlerted">alarmsAlerted</a></h3>
+    uint64_t alarmsAlerted;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$alarmsIgnored">alarmsIgnored</a></h3>
+    uint64_t alarmsIgnored;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$alertAlarmThreshold">alertAlarmThreshold</a></h3>
+    int alertAlarmThreshold;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$comp_len">comp_len</a></h3>
+    int comp_len;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$controlKey">controlKey</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* controlKey;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$lastAlertInfo">lastAlertInfo</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSMutableDictionary">NSMutableDictionary</a>* lastAlertInfo;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$pingDelay">pingDelay</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a> pingDelay;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$reminderInterval">reminderInterval</a></h3>
+    int reminderInterval;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$sink">sink</a></h3>
+    <a rel="gsdoc" href="EcAlarmSinkSNMP.html#class$EcAlarmSinkSNMP">EcAlarmSinkSNMP</a>* sink;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="005000000000">EcControl functions</a></h1>
+    <p>
+    </p>
+    <h3><a name="function$cmdWord">cmdWord</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdWord(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>* <b>a</b>, unsigned int <b>pos</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$comp">comp</a></h3>
+    int comp(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>s0</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>s1</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <br />
+    </font>
+</body>
+</html>

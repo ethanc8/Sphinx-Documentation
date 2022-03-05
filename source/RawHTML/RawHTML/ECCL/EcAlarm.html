@@ -1,0 +1,1727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcAlarm class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcAlarm">EcAlarm class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the EcAlarm class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the EcAlarm(Convenience)
+        category</a>
+        </li>
+        <li>
+          <a href="#003000000000">EcAlarm types</a>
+        </li>
+        <li>
+          <a href="#004000000000">EcAlarm functions</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the EcAlarm class
+      </a></h1>
+    <h2><a name="class$EcAlarm">EcAlarm</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcAlarm.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSCoding)">NSCoding</a></dd>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSCopying)">NSCopying</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            The EcAlarm class encapsulates an alarm to be sent out
+            to a monitoring system. It&apos;s designed to work cleanly
+            with industry standard SNMP alarm monitoring systems.
+            For more information on how the SNMP operation works,
+            see the
+            <a rel="gsdoc" href="EcAlarmSinkSNMP.html#class$EcAlarmSinkSNMP">EcAlarmSinkSNMP</a>
+class documentation.    </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Instances are created and sent to a central
+              coordination point where checks are
+              performed to see if there is an existing alarm
+              for the same issue. If the incoming alarm does not
+              change the severity of an existing alarm, it is
+              ignored, otherwise it may be passed on to an
+              external monitoring system. The central
+              coordination system is responsible for
+              ensuring that alarms for the same issue are
+              updated to contain the first event date,
+              notification ID and a trend indicator.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Alarms which have been raised (by passing them to
+              an alarm destination) remain raised until they are
+              cleared (by passign a matching alarm with a
+              cleared severity status) to the destination.
+              Alarm clears sent with no earlier matching raise
+              are generally ignored, but a clear may be flagged as
+              a special audit alarm: one which is passed on and
+              logged for audit porposes. This is a rare
+              situation where the alarm does not actually
+              represent a problem (or even the suspicion of a
+              problem).
+                </p>
+    <p>
+      
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_EcAlarm_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm(Convenience)+clear$cause$problem$">+clear:cause:problem:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm(Convenience)+raise$cause$problem$severity$action$,...">+raise:cause:problem:severity:action:,...</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm+alarmForManagedObject$at$withEventType$probableCause$specificProblem$perceivedSeverity$proposedRepairAction$additionalText$">+alarmForManagedObject:at:withEventType:probableCause:specificProblem:perceivedSeverity:proposedRepairAction:additionalText:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm+eventTypeFromProbableCause$">+eventTypeFromProbableCause:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm+stringFromEventType$">+stringFromEventType:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm+stringFromProbableCause$">+stringFromProbableCause:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm+stringFromSeverity$">+stringFromSeverity:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm+stringFromTrend$">+stringFromTrend:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-additionalText">-additionalText</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-audit">-audit</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-clear">-clear</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-compare$">-compare:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-copyWithZone$">-copyWithZone:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-dealloc">-dealloc</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-delay">-delay</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-delayed$">-delayed:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-encodeWithCoder$">-encodeWithCoder:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-eventDate">-eventDate</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-eventType">-eventType</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-extra">-extra</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-firstEventDate">-firstEventDate</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-freeze">-freeze</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-hash">-hash</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-initForManagedObject$at$withEventType$probableCause$specificProblem$perceivedSeverity$proposedRepairAction$additionalText$">-initForManagedObject:at:withEventType:probableCause:specificProblem:perceivedSeverity:proposedRepairAction:additionalText:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-initWithCoder$">-initWithCoder:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-isEqual$">-isEqual:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-managedObject">-managedObject</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-moComponent">-moComponent</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-moHost">-moHost</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-moInstance">-moInstance</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-moInstancedProcess">-moInstancedProcess</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-moProcess">-moProcess</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-notificationID">-notificationID</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-perceivedSeverity">-perceivedSeverity</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-probableCause">-probableCause</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-proposedRepairAction">-proposedRepairAction</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-setAudit$">-setAudit:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-setDelay$">-setDelay:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-setExtra$">-setExtra:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-setFirstEventDate$">-setFirstEventDate:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-setNotificationID$">-setNotificationID:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-setTrendIndicator$">-setTrendIndicator:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-setUserInfo$">-setUserInfo:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-specificProblem">-specificProblem</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-trendIndicator">-trendIndicator</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm-userInfo">-userInfo</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcAlarm+alarmForManagedObject$at$withEventType$probableCause$specificProblem$perceivedSeverity$proposedRepairAction$additionalText$">alarmForManagedObject:&nbsp;at:&nbsp;withEventType:&nbsp;probableCause:&nbsp;specificProblem:&nbsp;perceivedSeverity:&nbsp;proposedRepairAction:&nbsp;additionalText:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$EcAlarm">EcAlarm</a>*) <b>alarmForManagedObject:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject<b> at:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*)eventDate<b> withEventType:</b> (<a rel="gsdoc" href="#type$EcAlarmEventType">EcAlarmEventType</a>)eventType<b> probableCause:</b> (<a rel="gsdoc" href="#type$EcAlarmProbableCause">EcAlarmProbableCause</a>)probableCause<b> specificProblem:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)specificProblem<b> perceivedSeverity:</b> (<a rel="gsdoc" href="#type$EcAlarmSeverity">EcAlarmSeverity</a>)perceivedSeverity<b> proposedRepairAction:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)proposedRepairAction<b> additionalText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)additionalText;<br />
+    <div class="desc">
+      
+            Creates and returns an autoreleased instance by
+            calling the designated initialiser with all the
+            supplied arguments.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm+eventTypeFromProbableCause$">eventTypeFromProbableCause:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#type$EcAlarmEventType">EcAlarmEventType</a>) <b>eventTypeFromProbableCause:</b> (<a rel="gsdoc" href="#type$EcAlarmProbableCause">EcAlarmProbableCause</a>)value;<br />
+    <div class="desc">
+      
+            This method provides a mapping from the probable cause
+            of an event to the event type. <br /> The method is
+            called during initialisation of an alarm instance
+            (except where the probable cause is
+            EcAlarmProbableCauseUnknown)
+            to check that the supplied arguments are consistent. If
+            a subclass extends the possible probable cause values, it
+            must also override this method to handle those new
+            values by returning a known event type.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm+stringFromEventType$">stringFromEventType:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>stringFromEventType:</b> (<a rel="gsdoc" href="#type$EcAlarmEventType">EcAlarmEventType</a>)value;<br />
+    <div class="desc">
+      
+            Provides a human readable string representation of
+            an event type. <br /> This method is called during
+            initialisation of an alarm instance to check
+            that the supplied event type is legal. <br /> Returns
+            <code>nil</code> if the <var>value</var> is unknown.
+            <br />
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm+stringFromProbableCause$">stringFromProbableCause:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>stringFromProbableCause:</b> (<a rel="gsdoc" href="#type$EcAlarmProbableCause">EcAlarmProbableCause</a>)value;<br />
+    <div class="desc">
+      
+            Provides a human readable string representation of
+            a probable cause. <br /> Returns <code>nil</code> if the
+            <var>value</var> is unknown.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm+stringFromSeverity$">stringFromSeverity:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>stringFromSeverity:</b> (<a rel="gsdoc" href="#type$EcAlarmSeverity">EcAlarmSeverity</a>)value;<br />
+    <div class="desc">
+      
+            Provides a human readable string representation of
+            a severity. <br /> Returns <code>nil</code> if the
+            <var>value</var> is unknown.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm+stringFromTrend$">stringFromTrend:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>stringFromTrend:</b> (<a rel="gsdoc" href="#type$EcAlarmTrend">EcAlarmTrend</a>)value;<br />
+    <div class="desc">
+      
+            Provides a human readable string representation of
+            a trend. <br /> Returns <code>nil</code> if the
+            <var>value</var> is unknown.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-additionalText">additionalText&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>additionalText</b>;<br />
+    <div class="desc">
+      
+            This is the supplementary text (optional) which may be
+            provided with and alarm an an aid to the human
+            operator for the monitoring system.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-audit">audit&nbsp;</a></h3>
+    - (BOOL) <b>audit</b>;<br />
+    <div class="desc">
+      
+            Returns <code>YES</code> if this alarm is flagged
+            as an audit object: a clear which should be
+            recorded/monitored even without a
+            matching raise of the alarm.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-clear">clear&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$EcAlarm">EcAlarm</a>*) <b>clear</b>;<br />
+    <div class="desc">
+      
+            Returns an autoreleased copy of the receiver with
+            the same notificationID but with a perceivedSeverity
+            set to be EcAlarmSeverityCleared... this may be used to
+            clear the alarm represented by the receiver.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-compare$">compare:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSComparisonResult">NSComparisonResult</a>) <b>compare:</b> (<a rel="gsdoc" href="#class$EcAlarm">EcAlarm</a>*)other;<br />
+    <div class="desc">
+      
+            Compares the <var>other</var> object with the
+            receiver for sorting/ordering. <br /> If both
+            objects have a notificationID set then the result
+            of the numeric comparison of those IDs is used. <br />
+            Otherwise the result of the comparison orders the
+            objects by managedObject, eventType, probableCause,
+            and specificProblem.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-copyWithZone$">copyWithZone:&nbsp;</a></h3>
+    - (id) <b>copyWithZone:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSZone">NSZone</a>*)aZone;<br />
+    <div class="desc">
+      
+            EcAlarm objects may be copied. This method is
+            provided to implement the NSCopying protocol.
+            <br /> A copy of an object does <em>not</em> copy
+            any value provided by the
+            <a rel="gsdoc" href="#method$EcAlarm-setExtra$">
+              -setExtra:
+            </a>
+
+            method. <br /> A copy of an object is not frozen.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-dealloc">dealloc&nbsp;</a></h3>
+    - (void) <b>dealloc</b>;<br />
+    <div class="desc">
+      
+            Deallocates the receiver.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-delay">delay&nbsp;</a></h3>
+    - (uint8_t) <b>delay</b>;<br />
+    <div class="desc">
+      
+            Returns the queue delay set for this alarm (or zero
+            if none was set).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-delayed$">delayed:&nbsp;</a></h3>
+    - (BOOL) <b>delayed:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>)at;<br />
+    <div class="desc">
+      
+            Returns <code>YES</code> if the receiver should be
+            delayed in the queue past the supplied timestamp,
+            <code>NO</code> otherwise.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-encodeWithCoder$">encodeWithCoder:&nbsp;</a></h3>
+    - (void) <b>encodeWithCoder:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSCoder.html#class$NSCoder">NSCoder</a>*)aCoder;<br />
+    <div class="desc">
+      
+            EcAlarm objects may be passed over the distributed
+            objects system or archived. This method is provided
+            to implement the NSCoding protocol. <br /> An encoded
+            copy of an object does <em>not</em> copy any value
+            provided by the
+            <a rel="gsdoc" href="#method$EcAlarm-setExtra$">
+              -setExtra:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-eventDate">eventDate&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*) <b>eventDate</b>;<br />
+    <div class="desc">
+      
+            Returns the timestamp of the event which generated
+            the alarm.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-eventType">eventType&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#type$EcAlarmEventType">EcAlarmEventType</a>) <b>eventType</b>;<br />
+    <div class="desc">
+      
+            This method returns the type for event which generated
+            the alarm.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-extra">extra&nbsp;</a></h3>
+    - (void*) <b>extra</b>;<br />
+    <div class="desc">
+      
+            Returns any extra information stored by the
+            <a rel="gsdoc" href="#method$EcAlarm-setExtra$">
+              -setExtra:
+            </a>
+
+            method. <br />
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-firstEventDate">firstEventDate&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*) <b>firstEventDate</b>;<br />
+    <div class="desc">
+      
+            If this alarm is known to be represent an event updating
+            the status of an existing alarm, this method returns
+            the date of the initial event. otherwise it returns
+            <code>nil</code>.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-freeze">freeze&nbsp;</a></h3>
+    - (void) <b>freeze</b>;<br />
+    <div class="desc">
+      
+            Freeze the state of the receiver; no more calls to
+            setters are permitted. <br /> When a frozen alarm
+            is copied, the new copy is <em>not</em> frozen.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-hash">hash&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSUInteger">NSUInteger</a>) <b>hash</b>;<br />
+    <div class="desc">
+      
+            Returns the hash of the receiver... which is also
+            the hash of its managedObject.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-initForManagedObject$at$withEventType$probableCause$specificProblem$perceivedSeverity$proposedRepairAction$additionalText$">initForManagedObject:&nbsp;at:&nbsp;withEventType:&nbsp;probableCause:&nbsp;specificProblem:&nbsp;perceivedSeverity:&nbsp;proposedRepairAction:&nbsp;additionalText:&nbsp;</a></h3>
+    - (id) <b>initForManagedObject:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject<b> at:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*)eventDate<b> withEventType:</b> (<a rel="gsdoc" href="#type$EcAlarmEventType">EcAlarmEventType</a>)eventType<b> probableCause:</b> (<a rel="gsdoc" href="#type$EcAlarmProbableCause">EcAlarmProbableCause</a>)probableCause<b> specificProblem:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)specificProblem<b> perceivedSeverity:</b> (<a rel="gsdoc" href="#type$EcAlarmSeverity">EcAlarmSeverity</a>)perceivedSeverity<b> proposedRepairAction:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)proposedRepairAction<b> additionalText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)additionalText;<br />
+This is a designated initialiser for the class.<br />
+    <div class="desc">
+      
+            Initialises the receiver as an alarm for a
+            particular event. <br /> The
+            <var>managedObject</var> argument may be
+            <code>nil</code> if the alarm should use the default
+            managed object value for the current process.
+            <br /> The <var>eventDate</var> argument may be
+            <code>nil</code> if the alarm should use the current
+            timestamp. <br /> The <var>managedObject</var>,
+            <var>eventType</var>, <var>probableCause</var>, and
+            <var>specificProblem</var> arguments uniquely
+            identify the issue for which an alarm is being
+            produced. <br /> The <var>perceivedSeverity</var>
+            indicates the importance of the problem, with a
+            value of EcAlarmSeverityCleared indicating that the
+            problem is over. <br /> A
+            <var>proposedRepairAction</var> is mandatory (unless
+            the severity is cleared) to provide the human operator
+            with some sort of hint about how they should resolve
+            the issue.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-initWithCoder$">initWithCoder:&nbsp;</a></h3>
+    - (id) <b>initWithCoder:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSCoder.html#class$NSCoder">NSCoder</a>*)aCoder;<br />
+    <div class="desc">
+      
+            EcAlarm objects may be passed over the distributed
+            objects system or archived. This method is provided
+            to implement the NSCoding protocol.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-isEqual$">isEqual:&nbsp;</a></h3>
+    - (BOOL) <b>isEqual:</b> (id)other;<br />
+    <div class="desc">
+      
+            Returns a flag indicating whether the receiver is
+            equal to the <var>other</var> object. To be
+            considered equal either: <br /> The two objects
+            must have equal managedObject values and equal
+            (non-zero) notificationID values or <br /> the
+            two objects must have equal managedObject values, equal
+            eventType values, equal probableCause values, and
+            equal specificProblem values. <br /> NB. you must not
+            set two alarm instances to have the same notificationID
+            values if they are not considered equal using the
+            <var>other</var> criteria.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-managedObject">managedObject&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>managedObject</b>;<br />
+    <div class="desc">
+      
+            Returns the managedObject value set when the
+            receiver was initialised.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-moComponent">moComponent&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>moComponent</b>;<br />
+    <div class="desc">
+      
+            Returns the component of the managed object (if
+            any).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-moHost">moHost&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>moHost</b>;<br />
+    <div class="desc">
+      
+            Returns the host of the managed object.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-moInstance">moInstance&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>moInstance</b>;<br />
+    <div class="desc">
+      
+            Returns the instance of the managed object (if
+            any).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-moInstancedProcess">moInstancedProcess&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>moInstancedProcess</b>;<br />
+    <div class="desc">
+      
+            Returns the process name of the managed object
+            including the instance separated from the main
+            name by a hyphen. If the managed object has no process
+            instance, this method simply returns the process
+            name.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-moProcess">moProcess&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>moProcess</b>;<br />
+    <div class="desc">
+      
+            Returns the process name of the managed object.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-notificationID">notificationID&nbsp;</a></h3>
+    - (int) <b>notificationID</b>;<br />
+    <div class="desc">
+      
+            Returns zero or the notificationID value most
+            recently set by the
+            <a rel="gsdoc" href="#method$EcAlarm-setNotificationID$">
+              -setNotificationID:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-perceivedSeverity">perceivedSeverity&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#type$EcAlarmSeverity">EcAlarmSeverity</a>) <b>perceivedSeverity</b>;<br />
+    <div class="desc">
+      
+            Returns the perceivedSeverity set when the receiver
+            was initialised.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-probableCause">probableCause&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#type$EcAlarmProbableCause">EcAlarmProbableCause</a>) <b>probableCause</b>;<br />
+    <div class="desc">
+      
+            Returns the probableCause set when the receiver was
+            initialised.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-proposedRepairAction">proposedRepairAction&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>proposedRepairAction</b>;<br />
+    <div class="desc">
+      
+            Returns the proposedRepairAction set when the
+            receiver was initialised.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-setAudit$">setAudit:&nbsp;</a></h3>
+    - (void) <b>setAudit:</b> (BOOL)flag;<br />
+    <div class="desc">
+      
+            Specified if this alarm is to be flagged as an
+            audit object: a clear which should be
+            recorded/monitored even without a
+            matching raise of the alarm.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-setDelay$">setDelay:&nbsp;</a></h3>
+    - (void) <b>setDelay:</b> (uint8_t)delay;<br />
+    <div class="desc">
+      
+            Sets the number of seconds for which this alarm should
+            be delayed in the queue to allow coalescing with other
+            matching alarms. This defaults to zero so that
+            there is no special <var>delay</var> in processing
+            beyond that imposed by periodic queue flushing.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-setExtra$">setExtra:&nbsp;</a></h3>
+    - (void) <b>setExtra:</b> (void*)extra;<br />
+    <div class="desc">
+      
+            Sets <var>extra</var> data for the current instance.
+            <br /> Extra data is not copied, archived, or
+            transferred over DO, it is available only in
+            the exact instance of the class in which it was set.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-setFirstEventDate$">setFirstEventDate:&nbsp;</a></h3>
+    - (void) <b>setFirstEventDate:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*)firstEventDate;<br />
+    <div class="desc">
+      
+            Sets the first event date for the receiver. <br /> You
+            should not normally call this as it is reserved for
+            use by code which has matched the receiver to an
+            existing alarm.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-setNotificationID$">setNotificationID:&nbsp;</a></h3>
+    - (void) <b>setNotificationID:</b> (int)notificationID;<br />
+    <div class="desc">
+      
+            Sets the notification ID for the receiver. <br /> You
+            should not normally call this as it is reserved for
+            use by code which has matched the receiver to an
+            existing alarm. <br /> In particular, two
+            instances should not be set to have the same
+            non-zero <var>notificationID</var> unless they are
+            equal according to other criteria of equality (ie
+            have the same managedObject, eventType, probableCause,
+            and specificProblem values).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-setTrendIndicator$">setTrendIndicator:&nbsp;</a></h3>
+    - (void) <b>setTrendIndicator:</b> (<a rel="gsdoc" href="#type$EcAlarmTrend">EcAlarmTrend</a>)trendIndicator;<br />
+    <div class="desc">
+      
+            Sets the trend indicator for the receiver. <br /> You
+            should not normally call this as it is reserved for
+            use by code which has matched the receiver to an
+            existing alarm.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-setUserInfo$">setUserInfo:&nbsp;</a></h3>
+    - (void) <b>setUserInfo:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)userInfo;<br />
+    <div class="desc">
+      
+            Sets the user information associated with this alarm
+            (a dictionary). <br /> This user information is
+            additional data associated with the alarm which
+            is copied when the alarm is copied. This data is not
+            used by the CCITT X.733... it&apos;s optional additional
+            data. <br /> Conventional keys are: <br />
+            
+      <dl>
+        <dt>ResponsibleEmail</dt>
+        <dd>
+          
+                The Email address of the person/entity with primary
+                responsibility for dealing with an alarm
+                ... this is intended for use by the alerting system
+                (EcAlerter) when deciding where to send
+                email alerts.
+              
+        </dd>
+      </dl>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-specificProblem">specificProblem&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>specificProblem</b>;<br />
+    <div class="desc">
+      
+            Returns the specificProblem set when the receiver
+            was initialised.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-trendIndicator">trendIndicator&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#type$EcAlarmTrend">EcAlarmTrend</a>) <b>trendIndicator</b>;<br />
+    <div class="desc">
+      
+            Returns the value most recently set by the
+            <a rel="gsdoc" href="#method$EcAlarm-setTrendIndicator$">
+              -setTrendIndicator:
+            </a>
+
+            method (or EcAlarmTrendNone if that method has not
+            been called). <br /> This tells you whether the
+            receiver represents an increase in severity of an
+            issue, or a decrease in severity (or no change).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm-userInfo">userInfo&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*) <b>userInfo</b>;<br />
+    <div class="desc">
+      
+            Returns any previously set information (see
+            -setUserInfo:) or <code>nil</code> if none
+            has been set.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_EcAlarm_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for EcAlarm Class</h2>
+    <h3><a name="ivariable$EcAlarm*_additionalText">_additionalText</a></h3>
+    @protected NSString* <b>_additionalText</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_audit">_audit</a></h3>
+    @protected BOOL <b>_audit</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_delay">_delay</a></h3>
+    @protected uint8_t <b>_delay</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_eventDate">_eventDate</a></h3>
+    @protected NSDate* <b>_eventDate</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_eventType">_eventType</a></h3>
+    @protected EcAlarmEventType <b>_eventType</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_extra">_extra</a></h3>
+    @protected void* <b>_extra</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_firstEventDate">_firstEventDate</a></h3>
+    @protected NSDate* <b>_firstEventDate</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_frozen">_frozen</a></h3>
+    @protected BOOL <b>_frozen</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_managedObject">_managedObject</a></h3>
+    @protected NSString* <b>_managedObject</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_notificationID">_notificationID</a></h3>
+    @protected int <b>_notificationID</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_perceivedSeverity">_perceivedSeverity</a></h3>
+    @protected EcAlarmSeverity <b>_perceivedSeverity</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_probableCause">_probableCause</a></h3>
+    @protected EcAlarmProbableCause <b>_probableCause</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_proposedRepairAction">_proposedRepairAction</a></h3>
+    @protected NSString* <b>_proposedRepairAction</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_specificProblem">_specificProblem</a></h3>
+    @protected NSString* <b>_specificProblem</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_trendIndicator">_trendIndicator</a></h3>
+    @protected EcAlarmTrend <b>_trendIndicator</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarm*_userInfo">_userInfo</a></h3>
+    @protected NSDictionary* <b>_userInfo</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the EcAlarm(Convenience)
+        category
+      </a></h1>
+    <h2><a rel="gsdoc" href="#class$EcAlarm">EcAlarm</a>(<a name="category$EcAlarm(Convenience)">Convenience</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcAlarm.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm(Convenience)+clear$cause$problem$">+clear:cause:problem:</a></li>
+      <li><a rel="gsdoc" href="EcAlarm.html#method$EcAlarm(Convenience)+raise$cause$problem$severity$action$,...">+raise:cause:problem:severity:action:,...</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcAlarm(Convenience)+clear$cause$problem$">clear:&nbsp;cause:&nbsp;problem:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$EcAlarm">EcAlarm</a>*) <b>clear:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)componentName<b> cause:</b> (<a rel="gsdoc" href="#type$EcAlarmProbableCause">EcAlarmProbableCause</a>)probableCause<b> problem:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)specificProblem;<br />
+    <div class="desc">
+      
+            Generates an alarm to clears an alarm previously
+            generated. <br /> The <var>componentName</var>
+            may be <code>nil</code> for a process-wide alarm.
+            <br /> The <var>probableCause</var> must NOT be
+            unknown... it is used to infer the event type.
+            <br /> The <var>specificProblem</var> must be
+            identical to the value supplied in the original
+            alarm that this is intended to clear.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarm(Convenience)+raise$cause$problem$severity$action$,...">raise:&nbsp;cause:&nbsp;problem:&nbsp;severity:&nbsp;action:&nbsp;,...</a></h3>
+    + (<a rel="gsdoc" href="#class$EcAlarm">EcAlarm</a>*) <b>raise:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)componentName<b> cause:</b> (<a rel="gsdoc" href="#type$EcAlarmProbableCause">EcAlarmProbableCause</a>)probableCause<b> problem:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)specificProblem<b> severity:</b> (<a rel="gsdoc" href="#type$EcAlarmSeverity">EcAlarmSeverity</a>)perceivedSeverity<b> action:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)proposedRepairAction<b>,...</b>;<br />
+    <div class="desc">
+      
+            Generates a new alarm event with minimal
+            parameters. <br /> The <var>componentName</var>
+            may be <code>nil</code> for a process-wide alarm.
+            <br /> The <var>probableCause</var> must NOT be
+            unknown... it is used to infer the event type.
+            <br /> The <var>specificProblem</var> is used to
+            identify the event for which the alarm is raised.
+            <br /> The <var>perceivedSeverity</var> must be one
+            of EcAlarmSeverityWarning, EcAlarmSeverityMinor,
+            EcAlarmSeverityMajor or
+            EcAlarmSeverityCritical. <br />
+            The <var>proposedRepairAction</var> must contain
+            information sufficient for any person receiving
+            notification of the alarm to be able to deal
+            with it. The action is a format string, optionally
+            followed by any number of arguments to be
+            incorporated into the repair action. NB. The
+            resulting proposed repair action must be no more
+            than 255 bytes in length when converted to UTF-8 data.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="003000000000">EcAlarm types</a></h1>
+    <p>
+    </p>
+    <h3><a name="type$EcAlarmEventType">EcAlarmEventType</a></h3>
+    typedef enum ... EcAlarmEventType;<br />
+    <div class="desc">
+      
+          The EcAlarmEventType enumeration defines the different
+          types of alarm we support. <br /> The enumerated values
+          MUST be matched by those in your SNMP MIB if you wish to
+          have your software interact with SNMP tools. <br /> NB.
+          EcAlarmEventTypeUnknown must
+          <em>NOT</em> be used in an alarm... it is employed
+          solely as a marker for the case where a lookup of type
+          from probable cause can not determine a specific event
+          type.
+          
+      <dl>
+        <dt>EcAlarmEventTypeUnknown</dt>
+        <dd>
+          Not used
+        </dd>
+        <dt>EcAlarmEventTypeCommunications</dt>
+        <dd>
+          
+              A communications/networking/protocol issue
+            
+        </dd>
+        <dt>EcAlarmEventTypeEnvironmental</dt>
+        <dd>
+          
+              An external environmental issue (eg building on fire)
+            
+        </dd>
+        <dt>EcAlarmEventTypeEquipment</dt>
+        <dd>
+          A hardware problem (eg disk failure)
+        </dd>
+        <dt>EcAlarmEventTypeProcessingError</dt>
+        <dd>
+          
+              A software problem (a bug or misconfiguration)
+            
+        </dd>
+        <dt>EcAlarmEventTypeQualityOfService</dt>
+        <dd>
+          
+              A system not running as well as expected... eg.
+              overloaded
+            
+        </dd>
+      </dl>
+      
+          
+      <dl>
+        <dt><em>EcAlarmEventTypeUnknown</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmEventTypeCommunications</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmEventTypeEnvironmental</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmEventTypeEquipment</em></dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmEventTypeProcessingError</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmEventTypeQualityOfService</em>
+            </dt>
+        <dd>
+        </dd>
+      </dl>
+      
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="type$EcAlarmProbableCause">EcAlarmProbableCause</a></h3>
+    typedef enum ... EcAlarmProbableCause;<br />
+    <div class="desc">
+      
+          The EcAlarmProbableCause enumeration defines the probable
+          causes of alarms produced by the system. <br /> These
+          are taken from the CCITT X.733 specification with the
+          numeric values from the CCITT X.721 specification.
+          <br /> Enumeration values include a comment to specify
+          which EcAlarmEventType they apply to.
+          
+      <dl>
+        <dt>EcAlarmProbableCauseUnknown</dt>
+        <dd>
+          Category: Any
+        </dd>
+        <dt>EcAlarmAdapterError</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmApplicationSubsystemFailure</dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmBandwidthReduced</dt>
+        <dd>
+          Category: QoS
+        </dd>
+        <dt>EcAlarmCallEstablishmentError</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmCommunicationsProtocolError</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmCommunicationsSubsystemFailure</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>
+              EcAlarmConfigurationOrCustomizationError
+            </dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmCongestion</dt>
+        <dd>
+          Category: QoS
+        </dd>
+        <dt>EcAlarmCorruptData</dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmCpuCyclesLimitExceeded</dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmDataSetOrModemError</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmDegradedSignal</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmDTE_DCEInterfaceError</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmEnclosureDoorOpen</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmEquipmentMalfunction</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmExcessiveVibration</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmFileError</dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmFireDetected</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmFloodDetected</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmFramingError</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>
+              EcAlarmHeatingOrVentilationOrCoolingSystemProblem
+            </dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmHumidityUnacceptable</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmInputOutputDeviceError</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmInputDeviceError</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmLANError</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmLeakDetected</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmLocalNodeTransmissionError</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmLossOfFrame</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmLossOfSignal</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmMaterialSupplyExhausted</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmMultiplexerProblem</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmOutOfMemory</dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmOutputDeviceError</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmPerformanceDegraded</dt>
+        <dd>
+          Category: QoS
+        </dd>
+        <dt>EcAlarmPowerProblem</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmPressureUnacceptable</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmProcessorProblem</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmPumpFailure</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmQueueSizeExceeded</dt>
+        <dd>
+          Category: QoS
+        </dd>
+        <dt>EcAlarmReceiveFailure</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmReceiverFailure</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmRemoteNodeTransmissionError</dt>
+        <dd>
+          Category: Communications
+        </dd>
+        <dt>EcAlarmResourceAtOrNearingCapacity</dt>
+        <dd>
+          Category: QoS
+        </dd>
+        <dt>EcAlarmResponseTimeExcessive</dt>
+        <dd>
+          Category: QoS
+        </dd>
+        <dt>EcAlarmRetransmissionRateExcessive</dt>
+        <dd>
+          Category: QoS
+        </dd>
+        <dt>
+              EcAlarmSoftwareProgramAbnormallyTerminated
+            </dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmSoftwareProgramError</dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmStorageCapacityProblem</dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmTemperatureUnacceptable</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmThresholdCrossed</dt>
+        <dd>
+          Category: QoS
+        </dd>
+        <dt>EcAlarmTimingProblem</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmToxicLeakDetected</dt>
+        <dd>
+          Category: Environmental
+        </dd>
+        <dt>EcAlarmTransmitFailure</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmTransmitterFailure</dt>
+        <dd>
+          Category: Equipment
+        </dd>
+        <dt>EcAlarmUnderlyingResourceUnavailable</dt>
+        <dd>
+          Category: Processing
+        </dd>
+        <dt>EcAlarmVersionMismatch</dt>
+        <dd>
+          Category: Processing
+        </dd>
+      </dl>
+      
+          
+      <dl>
+        <dt><em>EcAlarmProbableCauseUnknown</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmAdapterError</em></dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmApplicationSubsystemFailure</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmBandwidthReduced</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmCallEstablishmentError</em></dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmCommunicationsProtocolError</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmCommunicationsSubsystemFailure</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmConfigurationOrCustomizationError</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmCongestion</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmCorruptData</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmCpuCyclesLimitExceeded</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmDataSetOrModemError</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmDegradedSignal</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmDTE_DCEInterfaceError</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmEnclosureDoorOpen</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmEquipmentMalfunction</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmExcessiveVibration</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmFileError</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmFireDetected</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmFloodDetected</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmFramingError</em></dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>
+                EcAlarmHeatingOrVentilationOrCoolingSystemProblem
+              </em>
+            </dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmHumidityUnacceptable</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmInputOutputDeviceError</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmInputDeviceError</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmLANError</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmLeakDetected</em></dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmLocalNodeTransmissionError</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmLossOfFrame</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmLossOfSignal</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmMaterialSupplyExhausted</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmMultiplexerProblem</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmOutOfMemory</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmOutputDeviceError</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmPerformanceDegraded</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmPowerProblem</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmPressureUnacceptable</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmProcessorProblem</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmPumpFailure</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmQueueSizeExceeded</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmReceiveFailure</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmReceiverFailure</em></dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmRemoteNodeTransmissionError</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmResourceAtOrNearingCapacity</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmResponseTimeExcessive</em></dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmRetransmissionRateExcessive</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmSoftwareProgramAbnormallyTerminated</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmSoftwareProgramError</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmStorageCapacityProblem</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmTemperatureUnacceptable</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmThresholdCrossed</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmTimingProblem</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmToxicLeakDetected</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmTransmitFailure</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmTransmitterFailure</em></dt>
+        <dd>
+        </dd>
+        <dt>
+              <em>EcAlarmUnderlyingResourceUnavailable</em>
+            </dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmVersionMismatch</em></dt>
+        <dd>
+        </dd>
+      </dl>
+      
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="type$EcAlarmSeverity">EcAlarmSeverity</a></h3>
+    typedef enum ... EcAlarmSeverity;<br />
+    <div class="desc">
+      
+          The EcAlarmSeverity enumeration defines the &apos;perceived
+          severities&apos; of alarms produced by the system.
+          <br /> The enumerated values MUST be matched by those
+          in your SNMP MIB if you wish to have your software
+          interact with SNMP tools. <br /> NB. The use of
+          EcAlarmSeverityIndeterminate
+          should be avoided.
+          
+      <dl>
+        <dt>EcAlarmSeverityIndeterminate</dt>
+        <dd>
+          Do not use
+        </dd>
+        <dt>EcAlarmSeverityCritical</dt>
+        <dd>
+          
+              Immediate intervention required to restore
+              service
+            
+        </dd>
+        <dt>EcAlarmSeverityMajor</dt>
+        <dd>
+          
+              Severe but partial system failure or a problem
+              which might recover without intervention
+            
+        </dd>
+        <dt>EcAlarmSeverityMinor</dt>
+        <dd>
+          
+              A failure, but one which is likely to recover or which
+              is probably not urgent
+            
+        </dd>
+        <dt>EcAlarmSeverityWarning</dt>
+        <dd>
+          
+              An unusual event which may not indicate any problem,
+              but which ought to be looked into
+            
+        </dd>
+        <dt>EcAlarmSeverityCleared</dt>
+        <dd>
+          
+              This indicates the resolution of an earlier issue
+            
+        </dd>
+      </dl>
+      
+          
+      <dl>
+        <dt><em>EcAlarmSeverityIndeterminate</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmSeverityCritical</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmSeverityMajor</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmSeverityMinor</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmSeverityWarning</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmSeverityCleared</em></dt>
+        <dd>
+        </dd>
+      </dl>
+      
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="type$EcAlarmTrend">EcAlarmTrend</a></h3>
+    typedef enum ... EcAlarmTrend;<br />
+    <div class="desc">
+      
+          The EcAlarmTrend enumeration defines the severity trend
+          of alarms produced by the system. <br /> The enumerated
+          values MUST be matched by those in your SNMP MIB if
+          you wish to have your software interact with SNMP tools.
+          <br />
+          
+      <dl>
+        <dt>EcAlarmTrendNone</dt>
+        <dd>
+          
+              This is not a change in severity of an earlier alarm
+            
+        </dd>
+        <dt>EcAlarmTrendUp</dt>
+        <dd>
+          
+              This is a more severe version of an earlier alarm
+            
+        </dd>
+        <dt>EcAlarmTrendDown</dt>
+        <dd>
+          
+              This is a less severe version of an earlier alarm
+            
+        </dd>
+      </dl>
+      
+          
+      <dl>
+        <dt><em>EcAlarmTrendNone</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmTrendUp</em></dt>
+        <dd>
+        </dd>
+        <dt><em>EcAlarmTrendDown</em></dt>
+        <dd>
+        </dd>
+      </dl>
+      
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="004000000000">EcAlarm functions</a></h1>
+    <p>
+    </p>
+    <h3><a name="function$EcMakeManagedObject">EcMakeManagedObject</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* EcMakeManagedObject(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>host</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>process</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>component</b>);<br />
+    <div class="desc">
+      
+          This function builds a managed object name from
+          <var>host</var>, <var>process</var>, and
+          <var>component</var>. <br /> The <var>host</var> part
+          may be <code>nil</code>... for the current
+          <var>host</var>. <br /> The <var>process</var> part may
+          be <code>nil</code>... for the current <var>process</var>.
+          <br /> The <var>component</var> may well be
+          <code>nil</code> if the alert applies to the
+          <var>process</var> as a whole rather than to a
+          particular <var>component</var>. This field is
+          typically used to identify a particular network
+          connection etc within a <var>process</var>. <br />
+          This parses the <var>process</var> and separates out any
+          instance ID (trailing hyphen and string of digits).
+          It then builds the managed object from four parts (
+          <var>host</var>, <var>process</var>, instance,
+          <var>component</var>) separated by underscores. Any
+          underscores in the arguments are replaced by
+          hyphens. <br /> NB. The total length must not exceed
+          127 ASCII characters.
+        
+    </div>
+    <hr width="25%" align="left" />
+    <br />
+    </font>
+</body>
+</html>

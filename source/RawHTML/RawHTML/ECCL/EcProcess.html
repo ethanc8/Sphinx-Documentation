@@ -1,0 +1,3292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcProcess class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcProcess">EcProcess class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the EcProcess class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the
+        NSObject(RemoteServerDelegate)
+        informal protocol</a>
+        </li>
+        <li>
+          <a href="#003000000000">Software documentation for the CmdClient protocol</a>
+        </li>
+        <li>
+          <a href="#004000000000">Software documentation for the CmdConfig protocol</a>
+        </li>
+        <li>
+          <a href="#005000000000">Software documentation for the CmdLogger protocol</a>
+        </li>
+        <li>
+          <a href="#006000000000">Software documentation for the CmdPing protocol</a>
+        </li>
+        <li>
+          <a href="#007000000000">Software documentation for the Command protocol</a>
+        </li>
+        <li>
+          <a href="#008000000000">Software documentation for the Console protocol</a>
+        </li>
+        <li>
+          <a href="#009000000000">Software documentation for the Control protocol</a>
+        </li>
+        <li>
+          <a href="#010000000000">Software documentation for the EcConfigForwarded
+        protocol</a>
+        </li>
+        <li>
+          <a href="#011000000000">Software documentation for the EcConfigForwarding
+        protocol</a>
+        </li>
+        <li>
+          <a href="#012000000000">EcProcess types</a>
+        </li>
+        <li>
+          <a href="#013000000000">EcProcess constants</a>
+        </li>
+        <li>
+          <a href="#014000000000">EcProcess macros</a>
+        </li>
+        <li>
+          <a href="#015000000000">EcProcess variables</a>
+        </li>
+        <li>
+          <a href="#016000000000">EcProcess functions</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the EcProcess class
+      </a></h1>
+    <h2><a name="class$EcProcess">EcProcess</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="#protocol$(CmdClient)">CmdClient</a></dd>
+        <dd><a rel="gsdoc" href="EcAlarmDestination.html#protocol$(EcAlarmDestination)">EcAlarmDestination</a></dd>
+        <dd><a rel="gsdoc" href="#protocol$(EcConfigForwarding)">EcConfigForwarding</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          Command line arguments -
+          
+    </p>
+    <p>
+
+            On startup, these are taken from the command line, or
+            from the local user defaults database of the person
+            running the program. <br /> If the EcEffectiveUser
+            specifies an alternative user, or the program is
+            able to read the database for the &apos;ecuser&apos; user, then
+            the other values are read from the defaults database of
+            that user.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            After startup, the command line arguments still take
+            precedence, but values retrieved from the
+            network configuration system will then override any
+            read from the local user defaults database.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Settings in the network configuration system will
+            have no effect on the following defaults which are
+            used BEFORE the network configuration can be read.
+              </p>
+    <p>
+      
+          
+      <dl>
+        <dt>EcCoreSize</dt>
+        <dd>
+          
+              Specifies the maximum size (in MB) for any
+              core-dump of the process. <br /> If this is not
+              set, the default size of 2GB is used. <br /> If this
+              is negative, the size is unlimited. <br /> If this is
+              zero then no core dumping is performed.
+            
+        </dd>
+        <dt>EcDaemon</dt>
+        <dd>
+          
+              To specify whether the program should run in the
+              background (boolean, <code>YES</code> if the
+              program is to run as a daemon, <code>NO</code>
+              otherwise). <br /> The value in the network
+              configuration has no effect.
+            
+        </dd>
+        <dt>EcEffectiveUser</dt>
+        <dd>
+          
+              To tell the server to change to being this user on
+              startup. defaults to &apos;ecuser&apos;, but the default
+              can be overridden by specifying
+              &apos;-DEC_EFFECTIVE_USER+@&quot;username&quot;&apos;
+              in the local.make make file. <br /> Set a value of &apos;*&apos;
+              to remain whoever runs the program rather than
+              changing.
+            
+        </dd>
+        <dt>EcInstance</dt>
+        <dd>
+          
+              To set the program instance ID (a non-negative integer
+              value). <br /> If this is specified, the program
+              name has a hyphen and the <strong>id</strong>
+              appended to it by the &apos;-initWithDefaults:&apos;
+              method.
+            
+        </dd>
+        <dt>EcKeepStandardError</dt>
+        <dd>
+          
+              This boolean value determines whether the standard
+              error output should be kept as it is on process
+              startup, or should be merged with the local
+              debug log to file. <br /> The default
+              (EcKeepStandardError set to
+              <code>NO</code>) is to merge the standard error
+              logging with the debug logging.
+            
+        </dd>
+        <dt>EcKillDebugOutput</dt>
+        <dd>
+          
+              This boolean value determines whether debug output
+              (including anything written to the standard
+              error output if that is merged with debug) should
+              be discarded (sent to the null device). <br /> This
+              setting cannot e controlled from the Console
+              command line. <br /> The default
+              (EcKillDebugOutput set to
+              <code>NO</code>) is to write debug output to file.
+            
+        </dd>
+        <dt>EcTransient</dt>
+        <dd>
+          
+              This boolean option is used to specify that the
+              program should not be restarted automatically by
+              the Command server if/when it disconnects from that
+              server.
+            
+        </dd>
+      </dl>
+      
+          
+    </p>
+    <p>
+
+            The following settings will be revised after startup to
+            include the values from the network configuration
+            system.
+              </p>
+    <p>
+      
+          
+      <dl>
+        <dt>EcAuditFlush</dt>
+        <dd>
+          
+              A flush interval in seconds (optionally followed by a
+              colon and a buffer size in KiloBytes) to control
+              flushing of audit logs. <br /> Setting an
+              interval of zero or less disables flushing by
+              timer. <br /> Setting a size of zero or less,
+              disables buffering (so logs are flushed
+              immediately).
+            
+        </dd>
+        <dt>EcDebug-</dt>
+        <dd>
+          
+              Any key of the form EcDebug-xxx turns on the xxx
+              debug level on program startup. <br /> The value of
+              &apos;XXX&apos; must match the name of a debug mode used by
+              the program!
+            
+        </dd>
+        <dt>EcDescriptorsMaximum</dt>
+        <dd>
+          
+              To protect against file descriptor leaks, a process
+              will check for the ability to create a pipe once a
+              minute. <br /> If it can&apos;t do so, it will shut
+              down with an error message. <br /> To increase the
+              chances of a successful shutdown, two descriptors
+              are reserved on the first check, and closed when a
+              shutdown is attempted. <br /> If
+              EcDescriptorsMaximum is defined to a
+              positive integer value, it is used to trigger
+              earlier shutdown once the specified number of
+              open file descriptors has been reached, rather than
+              waiting for the operating system imposed limit.
+            
+        </dd>
+        <dt>EcMemory</dt>
+        <dd>
+          
+              This boolean value determines whether statistics on
+              creation and destruction of objects are
+              maintained. <br /> This may be set in the
+              NSUserDefaults system or in Control.plist,
+              but may be overridden by using the &apos;memory&apos; command
+              in the Console program.
+            
+        </dd>
+        <dt>EcMemoryAlarm</dt>
+        <dd>
+          
+              This may be used to control the alarm severity level
+              at which the system starts raising alarms about memory
+              usage. Setting it to Warning means that alarms are
+              raised as soon as the base/allowed memory limit is
+              passed, while setting it to Critical only causes
+              an alarm to be raised when the MemoryMaximum limit is
+              close. <br /> The default value is Major (the
+              possible values are Warning, Minor, Major, and
+              Critical). <br /> This may be set in the
+              NSUserDefaults system or in Control.plist,
+              but may be overridden by using the &apos;memory&apos; command
+              in the Console program.
+            
+        </dd>
+        <dt>EcMemoryAllowed</dt>
+        <dd>
+          
+              This may be used to specify the process memory usage
+              (in megabytes by default) before memory usage alarms
+              may begin. <br /> If this setting is not specified
+              (or a negative or excessive value is specified) then
+              memory is monitored for ten minutes and the
+              base/allowed threshold is set at either the
+              peak during that period (plus a twenty percent
+              margin to allow further memory growth) or at half
+              the MemoryMaximum value, whichever is the greater.
+              <br /> This may be set in the NSUserDefaults
+              system or in Control.plist, but may be overridden
+              by using the &apos;memory&apos; command in the Console program.
+            
+        </dd>
+        <dt>EcMemoryIdle</dt>
+        <dd>
+          
+              This optional integer value (0 to 23) may be used to
+              specify the hour of the day in which restarts are
+              preferred to take place (some time when the
+              process is likely to be idle). If a process is
+              near a maximum permitted memory usage at this time
+              of day, the
+              <a rel="gsdoc" href="#method$EcProcess-ecRestart$">
+                -ecRestart:
+              </a>
+
+              method will be called. <br /> Near means over
+              three quarters of the way between the base/allowed
+              memory usage (as determined by MemoryAllowed) and
+              MemoryMaximum. <br /> This may be set in
+              the NSUserDefaults system or in Control.plist, but
+              may be overridden by using the &apos;memory&apos; command in
+              the Console program.
+            
+        </dd>
+        <dt>EcMemoryMaximum</dt>
+        <dd>
+          
+              This may be used to specify the maximum process
+              memory allowed (in megabytes by default) before
+              the process is forced to restart due to excessive
+              memory usage. <br /> If the total memory usage of
+              the process reaches this threshold, the
+              <a rel="gsdoc" href="#method$EcProcess-ecRestart$">
+                -ecRestart:
+              </a>
+
+              method will be called <br /> The process will also
+              generate alarms depending on the memory usage
+              once the bas/allowed memory usge has been passed.
+              The severity of the alarms depends on how far from
+              the base/allowed memory to the maximum memory the
+              current ten minute average of the usage is.
+              <br /> This may be set in the NSUserDefaults
+              system or in Control.plist, but may be overridden
+              by using the &apos;memory&apos; command in the Console program.
+            
+        </dd>
+        <dt>EcMemoryType</dt>
+        <dd>
+          
+              This controls the type of memory considered by the
+              EcMemoryAllowed, EcMemoryIdle and
+              EcMemoryMaximum options. <br /> Total
+              (the default), considers the total process memory
+              usage. <br /> Resident, considers current resident
+              memory used. <br /> Data, considers only
+              dynamically allocated and stack memory.
+              <br /> While using Total and Resident are easy to
+              relate to the output of system tools such as
+              <code>ps</code> and <code>top</code>, the Data
+              memory type is probably of most use for tracking
+              memory leaks on a system with many processes
+              running, since it excludes memory shared between
+              multiple processes (used for the program code
+              and for shared libraries).
+            
+        </dd>
+        <dt>EcMemoryUnit</dt>
+        <dd>
+          
+              This controls the units in which memory information
+              is displayed, the default being K/KB/KiB (1024 bytes).
+              Other possible settings are M/MB/MiB (1048576
+              bytes) and P/Pg/Page (system memory pages,
+              typically 4096 bytes).
+            
+        </dd>
+        <dt>EcRelease</dt>
+        <dd>
+          
+              This boolean value determines whether checks for
+              memory problems caused by release an object too
+              many times are done. Turning this on has a big
+              impact on program performance and is not
+              recommended except for debugging crashes and
+              other memory issues. <br /> This may be set in the
+              NSUserDefaults system or in Control.plist,
+              but may be overridden by using the &apos;release&apos; command
+              in the Console program.
+            
+        </dd>
+        <dt>EcTesting</dt>
+        <dd>
+          
+              This boolean value determines whether the server is
+              running in test mode (which may enable extra
+              logging or prevent the server from communicating
+              with live systems etc... the actual behavior is
+              server dependent). <br /> This may be set on the
+              command line or in Control.plist, but may be
+              overridden by using the &apos;testing&apos; command in
+              the Console program.
+            
+        </dd>
+        <dt>EcWellKnownHostNames</dt>
+        <dd>
+          
+              A dictionary mapping host names/address values to well
+              known names (the canonical values used by Command
+              and Control).
+            
+        </dd>
+      </dl>
+      
+          Alarm mechanism
+          
+    </p>
+    <p>
+
+            The EcProcess class conforms to the EcAlarmDestination
+            protocol to allow sending alarm information to a
+            centralised alarm system via the Command server
+            (the Control server acts as a sink for those alarms
+            and provides SNMP integration).
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            In addition to the standard alarm destination behavior,
+            the process automates some things: <br /> On successful
+            startup and registration with the Command server, a
+            <a rel="gsdoc" href="#method$(Control)-domanage$">
+              -domanage:
+            </a>
+
+            message is automatically sent for the default
+            managed object, clearing any outstanding alarms.
+            <br /> On successful shutdown (ie when
+            <a rel="gsdoc" href="#method$EcProcess-cmdQuit$">
+              -cmdQuit:
+            </a>
+
+            is called with zero as its argument), an
+            <a rel="gsdoc" href="#method$(Control)-unmanage$">
+              -unmanage:
+            </a>
+
+            message is automatically sent to clear any
+            outstanding alarms for the default managed
+            object. <br /> If you want to raise alarms which
+            will persist after a successful shutdown you should
+            therefore do so by creating a different managed
+            object for which to raise those alarms.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            As a convenience, the class provides various methods to
+            raise different kinds of alarms for specific common
+            purposes:
+              </p>
+    <p>
+      
+          
+      <dl>
+        <dt>Configuration problems</dt>
+        <dd>
+          
+              <a rel="gsdoc" href="#method$EcProcess-alarmConfigurationFor$specificProblem$additionalText$critical$">-alarmConfigurationFor:specificProblem:additionalText:critical:</a>
+
+            
+        </dd>
+        <dt>Exceptions and unexpected errors</dt>
+        <dd>
+          
+              <a rel="gsdoc" href="#method$EcProcess-ecException$specificProblem$perceivedSeverity$message$,...">-ecException:specificProblem:perceivedSeverity:message:,...</a>
+
+            
+        </dd>
+      </dl>
+      
+          
+    </p>
+    <p>
+
+            To further aid with logging/alarming about unexpected
+            code and data problems, there are macros to provide
+            detailed logs as well as specific alarms of
+            different severity.
+              </p>
+    <p>
+      
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_EcProcess_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess+ecGetKey$size$md5$">+ecGetKey:size:md5:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess+ecInitialDefaults">+ecInitialDefaults</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess+ecLock">+ecLock</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess+ecRegisterDefault$withTypeText$andHelpText$action$value$">+ecRegisterDefault:withTypeText:andHelpText:action:value:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess+ecSetup">+ecSetup</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-addServerToList$">-addServerToList:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-addServerToList$for$">-addServerToList:for:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-alarmConfigurationFor$specificProblem$additionalText$critical$">-alarmConfigurationFor:specificProblem:additionalText:critical:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-alarms">-alarms</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-clearConfigurationFor$specificProblem$additionalText$">-clearConfigurationFor:specificProblem:additionalText:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdAlert$,...">-cmdAlert:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdAlert$arguments$">-cmdAlert:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdAudit$,...">-cmdAudit:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdAudit$arguments$">-cmdAudit:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdBase">-cmdBase</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdConfig$">-cmdConfig:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdConnectionBecameInvalid$">-cmdConnectionBecameInvalid:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDataDirectory">-cmdDataDirectory</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDbg$msg$,...">-cmdDbg:msg:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDbg$msg$arguments$">-cmdDbg:msg:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDebug$,...">-cmdDebug:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDebug$arguments$">-cmdDebug:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDebugMode$">-cmdDebugMode:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDebugMode$active$">-cmdDebugMode:active:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDefaults">-cmdDefaults</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdDefaultsChanged$">-cmdDefaultsChanged:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdError$,...">-cmdError:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdError$arguments$">-cmdError:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdFlushLogs">-cmdFlushLogs</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdInstance">-cmdInstance</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdInterval">-cmdInterval</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdIsClient">-cmdIsClient</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdIsConnected">-cmdIsConnected</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdIsTesting">-cmdIsTesting</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdLogEnd$">-cmdLogEnd:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdLogFile$">-cmdLogFile:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMatch$toKey$">-cmdMatch:toKey:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesg$">-cmdMesg:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesgCache">-cmdMesgCache</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesgData$from$">-cmdMesgData:from:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesgarchive$">-cmdMesgarchive:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesgdebug$">-cmdMesgdebug:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesghelp$">-cmdMesghelp:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesgmemory$">-cmdMesgmemory:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesgnodebug$">-cmdMesgnodebug:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdMesgstatus$">-cmdMesgstatus:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdName">-cmdName</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdNewServer">-cmdNewServer</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdOperator$password$">-cmdOperator:password:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdPrintf$,...">-cmdPrintf:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdPrintf$arguments$">-cmdPrintf:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdQuit$">-cmdQuit:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdSignalled">-cmdSignalled</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdUpdate$">-cmdUpdate:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdUpdated">-cmdUpdated</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdWarn$,...">-cmdWarn:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-cmdWarn$arguments$">-cmdWarn:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecAlarmDestination">-ecAlarmDestination</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecArchive$">-ecArchive:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecAwaken">-ecAwaken</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecConfigurationError$,...">-ecConfigurationError:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecCopyright">-ecCopyright</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecDidAwaken">-ecDidAwaken</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecDidQuit">-ecDidQuit</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecDoLock">-ecDoLock</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecException$specificProblem$perceivedSeverity$message$,...">-ecException:specificProblem:perceivedSeverity:message:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecException$specificProblem$perceivedSeverity$message$arguments$">-ecException:specificProblem:perceivedSeverity:message:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecHadIP$">-ecHadIP:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecHadOP$">-ecHadOP:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecHandleQuit">-ecHandleQuit</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecIsQuitting">-ecIsQuitting</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecNewDay$">-ecNewDay:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecNewHour$">-ecNewHour:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecNewMinute$">-ecNewMinute:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecNotLeaked">-ecNotLeaked</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecQuitDuration">-ecQuitDuration</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecQuitFor$with$">-ecQuitFor:with:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecQuitLimit$">-ecQuitLimit:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecQuitReason">-ecQuitReason</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecQuitStatus">-ecQuitStatus</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecReconnect">-ecReconnect</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecRestart$">-ecRestart:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecRun">-ecRun</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecStarted">-ecStarted</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecTestLog$,...">-ecTestLog:,...</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecTestLog$arguments$">-ecTestLog:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecUnLock">-ecUnLock</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecUpdateRegisteredDefaults">-ecUpdateRegisteredDefaults</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecUserDirectory">-ecUserDirectory</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-ecWillQuit">-ecWillQuit</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-init">-init</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-initWithDefaults$">-initWithDefaults:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-isServerMultiple$">-isServerMultiple:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-log$type$">-log:type:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-processIdentifier">-processIdentifier</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-removeServerFromList$">-removeServerFromList:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-server$">-server:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-server$forNumber$">-server:forNumber:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-setCmdDebug$withDescription$">-setCmdDebug:withDescription:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-setCmdInterval$">-setCmdInterval:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-setCmdTimeout$">-setCmdTimeout:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$EcProcess-triggerCmdTimeout">-triggerCmdTimeout</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcProcess+ecGetKey$size$md5$">ecGetKey:&nbsp;size:&nbsp;md5:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>ecGetKey:</b> (const char*)name<b> size:</b> (unsigned)size<b> md5:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)digest;<br />
+    <div class="desc">
+      
+            This method is provided to prompt for an encryption
+            key using the specified key <var>name</var> and read in
+            a value from the terminal. <br /> The entered value must
+            be an even numbered sequence of hexadecimal digits, each
+            pair representing one byte of the key. <br /> The key
+            length (number of bytes) must be the specified
+            <var>size</var>, a value between 16 and 128, which is
+            exactly half the number of hexadecimal digits that
+            must be entered. <br /> If the <var>digest</var> is
+            not supplied, the user will be required to enter the
+            value twice (and the two values must match) for
+            confirmation. <br /> If the <var>digest</var>
+            is supplied, the md5 <var>digest</var> of the entered
+            key must match it (but the user does not need to enter
+            the value twice).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess+ecInitialDefaults">ecInitialDefaults&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSMutableDictionary">NSMutableDictionary</a>*) <b>ecInitialDefaults</b>;<br />
+    <div class="desc">
+      
+            Provides initial configuration. This method is
+            used by <a rel="gsdoc" href="#method$EcProcess-init">-init</a>
+ and
+            its return value is passed to
+            <a rel="gsdoc" href="#method$EcProcess-initWithDefaults$">
+              -initWithDefaults:
+            </a>
+
+            method. <br /> The default implementation simply
+            sets the ProgramName and HomeDirectory defaults to the
+            current program name and the current directory
+            (&apos;.&apos;). <br /> Subclasses may override this method to
+            provide additional default configuration for
+            processes using them. The returned dictionary is
+            mutable so that a subclass may simply modify the
+            configuration provided by the superclass
+            implementation.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess+ecLock">ecLock&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSLock.html#class$NSRecursiveLock">NSRecursiveLock</a>*) <b>ecLock</b>;<br />
+    <div class="desc">
+      
+            Returns the lock used by the
+            <a rel="gsdoc" href="#method$EcProcess-ecDoLock">
+              -ecDoLock
+            </a>
+
+            and <a rel="gsdoc" href="#method$EcProcess-ecUnLock">-ecUnLock</a>
+
+            methods.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess+ecRegisterDefault$withTypeText$andHelpText$action$value$">ecRegisterDefault:&nbsp;withTypeText:&nbsp;andHelpText:&nbsp;action:&nbsp;value:&nbsp;</a></h3>
+    + (void) <b>ecRegisterDefault:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name<b> withTypeText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)type<b> andHelpText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)help<b> action:</b> (SEL)cmd<b> value:</b> (id)value;<br />
+    <div class="desc">
+      
+            Registers an NSUserDefaults key that the receiver
+            understands. <br /> This is primarily intended
+            for user defaults which can reasonably be supplied at
+            the command line when a process is started (and for
+            which the process should therefore supply
+            <var>help</var> information). <br /> The
+            <var>type</var> text must be a a
+            <strong>short</strong> string saying what kind of
+            <var>value</var> must be provided (eg &apos;YES/NO&apos;) for
+            the default, or <code>nil</code> if no <var>help</var>
+            is to be provided for the default. <br /> The
+            <var>help</var> text should be a description of what
+            the default does, or <code>nil</code> if no
+            <var>help</var> is to be provided for the default.
+            <br /> The action may either be NULL or a selector
+            for a message to be sent to the EcProc instance with a
+            single argument (the new default <var>value</var>)
+            when the <var>value</var> of the user default changes.
+            <br /> The <var>value</var> may either be NULL, or
+            be an object to be set in the registration domain of the
+            defaults system (as <strong>long</strong> as this
+            method is called before the EcProcess instance is
+            initialized). <br /> If the same default
+            <var>name</var> is registered more than once, the
+            values from the last registration are used, except
+            for the case where the <var>cmd</var> argument is NULL,
+            in that case the previous selector is kept in the new
+            registration. <br /> This method should be
+            called in your
+            <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#method$NSObject+initialize">
+              +initialize
+            </a>
+
+            method, so that all supported defaults are already
+            registered by the time your process tries to
+            respond to being started with a --help command line
+            argument. <br /> NB. defaults keys do not have to
+            be registered (and can still be updated using the
+            &apos;defaults&apos; command), but registration provides a
+            more user friendly interface. <br /> If this method is
+            called later (once the EcProcess instance has been
+            initialized) it will not update the current
+            user defaults until you also call the
+            <a rel="gsdoc" href="#method$EcProcess-ecUpdateRegisteredDefaults">
+              -ecUpdateRegisteredDefaults
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess+ecSetup">ecSetup&nbsp;</a></h3>
+    + (void) <b>ecSetup</b>;<br />
+    <div class="desc">
+      
+            Convenience method to create the singleton
+            EcProcess instance using the initial
+            configuration provided by the
+            <a rel="gsdoc" href="#method$EcProcess+ecInitialDefaults">
+              +ecInitialDefaults
+            </a>
+
+            method. <br /> Raises NSGenericException if the
+            singleton instance has already been created.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-addServerToList$">addServerToList:&nbsp;</a></h3>
+    - (void) <b>addServerToList:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)serverName;<br />
+    <div class="desc">
+      
+            This is a convenience method equivalent to calling
+            <a rel="gsdoc" href="#method$EcProcess-addServerToList$for$">
+              -addServerToList:for:
+            </a>
+
+            passing <code>nil</code> as the second argument.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-addServerToList$for$">addServerToList:&nbsp;for:&nbsp;</a></h3>
+    - (void) <b>addServerToList:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)serverName<b> for:</b> (id)anObject;<br />
+    <div class="desc">
+      
+            Adds the specified <var>serverName</var> to the list
+            of named servers to which we make automatic distributed
+            object connections. <br /> By default the supplied
+            <var>serverName</var> is taken as the name of the
+            server to which the distributed objects connection
+            is made, and the connection is to any host on the local
+            network. However configuration in the user
+            defaults system (using keys derived from the
+            <var>serverName</var>) may be used to modify this
+            behavior:
+            
+      <dl>
+        <dt>serverNameName</dt>
+        <dd>
+          
+                Specifies the actual distributed objects port
+                name to which the connection is made, instead of
+                using <var>serverName</var>.
+              
+        </dd>
+        <dt>serverNameHost</dt>
+        <dd>
+          
+                Specifies the actual distributed objects host
+                name to which the connection is made, instead of
+                using an asterisk (any host).
+              
+        </dd>
+        <dt>serverNameBroadcast</dt>
+        <dd>
+          
+                Specifies that the server should actually be
+                configured to be a broadcast proxy (see
+                <a rel="gsdoc" href="EcBroadcastProxy.html#class$EcBroadcastProxy">EcBroadcastProxy</a>
+). <br /> The value of this field must be an array containing the configuration information for the <a rel="gsdoc" href="EcBroadcastProxy.html#class$EcBroadcastProxy">EcBroadcastProxy</a>
+instance. <br /> If this is defined then the serverNameName and serverNameHost values (if present) are ignored, and the connections are made to the individual servers listed in the elements of this array.
+        </dd>
+      </dl>
+       The argument <var>anObject</var> is an object which will be messaged when the connection to the server is established (or lost). The messages sent are those in the <em>RemoteServerDelegate</em> informal protocol. <br /> If no object is specified, the receiver is used. <br /> Once a server has been added to the list, it can be accessed using the <a rel="gsdoc" href="#method$EcProcess-server$">-server:</a>
+ or <a rel="gsdoc" href="#method$EcProcess-server$forNumber$">-server:forNumber:</a>
+ method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-alarmConfigurationFor$specificProblem$additionalText$critical$">alarmConfigurationFor:&nbsp;specificProblem:&nbsp;additionalText:&nbsp;critical:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*) <b>alarmConfigurationFor:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject<b> specificProblem:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)specificProblem<b> additionalText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)additionalText<b> critical:</b> (BOOL)isCritical;<br />
+    <div class="desc">
+      
+            Convenience method to produce a generic
+            configuration alarm and send it via the
+            <a rel="gsdoc" href="#method$(Command)-alarm$">
+              -alarm:
+            </a>
+
+            method. <br /> The managed object may be
+            <code>nil</code> (in which case it&apos;s the default
+            managed object for the current process). <br /> The
+            implied event type is
+            EcAlarmEventTypeProcessingError.
+            <br /> The implied probable cause is
+            EcAlarmConfigurationOrCustomizationError.
+            <br /> The implied severity is EcAlarmSeverityMajor
+            unless <var>isCritical</var> is <code>YES</code>.
+            <br /> The implied trend is EcAlarmTrendNone. <br />
+            The implied proposed repair action is to check/correct
+            the config. <br /> The specific problem and additional
+            text should be used to suggest what is wrong with the
+            config and where the config error should be
+            found/corrected.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-alarms">alarms&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>alarms</b>;<br />
+    <div class="desc">
+      
+            Returns the array of current alarms.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-clearConfigurationFor$specificProblem$additionalText$">clearConfigurationFor:&nbsp;specificProblem:&nbsp;additionalText:&nbsp;</a></h3>
+    - (void) <b>clearConfigurationFor:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject<b> specificProblem:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)specificProblem<b> additionalText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)additionalText;<br />
+    <div class="desc">
+      
+            Convenience method to clear an alarm as
+            produced by the
+            <a rel="gsdoc" href="#method$EcProcess-alarmConfigurationFor$specificProblem$additionalText$critical$">-alarmConfigurationFor:specificProblem:additionalText:critical:</a>
+ method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdAlert$,...">cmdAlert:&nbsp;,...</a></h3>
+    - (void) <b>cmdAlert:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            Deprecated; do not use.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdAlert$arguments$">cmdAlert:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>cmdAlert:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Deprecated; do not use.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdAudit$,...">cmdAudit:&nbsp;,...</a></h3>
+    - (void) <b>cmdAudit:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            Send a log message to the server by calling the
+            <a rel="gsdoc" href="#method$EcProcess-cmdAudit$arguments$">
+              -cmdAudit:arguments:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdAudit$arguments$">cmdAudit:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>cmdAudit:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Send a log message to the server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdBase">cmdBase&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>cmdBase</b>;<br />
+    <div class="desc">
+      
+            Returns the base name for this process (before any
+            instance ID was added). If the process has no
+            instance ID, this returns the same as the
+            <a rel="gsdoc" href="#method$EcProcess-cmdName">
+              -cmdName
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdConfig$">cmdConfig:&nbsp;</a></h3>
+    - (id) <b>cmdConfig:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)key;<br />
+    <div class="desc">
+      
+            Deprecated... use
+            <a rel="gsdoc" href="#method$EcProcess-cmdDefaults">
+              -cmdDefaults
+            </a>
+
+            instead.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdConnectionBecameInvalid$">cmdConnectionBecameInvalid:&nbsp;</a></h3>
+    - (id) <b>cmdConnectionBecameInvalid:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSNotification.html#class$NSNotification">NSNotification</a>*)notification;<br />
+    <div class="desc">
+      
+            Handles loss of connection to the server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDataDirectory">cmdDataDirectory&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>cmdDataDirectory</b>;<br />
+    <div class="desc">
+      
+            Returns the path to the data storage directory used
+            by this process to store files containing persistent
+            information.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDbg$msg$,...">cmdDbg:&nbsp;msg:&nbsp;,...</a></h3>
+    - (void) <b>cmdDbg:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)type<b> msg:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            Send a debug message - as <strong>long</strong> as the
+            debug mode specified as &apos;type&apos; is currently set.
+            Operates by calling the
+            <a rel="gsdoc" href="#method$EcProcess-cmdDbg$msg$arguments$">
+              -cmdDbg:msg:arguments:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDbg$msg$arguments$">cmdDbg:&nbsp;msg:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>cmdDbg:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)type<b> msg:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Send a debug message - as <strong>long</strong> as the
+            debug mode specified as &apos;type&apos; is currently set.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDebug$,...">cmdDebug:&nbsp;,...</a></h3>
+    - (void) <b>cmdDebug:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            Send a debug message with debug mode &apos;basicMode&apos;.
+            <br /> Operates by calling the
+            <a rel="gsdoc" href="#method$EcProcess-cmdDebug$arguments$">
+              -cmdDebug:arguments:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDebug$arguments$">cmdDebug:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>cmdDebug:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Send a debug message with debug mode &apos;basicMode&apos;.
+            <br /> Calls the
+            <a rel="gsdoc" href="#method$EcProcess-cmdDbg$msg$arguments$">
+              -cmdDbg:msg:arguments:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDebugMode$">cmdDebugMode:&nbsp;</a></h3>
+    - (BOOL) <b>cmdDebugMode:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)mode;<br />
+    <div class="desc">
+      
+            Check to see if a debug <var>mode</var> is active.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDebugMode$active$">cmdDebugMode:&nbsp;active:&nbsp;</a></h3>
+    - (void) <b>cmdDebugMode:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)mode<b> active:</b> (BOOL)flag;<br />
+    <div class="desc">
+      
+            Set a particular (named) debug <var>mode</var> to be
+            active or inactive.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDefaults">cmdDefaults&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSUserDefaults.html#class$NSUserDefaults">NSUserDefaults</a>*) <b>cmdDefaults</b>;<br />
+    <div class="desc">
+      
+            Returns the NSUserDefaults instance containing the
+            configuration information for this process.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdDefaultsChanged$">cmdDefaultsChanged:&nbsp;</a></h3>
+    - (void) <b>cmdDefaultsChanged:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSNotification.html#class$NSNotification">NSNotification</a>*)n;<br />
+    <div class="desc">
+      
+            Called automatically in response to a local
+            NSUserDefaults database change or in
+            response to a configuration update from the
+            Control server. <br /> This is automatically called
+            after
+            <a rel="gsdoc" href="#method$EcProcess-cmdUpdate$">
+              -cmdUpdate:
+            </a>
+
+            (even if the user defaults database has not actually
+            changed), in which case the notification argument
+            is <code>nil</code>. <br /> An automatic call to this
+            method is (if it does not raise an exception)
+            immediately followed by a call to the
+            <a rel="gsdoc" href="#method$EcProcess-cmdUpdated">
+              -cmdUpdated
+            </a>
+
+            method. <br /> This method deals with the updates
+            for any defaults registered using the
+            <a rel="gsdoc" href="#method$EcProcess+ecRegisterDefault$withTypeText$andHelpText$action$value$">+ecRegisterDefault:withTypeText:andHelpText:action:value:</a>
+ method, so if you override this to handle configuration changes, don&apos;t forget to call the superclass implementation. <br /> If you wish to manage updates from the central database in a specific order, you may wish to override the <a rel="gsdoc" href="#method$EcProcess-cmdUpdate$">-cmdUpdate:</a>
+ and/or <a rel="gsdoc" href="#method$EcProcess-cmdUpdated">-cmdUpdated</a>
+ method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdError$,...">cmdError:&nbsp;,...</a></h3>
+    - (void) <b>cmdError:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            Deprecated; do not use.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdError$arguments$">cmdError:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>cmdError:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Deprecated; do not use.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdFlushLogs">cmdFlushLogs&nbsp;</a></h3>
+    - (void) <b>cmdFlushLogs</b>;<br />
+    <div class="desc">
+      
+            Flush logging information.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdInstance">cmdInstance&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>cmdInstance</b>;<br />
+    <div class="desc">
+      
+            Returns the instance ID used for this process, or
+            <code>nil</code> if there is none.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdInterval">cmdInterval&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>) <b>cmdInterval</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdIsClient">cmdIsClient&nbsp;</a></h3>
+    - (BOOL) <b>cmdIsClient</b>;<br />
+    <div class="desc">
+      
+            This message returns <code>YES</code> if the receiver
+            is intended to be a client of a Command server, and
+            <code>NO</code> if it is a standalone process which
+            does not need to contact the Command server. <br />
+            The default implementation returns <code>YES</code>,
+            but subclasses may override this method to return
+            <code>NO</code> if they do not wish to contact the
+            Command server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdIsConnected">cmdIsConnected&nbsp;</a></h3>
+    - (BOOL) <b>cmdIsConnected</b>;<br />
+    <div class="desc">
+      
+            Returns a flag indicating whether this process is
+            currently connected it its Command server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdIsTesting">cmdIsTesting&nbsp;</a></h3>
+    - (BOOL) <b>cmdIsTesting</b>;<br />
+    <div class="desc">
+      
+            Returns <code>YES</code> is the process is running
+            in test mode, <code>NO</code> otherwise. <br /> Test
+            mode is defined by the EcTesting user default.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdLogEnd$">cmdLogEnd:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>cmdLogEnd:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            Closes a file previously obtained using the
+            <a rel="gsdoc" href="#method$EcProcess-cmdLogFile$">
+              -cmdLogFile:
+            </a>
+
+            method. <br /> Returns a description of any file
+            archiving done, or <code>nil</code> if the file
+            dis not exist. <br /> You should not close a logging
+            handle directly, use this method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdLogFile$">cmdLogFile:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSFileHandle.html#class$NSFileHandle">NSFileHandle</a>*) <b>cmdLogFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            Obtain a file handle for logging purposes. The file
+            will have the specified <var>name</var> and will be
+            created (if necessary) in the processes logging
+            directory. <br /> If there is already a handle
+            for the specified file, this method returns the
+            existing handle rather than creating a new one.
+            <br /> Do not close this file handle other than by
+            calling the
+            <a rel="gsdoc" href="#method$EcProcess-cmdLogEnd$">
+              -cmdLogEnd:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMatch$toKey$">cmdMatch:&nbsp;toKey:&nbsp;</a></h3>
+    - (BOOL) <b>cmdMatch:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)val<b> toKey:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)key;<br />
+    <div class="desc">
+      
+            Utility method to perform partial (case
+            insensitive) matching of an abbreviated
+            command word (<var>val</var>) to a keyword (
+            <var>key</var>)
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesg$">cmdMesg:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>cmdMesg:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)msg;<br />
+    <div class="desc">
+      
+            Handle with care - this method invokes the
+            cmdMesg... methods.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesgCache">cmdMesgCache&nbsp;</a></h3>
+    - (void) <b>cmdMesgCache</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesgData$from$">cmdMesgData:&nbsp;from:&nbsp;</a></h3>
+    - (void) <b>cmdMesgData:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)dat<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            Used by the Command server to send messages to your
+            application.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesgarchive$">cmdMesgarchive:&nbsp;</a></h3>
+    - (void) <b>cmdMesgarchive:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)msg;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesgdebug$">cmdMesgdebug:&nbsp;</a></h3>
+    - (void) <b>cmdMesgdebug:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)msg;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesghelp$">cmdMesghelp:&nbsp;</a></h3>
+    - (void) <b>cmdMesghelp:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)msg;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesgmemory$">cmdMesgmemory:&nbsp;</a></h3>
+    - (void) <b>cmdMesgmemory:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)msg;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesgnodebug$">cmdMesgnodebug:&nbsp;</a></h3>
+    - (void) <b>cmdMesgnodebug:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)msg;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdMesgstatus$">cmdMesgstatus:&nbsp;</a></h3>
+    - (void) <b>cmdMesgstatus:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)msg;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdName">cmdName&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>cmdName</b>;<br />
+    <div class="desc">
+      
+            Returns the name by which this process is known to
+            the Command server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdNewServer">cmdNewServer&nbsp;</a></h3>
+    - (id) <b>cmdNewServer</b>;<br />
+    <div class="desc">
+      
+            Attempt to establish connection to Command server
+            etc. Return a proxy to that server if it is available.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdOperator$password$">cmdOperator:&nbsp;password:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSMutableDictionary">NSMutableDictionary</a>*) <b>cmdOperator:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name<b> password:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)pass;<br />
+    <div class="desc">
+      
+            Return dictionary giving info about specified
+            operator. If the password string matches the
+            password of the operator (or the operator has no
+            password) then the dictionary field @&quot;Password&quot;
+            will be set to @&quot;yes&quot;, otherwise it will be @&quot;no&quot;. If
+            the named operator does not exist, the method will
+            return <code>nil</code>.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdPrintf$,...">cmdPrintf:&nbsp;,...</a></h3>
+    - (void) <b>cmdPrintf:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            May be used withing cmdMesg... methods to return
+            formatted text to the Console.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdPrintf$arguments$">cmdPrintf:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>cmdPrintf:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            May be used withing cmdMesg... methods to return
+            formatted text to the Console.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdQuit$">cmdQuit:&nbsp;</a></h3>
+    - (oneway void) <b>cmdQuit:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSInteger">NSInteger</a>)status;<br />
+    <div class="desc">
+      
+            Should be over-ridden to perform extra tidy up on
+            shutdown of the process - should call [super
+            cmdQuit:...] at the end of the method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdSignalled">cmdSignalled&nbsp;</a></h3>
+    - (int) <b>cmdSignalled</b>;<br />
+    <div class="desc">
+      
+            Returns non-zero (a signal) if the process has
+            received a unix signal.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdUpdate$">cmdUpdate:&nbsp;</a></h3>
+    - (void) <b>cmdUpdate:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSMutableDictionary">NSMutableDictionary</a>*)info;<br />
+    <div class="desc">
+      
+            Used to tell your application about configuration
+            changes (the default implementation merges the
+            configuration change into the NSUserDefaults
+            system and sends the defaults change notification).
+            <br /> If you want to deal with configuration
+            changes actively - override this and call [super
+            cmdUpdate:...] to install the changed
+            configuration before anything else. NB. This
+            method WILL be called before your application is
+            initialised. Make sure it is safe.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdUpdated">cmdUpdated&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>cmdUpdated</b>;<br />
+    <div class="desc">
+      
+            Used to tell your application about configuration
+            changes (including changes to the NSUserDefaults
+            system). <br /> NB. This method will be called
+            even if your implementation of
+            <a rel="gsdoc" href="#method$EcProcess-cmdUpdate$">
+              -cmdUpdate:
+            </a>
+
+            suppresses the actual update. In this situation
+            this method will find the configuration unchanged
+            since the previous time that it was called. <br />
+            This method is called in a run loop iteration of the
+            main thread after any NSUserDefaults notifications so
+            that it can check the state of things after any code
+            dealing with the notifications has run. <br /> The
+            return value of this method is used to control
+            automatic generation of alarms for fatal
+            configuration errors by passing it to the
+            <a rel="gsdoc" href="#method$EcProcess-ecConfigurationError$,...">
+              -ecConfigurationError:,...
+            </a>
+
+            method. <br /> When you implement this method, you
+            must ensure that your implementation calls the
+            superclass implementation, and if that returns a
+            non-nil result, you should pass that on as the
+            return value from your own implementation.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdWarn$,...">cmdWarn:&nbsp;,...</a></h3>
+    - (void) <b>cmdWarn:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            Send a warning message to the server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-cmdWarn$arguments$">cmdWarn:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>cmdWarn:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Send a warning message to the server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecAlarmDestination">ecAlarmDestination&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="EcAlarmDestination.html#class$EcAlarmDestination">EcAlarmDestination</a>*) <b>ecAlarmDestination</b>;<br />
+    <div class="desc">
+      
+            Returns the alarm destination for this process.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecArchive$">ecArchive:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>ecArchive:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*)when;<br />
+    <div class="desc">
+      
+            Archives debug log files into the appropriate
+            subdirectory for the supplied date (or the
+            files last modification date if <var>when</var> is
+            <code>nil</code>). <br /> Returns a text description
+            of any archiving actually done. <br /> The subdirectory
+            is created if necessary.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecAwaken">ecAwaken&nbsp;</a></h3>
+    - (void) <b>ecAwaken</b>;<br />
+    <div class="desc">
+      
+            This method is called at the start of
+            <a rel="gsdoc" href="#method$EcProcess-ecRun">
+              -ecRun
+            </a>
+
+            in order to allow a subclass to perform initialisation
+            after configuration information has been received
+            from the Command server, but before the process has
+            become a registered DO server and has entered the
+            run loop with a regular timer set up. <br /> This is
+            the recommended location to perform any initialisation
+            of your subclass which needs configuration information
+            from the Command server; override this method to
+            perform your initialisation. <br /> If you are not
+            using <a rel="gsdoc" href="#method$EcProcess-ecRun">-ecRun</a>
+ you
+            should call this method explicitly in your own code.
+            <br /> The default implementation does nothing but
+            record the fact that it has been called (for
+            -ecDidAwaken). <br />
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecConfigurationError$,...">ecConfigurationError:&nbsp;,...</a></h3>
+    - (void) <b>ecConfigurationError:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            Called to handle fatal configuration problems (or
+            with a <code>nil</code> argument, to clear any
+            outstanding alarm about a configuration
+            problem). <br /> If err is not <code>nil</code>,
+            a configuration error alarm will be raised (using the err
+            string as the &apos;additional text&apos; of the alarm), and
+            the process will be terminated by a call to
+            <a rel="gsdoc" href="#method$EcProcess-cmdQuit$">
+              -cmdQuit:
+            </a>
+
+            with an argument of 1. <br /> If you override this
+            method, you should ensure that your implementation
+            calls the superclass implementation. <br /> This
+            method is called automatically with the result of
+            <a rel="gsdoc" href="#method$EcProcess-cmdUpdated">
+              -cmdUpdated
+            </a>
+
+            when process configuration changes.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecCopyright">ecCopyright&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>ecCopyright</b>;<br />
+    <div class="desc">
+      
+            Return a <strong>short</strong> copyright notice...
+            subclasses should override.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecDidAwaken">ecDidAwaken&nbsp;</a></h3>
+    - (BOOL) <b>ecDidAwaken</b>;<br />
+    <div class="desc">
+      
+            Returns <code>YES</code> if the base implementation
+            of <a rel="gsdoc" href="#method$EcProcess-ecAwaken">-ecAwaken</a>
+ has
+            been called, <code>NO</code> otherwise. You may use
+            this in conjunction with
+            <a rel="gsdoc" href="#method$EcProcess-ecDoLock">
+              -ecDoLock
+            </a>
+
+            and <a rel="gsdoc" href="#method$EcProcess-ecUnLock">-ecUnLock</a>
+
+            to ensure that you have thread-safe initialisation of
+            your program (though the locking is normally
+            unnecessary if
+            <a rel="gsdoc" href="#method$EcProcess-ecAwaken">
+              -ecAwaken
+            </a>
+
+            is only called from -ecRun).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecDidQuit">ecDidQuit&nbsp;</a></h3>
+    - (oneway void) <b>ecDidQuit</b>;<br />
+    <div class="desc">
+      
+            Called once other stages of a graceful shutdown has
+            completed in order to perform final cleanup and
+            have the process exit with the expected status. <br />
+            Called automatically in the main thread by the
+            <a rel="gsdoc" href="#method$EcProcess-ecHandleQuit">
+              -ecHandleQuit
+            </a>
+
+            method. Subclasses overriding
+            <a rel="gsdoc" href="#method$EcProcess-ecHandleQuit">
+              -ecHandleQuit
+            </a>
+
+            must call the superclass implementation at the end of
+            their handling code.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecDoLock">ecDoLock&nbsp;</a></h3>
+    - (void) <b>ecDoLock</b>;<br />
+    <div class="desc">
+      
+            Obtain a lock on the shared EcProcess for
+            thread-safe updates to process-wide variables.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecException$specificProblem$perceivedSeverity$message$,...">ecException:&nbsp;specificProblem:&nbsp;perceivedSeverity:&nbsp;message:&nbsp;,...</a></h3>
+    - (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*) <b>ecException:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSException.html#class$NSException">NSException</a>*)cause<b> specificProblem:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)specificProblem<b> perceivedSeverity:</b> (<a rel="gsdoc" href="EcAlarm.html#type$EcAlarmSeverity">EcAlarmSeverity</a>)perceivedSeverity<b> message:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)format<b>,...</b>;<br />
+    <div class="desc">
+      
+            Method to log an exception (or other unexpected
+            error) and raise an alarm about it, providing a
+            unique <var>specificProblem</var> value to identify
+            the location in the code, and a
+            <var>perceivedSeverity</var> to let people know how
+            serious the problem is likely to be. Use
+            EcAlarmSeverityMajor if you really do
+            not know. <br /> This method serves a dual purpose, as
+            it generates an alarm to alert people about an
+            unexpected problem, but it also logs detailed
+            information about that problem (including a
+            stack trace) as an aid to debugging and analysis.
+            <br /> You may use EcAlarmSeverityClear to suppress
+            the use of an alarm and just generate debug logging
+            including a stack trace in the case where you
+            want to know what&apos;s going on at some point.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecException$specificProblem$perceivedSeverity$message$arguments$">ecException:&nbsp;specificProblem:&nbsp;perceivedSeverity:&nbsp;message:&nbsp;arguments:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*) <b>ecException:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSException.html#class$NSException">NSException</a>*)cause<b> specificProblem:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)specificProblem<b> perceivedSeverity:</b> (<a rel="gsdoc" href="EcAlarm.html#type$EcAlarmSeverity">EcAlarmSeverity</a>)perceivedSeverity<b> message:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)format<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Supporting code called by the
+            <a rel="gsdoc" href="#method$EcProcess-ecException$specificProblem$perceivedSeverity$message$,...">-ecException:specificProblem:perceivedSeverity:message:,...</a>
+ method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecHadIP$">ecHadIP:&nbsp;</a></h3>
+    - (void) <b>ecHadIP:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*)when;<br />
+    <div class="desc">
+      
+            Records the timestamp of the latest significant
+            input for this process. If <var>when</var> is
+            <code>nil</code> the current timestmp is used.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecHadOP$">ecHadOP:&nbsp;</a></h3>
+    - (void) <b>ecHadOP:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*)when;<br />
+    <div class="desc">
+      
+            Records the timestamp of the latest significant
+            output for this process. If <var>when</var> is
+            <code>nil</code> the current timestmp is used.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecHandleQuit">ecHandleQuit&nbsp;</a></h3>
+    - (void) <b>ecHandleQuit</b>;<br />
+    <div class="desc">
+      
+            Called by
+            <a rel="gsdoc" href="#method$EcProcess-ecQuitFor$with$">
+              -ecQuitFor:with:
+            </a>
+
+            or <a rel="gsdoc" href="#method$EcProcess-cmdQuit$">-cmdQuit:</a>
+
+            (after the
+            <a rel="gsdoc" href="#method$EcProcess-ecWillQuit">
+              -ecWillQuit
+            </a>
+
+            and before the
+            <a rel="gsdoc" href="#method$EcProcess-ecDidQuit">
+              -ecDidQuit
+            </a>
+
+            methods) as a method for subclasses to use to
+            implement their own behaviors. <br /> Subclass
+            implementations should call the superclass
+            implementation as the last thing they do.
+            <br /> This method is always called in the main
+            thread of the process and when the ecDeferQuit
+            instance variable is zero.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecIsQuitting">ecIsQuitting&nbsp;</a></h3>
+    - (BOOL) <b>ecIsQuitting</b>;<br />
+    <div class="desc">
+      
+            Returns <code>YES</code> if the process is
+            attempting a graceful shutdown, <code>NO</code>
+            otherwise. This also checks to see if the
+            process has been attempting to shut down for too
+            <strong>long</strong>, and if it has been going on
+            for over three minutes (or the value set by
+            -ecQuitLimit:), aborts the process. <br />
+            Subclasses must not override this method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecNewDay$">ecNewDay:&nbsp;</a></h3>
+    - (void) <b>ecNewDay:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSCalendarDate.html#class$NSCalendarDate">NSCalendarDate</a>*)when;<br />
+    <div class="desc">
+      
+            Called on the first timeout of a new day. <br /> The
+            argument &apos;when&apos; is the timestamp of the timeout.
+            <br /> If you override this, don&apos;t forget to call
+            the superclass implementation in order to perform
+            regular housekeeping.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecNewHour$">ecNewHour:&nbsp;</a></h3>
+    - (void) <b>ecNewHour:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSCalendarDate.html#class$NSCalendarDate">NSCalendarDate</a>*)when;<br />
+    <div class="desc">
+      
+            Called on the first timeout of a new hour. <br />
+            The argument &apos;when&apos; is the timestamp of the timeout.
+            <br /> If you override this, don&apos;t forget to call
+            the superclass implementation in order to perform
+            regular housekeeping.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecNewMinute$">ecNewMinute:&nbsp;</a></h3>
+    - (void) <b>ecNewMinute:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSCalendarDate.html#class$NSCalendarDate">NSCalendarDate</a>*)when;<br />
+    <div class="desc">
+      
+            Called on the first timeout of a new minute. <br />
+            The argument &apos;when&apos; is the timestamp of the timeout.
+            <br /> If you override this, don&apos;t forget to call
+            the superclass implementation in order to perform
+            regular housekeeping.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecNotLeaked">ecNotLeaked&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSUInteger">NSUInteger</a>) <b>ecNotLeaked</b>;<br />
+    <div class="desc">
+      
+            Return heap memory known not to be leaked... for use
+            in internal monitoring of memory usage. You should
+            override this to add in any heap store you have
+            used and know is not leaked. <br /> When generating
+            warning messages about possible memory leaks, this
+            value is taken into consideration.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecQuitDuration">ecQuitDuration&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>) <b>ecQuitDuration</b>;<br />
+    <div class="desc">
+      
+            Returns the interval since the process started
+            quitting, or zero if it is not quitting (as
+            determined by calling -ecIsQuitting).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecQuitFor$with$">ecQuitFor:&nbsp;with:&nbsp;</a></h3>
+    - (oneway void) <b>ecQuitFor:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)reason<b> with:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSInteger">NSInteger</a>)status;<br />
+    <div class="desc">
+      
+            This method is designed for handling an orderly
+            shutdown by noting the supplied <var>reason</var>
+            and <var>status</var>, and then calling
+            <a rel="gsdoc" href="#method$EcProcess-ecWillQuit">
+              -ecWillQuit
+            </a>
+
+            ,
+            <a rel="gsdoc" href="#method$EcProcess-ecHandleQuit">
+              -ecHandleQuit
+            </a>
+
+            , and finally calling
+            <a rel="gsdoc" href="#method$EcProcess-ecDidQuit">
+              -ecDidQuit
+            </a>
+
+            . <br /> Subclasses should not normally override this
+            method. Instead override the
+            <a rel="gsdoc" href="#method$EcProcess-ecHandleQuit">
+              -ecHandleQuit
+            </a>
+
+            method. <br /> For backward compatibility, this
+            will call the
+            <a rel="gsdoc" href="#method$EcProcess-cmdQuit$">
+              -cmdQuit:
+            </a>
+
+            method if a subclass has overridden it. <br /> NB.
+            On unix the possible range of <var>status</var> values
+            is actually from -128 to 127 and we have certain
+            conventions:
+            
+      <dl>
+        <dt>0</dt>
+        <dd>
+          
+                A clean/normal shutdown, no restart required
+              
+        </dd>
+        <dt>-1</dt>
+        <dd>
+          
+                An intentional shutdown where restart is required
+              
+        </dd>
+        <dt>-2</dt>
+        <dd>
+          
+                Process unable to register with name server
+              
+        </dd>
+        <dt>-3</dt>
+        <dd>
+          
+                Fatal error in process configuration information
+              
+        </dd>
+        <dt>-4</dt>
+        <dd>
+          
+                Process registration was rejected by the
+                Command server
+              
+        </dd>
+        <dt>-5 to -9</dt>
+        <dd>
+          Reserved for possible expansion
+        </dd>
+        <dt>-10 to -128</dt>
+        <dd>
+          Unused/free
+        </dd>
+        <dt>positive integer</dt>
+        <dd>
+          
+                Process caught a unix signal and shut down; the
+                exist <var>status</var> is the number of that
+                signal
+              
+        </dd>
+      </dl>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecQuitLimit$">ecQuitLimit:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>) <b>ecQuitLimit:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>)seconds;<br />
+    <div class="desc">
+      
+            Sets the number of <var>seconds</var> the graceful
+            shutdown process is permitted to take before the
+            process will attempt to abort on the next check to
+            see if it quitting (-ecIsQuitting). The default is
+            180.0 <var>seconds</var>. <br /> This method returns
+            the previous value of the setting.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecQuitReason">ecQuitReason&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>ecQuitReason</b>;<br />
+    <div class="desc">
+      
+            Returns the quit reason supplied to the
+            <a rel="gsdoc" href="#method$EcProcess-ecQuitFor$with$">
+              -ecQuitFor:with:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecQuitStatus">ecQuitStatus&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSInteger">NSInteger</a>) <b>ecQuitStatus</b>;<br />
+    <div class="desc">
+      
+            Returns the quit status supplied to the
+            <a rel="gsdoc" href="#method$EcProcess-ecQuitFor$with$">
+              -ecQuitFor:with:
+            </a>
+
+            or <a rel="gsdoc" href="#method$EcProcess-cmdQuit$">-cmdQuit:</a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecReconnect">ecReconnect&nbsp;</a></h3>
+    - (oneway void) <b>ecReconnect</b>;<br />
+    <div class="desc">
+      
+            This method may be called to prompt the process to
+            connect to the Command server if it is not already
+            connected.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecRestart$">ecRestart:&nbsp;</a></h3>
+    - (oneway void) <b>ecRestart:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)reason;<br />
+    <div class="desc">
+      
+            This method is designed for handling an orderly
+            restart. <br /> The default implementation calls
+            <a rel="gsdoc" href="#method$EcProcess-ecQuitFor$with$">
+              -ecQuitFor:with:
+            </a>
+
+            with minus one as the status code so that the Command
+            server will start the process again. <br /> The
+            method is called automatically when the
+            MemoryMaximum limit is exceeded (to
+            gracefully handle memory leaks by restarting).
+            <br /> Subclasses may override this method to allow
+            the shutdown process to be handled differently.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecRun">ecRun&nbsp;</a></h3>
+    - (int) <b>ecRun</b>;<br />
+    <div class="desc">
+      
+            This method calls
+            <a rel="gsdoc" href="#method$EcProcess-ecAwaken">
+              -ecAwaken
+            </a>
+
+            , establishes the receiver as a DO server, calls
+            <a rel="gsdoc" href="#method$EcProcess-triggerCmdTimeout">
+              -triggerCmdTimeout
+            </a>
+
+            , and then repeatedly runs the runloop. <br /> Returns
+            zero when the run loop completes. <br /> Returns one
+            (immediately) if the receiver is transient.
+            <br /> Returns two if unable to register as a DO
+            server. <br />
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecStarted">ecStarted&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*) <b>ecStarted</b>;<br />
+    <div class="desc">
+      
+            Return the timestamp at which this process started
+            up (when the receiver was initialised).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecTestLog$,...">ecTestLog:&nbsp;,...</a></h3>
+    - (void) <b>ecTestLog:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            Logs a message iff the process is running in test
+            mode. <br /> Operates by calling the
+            <a rel="gsdoc" href="#method$EcProcess-ecTestLog$arguments$">
+              -ecTestLog:arguments:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecTestLog$arguments$">ecTestLog:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>ecTestLog:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Logs a message iff the process is running in test mode
+            (that is, when EcTesting is set).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecUnLock">ecUnLock&nbsp;</a></h3>
+    - (void) <b>ecUnLock</b>;<br />
+    <div class="desc">
+      
+            Release a lock on the shared EcProcess after
+            thread-safe updates to process-wide variables.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecUpdateRegisteredDefaults">ecUpdateRegisteredDefaults&nbsp;</a></h3>
+    - (void) <b>ecUpdateRegisteredDefaults</b>;<br />
+    <div class="desc">
+      
+            This method must be called to make the user defaults
+            system aware of any changeds to registered defaults
+            made after the EcProcess instance has been created.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecUserDirectory">ecUserDirectory&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>ecUserDirectory</b>;<br />
+    <div class="desc">
+      
+            Returns the directory set as the root for files
+            owned by the ECCL user
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-ecWillQuit">ecWillQuit&nbsp;</a></h3>
+    - (void) <b>ecWillQuit</b>;<br />
+    <div class="desc">
+      
+            This is ignored if the process is already quitting,
+            otherwise it returns after setting the start time
+            used by the
+            <a rel="gsdoc" href="#method$EcProcess-ecIsQuitting">
+              -ecIsQuitting
+            </a>
+
+            method and (if
+            <a rel="gsdoc" href="#method$EcProcess-ecQuitReason">
+              -ecQuitReason
+            </a>
+
+            is not nil/empty) generating a log of why quitting was
+            started. <br /> Called automatically when the
+            process starts shutting down.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-init">init&nbsp;</a></h3>
+    - (id) <b>init</b>;<br />
+    <div class="desc">
+      
+            This calls the designated initialiser
+            (-initWithDefaults:) passing the
+            results of a call to
+            <a rel="gsdoc" href="#method$EcProcess+ecInitialDefaults">
+              +ecInitialDefaults
+            </a>
+
+            as its argument.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-initWithDefaults$">initWithDefaults:&nbsp;</a></h3>
+    - (id) <b>initWithDefaults:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)defs;<br />
+    <div class="desc">
+      
+            <a rel="gsdoc" href="#method$EcProcess-initWithDefaults$">
+              [-initWithDefaults:]
+            </a>
+
+            is the Designated initialiser <br /> It adds the
+            defaults specified to the defaults system. <br />
+            It sets the process name to be that specified in the
+            &apos;ProgramName&apos; default with an &apos;-id&apos; affix if
+            Instance is used to provide an instance
+            <strong>id</strong>. <br /> Moves to the directory
+            (relative to the current user&apos;s home directory)
+            given in &apos;HomeDirectory&apos;. <br /> If &apos;HomeDirectory&apos;
+            is not present in the defaults system (or is an empty
+            string) then no directory change is done. <br />
+            Please note, that the base implementation of this
+            method may cause other methods (eg
+            <a rel="gsdoc" href="#method$EcProcess-cmdUpdated">
+              -cmdUpdated
+            </a>
+
+            and -cmdDefaultsChanged:) to be called, so you must
+            take care that when you override those methods, your
+            own implementations do not depend on initialisation
+            having completed. It&apos;s therefore recommended that
+            you use &apos;lazy&apos; initialisation of subclass instance
+            variables as/when they are needed, rather than
+            initialising them in the
+            <a rel="gsdoc" href="#method$EcProcess-initWithDefaults$">
+              -initWithDefaults:
+            </a>
+
+            method. <br /> For a normal process, the
+            recommended place to perform initialisation is
+            immediately after initialisation (when
+            configuration information has been retrieved
+            from the Command server), typically by overriding the
+            <a rel="gsdoc" href="#method$EcProcess-ecAwaken">
+              -ecAwaken
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-isServerMultiple$">isServerMultiple:&nbsp;</a></h3>
+    - (BOOL) <b>isServerMultiple:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)serverName;<br />
+    <div class="desc">
+      
+            Standard servers return <code>NO</code> to the
+            following. But if we are using a
+            multiple/broadcast server, this returns
+            <code>YES</code>.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-log$type$">log:&nbsp;type:&nbsp;</a></h3>
+    - (void) <b>log:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)message<b> type:</b> (<a rel="gsdoc" href="#type$EcLogType">EcLogType</a>)t;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-processIdentifier">processIdentifier&nbsp;</a></h3>
+    - (int) <b>processIdentifier</b>;<br />
+    <div class="desc">
+      
+            Returns the system process identifier for the
+            client process.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-removeServerFromList$">removeServerFromList:&nbsp;</a></h3>
+    - (void) <b>removeServerFromList:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)serverName;<br />
+    <div class="desc">
+      
+            Removes the <var>serverName</var> from the list of
+            server processes for which we automatically maintain
+            distributed object connections. <br /> See the
+            addServerToList:for: metho for more
+            details.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-server$">server:&nbsp;</a></h3>
+    - (id) <b>server:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)serverName;<br />
+    <div class="desc">
+      
+            Returns a proxy object to a[n automatically
+            managed] server process. <br /> The
+            <var>serverName</var> must previously have been
+            registered using the
+            <a rel="gsdoc" href="#method$EcProcess-addServerToList$for$">
+              -addServerToList:for:
+            </a>
+
+            <a rel="gsdoc" href="#method$EcProcess-addServerToList$">
+              -addServerToList:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-server$forNumber$">server:&nbsp;forNumber:&nbsp;</a></h3>
+    - (id) <b>server:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)serverName<b> forNumber:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)num;<br />
+    <div class="desc">
+      
+            Like <a rel="gsdoc" href="#method$EcProcess-server$">-server:</a>
+,
+            but if the configuration contains a multiple servers,
+            this tries to locate the specific server that is set
+            up to deal with cases where the last two digits of an
+            identifer as as specified. <br /> This mechanism
+            permits work to be balanced/shared over up to 100
+            separate server processes.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-setCmdDebug$withDescription$">setCmdDebug:&nbsp;withDescription:&nbsp;</a></h3>
+    - (void) <b>setCmdDebug:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)mode<b> withDescription:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)desc;<br />
+    <div class="desc">
+      
+            Register a debug <var>mode</var> &apos;mode&apos;
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-setCmdInterval$">setCmdInterval:&nbsp;</a></h3>
+    - (void) <b>setCmdInterval:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>)interval;<br />
+    <div class="desc">
+      
+            Sets the <var>interval</var> between timeouts while
+            the runloop is running. <br /> Any value below 0.001 is
+            ignored and 10 is used. <br /> Any value above 300
+            is ignored and 60 is used. <br /> The default value is
+            60 seconds.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-setCmdTimeout$">setCmdTimeout:&nbsp;</a></h3>
+    - (void) <b>setCmdTimeout:</b> (SEL)sel;<br />
+    <div class="desc">
+      
+            Specify a handler method to be invoked after each
+            timeout to let you perform additional tasks.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcProcess-triggerCmdTimeout">triggerCmdTimeout&nbsp;</a></h3>
+    - (void) <b>triggerCmdTimeout</b>;<br />
+    <div class="desc">
+      
+            Schedule a timeout to go off as soon as possible
+            ... subsequent timeouts go off at the normal interval
+            after that one. <br /> This method is called
+            automatically near the start of
+            <a rel="gsdoc" href="#method$EcProcess-ecRun">
+              -ecRun
+            </a>
+
+            .
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_EcProcess_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for EcProcess Class</h2>
+    <h3><a name="ivariable$EcProcess*ecDeferQuit">ecDeferQuit</a></h3>
+    @protected NSUInteger <b>ecDeferQuit</b>;<br />
+    <div class="desc">
+      
+            Any method which is executing in the main thread (and
+            needs to return before a quit can be handled in the
+            main thread) must increment this counter on entry and
+            decrement it again before exit. This allows the
+            process to ensure that it calls
+            <a rel="gsdoc" href="#method$EcProcess-ecHandleQuit">
+              -ecHandleQuit
+            </a>
+
+            when no such method is in progress.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the
+        NSObject(RemoteServerDelegate)
+        informal protocol
+      </a></h1>
+    <h2><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a>(<a name="category$NSObject(RemoteServerDelegate)">RemoteServerDelegate</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$NSObject(RemoteServerDelegate)-cmdLostConnectionToServer$">-cmdLostConnectionToServer:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$NSObject(RemoteServerDelegate)-cmdMadeConnectionToServer$">-cmdMadeConnectionToServer:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$NSObject(RemoteServerDelegate)-cmdLostConnectionToServer$">cmdLostConnectionToServer:&nbsp;</a></h3>
+    - (void) <b>cmdLostConnectionToServer:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)serverName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSObject(RemoteServerDelegate)-cmdMadeConnectionToServer$">cmdMadeConnectionToServer:&nbsp;</a></h3>
+    - (void) <b>cmdMadeConnectionToServer:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)serverName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="003000000000">
+        Software documentation for the CmdClient protocol
+      </a></h1>
+    <h2><a name="protocol$(CmdClient)">CmdClient</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="#protocol$(CmdPing)">CmdPing</a></dd>
+        <dd><a rel="gsdoc" href="#protocol$(CmdConfig)">CmdConfig</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          Messages that the Command server may send to
+          clients.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdClient)-cmdMesgData$from$">-cmdMesgData:from:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdClient)-cmdQuit$">-cmdQuit:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdClient)-ecDidAwaken">-ecDidAwaken</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdClient)-ecReconnect">-ecReconnect</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdClient)-processIdentifier">-processIdentifier</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(CmdClient)-cmdMesgData$from$">cmdMesgData:&nbsp;from:&nbsp;</a></h3>
+    - (oneway void) <b>cmdMesgData:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)dat<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            Passes a property list message to the client (eg
+            from the Console).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdClient)-cmdQuit$">cmdQuit:&nbsp;</a></h3>
+    - (oneway void) <b>cmdQuit:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSInteger">NSInteger</a>)status;<br />
+    <div class="desc">
+      
+            Tells the client to shut down.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdClient)-ecDidAwaken">ecDidAwaken&nbsp;</a></h3>
+    - (BOOL) <b>ecDidAwaken</b>;<br />
+    <div class="desc">
+      
+            Asks the client whether it is awake (-ecAwaken has
+            been called)
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdClient)-ecReconnect">ecReconnect&nbsp;</a></h3>
+    - (oneway void) <b>ecReconnect</b>;<br />
+    <div class="desc">
+      
+            Instructs the client process to connect and
+            re-register with the Command server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdClient)-processIdentifier">processIdentifier&nbsp;</a></h3>
+    - (int) <b>processIdentifier</b>;<br />
+    <div class="desc">
+      
+            Asks the client for its process identifier.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="004000000000">
+        Software documentation for the CmdConfig protocol
+      </a></h1>
+    <h2><a name="protocol$(CmdConfig)">CmdConfig</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          The CmdConfig protocol is needed by objects that send and
+          receive configuration information.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdConfig)-requestConfigFor$">-requestConfigFor:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdConfig)-updateConfig$">-updateConfig:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(CmdConfig)-requestConfigFor$">requestConfigFor:&nbsp;</a></h3>
+    - (oneway void) <b>requestConfigFor:</b> (id<<a rel="gsdoc" href="#protocol$(CmdConfig)">CmdConfig</a>>)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdConfig)-updateConfig$">updateConfig:&nbsp;</a></h3>
+    - (oneway void) <b>updateConfig:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)info;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="005000000000">
+        Software documentation for the CmdLogger protocol
+      </a></h1>
+    <h2><a name="protocol$(CmdLogger)">CmdLogger</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="#protocol$(CmdClient)">CmdClient</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          Messages a Command logging process can be expected
+          to handle.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdLogger)-flush">-flush</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdLogger)-logMessage$type$for$">-logMessage:type:for:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdLogger)-logMessage$type$name$">-logMessage:type:name:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdLogger)-registerClient$identifier$name$transient$">-registerClient:identifier:name:transient:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdLogger)-unregisterByObject$status$">-unregisterByObject:status:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdLogger)-woken$">-woken:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(CmdLogger)-flush">flush&nbsp;</a></h3>
+    - (void) <b>flush</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdLogger)-logMessage$type$for$">logMessage:&nbsp;type:&nbsp;for:&nbsp;</a></h3>
+    - (oneway void) <b>logMessage:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> type:</b> (<a rel="gsdoc" href="#type$EcLogType">EcLogType</a>)t<b> for:</b> (id)o;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdLogger)-logMessage$type$name$">logMessage:&nbsp;type:&nbsp;name:&nbsp;</a></h3>
+    - (oneway void) <b>logMessage:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> type:</b> (<a rel="gsdoc" href="#type$EcLogType">EcLogType</a>)t<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdLogger)-registerClient$identifier$name$transient$">registerClient:&nbsp;identifier:&nbsp;name:&nbsp;transient:&nbsp;</a></h3>
+    - (bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*) <b>registerClient:</b> (id)c<b> identifier:</b> (int)p<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> transient:</b> (BOOL)t;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdLogger)-unregisterByObject$status$">unregisterByObject:&nbsp;status:&nbsp;</a></h3>
+    - (void) <b>unregisterByObject:</b> (byref id)obj<b> status:</b> (int)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdLogger)-woken$">woken:&nbsp;</a></h3>
+    - (void) <b>woken:</b> (id)obj;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="006000000000">
+        Software documentation for the CmdPing protocol
+      </a></h1>
+    <h2><a name="protocol$(CmdPing)">CmdPing</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          A &apos;ping&apos; can be sent from or to any process to check that
+          it is alive. A &apos;gnip&apos; should be sent in response to each
+          &apos;ping&apos; Each &apos;ping&apos; carries a sequence number which
+          should be echoed in its &apos;gnip&apos;. Optionally, the &apos;ping&apos;
+          can also transport a serialized property-list to provide
+          additional data or instructions - the value of
+          which is dependent on the program being pinged -
+          normally this value is <code>nil</code>.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdPing)-cmdGnip$sequence$extra$">-cmdGnip:sequence:extra:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(CmdPing)-cmdPing$sequence$extra$">-cmdPing:sequence:extra:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(CmdPing)-cmdGnip$sequence$extra$">cmdGnip:&nbsp;sequence:&nbsp;extra:&nbsp;</a></h3>
+    - (oneway void) <b>cmdGnip:</b> (id<<a rel="gsdoc" href="#protocol$(CmdPing)">CmdPing</a>>)from<b> sequence:</b> (unsigned)num<b> extra:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(CmdPing)-cmdPing$sequence$extra$">cmdPing:&nbsp;sequence:&nbsp;extra:&nbsp;</a></h3>
+    - (oneway void) <b>cmdPing:</b> (id<<a rel="gsdoc" href="#protocol$(CmdPing)">CmdPing</a>>)from<b> sequence:</b> (unsigned)num<b> extra:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="007000000000">
+        Software documentation for the Command protocol
+      </a></h1>
+    <h2><a name="protocol$(Command)">Command</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="#protocol$(CmdLogger)">CmdLogger</a></dd>
+        <dd><a rel="gsdoc" href="#protocol$(CmdConfig)">CmdConfig</a></dd>
+        <dd><a rel="gsdoc" href="EcAlarmDestination.html#protocol$(EcAlarmDestination)">EcAlarmDestination</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          Messages that clients may send to the server. NB.
+          The
+          <a rel="gsdoc" href="#method$(Command)-registerClient$identifier$name$transient$">-registerClient:identifier:name:transient:</a>
+ method must be sent before the <a rel="gsdoc" href="#method$(Command)-command$to$from$">-command:to:from:</a>
+ or <a rel="gsdoc" href="#method$(Command)-reply$to$from$">-reply:to:from:</a>
+ methods.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-activeCount">-activeCount</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-alarm$">-alarm:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-clear$">-clear:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-command$to$from$">-command:to:from:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-configurationFor$">-configurationFor:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-launch$">-launch:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-registerClient$identifier$name$transient$">-registerClient:identifier:name:transient:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-reply$to$from$">-reply:to:from:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-terminate$">-terminate:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Command)-woken$">-woken:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(Command)-activeCount">activeCount&nbsp;</a></h3>
+    - (unsigned) <b>activeCount</b>;<br />
+    <div class="desc">
+      
+            Request a count of the active clients of the
+            Command server
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-alarm$">alarm:&nbsp;</a></h3>
+    - (oneway void) <b>alarm:</b> (in bycopy <a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            Pass an <var>alarm</var> to the Command server for
+            forwarding to the Control server for central
+            handling to send alerts or SNMP integration.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-clear$">clear:&nbsp;</a></h3>
+    - (oneway void) <b>clear:</b> (in bycopy <a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            Pass an <var>alarm</var> clear to the Command server
+            for forwarding to its clients for clearing.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-command$to$from$">command:&nbsp;to:&nbsp;from:&nbsp;</a></h3>
+    - (oneway void) <b>command:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)dat<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)t<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)f;<br />
+    <div class="desc">
+      
+            Send a text command to a process owned by the Command
+            server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-configurationFor$">configurationFor:&nbsp;</a></h3>
+    - (bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*) <b>configurationFor:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            This is meant to be used remotely by all sorts of
+            software running on the machine and which is *not*
+            a full Command client (ie, not a subclass of EcProcess)
+            but which still wants to retrieve configuration from a
+            central location (the Control/Command servers).
+            <br /> The returned value is a a serialized property
+            list... you need to deserialize using the standard
+            GNUstep property list APIs. <br /> NB: The
+            configuration might change later on, so you
+            must not cache the configuration after asking for it,
+            but rather ask for it each time your software needs it.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-launch$">launch:&nbsp;</a></h3>
+    - (BOOL) <b>launch:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            Request immediate launch of the named process.
+            <br /> Returns <code>NO</code> if the process cannot
+            be launched. <br /> Returns <code>YES</code> if the
+            process is already running or launching has
+            started.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-registerClient$identifier$name$transient$">registerClient:&nbsp;identifier:&nbsp;name:&nbsp;transient:&nbsp;</a></h3>
+    - (bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*) <b>registerClient:</b> (id)c<b> identifier:</b> (int)p<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> transient:</b> (BOOL)t;<br />
+    <div class="desc">
+      
+            Registers as a client process of the Command
+            server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-reply$to$from$">reply:&nbsp;to:&nbsp;from:&nbsp;</a></h3>
+    - (oneway void) <b>reply:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)c;<br />
+    <div class="desc">
+      
+            Replies to a text command sent by another process.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-terminate$">terminate:&nbsp;</a></h3>
+    - (oneway void) <b>terminate:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*)byDate;<br />
+    <div class="desc">
+      
+            Shut down the Command server and all its clients.
+            <br /> Clients which fail to shut down gracefully
+            before the specified timestamp will be forcibly
+            killed. The timestamp is constrained to be at least
+            half a second in the future and not more than 15
+            minutes in the future.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Command)-woken$">woken:&nbsp;</a></h3>
+    - (void) <b>woken:</b> (id)obj;<br />
+    <div class="desc">
+      
+            Informs the Command server that a previously
+            registered client considers itself to have
+            started up and to now be stable.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="008000000000">
+        Software documentation for the Console protocol
+      </a></h1>
+    <h2><a name="protocol$(Console)">Console</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSObject)">NSObject</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Console)-information$">-information:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(Console)-information$">information:&nbsp;</a></h3>
+    - (oneway void) <b>information:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)txt;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="009000000000">
+        Software documentation for the Control protocol
+      </a></h1>
+    <h2><a name="protocol$(Control)">Control</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="#protocol$(CmdPing)">CmdPing</a></dd>
+        <dd><a rel="gsdoc" href="#protocol$(CmdConfig)">CmdConfig</a></dd>
+        <dd><a rel="gsdoc" href="EcAlarmDestination.html#protocol$(EcAlarmDestination)">EcAlarmDestination</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-alarm$">-alarm:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-command$from$">-command:from:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-domanage$">-domanage:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-information$type$to$from$">-information:type:to:from:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-registerCommand$name$">-registerCommand:name:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-registerConsole$name$pass$">-registerConsole:name:pass:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-reply$to$from$">-reply:to:from:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-servers$on$">-servers:on:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-unmanage$">-unmanage:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(Control)-unregister$">-unregister:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(Control)-alarm$">alarm:&nbsp;</a></h3>
+    - (oneway void) <b>alarm:</b> (in bycopy <a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-command$from$">command:&nbsp;from:&nbsp;</a></h3>
+    - (oneway void) <b>command:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)cmd<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)f;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-domanage$">domanage:&nbsp;</a></h3>
+    - (oneway void) <b>domanage:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-information$type$to$from$">information:&nbsp;type:&nbsp;to:&nbsp;from:&nbsp;</a></h3>
+    - (oneway void) <b>information:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> type:</b> (<a rel="gsdoc" href="#type$EcLogType">EcLogType</a>)t<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)to<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)from;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-registerCommand$name$">registerCommand:&nbsp;name:&nbsp;</a></h3>
+    - (bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*) <b>registerCommand:</b> (id<<a rel="gsdoc" href="#protocol$(Command)">Command</a>>)c<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-registerConsole$name$pass$">registerConsole:&nbsp;name:&nbsp;pass:&nbsp;</a></h3>
+    - (bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>registerConsole:</b> (id<<a rel="gsdoc" href="#protocol$(Console)">Console</a>>)c<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> pass:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)p;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-reply$to$from$">reply:&nbsp;to:&nbsp;from:&nbsp;</a></h3>
+    - (oneway void) <b>reply:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-servers$on$">servers:&nbsp;on:&nbsp;</a></h3>
+    - (oneway void) <b>servers:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)a<b> on:</b> (id<<a rel="gsdoc" href="#protocol$(Command)">Command</a>>)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-unmanage$">unmanage:&nbsp;</a></h3>
+    - (oneway void) <b>unmanage:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(Control)-unregister$">unregister:&nbsp;</a></h3>
+    - (void) <b>unregister:</b> (id)o;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="010000000000">
+        Software documentation for the EcConfigForwarded
+        protocol
+      </a></h1>
+    <h2><a name="protocol$(EcConfigForwarded)">EcConfigForwarded</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSObject)">NSObject</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          This is the protocol to which a client of configuration
+          forwarding must confirm. It contains a single
+          method that the server calls to pass config to the
+          client.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(EcConfigForwarded)-ecForwardedConfig$from$">-ecForwardedConfig:from:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(EcConfigForwarded)-ecForwardedConfig$from$">ecForwardedConfig:&nbsp;from:&nbsp;</a></h3>
+    - (oneway void) <b>ecForwardedConfig:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)info<b> from:</b> (id<<a rel="gsdoc" href="#protocol$(EcConfigForwarding)">EcConfigForwarding</a>>)server;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="011000000000">
+        Software documentation for the EcConfigForwarding
+        protocol
+      </a></h1>
+    <h2><a name="protocol$(EcConfigForwarding)">EcConfigForwarding</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcProcess.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSObject)">NSObject</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          The EcConfigForwarding protocol is provided by a process
+          to allow cooperating client processes to know how it is
+          configured and to get automatic updates when its
+          configuration changes.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(EcConfigForwarding)-ecCancelConfigFwdTo$">-ecCancelConfigFwdTo:</a></li>
+      <li><a rel="gsdoc" href="EcProcess.html#method$(EcConfigForwarding)-ecSetupConfigFwdTo$">-ecSetupConfigFwdTo:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(EcConfigForwarding)-ecCancelConfigFwdTo$">ecCancelConfigFwdTo:&nbsp;</a></h3>
+    - (oneway void) <b>ecCancelConfigFwdTo:</b> (id<<a rel="gsdoc" href="#protocol$(EcConfigForwarded)">EcConfigForwarded</a>>)client;<br />
+    <div class="desc">
+      
+            This method may be called by a <var>client</var> when
+            it wishes to stop receiving configuraton updates from
+            the server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcConfigForwarding)-ecSetupConfigFwdTo$">ecSetupConfigFwdTo:&nbsp;</a></h3>
+    - (bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*) <b>ecSetupConfigFwdTo:</b> (id<<a rel="gsdoc" href="#protocol$(EcConfigForwarded)">EcConfigForwarded</a>>)client;<br />
+    <div class="desc">
+      
+            This method is called by the <var>client</var> when it
+            wants to start receiving configuration updates from
+            the server. The method returns the current
+            configuration of the server (at the point
+            when the method was called). NB. With multithreaded
+            applications it is possible that setting up
+            configuration forwarding could cause a
+            <var>client</var> to be informed of a configuration
+            change before the setup method returns the
+            configuration.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="012000000000">EcProcess types</a></h1>
+    <p>
+    </p>
+    <h3><a name="type$EcLogType">EcLogType</a></h3>
+    typedef enum ... EcLogType;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="013000000000">EcProcess constants</a></h1>
+    <p>
+    </p>
+    <h3><a name="constant$EcDidQuitNotification">EcDidQuitNotification</a></h3>
+    NSString* const EcDidQuitNotification;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="constant$EcWillQuitNotification">EcWillQuitNotification</a></h3>
+    NSString* const EcWillQuitNotification;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="014000000000">EcProcess macros</a></h1>
+    <p>
+    </p>
+    <h3><a name="macro$EcExceptionCritical">EcExceptionCritical</a></h3>
+     EcExceptionCritical(<b>cause</b>, <b>format</b>, <b>args</b><b>,...</b>)<br />
+    <div class="desc">
+      
+          Convenience macros to raise unique alarms (which
+          do not clear automatically) for exceptions or unexpected
+          code/data errors. The unique specificProblem for
+          each alarm is derived from the file and line at which it
+          is raised. These macros should only be used when it&apos;s
+          impossible/impractical to have the
+          code automatically detect that a problem has gone away,
+          and clear the alarm.
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="015000000000">EcProcess variables</a></h1>
+    <p>
+    </p>
+    <h3><a name="variable$EcProc">EcProc</a></h3>
+    <a rel="gsdoc" href="#class$EcProcess">EcProcess</a>* EcProc;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$cmdBasicDbg">cmdBasicDbg</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdBasicDbg;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$cmdConnectDbg">cmdConnectDbg</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdConnectDbg;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$cmdDefaultDbg">cmdDefaultDbg</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdDefaultDbg;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$cmdDetailDbg">cmdDetailDbg</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdDetailDbg;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="016000000000">EcProcess functions</a></h1>
+    <p>
+    </p>
+    <h3><a name="function$cmdDataDir">cmdDataDir</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdDataDir();<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$cmdLogFormat">cmdLogFormat</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdLogFormat(<a rel="gsdoc" href="#type$EcLogType">EcLogType</a> <b>t</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>fmt</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$cmdLogKey">cmdLogKey</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdLogKey(<a rel="gsdoc" href="#type$EcLogType">EcLogType</a> <b>t</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$cmdLogName">cmdLogName</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdLogName();<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$cmdLogsDir">cmdLogsDir</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdLogsDir(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>date</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$cmdSetHome">cmdSetHome</a></h3>
+    void cmdSetHome(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>home</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$cmdVersion">cmdVersion</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdVersion(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>ver</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$ecNativeThreadID">ecNativeThreadID</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSUInteger">NSUInteger</a> ecNativeThreadID();<br />
+    <div class="desc">
+      
+          Return the native thread ID of the current thread, or
+          NSNotFound if that is not available.
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$ecSetLogsSubdirectory">ecSetLogsSubdirectory</a></h3>
+    void ecSetLogsSubdirectory(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>pathComponent</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <br />
+    </font>
+</body>
+</html>

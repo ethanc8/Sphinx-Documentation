@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="EcLogger">
+  <head>
+    <title>EcLogger class documentation</title>
+    <author name="Richard Frith-Macdonald">
+      <email address="rfm@gnu.org">
+        rfm@gnu.org
+      </email>
+    </author>
+    <copy>2012 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the EcLogger class
+      </heading>
+      <class name="EcLogger" super="NSObject">
+        <declared>EcLogger.h</declared>
+        <conform>CmdPing</conform>
+        <desc>
+          Instances of the EcLogger class are used to handle
+          various types of logging. <br /> The default
+          implementation supports writing to local files
+          and sending logs to a remote process (by default, the
+          Command server). <br /> Configuration options control
+          the amount of data buffered in memory before logs are
+          flushed, and the amount of time for which data may
+          be buffered in memory before being flushed. <br />
+          Configuration options are ???Server (to specify
+          the name of the server to log to if not Command) and
+          ???Flush (to specify when to flush the in-memory
+          buffer), where ??? is the type of logging being done
+          by a logger object. <br /> When there is no type-specific
+          flush configuration, the DefaultFlush configuration key
+          will be used. <br /> The flush configuration value must
+          be a floating point number of seconds after which to
+          flush, optionally folowed by a colon and an integer
+          number of kilobytes of data allowed before the buffer
+          is flushed.
+        </desc>
+        <ivariable type="BOOL" name="externalFlush" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="flushKey" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="inFlush" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="interval" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="key" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSDate*" name="last" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSRecursiveLock*" name="lock" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSMutableString*" name="message" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="pendingFlush" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="serverKey" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="serverName" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="shouldForward" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="unsigned int" name="size" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimer*" name="timer" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="EcLogType" name="type" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <method type="EcLogger*" factory="yes">
+          <sel>loggerForType:</sel>
+          <arg type="EcLogType">t</arg>
+          <desc>
+            Returns a (cached) logger object for the specified
+            type of logging. <br /> Creates a new object (adding
+            it to the cache) if none exists.
+          </desc>
+        </method>
+        <method type="void" factory="yes">
+          <sel>setFactory:</sel>
+          <arg type="Class">c</arg>
+          <desc>
+            Sets the factory class used by the
+            <ref type="method" id="+loggerForType:">
+              +loggerForType:
+            </ref>
+            method to create new EcLogger objects. <br /> This
+            is provided as a convenience so that you can get all
+            code to use a subclass of EcLogger without having to
+            use a category to override that method.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>cmdGnip:</sel>
+          <arg type="id&lt;CmdPing&gt;">from</arg>
+          <sel>sequence:</sel>
+          <arg type="unsigned">num</arg>
+          <sel>extra:</sel>
+          <arg type="NSData*">data</arg>
+          <desc>
+            Supports the CmdPing protocol.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMadeConnectionToServer:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>cmdPing:</sel>
+          <arg type="id&lt;CmdPing&gt;">from</arg>
+          <sel>sequence:</sel>
+          <arg type="unsigned">num</arg>
+          <sel>extra:</sel>
+          <arg type="NSData*">data</arg>
+          <desc>
+            Supports the CmdPing protocol.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>flush</sel>
+          <desc>
+            Called to flush accumulated data from the message
+            instance variable. <br /> On return from this
+            method the variable should be empty. <br /> External
+            flush operation... writes out data and asks any
+            server we write to to flush its data out too.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>log:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>log:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Called to log a message by appending to the message
+            instance variable. This method may also schedule
+            an asynchronous flush if the message buffer is too large
+            or if the last flush was too <strong>long</strong> ago.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>update</sel>
+          <desc>
+            Called when the user defaults system has changed and
+            a configuration update may have occurred.
+          </desc>
+        </method>
+      </class>
+    </chapter>
+    <chapter>
+      <heading>EcLogger constants</heading>
+      <p></p>
+      <constant type="NSString* const" name="EcLoggersDidChangeNotification">
+        <desc>
+          Notification sent when the logging set of cached
+          loggers is emptied.
+        </desc>
+      </constant>
+    </chapter>
+  </body>
+</gsdoc>

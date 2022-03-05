@@ -1,0 +1,596 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="EcAlarmDestination">
+  <head>
+    <title>EcAlarmDestination class documentation</title>
+    <author name="Richard Frith-Macdonald">
+      <email address="rfm@gnu.org">
+        rfm@gnu.org
+      </email>
+    </author>
+    <copy>2012 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the EcAlarmDestination
+        class
+      </heading>
+      <class name="EcAlarmDestination" super="NSObject">
+        <declared>EcAlarmDestination.h</declared>
+        <conform>EcAlarmDestination</conform>
+        <conform>EcAlarmMonitor</conform>
+        <desc>
+          <p>
+            The EcAlarmDestination class provides an object to act
+            as an alarm destination which is capable of buffering,
+            coalescing, and forwarding alarms to another
+            destination (usually in a separate process).
+          </p>
+          <p>
+            The buffering and coalescing mechanism is important to
+            prevent floods of alarms being sent over network
+            connections.
+          </p>
+          <p>
+            An EcAlarmDestination instance can also be set to
+            forward alarm information to a number of other
+            instances as backups for the main destination.
+          </p>
+        </desc>
+        <ivariable type="NSRecursiveLock*" name="_alarmLock" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSMutableArray*" name="_alarmQueue" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSMutableSet*" name="_alarmsActive" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSMutableSet*" name="_alarmsCleared" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSArray*" name="_backups" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="_coalesceOff" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="_debug" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="id&lt;EcAlarmDestination&gt;" name="_destination" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="_host" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="_inTimeout" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="_isRunning" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSMutableSet*" name="_managedObjects" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="id&lt;EcAlarmMonitor&gt;" name="_monitor" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="_name" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="_shouldStop" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimer*" name="_timer" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <method type="void">
+          <sel>activePut:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            Internal use only.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>activeRemove:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            Internal use only.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>alarm:</sel>
+          <arg type="in bycopy EcAlarm*">event</arg>
+          <desc>
+            Passes an alarm to the destination by adding it to a
+            queue of alarm events which will be processed in the
+            receivers running thread.
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>alarms</sel>
+          <desc>
+            Returns an array containing all the currently
+            active alarms.
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>backups</sel>
+          <desc>
+            Returns an array of backup destinations (if set).
+            <br /> See
+            <ref type="method" id="-setBackups:">
+              -setBackups:
+            </ref>
+            for more information.
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>clears</sel>
+          <desc>
+            Returns an array containing all the latest cleared
+            alarms.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearsPut:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            Internal use only.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearsRemove:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            Internal use only.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>domanage:</sel>
+          <arg type="in bycopy NSString*">managedObject</arg>
+          <desc>
+            Inform the destination of the existence of a managed
+            object. <br /> This is an indicator of a 'cold
+            start' of that object... meaning that the object has
+            just started up afresh, and all outstanding alarms for
+            the object are to be cleared. <br /> The
+            <var>managedObject</var> information is added to a
+            queue which is processed by the receiver's running
+            thread in order to pass the information on to the
+            destination. <br /> If
+            <var>managedObject</var> is <code>nil</code>, the
+            default managed object for the current process is
+            used. <br /> Processes using the
+            <ref type="class" id="EcProcess">EcProcess</ref>
+              class call this method automatically when they have
+              registered with the Command server, so you
+              don't usually need to call it explicity for the
+              default managed object.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>init</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="id">
+          <sel>initWithHost:</sel>
+          <arg type="NSString*">host</arg>
+          <sel>name:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            Sets the name/host of the object in a remote process
+            to which alarms should be forwarded. If this information
+            is set then the forwarder will attempt to maintain a
+            Distributed Objects connection to the remote
+            object. <br /> The <var>host</var> may be
+            <code>nil</code> for a local connection (current
+            machine and account), or an empty string for a
+            network connection to the local machine, or a
+            <var>host</var> <var>name</var> for a network
+            connection to another machine, or an asterisk
+            for a network connection to any available machine.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>isRunning</sel>
+          <desc>
+            Returns a flag indicating whether the receiver is
+            actually operating.
+          </desc>
+        </method>
+        <method type="EcAlarm*">
+          <sel>latest:</sel>
+          <arg type="EcAlarm*">toFind</arg>
+          <desc>
+            Finds and returns the most recent alarm in the system
+            which matches (is equal to) <var>toFind</var>. This
+            searches the queue of alarms to be processed, the
+            set of active alarms, and the set of cleared alarms (in
+            that order) returning the first match found. If no
+            match is found the method returns <code>nil</code>.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>managePut:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            Internal use only.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>manageRemove:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            Internal use only.
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>managed</sel>
+          <desc>
+            Returns an array containing the known managed
+            objects.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>run</sel>
+          <desc>
+            This method is called from
+            <ref type="method" id="-init">
+              -init
+            </ref>
+            in a secondary thread to start handling of alarms by the
+            receiver. Do not call it yourself.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setBackups:</sel>
+          <arg type="NSArray*">backups</arg>
+          <desc>
+            Sets an array containing EcAlarmDestination objects as
+            <var>backups</var> to receive copies of the alarm and
+            domanage/unmanage information sent to
+            this destination. <br /> You may set <code>nil</code>
+            or an empty array to turn off <var>backups</var>, and
+            may use the
+            <ref type="method" id="-backups">
+              -backups
+            </ref>
+            method to get the currently set values. <br /> Do
+            not set up loops causing a destination to be its own
+            backup either directly or indirectly, as this will
+            cause alarms to be forwarded endlessly.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>setCoalesce:</sel>
+          <arg type="BOOL">coalesce</arg>
+          <desc>
+            Sets coalescing behavior for the queue of alarms and
+            managed object changes. The default behavior is for
+            coalescing to be turned on (so new values
+            replace those in the queue), but setting this to
+            <code>NO</code> will cause all events to be passed
+            on (apart from repeated alarms at the same
+            perceivedSeverity level, which are never
+            passed one).
+          </desc>
+        </method>
+        <method type="int">
+          <sel>setDebug:</sel>
+          <arg type="int">debug</arg>
+          <desc>
+            Sets <var>debug</var> on/off. When debugging is on, we
+            generate logs of forwarding to the destination and
+            of coalescing of alarms. <br /> Any non-zero value sets
+            <var>debug</var> to <code>YES</code>, zero sets it to
+            <code>NO</code>. <br /> Returns the previous value
+            of the setting.
+          </desc>
+        </method>
+        <method type="id&lt;EcAlarmDestination&gt;">
+          <sel>setDestination:</sel>
+          <arg type="id&lt;EcAlarmDestination&gt;">destination</arg>
+          <desc>
+            Sets the <var>destination</var> to which alarms should
+            be forwarded. <br /> If <code>nil</code> this turns off
+            forwarding until it is re-set to a non-nil
+            <var>destination</var>. <br /> The
+            <var>destination</var> object is retained by the
+            receiver. <br /> Returns the previously set
+            <var>destination</var>.
+          </desc>
+        </method>
+        <method type="id&lt;EcAlarmMonitor&gt;">
+          <sel>setMonitor:</sel>
+          <arg type="id&lt;EcAlarmMonitor&gt;">monitor</arg>
+          <desc>
+            Sets the monitoring object to which state changes are
+            sent. <br /> If <code>nil</code> this turns off
+            monitoring. <br /> The monitoring object is
+            retained by the receiver. <br /> Returns the
+            previously set <var>monitor</var>.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>shutdown</sel>
+          <desc>
+            Requests that the receiver's running thread should
+            shut down. This method waits for a
+            <strong>short</strong> while for the thread to
+            shut down, but the process of shutting down is not
+            guaranteed to have completed by the time the
+            method returns.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>unmanage:</sel>
+          <arg type="in bycopy NSString*">managedObject</arg>
+          <desc>
+            Inform the destination of the removal of a managed
+            object. <br /> This is an indicator of a graceful
+            shutdown of that object... meaning that the object
+            has been stopped intentionally and all outstanding
+            alarms for the object are to be cleared. <br /> The
+            <var>managedObject</var> information is added to a
+            queue which is processed by the receiver's running
+            thread in order to pass the information on to the
+            destination. <br /> If
+            <var>managedObject</var> is <code>nil</code>, the
+            default managed object for the current process is
+            used. <br /> Processes using the
+            <ref type="class" id="EcProcess">EcProcess</ref>
+              class call this method automatically when they are
+              shut down normally (with a quit status of zero), so
+              you don't usually need to call it explicity for the
+              default managed object.
+          </desc>
+        </method>
+      </class>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the
+        EcAlarmDestination(Forwarding)
+        category
+      </heading>
+      <category name="Forwarding" class="EcAlarmDestination">
+        <declared>EcAlarmDestination.h</declared>
+        <desc>
+          Methods called internally to forward events to the
+          remote target of the receiver. These methods must
+          perform themselves in the main thread.
+        </desc>
+        <method type="void">
+          <sel>alarmFwd:</sel>
+          <arg type="EcAlarm*">event</arg>
+          <desc>
+            Forward an alarm <var>event</var>.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>domanageFwd:</sel>
+          <arg type="NSString*">managedObject</arg>
+          <desc>
+            Forward a domanage event.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>unmanageFwd:</sel>
+          <arg type="NSString*">managedObject</arg>
+          <desc>
+            Forward an unmanage event.
+          </desc>
+        </method>
+      </category>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the EcAlarmDestination
+        protocol
+      </heading>
+      <protocol name="EcAlarmDestination">
+        <declared>EcAlarmDestination.h</declared>
+        <conform>NSObject</conform>
+        <desc>
+          The EcAlarmDestination protocol describes the interface
+          which must be provided by an object which handles
+          alarms. <br />
+          <p>
+            The sender expects to be able to 'fire and forget',
+            sending the messages in this protocol without
+            having to wait for a response or deal with any error
+            conditions, so the destination must
+            <em>not</em> block for a <strong>long</strong> time or
+            raise an exception.
+          </p>
+        </desc>
+        <method type="oneway void">
+          <sel>alarm:</sel>
+          <arg type="in bycopy EcAlarm*">event</arg>
+          <desc>
+            Passes an alarm to the destination.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>domanage:</sel>
+          <arg type="in bycopy NSString*">managedObject</arg>
+          <desc>
+            Inform the destination of the existence of a managed
+            object. <br /> This is an indicator of a 'cold
+            start' of that object... meaning that the object has
+            just started up afresh, and all outstanding alarms for
+            the object are to be cleared.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>unmanage:</sel>
+          <arg type="in bycopy NSString*">managedObject</arg>
+          <desc>
+            Inform the destination of the removal of a managed
+            object. <br /> This is an indicator of a graceful
+            shutdown of that object... meaning that the object
+            has been stopped intentionally and all outstanding
+            alarms for the object are to be cleared.
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the EcAlarmMonitor protocol
+      </heading>
+      <protocol name="EcAlarmMonitor">
+        <declared>EcAlarmDestination.h</declared>
+        <conform>NSObject</conform>
+        <desc>
+          These methods are called to inform an object monitoring
+          the alarm destination about changes to its state.
+        </desc>
+        <method type="void">
+          <sel>activePut:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>activeRemove:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearsPut:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearsRemove:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>managePut:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>manageRemove:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+  </body>
+</gsdoc>

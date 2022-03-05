@@ -1,0 +1,1180 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="EcAlarm">
+  <head>
+    <title>EcAlarm class documentation</title>
+    <author name="Richard Frith-Macdonald">
+      <email address="rfm@gnu.org">
+        rfm@gnu.org
+      </email>
+    </author>
+    <copy>2012 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the EcAlarm class
+      </heading>
+      <class name="EcAlarm" super="NSObject">
+        <declared>EcAlarm.h</declared>
+        <conform>NSCoding</conform>
+        <conform>NSCopying</conform>
+        <desc>
+          <p>
+            The EcAlarm class encapsulates an alarm to be sent out
+            to a monitoring system. It's designed to work cleanly
+            with industry standard SNMP alarm monitoring systems.
+            For more information on how the SNMP operation works,
+            see the
+            <ref type="class" id="EcAlarmSinkSNMP">EcAlarmSinkSNMP</ref>class documentation.</p>
+            <p>
+              Instances are created and sent to a central
+              coordination point where checks are
+              performed to see if there is an existing alarm
+              for the same issue. If the incoming alarm does not
+              change the severity of an existing alarm, it is
+              ignored, otherwise it may be passed on to an
+              external monitoring system. The central
+              coordination system is responsible for
+              ensuring that alarms for the same issue are
+              updated to contain the first event date,
+              notification ID and a trend indicator.
+            </p>
+            <p>
+              Alarms which have been raised (by passing them to
+              an alarm destination) remain raised until they are
+              cleared (by passign a matching alarm with a
+              cleared severity status) to the destination.
+              Alarm clears sent with no earlier matching raise
+              are generally ignored, but a clear may be flagged as
+              a special audit alarm: one which is passed on and
+              logged for audit porposes. This is a rare
+              situation where the alarm does not actually
+              represent a problem (or even the suspicion of a
+              problem).
+            </p>
+        </desc>
+        <ivariable type="NSString*" name="_additionalText" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="_audit" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="uint8_t" name="_delay" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSDate*" name="_eventDate" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="EcAlarmEventType" name="_eventType" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="void*" name="_extra" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSDate*" name="_firstEventDate" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="_frozen" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="_managedObject" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="_notificationID" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="EcAlarmSeverity" name="_perceivedSeverity" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="EcAlarmProbableCause" name="_probableCause" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="_proposedRepairAction" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="_specificProblem" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="EcAlarmTrend" name="_trendIndicator" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <ivariable type="NSDictionary*" name="_userInfo" validity="protected">
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          </desc>
+        </ivariable>
+        <method type="EcAlarm*" factory="yes">
+          <sel>alarmForManagedObject:</sel>
+          <arg type="NSString*">managedObject</arg>
+          <sel>at:</sel>
+          <arg type="NSDate*">eventDate</arg>
+          <sel>withEventType:</sel>
+          <arg type="EcAlarmEventType">eventType</arg>
+          <sel>probableCause:</sel>
+          <arg type="EcAlarmProbableCause">probableCause</arg>
+          <sel>specificProblem:</sel>
+          <arg type="NSString*">specificProblem</arg>
+          <sel>perceivedSeverity:</sel>
+          <arg type="EcAlarmSeverity">perceivedSeverity</arg>
+          <sel>proposedRepairAction:</sel>
+          <arg type="NSString*">proposedRepairAction</arg>
+          <sel>additionalText:</sel>
+          <arg type="NSString*">additionalText</arg>
+          <desc>
+            Creates and returns an autoreleased instance by
+            calling the designated initialiser with all the
+            supplied arguments.
+          </desc>
+        </method>
+        <method type="EcAlarmEventType" factory="yes">
+          <sel>eventTypeFromProbableCause:</sel>
+          <arg type="EcAlarmProbableCause">value</arg>
+          <desc>
+            This method provides a mapping from the probable cause
+            of an event to the event type. <br /> The method is
+            called during initialisation of an alarm instance
+            (except where the probable cause is
+            EcAlarmProbableCauseUnknown)
+            to check that the supplied arguments are consistent. If
+            a subclass extends the possible probable cause values, it
+            must also override this method to handle those new
+            values by returning a known event type.
+          </desc>
+        </method>
+        <method type="NSString*" factory="yes">
+          <sel>stringFromEventType:</sel>
+          <arg type="EcAlarmEventType">value</arg>
+          <desc>
+            Provides a human readable string representation of
+            an event type. <br /> This method is called during
+            initialisation of an alarm instance to check
+            that the supplied event type is legal. <br /> Returns
+            <code>nil</code> if the <var>value</var> is unknown.
+            <br />
+          </desc>
+        </method>
+        <method type="NSString*" factory="yes">
+          <sel>stringFromProbableCause:</sel>
+          <arg type="EcAlarmProbableCause">value</arg>
+          <desc>
+            Provides a human readable string representation of
+            a probable cause. <br /> Returns <code>nil</code> if the
+            <var>value</var> is unknown.
+          </desc>
+        </method>
+        <method type="NSString*" factory="yes">
+          <sel>stringFromSeverity:</sel>
+          <arg type="EcAlarmSeverity">value</arg>
+          <desc>
+            Provides a human readable string representation of
+            a severity. <br /> Returns <code>nil</code> if the
+            <var>value</var> is unknown.
+          </desc>
+        </method>
+        <method type="NSString*" factory="yes">
+          <sel>stringFromTrend:</sel>
+          <arg type="EcAlarmTrend">value</arg>
+          <desc>
+            Provides a human readable string representation of
+            a trend. <br /> Returns <code>nil</code> if the
+            <var>value</var> is unknown.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>additionalText</sel>
+          <desc>
+            This is the supplementary text (optional) which may be
+            provided with and alarm an an aid to the human
+            operator for the monitoring system.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>audit</sel>
+          <desc>
+            Returns <code>YES</code> if this alarm is flagged
+            as an audit object: a clear which should be
+            recorded/monitored even without a
+            matching raise of the alarm.
+          </desc>
+        </method>
+        <method type="EcAlarm*">
+          <sel>clear</sel>
+          <desc>
+            Returns an autoreleased copy of the receiver with
+            the same notificationID but with a perceivedSeverity
+            set to be EcAlarmSeverityCleared... this may be used to
+            clear the alarm represented by the receiver.
+          </desc>
+        </method>
+        <method type="NSComparisonResult">
+          <sel>compare:</sel>
+          <arg type="EcAlarm*">other</arg>
+          <desc>
+            Compares the <var>other</var> object with the
+            receiver for sorting/ordering. <br /> If both
+            objects have a notificationID set then the result
+            of the numeric comparison of those IDs is used. <br />
+            Otherwise the result of the comparison orders the
+            objects by managedObject, eventType, probableCause,
+            and specificProblem.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>copyWithZone:</sel>
+          <arg type="NSZone*">aZone</arg>
+          <desc>
+            EcAlarm objects may be copied. This method is
+            provided to implement the NSCopying protocol.
+            <br /> A copy of an object does <em>not</em> copy
+            any value provided by the
+            <ref type="method" id="-setExtra:">
+              -setExtra:
+            </ref>
+            method. <br /> A copy of an object is not frozen.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>dealloc</sel>
+          <desc>
+            Deallocates the receiver.
+          </desc>
+        </method>
+        <method type="uint8_t">
+          <sel>delay</sel>
+          <desc>
+            Returns the queue delay set for this alarm (or zero
+            if none was set).
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>delayed:</sel>
+          <arg type="NSTimeInterval">at</arg>
+          <desc>
+            Returns <code>YES</code> if the receiver should be
+            delayed in the queue past the supplied timestamp,
+            <code>NO</code> otherwise.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>encodeWithCoder:</sel>
+          <arg type="NSCoder*">aCoder</arg>
+          <desc>
+            EcAlarm objects may be passed over the distributed
+            objects system or archived. This method is provided
+            to implement the NSCoding protocol. <br /> An encoded
+            copy of an object does <em>not</em> copy any value
+            provided by the
+            <ref type="method" id="-setExtra:">
+              -setExtra:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="NSDate*">
+          <sel>eventDate</sel>
+          <desc>
+            Returns the timestamp of the event which generated
+            the alarm.
+          </desc>
+        </method>
+        <method type="EcAlarmEventType">
+          <sel>eventType</sel>
+          <desc>
+            This method returns the type for event which generated
+            the alarm.
+          </desc>
+        </method>
+        <method type="void*">
+          <sel>extra</sel>
+          <desc>
+            Returns any extra information stored by the
+            <ref type="method" id="-setExtra:">
+              -setExtra:
+            </ref>
+            method. <br />
+          </desc>
+        </method>
+        <method type="NSDate*">
+          <sel>firstEventDate</sel>
+          <desc>
+            If this alarm is known to be represent an event updating
+            the status of an existing alarm, this method returns
+            the date of the initial event. otherwise it returns
+            <code>nil</code>.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>freeze</sel>
+          <desc>
+            Freeze the state of the receiver; no more calls to
+            setters are permitted. <br /> When a frozen alarm
+            is copied, the new copy is <em>not</em> frozen.
+          </desc>
+        </method>
+        <method type="NSUInteger">
+          <sel>hash</sel>
+          <desc>
+            Returns the hash of the receiver... which is also
+            the hash of its managedObject.
+          </desc>
+        </method>
+        <method type="id" init="yes">
+          <sel>initForManagedObject:</sel>
+          <arg type="NSString*">managedObject</arg>
+          <sel>at:</sel>
+          <arg type="NSDate*">eventDate</arg>
+          <sel>withEventType:</sel>
+          <arg type="EcAlarmEventType">eventType</arg>
+          <sel>probableCause:</sel>
+          <arg type="EcAlarmProbableCause">probableCause</arg>
+          <sel>specificProblem:</sel>
+          <arg type="NSString*">specificProblem</arg>
+          <sel>perceivedSeverity:</sel>
+          <arg type="EcAlarmSeverity">perceivedSeverity</arg>
+          <sel>proposedRepairAction:</sel>
+          <arg type="NSString*">proposedRepairAction</arg>
+          <sel>additionalText:</sel>
+          <arg type="NSString*">additionalText</arg>
+          <desc>
+            Initialises the receiver as an alarm for a
+            particular event. <br /> The
+            <var>managedObject</var> argument may be
+            <code>nil</code> if the alarm should use the default
+            managed object value for the current process.
+            <br /> The <var>eventDate</var> argument may be
+            <code>nil</code> if the alarm should use the current
+            timestamp. <br /> The <var>managedObject</var>,
+            <var>eventType</var>, <var>probableCause</var>, and
+            <var>specificProblem</var> arguments uniquely
+            identify the issue for which an alarm is being
+            produced. <br /> The <var>perceivedSeverity</var>
+            indicates the importance of the problem, with a
+            value of EcAlarmSeverityCleared indicating that the
+            problem is over. <br /> A
+            <var>proposedRepairAction</var> is mandatory (unless
+            the severity is cleared) to provide the human operator
+            with some sort of hint about how they should resolve
+            the issue.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>initWithCoder:</sel>
+          <arg type="NSCoder*">aCoder</arg>
+          <desc>
+            EcAlarm objects may be passed over the distributed
+            objects system or archived. This method is provided
+            to implement the NSCoding protocol.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>isEqual:</sel>
+          <arg type="id">other</arg>
+          <desc>
+            Returns a flag indicating whether the receiver is
+            equal to the <var>other</var> object. To be
+            considered equal either: <br /> The two objects
+            must have equal managedObject values and equal
+            (non-zero) notificationID values or <br /> the
+            two objects must have equal managedObject values, equal
+            eventType values, equal probableCause values, and
+            equal specificProblem values. <br /> NB. you must not
+            set two alarm instances to have the same notificationID
+            values if they are not considered equal using the
+            <var>other</var> criteria.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>managedObject</sel>
+          <desc>
+            Returns the managedObject value set when the
+            receiver was initialised.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>moComponent</sel>
+          <desc>
+            Returns the component of the managed object (if
+            any).
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>moHost</sel>
+          <desc>
+            Returns the host of the managed object.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>moInstance</sel>
+          <desc>
+            Returns the instance of the managed object (if
+            any).
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>moInstancedProcess</sel>
+          <desc>
+            Returns the process name of the managed object
+            including the instance separated from the main
+            name by a hyphen. If the managed object has no process
+            instance, this method simply returns the process
+            name.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>moProcess</sel>
+          <desc>
+            Returns the process name of the managed object.
+          </desc>
+        </method>
+        <method type="int">
+          <sel>notificationID</sel>
+          <desc>
+            Returns zero or the notificationID value most
+            recently set by the
+            <ref type="method" id="-setNotificationID:">
+              -setNotificationID:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="EcAlarmSeverity">
+          <sel>perceivedSeverity</sel>
+          <desc>
+            Returns the perceivedSeverity set when the receiver
+            was initialised.
+          </desc>
+        </method>
+        <method type="EcAlarmProbableCause">
+          <sel>probableCause</sel>
+          <desc>
+            Returns the probableCause set when the receiver was
+            initialised.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>proposedRepairAction</sel>
+          <desc>
+            Returns the proposedRepairAction set when the
+            receiver was initialised.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setAudit:</sel>
+          <arg type="BOOL">flag</arg>
+          <desc>
+            Specified if this alarm is to be flagged as an
+            audit object: a clear which should be
+            recorded/monitored even without a
+            matching raise of the alarm.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setDelay:</sel>
+          <arg type="uint8_t">delay</arg>
+          <desc>
+            Sets the number of seconds for which this alarm should
+            be delayed in the queue to allow coalescing with other
+            matching alarms. This defaults to zero so that
+            there is no special <var>delay</var> in processing
+            beyond that imposed by periodic queue flushing.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setExtra:</sel>
+          <arg type="void*">extra</arg>
+          <desc>
+            Sets <var>extra</var> data for the current instance.
+            <br /> Extra data is not copied, archived, or
+            transferred over DO, it is available only in
+            the exact instance of the class in which it was set.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setFirstEventDate:</sel>
+          <arg type="NSDate*">firstEventDate</arg>
+          <desc>
+            Sets the first event date for the receiver. <br /> You
+            should not normally call this as it is reserved for
+            use by code which has matched the receiver to an
+            existing alarm.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setNotificationID:</sel>
+          <arg type="int">notificationID</arg>
+          <desc>
+            Sets the notification ID for the receiver. <br /> You
+            should not normally call this as it is reserved for
+            use by code which has matched the receiver to an
+            existing alarm. <br /> In particular, two
+            instances should not be set to have the same
+            non-zero <var>notificationID</var> unless they are
+            equal according to other criteria of equality (ie
+            have the same managedObject, eventType, probableCause,
+            and specificProblem values).
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setTrendIndicator:</sel>
+          <arg type="EcAlarmTrend">trendIndicator</arg>
+          <desc>
+            Sets the trend indicator for the receiver. <br /> You
+            should not normally call this as it is reserved for
+            use by code which has matched the receiver to an
+            existing alarm.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setUserInfo:</sel>
+          <arg type="NSDictionary*">userInfo</arg>
+          <desc>
+            Sets the user information associated with this alarm
+            (a dictionary). <br /> This user information is
+            additional data associated with the alarm which
+            is copied when the alarm is copied. This data is not
+            used by the CCITT X.733... it's optional additional
+            data. <br /> Conventional keys are: <br />
+            <deflist>
+              <term>ResponsibleEmail</term>
+              <desc>
+                The Email address of the person/entity with primary
+                responsibility for dealing with an alarm
+                ... this is intended for use by the alerting system
+                (EcAlerter) when deciding where to send
+                email alerts.
+              </desc>
+            </deflist>
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>specificProblem</sel>
+          <desc>
+            Returns the specificProblem set when the receiver
+            was initialised.
+          </desc>
+        </method>
+        <method type="EcAlarmTrend">
+          <sel>trendIndicator</sel>
+          <desc>
+            Returns the value most recently set by the
+            <ref type="method" id="-setTrendIndicator:">
+              -setTrendIndicator:
+            </ref>
+            method (or EcAlarmTrendNone if that method has not
+            been called). <br /> This tells you whether the
+            receiver represents an increase in severity of an
+            issue, or a decrease in severity (or no change).
+          </desc>
+        </method>
+        <method type="NSDictionary*">
+          <sel>userInfo</sel>
+          <desc>
+            Returns any previously set information (see
+            -setUserInfo:) or <code>nil</code> if none
+            has been set.
+          </desc>
+        </method>
+      </class>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the EcAlarm(Convenience)
+        category
+      </heading>
+      <category name="Convenience" class="EcAlarm">
+        <declared>EcAlarm.h</declared>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+        <method type="EcAlarm*" factory="yes">
+          <sel>clear:</sel>
+          <arg type="NSString*">componentName</arg>
+          <sel>cause:</sel>
+          <arg type="EcAlarmProbableCause">probableCause</arg>
+          <sel>problem:</sel>
+          <arg type="NSString*">specificProblem</arg>
+          <desc>
+            Generates an alarm to clears an alarm previously
+            generated. <br /> The <var>componentName</var>
+            may be <code>nil</code> for a process-wide alarm.
+            <br /> The <var>probableCause</var> must NOT be
+            unknown... it is used to infer the event type.
+            <br /> The <var>specificProblem</var> must be
+            identical to the value supplied in the original
+            alarm that this is intended to clear.
+          </desc>
+        </method>
+        <method type="EcAlarm*" factory="yes">
+          <sel>raise:</sel>
+          <arg type="NSString*">componentName</arg>
+          <sel>cause:</sel>
+          <arg type="EcAlarmProbableCause">probableCause</arg>
+          <sel>problem:</sel>
+          <arg type="NSString*">specificProblem</arg>
+          <sel>severity:</sel>
+          <arg type="EcAlarmSeverity">perceivedSeverity</arg>
+          <sel>action:</sel>
+          <arg type="NSString*">proposedRepairAction</arg>
+          <vararg />
+          <desc>
+            Generates a new alarm event with minimal
+            parameters. <br /> The <var>componentName</var>
+            may be <code>nil</code> for a process-wide alarm.
+            <br /> The <var>probableCause</var> must NOT be
+            unknown... it is used to infer the event type.
+            <br /> The <var>specificProblem</var> is used to
+            identify the event for which the alarm is raised.
+            <br /> The <var>perceivedSeverity</var> must be one
+            of EcAlarmSeverityWarning, EcAlarmSeverityMinor,
+            EcAlarmSeverityMajor or
+            EcAlarmSeverityCritical. <br />
+            The <var>proposedRepairAction</var> must contain
+            information sufficient for any person receiving
+            notification of the alarm to be able to deal
+            with it. The action is a format string, optionally
+            followed by any number of arguments to be
+            incorporated into the repair action. NB. The
+            resulting proposed repair action must be no more
+            than 255 bytes in length when converted to UTF-8 data.
+          </desc>
+        </method>
+      </category>
+    </chapter>
+    <chapter>
+      <heading>EcAlarm types</heading>
+      <p></p>
+      <type type="enum ..." name="EcAlarmEventType">
+        <desc>
+          The EcAlarmEventType enumeration defines the different
+          types of alarm we support. <br /> The enumerated values
+          MUST be matched by those in your SNMP MIB if you wish to
+          have your software interact with SNMP tools. <br /> NB.
+          EcAlarmEventTypeUnknown must
+          <em>NOT</em> be used in an alarm... it is employed
+          solely as a marker for the case where a lookup of type
+          from probable cause can not determine a specific event
+          type.
+          <deflist>
+            <term>EcAlarmEventTypeUnknown</term>
+            <desc>Not used</desc>
+            <term>EcAlarmEventTypeCommunications</term>
+            <desc>
+              A communications/networking/protocol issue
+            </desc>
+            <term>EcAlarmEventTypeEnvironmental</term>
+            <desc>
+              An external environmental issue (eg building on fire)
+            </desc>
+            <term>EcAlarmEventTypeEquipment</term>
+            <desc>A hardware problem (eg disk failure)</desc>
+            <term>EcAlarmEventTypeProcessingError</term>
+            <desc>
+              A software problem (a bug or misconfiguration)
+            </desc>
+            <term>EcAlarmEventTypeQualityOfService</term>
+            <desc>
+              A system not running as well as expected... eg.
+              overloaded
+            </desc>
+          </deflist>
+          <deflist>
+            <term><em>EcAlarmEventTypeUnknown</em></term>
+            <desc></desc>
+            <term><em>EcAlarmEventTypeCommunications</em></term>
+            <desc></desc>
+            <term><em>EcAlarmEventTypeEnvironmental</em></term>
+            <desc></desc>
+            <term><em>EcAlarmEventTypeEquipment</em></term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmEventTypeProcessingError</em>
+            </term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmEventTypeQualityOfService</em>
+            </term>
+            <desc></desc>
+          </deflist>
+        </desc>
+      </type>
+      <type type="enum ..." name="EcAlarmProbableCause">
+        <desc>
+          The EcAlarmProbableCause enumeration defines the probable
+          causes of alarms produced by the system. <br /> These
+          are taken from the CCITT X.733 specification with the
+          numeric values from the CCITT X.721 specification.
+          <br /> Enumeration values include a comment to specify
+          which EcAlarmEventType they apply to.
+          <deflist>
+            <term>EcAlarmProbableCauseUnknown</term>
+            <desc>Category: Any</desc>
+            <term>EcAlarmAdapterError</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmApplicationSubsystemFailure</term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmBandwidthReduced</term>
+            <desc>Category: QoS</desc>
+            <term>EcAlarmCallEstablishmentError</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmCommunicationsProtocolError</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmCommunicationsSubsystemFailure</term>
+            <desc>Category: Communications</desc>
+            <term>
+              EcAlarmConfigurationOrCustomizationError
+            </term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmCongestion</term>
+            <desc>Category: QoS</desc>
+            <term>EcAlarmCorruptData</term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmCpuCyclesLimitExceeded</term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmDataSetOrModemError</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmDegradedSignal</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmDTE_DCEInterfaceError</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmEnclosureDoorOpen</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmEquipmentMalfunction</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmExcessiveVibration</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmFileError</term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmFireDetected</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmFloodDetected</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmFramingError</term>
+            <desc>Category: Communications</desc>
+            <term>
+              EcAlarmHeatingOrVentilationOrCoolingSystemProblem
+            </term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmHumidityUnacceptable</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmInputOutputDeviceError</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmInputDeviceError</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmLANError</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmLeakDetected</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmLocalNodeTransmissionError</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmLossOfFrame</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmLossOfSignal</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmMaterialSupplyExhausted</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmMultiplexerProblem</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmOutOfMemory</term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmOutputDeviceError</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmPerformanceDegraded</term>
+            <desc>Category: QoS</desc>
+            <term>EcAlarmPowerProblem</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmPressureUnacceptable</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmProcessorProblem</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmPumpFailure</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmQueueSizeExceeded</term>
+            <desc>Category: QoS</desc>
+            <term>EcAlarmReceiveFailure</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmReceiverFailure</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmRemoteNodeTransmissionError</term>
+            <desc>Category: Communications</desc>
+            <term>EcAlarmResourceAtOrNearingCapacity</term>
+            <desc>Category: QoS</desc>
+            <term>EcAlarmResponseTimeExcessive</term>
+            <desc>Category: QoS</desc>
+            <term>EcAlarmRetransmissionRateExcessive</term>
+            <desc>Category: QoS</desc>
+            <term>
+              EcAlarmSoftwareProgramAbnormallyTerminated
+            </term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmSoftwareProgramError</term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmStorageCapacityProblem</term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmTemperatureUnacceptable</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmThresholdCrossed</term>
+            <desc>Category: QoS</desc>
+            <term>EcAlarmTimingProblem</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmToxicLeakDetected</term>
+            <desc>Category: Environmental</desc>
+            <term>EcAlarmTransmitFailure</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmTransmitterFailure</term>
+            <desc>Category: Equipment</desc>
+            <term>EcAlarmUnderlyingResourceUnavailable</term>
+            <desc>Category: Processing</desc>
+            <term>EcAlarmVersionMismatch</term>
+            <desc>Category: Processing</desc>
+          </deflist>
+          <deflist>
+            <term><em>EcAlarmProbableCauseUnknown</em></term>
+            <desc></desc>
+            <term><em>EcAlarmAdapterError</em></term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmApplicationSubsystemFailure</em>
+            </term>
+            <desc></desc>
+            <term><em>EcAlarmBandwidthReduced</em></term>
+            <desc></desc>
+            <term><em>EcAlarmCallEstablishmentError</em></term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmCommunicationsProtocolError</em>
+            </term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmCommunicationsSubsystemFailure</em>
+            </term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmConfigurationOrCustomizationError</em>
+            </term>
+            <desc></desc>
+            <term><em>EcAlarmCongestion</em></term>
+            <desc></desc>
+            <term><em>EcAlarmCorruptData</em></term>
+            <desc></desc>
+            <term><em>EcAlarmCpuCyclesLimitExceeded</em></term>
+            <desc></desc>
+            <term><em>EcAlarmDataSetOrModemError</em></term>
+            <desc></desc>
+            <term><em>EcAlarmDegradedSignal</em></term>
+            <desc></desc>
+            <term><em>EcAlarmDTE_DCEInterfaceError</em></term>
+            <desc></desc>
+            <term><em>EcAlarmEnclosureDoorOpen</em></term>
+            <desc></desc>
+            <term><em>EcAlarmEquipmentMalfunction</em></term>
+            <desc></desc>
+            <term><em>EcAlarmExcessiveVibration</em></term>
+            <desc></desc> <term><em>EcAlarmFileError</em></term>
+            <desc></desc>
+            <term><em>EcAlarmFireDetected</em></term>
+            <desc></desc>
+            <term><em>EcAlarmFloodDetected</em></term>
+            <desc></desc>
+            <term><em>EcAlarmFramingError</em></term>
+            <desc></desc>
+            <term>
+              <em>
+                EcAlarmHeatingOrVentilationOrCoolingSystemProblem
+              </em>
+            </term>
+            <desc></desc>
+            <term><em>EcAlarmHumidityUnacceptable</em></term>
+            <desc></desc>
+            <term><em>EcAlarmInputOutputDeviceError</em></term>
+            <desc></desc>
+            <term><em>EcAlarmInputDeviceError</em></term>
+            <desc></desc> <term><em>EcAlarmLANError</em></term>
+            <desc></desc>
+            <term><em>EcAlarmLeakDetected</em></term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmLocalNodeTransmissionError</em>
+            </term>
+            <desc></desc>
+            <term><em>EcAlarmLossOfFrame</em></term>
+            <desc></desc>
+            <term><em>EcAlarmLossOfSignal</em></term>
+            <desc></desc>
+            <term><em>EcAlarmMaterialSupplyExhausted</em></term>
+            <desc></desc>
+            <term><em>EcAlarmMultiplexerProblem</em></term>
+            <desc></desc>
+            <term><em>EcAlarmOutOfMemory</em></term>
+            <desc></desc>
+            <term><em>EcAlarmOutputDeviceError</em></term>
+            <desc></desc>
+            <term><em>EcAlarmPerformanceDegraded</em></term>
+            <desc></desc>
+            <term><em>EcAlarmPowerProblem</em></term>
+            <desc></desc>
+            <term><em>EcAlarmPressureUnacceptable</em></term>
+            <desc></desc>
+            <term><em>EcAlarmProcessorProblem</em></term>
+            <desc></desc>
+            <term><em>EcAlarmPumpFailure</em></term>
+            <desc></desc>
+            <term><em>EcAlarmQueueSizeExceeded</em></term>
+            <desc></desc>
+            <term><em>EcAlarmReceiveFailure</em></term>
+            <desc></desc>
+            <term><em>EcAlarmReceiverFailure</em></term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmRemoteNodeTransmissionError</em>
+            </term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmResourceAtOrNearingCapacity</em>
+            </term>
+            <desc></desc>
+            <term><em>EcAlarmResponseTimeExcessive</em></term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmRetransmissionRateExcessive</em>
+            </term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmSoftwareProgramAbnormallyTerminated</em>
+            </term>
+            <desc></desc>
+            <term><em>EcAlarmSoftwareProgramError</em></term>
+            <desc></desc>
+            <term><em>EcAlarmStorageCapacityProblem</em></term>
+            <desc></desc>
+            <term><em>EcAlarmTemperatureUnacceptable</em></term>
+            <desc></desc>
+            <term><em>EcAlarmThresholdCrossed</em></term>
+            <desc></desc>
+            <term><em>EcAlarmTimingProblem</em></term>
+            <desc></desc>
+            <term><em>EcAlarmToxicLeakDetected</em></term>
+            <desc></desc>
+            <term><em>EcAlarmTransmitFailure</em></term>
+            <desc></desc>
+            <term><em>EcAlarmTransmitterFailure</em></term>
+            <desc></desc>
+            <term>
+              <em>EcAlarmUnderlyingResourceUnavailable</em>
+            </term>
+            <desc></desc>
+            <term><em>EcAlarmVersionMismatch</em></term>
+            <desc></desc>
+          </deflist>
+        </desc>
+      </type>
+      <type type="enum ..." name="EcAlarmSeverity">
+        <desc>
+          The EcAlarmSeverity enumeration defines the 'perceived
+          severities' of alarms produced by the system.
+          <br /> The enumerated values MUST be matched by those
+          in your SNMP MIB if you wish to have your software
+          interact with SNMP tools. <br /> NB. The use of
+          EcAlarmSeverityIndeterminate
+          should be avoided.
+          <deflist>
+            <term>EcAlarmSeverityIndeterminate</term>
+            <desc>Do not use</desc>
+            <term>EcAlarmSeverityCritical</term>
+            <desc>
+              Immediate intervention required to restore
+              service
+            </desc>
+            <term>EcAlarmSeverityMajor</term>
+            <desc>
+              Severe but partial system failure or a problem
+              which might recover without intervention
+            </desc>
+            <term>EcAlarmSeverityMinor</term>
+            <desc>
+              A failure, but one which is likely to recover or which
+              is probably not urgent
+            </desc>
+            <term>EcAlarmSeverityWarning</term>
+            <desc>
+              An unusual event which may not indicate any problem,
+              but which ought to be looked into
+            </desc>
+            <term>EcAlarmSeverityCleared</term>
+            <desc>
+              This indicates the resolution of an earlier issue
+            </desc>
+          </deflist>
+          <deflist>
+            <term><em>EcAlarmSeverityIndeterminate</em></term>
+            <desc></desc>
+            <term><em>EcAlarmSeverityCritical</em></term>
+            <desc></desc>
+            <term><em>EcAlarmSeverityMajor</em></term>
+            <desc></desc>
+            <term><em>EcAlarmSeverityMinor</em></term>
+            <desc></desc>
+            <term><em>EcAlarmSeverityWarning</em></term>
+            <desc></desc>
+            <term><em>EcAlarmSeverityCleared</em></term>
+            <desc></desc>
+          </deflist>
+        </desc>
+      </type>
+      <type type="enum ..." name="EcAlarmTrend">
+        <desc>
+          The EcAlarmTrend enumeration defines the severity trend
+          of alarms produced by the system. <br /> The enumerated
+          values MUST be matched by those in your SNMP MIB if
+          you wish to have your software interact with SNMP tools.
+          <br />
+          <deflist>
+            <term>EcAlarmTrendNone</term>
+            <desc>
+              This is not a change in severity of an earlier alarm
+            </desc>
+            <term>EcAlarmTrendUp</term>
+            <desc>
+              This is a more severe version of an earlier alarm
+            </desc>
+            <term>EcAlarmTrendDown</term>
+            <desc>
+              This is a less severe version of an earlier alarm
+            </desc>
+          </deflist>
+          <deflist>
+            <term><em>EcAlarmTrendNone</em></term> <desc></desc>
+            <term><em>EcAlarmTrendUp</em></term> <desc></desc>
+            <term><em>EcAlarmTrendDown</em></term> <desc></desc>
+          </deflist>
+        </desc>
+      </type>
+    </chapter>
+    <chapter>
+      <heading>EcAlarm functions</heading>
+      <p></p>
+      <function type="NSString*" name="EcMakeManagedObject">
+        <arg type="NSString*">host</arg>
+        <arg type="NSString*">process</arg>
+        <arg type="NSString*">component</arg>
+        <desc>
+          This function builds a managed object name from
+          <var>host</var>, <var>process</var>, and
+          <var>component</var>. <br /> The <var>host</var> part
+          may be <code>nil</code>... for the current
+          <var>host</var>. <br /> The <var>process</var> part may
+          be <code>nil</code>... for the current <var>process</var>.
+          <br /> The <var>component</var> may well be
+          <code>nil</code> if the alert applies to the
+          <var>process</var> as a whole rather than to a
+          particular <var>component</var>. This field is
+          typically used to identify a particular network
+          connection etc within a <var>process</var>. <br />
+          This parses the <var>process</var> and separates out any
+          instance ID (trailing hyphen and string of digits).
+          It then builds the managed object from four parts (
+          <var>host</var>, <var>process</var>, instance,
+          <var>component</var>) separated by underscores. Any
+          underscores in the arguments are replaced by
+          hyphens. <br /> NB. The total length must not exceed
+          127 ASCII characters.
+        </desc>
+      </function>
+    </chapter>
+  </body>
+</gsdoc>

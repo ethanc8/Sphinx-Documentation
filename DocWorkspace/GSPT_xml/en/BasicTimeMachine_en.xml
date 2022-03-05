@@ -1,0 +1,12 @@
+<section>
+<title>TimeMachine</title>
+<section>
+  <title>Single Window Application</title>
+  <para>Single window application is one of the most commonly used application type. Here, a TimeMachine application is made to demonstrate several techniques of GNUstep programming.</para>
+</section>
+&timemachineoutletaction;
+&timemachinecustomview;
+&timemachinedrawing;
+&timemachinepanel;
+&timemachinenotification;
+</section>

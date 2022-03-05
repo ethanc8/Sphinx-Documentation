@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="EcBroadcastProxy">
+  <head>
+    <title>EcBroadcastProxy class documentation</title>
+    <author name="Nicola Pero">
+      <email address="nicola.pero@meta-innovation.com">
+        nicola.pero@meta-innovation.com
+      </email>
+    </author>
+    <copy>2012 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the EcBroadcastProxy class
+      </heading>
+      <class name="EcBroadcastProxy" super="NSObject">
+        <declared>EcBroadcastProxy.h</declared>
+        <desc>
+          An EcBroadcastProxy instance forwards messages to multiple
+          servers via distributed objects. This is great if you
+          want to send a task to be repeated by multiple servers
+          in order to make a system more scalable. <br /> You may
+          also design your servers so that you pass some sort of
+          identifier to let them know that one of them
+          (which recognises the identifier) should do one thing
+          while the others ignore it. <br /> Finally, remote
+          servers are always listed in the same order, so you
+          can access them by their index; to get the host/name, you
+          can get it by asking the receiverNames and receiverHosts
+          and then looking up the one at the index you want. This
+          allows you to send specific messages to specific
+          servers.
+        </desc>
+        <ivariable type="id" name="delegate" validity="protected">
+          <desc>
+            The delegate (if any)
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="idFailed" validity="protected">
+          <desc>
+            Count of failed messages returning
+            <strong>id</strong>
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="idFullySent" validity="protected">
+          <desc>
+            Count of completed messages returning
+            <strong>id</strong>
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="idPartiallySent" validity="protected">
+          <desc>
+            Count of partial messages returning
+            <strong>id</strong>
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="onewayFailed" validity="protected">
+          <desc>
+            Count of failed messages returning
+            <strong>void</strong>
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="onewayFullySent" validity="protected">
+          <desc>
+            Count of completed messages returning
+            <strong>void</strong>
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="onewayPartiallySent" validity="protected">
+          <desc>
+            Count of partial messages returning
+            <strong>void</strong>
+          </desc>
+        </ivariable>
+        <ivariable type="NSArray*" name="receiverHosts" validity="protected">
+          <desc>
+            The hosts the receiver objects are on
+          </desc>
+        </ivariable>
+        <ivariable type="NSArray*" name="receiverNames" validity="protected">
+          <desc>
+            The names of the receiver object
+          </desc>
+        </ivariable>
+        <ivariable type="NSMutableArray*" name="receiverObjects" validity="protected">
+          <desc>
+            The [proxies to the] individual remote objects
+          </desc>
+        </ivariable>
+        <method type="id">
+          <sel>BCPdelegate</sel>
+          <desc>
+            Returns the delegate set using the
+            <ref type="method" id="-BCPsetDelegate:">
+              -BCPsetDelegate:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>BCPproxy:</sel>
+          <arg type="int">index</arg>
+          <desc>
+            The following one gives you back the proxy to talk to.
+            It automatically calls
+            <ref type="method" id="-BCPraiseConnection:">
+              -BCPraiseConnection:
+            </ref>
+            to that server before sending you back a proxy. It
+            returns <code>nil</code> upon failure.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>BCPraiseConnection:</sel>
+          <arg type="int">index</arg>
+          <desc>
+            Raise connection to server at <var>index</var>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>BCPraiseConnections</sel>
+          <desc>
+            Create connections to the receivers if needed. It is
+            called internally when a message to broadcast comes
+            in; but you may want to call this method in advance to
+            raise the connections so that when a message to
+            broadcast comes in, the connections are already
+            up and ready.
+          </desc>
+        </method>
+        <method type="int">
+          <sel>BCPreceiverCount</sel>
+          <desc>
+            Get the number of receivers
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>BCPreceiverHosts</sel>
+          <desc>
+            Get the list of server hosts
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>BCPreceiverNames</sel>
+          <desc>
+            Get the list of server names
+          </desc>
+        </method>
+        <method type="void">
+          <sel>BCPsetDelegate:</sel>
+          <arg type="id">object</arg>
+          <desc>
+            Set a delegate. <br /> The delegate <var>object</var>
+            gets the messages from the BCPdelegate informal
+            protocol upon connection loss and when a
+            connection is made.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>BCPstatus</sel>
+          <desc>
+            Get a string describing the status of the broadcast
+            object
+          </desc>
+        </method>
+        <method type="id" init="yes">
+          <sel>initWithReceiverNames:</sel>
+          <arg type="NSArray*">names</arg>
+          <sel>receiverHosts:</sel>
+          <arg type="NSArray*">hosts</arg>
+          <desc>
+            Initializes the receiver creating connections
+            to the specified distributed objects servers. The
+            <var>names</var> are the DO ports (server-names) and
+            <var>hosts</var> are the <var>names</var> of the
+            machines those servers are running on (may be '*'
+            to find the server on any machine on the LAN, or an
+            empty string to find the server on the local host).
+          </desc>
+        </method>
+        <method type="id">
+          <sel>initWithReceivers:</sel>
+          <arg type="NSArray*">receivers</arg>
+          <desc>
+            Configuration array contains a list of
+            dictionaries (one for each receiver) - each
+            dictionary has two keys: `Name' and `Host', with
+            the corresponding values set.
+          </desc>
+        </method>
+      </class>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the NSObject(BCPdelegate)
+        informal protocol
+      </heading>
+      <category name="BCPdelegate" class="NSObject">
+        <declared>EcBroadcastProxy.h</declared>
+        <desc>
+          The informal protocol listing messages which will be sent
+          to the EcBroadcastProxy's delegate if it responds to them.
+        </desc>
+        <method type="void">
+          <sel>BCP:</sel>
+          <arg type="EcBroadcastProxy*">proxy</arg>
+          <sel>lostConnectionToServer:</sel>
+          <arg type="NSString*">name</arg>
+          <sel>host:</sel>
+          <arg type="NSString*">host</arg>
+          <desc>
+            The method to notify the delegate that a connection to
+            an individual server process has been lost.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>BCP:</sel>
+          <arg type="EcBroadcastProxy*">proxy</arg>
+          <sel>madeConnectionToServer:</sel>
+          <arg type="NSString*">name</arg>
+          <sel>host:</sel>
+          <arg type="NSString*">host</arg>
+          <desc>
+            The method to notify the delegate that a connection to
+            an individual server process has been made.
+          </desc>
+        </method>
+      </category>
+    </chapter>
+    <chapter>
+      <heading>EcBroadcastProxy variables</heading>
+      <p></p>
+      <variable type="enum EcBroadcastProxyError" name="enum EcBroadcastProxyError">
+        <desc>
+          This type enumerates the possible error conditions
+          occurring when sending a message to the proxy.
+          <deflist>
+            <term>BCP_NO_ERROR</term> <desc>A success</desc>
+            <term>BCP_COULD_NOT_CONNECT</term>
+            <desc>Unable to connect to the server</desc>
+            <term>BCP_CONNECTION_WENT_DOWN</term>
+            <desc>Lost connection while sending</desc>
+            <term>BCP_MESSAGING_TIMEOUT</term>
+            <desc>Timeout while waiting for response</desc>
+          </deflist>
+          <deflist>
+            <term><em>BCP_NO_ERROR</em></term> <desc></desc>
+            <term><em>BCP_COULD_NOT_CONNECT</em></term>
+            <desc></desc>
+            <term><em>BCP_CONNECTION_WENT_DOWN</em></term>
+            <desc></desc>
+            <term><em>BCP_MESSAGING_TIMEOUT</em></term>
+            <desc></desc>
+          </deflist>
+        </desc>
+      </variable>
+    </chapter>
+  </body>
+</gsdoc>

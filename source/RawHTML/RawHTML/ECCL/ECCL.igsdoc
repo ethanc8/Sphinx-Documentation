@@ -1,0 +1,2638 @@
+{
+    categories = {
+	EcAlarm = {
+	    Convenience = EcAlarm;
+	};
+	EcAlarmDestination = {
+	    Forwarding = EcAlarmDestination;
+	};
+	NSHost = {
+	    EcHost = EcHost;
+	};
+	NSObject = {
+	    BCPdelegate = EcBroadcastProxy;
+	    RemoteServerDelegate = EcProcess;
+	};
+	NSUserDefaults = {
+	    EcUserDefaults = EcUserDefaults;
+	};
+    };
+    category = {
+	"EcAlarm(Convenience)" = EcAlarm;
+	"EcAlarmDestination(Forwarding)" = EcAlarmDestination;
+	"NSHost(EcHost)" = EcHost;
+	"NSObject(BCPdelegate)" = EcBroadcastProxy;
+	"NSObject(RemoteServerDelegate)" = EcProcess;
+	"NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+    };
+    class = {
+	CommandInfo = EcControl;
+	ConsoleInfo = EcControl;
+	EcAlarm = EcAlarm;
+	EcAlarmDestination = EcAlarmDestination;
+	EcAlarmSinkSNMP = EcAlarmSinkSNMP;
+	EcAlerter = EcAlerter;
+	EcBroadcastProxy = EcBroadcastProxy;
+	EcCommand = EcCommand;
+	EcConsole = EcConsole;
+	EcControl = EcControl;
+	EcLogger = EcLogger;
+	EcProcess = EcProcess;
+	LaunchInfo = EcCommand;
+    };
+    classvars = {
+	CommandInfo = {
+	    servers = EcControl;
+	};
+	ConsoleInfo = {
+	    alerts = EcControl;
+	    audits = EcControl;
+	    chost = EcControl;
+	    cserv = EcControl;
+	    errors = EcControl;
+	    general = EcControl;
+	    pass = EcControl;
+	    warnings = EcControl;
+	};
+	EcAlarm = {
+	    "_additionalText" = EcAlarm;
+	    "_audit" = EcAlarm;
+	    "_delay" = EcAlarm;
+	    "_eventDate" = EcAlarm;
+	    "_eventType" = EcAlarm;
+	    "_extra" = EcAlarm;
+	    "_firstEventDate" = EcAlarm;
+	    "_frozen" = EcAlarm;
+	    "_managedObject" = EcAlarm;
+	    "_notificationID" = EcAlarm;
+	    "_perceivedSeverity" = EcAlarm;
+	    "_probableCause" = EcAlarm;
+	    "_proposedRepairAction" = EcAlarm;
+	    "_specificProblem" = EcAlarm;
+	    "_trendIndicator" = EcAlarm;
+	    "_userInfo" = EcAlarm;
+	};
+	EcAlarmDestination = {
+	    "_alarmLock" = EcAlarmDestination;
+	    "_alarmQueue" = EcAlarmDestination;
+	    "_alarmsActive" = EcAlarmDestination;
+	    "_alarmsCleared" = EcAlarmDestination;
+	    "_backups" = EcAlarmDestination;
+	    "_coalesceOff" = EcAlarmDestination;
+	    "_debug" = EcAlarmDestination;
+	    "_destination" = EcAlarmDestination;
+	    "_host" = EcAlarmDestination;
+	    "_inTimeout" = EcAlarmDestination;
+	    "_isRunning" = EcAlarmDestination;
+	    "_managedObjects" = EcAlarmDestination;
+	    "_monitor" = EcAlarmDestination;
+	    "_name" = EcAlarmDestination;
+	    "_shouldStop" = EcAlarmDestination;
+	    "_timer" = EcAlarmDestination;
+	};
+	EcAlerter = {
+	    debug = EcAlerter;
+	    eBase = EcAlerter;
+	    eDflt = EcAlerter;
+	    eFrom = EcAlerter;
+	    eHost = EcAlerter;
+	    ePort = EcAlerter;
+	    eThreaded = EcAlerter;
+	    email = EcAlerter;
+	    failEmail = EcAlerter;
+	    failOther = EcAlerter;
+	    failSms = EcAlerter;
+	    lock = EcAlerter;
+	    other = EcAlerter;
+	    quiet = EcAlerter;
+	    rules = EcAlerter;
+	    sentEmail = EcAlerter;
+	    sentOther = EcAlerter;
+	    sentSms = EcAlerter;
+	    sms = EcAlerter;
+	    smtp = EcAlerter;
+	    supersede = EcAlerter;
+	    timer = EcAlerter;
+	};
+	EcBroadcastProxy = {
+	    delegate = EcBroadcastProxy;
+	    idFailed = EcBroadcastProxy;
+	    idFullySent = EcBroadcastProxy;
+	    idPartiallySent = EcBroadcastProxy;
+	    onewayFailed = EcBroadcastProxy;
+	    onewayFullySent = EcBroadcastProxy;
+	    onewayPartiallySent = EcBroadcastProxy;
+	    receiverHosts = EcBroadcastProxy;
+	    receiverNames = EcBroadcastProxy;
+	    receiverObjects = EcBroadcastProxy;
+	};
+	EcCommand = {
+	    clients = EcCommand;
+	    compressAfter = EcCommand;
+	    config = EcCommand;
+	    control = EcCommand;
+	    debUncompressed = EcCommand;
+	    debUndeleted = EcCommand;
+	    deleteAfter = EcCommand;
+	    environment = EcCommand;
+	    fwdSequence = EcCommand;
+	    host = EcCommand;
+	    logUncompressed = EcCommand;
+	    logUndeleted = EcCommand;
+	    logname = EcCommand;
+	    nodesFree = EcCommand;
+	    outstanding = EcCommand;
+	    revSequence = EcCommand;
+	    spaceFree = EcCommand;
+	    sweeping = EcCommand;
+	    terminating = EcCommand;
+	    timer = EcCommand;
+	};
+	EcConsole = {
+	    data = EcConsole;
+	    fail = EcConsole;
+	    host = EcConsole;
+	    ichan = EcConsole;
+	    interactive = EcConsole;
+	    local = EcConsole;
+	    name = EcConsole;
+	    ochan = EcConsole;
+	    pass = EcConsole;
+	    pos = EcConsole;
+	    rnam = EcConsole;
+	    server = EcConsole;
+	    timer = EcConsole;
+	    user = EcConsole;
+	    want = EcConsole;
+	};
+	EcControl = {
+	    alarmFilter = EcControl;
+	    alerter = EcControl;
+	    commandPingPosition = EcControl;
+	    commands = EcControl;
+	    config = EcControl;
+	    configFailed = EcControl;
+	    configIncludeFailed = EcControl;
+	    consolePingPosition = EcControl;
+	    consoles = EcControl;
+	    fileBodies = EcControl;
+	    fileDates = EcControl;
+	    logname = EcControl;
+	    mgr = EcControl;
+	    operators = EcControl;
+	    terminating = EcControl;
+	    timer = EcControl;
+	};
+	EcLogger = {
+	    externalFlush = EcLogger;
+	    flushKey = EcLogger;
+	    inFlush = EcLogger;
+	    interval = EcLogger;
+	    key = EcLogger;
+	    last = EcLogger;
+	    lock = EcLogger;
+	    message = EcLogger;
+	    pendingFlush = EcLogger;
+	    serverKey = EcLogger;
+	    serverName = EcLogger;
+	    shouldForward = EcLogger;
+	    size = EcLogger;
+	    timer = EcLogger;
+	    type = EcLogger;
+	};
+	EcProcess = {
+	    ecDeferQuit = EcProcess;
+	};
+	LaunchInfo = {
+	    abortDate = EcCommand;
+	    alarms = EcCommand;
+	    awakenedDate = EcCommand;
+	    client = EcCommand;
+	    clientLostDate = EcCommand;
+	    clientQuitDate = EcCommand;
+	    conf = EcCommand;
+	    deferredDate = EcCommand;
+	    dependencies = EcCommand;
+	    desired = EcCommand;
+	    fib0 = EcCommand;
+	    fib1 = EcCommand;
+	    hungDate = EcCommand;
+	    identifier = EcCommand;
+	    inStarting = EcCommand;
+	    launchDate = EcCommand;
+	    manual = EcCommand;
+	    name = EcCommand;
+	    nextStableDate = EcCommand;
+	    pingDate = EcCommand;
+	    queuedDate = EcCommand;
+	    registrationDate = EcCommand;
+	    restartReason = EcCommand;
+	    stableDate = EcCommand;
+	    startedReason = EcCommand;
+	    startingAlarm = EcCommand;
+	    startingDate = EcCommand;
+	    startingTimer = EcCommand;
+	    stoppedReason = EcCommand;
+	    stoppingDate = EcCommand;
+	    stoppingTimer = EcCommand;
+	    task = EcCommand;
+	    terminationCount = EcCommand;
+	    terminationDate = EcCommand;
+	    terminationSignal = EcCommand;
+	    terminationStatus = EcCommand;
+	    terminationStatusKnown = EcCommand;
+	};
+    };
+    constant = {
+	EcDidQuitNotification = EcProcess;
+	EcLoggersDidChangeNotification = EcLogger;
+	EcWillQuitNotification = EcProcess;
+	day = EcCommand;
+    };
+    function = {
+	ACStrings = EcCommand;
+	EcMakeManagedObject = EcAlarm;
+	EcTestConnect = EcTest;
+	EcTestGetConfig = EcTest;
+	EcTestSetConfig = EcTest;
+	EcTestShutdown = EcTest;
+	EcTestShutdownByName = EcTest;
+	cmdDataDir = EcProcess;
+	cmdLogFormat = EcProcess;
+	cmdLogKey = EcProcess;
+	cmdLogName = EcProcess;
+	cmdLogsDir = EcProcess;
+	cmdSetHome = EcProcess;
+	cmdVersion = EcProcess;
+	cmdWord = EcControl;
+	commandIsRepeat = EcConsole;
+	comp = EcControl;
+	date = EcCommand;
+	desiredName = EcCommand;
+	ecNativeThreadID = EcProcess;
+	ecSetLogsSubdirectory = EcProcess;
+	restartStatus = EcCommand;
+    };
+    ivariable = {
+	"_additionalText" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_alarmLock" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_alarmQueue" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_alarmsActive" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_alarmsCleared" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_audit" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_backups" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_coalesceOff" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_debug" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_delay" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_destination" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_eventDate" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_eventType" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_extra" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_firstEventDate" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_frozen" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_host" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_inTimeout" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_isRunning" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_managedObject" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_managedObjects" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_monitor" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_name" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_notificationID" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_perceivedSeverity" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_probableCause" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_proposedRepairAction" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_shouldStop" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_specificProblem" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_timer" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"_trendIndicator" = {
+	    EcAlarm = EcAlarm;
+	};
+	"_userInfo" = {
+	    EcAlarm = EcAlarm;
+	};
+	abortDate = {
+	    LaunchInfo = EcCommand;
+	};
+	alarmFilter = {
+	    EcControl = EcControl;
+	};
+	alarms = {
+	    LaunchInfo = EcCommand;
+	};
+	alerter = {
+	    EcControl = EcControl;
+	};
+	alerts = {
+	    ConsoleInfo = EcControl;
+	};
+	audits = {
+	    ConsoleInfo = EcControl;
+	};
+	awakenedDate = {
+	    LaunchInfo = EcCommand;
+	};
+	chost = {
+	    ConsoleInfo = EcControl;
+	};
+	client = {
+	    LaunchInfo = EcCommand;
+	};
+	clientLostDate = {
+	    LaunchInfo = EcCommand;
+	};
+	clientQuitDate = {
+	    LaunchInfo = EcCommand;
+	};
+	clients = {
+	    EcCommand = EcCommand;
+	};
+	commandPingPosition = {
+	    EcControl = EcControl;
+	};
+	commands = {
+	    EcControl = EcControl;
+	};
+	compressAfter = {
+	    EcCommand = EcCommand;
+	};
+	conf = {
+	    LaunchInfo = EcCommand;
+	};
+	config = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	configFailed = {
+	    EcControl = EcControl;
+	};
+	configIncludeFailed = {
+	    EcControl = EcControl;
+	};
+	consolePingPosition = {
+	    EcControl = EcControl;
+	};
+	consoles = {
+	    EcControl = EcControl;
+	};
+	control = {
+	    EcCommand = EcCommand;
+	};
+	cserv = {
+	    ConsoleInfo = EcControl;
+	};
+	data = {
+	    EcConsole = EcConsole;
+	};
+	debUncompressed = {
+	    EcCommand = EcCommand;
+	};
+	debUndeleted = {
+	    EcCommand = EcCommand;
+	};
+	debug = {
+	    EcAlerter = EcAlerter;
+	};
+	deferredDate = {
+	    LaunchInfo = EcCommand;
+	};
+	delegate = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	deleteAfter = {
+	    EcCommand = EcCommand;
+	};
+	dependencies = {
+	    LaunchInfo = EcCommand;
+	};
+	desired = {
+	    LaunchInfo = EcCommand;
+	};
+	eBase = {
+	    EcAlerter = EcAlerter;
+	};
+	eDflt = {
+	    EcAlerter = EcAlerter;
+	};
+	eFrom = {
+	    EcAlerter = EcAlerter;
+	};
+	eHost = {
+	    EcAlerter = EcAlerter;
+	};
+	ePort = {
+	    EcAlerter = EcAlerter;
+	};
+	eThreaded = {
+	    EcAlerter = EcAlerter;
+	};
+	ecDeferQuit = {
+	    EcProcess = EcProcess;
+	};
+	email = {
+	    EcAlerter = EcAlerter;
+	};
+	environment = {
+	    EcCommand = EcCommand;
+	};
+	errors = {
+	    ConsoleInfo = EcControl;
+	};
+	externalFlush = {
+	    EcLogger = EcLogger;
+	};
+	fail = {
+	    EcConsole = EcConsole;
+	};
+	failEmail = {
+	    EcAlerter = EcAlerter;
+	};
+	failOther = {
+	    EcAlerter = EcAlerter;
+	};
+	failSms = {
+	    EcAlerter = EcAlerter;
+	};
+	fib0 = {
+	    LaunchInfo = EcCommand;
+	};
+	fib1 = {
+	    LaunchInfo = EcCommand;
+	};
+	fileBodies = {
+	    EcControl = EcControl;
+	};
+	fileDates = {
+	    EcControl = EcControl;
+	};
+	flushKey = {
+	    EcLogger = EcLogger;
+	};
+	fwdSequence = {
+	    EcCommand = EcCommand;
+	};
+	general = {
+	    ConsoleInfo = EcControl;
+	};
+	host = {
+	    EcCommand = EcCommand;
+	    EcConsole = EcConsole;
+	};
+	hungDate = {
+	    LaunchInfo = EcCommand;
+	};
+	ichan = {
+	    EcConsole = EcConsole;
+	};
+	idFailed = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	idFullySent = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	idPartiallySent = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	identifier = {
+	    LaunchInfo = EcCommand;
+	};
+	inFlush = {
+	    EcLogger = EcLogger;
+	};
+	inStarting = {
+	    LaunchInfo = EcCommand;
+	};
+	interactive = {
+	    EcConsole = EcConsole;
+	};
+	interval = {
+	    EcLogger = EcLogger;
+	};
+	key = {
+	    EcLogger = EcLogger;
+	};
+	last = {
+	    EcLogger = EcLogger;
+	};
+	launchDate = {
+	    LaunchInfo = EcCommand;
+	};
+	local = {
+	    EcConsole = EcConsole;
+	};
+	lock = {
+	    EcAlerter = EcAlerter;
+	    EcLogger = EcLogger;
+	};
+	logUncompressed = {
+	    EcCommand = EcCommand;
+	};
+	logUndeleted = {
+	    EcCommand = EcCommand;
+	};
+	logname = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	manual = {
+	    LaunchInfo = EcCommand;
+	};
+	message = {
+	    EcLogger = EcLogger;
+	};
+	mgr = {
+	    EcControl = EcControl;
+	};
+	name = {
+	    EcConsole = EcConsole;
+	    LaunchInfo = EcCommand;
+	};
+	nextStableDate = {
+	    LaunchInfo = EcCommand;
+	};
+	nodesFree = {
+	    EcCommand = EcCommand;
+	};
+	ochan = {
+	    EcConsole = EcConsole;
+	};
+	onewayFailed = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	onewayFullySent = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	onewayPartiallySent = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	operators = {
+	    EcControl = EcControl;
+	};
+	other = {
+	    EcAlerter = EcAlerter;
+	};
+	outstanding = {
+	    EcCommand = EcCommand;
+	};
+	pass = {
+	    ConsoleInfo = EcControl;
+	    EcConsole = EcConsole;
+	};
+	pendingFlush = {
+	    EcLogger = EcLogger;
+	};
+	pingDate = {
+	    LaunchInfo = EcCommand;
+	};
+	pos = {
+	    EcConsole = EcConsole;
+	};
+	queuedDate = {
+	    LaunchInfo = EcCommand;
+	};
+	quiet = {
+	    EcAlerter = EcAlerter;
+	};
+	receiverHosts = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	receiverNames = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	receiverObjects = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	registrationDate = {
+	    LaunchInfo = EcCommand;
+	};
+	restartReason = {
+	    LaunchInfo = EcCommand;
+	};
+	revSequence = {
+	    EcCommand = EcCommand;
+	};
+	rnam = {
+	    EcConsole = EcConsole;
+	};
+	rules = {
+	    EcAlerter = EcAlerter;
+	};
+	sentEmail = {
+	    EcAlerter = EcAlerter;
+	};
+	sentOther = {
+	    EcAlerter = EcAlerter;
+	};
+	sentSms = {
+	    EcAlerter = EcAlerter;
+	};
+	server = {
+	    EcConsole = EcConsole;
+	};
+	serverKey = {
+	    EcLogger = EcLogger;
+	};
+	serverName = {
+	    EcLogger = EcLogger;
+	};
+	servers = {
+	    CommandInfo = EcControl;
+	};
+	shouldForward = {
+	    EcLogger = EcLogger;
+	};
+	size = {
+	    EcLogger = EcLogger;
+	};
+	sms = {
+	    EcAlerter = EcAlerter;
+	};
+	smtp = {
+	    EcAlerter = EcAlerter;
+	};
+	spaceFree = {
+	    EcCommand = EcCommand;
+	};
+	stableDate = {
+	    LaunchInfo = EcCommand;
+	};
+	startedReason = {
+	    LaunchInfo = EcCommand;
+	};
+	startingAlarm = {
+	    LaunchInfo = EcCommand;
+	};
+	startingDate = {
+	    LaunchInfo = EcCommand;
+	};
+	startingTimer = {
+	    LaunchInfo = EcCommand;
+	};
+	stoppedReason = {
+	    LaunchInfo = EcCommand;
+	};
+	stoppingDate = {
+	    LaunchInfo = EcCommand;
+	};
+	stoppingTimer = {
+	    LaunchInfo = EcCommand;
+	};
+	supersede = {
+	    EcAlerter = EcAlerter;
+	};
+	sweeping = {
+	    EcCommand = EcCommand;
+	};
+	task = {
+	    LaunchInfo = EcCommand;
+	};
+	terminating = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	terminationCount = {
+	    LaunchInfo = EcCommand;
+	};
+	terminationDate = {
+	    LaunchInfo = EcCommand;
+	};
+	terminationSignal = {
+	    LaunchInfo = EcCommand;
+	};
+	terminationStatus = {
+	    LaunchInfo = EcCommand;
+	};
+	terminationStatusKnown = {
+	    LaunchInfo = EcCommand;
+	};
+	timer = {
+	    EcAlerter = EcAlerter;
+	    EcCommand = EcCommand;
+	    EcConsole = EcConsole;
+	    EcControl = EcControl;
+	    EcLogger = EcLogger;
+	};
+	type = {
+	    EcLogger = EcLogger;
+	};
+	user = {
+	    EcConsole = EcConsole;
+	};
+	want = {
+	    EcConsole = EcConsole;
+	};
+	warnings = {
+	    ConsoleInfo = EcControl;
+	};
+    };
+    macro = {
+	EcExceptionCritical = EcProcess;
+    };
+    method = {
+	"+alarmForManagedObject:at:withEventType:probableCause:specificProblem:perceivedSeverity:proposedRepairAction:additionalText:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"+alarmSinkSNMP" = {
+	    EcAlarmSinkSNMP = EcAlarmSinkSNMP;
+	};
+	"+clear:cause:problem:" = {
+	    "EcAlarm(Convenience)" = EcAlarm;
+	};
+	"+controlWellKnownName" = {
+	    "NSHost(EcHost)" = EcHost;
+	};
+	"+description" = {
+	    LaunchInfo = EcCommand;
+	};
+	"+ecGetKey:size:md5:" = {
+	    EcProcess = EcProcess;
+	};
+	"+ecInitialDefaults" = {
+	    EcProcess = EcProcess;
+	};
+	"+ecLock" = {
+	    EcProcess = EcProcess;
+	};
+	"+ecRegisterDefault:withTypeText:andHelpText:action:value:" = {
+	    EcProcess = EcProcess;
+	};
+	"+ecSetup" = {
+	    EcProcess = EcProcess;
+	};
+	"+eventTypeFromProbableCause:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"+existing:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"+find:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"+hostWithWellKnownName:" = {
+	    "NSHost(EcHost)" = EcHost;
+	};
+	"+launchInfo:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"+launching" = {
+	    LaunchInfo = EcCommand;
+	};
+	"+loggerForType:" = {
+	    EcLogger = EcLogger;
+	};
+	"+names" = {
+	    LaunchInfo = EcCommand;
+	};
+	"+prefixedDefaults" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"+processQueue" = {
+	    LaunchInfo = EcCommand;
+	};
+	"+raise:cause:problem:severity:action:,..." = {
+	    "EcAlarm(Convenience)" = EcAlarm;
+	};
+	"+remove:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"+setDefaultLifetime:" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"+setFactory:" = {
+	    EcLogger = EcLogger;
+	};
+	"+setWellKnownNames:" = {
+	    "NSHost(EcHost)" = EcHost;
+	};
+	"+stringFromEventType:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"+stringFromProbableCause:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"+stringFromSeverity:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"+stringFromTrend:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"+userDefaultsWithPrefix:" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-BCP:lostConnectionToServer:host:" = {
+	    "NSObject(BCPdelegate)" = EcBroadcastProxy;
+	};
+	"-BCP:madeConnectionToServer:host:" = {
+	    "NSObject(BCPdelegate)" = EcBroadcastProxy;
+	};
+	"-BCPdelegate" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-BCPproxy:" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-BCPraiseConnection:" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-BCPraiseConnections" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-BCPreceiverCount" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-BCPreceiverHosts" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-BCPreceiverNames" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-BCPsetDelegate:" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-BCPstatus" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-_housekeeping:" = {
+	    EcCommand = EcCommand;
+	};
+	"-_terminate:" = {
+	    EcCommand = EcCommand;
+	};
+	"-activateReadline" = {
+	    EcConsole = EcConsole;
+	};
+	"-activeCount" = {
+	    "(Command)" = EcProcess;
+	};
+	"-activePut:" = {
+	    "(EcAlarmMonitor)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-activeRemove:" = {
+	    "(EcAlarmMonitor)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-addServerToList:" = {
+	    EcProcess = EcProcess;
+	};
+	"-addServerToList:for:" = {
+	    EcProcess = EcProcess;
+	};
+	"-additionalText" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-alarm:" = {
+	    "(Command)" = EcProcess;
+	    "(Control)" = EcProcess;
+	    "(EcAlarmDestination)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	    LaunchInfo = EcCommand;
+	};
+	"-alarmCode:procName:addText:" = {
+	    EcCommand = EcCommand;
+	};
+	"-alarmConfigurationFor:specificProblem:additionalText:critical:" = {
+	    EcProcess = EcProcess;
+	};
+	"-alarmFwd:" = {
+	    "EcAlarmDestination(Forwarding)" = EcAlarmDestination;
+	};
+	"-alarms" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	    EcProcess = EcProcess;
+	    LaunchInfo = EcCommand;
+	};
+	"-audit" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-auditState:reason:" = {
+	    EcCommand = EcCommand;
+	};
+	"-autolaunch" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-awakened" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-backups" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-checkActive" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-checkProcess" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-chost" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-clear" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-clear:" = {
+	    "(Command)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-clearAll:addText:" = {
+	    EcCommand = EcCommand;
+	};
+	"-clearClient:cleanly:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-clearCode:procName:addText:" = {
+	    EcCommand = EcCommand;
+	};
+	"-clearConfigurationFor:specificProblem:additionalText:" = {
+	    EcProcess = EcProcess;
+	};
+	"-clearHung" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-clears" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-clearsPut:" = {
+	    "(EcAlarmMonitor)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-clearsRemove:" = {
+	    "(EcAlarmMonitor)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-client" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-cmdAlert:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdAlert:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdAudit:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdAudit:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdBase" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdConfig:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdConnectionBecameInvalid:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDataDirectory" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDbg:msg:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDbg:msg:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDebug:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDebug:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDebugMode:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDebugMode:active:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDefaults" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdDefaultsChanged:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdError:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdError:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdFlushLogs" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdGnip:sequence:extra:" = {
+	    "(CmdPing)" = EcProcess;
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	    EcLogger = EcLogger;
+	};
+	"-cmdInstance" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdInterval" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdIsClient" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdIsConnected" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdIsTesting" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdLogEnd:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdLogFile:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdLostConnectionToServer:" = {
+	    "NSObject(RemoteServerDelegate)" = EcProcess;
+	};
+	"-cmdMadeConnectionToServer:" = {
+	    EcLogger = EcLogger;
+	    "NSObject(RemoteServerDelegate)" = EcProcess;
+	};
+	"-cmdMatch:toKey:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesg:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesgCache" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesgData:from:" = {
+	    "(CmdClient)" = EcProcess;
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesgarchive:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesgdebug:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesghelp:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesgmemory:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesgnodebug:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdMesgstatus:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdName" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdNewServer" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdOperator:password:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdPing:sequence:extra:" = {
+	    "(CmdPing)" = EcProcess;
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	    EcLogger = EcLogger;
+	};
+	"-cmdPrintf:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdPrintf:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdQuit:" = {
+	    "(CmdClient)" = EcProcess;
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	    EcProcess = EcProcess;
+	};
+	"-cmdSignalled" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdUpdate:" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdUpdated" = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdWarn:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-cmdWarn:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-command:from:" = {
+	    "(Control)" = EcProcess;
+	    EcControl = EcControl;
+	};
+	"-command:to:from:" = {
+	    "(Command)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-commandExpiries" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-commandObjectForKey:" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-compare:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-configuration" = {
+	    LaunchInfo = EcCommand;
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-configurationFor:" = {
+	    "(Command)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-configure:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-configureWithDefaults:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-connection:shouldMakeNewConnection:" = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	"-connectionBecameInvalid:" = {
+	    EcCommand = EcCommand;
+	    EcConsole = EcConsole;
+	    EcControl = EcControl;
+	};
+	"-copyWithZone:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-cserv" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-deactivateReadline" = {
+	    EcConsole = EcConsole;
+	};
+	"-dealloc" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-defaultsPrefix" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-delay" = {
+	    EcAlarm = EcAlarm;
+	    LaunchInfo = EcCommand;
+	};
+	"-delayed:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-desired" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-didRead:" = {
+	    EcConsole = EcConsole;
+	};
+	"-didWrite:" = {
+	    EcConsole = EcConsole;
+	};
+	"-disabled" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-doCommand:" = {
+	    EcConsole = EcConsole;
+	};
+	"-domanage:" = {
+	    "(Control)" = EcProcess;
+	    "(EcAlarmDestination)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-domanageFwd:" = {
+	    "EcAlarmDestination(Forwarding)" = EcAlarmDestination;
+	};
+	"-ecAlarmDestination" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecArchive:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecAwaken" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecCancelConfigFwdTo:" = {
+	    "(EcConfigForwarding)" = EcProcess;
+	};
+	"-ecConfigurationError:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-ecCopyright" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecDidAwaken" = {
+	    "(CmdClient)" = EcProcess;
+	    EcProcess = EcProcess;
+	};
+	"-ecDidQuit" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecDoLock" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecException:specificProblem:perceivedSeverity:message:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-ecException:specificProblem:perceivedSeverity:message:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecForwardedConfig:from:" = {
+	    "(EcConfigForwarded)" = EcProcess;
+	};
+	"-ecHadIP:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecHadOP:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecHandleQuit" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecIsQuitting" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecNewDay:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecNewHour:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecNewMinute:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecNotLeaked" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecQuitDuration" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecQuitFor:with:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecQuitLimit:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecQuitReason" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecQuitStatus" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecReconnect" = {
+	    "(CmdClient)" = EcProcess;
+	    EcProcess = EcProcess;
+	};
+	"-ecRestart:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecRun" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecSetupConfigFwdTo:" = {
+	    "(EcConfigForwarding)" = EcProcess;
+	};
+	"-ecStarted" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecTestCommand:" = {
+	    "(EcTest)" = EcTest;
+	};
+	"-ecTestConfigForKey:" = {
+	    "(EcTest)" = EcTest;
+	};
+	"-ecTestLog:,..." = {
+	    EcProcess = EcProcess;
+	};
+	"-ecTestLog:arguments:" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecTestSetConfig:forKey:" = {
+	    "(EcTest)" = EcTest;
+	};
+	"-ecUnLock" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecUpdateRegisteredDefaults" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecUserDirectory" = {
+	    EcProcess = EcProcess;
+	};
+	"-ecWillQuit" = {
+	    EcProcess = EcProcess;
+	};
+	"-encodeWithCoder:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-environment" = {
+	    EcCommand = EcCommand;
+	};
+	"-eventDate" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-eventType" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-extra" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-findAll:byAbbreviation:" = {
+	    EcCommand = EcCommand;
+	};
+	"-findIn:byAbbreviation:" = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	"-findIn:byName:" = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	"-findIn:byObject:" = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	"-firstEventDate" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-flush" = {
+	    "(CmdLogger)" = EcProcess;
+	    EcLogger = EcLogger;
+	};
+	"-flushEmail" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-flushSms" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-freeze" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-getAlerts" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-getAudits" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-getErrors" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-getGeneral" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-getInclude:" = {
+	    EcControl = EcControl;
+	};
+	"-getWarnings" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-handleAudit:withHost:andServer:timestamp:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-handleEvent:withHost:andServer:timestamp:identifier:alarm:reminder:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-handleInfo:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-hash" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-host" = {
+	    EcCommand = EcCommand;
+	};
+	"-housekeeping:" = {
+	    EcCommand = EcCommand;
+	};
+	"-hungDate" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-hungRestart:" = {
+	    EcCommand = EcCommand;
+	};
+	"-information:" = {
+	    "(Console)" = EcProcess;
+	};
+	"-information:from:to:type:" = {
+	    EcCommand = EcCommand;
+	};
+	"-information:from:type:" = {
+	    EcCommand = EcCommand;
+	};
+	"-information:type:to:from:" = {
+	    "(Control)" = EcProcess;
+	    EcControl = EcControl;
+	};
+	"-init" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	    EcProcess = EcProcess;
+	};
+	"-initFor:name:with:pass:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-initForManagedObject:at:withEventType:probableCause:specificProblem:perceivedSeverity:proposedRepairAction:additionalText:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-initWithCoder:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-initWithDefaults:" = {
+	    EcProcess = EcProcess;
+	};
+	"-initWithHost:name:" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	    EcAlarmSinkSNMP = EcAlarmSinkSNMP;
+	};
+	"-initWithReceiverNames:receiverHosts:" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-initWithReceivers:" = {
+	    EcBroadcastProxy = EcBroadcastProxy;
+	};
+	"-isActive" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-isEqual:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-isRunning" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-isServerMultiple:" = {
+	    EcProcess = EcProcess;
+	};
+	"-isStarting" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-isStopping" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-key:" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-killAll" = {
+	    EcCommand = EcCommand;
+	};
+	"-latest:" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-launch" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-launch:" = {
+	    "(Command)" = EcProcess;
+	};
+	"-log:,..." = {
+	    EcLogger = EcLogger;
+	};
+	"-log:arguments:" = {
+	    EcLogger = EcLogger;
+	};
+	"-log:to:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-log:type:" = {
+	    EcProcess = EcProcess;
+	};
+	"-logChange:for:" = {
+	    EcCommand = EcCommand;
+	};
+	"-logFile" = {
+	    EcCommand = EcCommand;
+	};
+	"-logMessage:type:for:" = {
+	    "(CmdLogger)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-logMessage:type:name:" = {
+	    "(CmdLogger)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-mail:to:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-makeSpace" = {
+	    EcCommand = EcCommand;
+	};
+	"-managePut:" = {
+	    "(EcAlarmMonitor)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-manageRemove:" = {
+	    "(EcAlarmMonitor)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-managed" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-managedObject" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-manual" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-mayBecomeStable" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-mayCoreDump" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-messageForAlarm:" = {
+	    EcControl = EcControl;
+	};
+	"-moComponent" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-moHost" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-moInstance" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-moInstancedProcess" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-moProcess" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-name" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-newConfig:" = {
+	    EcCommand = EcCommand;
+	};
+	"-notificationID" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-openLog:" = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	"-other:to:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-pass" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-perceivedSeverity" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-pingControl" = {
+	    EcCommand = EcCommand;
+	};
+	"-probableCause" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-processIdentifier" = {
+	    "(CmdClient)" = EcProcess;
+	    EcProcess = EcProcess;
+	    LaunchInfo = EcCommand;
+	};
+	"-progress" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-promptAfter:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-proposedRepairAction" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-purgeSettings" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-quitAll" = {
+	    EcCommand = EcCommand;
+	};
+	"-reasonToPreventLaunch" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-recursiveInclude:" = {
+	    EcControl = EcControl;
+	};
+	"-registerClient:identifier:name:transient:" = {
+	    "(CmdLogger)" = EcProcess;
+	    "(Command)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-registerCommand:name:" = {
+	    "(Control)" = EcProcess;
+	    EcControl = EcControl;
+	};
+	"-registerConsole:name:pass:" = {
+	    "(Control)" = EcProcess;
+	    EcControl = EcControl;
+	};
+	"-removeClient:cleanly:" = {
+	    EcCommand = EcCommand;
+	};
+	"-removeServerFromList:" = {
+	    EcProcess = EcProcess;
+	};
+	"-reply:to:from:" = {
+	    "(Command)" = EcProcess;
+	    "(Control)" = EcProcess;
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	"-reportAlarm:withMessage:isCleared:reminder:" = {
+	    EcControl = EcControl;
+	};
+	"-reportAlarms" = {
+	    EcControl = EcControl;
+	};
+	"-requestConfigFor:" = {
+	    "(CmdConfig)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-resetDelay" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-revertSettings" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-run" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-server:" = {
+	    EcProcess = EcProcess;
+	};
+	"-server:forNumber:" = {
+	    EcProcess = EcProcess;
+	};
+	"-serverByAbbreviation:" = {
+	    CommandInfo = EcControl;
+	};
+	"-servers" = {
+	    CommandInfo = EcControl;
+	};
+	"-servers:on:" = {
+	    "(Control)" = EcProcess;
+	    EcControl = EcControl;
+	};
+	"-setAlerts:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-setAudit:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-setAudits:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-setBackups:" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-setClient:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-setCmdDebug:withDescription:" = {
+	    EcProcess = EcProcess;
+	};
+	"-setCmdInterval:" = {
+	    EcProcess = EcProcess;
+	};
+	"-setCmdTimeout:" = {
+	    EcProcess = EcProcess;
+	};
+	"-setCoalesce:" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-setCommand:forKey:" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-setCommand:forKey:lifetime:" = {
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-setConfiguration:" = {
+	    LaunchInfo = EcCommand;
+	    "NSUserDefaults(EcUserDefaults)" = EcUserDefaults;
+	};
+	"-setConnectedHost:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-setConnectedServ:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-setDebug:" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-setDelay:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-setDesired:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-setDestination:" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-setErrors:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-setExtra:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-setFirstEventDate:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-setGeneral:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-setHung" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-setManual:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-setMonitor:" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-setNotificationID:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-setPing" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-setProcessIdentifier:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-setRules:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-setServers:" = {
+	    CommandInfo = EcControl;
+	};
+	"-setStable:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-setTerminationStatus:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-setTrendIndicator:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-setUserInfo:" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-setWarnings:" = {
+	    ConsoleInfo = EcControl;
+	};
+	"-setWellKnownName:" = {
+	    "NSHost(EcHost)" = EcHost;
+	};
+	"-setupConnection" = {
+	    EcConsole = EcConsole;
+	};
+	"-shutdown" = {
+	    EcAlarmDestination = EcAlarmDestination;
+	    EcAlerter = EcAlerter;
+	};
+	"-sms:to:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-specificProblem" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-stable" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-start" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-start:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-started" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-starting:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-status" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-stop" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-stop:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-stopped" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-stopping:" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-task" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-terminate:" = {
+	    "(Command)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-timedOut" = {
+	    EcConsole = EcConsole;
+	};
+	"-timedOut:" = {
+	    EcControl = EcControl;
+	};
+	"-timeout:" = {
+	    EcAlerter = EcAlerter;
+	};
+	"-trendIndicator" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-triggerCmdTimeout" = {
+	    EcProcess = EcProcess;
+	};
+	"-tryInclude:multi:" = {
+	    EcControl = EcControl;
+	};
+	"-unconfiguredClients" = {
+	    EcCommand = EcCommand;
+	};
+	"-unfulfilled" = {
+	    LaunchInfo = EcCommand;
+	};
+	"-unmanage:" = {
+	    "(Control)" = EcProcess;
+	    "(EcAlarmDestination)" = EcAlarmDestination;
+	    EcAlarmDestination = EcAlarmDestination;
+	};
+	"-unmanageFwd:" = {
+	    "EcAlarmDestination(Forwarding)" = EcAlarmDestination;
+	};
+	"-unregister:" = {
+	    "(Control)" = EcProcess;
+	    EcControl = EcControl;
+	};
+	"-unregisterByObject:status:" = {
+	    "(CmdLogger)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+	"-update" = {
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	    EcLogger = EcLogger;
+	};
+	"-updateConfig:" = {
+	    "(CmdConfig)" = EcProcess;
+	    EcCommand = EcCommand;
+	    EcControl = EcControl;
+	};
+	"-userInfo" = {
+	    EcAlarm = EcAlarm;
+	};
+	"-waitEnded:" = {
+	    EcConsole = EcConsole;
+	};
+	"-wellKnownName" = {
+	    "NSHost(EcHost)" = EcHost;
+	};
+	"-woken:" = {
+	    "(CmdLogger)" = EcProcess;
+	    "(Command)" = EcProcess;
+	    EcCommand = EcCommand;
+	};
+    };
+    output = {
+	"ECCL.h" = (
+	    "ECCL/ECCL.gsdoc"
+	);
+	"EcAlarm.h" = (
+	    "ECCL/EcAlarm.gsdoc"
+	);
+	"EcAlarmDestination.h" = (
+	    "ECCL/EcAlarmDestination.gsdoc"
+	);
+	"EcAlarmSinkSNMP.h" = (
+	    "ECCL/EcAlarmSinkSNMP.gsdoc"
+	);
+	"EcAlerter.h" = (
+	    "ECCL/EcAlerter.gsdoc"
+	);
+	"EcBroadcastProxy.h" = (
+	    "ECCL/EcBroadcastProxy.gsdoc"
+	);
+	"EcCommand.m" = (
+	    "ECCL/EcCommand.gsdoc"
+	);
+	"EcConsole.m" = (
+	    "ECCL/EcConsole.gsdoc"
+	);
+	"EcControl.m" = (
+	    "ECCL/EcControl.gsdoc"
+	);
+	"EcHost.h" = (
+	    "ECCL/EcHost.gsdoc"
+	);
+	"EcLogger.h" = (
+	    "ECCL/EcLogger.gsdoc"
+	);
+	"EcProcess.h" = (
+	    "ECCL/EcProcess.gsdoc"
+	);
+	"EcTest.h" = (
+	    "ECCL/EcTest.gsdoc"
+	);
+	"EcUserDefaults.h" = (
+	    "ECCL/EcUserDefaults.gsdoc"
+	);
+    };
+    protocol = {
+	"(CmdClient)" = EcProcess;
+	"(CmdConfig)" = EcProcess;
+	"(CmdLogger)" = EcProcess;
+	"(CmdPing)" = EcProcess;
+	"(Command)" = EcProcess;
+	"(Console)" = EcProcess;
+	"(Control)" = EcProcess;
+	"(EcAlarmDestination)" = EcAlarmDestination;
+	"(EcAlarmMonitor)" = EcAlarmDestination;
+	"(EcConfigForwarded)" = EcProcess;
+	"(EcConfigForwarding)" = EcProcess;
+	"(EcTest)" = EcTest;
+	"NSObject(BCPdelegate)" = EcBroadcastProxy;
+	"NSObject(RemoteServerDelegate)" = EcProcess;
+    };
+    source = {
+	"ECCL.h" = (
+	    "ECCL.h"
+	);
+	"EcAlarm.h" = (
+	    "EcAlarm.m"
+	);
+	"EcAlarmDestination.h" = (
+	    "EcAlarmDestination.m"
+	);
+	"EcAlarmSinkSNMP.h" = (
+	    "EcAlarmSinkSNMP.m"
+	);
+	"EcAlerter.h" = (
+	    "EcAlerter.m"
+	);
+	"EcBroadcastProxy.h" = (
+	    "EcBroadcastProxy.m"
+	);
+	"EcCommand.m" = (
+	    "EcCommand.m",
+	    "EcCommand.m"
+	);
+	"EcConsole.m" = (
+	    "EcConsole.m",
+	    "EcConsole.m"
+	);
+	"EcControl.m" = (
+	    "EcControl.m",
+	    "EcControl.m"
+	);
+	"EcHost.h" = (
+	    "EcHost.m"
+	);
+	"EcLogger.h" = (
+	    "EcLogger.m"
+	);
+	"EcProcess.h" = (
+	    "EcProcess.m"
+	);
+	"EcTest.h" = (
+	    "EcTest.m"
+	);
+	"EcUserDefaults.h" = (
+	    "EcUserDefaults.m"
+	);
+    };
+    super = {
+	CommandInfo = EcClientI;
+	ConsoleInfo = EcClientI;
+	EcAlarm = NSObject;
+	EcAlarmDestination = NSObject;
+	EcAlarmSinkSNMP = EcAlarmDestination;
+	EcAlerter = NSObject;
+	EcBroadcastProxy = NSObject;
+	EcCommand = EcProcess;
+	EcConsole = EcProcess;
+	EcControl = EcProcess;
+	EcLogger = NSObject;
+	EcProcess = NSObject;
+	LaunchInfo = NSObject;
+    };
+    title = {
+	ECCL = "ECCL documentation";
+	EcAlarm = "EcAlarm class documentation";
+	EcAlarmDestination = "EcAlarmDestination class documentation";
+	EcAlarmSinkSNMP = "EcAlarmSinkSNMP class documentation";
+	EcAlerter = "EcAlerter class documentation";
+	EcBroadcastProxy = "EcBroadcastProxy class documentation";
+	EcCommand = "EcCommand documentation";
+	EcConsole = "EcConsole class documentation";
+	EcControl = "EcControl documentation";
+	EcHost = "EcHost documentation";
+	EcLogger = "EcLogger class documentation";
+	EcProcess = "EcProcess class documentation";
+	EcTest = "EcTest documentation";
+	EcUserDefaults = "EcUserDefaults documentation";
+    };
+    type = {
+	AlarmCode = EcCommand;
+	Desired = EcCommand;
+	EcAlarmEventType = EcAlarm;
+	EcAlarmProbableCause = EcAlarm;
+	EcAlarmSeverity = EcAlarm;
+	EcAlarmTrend = EcAlarm;
+	EcLogType = EcProcess;
+    };
+    unitmethods = {
+	"(CmdClient)" = {
+	    "-cmdMesgData:from:" = EcProcess;
+	    "-cmdQuit:" = EcProcess;
+	    "-ecDidAwaken" = EcProcess;
+	    "-ecReconnect" = EcProcess;
+	    "-processIdentifier" = EcProcess;
+	};
+	"(CmdConfig)" = {
+	    "-requestConfigFor:" = EcProcess;
+	    "-updateConfig:" = EcProcess;
+	};
+	"(CmdLogger)" = {
+	    "-flush" = EcProcess;
+	    "-logMessage:type:for:" = EcProcess;
+	    "-logMessage:type:name:" = EcProcess;
+	    "-registerClient:identifier:name:transient:" = EcProcess;
+	    "-unregisterByObject:status:" = EcProcess;
+	    "-woken:" = EcProcess;
+	};
+	"(CmdPing)" = {
+	    "-cmdGnip:sequence:extra:" = EcProcess;
+	    "-cmdPing:sequence:extra:" = EcProcess;
+	};
+	"(Command)" = {
+	    "-activeCount" = EcProcess;
+	    "-alarm:" = EcProcess;
+	    "-clear:" = EcProcess;
+	    "-command:to:from:" = EcProcess;
+	    "-configurationFor:" = EcProcess;
+	    "-launch:" = EcProcess;
+	    "-registerClient:identifier:name:transient:" = EcProcess;
+	    "-reply:to:from:" = EcProcess;
+	    "-terminate:" = EcProcess;
+	    "-woken:" = EcProcess;
+	};
+	"(Console)" = {
+	    "-information:" = EcProcess;
+	};
+	"(Control)" = {
+	    "-alarm:" = EcProcess;
+	    "-command:from:" = EcProcess;
+	    "-domanage:" = EcProcess;
+	    "-information:type:to:from:" = EcProcess;
+	    "-registerCommand:name:" = EcProcess;
+	    "-registerConsole:name:pass:" = EcProcess;
+	    "-reply:to:from:" = EcProcess;
+	    "-servers:on:" = EcProcess;
+	    "-unmanage:" = EcProcess;
+	    "-unregister:" = EcProcess;
+	};
+	"(EcAlarmDestination)" = {
+	    "-alarm:" = EcAlarmDestination;
+	    "-domanage:" = EcAlarmDestination;
+	    "-unmanage:" = EcAlarmDestination;
+	};
+	"(EcAlarmMonitor)" = {
+	    "-activePut:" = EcAlarmDestination;
+	    "-activeRemove:" = EcAlarmDestination;
+	    "-clearsPut:" = EcAlarmDestination;
+	    "-clearsRemove:" = EcAlarmDestination;
+	    "-managePut:" = EcAlarmDestination;
+	    "-manageRemove:" = EcAlarmDestination;
+	};
+	"(EcConfigForwarded)" = {
+	    "-ecForwardedConfig:from:" = EcProcess;
+	};
+	"(EcConfigForwarding)" = {
+	    "-ecCancelConfigFwdTo:" = EcProcess;
+	    "-ecSetupConfigFwdTo:" = EcProcess;
+	};
+	"(EcTest)" = {
+	    "-ecTestCommand:" = EcTest;
+	    "-ecTestConfigForKey:" = EcTest;
+	    "-ecTestSetConfig:forKey:" = EcTest;
+	};
+	CommandInfo = {
+	    "-serverByAbbreviation:" = EcControl;
+	    "-servers" = EcControl;
+	    "-setServers:" = EcControl;
+	};
+	ConsoleInfo = {
+	    "-chost" = EcControl;
+	    "-cserv" = EcControl;
+	    "-getAlerts" = EcControl;
+	    "-getAudits" = EcControl;
+	    "-getErrors" = EcControl;
+	    "-getGeneral" = EcControl;
+	    "-getWarnings" = EcControl;
+	    "-initFor:name:with:pass:" = EcControl;
+	    "-pass" = EcControl;
+	    "-promptAfter:" = EcControl;
+	    "-setAlerts:" = EcControl;
+	    "-setAudits:" = EcControl;
+	    "-setConnectedHost:" = EcControl;
+	    "-setConnectedServ:" = EcControl;
+	    "-setErrors:" = EcControl;
+	    "-setGeneral:" = EcControl;
+	    "-setWarnings:" = EcControl;
+	};
+	EcAlarm = {
+	    "+alarmForManagedObject:at:withEventType:probableCause:specificProblem:perceivedSeverity:proposedRepairAction:additionalText:" = EcAlarm;
+	    "+eventTypeFromProbableCause:" = EcAlarm;
+	    "+stringFromEventType:" = EcAlarm;
+	    "+stringFromProbableCause:" = EcAlarm;
+	    "+stringFromSeverity:" = EcAlarm;
+	    "+stringFromTrend:" = EcAlarm;
+	    "-additionalText" = EcAlarm;
+	    "-audit" = EcAlarm;
+	    "-clear" = EcAlarm;
+	    "-compare:" = EcAlarm;
+	    "-copyWithZone:" = EcAlarm;
+	    "-dealloc" = EcAlarm;
+	    "-delay" = EcAlarm;
+	    "-delayed:" = EcAlarm;
+	    "-encodeWithCoder:" = EcAlarm;
+	    "-eventDate" = EcAlarm;
+	    "-eventType" = EcAlarm;
+	    "-extra" = EcAlarm;
+	    "-firstEventDate" = EcAlarm;
+	    "-freeze" = EcAlarm;
+	    "-hash" = EcAlarm;
+	    "-initForManagedObject:at:withEventType:probableCause:specificProblem:perceivedSeverity:proposedRepairAction:additionalText:" = EcAlarm;
+	    "-initWithCoder:" = EcAlarm;
+	    "-isEqual:" = EcAlarm;
+	    "-managedObject" = EcAlarm;
+	    "-moComponent" = EcAlarm;
+	    "-moHost" = EcAlarm;
+	    "-moInstance" = EcAlarm;
+	    "-moInstancedProcess" = EcAlarm;
+	    "-moProcess" = EcAlarm;
+	    "-notificationID" = EcAlarm;
+	    "-perceivedSeverity" = EcAlarm;
+	    "-probableCause" = EcAlarm;
+	    "-proposedRepairAction" = EcAlarm;
+	    "-setAudit:" = EcAlarm;
+	    "-setDelay:" = EcAlarm;
+	    "-setExtra:" = EcAlarm;
+	    "-setFirstEventDate:" = EcAlarm;
+	    "-setNotificationID:" = EcAlarm;
+	    "-setTrendIndicator:" = EcAlarm;
+	    "-setUserInfo:" = EcAlarm;
+	    "-specificProblem" = EcAlarm;
+	    "-trendIndicator" = EcAlarm;
+	    "-userInfo" = EcAlarm;
+	};
+	"EcAlarm(Convenience)" = {
+	    "+clear:cause:problem:" = EcAlarm;
+	    "+raise:cause:problem:severity:action:,..." = EcAlarm;
+	};
+	EcAlarmDestination = {
+	    "-activePut:" = EcAlarmDestination;
+	    "-activeRemove:" = EcAlarmDestination;
+	    "-alarm:" = EcAlarmDestination;
+	    "-alarms" = EcAlarmDestination;
+	    "-backups" = EcAlarmDestination;
+	    "-clears" = EcAlarmDestination;
+	    "-clearsPut:" = EcAlarmDestination;
+	    "-clearsRemove:" = EcAlarmDestination;
+	    "-domanage:" = EcAlarmDestination;
+	    "-init" = EcAlarmDestination;
+	    "-initWithHost:name:" = EcAlarmDestination;
+	    "-isRunning" = EcAlarmDestination;
+	    "-latest:" = EcAlarmDestination;
+	    "-managePut:" = EcAlarmDestination;
+	    "-manageRemove:" = EcAlarmDestination;
+	    "-managed" = EcAlarmDestination;
+	    "-run" = EcAlarmDestination;
+	    "-setBackups:" = EcAlarmDestination;
+	    "-setCoalesce:" = EcAlarmDestination;
+	    "-setDebug:" = EcAlarmDestination;
+	    "-setDestination:" = EcAlarmDestination;
+	    "-setMonitor:" = EcAlarmDestination;
+	    "-shutdown" = EcAlarmDestination;
+	    "-unmanage:" = EcAlarmDestination;
+	};
+	"EcAlarmDestination(Forwarding)" = {
+	    "-alarmFwd:" = EcAlarmDestination;
+	    "-domanageFwd:" = EcAlarmDestination;
+	    "-unmanageFwd:" = EcAlarmDestination;
+	};
+	EcAlarmSinkSNMP = {
+	    "+alarmSinkSNMP" = EcAlarmSinkSNMP;
+	    "-initWithHost:name:" = EcAlarmSinkSNMP;
+	};
+	EcAlerter = {
+	    "-configure:" = EcAlerter;
+	    "-configureWithDefaults:" = EcAlerter;
+	    "-flushEmail" = EcAlerter;
+	    "-flushSms" = EcAlerter;
+	    "-handleAudit:withHost:andServer:timestamp:" = EcAlerter;
+	    "-handleEvent:withHost:andServer:timestamp:identifier:alarm:reminder:" = EcAlerter;
+	    "-handleInfo:" = EcAlerter;
+	    "-log:to:" = EcAlerter;
+	    "-mail:to:" = EcAlerter;
+	    "-other:to:" = EcAlerter;
+	    "-setRules:" = EcAlerter;
+	    "-shutdown" = EcAlerter;
+	    "-sms:to:" = EcAlerter;
+	    "-timeout:" = EcAlerter;
+	};
+	EcBroadcastProxy = {
+	    "-BCPdelegate" = EcBroadcastProxy;
+	    "-BCPproxy:" = EcBroadcastProxy;
+	    "-BCPraiseConnection:" = EcBroadcastProxy;
+	    "-BCPraiseConnections" = EcBroadcastProxy;
+	    "-BCPreceiverCount" = EcBroadcastProxy;
+	    "-BCPreceiverHosts" = EcBroadcastProxy;
+	    "-BCPreceiverNames" = EcBroadcastProxy;
+	    "-BCPsetDelegate:" = EcBroadcastProxy;
+	    "-BCPstatus" = EcBroadcastProxy;
+	    "-initWithReceiverNames:receiverHosts:" = EcBroadcastProxy;
+	    "-initWithReceivers:" = EcBroadcastProxy;
+	};
+	EcCommand = {
+	    "-_housekeeping:" = EcCommand;
+	    "-_terminate:" = EcCommand;
+	    "-alarmCode:procName:addText:" = EcCommand;
+	    "-auditState:reason:" = EcCommand;
+	    "-clear:" = EcCommand;
+	    "-clearAll:addText:" = EcCommand;
+	    "-clearCode:procName:addText:" = EcCommand;
+	    "-cmdGnip:sequence:extra:" = EcCommand;
+	    "-cmdPing:sequence:extra:" = EcCommand;
+	    "-cmdQuit:" = EcCommand;
+	    "-command:to:from:" = EcCommand;
+	    "-configurationFor:" = EcCommand;
+	    "-connection:shouldMakeNewConnection:" = EcCommand;
+	    "-connectionBecameInvalid:" = EcCommand;
+	    "-environment" = EcCommand;
+	    "-findAll:byAbbreviation:" = EcCommand;
+	    "-findIn:byAbbreviation:" = EcCommand;
+	    "-findIn:byName:" = EcCommand;
+	    "-findIn:byObject:" = EcCommand;
+	    "-host" = EcCommand;
+	    "-housekeeping:" = EcCommand;
+	    "-hungRestart:" = EcCommand;
+	    "-information:from:to:type:" = EcCommand;
+	    "-information:from:type:" = EcCommand;
+	    "-killAll" = EcCommand;
+	    "-logChange:for:" = EcCommand;
+	    "-logFile" = EcCommand;
+	    "-logMessage:type:for:" = EcCommand;
+	    "-logMessage:type:name:" = EcCommand;
+	    "-makeSpace" = EcCommand;
+	    "-newConfig:" = EcCommand;
+	    "-openLog:" = EcCommand;
+	    "-pingControl" = EcCommand;
+	    "-quitAll" = EcCommand;
+	    "-registerClient:identifier:name:transient:" = EcCommand;
+	    "-removeClient:cleanly:" = EcCommand;
+	    "-reply:to:from:" = EcCommand;
+	    "-requestConfigFor:" = EcCommand;
+	    "-terminate:" = EcCommand;
+	    "-unconfiguredClients" = EcCommand;
+	    "-unregisterByObject:status:" = EcCommand;
+	    "-update" = EcCommand;
+	    "-updateConfig:" = EcCommand;
+	    "-woken:" = EcCommand;
+	};
+	EcConsole = {
+	    "-activateReadline" = EcConsole;
+	    "-connectionBecameInvalid:" = EcConsole;
+	    "-deactivateReadline" = EcConsole;
+	    "-didRead:" = EcConsole;
+	    "-didWrite:" = EcConsole;
+	    "-doCommand:" = EcConsole;
+	    "-setupConnection" = EcConsole;
+	    "-timedOut" = EcConsole;
+	    "-waitEnded:" = EcConsole;
+	};
+	EcControl = {
+	    "-cmdGnip:sequence:extra:" = EcControl;
+	    "-cmdPing:sequence:extra:" = EcControl;
+	    "-cmdQuit:" = EcControl;
+	    "-command:from:" = EcControl;
+	    "-connection:shouldMakeNewConnection:" = EcControl;
+	    "-connectionBecameInvalid:" = EcControl;
+	    "-findIn:byAbbreviation:" = EcControl;
+	    "-findIn:byName:" = EcControl;
+	    "-findIn:byObject:" = EcControl;
+	    "-getInclude:" = EcControl;
+	    "-information:type:to:from:" = EcControl;
+	    "-messageForAlarm:" = EcControl;
+	    "-openLog:" = EcControl;
+	    "-recursiveInclude:" = EcControl;
+	    "-registerCommand:name:" = EcControl;
+	    "-registerConsole:name:pass:" = EcControl;
+	    "-reply:to:from:" = EcControl;
+	    "-reportAlarm:withMessage:isCleared:reminder:" = EcControl;
+	    "-reportAlarms" = EcControl;
+	    "-servers:on:" = EcControl;
+	    "-timedOut:" = EcControl;
+	    "-tryInclude:multi:" = EcControl;
+	    "-unregister:" = EcControl;
+	    "-update" = EcControl;
+	    "-updateConfig:" = EcControl;
+	};
+	EcLogger = {
+	    "+loggerForType:" = EcLogger;
+	    "+setFactory:" = EcLogger;
+	    "-cmdGnip:sequence:extra:" = EcLogger;
+	    "-cmdMadeConnectionToServer:" = EcLogger;
+	    "-cmdPing:sequence:extra:" = EcLogger;
+	    "-flush" = EcLogger;
+	    "-log:,..." = EcLogger;
+	    "-log:arguments:" = EcLogger;
+	    "-update" = EcLogger;
+	};
+	EcProcess = {
+	    "+ecGetKey:size:md5:" = EcProcess;
+	    "+ecInitialDefaults" = EcProcess;
+	    "+ecLock" = EcProcess;
+	    "+ecRegisterDefault:withTypeText:andHelpText:action:value:" = EcProcess;
+	    "+ecSetup" = EcProcess;
+	    "-addServerToList:" = EcProcess;
+	    "-addServerToList:for:" = EcProcess;
+	    "-alarmConfigurationFor:specificProblem:additionalText:critical:" = EcProcess;
+	    "-alarms" = EcProcess;
+	    "-clearConfigurationFor:specificProblem:additionalText:" = EcProcess;
+	    "-cmdAlert:,..." = EcProcess;
+	    "-cmdAlert:arguments:" = EcProcess;
+	    "-cmdAudit:,..." = EcProcess;
+	    "-cmdAudit:arguments:" = EcProcess;
+	    "-cmdBase" = EcProcess;
+	    "-cmdConfig:" = EcProcess;
+	    "-cmdConnectionBecameInvalid:" = EcProcess;
+	    "-cmdDataDirectory" = EcProcess;
+	    "-cmdDbg:msg:,..." = EcProcess;
+	    "-cmdDbg:msg:arguments:" = EcProcess;
+	    "-cmdDebug:,..." = EcProcess;
+	    "-cmdDebug:arguments:" = EcProcess;
+	    "-cmdDebugMode:" = EcProcess;
+	    "-cmdDebugMode:active:" = EcProcess;
+	    "-cmdDefaults" = EcProcess;
+	    "-cmdDefaultsChanged:" = EcProcess;
+	    "-cmdError:,..." = EcProcess;
+	    "-cmdError:arguments:" = EcProcess;
+	    "-cmdFlushLogs" = EcProcess;
+	    "-cmdInstance" = EcProcess;
+	    "-cmdInterval" = EcProcess;
+	    "-cmdIsClient" = EcProcess;
+	    "-cmdIsConnected" = EcProcess;
+	    "-cmdIsTesting" = EcProcess;
+	    "-cmdLogEnd:" = EcProcess;
+	    "-cmdLogFile:" = EcProcess;
+	    "-cmdMatch:toKey:" = EcProcess;
+	    "-cmdMesg:" = EcProcess;
+	    "-cmdMesgCache" = EcProcess;
+	    "-cmdMesgData:from:" = EcProcess;
+	    "-cmdMesgarchive:" = EcProcess;
+	    "-cmdMesgdebug:" = EcProcess;
+	    "-cmdMesghelp:" = EcProcess;
+	    "-cmdMesgmemory:" = EcProcess;
+	    "-cmdMesgnodebug:" = EcProcess;
+	    "-cmdMesgstatus:" = EcProcess;
+	    "-cmdName" = EcProcess;
+	    "-cmdNewServer" = EcProcess;
+	    "-cmdOperator:password:" = EcProcess;
+	    "-cmdPrintf:,..." = EcProcess;
+	    "-cmdPrintf:arguments:" = EcProcess;
+	    "-cmdQuit:" = EcProcess;
+	    "-cmdSignalled" = EcProcess;
+	    "-cmdUpdate:" = EcProcess;
+	    "-cmdUpdated" = EcProcess;
+	    "-cmdWarn:,..." = EcProcess;
+	    "-cmdWarn:arguments:" = EcProcess;
+	    "-ecAlarmDestination" = EcProcess;
+	    "-ecArchive:" = EcProcess;
+	    "-ecAwaken" = EcProcess;
+	    "-ecConfigurationError:,..." = EcProcess;
+	    "-ecCopyright" = EcProcess;
+	    "-ecDidAwaken" = EcProcess;
+	    "-ecDidQuit" = EcProcess;
+	    "-ecDoLock" = EcProcess;
+	    "-ecException:specificProblem:perceivedSeverity:message:,..." = EcProcess;
+	    "-ecException:specificProblem:perceivedSeverity:message:arguments:" = EcProcess;
+	    "-ecHadIP:" = EcProcess;
+	    "-ecHadOP:" = EcProcess;
+	    "-ecHandleQuit" = EcProcess;
+	    "-ecIsQuitting" = EcProcess;
+	    "-ecNewDay:" = EcProcess;
+	    "-ecNewHour:" = EcProcess;
+	    "-ecNewMinute:" = EcProcess;
+	    "-ecNotLeaked" = EcProcess;
+	    "-ecQuitDuration" = EcProcess;
+	    "-ecQuitFor:with:" = EcProcess;
+	    "-ecQuitLimit:" = EcProcess;
+	    "-ecQuitReason" = EcProcess;
+	    "-ecQuitStatus" = EcProcess;
+	    "-ecReconnect" = EcProcess;
+	    "-ecRestart:" = EcProcess;
+	    "-ecRun" = EcProcess;
+	    "-ecStarted" = EcProcess;
+	    "-ecTestLog:,..." = EcProcess;
+	    "-ecTestLog:arguments:" = EcProcess;
+	    "-ecUnLock" = EcProcess;
+	    "-ecUpdateRegisteredDefaults" = EcProcess;
+	    "-ecUserDirectory" = EcProcess;
+	    "-ecWillQuit" = EcProcess;
+	    "-init" = EcProcess;
+	    "-initWithDefaults:" = EcProcess;
+	    "-isServerMultiple:" = EcProcess;
+	    "-log:type:" = EcProcess;
+	    "-processIdentifier" = EcProcess;
+	    "-removeServerFromList:" = EcProcess;
+	    "-server:" = EcProcess;
+	    "-server:forNumber:" = EcProcess;
+	    "-setCmdDebug:withDescription:" = EcProcess;
+	    "-setCmdInterval:" = EcProcess;
+	    "-setCmdTimeout:" = EcProcess;
+	    "-triggerCmdTimeout" = EcProcess;
+	};
+	LaunchInfo = {
+	    "+description" = EcCommand;
+	    "+existing:" = EcCommand;
+	    "+find:" = EcCommand;
+	    "+launchInfo:" = EcCommand;
+	    "+launching" = EcCommand;
+	    "+names" = EcCommand;
+	    "+processQueue" = EcCommand;
+	    "+remove:" = EcCommand;
+	    "-alarm:" = EcCommand;
+	    "-alarms" = EcCommand;
+	    "-autolaunch" = EcCommand;
+	    "-awakened" = EcCommand;
+	    "-checkActive" = EcCommand;
+	    "-checkProcess" = EcCommand;
+	    "-clearClient:cleanly:" = EcCommand;
+	    "-clearHung" = EcCommand;
+	    "-client" = EcCommand;
+	    "-configuration" = EcCommand;
+	    "-delay" = EcCommand;
+	    "-desired" = EcCommand;
+	    "-disabled" = EcCommand;
+	    "-hungDate" = EcCommand;
+	    "-isActive" = EcCommand;
+	    "-isStarting" = EcCommand;
+	    "-isStopping" = EcCommand;
+	    "-launch" = EcCommand;
+	    "-manual" = EcCommand;
+	    "-mayBecomeStable" = EcCommand;
+	    "-mayCoreDump" = EcCommand;
+	    "-name" = EcCommand;
+	    "-processIdentifier" = EcCommand;
+	    "-progress" = EcCommand;
+	    "-reasonToPreventLaunch" = EcCommand;
+	    "-resetDelay" = EcCommand;
+	    "-setClient:" = EcCommand;
+	    "-setConfiguration:" = EcCommand;
+	    "-setDesired:" = EcCommand;
+	    "-setHung" = EcCommand;
+	    "-setManual:" = EcCommand;
+	    "-setPing" = EcCommand;
+	    "-setProcessIdentifier:" = EcCommand;
+	    "-setStable:" = EcCommand;
+	    "-setTerminationStatus:" = EcCommand;
+	    "-stable" = EcCommand;
+	    "-start" = EcCommand;
+	    "-start:" = EcCommand;
+	    "-started" = EcCommand;
+	    "-starting:" = EcCommand;
+	    "-status" = EcCommand;
+	    "-stop" = EcCommand;
+	    "-stop:" = EcCommand;
+	    "-stopped" = EcCommand;
+	    "-stopping:" = EcCommand;
+	    "-task" = EcCommand;
+	    "-unfulfilled" = EcCommand;
+	};
+	"NSHost(EcHost)" = {
+	    "+controlWellKnownName" = EcHost;
+	    "+hostWithWellKnownName:" = EcHost;
+	    "+setWellKnownNames:" = EcHost;
+	    "-setWellKnownName:" = EcHost;
+	    "-wellKnownName" = EcHost;
+	};
+	"NSObject(BCPdelegate)" = {
+	    "-BCP:lostConnectionToServer:host:" = EcBroadcastProxy;
+	    "-BCP:madeConnectionToServer:host:" = EcBroadcastProxy;
+	};
+	"NSObject(RemoteServerDelegate)" = {
+	    "-cmdLostConnectionToServer:" = EcProcess;
+	    "-cmdMadeConnectionToServer:" = EcProcess;
+	};
+	"NSUserDefaults(EcUserDefaults)" = {
+	    "+prefixedDefaults" = EcUserDefaults;
+	    "+setDefaultLifetime:" = EcUserDefaults;
+	    "+userDefaultsWithPrefix:" = EcUserDefaults;
+	    "-commandExpiries" = EcUserDefaults;
+	    "-commandObjectForKey:" = EcUserDefaults;
+	    "-configuration" = EcUserDefaults;
+	    "-defaultsPrefix" = EcUserDefaults;
+	    "-key:" = EcUserDefaults;
+	    "-purgeSettings" = EcUserDefaults;
+	    "-revertSettings" = EcUserDefaults;
+	    "-setCommand:forKey:" = EcUserDefaults;
+	    "-setCommand:forKey:lifetime:" = EcUserDefaults;
+	    "-setConfiguration:" = EcUserDefaults;
+	};
+    };
+    variable = {
+	EcProc = EcProcess;
+	alarmsAlerted = EcControl;
+	alarmsIgnored = EcControl;
+	alertAlarmThreshold = EcControl;
+	cmdBasicDbg = EcProcess;
+	cmdConnectDbg = EcProcess;
+	cmdDefaultDbg = EcProcess;
+	cmdDetailDbg = EcProcess;
+	"comp_len" = EcControl;
+	controlKey = EcControl;
+	debug = EcCommand;
+	"enum EcBroadcastProxyError" = EcBroadcastProxy;
+	lastAlertInfo = EcControl;
+	launchEnabled = EcCommand;
+	launchInfo = EcCommand;
+	launchLimit = EcCommand;
+	launchOrder = EcCommand;
+	launchQueue = EcCommand;
+	pingDelay = EcControl;
+	pingTime = EcCommand;
+	quitTime = EcCommand;
+	reminderInterval = EcControl;
+	sink = EcControl;
+	tStatus = EcCommand;
+	terminateBy = EcCommand;
+    };
+}

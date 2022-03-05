@@ -10,7 +10,7 @@ caption: Frameworks
 AddressBook/index.md
 CFNetwork/index.md
 DBusKit/index.md
-Enterprise Control/index.md
+ECCL/index.md
 PDFKit/index.md
 WebKit/index.md
 Xcode/index.md

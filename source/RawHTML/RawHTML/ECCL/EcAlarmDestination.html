@@ -1,0 +1,908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcAlarmDestination class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcAlarmDestination">EcAlarmDestination class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the EcAlarmDestination
+        class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the
+        EcAlarmDestination(Forwarding)
+        category</a>
+        </li>
+        <li>
+          <a href="#003000000000">Software documentation for the EcAlarmDestination
+        protocol</a>
+        </li>
+        <li>
+          <a href="#004000000000">Software documentation for the EcAlarmMonitor protocol</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the EcAlarmDestination
+        class
+      </a></h1>
+    <h2><a name="class$EcAlarmDestination">EcAlarmDestination</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcAlarmDestination.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="#protocol$(EcAlarmDestination)">EcAlarmDestination</a></dd>
+        <dd><a rel="gsdoc" href="#protocol$(EcAlarmMonitor)">EcAlarmMonitor</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            The EcAlarmDestination class provides an object to act
+            as an alarm destination which is capable of buffering,
+            coalescing, and forwarding alarms to another
+            destination (usually in a separate process).
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            The buffering and coalescing mechanism is important to
+            prevent floods of alarms being sent over network
+            connections.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            An EcAlarmDestination instance can also be set to
+            forward alarm information to a number of other
+            instances as backups for the main destination.
+              </p>
+    <p>
+      
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_EcAlarmDestination_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination(Forwarding)-alarmFwd$">-alarmFwd:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination(Forwarding)-domanageFwd$">-domanageFwd:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination(Forwarding)-unmanageFwd$">-unmanageFwd:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-activePut$">-activePut:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-activeRemove$">-activeRemove:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-alarm$">-alarm:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-alarms">-alarms</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-backups">-backups</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-clears">-clears</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-clearsPut$">-clearsPut:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-clearsRemove$">-clearsRemove:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-domanage$">-domanage:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-init">-init</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-initWithHost$name$">-initWithHost:name:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-isRunning">-isRunning</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-latest$">-latest:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-managePut$">-managePut:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-manageRemove$">-manageRemove:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-managed">-managed</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-run">-run</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-setBackups$">-setBackups:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-setCoalesce$">-setCoalesce:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-setDebug$">-setDebug:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-setDestination$">-setDestination:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-setMonitor$">-setMonitor:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-shutdown">-shutdown</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination-unmanage$">-unmanage:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-activePut$">activePut:&nbsp;</a></h3>
+    - (void) <b>activePut:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            Internal use only.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-activeRemove$">activeRemove:&nbsp;</a></h3>
+    - (void) <b>activeRemove:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            Internal use only.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-alarm$">alarm:&nbsp;</a></h3>
+    - (oneway void) <b>alarm:</b> (in bycopy <a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)event;<br />
+    <div class="desc">
+      
+            Passes an alarm to the destination by adding it to a
+            queue of alarm events which will be processed in the
+            receivers running thread.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-alarms">alarms&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>alarms</b>;<br />
+    <div class="desc">
+      
+            Returns an array containing all the currently
+            active alarms.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-backups">backups&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>backups</b>;<br />
+    <div class="desc">
+      
+            Returns an array of backup destinations (if set).
+            <br /> See
+            <a rel="gsdoc" href="#method$EcAlarmDestination-setBackups$">
+              -setBackups:
+            </a>
+
+            for more information.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-clears">clears&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>clears</b>;<br />
+    <div class="desc">
+      
+            Returns an array containing all the latest cleared
+            alarms.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-clearsPut$">clearsPut:&nbsp;</a></h3>
+    - (void) <b>clearsPut:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            Internal use only.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-clearsRemove$">clearsRemove:&nbsp;</a></h3>
+    - (void) <b>clearsRemove:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            Internal use only.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-domanage$">domanage:&nbsp;</a></h3>
+    - (oneway void) <b>domanage:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject;<br />
+    <div class="desc">
+      
+            Inform the destination of the existence of a managed
+            object. <br /> This is an indicator of a &apos;cold
+            start&apos; of that object... meaning that the object has
+            just started up afresh, and all outstanding alarms for
+            the object are to be cleared. <br /> The
+            <var>managedObject</var> information is added to a
+            queue which is processed by the receiver&apos;s running
+            thread in order to pass the information on to the
+            destination. <br /> If
+            <var>managedObject</var> is <code>nil</code>, the
+            default managed object for the current process is
+            used. <br /> Processes using the
+            <a rel="gsdoc" href="EcProcess.html#class$EcProcess">EcProcess</a>
+
+              class call this method automatically when they have
+              registered with the Command server, so you
+              don&apos;t usually need to call it explicity for the
+              default managed object.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-init">init&nbsp;</a></h3>
+    - (id) <b>init</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-initWithHost$name$">initWithHost:&nbsp;name:&nbsp;</a></h3>
+    - (id) <b>initWithHost:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)host<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            Sets the name/host of the object in a remote process
+            to which alarms should be forwarded. If this information
+            is set then the forwarder will attempt to maintain a
+            Distributed Objects connection to the remote
+            object. <br /> The <var>host</var> may be
+            <code>nil</code> for a local connection (current
+            machine and account), or an empty string for a
+            network connection to the local machine, or a
+            <var>host</var> <var>name</var> for a network
+            connection to another machine, or an asterisk
+            for a network connection to any available machine.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-isRunning">isRunning&nbsp;</a></h3>
+    - (BOOL) <b>isRunning</b>;<br />
+    <div class="desc">
+      
+            Returns a flag indicating whether the receiver is
+            actually operating.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-latest$">latest:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*) <b>latest:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)toFind;<br />
+    <div class="desc">
+      
+            Finds and returns the most recent alarm in the system
+            which matches (is equal to) <var>toFind</var>. This
+            searches the queue of alarms to be processed, the
+            set of active alarms, and the set of cleared alarms (in
+            that order) returning the first match found. If no
+            match is found the method returns <code>nil</code>.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-managePut$">managePut:&nbsp;</a></h3>
+    - (void) <b>managePut:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            Internal use only.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-manageRemove$">manageRemove:&nbsp;</a></h3>
+    - (void) <b>manageRemove:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            Internal use only.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-managed">managed&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>managed</b>;<br />
+    <div class="desc">
+      
+            Returns an array containing the known managed
+            objects.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-run">run&nbsp;</a></h3>
+    - (void) <b>run</b>;<br />
+    <div class="desc">
+      
+            This method is called from
+            <a rel="gsdoc" href="#method$EcAlarmDestination-init">
+              -init
+            </a>
+
+            in a secondary thread to start handling of alarms by the
+            receiver. Do not call it yourself.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-setBackups$">setBackups:&nbsp;</a></h3>
+    - (void) <b>setBackups:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)backups;<br />
+    <div class="desc">
+      
+            Sets an array containing EcAlarmDestination objects as
+            <var>backups</var> to receive copies of the alarm and
+            domanage/unmanage information sent to
+            this destination. <br /> You may set <code>nil</code>
+            or an empty array to turn off <var>backups</var>, and
+            may use the
+            <a rel="gsdoc" href="#method$EcAlarmDestination-backups">
+              -backups
+            </a>
+
+            method to get the currently set values. <br /> Do
+            not set up loops causing a destination to be its own
+            backup either directly or indirectly, as this will
+            cause alarms to be forwarded endlessly.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-setCoalesce$">setCoalesce:&nbsp;</a></h3>
+    - (BOOL) <b>setCoalesce:</b> (BOOL)coalesce;<br />
+    <div class="desc">
+      
+            Sets coalescing behavior for the queue of alarms and
+            managed object changes. The default behavior is for
+            coalescing to be turned on (so new values
+            replace those in the queue), but setting this to
+            <code>NO</code> will cause all events to be passed
+            on (apart from repeated alarms at the same
+            perceivedSeverity level, which are never
+            passed one).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-setDebug$">setDebug:&nbsp;</a></h3>
+    - (int) <b>setDebug:</b> (int)debug;<br />
+    <div class="desc">
+      
+            Sets <var>debug</var> on/off. When debugging is on, we
+            generate logs of forwarding to the destination and
+            of coalescing of alarms. <br /> Any non-zero value sets
+            <var>debug</var> to <code>YES</code>, zero sets it to
+            <code>NO</code>. <br /> Returns the previous value
+            of the setting.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-setDestination$">setDestination:&nbsp;</a></h3>
+    - (id<<a rel="gsdoc" href="#protocol$(EcAlarmDestination)">EcAlarmDestination</a>>) <b>setDestination:</b> (id<<a rel="gsdoc" href="#protocol$(EcAlarmDestination)">EcAlarmDestination</a>>)destination;<br />
+    <div class="desc">
+      
+            Sets the <var>destination</var> to which alarms should
+            be forwarded. <br /> If <code>nil</code> this turns off
+            forwarding until it is re-set to a non-nil
+            <var>destination</var>. <br /> The
+            <var>destination</var> object is retained by the
+            receiver. <br /> Returns the previously set
+            <var>destination</var>.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-setMonitor$">setMonitor:&nbsp;</a></h3>
+    - (id<<a rel="gsdoc" href="#protocol$(EcAlarmMonitor)">EcAlarmMonitor</a>>) <b>setMonitor:</b> (id<<a rel="gsdoc" href="#protocol$(EcAlarmMonitor)">EcAlarmMonitor</a>>)monitor;<br />
+    <div class="desc">
+      
+            Sets the monitoring object to which state changes are
+            sent. <br /> If <code>nil</code> this turns off
+            monitoring. <br /> The monitoring object is
+            retained by the receiver. <br /> Returns the
+            previously set <var>monitor</var>.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-shutdown">shutdown&nbsp;</a></h3>
+    - (void) <b>shutdown</b>;<br />
+    <div class="desc">
+      
+            Requests that the receiver&apos;s running thread should
+            shut down. This method waits for a
+            <strong>short</strong> while for the thread to
+            shut down, but the process of shutting down is not
+            guaranteed to have completed by the time the
+            method returns.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination-unmanage$">unmanage:&nbsp;</a></h3>
+    - (oneway void) <b>unmanage:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject;<br />
+    <div class="desc">
+      
+            Inform the destination of the removal of a managed
+            object. <br /> This is an indicator of a graceful
+            shutdown of that object... meaning that the object
+            has been stopped intentionally and all outstanding
+            alarms for the object are to be cleared. <br /> The
+            <var>managedObject</var> information is added to a
+            queue which is processed by the receiver&apos;s running
+            thread in order to pass the information on to the
+            destination. <br /> If
+            <var>managedObject</var> is <code>nil</code>, the
+            default managed object for the current process is
+            used. <br /> Processes using the
+            <a rel="gsdoc" href="EcProcess.html#class$EcProcess">EcProcess</a>
+
+              class call this method automatically when they are
+              shut down normally (with a quit status of zero), so
+              you don&apos;t usually need to call it explicity for the
+              default managed object.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_EcAlarmDestination_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for EcAlarmDestination Class</h2>
+    <h3><a name="ivariable$EcAlarmDestination*_alarmLock">_alarmLock</a></h3>
+    @protected NSRecursiveLock* <b>_alarmLock</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_alarmQueue">_alarmQueue</a></h3>
+    @protected NSMutableArray* <b>_alarmQueue</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_alarmsActive">_alarmsActive</a></h3>
+    @protected NSMutableSet* <b>_alarmsActive</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_alarmsCleared">_alarmsCleared</a></h3>
+    @protected NSMutableSet* <b>_alarmsCleared</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_backups">_backups</a></h3>
+    @protected NSArray* <b>_backups</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_coalesceOff">_coalesceOff</a></h3>
+    @protected BOOL <b>_coalesceOff</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_debug">_debug</a></h3>
+    @protected BOOL <b>_debug</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_destination">_destination</a></h3>
+    @protected id<EcAlarmDestination> <b>_destination</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_host">_host</a></h3>
+    @protected NSString* <b>_host</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_inTimeout">_inTimeout</a></h3>
+    @protected BOOL <b>_inTimeout</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_isRunning">_isRunning</a></h3>
+    @protected BOOL <b>_isRunning</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_managedObjects">_managedObjects</a></h3>
+    @protected NSMutableSet* <b>_managedObjects</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_monitor">_monitor</a></h3>
+    @protected id<EcAlarmMonitor> <b>_monitor</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_name">_name</a></h3>
+    @protected NSString* <b>_name</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_shouldStop">_shouldStop</a></h3>
+    @protected BOOL <b>_shouldStop</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcAlarmDestination*_timer">_timer</a></h3>
+    @protected NSTimer* <b>_timer</b>;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this instance variable indicates that, even
+            though it is not technically <em>private</em>, it is
+            intended for internal use within the package, and
+            you should not use the variable in other code.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the
+        EcAlarmDestination(Forwarding)
+        category
+      </a></h1>
+    <h2><a rel="gsdoc" href="#class$EcAlarmDestination">EcAlarmDestination</a>(<a name="category$EcAlarmDestination(Forwarding)">Forwarding</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcAlarmDestination.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          Methods called internally to forward events to the
+          remote target of the receiver. These methods must
+          perform themselves in the main thread.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination(Forwarding)-alarmFwd$">-alarmFwd:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination(Forwarding)-domanageFwd$">-domanageFwd:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$EcAlarmDestination(Forwarding)-unmanageFwd$">-unmanageFwd:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcAlarmDestination(Forwarding)-alarmFwd$">alarmFwd:&nbsp;</a></h3>
+    - (void) <b>alarmFwd:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)event;<br />
+    <div class="desc">
+      
+            Forward an alarm <var>event</var>.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination(Forwarding)-domanageFwd$">domanageFwd:&nbsp;</a></h3>
+    - (void) <b>domanageFwd:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject;<br />
+    <div class="desc">
+      
+            Forward a domanage event.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcAlarmDestination(Forwarding)-unmanageFwd$">unmanageFwd:&nbsp;</a></h3>
+    - (void) <b>unmanageFwd:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject;<br />
+    <div class="desc">
+      
+            Forward an unmanage event.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="003000000000">
+        Software documentation for the EcAlarmDestination
+        protocol
+      </a></h1>
+    <h2><a name="protocol$(EcAlarmDestination)">EcAlarmDestination</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcAlarmDestination.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSObject)">NSObject</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          The EcAlarmDestination protocol describes the interface
+          which must be provided by an object which handles
+          alarms. <br />
+          
+    </p>
+    <p>
+
+            The sender expects to be able to &apos;fire and forget&apos;,
+            sending the messages in this protocol without
+            having to wait for a response or deal with any error
+            conditions, so the destination must
+            <em>not</em> block for a <strong>long</strong> time or
+            raise an exception.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmDestination)-alarm$">-alarm:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmDestination)-domanage$">-domanage:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmDestination)-unmanage$">-unmanage:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(EcAlarmDestination)-alarm$">alarm:&nbsp;</a></h3>
+    - (oneway void) <b>alarm:</b> (in bycopy <a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)event;<br />
+    <div class="desc">
+      
+            Passes an alarm to the destination.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcAlarmDestination)-domanage$">domanage:&nbsp;</a></h3>
+    - (oneway void) <b>domanage:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject;<br />
+    <div class="desc">
+      
+            Inform the destination of the existence of a managed
+            object. <br /> This is an indicator of a &apos;cold
+            start&apos; of that object... meaning that the object has
+            just started up afresh, and all outstanding alarms for
+            the object are to be cleared.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcAlarmDestination)-unmanage$">unmanage:&nbsp;</a></h3>
+    - (oneway void) <b>unmanage:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)managedObject;<br />
+    <div class="desc">
+      
+            Inform the destination of the removal of a managed
+            object. <br /> This is an indicator of a graceful
+            shutdown of that object... meaning that the object
+            has been stopped intentionally and all outstanding
+            alarms for the object are to be cleared.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="004000000000">
+        Software documentation for the EcAlarmMonitor protocol
+      </a></h1>
+    <h2><a name="protocol$(EcAlarmMonitor)">EcAlarmMonitor</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcAlarmDestination.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSObject)">NSObject</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          These methods are called to inform an object monitoring
+          the alarm destination about changes to its state.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmMonitor)-activePut$">-activePut:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmMonitor)-activeRemove$">-activeRemove:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmMonitor)-clearsPut$">-clearsPut:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmMonitor)-clearsRemove$">-clearsRemove:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmMonitor)-managePut$">-managePut:</a></li>
+      <li><a rel="gsdoc" href="EcAlarmDestination.html#method$(EcAlarmMonitor)-manageRemove$">-manageRemove:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(EcAlarmMonitor)-activePut$">activePut:&nbsp;</a></h3>
+    - (void) <b>activePut:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcAlarmMonitor)-activeRemove$">activeRemove:&nbsp;</a></h3>
+    - (void) <b>activeRemove:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcAlarmMonitor)-clearsPut$">clearsPut:&nbsp;</a></h3>
+    - (void) <b>clearsPut:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcAlarmMonitor)-clearsRemove$">clearsRemove:&nbsp;</a></h3>
+    - (void) <b>clearsRemove:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcAlarmMonitor)-managePut$">managePut:&nbsp;</a></h3>
+    - (void) <b>managePut:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcAlarmMonitor)-manageRemove$">manageRemove:&nbsp;</a></h3>
+    - (void) <b>manageRemove:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

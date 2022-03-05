@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="EcTest">
+  <head>
+    <title>EcTest documentation</title>
+    <author name="Richard Frith-Macdonald">
+      <email address="rfm@gnu.org">
+        rfm@gnu.org
+      </email>
+    </author>
+    <copy>2014 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the EcTest protocol
+      </heading>
+      <protocol name="EcTest">
+        <declared>EcTest.h</declared>
+        <conform>NSObject</conform>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+        <method type="bycopy NSString*">
+          <sel>ecTestCommand:</sel>
+          <arg type="in bycopy NSString*">command</arg>
+          <desc>
+            Sends a <var>command</var> to the remote process and
+            returns the string output. <br /> Similar to
+            issueing the <var>command</var> string at the
+            console.
+          </desc>
+        </method>
+        <method type="bycopy NSData*">
+          <sel>ecTestConfigForKey:</sel>
+          <arg type="in bycopy NSString*">key</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecTestSetConfig:</sel>
+          <arg type="in bycopy NSData*">data</arg>
+          <sel>forKey:</sel>
+          <arg type="in bycopy NSString*">key</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>EcTest functions</heading>
+      <p></p>
+      <function type="id&lt;EcTest&gt;" name="EcTestConnect">
+        <arg type="NSString*">name</arg>
+        <arg type="NSString*">host</arg>
+        <arg type="NSTimeInterval">timeout</arg>
+        <desc>
+          This function obtains a Distributed Objects proxy to the
+          EcProcess instance controlling the server with the
+          specified <var>name</var> and <var>host</var>.
+          <br /> A <code>nil</code> or empty string for the
+          <var>host</var> is taken to mean the local
+          <var>host</var>, while an asterisk denotes any
+          <var>host</var> on the local network. <br /> The
+          <var>timeout</var> is a time limit on how
+          <strong>long</strong> it may take to get the
+          connection (a value less than or equal to zero
+          will cause the function to keep on trying indefinitely).
+          <br /> If an immediate connection is not possible, the
+          function will attempt to contact the Command server
+          on the specified <var>host</var> and ask it to launch the
+          process before trying to connect again.
+        </desc>
+      </function>
+      <function type="id" name="EcTestGetConfig">
+        <arg type="id&lt;EcTest&gt;">process</arg>
+        <arg type="NSString*">key</arg>
+        <desc>
+          This function gets <var>process</var> configuration for
+          the specified <var>key</var> and deserialises it to a
+          property list object (returned) or <code>nil</code>
+          if no value is configured for the specified <var>key</var>
+          .
+        </desc>
+      </function>
+      <function type="void" name="EcTestSetConfig">
+        <arg type="id&lt;EcTest&gt;">process</arg>
+        <arg type="NSString*">key</arg>
+        <arg type="id">value</arg>
+        <desc>
+          This function sets <var>process</var> configuration by
+          serialising the property list <var>value</var>
+          and passing the resulting data to the remote
+          <var>process</var>. <br /> If the <var>value</var> is
+          <code>nil</code> then the configuration for the remote
+          <var>process</var> reverts to its default setting.
+        </desc>
+      </function>
+      <function type="BOOL" name="EcTestShutdown">
+        <arg type="id&lt;EcTest&gt;">process</arg>
+        <arg type="NSTimeInterval">timeout</arg>
+        <desc>
+          This function shuts down the remote <var>process</var>,
+          gracefully if possible, but then with a kill if
+          graceful shutdown fails. <br /> Returns
+          <code>YES</code> on graceful shutdown, <code>NO</code>
+          on <var>timeout</var> (or if the connection had already
+          been invalidated).
+        </desc>
+      </function>
+      <function type="BOOL" name="EcTestShutdownByName">
+        <arg type="NSString*">name</arg>
+        <arg type="NSString*">host</arg>
+        <arg type="NSTimeInterval">timeout</arg>
+        <desc>
+          This function shuts down the remote process, gracefully
+          if possible, but then with a kill if graceful shutdown
+          fails. <br /> Returns <code>YES</code> on graceful
+          shutdown (or if the process was not running),
+          <code>NO</code> on <var>timeout</var>.
+        </desc>
+      </function>
+    </chapter>
+  </body>
+</gsdoc>

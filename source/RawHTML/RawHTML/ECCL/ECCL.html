@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>ECCL documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$ECCL">ECCL documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2013 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001001000000">Enterprise Control Configuration and Logging</a>
+        </li>
+        <li>
+          <a href="#001002000000">The Control command line tool</a>
+        </li>
+        <li>
+          <a href="#001003000000">The Command command line tool</a>
+        </li>
+        <li>
+          <a href="#001004000000">The Console command line tool</a>
+        </li>
+        <li>
+          <a href="#001005000000">The AlarmTool command line tool</a>
+        </li>
+        <li>
+          <a href="#001006000000">The LogTool command line tool</a>
+        </li>
+        <li>
+          <a href="#001007000000">The Terminate command line tool</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <p>
+
+        The index below lists the major components of the ECCL
+        documentation. <br />
+          </p>
+    <b>Title Index</b>
+    <ul>
+      <li><a rel="gsdoc" target="mainFrame" href="EcAlarm.html#title$EcAlarm">EcAlarm class documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcAlarmDestination.html#title$EcAlarmDestination">EcAlarmDestination class documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcAlarmSinkSNMP.html#title$EcAlarmSinkSNMP">EcAlarmSinkSNMP class documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcAlerter.html#title$EcAlerter">EcAlerter class documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcBroadcastProxy.html#title$EcBroadcastProxy">EcBroadcastProxy class documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcCommand.html#title$EcCommand">EcCommand documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcConsole.html#title$EcConsole">EcConsole class documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcControl.html#title$EcControl">EcControl documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcHost.html#title$EcHost">EcHost documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcLogger.html#title$EcLogger">EcLogger class documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcProcess.html#title$EcProcess">EcProcess class documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcTest.html#title$EcTest">EcTest documentation</a></li>
+      <li><a rel="gsdoc" target="mainFrame" href="EcUserDefaults.html#title$EcUserDefaults">EcUserDefaults documentation</a></li>
+    </ul>
+
+            <h2><a name="001001000000">
+          Enterprise Control Configuration and Logging
+        </a></h2>
+    <p>
+
+          Classes and tools for building and administering 24*7
+          server processes for large scale software systems.
+            </p>
+
+            <h2><a name="001002000000">The Control command line tool</a></h2>
+    <p>
+
+          Based around the
+          <a rel="gsdoc" href="EcControl.html#class$EcControl">EcControl</a>
+
+            class, this server process provides a central
+            command/control point and acts as the SNMP
+            agent for integration of a cluster of Objective-C
+            based processes.
+              </p>
+    <p>
+
+            On startup, (or configuration change) the configuration
+            dictionary from Control.plist (plus any included
+            files) is written to /tmp/Control.cnf to provide a
+            record of the latest config.
+              </p>
+    <p>
+
+            Periodically, the file /tmp/Control.alive is
+            updated to indicate that the process is still
+            running correctly. If the user default string
+            ControlVersion is defined, it is written to
+            one line of this file and in any case a timestamp is
+            written.
+              </p>
+    <p>
+
+            If the EcControlKey NSUserDefault (32 hex digits) is set
+            when the Control server is started, it must also be
+            set to the same value in Control.plist, and on startup
+            the Control server then requires manual entry of a key
+            from the terminal (and makes the string entered
+            (leading and trailing white space stripped)
+            available as EcControlKey in the configuration
+            information it gives to other processes. <br />
+            This for instance allows all processes in a cluster to
+            use a single encryption key never stored on disk.
+            <br /> The value of EcControlKey in Control.plist
+            must be the MD5 hash of the value entered as the
+            master key, otherwise the Control server will log a
+            warning and shut down. <br /> For purposes of
+            automated testing only, Control.plist may contain
+            the master key (64 hex digits) in EcControlKeyTest. In
+            this case EcControlKey need not be defined as an
+            NSUserDefault (because the Control server
+            does not need to read the master key from the
+            terminal).
+              </p>
+
+              <h2><a name="001003000000">The Command command line tool</a></h2>
+    <p>
+
+            Based around the
+            <a rel="gsdoc" href="EcCommand.html#class$EcCommand">EcCommand</a>
+
+              class, this server process provides the
+              configuration/logging/launch
+              facilities for all processes on a single
+              machine. It obtains centralised configuration
+              from the Control server and sends logging, alerts
+              and alarms to that server.
+                </p>
+
+                <h2><a name="001004000000">The Console command line tool</a></h2>
+    <p>
+
+              Based around the
+              <a rel="gsdoc" href="EcConsole.html#class$EcConsole">EcConsole</a>
+
+                class, this process provides an interactive
+                command-line based interface for
+                controlling the entire system via the
+                Control server. <br /> It may also be used in a
+                non-interactive mode to send commands
+                to any process and wait for responses. In
+                non-interactive mode the tool uses the
+                following additional
+                command-line-arguments/user-default-keys
+                and/or environment variables:
+                  </p>
+<br /> Pass (or the
+              ConsolePass environment variable) specifies
+              the password for the user login to the Control
+              server. <br /> Line (or the ConsoleLine
+              environment variable) specifies the command
+              line to be used (as if type in interactively). If
+              the command line is sent, the process exit status is
+              0, but if a failure occurs the status is 1 (except as
+              noted below). <br /> Wait (or the ConsoleWait
+              environment variable) specifies the number of
+              seconds to wait for the result of the command. If
+              this timeout occurs, the process exit status is 2.
+              <br /> Want (or the ConsoleWant environment
+              variable) specifies the regular expression to
+              match a single line success response to the
+              command. <br /> Fail (or the ConsoleFail
+              environment variable) specifies the regular
+              expression to match a single line failure
+              response to the command. If this response is
+              matched, the process exit status is 3. <br />
+              Quiet (or the ConsoleQuiet environment variable) is
+              a boolean which, if true, will suppress any output
+              while waiting for a response. <br /> If the Control
+              server cannot be contacted, the process exit
+              status is 10. <br /> If the Control server
+              actively refuses the login, the exit status is
+              11.
+            
+                  <h2><a name="001005000000">
+                The AlarmTool command line tool
+              </a></h2>
+    <p>
+
+                The AlarmTool command line tool provides a
+                mechanism to raise and clear alarms (using
+                the ECCL alarm system) from a process which is not
+                itsself ECCL enabled (ie not built using the
+                ECCL classes). <br /> You may use this to generate
+                logging from shell scripts or from Java
+                servlets etc.
+                  </p>
+    <p>
+
+                The tool requires at least four (usually six)
+                arguments: <br /> &apos;-Cause NN&apos; the probable
+                cause of the alarm (type of problem). <br />
+                &apos;-Component NN&apos; the component which raised
+                the alarm. <br /> &apos;-Problem NN&apos; the specific
+                problem which raised the alarm. <br />
+                &apos;-Process NN&apos; the name of the process which
+                raised the alarm. <br /> &apos;-Repair NN&apos; a proposed
+                repair action to fix the issue. <br />
+                &apos;-Severity NN&apos; the severity of the problem
+                (defaults to &apos;cleared&apos;, in which case the
+                Repair action is not required). <br />
+                  </p>
+
+                  <h2><a name="001006000000">
+                The LogTool command line tool
+              </a></h2>
+    <p>
+
+                The LogTool command line tool provides a mechanism
+                to log various types of messages (using the ECCL
+                logging system) from a process which is not
+                itsself ECCL enabled (ie not built using the
+                ECCL classes). You may use this to generate
+                logging from shell scripts or from Java
+                servlets etc.
+                  </p>
+    <p>
+
+                The tool requires at least two arguments: <br />
+                &apos;-Name XXX&apos; specifies the name under which the
+                message is to be logged and <br /> &apos;-Mesg XXX&apos;
+                specifies the content of the message to be
+                logged. <br /> The optional &apos;-Mode XXX&apos;
+                argument specifies the type of log to be
+                generated (one of Audit, Debug, Warn, Error
+                or Alert) and defaults to generating a &apos;Warn&apos; log.
+                  </p>
+
+                  <h2><a name="001007000000">
+                The Terminate command line tool
+              </a></h2>
+    <p>
+
+                The Terminate command line tool provides a
+                mechanism to shut down an ECCL host. This
+                tool contacts a Command server and tells it to
+                shut down all it&apos;s local client process and then
+                shut itsself down. <br /> Each client of the
+                Command server is given thirty seconds to shut
+                down gracefully, and if it has not shut down when
+                this period is over, the Command server is free to
+                kill it. <br /> You can expect Command servers to
+                have shut down within forty seconds of the
+                Terminate command being run.
+                  </p>
+    <p>
+
+                You may use &apos;-CommandHost&apos; and &apos;-CommandName&apos; to
+                specify a Command server to contact, otherwise
+                the default local Command server is contacted (or
+                if there is no local server, any available Command
+                server on the local network is contacted).
+                  </p>
+    <p>
+
+                If you wish to terminate everything in a cluster,
+                you may use the &apos;-CommandName&apos; argument to specify
+                the name of the &apos;Control&apos; server of the cluster
+                rather than the &apos;Command&apos; server of an
+                individual host. In this case the tool will
+                contact the Control server, and the Control
+                server will in turn send a terminate message to
+                each Command server in the cluster, before closing
+                down itsself.
+                  </p>
+    <br />
+    </font>
+</body>
+</html>
