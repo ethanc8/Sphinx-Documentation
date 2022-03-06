@@ -1,4 +1,4 @@
-# Message Forwarding
+# Traditional Message Forwarding
 ## GCC runtime
 
 Taken from GCC's [`<objc/message.h>`](https://github.com/gcc-mirror/gcc/blob/16e2427f50c208dfe07d07f18009969502c25dc8/libobjc/objc/message.h).

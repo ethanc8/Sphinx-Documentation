@@ -9,22 +9,22 @@ maxdepth: 1
 caption: Contents
 ---
 Attributes.md
-Basic Types.md
+BasicTypes.md
 NS_ENUM/index.md
 
 Classes.md
-Lightweight Generics.md
+LightweightGenerics.md
 
 Exceptions.md
-Fast Enumeration.md
+FastEnumeration.md
 
-String literals.md
-Dynamic literals.rst
+StringLiterals.md
+DynamicLiterals.rst
 
-Message Forwarding without NSObject.md
+TraditionalMessageForwarding.md
 Modules.rst
 
-Getting Environment Information.md
+EnvInformation.md
 Versions.md
 ```
 

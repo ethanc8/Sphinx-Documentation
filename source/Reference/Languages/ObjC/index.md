@@ -8,5 +8,5 @@ This section contains a lot of documentation about it.
 maxdepth: 2
 caption: Contents
 ---     
-Language Reference/index.md
+Reference/index.md
 ```
