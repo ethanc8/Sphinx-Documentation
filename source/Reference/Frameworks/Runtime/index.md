@@ -2,13 +2,13 @@
 
 ## Apple modern runtime (objc4)
 
-[Source code](https://opensource.apple.com/source/objc4/objc4-818.2/)
+[Source code](https://github.com/apple-oss-distributions/objc4)
 
 [Reference](https://developer.apple.com/documentation/objectivec/objective-c_runtime?language=objc)
 
 [Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Introduction/Introduction.html?language=objc#//apple_ref/doc/uid/TP40008048)
 
-### Detect using
+### Detect this runtime
 
 After importing `<objc/objc.h>`, check for the following macros being defined:
 

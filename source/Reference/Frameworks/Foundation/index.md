@@ -8,6 +8,9 @@ hidden: true
 ---
 Missing.md
 AppleReleaseNotes.md
+GNUstepReleaseNotes.html.md
+Debugging.html.md
+OpenStepCompliance.html.md
 ```
 
 The Foundation Kit provides key data types for working in Objective-C, such as strings, dictionaries, and lists. It also provides networking, configuration storage, file manipulation, and more.
