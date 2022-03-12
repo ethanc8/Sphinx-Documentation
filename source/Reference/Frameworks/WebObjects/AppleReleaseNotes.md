@@ -3,7 +3,7 @@
 * [WebObjects 2.0](https://www.nextop.de/NeXTAnswers/2479.html)
 * [WebObjects 2.1](https://www.nextop.de/NeXTAnswers/2513.html)
 * [WebObjects 3.0](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.1/DeltaDoc/DeltaDoc.html)
-    * [Developer documentation](https://web.archive.org/web/19970412195743if_/http://www.next.com/Pubs/Documents/WebObjects/)
+    * [Developer documentation (incomplete)](https://web.archive.org/web/19970412195743if_/http://www.next.com/Pubs/Documents/WebObjects/)
 * WebObjects 3.1
     * [Developer documentation](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.1/WebObjectsTOC.html#//apple_ref/doc/uid/TP40006772)
 * [WebObjects 3.5 Bugs](https://web.archive.org/web/20010710124052if_/http://til.info.apple.com/techinfo.nsf/artnum/n72557?OpenDocument&webobjects)

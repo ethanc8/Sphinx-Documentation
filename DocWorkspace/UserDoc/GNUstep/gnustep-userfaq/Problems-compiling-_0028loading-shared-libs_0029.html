@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Problems compiling (loading shared libs) (Untitled Document)</title>
+
+<meta name="description" content="Problems compiling (loading shared libs) (Untitled Document)">
+<meta name="keywords" content="Problems compiling (loading shared libs) (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Troubleshooting.html" rel="up" title="Troubleshooting">
+<link href="Problems-compiling-_0028GNUstep-Internal-Error_0029.html" rel="next" title="Problems compiling (GNUstep Internal Error)">
+<link href="Troubleshooting.html" rel="prev" title="Troubleshooting">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Problems-compiling-_0028loading-shared-libs_0029"></span><div class="header">
+<p>
+Next: <a href="Problems-compiling-_0028GNUstep-Internal-Error_0029.html" accesskey="n" rel="next">Problems compiling (GNUstep Internal Error)</a>, Previous: <a href="Troubleshooting.html" accesskey="p" rel="prev">Troubleshooting</a>, Up: <a href="Troubleshooting.html" accesskey="u" rel="up">Troubleshooting</a> &nbsp; </p>
+</div>
+<hr>
+<span id="Problems-compiling-_0028loading-shared-libs_0029-1"></span><h4 class="subsection">1.4.1 Problems compiling (loading shared libs)</h4>
+
+<p>If you get something like
+</p>
+<div class="example">
+<pre class="example">plmerge: error while loading shared libraries:
+libgnustep-base.so.1: cannot open shared object file: No such file or directory
+</pre></div>
+
+<p>or this:
+</p>
+<div class="example">
+<pre class="example">Making all for service example...
+make[2]: *** [example.service/Resources/Info-gnustep.plist] Error 1
+make[1]: *** [example.all.service.variables] Error 2
+make[1]: Leaving directory `/home/multix/gnustep-gui-0.8.6/Tools'
+make: *** [internal-all] Error 2
+</pre></div>
+
+<p>This means your GNU make is being overly protective. When you try to
+become root (e.g. to install something), certain environment variables
+like LD_LIBRARY_PATH are unset in order to reduce the possibility of
+a security breach.  If you are becoming root to install
+something, you need to exec the GNUstep.sh file as root, just as you
+do when you login. Although for simplicity, you can also try this:
+</p>
+<div class="example">
+<pre class="example">make LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+</pre></div>
+
+<p>You could also be having problems with gcc. gcc 2.96 does not work
+(Mandrake 8.1, perhaps others). Use a different compiler, like gcc 3.x.
+</p>
+
+
+
+</body>
+</html>

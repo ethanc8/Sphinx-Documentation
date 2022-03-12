@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Can I use my original NIB files? (Untitled Document)</title>
+
+<meta name="description" content="Can I use my original NIB files? (Untitled Document)">
+<meta name="keywords" content="Can I use my original NIB files? (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Compatibility.html" rel="up" title="Compatibility">
+<link href="Can-one-use-the-hybrid-_0022Objective_002dC_002b_002b_0022.html" rel="next" title="Can one use the hybrid &quot;Objective-C++&quot;">
+<link href="Is-there-an-Interface-Builder-for-GNUstep_003f.html" rel="prev" title="Is there an Interface Builder for GNUstep?">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Can-I-use-my-original-NIB-files_003f"></span><div class="header">
+<p>
+Next: <a href="Can-one-use-the-hybrid-_0022Objective_002dC_002b_002b_0022.html" accesskey="n" rel="next">Can one use the hybrid &quot;Objective-C++&quot;</a>, Previous: <a href="Is-there-an-Interface-Builder-for-GNUstep_003f.html" accesskey="p" rel="prev">Is there an Interface Builder for GNUstep?</a>, Up: <a href="Compatibility.html" accesskey="u" rel="up">Compatibility</a> &nbsp; </p>
+</div>
+<hr>
+<span id="Can-I-use-my-original-NIB-files_003f-1"></span><h4 class="subsection">1.1.7 Can I use my original NIB files?</h4>
+
+<p>No - NeXT/Apple never documented their nib format, so GNUstep supports
+both the &rsquo;gmodel&rsquo; format (which stores information as text
+(property-lists) and can therefore be edited &rsquo;by hand&rsquo;) and binary
+archive format (which can be edited by Gorm).  There IS a conversion
+tool called nib2gmodel that can be compiled under OPENSTEP to convert
+nib files to GNUstep gmodel files.
+</p>
+<p>The current version of gui supports reading nib files created as of 10.2. 
+If you have nib files which are older than this, you can convert them by
+loading them into Interface Builder, going to the &quot;file&quot; second and saving 
+the nib using the &quot;10.2 or later format.&quot;
+</p>
+
+
+
+</body>
+</html>

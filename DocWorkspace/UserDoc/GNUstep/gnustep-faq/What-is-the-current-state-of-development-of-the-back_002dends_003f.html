@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>What is the current state of development of the back-ends? (Untitled Document)</title>
+
+<meta name="description" content="What is the current state of development of the back-ends? (Untitled Document)">
+<meta name="keywords" content="What is the current state of development of the back-ends? (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="GNUstep-GUI-Library.html" rel="up" title="GNUstep GUI Library">
+<link href="GNUstep-DisplayGhostScript-Server.html" rel="next" title="GNUstep DisplayGhostScript Server">
+<link href="What-is-the-current-state-of-development-of-the-front_002dend_003f.html" rel="prev" title="What is the current state of development of the front-end?">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="What-is-the-current-state-of-development-of-the-back_002dends_003f"></span><div class="header">
+<p>
+Previous: <a href="What-is-the-current-state-of-development-of-the-front_002dend_003f.html" accesskey="p" rel="prev">What is the current state of development of the front-end?</a>, Up: <a href="GNUstep-GUI-Library.html" accesskey="u" rel="up">GNUstep GUI Library</a> &nbsp; </p>
+</div>
+<hr>
+<span id="What-is-the-current-state-of-development-of-the-back_002dends_003f-1"></span><h4 class="subsection">1.5.4 What is the current state of development of the back-ends?</h4>
+
+<p>There are several backends currently available:
+</p>
+<dl compact="compact">
+<dt>&lsquo;<samp>xlib</samp>&rsquo;</dt>
+<dd><p>This backend runs on X11 and uses standard xlib
+calls for implementing drawing. It works well, but is limited in many
+areas due to the limitations of xlib drawing.
+</p></dd>
+<dt>&lsquo;<samp>art</samp>&rsquo;</dt>
+<dd><p>This is a very good backend that draws using the libart package and
+freetype with near PostScript quality and functionality. It is currently
+the standard backend (as long as the required libraries are installed). 
+</p></dd>
+<dt>&lsquo;<samp>w32</samp>&rsquo;</dt>
+<dd><p>This backend works on Windows and uses basic Windows drawing
+</p></dd>
+<dt>&lsquo;<samp>cairo</samp>&rsquo;</dt>
+<dd><p>An up-and-coming backend. It still relies on unpublished functions in
+the cairo library so using it is not for the beginner.
+</p></dd>
+</dl>
+
+
+
+
+
+</body>
+</html>

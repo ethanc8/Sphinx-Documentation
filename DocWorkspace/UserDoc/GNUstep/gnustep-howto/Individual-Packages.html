@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Individual Packages (GNUstep HOWTO)</title>
+
+<meta name="description" content="Individual Packages (GNUstep HOWTO)">
+<meta name="keywords" content="Individual Packages (GNUstep HOWTO)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Core-Package.html" rel="up" title="Core Package">
+<link href="Additional-Installation.html" rel="next" title="Additional Installation">
+<link href="Alternate-Library-Setup.html" rel="prev" title="Alternate Library Setup">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Individual-Packages"></span><div class="header">
+<p>
+Previous: <a href="Alternate-Library-Setup.html" accesskey="p" rel="prev">Alternate Library Setup</a>, Up: <a href="Core-Package.html" accesskey="u" rel="up">Core Package</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Building-the-Package"></span><h4 class="subsection">3.1.2 Building the Package</h4>
+
+<p>To build the individual packages, use this familiar set of commands for
+each pacakge (add any additional options you decide upon):
+</p>
+<div class="example">
+<pre class="example">./configure
+make
+make install
+</pre></div>
+
+<p>Start with the Makefile Package (gnustep-make). After installing
+gnustep-make you need to execute GNUstep&rsquo;s shell configuration script,
+as follows:
+</p>
+<div class="example">
+<pre class="example"> . /usr/local/share/GNUstep/Makefiles/GNUstep.sh
+</pre></div>
+
+<p>before proceeding any further.
+</p>
+<p>NOTE for gcc 2.X or MinGW users: Now install gnustep-objc. Before building
+gnustep-objc, edit the <samp>GNUmakefile</samp> and set the <var>THREADING</var>
+variable to the thread library used on your system (usually its posix,
+but you can leave it at single if you don&rsquo;t need threads). At this point
+you should probably re-configure, make and install gnustep-make, so it
+can pick up on any threading information that gnustep-objc provides.
+</p>
+<p>Now install gnustep-base, gnustep-gui and finally gnustep-back.
+</p>
+<p>NOTE: If you are trying to install the packages without root permission,
+you may need to change one thing in the base library. Edit the file
+gnustep-base/Tools/gdomap.h to uncomment the last line and modify
+the specified port number to a port which you <em>know</em> is not in use on
+your network.  You should only do this if absolutely necessary since
+making this change will break communications with any systems where
+an identical change has not been made.  Also, the standard gdomap port
+is the one officially registered with IANA and is reserved for use by
+gdomap - it should only be changed if you can&rsquo;t get your system
+administrator to start the gdomap server using it.
+</p>
+
+
+
+</body>
+</html>

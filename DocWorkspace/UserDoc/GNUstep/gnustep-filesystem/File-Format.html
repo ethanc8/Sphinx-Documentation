@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>File Format (GNUstep Filesystem Hierarchy Document)</title>
+
+<meta name="description" content="File Format (GNUstep Filesystem Hierarchy Document)">
+<meta name="keywords" content="File Format (GNUstep Filesystem Hierarchy Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Configuration.html" rel="up" title="Configuration">
+<link href="Windows-_0028MINGW_0029.html" rel="next" title="Windows (MINGW)">
+<link href="Configuration.html" rel="prev" title="Configuration">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="File-Format"></span><div class="header">
+<p>
+Next: <a href="Windows-_0028MINGW_0029.html" accesskey="n" rel="next">Windows (MINGW)</a>, Previous: <a href="Configuration.html" accesskey="p" rel="prev">Configuration</a>, Up: <a href="Configuration.html" accesskey="u" rel="up">Configuration</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="File-Format-1"></span><h4 class="subsection">1.6.1 File Format</h4>
+
+<p>By default, the configuration file is called GNUstep.conf; it
+typically exists in /etc/GNUstep or /usr/local/etc/GNUstep (depending
+on how gnustep-make was configured) on a Unix-like system.  This file
+is in a format suitable for being &rsquo;sourced&rsquo; by the standard unix
+(Bourne) shell, consisting of lines of the form key=value, comments
+(everything on a line from the first hash (#) onwards), or blank
+lines.
+</p>
+<p>This is very convenient on unix-like systems, but needs care for windows users.
+If a value contains whitespace or backslash characters (or the hash which
+would start a comment) it needs to be quoted by enclosing the whole value
+in single or double quotes.  An alternative for values containing backslashes
+(the norm for a windows path) is to double up each backslash in an unquoted
+value.
+</p>
+<p>The valid values for the keys in the GNUstep configuration file are
+documented in the GNUstep.conf file itself.  Please check the
+GNUstep.conf.in file in your gnustep-make distribution for an
+up-to-date list of all the variables that you can change with
+explanations of what they do.
+</p>
+
+
+
+</body>
+</html>

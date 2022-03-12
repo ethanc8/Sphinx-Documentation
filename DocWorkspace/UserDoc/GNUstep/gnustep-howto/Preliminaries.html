@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Preliminaries (GNUstep HOWTO)</title>
+
+<meta name="description" content="Preliminaries (GNUstep HOWTO)">
+<meta name="keywords" content="Preliminaries (GNUstep HOWTO)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Compiling-and-Installing.html" rel="next" title="Compiling and Installing">
+<link href="Introduction.html" rel="prev" title="Introduction">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Preliminaries"></span><div class="header">
+<p>
+Next: <a href="Compiling-and-Installing.html" accesskey="n" rel="next">Compiling and Installing</a>, Previous: <a href="Introduction.html" accesskey="p" rel="prev">Introduction</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Summary"></span><h2 class="chapter">2 Summary</h2>
+
+<p>In order to compile the libraries, you need to compile and install
+the following packages first (if you don&rsquo;t already have them):
+</p>
+<ul>
+<li> gcc (Version 2.95 or greater, 3.0.4 or greater recommended)
+</li><li> GNU make (Version 3.75 or greater)
+</li><li> gdb (Version 6.0 or greater recommended), if you plan to do any debugging
+</li></ul>
+
+<p>You may also need to install some of the following libraries and
+packages described below. Most of these packages are optional, but some
+are required.
+</p>
+<dl compact="compact">
+<dt>&lsquo;<samp>ffcall libraries (HIGHLY RECOMMENDED)</samp>&rsquo;</dt>
+<dd><p>This is a library that provides stack-frame handling for NSInvocation
+and NSConnection. This library is highly recommended. The previous
+builtin method for stack frame handling is no longer supported and may
+be removed in the future.  ffcall is under GNU GPL. As a special
+exception, if used in GNUstep or in derivate works of GNUstep, the
+included parts of ffcall are under GNU LGPL.
+</p>
+</dd>
+<dt>&lsquo;<samp>libffi library (ALTERNATIVE RECOMMENDATION)</samp>&rsquo;</dt>
+<dd><p>This is a library that provides stack frame handling for NSInvocation
+and NSConnection similar to ffcall. 
+Use this instead of ffcall. You don&rsquo;t need both.
+</p>
+</dd>
+<dt>&lsquo;<samp>libxml2 (RECOMMENDED)</samp>&rsquo;</dt>
+<dd><p>The libxml library (Version 2) is used to translate some of the
+documentation for GNUstep and to provide suport for MacOS-X compatible
+XML-based property-lists. It is not required, but you have to explicitly
+disable use of XML when compiling GNUstep base if you do not have it.
+</p>
+</dd>
+<dt>&lsquo;<samp>libxslt (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>Stylesheet support for use with XML.
+</p>
+</dd>
+<dt>&lsquo;<samp>openssl (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>The openssl library is used to provide support for https connections by
+the NSURL and HSURLHandle classes.  This functionality is
+compiled as a separate bundle since the OpenSSL license is not
+compatible with GPL, and in the hopes that if someone writes an openssl
+replacement, it can quickly be used by creating another bundle.
+</p>
+</dd>
+<dt>&lsquo;<samp>libiconv (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>Note: Do not install this library unless you are sure you need it.
+You probably don&rsquo;t need it except perhaps on MinGW.
+Unicode support functions (iconv) come with glibc version 2.1 or greater. If
+you don&rsquo;t have glibc (try iconv &ndash;version), you can get the separate 
+libiconv library from 
+<a href="http://clisp.cons.org/~haible/packages-libiconv.html">http://clisp.cons.org/~haible/packages-libiconv.html</a>. However,
+neither one is required to use GNUstep.
+</p>
+</dd>
+<dt>&lsquo;<samp>The TIFF library (libtiff) (Version 3.4beta36 or greater) (REQUIRED)</samp>&rsquo;</dt>
+<dd><p>The GUI library uses this to handle loading and saving TIFF images.
+</p>
+</dd>
+<dt>&lsquo;<samp>The JPEG library (libjpeg) (RECOMMENDED)</samp>&rsquo;</dt>
+<dd><p>The GUI library uses this to handle loading JPEG images.
+</p>
+</dd>
+<dt>&lsquo;<samp>The PNG library (libpng) (RECOMMENDED)</samp>&rsquo;</dt>
+<dd><p>The GUI library uses this to handle loading PNG images.
+</p>
+</dd>
+<dt>&lsquo;<samp>gif or ungif (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>The GUI library uses either one of these libraries to load GIF images.
+</p>
+</dd>
+<dt>&lsquo;<samp>aspell (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>The GUI library uses this to handle spell checking.
+</p>
+</dd>
+<dt>&lsquo;<samp>cups (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>The GUI library uses this to handle interface to the CUPS print servers.
+</p>
+</dd>
+<dt>&lsquo;<samp>audiofile (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>The GUI library uses this for playing sound files.
+</p>
+</dd>
+<dt>&lsquo;<samp>portaudio (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>The GUI library uses this for the sound server.  Use v19, which has
+several API changes since the previous version. v19 hasn&rsquo;t actually been
+formally released, but several distributions (SuSE, etc) use it anyway.
+</p>
+</dd>
+<dt>&lsquo;<samp>freetype2 (RECOMMENDED, REQUIRED for art backend)</samp>&rsquo;</dt>
+<dd><p>This is used for font information. Freetype2 cache API is in flux.
+GNUstep tries to account for
+this, but if you get errors about undefined FTC_ symbols, you might be
+using an unsupported version of freetype.
+</p>
+</dd>
+<dt>&lsquo;<samp>libart_lgpl2 (REQUIRED for art backend only)</samp>&rsquo;</dt>
+<dd><p>Drawing library for the art backend.
+</p>
+</dd>
+<dt>&lsquo;<samp>WindowMaker (Version &gt;= 0.62) (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>GNUstep and WindowMaker work together to provide a consistant interface.
+Although it is not required, GNUstep will work much better if you use it
+with the WindowMaker window manager. 
+Get WindowMaker from <a href="http://www.windowmaker.info">http://www.windowmaker.info</a>.
+</p>
+</dd>
+<dt>&lsquo;<samp>gnustep-objc package (REQUIRED BUT ONLY for gcc version &lt; 3.0 or MINGW/Cygwin)</samp>&rsquo;</dt>
+<dd><p>Note: Do not install this library unless you are sure you need it.
+You probably don&rsquo;t need it except on MinGW and Cygwin (regardless of the
+gcc version you have).
+This is a special version of the Objective-C runtime that is compiled
+as a shared library.
+It is available at <a href="ftp://ftp.gnustep.org/pub/gnustep/libs">ftp://ftp.gnustep.org/pub/gnustep/libs</a> which
+compiles using the GNUstep Makefile package (so you don&rsquo;t have to get the
+entire gcc dist). Make sure to set the THREADING variable in the GNUmakefile.
+It&rsquo;s possible to compile the library static (make shared=no) and
+just copy to the place where the gcc libobjc library is (type gcc -v to
+get this location). Note you have to install gnustep-make (below) before
+installing this library.
+</p>
+</dd>
+<dt>&lsquo;<samp>GDB (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>GDB can be obtained from <a href="ftp://ftp.gnu.org/gnu/gdb">ftp://ftp.gnu.org/gnu/gdb</a>. As of release
+6.0, gdb has special support for debugging Objective-C programs.
+</p>    
+</dd>
+<dt>&lsquo;<samp>TeX (OPTIONAL)</samp>&rsquo;</dt>
+<dd><p>You need a TeX implementation, like tetex, to compile some of the
+documentation (although most of that is available on the web).
+</p></dd>
+</dl>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Compiling-and-Installing.html" accesskey="n" rel="next">Compiling and Installing</a>, Previous: <a href="Introduction.html" accesskey="p" rel="prev">Introduction</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>How about implementing parts of the Application Kit with GTK? (Untitled Document)</title>
+
+<meta name="description" content="How about implementing parts of the Application Kit with GTK? (Untitled Document)">
+<meta name="keywords" content="How about implementing parts of the Application Kit with GTK? (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Compatibility.html" rel="up" title="Compatibility">
+<link href="Compiling-and-Developing.html" rel="next" title="Compiling and Developing">
+<link href="Is-the-Objective-C-API-for-GTK-related_003f.html" rel="prev" title="Is the Objective C API for GTK related?">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="How-about-implementing-parts-of-the-Application-Kit-with-GTK_003f"></span><div class="header">
+<p>
+Previous: <a href="Is-the-Objective-C-API-for-GTK-related_003f.html" accesskey="p" rel="prev">Is the Objective C API for GTK related?</a>, Up: <a href="Compatibility.html" accesskey="u" rel="up">Compatibility</a> &nbsp; </p>
+</div>
+<hr>
+<span id="How-about-implementing-parts-of-the-Application-Kit-with-GTK_003f-1"></span><h4 class="subsection">1.1.12 How about implementing parts of the Application Kit with GTK?</h4>
+
+<p>Yes and No - The GNUstep architecture provides a single,
+platform-independent, API for handling all aspects of GUI interaction
+(implemented in the gstep-gui library), with a backend architecture
+that permits you to have different display models (display postscript,
+X-windows, win32, berlin ...) while letting you use the same code
+for printing as for displaying. Use of GTK in the frontend gui
+library would remove some of those advantages without adding any.
+</p>
+<p>That being said, a backend library could be implemented using gtk
+if anyone wanted to do so.  Since the frontend library handles most
+of the work involved in implementing the OpenStep API, the backend
+is a relatively thin layer and the advantages of GTK over direct
+xlib or win32 calls is likely to be minimal.  If/when GTK is ported
+to more systems, a backend written using it could be a valuable
+asset - volunteers are, as always, welcome.
+</p>
+
+
+
+
+</body>
+</html>

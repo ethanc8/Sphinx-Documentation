@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Can I transfer archived data from GNUstep to Cocoa? (Untitled Document)</title>
+
+<meta name="description" content="Can I transfer archived data from GNUstep to Cocoa? (Untitled Document)">
+<meta name="keywords" content="Can I transfer archived data from GNUstep to Cocoa? (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Compatibility.html" rel="up" title="Compatibility">
+<link href="Does-distributed-objects-work-between-GNUstep-and-Cocoa_003f.html" rel="next" title="Does distributed objects work between GNUstep and Cocoa?">
+<link href="Tools-for-porting.html" rel="prev" title="Tools for porting">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Can-I-transfer-archived-data-from-GNUstep-to-Cocoa_003f"></span><div class="header">
+<p>
+Next: <a href="Does-distributed-objects-work-between-GNUstep-and-Cocoa_003f.html" accesskey="n" rel="next">Does distributed objects work between GNUstep and Cocoa?</a>, Previous: <a href="Tools-for-porting.html" accesskey="p" rel="prev">Tools for porting</a>, Up: <a href="Compatibility.html" accesskey="u" rel="up">Compatibility</a> &nbsp; </p>
+</div>
+<hr>
+<span id="Can-I-transfer-archived-data-from-GNUstep-to-Cocoa_003f-1"></span><h4 class="subsection">1.1.4 Can I transfer archived data from GNUstep to Cocoa?</h4>
+
+<p>Apple&rsquo;s archiving format is proprietary and not documented, so this
+poses a problem for anyone wanting to implement compatibility with it.
+However, even if we reverse engineered the format, there are enough
+differences between the class and ivar layouts to make this sort of
+compatibility difficult. Not to mention the fact that we would
+constantly have to keep up with the changes Apple made. 
+</p>
+<p>The new keyed archiving using XML file formats is much more portable,
+and GNUstep is trying to maintain compatibility with Apple with this
+type of archiving.
+</p>
+
+
+
+</body>
+</html>

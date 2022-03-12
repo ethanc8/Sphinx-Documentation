@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Why not use framework bundles? (Untitled Document)</title>
+
+<meta name="description" content="Why not use framework bundles? (Untitled Document)">
+<meta name="keywords" content="Why not use framework bundles? (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Compatibility-and-Layout.html" rel="up" title="Compatibility and Layout">
+<link href="Troubleshooting.html" rel="next" title="Troubleshooting">
+<link href="What_0027s-up-with-the-directory-structure_003f.html" rel="prev" title="What's up with the directory structure?">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Why-not-use-framework-bundles_003f"></span><div class="header">
+<p>
+Previous: <a href="What_0027s-up-with-the-directory-structure_003f.html" accesskey="p" rel="prev">What's up with the directory structure?</a>, Up: <a href="Compatibility-and-Layout.html" accesskey="u" rel="up">Compatibility and Layout</a> &nbsp; </p>
+</div>
+<hr>
+<span id="Why-not-use-framework-bundles_003f-1"></span><h4 class="subsection">1.3.5 Why not use framework bundles?</h4>
+
+<p>Framework bundles are much more difficult to port and to use, and are very
+unnatural on a UNIX system; extremely unnatural on Windows. In a
+framework bundle, the shared dynamic library is inside a framework wrapper
+directory.  Because of this, the dynamic linker can&rsquo;t find it.
+</p>
+<p>We have frameworks, so how do we work around that? Well, we build dynamic
+links from a directory inside the dynamic linker path into the framework,
+which work, but then you can&rsquo;t move the framework anywhere else on
+the system, otherwise you break the link, and nothing will find the
+framework any longer!
+</p>
+<p>On systems without dynamic links, like Windows, we can&rsquo;t even do this!  
+We have to copy the library from the framework into the dynamic linker
+path, but that is simply a shared library then!  Absolutely <em>no</em>
+difference.  You put the dynamic library in a system directory in the
+dynamic linker path, and associate with that library a resource directory.
+</p>
+<p>OpenStep for Windows did that, and still called them frameworks.  
+So we can do the same, and call our libraries frameworks. 
+</p>
+<p>In a shared library, the shared dynamic library is in a directory which is
+in the path to the dynamic linker.  the dynamic linker can find it very
+easily.  this is how all shared and static libraries work on UNIX systems,
+Windows systems and possibly most system at all.
+</p>
+<p>Moreover, the OpenStep API requires us to provide some stuff for
+frameworks, like creating and registering automatically a framework
+object each time a framework is used (linked at runtime, or linked into
+the app), and attaching to it the list of classes inside the framework -
+which are not particularly trivial to implement &mdash; they depend on playing
+with the linker and the object file format &mdash; and might produce troubles
+when porting. And we never use these facilities.
+</p>
+<p>For Apple Mac OS X sure it&rsquo;s easier. They can modify
+the system linker, compiler, the system dynamical linker. They
+always know on which platform they are working (their own), etc.  They can
+modify the system to support frameworks natively.  Easy that way.
+</p>
+<p>But GNUstep is meant to run on many different platforms, platforms which
+we don&rsquo;t control (Windows, Sun Solaris, Darwin, GNU/Linux, UNIX system
+variants) and which have different linkers and do not support frameworks
+natively.  On some systems it&rsquo;s difficult to just load a bundle or
+compile a shared library!
+</p>
+<p>So building the core libraries as &rsquo;libraries&rsquo; means that it&rsquo;s much
+easier to port them, and it&rsquo;s much more difficult to break them.
+</p>
+<p>Sure, frameworks have a bundle of resources associated with it &mdash; but we
+can very easily associate a bundle of resource with a shared library, no
+reason why not.  We are doing it.  
+</p>
+<p>So please note that GNUstep libraries are meant to be much similar to
+Mac OS X frameworks.  They are composed of a shared library and
+associated with a bundle of resources.  There is a difference in
+terminology, in where the resources are installed, and possibly a slight
+difference in the NSBundle API to get to the resource bundle (anyway,
+it&rsquo;s a one line difference between Mac OS X and GNUstep, so it looks like
+very easy to #ifdef).
+</p>
+<p>In other words, GNUstep libraries are meant to basically do the same as
+frameworks do on Mac OS X, but to be portable to very different platforms (such
+as Windows).
+</p>
+
+<hr>
+<div class="header">
+<p>
+Previous: <a href="What_0027s-up-with-the-directory-structure_003f.html" accesskey="p" rel="prev">What's up with the directory structure?</a>, Up: <a href="Compatibility-and-Layout.html" accesskey="u" rel="up">Compatibility and Layout</a> &nbsp; </p>
+</div>
+
+
+
+</body>
+</html>

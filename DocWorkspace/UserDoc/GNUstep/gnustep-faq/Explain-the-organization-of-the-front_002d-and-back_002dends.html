@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Explain the organization of the front- and back-ends (Untitled Document)</title>
+
+<meta name="description" content="Explain the organization of the front- and back-ends (Untitled Document)">
+<meta name="keywords" content="Explain the organization of the front- and back-ends (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="GNUstep-GUI-Library.html" rel="up" title="GNUstep GUI Library">
+<link href="What-is-the-current-state-of-development-of-the-front_002dend_003f.html" rel="next" title="What is the current state of development of the front-end?">
+<link href="What-is-the-GUI-Library_003f.html" rel="prev" title="What is the GUI Library?">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Explain-the-organization-of-the-front_002d-and-back_002dends"></span><div class="header">
+<p>
+Next: <a href="What-is-the-current-state-of-development-of-the-front_002dend_003f.html" accesskey="n" rel="next">What is the current state of development of the front-end?</a>, Previous: <a href="What-is-the-GUI-Library_003f.html" accesskey="p" rel="prev">What is the GUI Library?</a>, Up: <a href="GNUstep-GUI-Library.html" accesskey="u" rel="up">GNUstep GUI Library</a> &nbsp; </p>
+</div>
+<hr>
+<span id="Explain-the-organization-of-the-front_002d-and-back_002dends-1"></span><h4 class="subsection">1.5.2 Explain the organization of the front- and back-ends</h4>
+
+<p>The GNUstep GUI Library is divided into a front- and back-end.  The
+front-end contains the majority of implementation, but leaves out the
+low-level drawing and event code.  A back-end can override whatever
+methods necessary in order to implement low-level drawing event
+receiving.  Different back-ends will make GNUstep available on various
+platforms.  The default GNU back-end will run on top of X Windows.
+Other back-ends could allow GNUstep to run on OpenGL and WIN32
+graphics/event platforms.  Much work will be saved by this clean
+separation between front- and back-end, because it allows different
+platforms to share the large amount of front-end code.
+</p>
+
+
+
+</body>
+</html>

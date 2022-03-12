@@ -34,7 +34,7 @@ Version 1.28.0
 
 [Tutorial: Basic Classes of the GNUstep Base Library](https://web.archive.org/web/20211006234718if_/http://www.gnustep.it//nicola/Tutorials/BasicClasses/index.html)
 
-<a href="../../../RawHTML/Gui/ReleaseNotes/ReleaseNotes.html">Release Notes</a>
+<a href="../../../RawHTML/Gui/ReleaseNotes/ReleaseNotes.html">Release Notes (HTML)</a>
 
 [Source code](https://github.com/gnustep/libs-base)
 

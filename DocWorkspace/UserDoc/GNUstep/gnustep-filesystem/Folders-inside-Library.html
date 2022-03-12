@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Folders inside Library (GNUstep Filesystem Hierarchy Document)</title>
+
+<meta name="description" content="Folders inside Library (GNUstep Filesystem Hierarchy Document)">
+<meta name="keywords" content="Folders inside Library (GNUstep Filesystem Hierarchy Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Structure-of-a-Domain.html" rel="up" title="Structure of a Domain">
+<link href="ApplicationSupport.html" rel="next" title="ApplicationSupport">
+<link href="Documentation-_0028Man-Pages_0029.html" rel="prev" title="Documentation (Man Pages)">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Folders-inside-Library"></span><div class="header">
+<p>
+Previous: <a href="Documentation-_0028Man-Pages_0029.html" accesskey="p" rel="prev">Documentation (Man Pages)</a>, Up: <a href="Structure-of-a-Domain.html" accesskey="u" rel="up">Structure of a Domain</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Folders-inside-Library-1"></span><h4 class="subsection">1.5.14 Folders inside Library</h4>
+
+<p>In this section we discuss the standard folders that are available
+inside the <code>Library</code> location.  To find any of these folders,
+just find the location of <code>Library</code> and then append the folder
+name (for example, in a GNUmakefile you can access the &rsquo;ColorPickers&rsquo;
+folder of the installation domain as
+<code>$GNUSTEP_LIBRARY/ColorPickers</code>).
+</p>
+<p>Some of the folders can also be accessed using direct variables, such
+as <code>GNUSTEP_BUNDLES</code>.  You should prefer using these direct
+variables if you can because they are more future-proof (in case some
+of the folders become independent from <code>Library</code> in the future).
+All such cases should be documented here.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="ApplicationSupport.html" accesskey="1">ApplicationSupport</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Bundles.html" accesskey="2">Bundles</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="ColorPickers.html" accesskey="3">ColorPickers</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Colors.html" accesskey="4">Colors</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="DTDs.html" accesskey="5">DTDs</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="DocTemplates.html" accesskey="6">DocTemplates</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Fonts.html" accesskey="7">Fonts</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Frameworks.html" accesskey="8">Frameworks</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Images.html" accesskey="9">Images</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Libraries_002fJava.html">Libraries/Java</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Libraries_002fResources.html">Libraries/Resources</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="KeyBindings.html">KeyBindings</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="PostScript.html">PostScript</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Services.html">Services</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Sounds.html">Sounds</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Tools_002fResources.html">Tools/Resources</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+
+
+</body>
+</html>

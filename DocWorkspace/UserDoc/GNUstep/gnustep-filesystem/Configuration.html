@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Configuration (GNUstep Filesystem Hierarchy Document)</title>
+
+<meta name="description" content="Configuration (GNUstep Filesystem Hierarchy Document)">
+<meta name="keywords" content="Configuration (GNUstep Filesystem Hierarchy Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="File-Format.html" rel="next" title="File Format">
+<link href="Tools_002fResources.html" rel="prev" title="Tools/Resources">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Configuration"></span><div class="header">
+<p>
+Previous: <a href="Structure-of-a-Domain.html" accesskey="p" rel="prev">Structure of a Domain</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Configuration-1"></span><h3 class="section">1.6 Configuration</h3>
+
+<p>GNUstep supports arbitrary filesystem layouts to map the locations in
+the various domains to directories on the filesystem.
+</p>
+<p>When you run gnustep-make&rsquo;s ./configure program you can use the
+&ndash;with-layout=xxx flag to select the filesystem layout that you prefer
+(choosing between the ones in the FilesystemLayouts directory, or
+creating your own in there!).
+</p>
+<p>For most users, this is all they need to know.
+</p>
+<p>In this section we&rsquo;ll go more into the details of how the filesystem
+layout system internally works; this is only useful if you need to do
+something advanced with it, typically because you have multiple
+GNUstep installations or you are trying to do some custom packaging of
+GNUstep.
+</p>
+<p>The filesystem layout is determined by the GNUstep configuration file
+(or if that is not present, by default values built into the GNUstep
+make and base packages when they were configured and built).
+</p>
+<p>The location of the GNUstep configuration file is built in to the make and
+base packages when they are configured using the &ndash;with-config-file option
+to the configure script.  The path specified must be an absolute one for
+the make package, but may also be a path relative to the location of the
+base library itsself (as dynamically linked into applications) for the
+base package.
+</p>
+<p>However, the location of the configuration file may also be specified
+using the GNUSTEP_CONFIG_FILE environment variable, overriding the value
+built in to the package, at any time when using the make package to build
+or install software.  Support for the environment variable may also
+be enabled for the make package when its configure script is run.
+</p>
+<p>The GNUSTEP_CONFIG_FILE environment variable is particularly useful if
+you have multiple installations and need to easily switch between
+them.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="File-Format.html" accesskey="1">File Format</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Windows-_0028MINGW_0029.html" accesskey="2">Windows (MINGW)</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<div class="header">
+<p>
+Previous: <a href="Structure-of-a-Domain.html" accesskey="p" rel="prev">Structure of a Domain</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>What are the features of GNU Distributed Objects? (Untitled Document)</title>
+
+<meta name="description" content="What are the features of GNU Distributed Objects? (Untitled Document)">
+<meta name="keywords" content="What are the features of GNU Distributed Objects? (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="GNUstep-Base-Library.html" rel="up" title="GNUstep Base Library">
+<link href="GNUstep-GUI-Library.html" rel="next" title="GNUstep GUI Library">
+<link href="What-is-base_0027s-current-state-of-development_003f.html" rel="prev" title="What is base's current state of development?">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="What-are-the-features-of-GNU-Distributed-Objects_003f"></span><div class="header">
+<p>
+Previous: <a href="What-is-base_0027s-current-state-of-development_003f.html" accesskey="p" rel="prev">What is base's current state of development?</a>, Up: <a href="GNUstep-Base-Library.html" accesskey="u" rel="up">GNUstep Base Library</a> &nbsp; </p>
+</div>
+<hr>
+<span id="What-are-the-features-of-GNU-Distributed-Objects_003f-1"></span><h4 class="subsection">1.4.3 What are the features of GNU Distributed Objects?</h4>
+
+<p>GNU Distributed Objects has many of the features of other distributed
+objects implementations, but, since it is free software, it can be
+ported to platforms for which other distributed objects implementations
+are not available.
+</p>
+<p>[ NOTE: The GNU distributed object facilities have the same ease-of-use
+as Apple&rsquo;s; be warned, however, that they are not compatible with each
+other.  They have different class hierarchies, different instance
+variables, different method names, different implementation strategies
+and different network message formats.  You cannot communicate with a
+Apple NSConnection using a GNU NSConnection.  
+</p>
+<p>Here are some differences between GNU distributed objects and Apple&rsquo;s
+distributed objects: Apple NSDistantObject asks it&rsquo;s remote
+target for the method encoding types and caches the results; GNU
+NSDistantObject gets the types directly from the local GNU &quot;typed selector&quot;
+mechanism if the information is known locally and only queries the remote
+target or caching encoding types when using a method that is not known to
+the local process.  The NSProxy for the remote root object always has name
+and, once set, you cannot change the root object of a NSConnection; the GNU
+Proxy for the remote root object has a target address value just like
+all other Proxy&rsquo;s, and you can change the root object as many times as
+you like. ].
+</p>
+
+
+
+
+</body>
+</html>

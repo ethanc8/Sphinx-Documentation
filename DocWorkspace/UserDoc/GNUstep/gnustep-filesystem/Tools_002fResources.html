@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Tools/Resources (GNUstep Filesystem Hierarchy Document)</title>
+
+<meta name="description" content="Tools/Resources (GNUstep Filesystem Hierarchy Document)">
+<meta name="keywords" content="Tools/Resources (GNUstep Filesystem Hierarchy Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Folders-inside-Library.html" rel="up" title="Folders inside Library">
+<link href="Configuration.html" rel="next" title="Configuration">
+<link href="Sounds.html" rel="prev" title="Sounds">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Tools_002fResources"></span><div class="header">
+<p>
+Previous: <a href="Sounds.html" accesskey="p" rel="prev">Sounds</a>, Up: <a href="Folders-inside-Library.html" accesskey="u" rel="up">Folders inside Library</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Tools_002fResources-1"></span><h4 class="subsubsection">1.5.14.16 Tools/Resources</h4>
+
+<p>This directory contains resources used by tools.  In GNUstep a tool
+can have an associated resource bundle (a bundle only composed of
+resources, with no object file), which is then installed into this
+directory.
+</p>
+<p>For example, a tool called <code>myTool</code> will get its resource bundle
+installed into
+<code>GNUSTEP_SYSTEM_LIBRARY/Tools/Resources/myTool</code>.
+</p>
+<p>In GNUmakefiles, this location is available as the
+<samp>Tools/Resources</samp> folder inside the <code>Library</code> location.
+</p>
+<p>In gnustep-base, you can access the resource bundle associated with
+your tool by using the <code>[NSBundle +mainBundle]</code> method (this
+semantic is a GNUstep extension).
+</p>
+
+
+
+
+
+</body>
+</html>

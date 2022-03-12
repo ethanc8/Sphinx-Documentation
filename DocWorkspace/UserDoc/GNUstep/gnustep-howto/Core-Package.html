@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Core Package (GNUstep HOWTO)</title>
+
+<meta name="description" content="Core Package (GNUstep HOWTO)">
+<meta name="keywords" content="Core Package (GNUstep HOWTO)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Compiling-and-Installing.html" rel="up" title="Compiling and Installing">
+<link href="Alternate-Library-Setup.html" rel="next" title="Alternate Library Setup">
+<link href="Compiling-and-Installing.html" rel="prev" title="Compiling and Installing">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Core-Package"></span><div class="header">
+<p>
+Previous: <a href="Compiling-and-Installing.html" accesskey="p" rel="prev">Compiling and Installing</a>, Up: <a href="Compiling-and-Installing.html" accesskey="u" rel="up">Compiling and Installing</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Installing-the-Core-Libraries"></span><h3 class="section">3.1 Installing the Core Libraries</h3>
+
+<p>The GNUstep packages uses the Autoconf mechanism for configuration; it
+checks some host capabilities which are used by all GNUstep software.
+The first package you will compile is gnustep-make.  To configure
+gnustep-make just type:
+</p>
+<div class="example">
+<pre class="example">./configure
+</pre></div>
+
+<p>The GNUstep makefile package can be configured to use different types
+of filesystem layouts.  By default, GNUstep is installed with a
+Unix-style filesystem layout into /usr/local/.  That is a good,
+recommended default if you don&rsquo;t have an opinion on which filesystem
+layout to use.
+</p>
+<p>But you can also install it somewhere else by using the prefix
+parameter; the following command installs it in /opt/GNUstep:
+</p>
+<div class="example">
+<pre class="example">./configure --prefix=/opt/GNUstep
+</pre></div>
+
+<p>You can also install GNUstep using a GNUstep layout (or some other
+filesystem layout of your choice) by using the with-layout parameter;
+the following command configures GNUstep to use the traditional
+GNUstep layout:
+</p>
+<div class="example">
+<pre class="example">./configure --with-layout=gnustep
+</pre></div>
+
+<p>In this document we will always present examples that assume that you
+are using the default filesystem layout in /usr/local/.  If you are
+using a different layout, you will need to make the obvious changes.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="Alternate-Library-Setup.html" accesskey="1">Alternate Library Setup</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Individual-Packages.html" accesskey="2">Individual Packages</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+
+
+</body>
+</html>

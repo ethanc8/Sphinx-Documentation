@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Problems running tools and compiling (Untitled Document)</title>
+
+<meta name="description" content="Problems running tools and compiling (Untitled Document)">
+<meta name="keywords" content="Problems running tools and compiling (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Troubleshooting.html" rel="up" title="Troubleshooting">
+<link href="Problems-with-gcc3.html" rel="next" title="Problems with gcc3">
+<link href="Problems-compiling-_0028GNUstep-Internal-Error_0029.html" rel="prev" title="Problems compiling (GNUstep Internal Error)">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Problems-running-tools-and-compiling"></span><div class="header">
+<p>
+Next: <a href="Problems-with-gcc3.html" accesskey="n" rel="next">Problems with gcc3</a>, Previous: <a href="Problems-compiling-_0028GNUstep-Internal-Error_0029.html" accesskey="p" rel="prev">Problems compiling (GNUstep Internal Error)</a>, Up: <a href="Troubleshooting.html" accesskey="u" rel="up">Troubleshooting</a> &nbsp; </p>
+</div>
+<hr>
+<span id="Problems-running-tools-and-compiling-1"></span><h4 class="subsection">1.4.3 Problems running tools and compiling</h4>
+
+<p>If you have a system that has SELinux enabled (Fedora Core for example),
+you may have trouble running and/or compiling (some tools are run during
+the compilation process) GNUstep. This is due to the use of ffcall
+and/or libffi and other techniques used to access memory in a way that
+SELinux does not like. You might get errors like
+</p>
+<div class="example">
+<pre class="example">trampoline: cannot make memory executable
+/bin/sh: line 5:  8427 Aborted                 ././shared_obj/ 
+make_services --test GSspell.service/Resources/Info-gnustep.plist
+gmake[2]: *** [GSspell.service/Resources/Info-gnustep.plist] Error 1
+</pre></div>
+<p>or
+</p><div class="example">
+<pre class="example">libgnustep-base.so.1.13: cannot restore segment prot after reloc: Permission denied
+</pre></div>
+
+<p>If you are using ffcall, you might need to switch to libffi. But in
+either case, it might help to do this:
+</p>
+<div class="example">
+<pre class="example">chcon -t texrel_shlib_t /usr/GNUstep/System/Library/Libraries/*.so
+</pre></div>
+
+<p>after installing the base libraries.
+</p>
+
+
+
+</body>
+</html>

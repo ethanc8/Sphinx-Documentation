@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>No Makefile (Untitled Document)</title>
+
+<meta name="description" content="No Makefile (Untitled Document)">
+<meta name="keywords" content="No Makefile (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Troubleshooting.html" rel="up" title="Troubleshooting">
+<link href="No-characters-displayed.html" rel="prev" title="No characters displayed">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="No-Makefile"></span><div class="header">
+<p>
+Previous: <a href="No-characters-displayed.html" accesskey="p" rel="prev">No characters displayed</a>, Up: <a href="Troubleshooting.html" accesskey="u" rel="up">Troubleshooting</a> &nbsp; </p>
+</div>
+<hr>
+<span id="No-Makefile-1"></span><h4 class="subsection">1.4.8 No Makefile</h4>
+
+<p>I tried to compile something and I get:
+</p>
+<div class="example">
+<pre class="example">GNUmakefile:27: /Makefiles/common.make: No such file or directory 
+GNUmakefile:39: /Makefiles/aggregate.make: No such file or directory 
+gmake: *** No rule to make target `/Makefiles/aggregate.make'.  Stop. 
+</pre></div>
+
+<p>Make sure you have installed the gnustep-make package and also type:
+</p>
+<div class="example">
+<pre class="example">source /usr/local/share/GNUstep/Makefiles/GNUstep.sh
+</pre></div>
+
+<p>You can put this line in your <samp>.profile</samp> or <samp>.bash_profile</samp> file
+so that it is done automatically when you log in.
+</p>
+
+
+
+</body>
+</html>

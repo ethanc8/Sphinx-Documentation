@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Library (GNUstep Filesystem Hierarchy Document)</title>
+
+<meta name="description" content="Library (GNUstep Filesystem Hierarchy Document)">
+<meta name="keywords" content="Library (GNUstep Filesystem Hierarchy Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Structure-of-a-Domain.html" rel="up" title="Structure of a Domain">
+<link href="Headers.html" rel="next" title="Headers">
+<link href="Admin-Tools.html" rel="prev" title="Admin Tools">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Library"></span><div class="header">
+<p>
+Next: <a href="Headers.html" accesskey="n" rel="next">Headers</a>, Previous: <a href="Admin-Tools.html" accesskey="p" rel="prev">Admin Tools</a>, Up: <a href="Structure-of-a-Domain.html" accesskey="u" rel="up">Structure of a Domain</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Library-1"></span><h4 class="subsection">1.5.8 Library</h4>
+
+<p>The <samp>Library</samp> location contains most of the resources that are
+located and loaded at runtime.  These resources are organized in
+folders (directories) inside <samp>Library</samp>; the most important
+<samp>Library</samp> folders will be described later on.
+</p>
+<p>Like all systems inspired by OpenStep, resources are mostly organized
+in bundles and small wrappers that contain both machine-dependent
+files (such as executables or loadable object files) and general
+machine-independent resources (such as images or text files).  For
+this reason, the <samp>Library</samp> location will contain both
+machine-dependent and machine-independent files.
+</p>
+<p>The structure of the folders within Library is the same in all
+filesystem layouts, with a few exceptions: in the GNUstep filesystem
+layout, the <code>Libraries</code>, <code>Headers</code>, <code>Documentation</code> and
+<code>WebApplications</code> folders are all inside <code>Library</code>, but this
+is not necessarily true for other filesystem layouts.
+</p>
+<p>Vice versa, it&rsquo;s common on other filesystem layouts (eg, FHS) to put
+<code>Applications</code> and <code>Admin Applications</code> as folders inside
+<code>Library</code>.
+</p>
+<p>In GNUmakefiles, the <samp>Library</samp> location is available via the
+<code>GNUSTEP_LIBRARY</code> variable, which is the location for the
+domain in which the software will be installed.  You can also
+reference the locations in the various domains directly by using the
+variables <code>GNUSTEP_SYSTEM_LIBRARY</code>,
+<code>GNUSTEP_NETWORK_LIBRARY</code>, <code>GNUSTEP_LOCAL_LIBRARY</code> and
+<code>GNUSTEP_USER_LIBRARY</code>.
+</p>
+<p>In gnustep-base, the <samp>Library</samp> locations are available by
+using the <code>NSLibraryDirectory</code> directory key for
+<code>NSSearchPathForDirectoriesInDomains()</code>.
+</p>
+
+
+
+
+</body>
+</html>

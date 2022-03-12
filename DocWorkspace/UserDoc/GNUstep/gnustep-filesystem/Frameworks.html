@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Frameworks (GNUstep Filesystem Hierarchy Document)</title>
+
+<meta name="description" content="Frameworks (GNUstep Filesystem Hierarchy Document)">
+<meta name="keywords" content="Frameworks (GNUstep Filesystem Hierarchy Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Folders-inside-Library.html" rel="up" title="Folders inside Library">
+<link href="Images.html" rel="next" title="Images">
+<link href="Fonts.html" rel="prev" title="Fonts">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Frameworks"></span><div class="header">
+<p>
+Next: <a href="Images.html" accesskey="n" rel="next">Images</a>, Previous: <a href="Fonts.html" accesskey="p" rel="prev">Fonts</a>, Up: <a href="Folders-inside-Library.html" accesskey="u" rel="up">Folders inside Library</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Frameworks-1"></span><h4 class="subsubsection">1.5.14.8 Frameworks</h4>
+
+<p>This directory contains frameworks.  Frameworks are a type of bundle,
+which include, within their directory structure, a shared library
+providing a specific functionality (or group of related
+functionalities), and all resources required by that shared library.
+</p>
+<p>All frameworks must have the extension <samp>framework</samp>, to indicate
+their usage.
+</p>
+<p>Use of frameworks is generally discouraged, as it is difficult to
+support them in a clean way on multiple platforms. Bundles are a
+better method of organizing shared collections of resources and code.
+</p>
+<p>In GNUmakefiles, this location is available via the
+<code>GNUSTEP_FRAMEWORKS</code> variable, which is the location for the
+domain in which the software will be installed.  You can also
+reference the locations in the various domains directly by using the
+variables <code>GNUSTEP_SYSTEM_FRAMEWORKS</code>,
+<code>GNUSTEP_NETWORK_FRAMEWORKS</code>, <code>GNUSTEP_LOCAL_FRAMEWORKS</code> and
+<code>GNUSTEP_USER_FRAMEWORKS</code>.
+</p>
+<p>In gnustep-base, the <code>Frameworks</code> locations are available by
+using the <code>GSFrameworksDirectory</code> directory key for
+<code>NSSearchPathForDirectoriesInDomains()</code>.
+</p>
+
+
+
+</body>
+</html>

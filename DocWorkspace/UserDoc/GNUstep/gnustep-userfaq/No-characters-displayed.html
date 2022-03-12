@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>No characters displayed (Untitled Document)</title>
+
+<meta name="description" content="No characters displayed (Untitled Document)">
+<meta name="keywords" content="No characters displayed (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Troubleshooting.html" rel="up" title="Troubleshooting">
+<link href="No-Makefile.html" rel="next" title="No Makefile">
+<link href="Problems-with-fonts.html" rel="prev" title="Problems with fonts">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="No-characters-displayed"></span><div class="header">
+<p>
+Next: <a href="No-Makefile.html" accesskey="n" rel="next">No Makefile</a>, Previous: <a href="Problems-with-fonts.html" accesskey="p" rel="prev">Problems with fonts</a>, Up: <a href="Troubleshooting.html" accesskey="u" rel="up">Troubleshooting</a> &nbsp; </p>
+</div>
+<hr>
+<span id="No-characters-displayed_002e"></span><h4 class="subsection">1.4.7 No characters displayed.</h4>
+
+<p>When using the xlib backend, no characters are displayed in any GNUstep
+applications.
+</p>
+<p>The xlib backend has font anti-aliasing turned on by default. It&rsquo;s possible
+that GNUstep can&rsquo;t find any fonts on your system that can be properly anti-
+aliased. Try
+</p>
+<div class="example">
+<pre class="example">defaults write NSGlobalDomain GSFontAntiAlias NO
+</pre></div>
+
+<p>to turn off font anti-aliasing.
+</p>
+
+
+
+</body>
+</html>

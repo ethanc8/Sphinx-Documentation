@@ -41,7 +41,7 @@ Version 0.29.0
 <a href="../../../RawHTML/Gui/Reference/index.html">API Documentation</a>  
 <a href="../../../RawHTML/Gui/Additions/index.html">Gui Additions API</a>
 
-<a href="../../../RawHTML/Gui/ReleaseNotes/ReleaseNotes.html">Release Notes</a>
+<a href="../../../RawHTML/Gui/ReleaseNotes/ReleaseNotes.html">Release Notes (HTML)</a>
 
 [Source code](https://github.com/gnustep/libs-gui)  
 [](https://developer.apple.com/documentation/appkit?language=objc)

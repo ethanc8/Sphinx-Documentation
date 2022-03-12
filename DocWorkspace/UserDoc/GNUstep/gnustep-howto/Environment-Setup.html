@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Environment Setup (GNUstep HOWTO)</title>
+
+<meta name="description" content="Environment Setup (GNUstep HOWTO)">
+<meta name="keywords" content="Environment Setup (GNUstep HOWTO)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Additional-Installation.html" rel="up" title="Additional Installation">
+<link href="GNUstep-Home.html" rel="next" title="GNUstep Home">
+<link href="Additional-Installation.html" rel="prev" title="Additional Installation">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Environment-Setup"></span><div class="header">
+<p>
+Next: <a href="GNUstep-Home.html" accesskey="n" rel="next">GNUstep Home</a>, Previous: <a href="Additional-Installation.html" accesskey="p" rel="prev">Additional Installation</a>, Up: <a href="Additional-Installation.html" accesskey="u" rel="up">Additional Installation</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Environment-Setup-1"></span><h3 class="section">4.1 Environment Setup</h3>
+
+<p>You need to make sure your environment is properly setup in order to
+compile and run GNUstep software.  The steps to setup your environment
+differ slightly depending on your filesystem layout.
+</p>
+<p>There is a way of setting up your environment that always works:
+sourcing the <samp>GNUstep.sh</samp> shell script before using GNUstep.  The
+shell script <samp>GNUstep.sh</samp> is located in the Makefile package; you
+may want to add it to your shell startup file (such as
+<samp>.profile</samp>). For instance, if you installed GNUstep with the
+default filesystem layout in <samp>/usr/local</samp>, then adding
+</p>
+<div class="example">
+<pre class="example">. /usr/local/share/GNUstep/Makefiles/GNUstep.sh
+</pre></div>
+
+<p>in your <samp>.profile</samp> file will work.  Note the period at the
+beginning of the line, and the space between the period and the
+following path.  If you installed GNUstep somewhere else, you need to
+replace <samp>/usr/local/share/GNUstep/Makefiles/GNUstep.sh</samp> with the
+path to your <samp>GNUstep.sh</samp> script.  Another typical location is
+<samp>/usr/GNUstep/System/Library/Makefiles</samp>, which is the default
+location of your <samp>GNUstep.sh</samp> script when gnustep-make is
+configured with the GNUstep layout.  The script defines environment
+variables that are needed to find GNUstep files and executables.
+</p>
+<p>Users of csh need to use the <samp>GNUstep.csh</samp> script. Read the make
+package <samp>README</samp> for more info. Some systems, like GNU/Linux have
+an <samp>/etc/profile.d</samp> directory where scripts can be executed
+automatically. If you want to set up GNUstep for every user on your
+system, you can try copying/linking the <samp>GNUstep.sh</samp> there. For
+csh or tcsh, try
+</p>
+<div class="example">
+<pre class="example">source /usr/local/share/GNUstep/Makefiles/GNUstep.csh
+</pre></div>
+
+<p>Finally, in most filesystem configuration it&rsquo;s also possible to
+manually set up your environment by setting PATH, the linker library
+paths and the <code>GNUSTEP_MAKEFILES</code> variable (instead of using
+<samp>GNUstep.sh</samp>).  For example, on GNU/Linux (with a default GNUstep
+installation), instead of sourcing <samp>GNUstep.sh</samp> you could manually
+add the Tools directories to your PATH:
+</p>
+<div class="example">
+<pre class="example">PATH=&quot;/usr/local/bin:$PATH&quot;
+</pre></div>
+
+<p>manually add <samp>/usr/local/lib</samp> to your <samp>/etc/ld.so.conf</samp> file
+(don&rsquo;t forget to run <code>ldconfig</code> every time you install a
+library), and set the environment variable <code>GNUSTEP_MAKEFILES</code>
+when you want to compile something:
+</p>
+<div class="example">
+<pre class="example">GNUSTEP_MAKEFILES=/usr/local/share/GNUstep/Makefiles
+</pre></div>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="GNUstep-Home.html" accesskey="n" rel="next">GNUstep Home</a>, Previous: <a href="Additional-Installation.html" accesskey="p" rel="prev">Additional Installation</a>, Up: <a href="Additional-Installation.html" accesskey="u" rel="up">Additional Installation</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

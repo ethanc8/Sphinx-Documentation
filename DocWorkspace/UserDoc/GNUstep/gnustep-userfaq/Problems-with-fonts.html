@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Problems with fonts (Untitled Document)</title>
+
+<meta name="description" content="Problems with fonts (Untitled Document)">
+<meta name="keywords" content="Problems with fonts (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Troubleshooting.html" rel="up" title="Troubleshooting">
+<link href="No-characters-displayed.html" rel="next" title="No characters displayed">
+<link href="Problems-with-Alt-key.html" rel="prev" title="Problems with Alt key">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Problems-with-fonts"></span><div class="header">
+<p>
+Next: <a href="No-characters-displayed.html" accesskey="n" rel="next">No characters displayed</a>, Previous: <a href="Problems-with-Alt-key.html" accesskey="p" rel="prev">Problems with Alt key</a>, Up: <a href="Troubleshooting.html" accesskey="u" rel="up">Troubleshooting</a> &nbsp; </p>
+</div>
+<hr>
+<span id="Problems-with-fonts-1"></span><h4 class="subsection">1.4.6 Problems with fonts</h4>
+
+<p>Why do the characters get changed to asterisks (&rsquo;*&rsquo;)?
+</p>
+<p>The problem you are getting come from the fact that the xlib backend
+ (when not using Xft) will only use one fixed X font for a given
+font name. If the font &quot;helvetica&quot; is used inside of GNUstep the
+one selected X font, in your case
+&quot;-*-helvetica-medium-r-normal&ndash;12-*-*-*-p-*-iso8859-1&quot; is used. So
+only characters (or glyphs) that are available in that font can be
+displayed. The selection of which font name to use happens inside the
+font_cacher and is more or less at random (the order fonts are
+listed by the X system).
+</p>
+<p>You can influence the fonts that are available by setting:
+</p>
+<div class="example">
+<pre class="example">defaults write NSGlobalDomain GSFontMask &quot;*iso8859-13&quot;
+font_cacher
+</pre></div>
+
+<p>(or using a different character set, like iso8859-2). This is really a
+bug in GNUstep, but it hasn&rsquo;t been fixed yet.
+</p>
+<p>The other option is the use the art backend, which handles fonts much
+better. When compiling gnustep-back, start with
+</p>
+<div class="example">
+<pre class="example">./configure --enable-graphics=art
+</pre></div>
+
+
+
+
+</body>
+</html>

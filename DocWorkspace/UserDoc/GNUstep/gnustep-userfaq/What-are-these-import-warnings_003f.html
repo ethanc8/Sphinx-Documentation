@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>What are these import warnings? (Untitled Document)</title>
+
+<meta name="description" content="What are these import warnings? (Untitled Document)">
+<meta name="keywords" content="What are these import warnings? (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Compiling-and-Installing.html" rel="up" title="Compiling and Installing">
+<link href="Compatibility-and-Layout.html" rel="next" title="Compatibility and Layout">
+<link href="What-are-these-type-and-size-warnings_003f.html" rel="prev" title="What are these type and size warnings?">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="What-are-these-import-warnings_003f"></span><div class="header">
+<p>
+Previous: <a href="What-are-these-type-and-size-warnings_003f.html" accesskey="p" rel="prev">What are these type and size warnings?</a>, Up: <a href="Compiling-and-Installing.html" accesskey="u" rel="up">Compiling and Installing</a> &nbsp; </p>
+</div>
+<hr>
+<span id="What-are-these-import-warnings_003f-1"></span><h4 class="subsection">1.2.4 What are these import warnings?</h4>
+
+<p>Do you get this obnoxious warning whenever you compile an application, tool,
+or Objective-C program:
+</p>
+<div class="example">
+<pre class="example">warning: using `#import' is not recommended
+[...]
+</pre></div>
+
+<p>Up until gcc 3.4, the #import directive was not implemented correctly.
+As a result, the GCC compiler automatically emitted a warning whenever
+#import was used.  As of gcc 3.4, this problem has been fixed, so
+presumably, this warning is no longer emitted when code is compiled. If
+you are using an early compiler, you can supress these warnings by adding
+<code>-Wno-import</code> to your include (cpp) flags.
+</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Source via git (GNUstep HOWTO)</title>
+
+<meta name="description" content="Source via git (GNUstep HOWTO)">
+<meta name="keywords" content="Source via git (GNUstep HOWTO)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="Machine-Specific.html" rel="prev" title="Machine Specific">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Source-via-git"></span><div class="header">
+<p>
+Previous: <a href="Machine-Specific.html" accesskey="p" rel="prev">Machine Specific</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Getting-Libraries-via-git"></span><h2 class="chapter">7 Getting Libraries via git</h2>
+
+<p>If you didn&rsquo;t get one of the snapshots, or if you want to be sure to
+stay on the bleeding edge, then you should get the libraries via git. Go
+to <a href="http://www.gnustep.org/resources/sources.html">http://www.gnustep.org/resources/sources.html</a> for information on how
+to get the sourcecode.
+</p>
+<p>To fetch all the GNUstep core libraries, you can clone the covenient <samp>core</samp>
+repository:
+</p><div class="example">
+<pre class="example">git clone --recurse-submodules https://github.com/gnustep/core.git
+</pre></div>
+
+<p>After you have checked out the source you can compile it as
+usual. To update the source, go into the directory of the source tree
+you want to update, for example, go into &rsquo;base&rsquo;, and type:
+</p>
+<div class="example">
+<pre class="example">git pull
+</pre></div>
+
+<p>You don&rsquo;t have to re-checkout after you have the source, just pull!
+</p>
+
+
+
+</body>
+</html>

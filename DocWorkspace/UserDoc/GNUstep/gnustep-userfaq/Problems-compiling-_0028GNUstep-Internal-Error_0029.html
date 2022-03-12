@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Problems compiling (GNUstep Internal Error) (Untitled Document)</title>
+
+<meta name="description" content="Problems compiling (GNUstep Internal Error) (Untitled Document)">
+<meta name="keywords" content="Problems compiling (GNUstep Internal Error) (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Troubleshooting.html" rel="up" title="Troubleshooting">
+<link href="Problems-running-tools-and-compiling.html" rel="next" title="Problems running tools and compiling">
+<link href="Problems-compiling-_0028loading-shared-libs_0029.html" rel="prev" title="Problems compiling (loading shared libs)">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Problems-compiling-_0028GNUstep-Internal-Error_0029"></span><div class="header">
+<p>
+Next: <a href="Problems-running-tools-and-compiling.html" accesskey="n" rel="next">Problems running tools and compiling</a>, Previous: <a href="Problems-compiling-_0028loading-shared-libs_0029.html" accesskey="p" rel="prev">Problems compiling (loading shared libs)</a>, Up: <a href="Troubleshooting.html" accesskey="u" rel="up">Troubleshooting</a> &nbsp; </p>
+</div>
+<hr>
+<span id="Problems-compiling-_0028GNUstep-Internal-Error_0029-1"></span><h4 class="subsection">1.4.2 Problems compiling (GNUstep Internal Error)</h4>
+
+<p>If you get
+</p>
+<div class="example">
+<pre class="example">GNUSTEP Internal Error:
+The private GNUstep function to establish the argv and environment
+variables was not called.
+Please report the error to bug-gnustep@gnu.org.
+</pre></div>
+
+<p>when compiling the gui library, there could be several things wrong. One
+is that you installed the gnustep-objc library, but the compiler
+found another Objecive-C library (like the one that came with gcc). If
+you are using gcc 3.x, DO NOT use the gnustep-objc library. 
+</p>
+<p>There could also be a mismatch between the base and gui library versions.
+Make sure you have the latest release of each library installed.
+</p>
+
+
+
+
+</body>
+</html>

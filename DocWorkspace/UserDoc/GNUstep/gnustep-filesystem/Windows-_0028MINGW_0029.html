@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Windows (MINGW) (GNUstep Filesystem Hierarchy Document)</title>
+
+<meta name="description" content="Windows (MINGW) (GNUstep Filesystem Hierarchy Document)">
+<meta name="keywords" content="Windows (MINGW) (GNUstep Filesystem Hierarchy Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Configuration.html" rel="up" title="Configuration">
+<link href="File-Format.html" rel="prev" title="File Format">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Windows-_0028MINGW_0029"></span><div class="header">
+<p>
+Previous: <a href="File-Format.html" accesskey="p" rel="prev">File Format</a>, Up: <a href="Configuration.html" accesskey="u" rel="up">Configuration</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Windows-_0028MINGW_0029-1"></span><h4 class="subsection">1.6.2 Windows (MINGW)</h4>
+
+<p>On ms-windows, for software development, you are likely to want to have an
+extra configuration file.  This is because of the limitations of the
+make program (used to build and install software).
+</p>
+<p>Basically the issue is that the make package doesn&rsquo;t really like the
+colons and backslashes in windows paths (using them is error prone)
+and can&rsquo;t tolerate whitespace in file names.  So you want to do all
+the building in a unix-style environment using only unix-style paths.
+</p>
+<p>On MSYS/MinGW this is done naturally by using the standard unix-style
+/usr/local/etc/GNUstep/GNUstep.conf config file, where the location is
+inside the MSYS unix-style emulation system.  This is what is normally
+done by gnustep-make, so there is nothing special you need to do here.
+</p>
+<p>On the other hand, the base library (and all applications since they are
+built using it) wants to work with native windows paths so that applications
+behave naturally as far as the end users are concerned, and therefore needs a
+configuration file containing windows-style paths rather than unix-like
+ones.
+</p>
+<p>So, you need a different config file to be used by gnustep-base at
+runtime.  And this is enabled by default &ndash; in fact gnustep-base will
+use ./GNUstep.conf as config file on MinGW, where the location is
+relative to the location of the gnustep-base.dll.
+</p>
+<p>In other words, gnustep-make will use
+C:/xxx/usr/local/etc/GNUstep/GNUstep.conf (where &rsquo;xxx&rsquo; is the MSYS
+installation path), while gnustep-base will use a GNUstep.conf file in
+the same directory as the gnustep-base.dll.
+</p>
+<p>This ./GNUstep.conf file normally does not even exist; gnustep-base&rsquo;s
+./configure will hardcode into gnustep-base.dll relative paths to all
+resources (relative from the installation location of
+gnustep-base.dll).  If you modify the filesystem layout or relocate
+gnustep-base.dll, you should add a GNUstep.conf file with
+gnustep-base.dll that contains the relative locations of the
+directories (relative to the location of gnustep-base.dll).
+</p>
+<p>It is recommended that this ./GNUstep.conf always contains relative
+paths to make relocation easier.
+</p>
+<hr>
+<div class="header">
+<p>
+Previous: <a href="File-Format.html" accesskey="p" rel="prev">File Format</a>, Up: <a href="Configuration.html" accesskey="u" rel="up">Configuration</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>How about porting between Cocoa and GNUstep? (Untitled Document)</title>
+
+<meta name="description" content="How about porting between Cocoa and GNUstep? (Untitled Document)">
+<meta name="keywords" content="How about porting between Cocoa and GNUstep? (Untitled Document)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="Compatibility.html" rel="up" title="Compatibility">
+<link href="Tools-for-porting.html" rel="next" title="Tools for porting">
+<link href="Is-it-easy-to-port-OPENSTEP-programs-to-GNUstep_003f.html" rel="prev" title="Is it easy to port OPENSTEP programs to GNUstep?">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="How-about-porting-between-Cocoa-and-GNUstep_003f"></span><div class="header">
+<p>
+Next: <a href="Tools-for-porting.html" accesskey="n" rel="next">Tools for porting</a>, Previous: <a href="Is-it-easy-to-port-OPENSTEP-programs-to-GNUstep_003f.html" accesskey="p" rel="prev">Is it easy to port OPENSTEP programs to GNUstep?</a>, Up: <a href="Compatibility.html" accesskey="u" rel="up">Compatibility</a> &nbsp; </p>
+</div>
+<hr>
+<span id="How-about-porting-between-Cocoa-and-GNUstep_003f-1"></span><h4 class="subsection">1.1.2 How about porting between Cocoa and GNUstep?</h4>
+
+<p>It&rsquo;s easier from GNUstep to Cocoa than Cocoa to GNUstep. Cocoa is
+constantly changing, much faster than GNUstep could hope to keep
+up. They have added extensions and new classes that aren&rsquo;t available in
+GNUstep yet. Plus there are some other issues. If you start with
+Cocoa:
+</p>
+<ul>
+<li> Use #ifndef GNUSTEP for Apple only code.
+</li><li> Do not use CoreFoundation
+</li><li> Do not use Objective-C++ (except with gcc 4.1 or later)
+</li><li> Do not use Quicktime or other proprietary extension
+</li><li> GNUstep should be able to read Cocoa nib files automatically, so there
+is no need to port these, although you might want to have GNUstep specific
+versions of them anyway.
+</li></ul>
+
+<p>See also <a href="http://mediawiki.gnustep.org/index.php/Writing_portable_code">http://mediawiki.gnustep.org/index.php/Writing_portable_code</a>
+for more information.
+</p>
+
+
+
+</body>
+</html>
