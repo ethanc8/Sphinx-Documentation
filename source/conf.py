@@ -14,6 +14,11 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import os
+import sys
+
+sys.path.append(os.path.abspath("./_ext"))
+
 
 # -- Project information -----------------------------------------------------
 
@@ -31,7 +36,10 @@ release = '2021 December'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'myst_parser'
+    'myst_parser',
+    'makedomain',
+    'objcdomain',
+    'sphinx.ext.autodoc'
 ]
 
 myst_enable_extensions = [

@@ -165,50 +165,36 @@ INTER-DOCUMENT LINKAGE
 
 The 'Up' default is used to specify the name of a document which should be used as the 'up' link for any other documents used. This name must not include a path or extension. Generally, the document referred to by this default should be a hand-edited GSDoc document which should have a &lt;em&gt;back&lt;/em&gt; section containing a project index. e.g.
 
-&lt;?xml version="1.0"?&gt;
+```xml
+<?xml version="1.0"?>
 
-> &lt;!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.3//EN"
->
-> > "http://www.gnustep.org/gsdoc-1\_0\_3.xml"&gt;
-> >
-> > > &lt;gsdoc base="index"&gt;
-> > >
-> > > > &lt;head&gt;
-> > > >
-> > > > > &lt;title&gt;My project reference&lt;/title&gt;
-> > > > >
-> > > > > > &lt;author name="my name"&gt;&lt;/author&gt;
-> > > > > >
-> > > > > > > &lt;/head&gt;
-> > > > > > >
-> > > > > > > > &lt;body&gt;
-> > > > > > > >
-> > > > > > > > > &lt;chapter&gt;
-> > > > > > > > >
-> > > > > > > > > > &lt;heading&gt;My project reference&lt;/heading&gt;
-> > > > > > > > > >
-> > > > > > > > > > > &lt;/chapter&gt;
-> > > > > > > > > > >
-> > > > > > > > > > > > &lt;back&gt;
-> > > > > > > > > > > >
-> > > > > > > > > > > > > &lt;index scope="project" type="title" /&gt;
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > > &lt;/back&gt;
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > &lt;/body&gt;
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > &lt;/gsdoc&gt;
-> > > > > > > > > > > > > > > >
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.3//EN"
+"http://www.gnustep.org/gsdoc-1_0_3.xml">
+
+<gsdoc base="index">
+    <head>
+        <title>My project reference</title>
+        <author name="my name"></author>
+    </head>
+
+    <body>
+        <chapter>
+            <heading>My project reference</heading>
+        </chapter>
+
+        <back>
+            <index scope="project" type="title" />
+        </back>
+    </body>
+</gsdoc>
+```
 FILES
 =====
 
-Source: .h, .m, .c
-
-> GSDoc: .gsdoc
->
-> > Index: .igsdoc
-> >
-> > > HTML: .html
+* Source: .h, .m, .c
+* GSDoc: .gsdoc
+* Index: .igsdoc
+* HTML: .html
 
 BUGS
 ====

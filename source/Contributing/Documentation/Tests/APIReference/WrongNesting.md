@@ -1,16 +1,16 @@
 # Wrong nesting
 
-```{py:class} NSObject
+````{py:class} NSObject
 
 NSObject is the base object type.
 
-````{c:function} initWithZone(NSZone* zone)
+```{c:function} initWithZone: NSZone* zone
 A zone
-````
-
-````{c:function} doSomething(void)
-Hello
-````
-
-
 ```
+
+```{c:function} doSomething
+Hello
+```
+
+
+````

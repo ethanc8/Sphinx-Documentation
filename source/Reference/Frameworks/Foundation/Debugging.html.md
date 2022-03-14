@@ -9,8 +9,7 @@ Adam Fedor
 
 **Copyright:** (C) Copyright (C) 2005 Free Software Foundation, Inc.
 
-<span id="001000000000">Debugging</span>
-========================================
+## Overview
 
 GDB is the GNU debugger and is the main method used for debugging Objective-C programs. Full support for debugging Objective-C with GDB was added in version 6.0. This document will describe the various features of GDB that help with debugging Objective-C programs. However, GDB is a very complex program, and not everything that it can do will be described here.
 

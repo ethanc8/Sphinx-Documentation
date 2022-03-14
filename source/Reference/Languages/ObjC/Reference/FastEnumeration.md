@@ -29,7 +29,7 @@
 
 New `for` loop syntax:
 
-> `for (` *init-clause* `in` *fast-enumerator* `)` *loop-statement*
+`for (` *init-clause* `in` *fast-enumerator* `)` *loop-statement*
 
 *init-clause* is an expression or declaration.  
 *fast-enumerator* is the object which is being iterated over which conforms to the `NSFastEnumeration` protocol.
