@@ -7,6 +7,7 @@ An `igsdoc` file is like the following:
 ```
 ## Category
 ### IGSDoc markup
+#### Class &rarr; Category &rarr; File
 ```plist
     categories = {
         NSArchiver = {
@@ -29,6 +30,10 @@ An `igsdoc` file is like the following:
             "GNU_Uniquing" = NSSet;
         };
     };
+```
+
+#### Class(Category) &rarr; File
+```
     category = {
         "NSArchiver(GNUstep)" = NSArchiver;
         "NSArray(NSKeyValueObserverRegistration)" = NSKeyValueObserving;
@@ -49,6 +54,11 @@ No directive yet.
 ```
 
 ## Class
+
+### IGSDoc markup
+
+#### Class &rarr; File
+
 ```
     class = {
         NSAffineTransform = NSAffineTransform;
@@ -173,7 +183,47 @@ No directive yet.
     };
 ```
 
-## Class Variable
+#### Class &rarr; Superclass
+
+```
+    super = {
+		NSAffineTransform = NSObject;
+		NSArchiver = NSCoder;
+		NSArray = NSObject;
+		NSAssertionHandler = NSObject;
+		NSAttributedString = NSObject;
+		NSAutoreleasePool = NSObject;
+		NSBundle = NSObject;
+		NSCachedURLResponse = NSObject;
+		NSCalendarDate = NSDate;
+		NSCharacterSet = NSObject;
+		NSClassDescription = NSObject;
+		NSCoder = NSObject;
+		NSCondition = NSObject;
+		NSConditionLock = NSObject;
+		NSConnection = NSObject;
+		NSCountedSet = NSMutableSet;
+		NSData = NSObject;
+		NSDate = NSObject;
+    };
+```
+
+### Sphinx directive
+
+No directive yet.
+
+### Objective-C Declaration
+
+```objc
+@interface NSArray: NSObject
+```
+
+## Instance Variable
+
+### IGSDoc Markup
+
+#### Class &rarr; Variable &rarr; File
+
 ```plist
     classvars = {
         NSAutoreleasePool = {
@@ -211,42 +261,7 @@ No directive yet.
     };
 ```
 
-## Constant
-
-```plist
-    constant = {
-        GSConfigDomain = TypesAndConstants;
-        GSFileHandleConnectCompletionNotification = TypesAndConstants;
-        GSFileHandleNotificationError = TypesAndConstants;
-        GSFileHandleWriteCompletionNotification = TypesAndConstants;
-        GSHTTPPropertyCertificateFileKey = TypesAndConstants;
-        GSHTTPPropertyKeyFileKey = TypesAndConstants;
-        GSHTTPPropertyLocalHostKey = TypesAndConstants;
-    };
-```
-## Function
-```plist
-    function = {
-        GNUstepConfig = Functions;
-        GNUstepUserConfig = Functions;
-        GSAssignZeroingWeakPointer = Functions;
-        GSDebugAllocationActive = Functions;
-        GSDebugAllocationActiveRecordingObjects = Functions;
-        GSDebugAllocationAdd = Functions;
-        GSDebugAllocationBytes = Functions;
-        GSDebugAllocationClassList = Functions;
-        GSDebugAllocationCount = Functions;
-        GSDebugAllocationList = Functions;
-        GSDebugAllocationListAll = Functions;
-        GSDebugAllocationListRecordedObjects = Functions;
-        GSDebugAllocationPeak = Functions;
-        GSDebugAllocationRecordObjects = Functions;
-        GSDebugAllocationRemove = Functions;
-        GSDebugAllocationTagRecordedObject = Functions;
-    };
-```
-
-## Instance variable
+#### Variable &rarr; Class &rarr; File
 
 ```plist
     ivariable = {
@@ -276,6 +291,43 @@ No directive yet.
         };
     };
 ```
+
+### Sphinx directive
+
+None yet.
+
+### Objective-C Declaration
+
+```objc
+@interface NSAutoReleasePool : NSObject
+{
+	NSAutoreleasePool *_parent;
+	// Other variables
+}
+```
+
+## Function
+```plist
+    function = {
+        GNUstepConfig = Functions;
+        GNUstepUserConfig = Functions;
+        GSAssignZeroingWeakPointer = Functions;
+        GSDebugAllocationActive = Functions;
+        GSDebugAllocationActiveRecordingObjects = Functions;
+        GSDebugAllocationAdd = Functions;
+        GSDebugAllocationBytes = Functions;
+        GSDebugAllocationClassList = Functions;
+        GSDebugAllocationCount = Functions;
+        GSDebugAllocationList = Functions;
+        GSDebugAllocationListAll = Functions;
+        GSDebugAllocationListRecordedObjects = Functions;
+        GSDebugAllocationPeak = Functions;
+        GSDebugAllocationRecordObjects = Functions;
+        GSDebugAllocationRemove = Functions;
+        GSDebugAllocationTagRecordedObject = Functions;
+    };
+```
+
 
 ## Macro
 
@@ -307,7 +359,8 @@ No directive yet.
 ```
 
 ## Method
-
+### IGSDoc Markup
+#### Method &rarr; Class &rarr; File
 ```
     method = {
         "+DTDNodeWithXMLString:" = {
@@ -354,192 +407,8 @@ No directive yet.
         };
     };
 ```
+### Class &rarr; Method &rarr; File
 
-## Output (mapping from header to `.gsdoc`)
-
-```
-    output = {
-        "../Headers/Foundation/NSAffineTransform.h" = (
-            "../Documentation/Base/NSAffineTransform.gsdoc"
-        );
-        "../Headers/Foundation/NSArchiver.h" = (
-            "../Documentation/Base/NSArchiver.gsdoc",
-            "../Documentation/Base/TypesAndConstants.gsdoc"
-        );
-        "../Headers/Foundation/NSArray.h" = (
-            "../Documentation/Base/NSArray.gsdoc"
-        );
-        "../Headers/Foundation/NSAttributedString.h" = (
-            "../Documentation/Base/NSAttributedString.gsdoc"
-        );
-        "../Headers/Foundation/NSAutoreleasePool.h" = (
-            "../Documentation/Base/NSAutoreleasePool.gsdoc"
-        );
-        "../Headers/Foundation/NSBundle.h" = (
-            "../Documentation/Base/NSBundle.gsdoc",
-            "../Documentation/Base/Functions.gsdoc",
-            "../Documentation/Base/TypesAndConstants.gsdoc"
-        );
-        "../Headers/Foundation/NSCalendarDate.h" = (
-            "../Documentation/Base/NSCalendarDate.gsdoc"
-        );
-        "../Headers/Foundation/NSCharacterSet.h" = (
-            "../Documentation/Base/NSCharacterSet.gsdoc"
-        );
-        "../Headers/Foundation/NSClassDescription.h" = (
-            "../Documentation/Base/NSClassDescription.gsdoc",
-            "../Documentation/Base/TypesAndConstants.gsdoc"
-        );
-        "../Headers/Foundation/NSCoder.h" = (
-            "../Documentation/Base/NSCoder.gsdoc"
-        );
-    };
-```
-
-## Protocol
-
-```
-    protocol = {
-        "(GSLogDelegate)" = NSDebug;
-        "(NSCoding)" = NSObject;
-        "(NSCopying)" = NSObject;
-        "(NSDecimalNumberBehaviors)" = NSDecimalNumber;
-        "(NSDiscardableContent)" = NSObject;
-        "(NSFastEnumeration)" = NSEnumerator;
-        "(NSFileManagerDelegate)" = NSFileManager;
-        "(NSLocking)" = NSLock;
-        "(NSMutableCopying)" = NSObject;
-        "(NSNetServiceBrowserDelegate)" = NSNetServices;
-        "(NSNetServiceDelegate)" = NSNetServices;
-        "(NSObjCTypeSerializationCallBack)" = NSSerialization;
-        "(NSObject)" = NSObject;
-        "(NSSecureCoding)" = NSObject;
-        "(NSStreamDelegate)" = NSStream;
-        "(NSURLAuthenticationChallengeSender)" = NSURLAuthenticationChallenge;
-        "(NSURLConnectionDelegate)" = NSURLConnection;
-        "(NSURLDownloadDelegate)" = NSURLDownload;
-        "(NSURLHandleClient)" = NSURLHandle;
-        "(NSURLProtocolClient)" = NSURLProtocol;
-        "(NSXMLParserDelegate)" = NSXMLParser;
-        "(RunLoopEvents)" = NSRunLoop;
-        "NSObject(GSTraceLocks)" = NSLock;
-        "NSObject(NSConnectionDelegate)" = NSConnection;
-        "NSObject(NSFileManagerDelegate)" = NSFileManager;
-        "NSObject(NSFileManagerHandler)" = NSFileManager;
-        "NSObject(NSKeyValueCoding)" = NSKeyValueCoding;
-        "NSObject(NSNetServiceBrowserDelegateMethods)" = NSNetServices;
-        "NSObject(NSNetServiceDelegateMethods)" = NSNetServices;
-        "NSObject(NSStreamDelegate)" = NSStream;
-        "NSObject(RunLoopEvents)" = NSRunLoop;
-        "NSObject(TimedPerformers)" = NSObject;
-    };
-```
-
-## Source (mapping from header to source)
-
-```
-    source = {
-        "../Headers/Foundation/NSAffineTransform.h" = (
-            "NSAffineTransform.m"
-        );
-        "../Headers/Foundation/NSArchiver.h" = (
-            "NSUnarchiver.m",
-            "NSArchiver.m"
-        );
-        "../Headers/Foundation/NSArray.h" = (
-            "NSArray.m"
-        );
-        "../Headers/Foundation/NSAttributedString.h" = (
-            "NSAttributedString.m"
-        );
-        "../Headers/Foundation/NSAutoreleasePool.h" = (
-            "NSAutoreleasePool.m"
-        );
-    };
-```
-
-## Superclass
-
-```
-    super = {
-		NSAffineTransform = NSObject;
-		NSArchiver = NSCoder;
-		NSArray = NSObject;
-		NSAssertionHandler = NSObject;
-		NSAttributedString = NSObject;
-		NSAutoreleasePool = NSObject;
-		NSBundle = NSObject;
-		NSCachedURLResponse = NSObject;
-		NSCalendarDate = NSDate;
-		NSCharacterSet = NSObject;
-		NSClassDescription = NSObject;
-		NSCoder = NSObject;
-		NSCondition = NSObject;
-		NSConditionLock = NSObject;
-		NSConnection = NSObject;
-		NSCountedSet = NSMutableSet;
-		NSData = NSObject;
-		NSDate = NSObject;
-    };
-```
-## Title (mapping from GSDoc to title of doc)
-```
-    title = {
-		Base = "GNUstep Base";
-		Functions = Functions;
-		NSAffineTransform = "NSAffineTransform.m";
-		NSArchiver = "NSArchiver class reference";
-		NSArray = "NSArray class reference";
-		NSAttributedString = "NSAttributedString class reference";
-		NSAutoreleasePool = "NSAutoreleasePool class reference";
-		NSBundle = "NSBundle class reference";
-		NSCalendarDate = "NSCalendarDate class reference";
-		NSCharacterSet = "NSCharacterSet class reference";
-		NSClassDescription = "NSClassDescription class reference";
-		NSCoder = "NSCoder class reference";
-		NSConnection = "NSConnection class reference";
-		NSData = "NSData class reference";
-		NSDate = "NSDate class reference";
-		NSDateFormatter = "NSDateFormatter class reference";
-		NSDebug = "NSDebug utilities reference";
-		NSDecimalNumber = "NSDecimalNumber class reference";
-		NSDictionary = "NSDictionary class reference";
-		TypesAndConstants = "Types and Constants";
-    };
-```
-
-## Type (`struct`, `typedef`)
-
-```
-    type = {
-		CGFloat = TypesAndConstants;
-		NSActivityOptions = TypesAndConstants;
-		NSAttributedStringKey = TypesAndConstants;
-		NSBinarySearchingOptions = TypesAndConstants;
-		NSCalculationError = TypesAndConstants;
-		NSComparisonResult = TypesAndConstants;
-		NSDataBase64DecodingOptions = TypesAndConstants;
-		NSDataBase64EncodingOptions = TypesAndConstants;
-		NSDataSearchOptions = TypesAndConstants;
-		NSDateFormatterBehavior = TypesAndConstants;
-		NSDateFormatterStyle = TypesAndConstants;
-		NSDirectoryEnumerationOptions = TypesAndConstants;
-		NSEnumerationOptions = TypesAndConstants;
-		NSErrorDomain = TypesAndConstants;
-		NSExceptionName = TypesAndConstants;
-		NSFormattingContext = TypesAndConstants;
-		NSFormattingUnitStyle = TypesAndConstants;
-		NSHTTPCookieAcceptPolicy = TypesAndConstants;
-		"struct NSEdgeInsets" = TypesAndConstants;
-		"struct _NSHandler" = TypesAndConstants;
-		"struct _NSHashTableCallBacks" = TypesAndConstants;
-		"struct _NSMapTableKeyCallBacks" = TypesAndConstants;
-		"struct autorelease_array_list" = TypesAndConstants;
-		"struct autorelease_thread_vars" = TypesAndConstants;
-		unichar = TypesAndConstants;
-    };
-```
-## Unit method (class to method to file mapping)
 ```
     unitmethods = {
 		"(GSLogDelegate)" = {
@@ -591,6 +460,91 @@ No directive yet.
     };
 ```
 
+## Protocol
+
+```
+    protocol = {
+        "(GSLogDelegate)" = NSDebug;
+        "(NSCoding)" = NSObject;
+        "(NSCopying)" = NSObject;
+        "(NSDecimalNumberBehaviors)" = NSDecimalNumber;
+        "(NSDiscardableContent)" = NSObject;
+        "(NSFastEnumeration)" = NSEnumerator;
+        "(NSFileManagerDelegate)" = NSFileManager;
+        "(NSLocking)" = NSLock;
+        "(NSMutableCopying)" = NSObject;
+        "(NSNetServiceBrowserDelegate)" = NSNetServices;
+        "(NSNetServiceDelegate)" = NSNetServices;
+        "(NSObjCTypeSerializationCallBack)" = NSSerialization;
+        "(NSObject)" = NSObject;
+        "(NSSecureCoding)" = NSObject;
+        "(NSStreamDelegate)" = NSStream;
+        "(NSURLAuthenticationChallengeSender)" = NSURLAuthenticationChallenge;
+        "(NSURLConnectionDelegate)" = NSURLConnection;
+        "(NSURLDownloadDelegate)" = NSURLDownload;
+        "(NSURLHandleClient)" = NSURLHandle;
+        "(NSURLProtocolClient)" = NSURLProtocol;
+        "(NSXMLParserDelegate)" = NSXMLParser;
+        "(RunLoopEvents)" = NSRunLoop;
+        "NSObject(GSTraceLocks)" = NSLock;
+        "NSObject(NSConnectionDelegate)" = NSConnection;
+        "NSObject(NSFileManagerDelegate)" = NSFileManager;
+        "NSObject(NSFileManagerHandler)" = NSFileManager;
+        "NSObject(NSKeyValueCoding)" = NSKeyValueCoding;
+        "NSObject(NSNetServiceBrowserDelegateMethods)" = NSNetServices;
+        "NSObject(NSNetServiceDelegateMethods)" = NSNetServices;
+        "NSObject(NSStreamDelegate)" = NSStream;
+        "NSObject(RunLoopEvents)" = NSRunLoop;
+        "NSObject(TimedPerformers)" = NSObject;
+    };
+```
+
+## Constant
+
+```plist
+    constant = {
+        GSConfigDomain = TypesAndConstants;
+        GSFileHandleConnectCompletionNotification = TypesAndConstants;
+        GSFileHandleNotificationError = TypesAndConstants;
+        GSFileHandleWriteCompletionNotification = TypesAndConstants;
+        GSHTTPPropertyCertificateFileKey = TypesAndConstants;
+        GSHTTPPropertyKeyFileKey = TypesAndConstants;
+        GSHTTPPropertyLocalHostKey = TypesAndConstants;
+    };
+```
+
+## Type (`struct`, `typedef`)
+
+```
+    type = {
+		CGFloat = TypesAndConstants;
+		NSActivityOptions = TypesAndConstants;
+		NSAttributedStringKey = TypesAndConstants;
+		NSBinarySearchingOptions = TypesAndConstants;
+		NSCalculationError = TypesAndConstants;
+		NSComparisonResult = TypesAndConstants;
+		NSDataBase64DecodingOptions = TypesAndConstants;
+		NSDataBase64EncodingOptions = TypesAndConstants;
+		NSDataSearchOptions = TypesAndConstants;
+		NSDateFormatterBehavior = TypesAndConstants;
+		NSDateFormatterStyle = TypesAndConstants;
+		NSDirectoryEnumerationOptions = TypesAndConstants;
+		NSEnumerationOptions = TypesAndConstants;
+		NSErrorDomain = TypesAndConstants;
+		NSExceptionName = TypesAndConstants;
+		NSFormattingContext = TypesAndConstants;
+		NSFormattingUnitStyle = TypesAndConstants;
+		NSHTTPCookieAcceptPolicy = TypesAndConstants;
+		"struct NSEdgeInsets" = TypesAndConstants;
+		"struct _NSHandler" = TypesAndConstants;
+		"struct _NSHashTableCallBacks" = TypesAndConstants;
+		"struct _NSMapTableKeyCallBacks" = TypesAndConstants;
+		"struct autorelease_array_list" = TypesAndConstants;
+		"struct autorelease_thread_vars" = TypesAndConstants;
+		unichar = TypesAndConstants;
+    };
+```
+
 ## Variable
 
 ```plist
@@ -620,6 +574,103 @@ No directive yet.
 		"struct _NSZone" = TypesAndConstants;
     };
 ```
+
+## Files
+
+### IGSDoc markup
+
+#### Header file &rarr; GSDoc file
+
+```
+    output = {
+        "../Headers/Foundation/NSAffineTransform.h" = (
+            "../Documentation/Base/NSAffineTransform.gsdoc"
+        );
+        "../Headers/Foundation/NSArchiver.h" = (
+            "../Documentation/Base/NSArchiver.gsdoc",
+            "../Documentation/Base/TypesAndConstants.gsdoc"
+        );
+        "../Headers/Foundation/NSArray.h" = (
+            "../Documentation/Base/NSArray.gsdoc"
+        );
+        "../Headers/Foundation/NSAttributedString.h" = (
+            "../Documentation/Base/NSAttributedString.gsdoc"
+        );
+        "../Headers/Foundation/NSAutoreleasePool.h" = (
+            "../Documentation/Base/NSAutoreleasePool.gsdoc"
+        );
+        "../Headers/Foundation/NSBundle.h" = (
+            "../Documentation/Base/NSBundle.gsdoc",
+            "../Documentation/Base/Functions.gsdoc",
+            "../Documentation/Base/TypesAndConstants.gsdoc"
+        );
+        "../Headers/Foundation/NSCalendarDate.h" = (
+            "../Documentation/Base/NSCalendarDate.gsdoc"
+        );
+        "../Headers/Foundation/NSCharacterSet.h" = (
+            "../Documentation/Base/NSCharacterSet.gsdoc"
+        );
+        "../Headers/Foundation/NSClassDescription.h" = (
+            "../Documentation/Base/NSClassDescription.gsdoc",
+            "../Documentation/Base/TypesAndConstants.gsdoc"
+        );
+        "../Headers/Foundation/NSCoder.h" = (
+            "../Documentation/Base/NSCoder.gsdoc"
+        );
+    };
+```
+
+#### Header file &rarr; Source file
+
+```
+    source = {
+        "../Headers/Foundation/NSAffineTransform.h" = (
+            "NSAffineTransform.m"
+        );
+        "../Headers/Foundation/NSArchiver.h" = (
+            "NSUnarchiver.m",
+            "NSArchiver.m"
+        );
+        "../Headers/Foundation/NSArray.h" = (
+            "NSArray.m"
+        );
+        "../Headers/Foundation/NSAttributedString.h" = (
+            "NSAttributedString.m"
+        );
+        "../Headers/Foundation/NSAutoreleasePool.h" = (
+            "NSAutoreleasePool.m"
+        );
+    };
+```
+
+
+#### GSDoc file &rarr; Title
+```
+    title = {
+		Base = "GNUstep Base";
+		Functions = Functions;
+		NSAffineTransform = "NSAffineTransform.m";
+		NSArchiver = "NSArchiver class reference";
+		NSArray = "NSArray class reference";
+		NSAttributedString = "NSAttributedString class reference";
+		NSAutoreleasePool = "NSAutoreleasePool class reference";
+		NSBundle = "NSBundle class reference";
+		NSCalendarDate = "NSCalendarDate class reference";
+		NSCharacterSet = "NSCharacterSet class reference";
+		NSClassDescription = "NSClassDescription class reference";
+		NSCoder = "NSCoder class reference";
+		NSConnection = "NSConnection class reference";
+		NSData = "NSData class reference";
+		NSDate = "NSDate class reference";
+		NSDateFormatter = "NSDateFormatter class reference";
+		NSDebug = "NSDebug utilities reference";
+		NSDecimalNumber = "NSDecimalNumber class reference";
+		NSDictionary = "NSDictionary class reference";
+		TypesAndConstants = "Types and Constants";
+    };
+```
+
+
 ## End of document
 ```plist
 }

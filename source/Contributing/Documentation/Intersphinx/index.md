@@ -6,6 +6,7 @@ In order to link to a page without API documentation, you need to manually add a
 
 ## Todo
 
+* [ ] Script that converts a folder of files to an `object.inv`
 * [ ] Script that automatically converts `igsdoc` to `objects.inv`
 
 ## References

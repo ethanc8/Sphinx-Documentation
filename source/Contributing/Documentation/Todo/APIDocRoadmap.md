@@ -25,6 +25,17 @@ However, currently we have multiple options to create better API documentation.
 * Doxygen
     * Not the most intuitive output by default, but extremely customizable.
     * We could use Breathe or Exhale to convert to Sphinx, but right now they don't have good support for Objective-C, because Sphinx doesn't have good support.
+    * Also doesn't look good, but there's multiple great themes:
+        * [m.css theme](https://mcss.mosra.cz/documentation/doxygen/)
+            * [Example](https://doc.magnum.graphics/magnum/)
+        * [Doxygen Awesome theme w/ example](https://jothepro.github.io/doxygen-awesome-css/index.html#autotoc_md9)
+        * [Doxygen Materialized](https://2bndy5.github.io/doxygen-materialized/)
+        * [ADC theme](https://github.com/nnen/doxygen-theme)
+            * [Example](https://web.archive.org/web/20150809022718if_/http://milik.cz/~jan/cppapp/docs/namespacecppapp.html)
+        * [Metro theme](https://github.com/nafSadh/doxygen-theme-metro)
+            * [Example](http://nafsadh.github.io/scire/doc/d3/de4/classscire_1_1_a_container.html)
+        * [Bootstrap theme](https://github.com/Velron/doxygen-bootstrapped)
+            * [Example](https://biogearsengine.com/documentation/index.html)
 * Use HeaderDoc
 * Use XSDocGen based on HeaderDoc
     * [Github repository](https://github.com/macmade/XSDocgen)
