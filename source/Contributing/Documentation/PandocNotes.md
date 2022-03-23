@@ -1,6 +1,6 @@
 # Pandoc Notes
 
-`pandoc --wrap=none -f` *input format* `-t markdown_strict` *input file* `-o` *output file*
+`pandoc --wrap=none -t markdown_strict+pipe_tables+tex_math_dollars+footnotes+task_lists -f` *input format* *input file* `-o` *output file*
 
 Iterate over folder, converting HTML to Markdown and creating toctree:
 

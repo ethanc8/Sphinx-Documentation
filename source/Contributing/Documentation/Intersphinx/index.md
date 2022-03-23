@@ -30,3 +30,4 @@ Random projects have information about Intersphinx in their documentation:
 * [Creating a Custom Intersphinx Mapping for BeautifulSoup](https://github.com/svenevs/exhale/tree/master/docs/_intersphinx)
 * [`sphobjinv` tutorial](https://sphobjinv.readthedocs.io/en/stable/customfile.html)
 * [Example (potentially outdated)](https://github.com/bskinn/intersphinx-xlwsf)
+* [Example using Python `zlib` module](https://gist.github.com/shimizukawa/3978232)
