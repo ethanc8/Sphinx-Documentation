@@ -2,6 +2,7 @@
 
 * [OPENSTEP 4.1](https://www.nextop.de/NeXTAnswers/2469.html)
 * [OPENSTEP 4.2](https://www.nextop.de/NeXTAnswers/2500.html)
+    * [API documentation (PDF and HTML, online)](https://web.archive.org/web/19970412202347if_/http://www.next.com/Pubs/Documents/OPENSTEP/ApplicationKit/)
 * [Rhapsody 5.0 / DR1](https://developer.apple.com/library/archive/releasenotes/AppKit/RN-AppKitOlderNotes/index.html#DR1Notes)
 * [Rhapsody 5.1 / DR2](https://developer.apple.com/library/archive/releasenotes/AppKit/RN-AppKitOlderNotes/index.html#DR2Notes)
 * [Rhapsody 5.1 / DR2](https://developer.apple.com/library/archive/releasenotes/AppKit/RN-AppKitOlderNotes/index.html#DR2Notes)

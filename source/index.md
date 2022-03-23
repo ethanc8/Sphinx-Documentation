@@ -13,11 +13,3 @@ Tutorials/index.rst
 Reference/index.md
 Contributing/index.md
 ```
-
-## Indices and tables
-
-These might be completely off!
-
-* [](genindex)
-* [](modindex)
-* [](search)

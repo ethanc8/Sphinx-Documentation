@@ -1,4 +1,4 @@
-# Missing features
+# Cocoa Compatibility
 
 The current goal is for GNUstep Base to be compatible with Mac OS X 10.15 Catalina ([View header files](https://github.com/phracker/MacOSX-SDKs/tree/master/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers)).
 

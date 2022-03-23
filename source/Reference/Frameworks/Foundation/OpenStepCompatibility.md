@@ -9,10 +9,11 @@ Adam Fedor
 
 **Copyright:** (C) 2005 Free Software Foundation, Inc.
 
-<span id="001000000000">Classes</span>
-======================================
+## Overview
 
 This file documents the complance of all the classes in the GNUstep Base library. Note that the following is just a best guess as to the compliance of the classes. Each class was checked to make sure it implemented all the documented OpenStep methods and functions. In addition, extensive testing has been performed on the GNUstep Base Library, and it is believed, to the best of our knowledge, that it operates according to the OpenStep specification, with the caveat that there are always bugs in any implementation and there are most likely bugs in the current implementation that we are not aware of.
+
+## Classes
 
 The following classes conform to the OpenStep specification:
 

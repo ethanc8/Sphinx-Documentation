@@ -43,4 +43,8 @@ However, currently we have multiple options to create better API documentation.
 * Projects without much info
     * [ASDoc based on HeaderDoc](https://github.com/darricktheprogrammer/ASDoc)
     * [HeaderDoc to Markdown](https://github.com/MetamediaTechnology/objective-c-markdown-document-generator)
-    * 
+* Other non-Objective-C systems that might be good to take inspiration from
+    * [Swift Biome](https://github.com/kelvin13/swift-biome) - looks like DocC / Apple output
+        * [Example - Swift Stdlib](https://swiftinit.org/reference/swift)
+        * [Example - Swift JPEG](https://kelvin13.github.io/jpeg/)
+        * Has great search system!
