@@ -2,7 +2,7 @@
 
 ```{toctree}
 ---
-maxdepth: 2
+titlesonly: true
 caption: Tools
 ---     
 Make/index.md

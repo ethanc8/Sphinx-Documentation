@@ -2,11 +2,11 @@
 
 ```{toctree}
 ---
-maxdepth: 2
-caption: Contents
+titlesonly: true
 hidden: true
 ---
-Release Notes.md
+GNUstepReleaseNotes.md
+NewDocumentation/index.md
 ```
 
 GNUstep Make is a simple build system. 

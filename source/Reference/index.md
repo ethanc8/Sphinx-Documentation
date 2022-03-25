@@ -4,7 +4,7 @@ This section contains API references and other information about the frameworks 
 
 ```{toctree}
 ---
-maxdepth: 2
+titlesonly: true
 caption: Contents
 ---     
 Frameworks/index.md

@@ -16,4 +16,5 @@ WebKit/index.md
 Xcode/index.md
 Pantomime/index.md
 GWorkspace/index.md
+Renaissance/index.md
 ```
