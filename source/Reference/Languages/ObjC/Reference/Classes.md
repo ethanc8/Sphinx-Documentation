@@ -50,3 +50,27 @@ This works similary to forward-declaring a struct, but you cannot use the keywor
 ## Class implementation
 
 ## Methods
+
+## Class names in code
+
+You can use the name of a class in code as either a type name followed by a `*`, or an object to send a message to.
+
+GOOD:
+
+```objc
+NSString* myString = [[NSString alloc] init];
+```
+
+You cannot use the class name as an object of type `Class`:
+
+BAD:
+```objc
+Class myClass = NSObject;
+```
+
+Instead, send the method `+class` to the object:
+
+GOOD:
+```objc
+Class myClass = [NSObject class];
+```

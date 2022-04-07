@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Documentation/Cocoa Documentation"
+		},
+		{
+			"path": "../../../../../usr/GNUstep/Local/Library/Documentation"
+		},
+		{
+			"path": "../Install"
+		},
+		{
+			"path": "../../../../../usr/GNUstep/Local/Library/Headers"
+		},
+		{
+			"path": "../Swift/DocC"
+		}
+	],
+	"settings": {
+		"esbonio.server.enabled": true
+	}
+}

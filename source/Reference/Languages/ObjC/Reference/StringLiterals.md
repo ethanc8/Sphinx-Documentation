@@ -50,20 +50,6 @@ struct {
     /**
      * Data pointer; format described by the bottom bits of `flags`.
      */
-```
-then
-```objc
-    const char * const data;
-```
-or
-```objc
     const char * const str;
-```
-or
-```objc
-    const void* data;
-```
-then
-```objc
 }
 ```
