@@ -1,0 +1,233 @@
+{
+    "(DocSourceParsing)" = (
+	"-initWithSourceFile:additionalParserFiles:",
+	"-setWeaver:",
+	"-weaver",
+	"-parseAndWeave"
+    );
+    "(DocWeaving)" = (
+	"-weaveClassNamed:superclassName:",
+	"-weaveProtocolNamed:",
+	"-weaveCategoryNamed:className:isInformalProtocol:",
+	"-weaveHeader:",
+	"-weaveMethod:",
+	"-weaveFunction:",
+	"-weaveMacro:",
+	"-weaveConstant:",
+	"-weaveIVar:",
+	"-weaveProperty:",
+	"-weaveOtherDataType:",
+	"-finishWeaving",
+	"-currentHeader"
+    );
+    "(GSDocParserDelegate)" = (
+	"-parser:startElement:withAttributes:",
+	"-parser:endElement:withContent:"
+    );
+    DocCDataType = (
+	"-GSDocElementName",
+	"-weaveSelector"
+    );
+    DocCategoryPage = (
+	"-addMethodGroup:"
+    );
+    DocConstant = (
+	"-GSDocElementName",
+	"-weaveSelector",
+	"-parseProgramComponent:"
+    );
+    DocDeclarationReorderer = (
+	"-initWithWeaver:orderedSymbols:"
+    );
+    DocDescriptionParser = (
+	"-validTagsBeforeMainDescription",
+	"-validTagsAfterMainDescription",
+	"-parse:",
+	"-description",
+	"-task",
+	"-taskUnit",
+	"-returnDescription",
+	"-descriptionForParameter:"
+    );
+    DocElement = (
+	"+defaultTask",
+	"+forthcomingDescription",
+	"-appendToRawDescription:",
+	"-rawDescription",
+	"-addInformationFrom:",
+	"-insertLinksWithDocIndex:forString:",
+	"-HTMLDescriptionWithDocIndex:",
+	"-HTMLRepresentation",
+	"-GSDocElementName",
+	"-weaveSelector"
+    );
+    DocElementGroup = (
+	"-initWithHeader:subgroupKey:",
+	"-addElement:"
+    );
+    DocFunction = (
+	"-GSDocElementName",
+	"-weaveSelector",
+	"-parseProgramComponent:"
+    );
+    DocGraphWriter = (
+	"-cleanupGraph",
+	"-addNode:",
+	"-addEdge:to:",
+	"-setAttribute:with:on:",
+	"-setGraphAttribute:with:",
+	"-layout",
+	"-generateFile:withFormat:",
+	"-generateWithFormat:"
+    );
+    DocHTMLElement = (
+	"+blankElement",
+	"+elementWithName:",
+	"-initWithName:",
+	"-id:",
+	"-class:",
+	"-name:",
+	"-addText:",
+	"-add:",
+	"-with:",
+	"-and:",
+	"-content",
+	"-description"
+    );
+    "DocHTMLElement(CommonUseCases)" = (
+	"-class:with:",
+	"-class:with:and:",
+	"-class:with:and:and:",
+	"-with:and:",
+	"-with:and:and:",
+	"-with:and:and:and:",
+	"-id:with:",
+	"-id:with:and:",
+	"-id:with:and:and:"
+    );
+    DocHeader = (
+	"-addAuthor:",
+	"-addAdoptedProtocolName:",
+	"-HTMLOverviewRepresentation",
+	"-HTMLRepresentation",
+	"-HTMLRepresentationWithTitleBlockElement:",
+	"-HTMLTOCRepresentation"
+    );
+    DocIVar = (
+	"-parseProgramComponent:"
+    );
+    DocIndex = (
+	"+currentIndex",
+	"+setCurrentIndex:",
+	"-init",
+	"-setProjectRef:forSymbolName:ofKind:",
+	"-projectSymbolNamesOfKind:",
+	"-symbolKinds",
+	"-regenerate",
+	"-linkForSymbolName:ofKind:",
+	"-linkWithName:forSymbolName:ofKind:",
+	"-linkForClassName:",
+	"-linkForProtocolName:",
+	"-linkForGSDocRef:",
+	"-linkForLocalMethodRef:relativeTo:",
+	"-linkWithName:ref:anchor:",
+	"-refFileExtension",
+	"-elementForSymbolName:ofKind:",
+	"-setElement:forSymbolName:ofKind:"
+    );
+    DocMacro = (
+	"-GSDocElementName",
+	"-weaveSelector",
+	"-parseProgramComponent:"
+    );
+    DocMethod = (
+	"-isClassMethod",
+	"-refMarkup",
+	"-refMarkupWithClassName:",
+	"-refMarkupWithProtocolName:",
+	"-parseProgramComponent:"
+    );
+    DocMethodGroupDescriptionParser = (
+	"-group",
+	"-abstract"
+    );
+    DocPage = (
+	"-initWithDocumentFile:templateFile:menuFile:",
+	"-name",
+	"-writeToURL:",
+	"-setHeader:",
+	"-header",
+	"-addSubheader:",
+	"-addMethod:",
+	"-addFunction:",
+	"-addConstant:",
+	"-addMacro:",
+	"-addOtherDataType:",
+	"-addIVar:",
+	"-addProperty:",
+	"-HTMLString",
+	"-mainContentHTMLRepresentations",
+	"-HTMLRepresentationForHeader:",
+	"-HTMLOverviewRepresentationForGroupNamed:",
+	"-HTMLRepresentationWithTitle:elements:HTMLRepresentationSelector:groupSeparator:"
+    );
+    DocPageWeaver = (
+	"+parserClassForFileType:",
+	"+markdownFileTypes",
+	"+additionalSourceFileTypes",
+	"-initWithParserSourceDirectory:fileTypes:rawSourceDirectories:additionalSourceFiles:templateFile:",
+	"-initWithSourceFiles:templateFile:",
+	"-setMenuFile:",
+	"-setExternalMappingFile:",
+	"-pathForRawSourceFileNamed:",
+	"-templateFileForSourceFile:",
+	"-weaveAllPages",
+	"-weaveCurrentSourcePages",
+	"-weaveNewPage",
+	"-weaveOverviewFile",
+	"-weavePageForCategoryNamed:className:",
+	"-currentSourceFile",
+	"-currentPage",
+	"-currentClassName",
+	"-currentHeader"
+    );
+    DocParameter = (
+	"+parameterWithName:type:",
+	"-initWithName:type:",
+	"-parseType:",
+	"-HTMLRepresentationWithParentheses:"
+    );
+    DocProperty = (
+	"-parseProgramComponent:"
+    );
+    DocSubroutine = (
+	"-returnParameter",
+	"-addParameter:",
+	"-parameters",
+	"-HTMLAddendumRepresentation"
+    );
+    DocVariable = (
+	"-GSDocElementName",
+	"-weaveSelector",
+	"-parseProgramComponent:"
+    );
+    GSDocParser = (
+	"-initWithSourceFile:additionalParserFiles:",
+	"-setWeaver:",
+	"-weaver",
+	"-parseAndWeave",
+	"-newContent",
+	"-elementClassForName:",
+	"-parserDelegate",
+	"-pushParserDelegate:",
+	"-popParserDelegate",
+	"-indentSpaces",
+	"-currentAttributes",
+	"-argTypeFromArgsAttributes:",
+	"-isInformalProtocolSymbolName:"
+    );
+    "NSString(DocGenerator)" = (
+	"-trimmedString",
+	"-stringByTrimmingWhitespacesAndNewlinesByLine"
+    );
+}

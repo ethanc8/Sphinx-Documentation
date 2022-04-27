@@ -1,0 +1,633 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base Additions</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>Macros</h2><div class="meta">
+<p class="metadesc"><em>All the public Macros in GNUstep Base Additions</em></p><table></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div class="macros">
+<h3>Macros</h3><h4>Default</h4><div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> ASSIGN</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">value</span></span>)</span></dt>
+<dd><div class="methodDescription">
+ASSIGN(<var>object</var>,value) assigns the <var>value</var> to the <var>object</var> with appropriate retain and release operations. <br></br> Use this to avoid retain/release errors.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> ASSIGNCOPY</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">value</span></span>)</span></dt>
+<dd><div class="methodDescription">
+ASSIGNCOPY(<var>object</var>,value) assigns a copy of the <var>value</var> to the <var>object</var> with release of the original. <br></br> Use this to avoid retain/release errors.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> ASSIGNMUTABLECOPY</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">value</span></span>)</span></dt>
+<dd><div class="methodDescription">
+ASSIGNMUTABLECOPY(<var>object</var>,value) assigns a mutable copy of the <var>value</var> to the <var>object</var> with release of the original. <br></br> Use this to avoid retain/release errors.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> AUTORELEASE</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Basic autorelease operation... calls  [NSObject -autorelease]  <br></br> Does nothing when ARC is in use.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> CHECK_INDEX_RANGE_ERROR</span>(<span class="parameter"><span class="type"> </span><span class="arg">INDEX</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">OVER</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Checks whether <var>INDEX</var> is strictly less than <var>OVER</var> (within C array space). <var>INDEX</var> and <var>OVER</var> must be <strong>unsigned</strong> integers (NSUInteger).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> CREATE_AUTORELEASE_POOL</span>(<span class="parameter"><span class="type"> </span><span class="arg">X</span></span>)</span></dt>
+<dd><div class="methodDescription">
+DEPRECATED... use ENTER_POOL and LEAVE_POOL and make sure your code does not break/continue/return out of the section of code.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> DEALLOC</span>()</span></dt>
+<dd><div class="methodDescription">
+DEALLOC calls the superclass implementation of dealloc, unless ARC is in use (in which case it does nothing).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> DESTROY</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>)</span></dt>
+<dd><div class="methodDescription">
+DESTROY()  is a release operation which also sets the variable to be a <var>nil</var> pointer for tidiness - we can't accidentally use a DESTROYED <var>object</var> later. It also makes sure to set the variable to <var>nil</var> before releasing the <var>object</var> - to avoid side-effects of the release trying to reference the <var>object</var> being released through the variable.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> ENTER_POOL</span>()</span></dt>
+<dd><div class="methodDescription">
+ENTER_POOL creates an autorelease pool and places subsequent code in a block. <br></br> The block must be terminated with a corresponding LEAVE_POOL. <br></br> You should not break, continue, or return from such a block of code (to do so could leak an autorelease pool and give objects a longer lifetime than they ought to have. If you wish to leave the block of code early, you should ensure that doing so causes the autorelease pool outside the block to be released promptly (since that will implicitly release the pool created at the start of the block too).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GSLocalizedStaticString</span>(<span class="parameter"><span class="type"> </span><span class="arg">key</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">comment</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> This function (macro) is a GNUstep extensions, and it is used to localize static strings. Here is an example of a static string: </p> <p> <var> NSString *message = @"Hi there";... some code... NSLog (message); </var> </p> <p> This string can not be localized using the standard openstep functions/macros. By using this gnustep extension, you can localize it as follows: </p> <p> <var> NSString *message = GSLocalizedStaticString (@"Hi there", @"Greeting");... some code... NSLog (NSLocalizedString (message, @"")); </var> </p> <p> When the tools generate the <var>Localizable.strings</var> file from the source code, they will ignore the <var>NSLocalizedString</var> call while they will extract the string (and the <var>comment</var>) to localize from the <var>GSLocalizedStaticString</var> call. </p> <p> When the code is compiled, instead, the <var>GSLocalizedStaticString</var> call is ignored (discarded, it is a macro which simply expands to <var><var>key</var></var>), while the <var>NSLocalizedString</var> will actually look up the string for translation in the <var>Localizable.strings</var> file. </p> <p> Please note that there is currently no macro/function to localize static strings using different tables. If you need that functionality, you have either to prepare the localization tables by hand, or to rewrite your code in such a way as not to use static strings. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_RANGE_CHECK</span>(<span class="parameter"><span class="type"> </span><span class="arg">RANGE</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">SIZE</span></span>)</span></dt>
+<dd><div class="methodDescription">
+To be used inside a method for making sure that a range does not specify anything outside the size of an array/string. Raises exception if range extends beyond [0,size]. Size must be an <strong>unsigned</strong> integer (NSUInteger).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> LEAVE_POOL</span>()</span></dt>
+<dd><div class="methodDescription">
+LEAVE_POOL terminates a block of code started with ENTER_POOL.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> RECREATE_AUTORELEASE_POOL</span>(<span class="parameter"><span class="type"> </span><span class="arg">X</span></span>)</span></dt>
+<dd><div class="methodDescription">
+DEPRECATED... use ENTER_POOL and LEAVE_POOL and make sure your code does not break/continue/return out of the section of code.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> RELEASE</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Basic release operation... calls  [NSObject -release]  <br></br> Does nothing when ARC is in use.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> RETAIN</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Basic retain operation... calls  [NSObject -retain]  <br></br> Does nothing when ARC is in use.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> TEST_AUTORELEASE</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Tested autorelease - only invoke the objective-c method if the receiver is not <var>nil</var>. <br></br> Does nothing when ARC is in use.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> TEST_RELEASE</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Tested release - only invoke the objective-c method if the receiver is not <var>nil</var>. <br></br> Does nothing when ARC is in use.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> TEST_RETAIN</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Tested retain - only invoke the objective-c method if the receiver is not <var>nil</var>. <br></br> Does nothing when ARC is in use.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> _</span>(<span class="parameter"><span class="type"> </span><span class="arg">X</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> This function (macro) is a GNUstep extension. </p> <p> <var>_(@"My string to translate")</var> </p> <p> is basically equivalent to </p> <p> <var> NSLocalizedString(@"My string to translate", @"") </var> </p> <p> It is useful when you need to translate an application very quickly, as you just need to enclose all strings inside <var>_()</var>. But please note that when you use this macro, you are not taking advantage of comments for the translator, so consider using <var>NSLocalizedString</var> instead when you need a comment. </p> <p> You may define GS_LOCALISATION_BUNDLE_ID to the bundle identifier of the bundle which is to provide the localisation information. <br></br> This can be used when compiling a single file by specifying something like '-D GS_LOCALISATION_BUNDLE_ID=$(FRAMEWORK_NAME)' in your make file. <br></br> If this is not defined, the localisation is provided by your application's main bundle exactly like the NSLocalizedString function. </p> <p> Alternatively you may define GS_LOCALISATION_BUNDLE to be the bundle to be used to prvide the localisation information. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> __</span>(<span class="parameter"><span class="type"> </span><span class="arg">X</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> This function (macro) is a GNUstep extension. </p> <p> <var>__(@"My string to translate")</var> </p> <p> is exactly the same as </p> <p> <var> GSLocalizedStaticString(@"My string to translate", @"") </var> </p> <p> It is useful when you need to translate an application very quickly. You would use it as follows for static strings: </p> <p> <var> NSString *message = __(@"Hello there");... more code... NSLog (_(messages)); </var> </p> <p> But please note that when you use this macro, you are not taking advantage of comments for the translator, so consider using <var>GSLocalizedStaticString</var> instead when you need a comment. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> CALL_BLOCK</span>(<span class="parameter"><span class="type"> </span><span class="arg">block</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Calls a <var>block</var>. Works irrespective of whether the compiler supports blocks.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> CALL_BLOCK_NO_ARGS</span>(<span class="parameter"><span class="type"> </span><span class="arg">block</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Calls a <var>block</var> without arguments.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_API_LATEST</span>()</span></dt>
+<dd><div class="methodDescription">
+A constant to represent a feature which is still present in the latest version. This is the highest possible version number. <br></br> eg. <br></br> #if  OS_API_VERSION  (GS_API_MACOSX, GS_API_LATEST) <br></br> denotes code present from the initial MacOS-X version onwards.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_API_MACOSX</span>()</span></dt>
+<dd><div class="methodDescription">
+The version number of the first MacOS-X implementation. <br></br> eg. <br></br> #if  OS_API_VERSION  (GS_API_MACOSX, GS_API_LATEST) <br></br> denotes code present from the initial MacOS-X version onwards.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_API_NONE</span>()</span></dt>
+<dd><div class="methodDescription">
+A constant which is the lowest possible version number (0) so that when used as the removal version (second argument of the GS_API_VERSION or OS_API_VERSION macro) represents a feature which is not present in any version. <br></br> eg. <br></br> #if  OS_API_VERSION  (GS_API_NONE, GS_API_NONE) <br></br> denotes code not present in OpenStep/OPENSTEP/MacOS-X<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_API_OPENSTEP</span>()</span></dt>
+<dd><div class="methodDescription">
+The version number of the first OPENSTEP implementation. <br></br> eg. <br></br> #if  OS_API_VERSION  (GS_API_OPENSTEP, GS_API_LATEST) <br></br> denotes code present from the initial OPENSTEP version onwards.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_API_OSSPEC</span>()</span></dt>
+<dd><div class="methodDescription">
+The version number of the initial OpenStep specification. <br></br> eg. <br></br> #if  OS_API_VERSION  (GS_API_OSSPEC, GS_API_LATEST) <br></br> denotes code present from the OpenStep specification onwards.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_API_VERSION</span>(<span class="parameter"><span class="type"> </span><span class="arg">ADD</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">REM</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Macro to check a defined GNUstep version number (GS_GNUSTEP_V) against the supplied arguments. Returns true if no GNUstep version is specified, or if <var>ADD</var> &lt;= version &lt; <var>REM</var>, where <var>ADD</var> is the version number at which a feature guarded by the macro was introduced and <var>REM</var> is the version number at which it was removed. </p> <p> The version number arguments are six digit integers where the first two digits are the major version number, the second two are the minor version number and the last two are the subminor number (all left padded with a zero where necessary). However, for convenience you can also use the predefined constants...  GS_API_NONE  ,  GS_API_LATEST  , </p> <p> Also see  OS_API_VERSION  </p> <p> NB. If you are changing the API (eg adding a new feature) you need to control the visibility io the new header file code using <br></br> <var> #if GS_API_VERSION(<var>ADD</var>,GS_API_LATEST) </var> <br></br> where <var><var>ADD</var></var> is the version number of the next minor release after the most recent one. <br></br> As a general principle you should <em>not</em> change the API with changing subminor version numbers... as that tends to confuse people (though Apple has sometimes done it). </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> OS_API_VERSION</span>(<span class="parameter"><span class="type"> </span><span class="arg">ADD</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">REM</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Macro to check a defined OpenStep/OPENSTEP/MacOS-X version against the supplied arguments. Returns true if no version is specified, or if <var>ADD</var> &lt;= version &lt; <var>REM</var>, where <var>ADD</var> is the version number at which a feature guarded by the macro was introduced and <var>REM</var> is the version number at which it was removed. </p> <p> The version number arguments are six digit integers where the first two digits are the major version number, the second two are the minor version number and the last two are the subminor number (all left padded with a zero where necessary). However, for convenience you can also use any of several predefined constants...  GS_API_NONE  ,  GS_API_LATEST  ,  GS_API_OSSPEC  ,  GS_API_OPENSTEP  ,  GS_API_MACOSX  </p> <p> Also see  GS_API_VERSION  </p> <p> For OSX compatibility, this macro also supports the use of Apple's symbolic constants for version numbering. Their contants are currently four digit values (two digits for the major version, one for the minor, and one for the subminor). </p> <p> The Apple compatibility version macros are currently:  MAC_OS_X_VERSION_10_0  ,  MAC_OS_X_VERSION_10_1  ,  MAC_OS_X_VERSION_10_2  ,  MAC_OS_X_VERSION_10_3  ,  MAC_OS_X_VERSION_10_4  ,  MAC_OS_X_VERSION_10_5  ,  MAC_OS_X_VERSION_10_6  ,  MAC_OS_X_VERSION_10_7  ,  MAC_OS_X_VERSION_10_8   MAC_OS_X_VERSION_10_9  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_MAX_OBJECTS_FROM_STACK</span>()</span></dt>
+<dd><div class="methodDescription">
+The number of objects to try to get from varargs into an array on the stack... if there are more than this, use the heap. NB. This MUST be a multiple of 2<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_USEIDLIST</span>(<span class="parameter"><span class="type"> </span><span class="arg">firstObject</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">code</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> This is a macro designed to minimise the use of memory allocation and deallocation when you need to work with a vararg list of objects. <br></br> The objects are unpacked from the vararg list into a 'C' array and then a <var>code</var> fragment you specify is able to make use of them before that 'C' array is destroyed. </p> <p> The <var>firstObject</var> argument is the name of the formal parameter in your method or function which precedes the ',...' denoting variable args. </p> <p> The <var>code</var> argument is a piece of objective-c <var>code</var> to be executed to make use of the objects stored in the 'C' array. <br></br> When this <var>code</var> is called the <strong>unsigned</strong> integer '__count' will contain the number of objects unpacked, and the pointer '__objects' will point to the unpacked objects, ie. <var>firstObject</var> followed by the vararg arguments up to (but not including) the first <var>nil</var>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_USEIDPAIRLIST</span>(<span class="parameter"><span class="type"> </span><span class="arg">firstObject</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">code</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> This is a macro designed to minimise the use of memory allocation and deallocation when you need to work with a vararg list of objects. <br></br> The objects are unpacked from the vararg list into two 'C' arrays and then a <var>code</var> fragment you specify is able to make use of them before that 'C' array is destroyed. </p> <p> The <var>firstObject</var> argument is the name of the formal parameter in your method or function which precedes the ',...' denoting variable args. </p> <p> The <var>code</var> argument is a piece of objective-c <var>code</var> to be executed to make use of the objects stored in the 'C' arrays. <br></br> When this <var>code</var> is called the <strong>unsigned</strong> integer '__count' will contain the number of objects unpacked, the pointer '__objects' will point to the first object in each pair, and the pointer '__pairs' will point to an array containing the second halves of the pairs of objects whose first halves are in '__objects'. <br></br> This lets you pack a list of the form 'key, value, key, value,...' into an array of keys and an array of values. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GSOnceFLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Macro to log a message only the first time it is encountered. <br></br> Not entirely thread safe... but that's not really important, it just means that it's possible for the message to be logged more than once if two threads call it simultaneously when it has not already been called. <br></br> Use this from inside a function. Pass an NSString as a <var>format</var>, followed by zero or more arguments for the <var>format</var> string. Example: GSOnceFLog(@"This function is deprecated, use another");<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GSOnceMLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Macro to log a message only the first time it is encountered. <br></br> Not entirely thread safe... but that's not really important, it just means that it's possible for the message to be logged more than once if two threads call it simultaneously when it has not already been called. <br></br> Use this from inside a method. Pass an NSString as a <var>format</var> followed by zero or more arguments for the <var>format</var> string. <br></br> Example: GSOnceMLog(@"This method is deprecated, use another");<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSDebugFLLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">level</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro is like  NSDebugLLog()  but includes the name and location of the function in which the macro is used as part of the log output.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSDebugFLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro is a shorthand for  NSDebugFLLog()  using then default debug level... 'dflt'<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSDebugFRLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">msg</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro saves the name and location of the function in which the macro is used, along with a <strong>short</strong> string <var>msg</var> as the tag associated with a recorded <var>object</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSDebugLLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">level</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p>  NSDebugLLog()  is the basic debug logging macro used to display log messages using  NSLog()  , if debug logging was enabled at compile time and the appropriate logging <var>level</var> was set at runtime. </p> <p> Debug logging which can be enabled/disabled by defining GSDIAGNOSE when compiling and also setting values in the mutable set which is set up by NSProcessInfo. GSDIAGNOSE is defined automatically unless diagnose=no is specified in the make arguments. </p> <p> NSProcess initialises a set of strings that are the names of active debug levels using the '--GNU-Debug=...' command line argument. Each command-line argument of that form is removed from <var>NSProcessInfo</var> 's list of arguments and the variable part (...) is added to the set. This means that as far as the program proper is concerned, it is running with the same arguments as if debugging had not been enabled. </p> <p> For instance, to debug the NSBundle class, run your program with '--GNU-Debug=NSBundle' You can of course supply multiple '--GNU-Debug=...' arguments to output debug information on more than one thing. </p> <p> NSUserDefaults also adds debug levels from the array given by the GNU-Debug key... but these values will not take effect until the  +standardUserDefaults  method is called... so they are useless for debugging NSUserDefaults itself or for debugging any code executed before the defaults system is used. </p> <p> To embed debug logging in your code you use the  NSDebugLLog()  or  NSDebugLog()  macro.  NSDebugLog()  is just  NSDebugLLog()  with the debug <var>level</var> set to 'dflt'. So, to activate debug statements that use  NSDebugLog()  , you supply the '--GNU-Debug=dflt' argument to your program. </p> <p> You can also change the active debug levels under your programs control - NSProcessInfo has a  [-debugSet]  method that returns the mutable set that contains the active debug levels - your program can modify this set. </p> <p> Two debug levels have a special effect - 'dflt' is the <var>level</var> used for debug logs statements where no debug <var>level</var> is specified, and 'NoWarn' is used to *disable* warning messages. </p> <p> As a convenience, there are four more logging macros you can use -  NSDebugFLog()  ,  NSDebugFLLog()  ,  NSDebugMLog()  and  NSDebugMLLog()  . These are the same as the other macros, but are specifically for use in either functions or methods and prepend information about the file, line and either function or class/method in which the message was generated. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSDebugLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro is a shorthand for  NSDebugLLog()  using then default debug level... 'dflt'<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSDebugMLLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">level</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro is like  NSDebugLLog()  but includes the name and location of the <em>method</em> in which the macro is used as part of the log output.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSDebugMLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro is a shorthand for  NSDebugMLLog()  using then default debug level... 'dflt'<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSDebugMRLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">object</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">msg</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro saves the name and location of the method in which the macro is used, along with a <strong>short</strong> string <var>msg</var> as the tag associated with a recorded <var>object</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSWarnFLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro is like  NSWarnLog()  but includes the name and location of the <em>function</em> in which the macro is used as part of the log output.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSWarnLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p>  NSWarnLog()  is the basic debug logging macro used to display warning messages using  NSLog()  , if warn logging was not disabled at compile time and the disabling logging level was not set at runtime. </p> <p> Warning messages which can be enabled/disabled by defining GSWARN when compiling. </p> <p> You can also disable these messages at runtime by supplying a '--GNU-Debug=NoWarn' argument to the program, or by adding 'NoWarn' to the user default array named 'GNU-Debug'. </p> <p> These logging macros are intended to be used when the software detects something that it not necessarily fatal or illegal, but looks like it might be a programming error. eg. attempting to remove 'nil' from an NSArray, which the Spec/documentation does not prohibit, but which a well written program should not be attempting (since an NSArray object cannot contain a 'nil'). </p> <p> NB. The 'warn=yes' option is understood by the GNUstep make package to mean that GSWARN should be defined, and the 'warn=no' means that GSWARN should be undefined. Default is to define it. </p> <p> To embed debug logging in your code you use the  NSWarnLog()  macro. </p> <p> As a convenience, there are two more logging macros you can use -  NSWarnFLog()  , and  NSWarnMLog()  . These are specifically for use in either functions or methods and prepend information about the file, line and either function or class/method in which the message was generated. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> NSWarnMLog</span>(<span class="parameter"><span class="type"> </span><span class="arg">format</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">args</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This macro is like  NSWarnLog()  but includes the name and location of the <em>method</em> in which the macro is used as part of the log output.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"> </span><span class="selector"> GS_INITIALIZED_LOCK</span>(<span class="parameter"><span class="type"> </span><span class="arg">IDENT</span></span>, <span class="parameter"><span class="type"> </span><span class="arg">CLASSNAME</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns <var>IDENT</var> which will be initialized to an instance of a <var>CLASSNAME</var> in a thread safe manner. If <var>IDENT</var> has been previously initialized this macro merely returns <var>IDENT</var>. <var>IDENT</var> is considered uninitialized, if it contains <var>nil</var> . <var>CLASSNAME</var> must be either NSLock, NSRecursiveLock or one of their subclasses. See  [NSLock +newLockAt:]  for details. This macro is intended for code that cannot insure that a lock can be initialized in thread safe manner otherwise. 
+<pre>
+ NSLock *my_lock = nil;
+
+ void function (void)
+ {
+   [GS_INITIALIZED_LOCK(my_lock, NSLock) lock];
+   do_work ();
+   [my_lock unlock];
+ }
+
+ </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base Additions</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="GCArray.html#GCArray">GCArray</a></li><li><a href="GCDictionary.html#GCDictionary">GCDictionary</a></li><li><a href="GCMutableArray.html#GCMutableArray">GCMutableArray</a></li><li><a href="GCMutableDictionary.html#GCMutableDictionary">GCMutableDictionary</a></li><li><a href="GCObject.html#GCObject">GCObject</a></li><li><a href="GSHTMLParser.html#GSHTMLParser">GSHTMLParser</a></li><li><a href="GSHTMLSAXHandler.html#GSHTMLSAXHandler">GSHTMLSAXHandler</a></li><li><a href="GSLazyLock.html#GSLazyLock">GSLazyLock</a></li><li><a href="GSLazyRecursiveLock.html#GSLazyRecursiveLock">GSLazyRecursiveLock</a></li><li><a href="GSSAXHandler.html#GSSAXHandler">GSSAXHandler</a></li><li><a href="GSTLSCertificateList.html#GSTLSCertificateList">GSTLSCertificateList</a></li><li><a href="GSTLSCredentials.html#GSTLSCredentials">GSTLSCredentials</a></li><li><a href="GSTLSDHParams.html#GSTLSDHParams">GSTLSDHParams</a></li><li><a href="GSTLSObject.html#GSTLSObject">GSTLSObject</a></li><li><a href="GSTLSPrivateKey.html#GSTLSPrivateKey">GSTLSPrivateKey</a></li><li><a href="GSTLSSession.html#GSTLSSession">GSTLSSession</a></li><li><a href="GSTreeSAXHandler.html#GSTreeSAXHandler">GSTreeSAXHandler</a></li><li><a href="GSXMLAttribute.html#GSXMLAttribute">GSXMLAttribute</a></li><li><a href="GSXMLDocument.html#GSXMLDocument">GSXMLDocument</a></li><li><a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a></li><li><a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a></li><li><a href="GSXMLParser.html#GSXMLParser">GSXMLParser</a></li><li><a href="GSXMLRPC.html#GSXMLRPC">GSXMLRPC</a></li><li><a href="GSXPathBoolean.html#GSXPathBoolean">GSXPathBoolean</a></li><li><a href="GSXPathContext.html#GSXPathContext">GSXPathContext</a></li><li><a href="GSXPathNodeSet.html#GSXPathNodeSet">GSXPathNodeSet</a></li><li><a href="GSXPathNumber.html#GSXPathNumber">GSXPathNumber</a></li><li><a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a></li><li><a href="GSXPathString.html#GSXPathString">GSXPathString</a></li></ul></div>
+
+<ul><li><a href="GSMime.html">GSMime (buggy documentation)</a></li></ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="GCObjectCategories.html#GCObject(Extra)">GCObject</a></li><li><a href="GSXMLDocumentCategories.html#GSXMLDocument(XSLT)">GSXMLDocument</a></li><li><a href="GSXMLRPCCategories.html#GSXMLRPC(Delegate)">GSXMLRPC</a></li><li><a href="NSArrayCategories.html#NSArray(GNUstepBase)">NSArray</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(GNUstepBase)">NSAttributedString</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstepBase)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GNUstepBase)">NSCalendarDate</a></li><li><a href="NSDataCategories.html#NSData(GNUstepBase)">NSData</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepBase)">NSFileHandle</a></li><li><a href="NSLockCategories.html#NSLock(GNUstepBase)">NSLock</a></li><li><a href="NSMutableStringCategories.html#NSMutableString(GNUstepBase)">NSMutableString</a></li><li><a href="NSNumberCategories.html#NSNumber(GNUstepBase)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstepBase)">NSObject</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstepBase)">NSProcessInfo</a></li><li><a href="NSRecursiveLockCategories.html#NSRecursiveLock(GNUstepBase)">NSRecursiveLock</a></li><li><a href="NSStringCategories.html#NSString(GNUstepBase)">NSString</a></li><li><a href="NSTaskCategories.html#NSTask(GNUstepBase)">NSTask</a></li><li><a href="NSThreadCategories.html#NSThread(GNUstepBase)">NSThread</a></li><li><a href="NSURLCategories.html#NSURL(GNUstepBase)">NSURL</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

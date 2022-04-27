@@ -1,0 +1,675 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui Additions</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h1>GSDisplayServer categories documentation</h1><div class="meta">
+<p class="metadesc"><em>All the public Categories which extend <a href="GSDisplayServer.html#GSDisplayServer">GSDisplayServer</a> class.</em></p><table></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div class="methodGroup">
+<div class="header">
+<h2>EventOps</h2>GSDisplayServer (EventOps)<div class="meta">
+<p class="metadesc"><em>Abstract display server class.</em></p><table><tr><th>Authors</th><td>Adam Fedor </td></tr><tr><th>Declared in</th><td>GNUstepGUI/GSDisplayServer.h</td></tr></table></div>
+</div>
+<div>
+<h3>Default</h3><div class="method">
+<a name="-[GSDisplayServer(EventOps)_getEventMatchingMask:beforeDate:inMode:dequeue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSEvent *)</span><span class="selector"> getEventMatchingMask: </span><span class="parameter"><span class="type">(unsigned)</span><span class="arg">mask</span></span><span class="selector"> beforeDate: </span><span class="parameter"><span class="type">(NSDate *)</span><span class="arg">limit</span></span><span class="selector"> inMode: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">mode</span></span><span class="selector"> dequeue: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Scans through the event queue to find the first event whose type matches <var>mask</var>. If no event is found, then the current run loop is run in the specified <var>mode</var> to allow more events to arrive. <br></br> If a matching event is found, it is returned and either removed from or left in the queue according to <var>flag</var>. <br></br> If no matching event is found and the <var>limit</var> date is reached, this method returns <var>nil</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(EventOps)_discardEventsMatchingMask:beforeEvent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> discardEventsMatchingMask: </span><span class="parameter"><span class="type">(unsigned)</span><span class="arg">mask</span></span><span class="selector"> beforeEvent: </span><span class="parameter"><span class="type">(NSEvent *)</span><span class="arg">limit</span></span></span></dt>
+<dd><div class="methodDescription">
+Steps through the event queue and removes all events whose timestamp is earlier than that of <var>limit</var> wand which match the supplied <var>mask</var> of event types.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(EventOps)_postEvent:atStart:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> postEvent: </span><span class="parameter"><span class="type">(NSEvent *)</span><span class="arg">anEvent</span></span><span class="selector"> atStart: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Posts an event to the event queue. The value of <var>flag</var> determines whether the event is inserted at the start of the queue or appended at the end.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(EventOps)__printEventQueue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> _printEventQueue </span></span></dt>
+<dd><div class="methodDescription">
+<em>Warning</em> the underscore at the start of the name of this method indicates that it is private, for internal use only, and you should not use the method in your code.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="methodGroup">
+<div class="header">
+<h2>WindowOps</h2>GSDisplayServer (WindowOps)<div class="meta">
+<p class="metadesc"><em>Abstract display server class.</em></p><table><tr><th>Authors</th><td>Adam Fedor </td></tr><tr><th>Declared in</th><td>GNUstepGUI/GSDisplayServer.h</td></tr></table></div>
+</div>
+<div>
+<h3>Default</h3><div class="method">
+<a name="-[GSDisplayServer(WindowOps)__setWindowOwnedByServer:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> _setWindowOwnedByServer: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Warning</em> the underscore at the start of the name of this method indicates that it is private, for internal use only, and you should not use the method in your code. <br></br> Tells the receiver that it owns the window described by <var>win</var>. Concrete subclasses must call this function when creating a window. Do not call this method in any other case, particularly for a window that has already been created<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_window:::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(int)</span><span class="selector"> window: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">frame</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(NSBackingStoreType)</span><span class="arg">type</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(unsigned int)</span><span class="arg">style</span></span></span></dt>
+<dd><div class="methodDescription">
+Creates a window whose location and size is described by <var>frame</var> and whose backing store is described by <var>type</var>. This window is not mapped to the screen by this call. <br></br> Note that <var>frame</var> is the <var>frame</var> of the entire GNUstep window including borders, titlebar and other standard decorations. <br></br> If  -handlesWindowDecorations  returns <var>YES</var>, the backend will produce (and return the identifier of) a smaller drawable window inside this decorated area. <br></br> Use  -styleoffsets:::::  to determine the extent of the decorations and determine the size of the drawable area inside them.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_window::::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(int)</span><span class="selector"> window: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">frame</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(NSBackingStoreType)</span><span class="arg">type</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(unsigned int)</span><span class="arg">style</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">screen</span></span></span></dt>
+<dd><div class="methodDescription">
+Like  -window:::  only there is an additional argument to specify which <var>screen</var> the window will display on<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_termwindow:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> termwindow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Destroys the representation of the window and frees and memory associated with it.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_nativeWindow:::::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(int)</span><span class="selector"> nativeWindow: </span><span class="parameter"><span class="type">(void*)</span><span class="arg">winref</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(NSRect *)</span><span class="arg">frame</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(NSBackingStoreType *)</span><span class="arg">type</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(unsigned int*)</span><span class="arg">style</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int*)</span><span class="arg">screen</span></span></span></dt>
+<dd><div class="methodDescription">
+Create all the backend structures for a reference to a native window and return the extend, backing <var>type</var>, <var>style</var> and <var>screen</var> for that window.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_stylewindow::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> stylewindow: </span><span class="parameter"><span class="type">(unsigned int)</span><span class="arg">style</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the <var>style</var> of the window. See  [NSWindow -styleMask]  for a description of the available styles<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_windowbacking::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> windowbacking: </span><span class="parameter"><span class="type">(NSBackingStoreType)</span><span class="arg">type</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Changes window's the backing store to <var>type</var><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_titlewindow::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> titlewindow: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">window_title</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the window title<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_miniwindow:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> miniwindow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Miniaturizes the window<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_hideApplication:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> hideApplication: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Ask the window manager to hide all the application windows for us. Return whether they have been hidden.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_appOwnsMiniwindow]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> appOwnsMiniwindow </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> if the application should create the miniwindow counterpart to the full size window and own it. Some display systems handle the miniwindow themselves. In this case the backend subclass should override this method to return <var>NO</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setWindowdevice:forContext:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setWindowdevice: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span><span class="selector"> forContext: </span><span class="parameter"><span class="type">(NSGraphicsContext *)</span><span class="arg">ctxt</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the window device information for the NSGraphicsContext, typically by calling [NSGraphicsContext -GSSetDevice:::], although depending on the concrete implmentation, more information than this may need to be exchanged.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_windowdevice:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> windowdevice: </span><span class="parameter"><span class="type">(int)</span><span class="arg">winNum</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the window device information for the current NSGraphicsContext, typically by calling [NSGraphicsContext -GSSetDevice:::], although depending on the concrete implmentation, more information than this may need to be exchanged.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_orderwindow:::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> orderwindow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">op</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">otherWin</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Causes the window to be ordered onto or off the screen depending on the value of <var>op</var>. The window is ordered relative to <var>otherWin</var> . </p> <p> The effect of the various combinations of <var>op</var> and <var>otherWin</var> are: </p> <dl> <dt><var>op</var> is NSWindowOut</dt> <dd> The window is removed from the display and otherWinm is ignored. </dd> <dt> <var>op</var> is NSWindowAbove and <var>otherWin</var> is zero </dt> <dd> The window is placed above all other windows at the same level unless doing the current key window is at this level (in which case the window will be placed immediately below that). </dd> <dt> <var>op</var> is NSWindowAbove and <var>otherWin</var> is minus one </dt> <dd> The window is placed above all other windows at the same level even if doing that would place it above the current key window. <br></br> This is a special feature that [NSWindow -orderWindow:relativeTo:] uses to place the window correctly. </dd> <dt> <var>op</var> is NSWindowBelow and <var>otherWin</var> is zero </dt> <dd> The window is placed above all other windows at the same level. </dd> <dt> <var>op</var> is NSWindowAbove and <var>otherWin</var> is a window on the display </dt> <dd> The level of the window is set to be the same as that of <var>otherWin</var> and the window is placed immediately above <var>otherWin</var>. </dd> <dt> <var>op</var> is NSWindowBelow and <var>otherWin</var> is a window on the display </dt> <dd> The level of the window is set to be the same as that of <var>otherWin</var> and the window is placed immediately below <var>otherWin</var>. </dd> </dl><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_movewindow::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> movewindow: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">loc</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Moves the bottom left corner of the window (including any border) to <var>loc</var>. <br></br> The position is expressed as an offset from the bottom left corner of the screen.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_placewindow::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> placewindow: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">frame</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Moves and resizes the window on the screen as described by <var>frame</var>. The value of <var>frame</var> is a rectangle containing the entire window, including any border/decorations. Its position is expressed as an offset from the bottom left corner of the screen.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_windowbounds:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> windowbounds: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the frame of the window on the screen. <br></br> The value of frame is a rectangle containing the entire window, including any border/decorations. Its position is expressed as an offset from the bottom left corner of the screen.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setwindowlevel::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setwindowlevel: </span><span class="parameter"><span class="type">(int)</span><span class="arg">level</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the <var>level</var> of the window as in the [NSWindow -setLevel] method. <br></br> The use of window levels organises the window hierarchy into groups of windows at each <var>level</var>. It effects the operation of the  -orderwindow:::  method in the case where the position is 'above' or 'below' and the other window number is zero.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_windowlevel:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(int)</span><span class="selector"> windowlevel: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the window level as in [NSWindow -level]<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_windowlist]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> windowlist </span></span></dt>
+<dd><div class="methodDescription">
+Backends can override this method to return an array of window numbers ordered front to back. The front most window being the first object in the array. The default implementation returns the visible windows in an unspecified order.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_windowdepth:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(int)</span><span class="selector"> windowdepth: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the depth of the window<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setmaxsize::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setmaxsize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">size</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the maximum <var>size</var> (pixels) of the window<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setminsize::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setminsize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">size</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the minimum <var>size</var> (pixels) of the window<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setresizeincrements::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setresizeincrements: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">size</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the resize incremenet of the window<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_flushwindowrect::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> flushwindowrect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Causes buffered graphics to be flushed to the screen. The value of <var>rect</var> is expressed in OpenStep window coordinates.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_styleoffsets:::::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> styleoffsets: </span><span class="parameter"><span class="type">(float*)</span><span class="arg">l</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(float*)</span><span class="arg">r</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(float*)</span><span class="arg">t</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(float*)</span><span class="arg">b</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(unsigned int)</span><span class="arg">style</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the dimensions of window decorations added outside the drawable window frame by a window manager or equivalent. For instance, <var>t</var> gives the height of the title bar for the window. <br></br> If  -handlesWindowDecorations  returns <var>NO</var>, there are no decorations outside the drawable window frame and this method shouldn't be called.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_docedited::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> docedited: </span><span class="parameter"><span class="type">(int)</span><span class="arg">edited</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the document <var>edited</var> flag for the window<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setinputstate::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setinputstate: </span><span class="parameter"><span class="type">(int)</span><span class="arg">state</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the input <var>state</var> for the window given by the GSWindowInputState constant. Instructs the window manager that the specified window is 'key', 'main', or just a normal window.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setinputfocus:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setinputfocus: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Forces focus to the window so that all key events are sent to this window<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setalpha::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setalpha: </span><span class="parameter"><span class="type">(float)</span><span class="arg">alpha</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the transparancy value for the whole window<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setShadow::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setShadow: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">hasShadow</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the window shadow<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_mouselocation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> mouselocation </span></span></dt>
+<dd><div class="methodDescription">
+Returns the current mouse location on the default screen. If the pointer is not on the default screen, an invalid point (-1,-1} is returned. <br></br> The location is expressed as an offset from the bottom left corner of the screen.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_mouseLocationOnScreen:window:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> mouseLocationOnScreen: </span><span class="parameter"><span class="type">(int)</span><span class="arg">aScreen</span></span><span class="selector"> window: </span><span class="parameter"><span class="type">(int*)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the current mouse location on <var>aScreen</var>. If the pointer is not on <var>aScreen</var>, this method acts like  -mouselocation  . If <var>aScreen</var> is -1, then the location of the mouse on any screen is returned. The <var>win</var> pointer returns the window number of the GNUstep window that the mouse is in or 0 if it is not in a window. <br></br> The location is expressed as an offset from the bottom left corner of the screen.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_capturemouse:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> capturemouse: </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+Grabs the pointer device so that all future mouse events will be directed only to the window <var>win</var>. If successful, the return value is <var>YES</var> and this message must be balanced by a  -releasemouse  message.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_releasemouse]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> releasemouse </span></span></dt>
+<dd><div class="methodDescription">
+Release a previous captured mouse from  -capturemouse:<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setMouseLocation:onScreen:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMouseLocation: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">mouseLocation</span></span><span class="selector"> onScreen: </span><span class="parameter"><span class="type">(int)</span><span class="arg">aScreen</span></span></span></dt>
+<dd><div class="methodDescription">
+Set mouse cursor position.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_hidecursor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> hidecursor </span></span></dt>
+<dd><div class="methodDescription">
+Hides the cursor<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_showcursor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> showcursor </span></span></dt>
+<dd><div class="methodDescription">
+Show a previously hidden cursor<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_standardcursor::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> standardcursor: </span><span class="parameter"><span class="type">(int)</span><span class="arg">style</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(void**)</span><span class="arg">cid</span></span></span></dt>
+<dd><div class="methodDescription">
+Create a standard cursor (such as an arror or IBeam). Returns a pointer to the internal device representation that can be used later to make this cursor the current one<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_imagecursor:::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> imagecursor: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">hotp</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(NSImage *)</span><span class="arg">image</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(void**)</span><span class="arg">cid</span></span></span></dt>
+<dd><div class="methodDescription">
+Create a cursor from an <var>image</var>. Returns a pointer to the internal device representation that can be used later to make this cursor the current one<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setcursorcolor:::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setcursorcolor: </span><span class="parameter"><span class="type">(NSColor *)</span><span class="arg">fg</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(NSColor *)</span><span class="arg">bg</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(void*)</span><span class="arg">cid</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the cursor given by the <var>cid</var> representation as being the current cursor. The cursor has a foreground color <var>fg</var> and a background color <var>bg</var>. To keep the default color for the cursor, pass <var>nil</var> for <var>fg</var> and <var>bg</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_recolorcursor:::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> recolorcursor: </span><span class="parameter"><span class="type">(NSColor *)</span><span class="arg">fg</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(NSColor *)</span><span class="arg">bg</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(void*)</span><span class="arg">cid</span></span></span></dt>
+<dd><div class="methodDescription">
+Recolour the cursor given by the <var>cid</var> representation into having a foreground color <var>fg</var> and a background color <var>bg</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setcursor:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setcursor: </span><span class="parameter"><span class="type">(void*)</span><span class="arg">cid</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the cursor given by the <var>cid</var> representation as being the current cursor.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_freecursor:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> freecursor: </span><span class="parameter"><span class="type">(void*)</span><span class="arg">cid</span></span></span></dt>
+<dd><div class="methodDescription">
+Free the cursor given by the <var>cid</var> representation.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setParentWindow:forChildWindow:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setParentWindow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">parentWin</span></span><span class="selector"> forChildWindow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">childWin</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDisplayServer(WindowOps)_setIgnoreMouse::]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setIgnoreMouse: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">ignoreMouse</span></span><span class="selector"> : </span><span class="parameter"><span class="type">(int)</span><span class="arg">win</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui Additions</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="GSDisplayServer.html#GSDisplayServer">GSDisplayServer</a></li><li><a href="GSHbox.html#GSHbox">GSHbox</a></li><li><a href="GSTable.html#GSTable">GSTable</a></li><li><a href="GSVbox.html#GSVbox">GSVbox</a></li></ul></div>
+
+<ul><li><a href="GSTheme.html">GSTheme (buggy documentation)</a></li></ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="GSDisplayServerCategories.html#GSDisplayServer(EventOps)">GSDisplayServer</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

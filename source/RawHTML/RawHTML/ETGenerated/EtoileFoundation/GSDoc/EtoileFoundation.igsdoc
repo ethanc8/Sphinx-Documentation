@@ -1,0 +1,2805 @@
+{
+    categories = {
+	NSArray = {
+	    ETCollection = ETCollection;
+	    ETCollectionHOM = "ETCollection+HOM";
+	    ETKeyValuePairRepresentation = ETKeyValuePair;
+	    Etoile = "NSArray+Etoile";
+	};
+	NSCountedSet = {
+	    ETCollection = ETCollection;
+	};
+	NSData = {
+	    ETHash = "NSData+Hash";
+	};
+	NSDate = {
+	    ETModel = "NSObject+Model";
+	};
+	NSDictionary = {
+	    ETCollection = ETCollection;
+	    ETCollectionHOM = "ETCollection+HOM";
+	    ETPropertyValueCoding = ETPropertyValueCoding;
+	    Etoile = "NSDictionary+Etoile";
+	};
+	NSException = {
+	    ETException = ETException;
+	};
+	NSFileHandle = {
+	    ETSocketAdditions = "NSFileHandle+Socket";
+	};
+	NSFileManager = {
+	    ETTempFile = "NSFileManager+TempFile";
+	};
+	NSIndexPath = {
+	    Etoile = "NSIndexPath+Etoile";
+	};
+	NSIndexSet = {
+	    ETCollection = ETCollection;
+	    ETCollectionHOM = "ETCollection+HOM";
+	    Etoile = "NSIndexSet+Etoile";
+	};
+	NSInvocation = {
+	    Etoile = "NSInvocation+Etoile";
+	};
+	NSMapTable = {
+	    Etoile = "NSMapTable+Etoile";
+	};
+	NSMutableArray = {
+	    ETCollectionHOM = "ETCollection+HOM";
+	    ETCollectionMutation = ETCollection;
+	    Etoile = "NSArray+Etoile";
+	};
+	NSMutableDictionary = {
+	    ETCollectionHOM = "ETCollection+HOM";
+	    ETCollectionMutation = ETCollection;
+	    ETMutablePropertyValueCoding = ETPropertyValueCoding;
+	    Etoile = "NSDictionary+Etoile";
+	};
+	NSMutableIndexSet = {
+	    ETCollectionHOM = "ETCollection+HOM";
+	    ETCollectionMutation = ETCollection;
+	    Etoile = "NSIndexSet+Etoile";
+	};
+	NSMutableOrderedSet = {
+	    ETCollectionMutation = ETCollection;
+	};
+	NSMutableSet = {
+	    ETCollectionHOM = "ETCollection+HOM";
+	    ETCollectionMutation = ETCollection;
+	};
+	NSNumber = {
+	    ETModel = "NSObject+Model";
+	};
+	NSObject = {
+	    ETBatchCollectionMutation = ETCollection;
+	    ETCollectionHOMIntegrationInformalProtocol = "ETCollection+HOM";
+	    ETCollectionMutationKVOSupport = ETCollection;
+	    ETDoubleDispatch = "NSObject+DoubleDispatch";
+	    ETEachHOM = "ETCollection+HOM";
+	    ETHOM = "NSObject+HOM";
+	    ETIndexValuePair = ETIndexValuePair;
+	    ETKeyValuePair = ETKeyValuePair;
+	    ETListenSocketDelegate = ETSocket;
+	    ETModel = "NSObject+Model";
+	    ETPropertyValueCoding = ETPropertyValueCoding;
+	    ETPrototypes = "NSObject+Prototypes";
+	    ETSocketDelegate = ETSocket;
+	    ETStackTraceRecorderConveniency = ETStackTraceRecorder;
+	    ETTrait = "NSObject+Trait";
+	    ETViewpointAdditions = ETViewpoint;
+	    Etoile = "NSObject+Etoile";
+	};
+	NSOrderedSet = {
+	    ETCollection = ETCollection;
+	};
+	NSSet = {
+	    ETCollection = ETCollection;
+	    ETCollectionHOM = "ETCollection+HOM";
+	};
+	NSString = {
+	    ETBase64 = "NSData+Hash";
+	    ETModel = "NSObject+Model";
+	    ETUUID = ETUUID;
+	    Etoile = "NSString+Etoile";
+	};
+	NSUserDefaults = {
+	    ETUUID = ETUUID;
+	};
+    };
+    category = {
+	"NSArray(ETCollection)" = ETCollection;
+	"NSArray(ETCollectionHOM)" = "ETCollection+HOM";
+	"NSArray(ETKeyValuePairRepresentation)" = ETKeyValuePair;
+	"NSArray(Etoile)" = "NSArray+Etoile";
+	"NSCountedSet(ETCollection)" = ETCollection;
+	"NSData(ETHash)" = "NSData+Hash";
+	"NSDate(ETModel)" = "NSObject+Model";
+	"NSDictionary(ETCollection)" = ETCollection;
+	"NSDictionary(ETCollectionHOM)" = "ETCollection+HOM";
+	"NSDictionary(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	"NSDictionary(Etoile)" = "NSDictionary+Etoile";
+	"NSException(ETException)" = ETException;
+	"NSFileHandle(ETSocketAdditions)" = "NSFileHandle+Socket";
+	"NSFileManager(ETTempFile)" = "NSFileManager+TempFile";
+	"NSIndexPath(Etoile)" = "NSIndexPath+Etoile";
+	"NSIndexSet(ETCollection)" = ETCollection;
+	"NSIndexSet(ETCollectionHOM)" = "ETCollection+HOM";
+	"NSIndexSet(Etoile)" = "NSIndexSet+Etoile";
+	"NSInvocation(Etoile)" = "NSInvocation+Etoile";
+	"NSMapTable(Etoile)" = "NSMapTable+Etoile";
+	"NSMutableArray(ETCollectionHOM)" = "ETCollection+HOM";
+	"NSMutableArray(ETCollectionMutation)" = ETCollection;
+	"NSMutableArray(Etoile)" = "NSArray+Etoile";
+	"NSMutableDictionary(ETCollectionHOM)" = "ETCollection+HOM";
+	"NSMutableDictionary(ETCollectionMutation)" = ETCollection;
+	"NSMutableDictionary(ETMutablePropertyValueCoding)" = ETPropertyValueCoding;
+	"NSMutableDictionary(Etoile)" = "NSDictionary+Etoile";
+	"NSMutableIndexSet(ETCollectionHOM)" = "ETCollection+HOM";
+	"NSMutableIndexSet(ETCollectionMutation)" = ETCollection;
+	"NSMutableIndexSet(Etoile)" = "NSIndexSet+Etoile";
+	"NSMutableOrderedSet(ETCollectionMutation)" = ETCollection;
+	"NSMutableSet(ETCollectionHOM)" = "ETCollection+HOM";
+	"NSMutableSet(ETCollectionMutation)" = ETCollection;
+	"NSNumber(ETModel)" = "NSObject+Model";
+	"NSObject(ETBatchCollectionMutation)" = ETCollection;
+	"NSObject(ETCollectionHOMIntegrationInformalProtocol)" = "ETCollection+HOM";
+	"NSObject(ETCollectionMutationKVOSupport)" = ETCollection;
+	"NSObject(ETDoubleDispatch)" = "NSObject+DoubleDispatch";
+	"NSObject(ETEachHOM)" = "ETCollection+HOM";
+	"NSObject(ETHOM)" = "NSObject+HOM";
+	"NSObject(ETIndexValuePair)" = ETIndexValuePair;
+	"NSObject(ETKeyValuePair)" = ETKeyValuePair;
+	"NSObject(ETListenSocketDelegate)" = ETSocket;
+	"NSObject(ETModel)" = "NSObject+Model";
+	"NSObject(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	"NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	"NSObject(ETSocketDelegate)" = ETSocket;
+	"NSObject(ETStackTraceRecorderConveniency)" = ETStackTraceRecorder;
+	"NSObject(ETTrait)" = "NSObject+Trait";
+	"NSObject(ETViewpointAdditions)" = ETViewpoint;
+	"NSObject(Etoile)" = "NSObject+Etoile";
+	"NSOrderedSet(ETCollection)" = ETCollection;
+	"NSSet(ETCollection)" = ETCollection;
+	"NSSet(ETCollectionHOM)" = "ETCollection+HOM";
+	"NSString(ETBase64)" = "NSData+Hash";
+	"NSString(ETModel)" = "NSObject+Model";
+	"NSString(ETUUID)" = ETUUID;
+	"NSString(Etoile)" = "NSString+Etoile";
+	"NSUserDefaults(ETUUID)" = ETUUID;
+    };
+    class = {
+	ETAdaptiveModelObject = ETAdaptiveModelObject;
+	ETByteSizeFormatter = ETByteSizeFormatter;
+	ETCPrimitiveEntityDescription = ETEntityDescription;
+	ETClassMirror = ETClassMirror;
+	ETCollectionTrait = ETCollection;
+	ETCollectionViewpoint = ETCollectionViewpoint;
+	ETEntityDescription = ETEntityDescription;
+	ETHistory = ETHistory;
+	ETIndexValuePair = ETIndexValuePair;
+	ETInstanceVariableMirror = ETInstanceVariableMirror;
+	ETKeyValuePair = ETKeyValuePair;
+	ETListenSocket = ETSocket;
+	ETMethodDescriptionMirror = ETMethodMirror;
+	ETMethodMirror = ETMethodMirror;
+	ETModelDescriptionRepository = ETModelDescriptionRepository;
+	ETModelElementDescription = ETModelElementDescription;
+	ETMultiOptionsRole = ETRoleDescription;
+	ETMutableCollectionTrait = ETCollection;
+	ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	ETNumberRole = ETRoleDescription;
+	ETObjectMirror = ETObjectMirror;
+	ETPackageDescription = ETPackageDescription;
+	ETPlugInRegistry = ETPlugInRegistry;
+	ETPrimitiveEntityDescription = ETEntityDescription;
+	ETPropertyDescription = ETPropertyDescription;
+	ETProtocolMirror = ETProtocolMirror;
+	ETReflection = ETReflection;
+	ETRelationshipRole = ETRoleDescription;
+	ETRoleDescription = ETRoleDescription;
+	ETSocket = ETSocket;
+	ETStackTrace = ETStackTraceRecorder;
+	ETStackTraceRecorder = ETStackTraceRecorder;
+	ETTranscript = ETTranscript;
+	ETUTI = ETUTI;
+	ETUUID = ETUUID;
+	ETUnionViewpoint = ETUnionViewpoint;
+	ETValidationResult = ETValidationResult;
+	ETViewpointTrait = ETViewpoint;
+    };
+    classvars = {
+	ETListenSocket = {
+	    hasAccept = ETSocket;
+	};
+	ETModelElementDescription = {
+	    "_isFrozen" = ETModelElementDescription;
+	};
+	ETMutableObjectViewpoint = {
+	    "_isSettingValue" = ETMutableObjectViewpoint;
+	};
+	ETSocket = {
+	    buffer = ETSocket;
+	    connectionIsBroken = ETSocket;
+	    delegate = ETSocket;
+	    eofCounter = ETSocket;
+	    handle = ETSocket;
+	    inFilters = ETSocket;
+	    outFilters = ETSocket;
+	    ssl = ETSocket;
+	    sslContext = ETSocket;
+	};
+	ETStackTrace = {
+	    "_callStackSymbols" = ETStackTraceRecorder;
+	};
+	ETUnionViewpoint = {
+	    "_contentKeyPath" = ETUnionViewpoint;
+	    "_observations" = ETUnionViewpoint;
+	};
+    };
+    constant = {
+	ETCollectionDidUpdateNotification = "NSObject+Model";
+	ETUndeterminedIndex = ETCollection;
+	kETDescriptionOptionMaxDepth = "NSObject+Model";
+	kETDescriptionOptionPropertyIndent = "NSObject+Model";
+	kETDescriptionOptionShortDescriptionSelector = "NSObject+Model";
+	kETDescriptionOptionTraversalKey = "NSObject+Model";
+	kETDescriptionOptionValuesForKeyPaths = "NSObject+Model";
+	kETUTITagClassFileExtension = ETUTI;
+	kETUTITagClassMIMEType = ETUTI;
+    };
+    function = {
+	ETCArrayAdd = ETCArray;
+	ETCArrayAddAtIndex = ETCArray;
+	ETCArrayAppendArray = ETCArray;
+	ETCArrayCount = ETCArray;
+	ETCArrayFree = ETCArray;
+	ETCArrayIndexOfObjectIdenticalTo = ETCArray;
+	ETCArrayNew = ETCArray;
+	ETCArrayNewWithInitialSize = ETCArray;
+	ETCArrayObjectAtIndex = ETCArray;
+	ETCArrayRemoveAllObjects = ETCArray;
+	ETCArrayRemoveLastObject = ETCArray;
+	ETCArrayRemoveObjectAtIndex = ETCArray;
+	ETCArraySwap = ETCArray;
+	ETDrainAutoreleasePool = Macros;
+	ETGetInstanceVariableValueForKey = ETReflection;
+	ETGetOptionsDictionary = ETGetOptionsDictionary;
+	ETSetInstanceVariableValueForKey = ETReflection;
+	ETStackAutoRelease = Macros;
+	ETUnlockObject = Macros;
+	pophandler = ETException;
+    };
+    ivariable = {
+	"_callStackSymbols" = {
+	    ETStackTrace = ETStackTraceRecorder;
+	};
+	"_contentKeyPath" = {
+	    ETUnionViewpoint = ETUnionViewpoint;
+	};
+	"_isFrozen" = {
+	    ETModelElementDescription = ETModelElementDescription;
+	};
+	"_isSettingValue" = {
+	    ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	};
+	"_observations" = {
+	    ETUnionViewpoint = ETUnionViewpoint;
+	};
+	buffer = {
+	    ETSocket = ETSocket;
+	};
+	connectionIsBroken = {
+	    ETSocket = ETSocket;
+	};
+	delegate = {
+	    ETSocket = ETSocket;
+	};
+	eofCounter = {
+	    ETSocket = ETSocket;
+	};
+	handle = {
+	    ETSocket = ETSocket;
+	};
+	hasAccept = {
+	    ETListenSocket = ETSocket;
+	};
+	inFilters = {
+	    ETSocket = ETSocket;
+	};
+	outFilters = {
+	    ETSocket = ETSocket;
+	};
+	ssl = {
+	    ETSocket = ETSocket;
+	};
+	sslContext = {
+	    ETSocket = ETSocket;
+	};
+    };
+    macro = {
+	A = Macros;
+	D = Macros;
+	ETAssert = Macros;
+	ETAssertUnreachable = Macros;
+	FOREACH = Macros;
+	FOREACHE = Macros;
+	FOREACHI = Macros;
+	INDEXSET = Macros;
+	"INVALIDARG_EXCEPTION_TEST" = Macros;
+	"LOCAL_AUTORELEASE_POOL" = Macros;
+	"LOCK_FOR_SCOPE" = Macros;
+	"NILARG_EXCEPTION_TEST" = Macros;
+	"NS_RESTARTABLE_DURING" = ETException;
+	"NS_RESTARTABLE_HANDLER" = ETException;
+	S = Macros;
+	SELFINIT = Macros;
+	"SET_HANDLER" = ETException;
+	SUPERINIT = Macros;
+	UNIQUESET = Macros;
+    };
+    method = {
+	"+UUID" = {
+	    ETUUID = ETUUID;
+	};
+	"+UUIDString" = {
+	    "NSString(ETUUID)" = ETUUID;
+	};
+	"+UUIDWithData:" = {
+	    ETUUID = ETUUID;
+	};
+	"+UUIDWithString:" = {
+	    ETUUID = ETUUID;
+	};
+	"+addClassMethod:fromBlock:" = {
+	    "NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	};
+	"+addInstanceMethod:fromBlock:" = {
+	    "NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	};
+	"+allSubclasses" = {
+	    "NSObject(Etoile)" = "NSObject+Etoile";
+	};
+	"+appendString:" = {
+	    ETTranscript = ETTranscript;
+	};
+	"+applyTraitFromClass:" = {
+	    "NSObject(ETTrait)" = "NSObject+Trait";
+	};
+	"+applyTraitFromClass:excludedMethodNames:aliasedMethodNames:" = {
+	    "NSObject(ETTrait)" = "NSObject+Trait";
+	};
+	"+applyTraitFromClass:excludedMethodNames:aliasedMethodNames:allowsOverride:" = {
+	    "NSObject(ETTrait)" = "NSObject+Trait";
+	};
+	"+cr" = {
+	    ETTranscript = ETTranscript;
+	};
+	"+descriptionWithName:" = {
+	    ETModelElementDescription = ETModelElementDescription;
+	};
+	"+descriptionWithName:type:" = {
+	    ETPropertyDescription = ETPropertyDescription;
+	};
+	"+descriptionWithName:typeName:" = {
+	    ETPropertyDescription = ETPropertyDescription;
+	};
+	"+directSubclasses" = {
+	    "NSObject(Etoile)" = "NSObject+Etoile";
+	};
+	"+enableEtoileExceptions" = {
+	    "NSException(ETException)" = ETException;
+	};
+	"+fileHandleConnectedToRemoteHost:forService:" = {
+	    "NSFileHandle(ETSocketAdditions)" = "NSFileHandle+Socket";
+	};
+	"+history" = {
+	    ETHistory = ETHistory;
+	};
+	"+indexPath" = {
+	    "NSIndexPath(Etoile)" = "NSIndexPath+Etoile";
+	};
+	"+indexPathWithString:" = {
+	    "NSIndexPath(Etoile)" = "NSIndexPath+Etoile";
+	};
+	"+invalidResultWithError:" = {
+	    ETValidationResult = ETValidationResult;
+	};
+	"+invocationWithTarget:selector:arguments:" = {
+	    "NSInvocation(Etoile)" = "NSInvocation+Etoile";
+	};
+	"+listenSocketForAddress:onPort:" = {
+	    ETListenSocket = ETSocket;
+	};
+	"+listenSocketOnPort:" = {
+	    ETListenSocket = ETSocket;
+	};
+	"+mainRepository" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"+mirrorWithClass:" = {
+	    ETClassMirror = ETClassMirror;
+	};
+	"+mirrorWithIvar:ownerMirror:" = {
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"+mirrorWithMethod:isClassMethod:" = {
+	    ETMethodMirror = ETMethodMirror;
+	};
+	"+mirrorWithMethodName:isClassMethod:" = {
+	    ETMethodDescriptionMirror = ETMethodMirror;
+	};
+	"+mirrorWithObject:" = {
+	    ETObjectMirror = ETObjectMirror;
+	};
+	"+mirrorWithProtocol:" = {
+	    ETProtocolMirror = ETProtocolMirror;
+	};
+	"+mixedValueMarker" = {
+	    ETUnionViewpoint = ETUnionViewpoint;
+	};
+	"+mutableClass" = {
+	    "NSArray(ETCollection)" = ETCollection;
+	    "NSCountedSet(ETCollection)" = ETCollection;
+	    "NSDictionary(ETCollection)" = ETCollection;
+	    "NSIndexSet(ETCollection)" = ETCollection;
+	    "NSObject(ETModel)" = "NSObject+Model";
+	    "NSSet(ETCollection)" = ETCollection;
+	};
+	"+mutableViewpointClass" = {
+	    "(ETViewpointMutation)" = ETViewpoint;
+	};
+	"+newBasicEntityDescription" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"+newEntityDescription" = {
+	    ETEntityDescription = ETEntityDescription;
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	    ETModelElementDescription = ETModelElementDescription;
+	    ETPackageDescription = ETPackageDescription;
+	    ETPropertyDescription = ETPropertyDescription;
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"+pairWithKey:value:" = {
+	    ETKeyValuePair = ETKeyValuePair;
+	};
+	"+popHandlerForException:" = {
+	    "NSException(ETException)" = ETException;
+	};
+	"+pushHandler:forException:" = {
+	    "NSException(ETException)" = ETException;
+	};
+	"+reflectAllRootClasses" = {
+	    ETReflection = ETReflection;
+	};
+	"+reflectClass:" = {
+	    ETReflection = ETReflection;
+	};
+	"+reflectClassWithName:" = {
+	    ETReflection = ETReflection;
+	};
+	"+reflectObject:" = {
+	    ETReflection = ETReflection;
+	};
+	"+reflectProtocol:" = {
+	    ETReflection = ETReflection;
+	};
+	"+reflectProtocolWithName:" = {
+	    ETReflection = ETReflection;
+	};
+	"+registerTypeWithString:description:supertypeStrings:typeTags:" = {
+	    ETUTI = ETUTI;
+	};
+	"+registerTypesFromBundle:" = {
+	    ETUTI = ETUTI;
+	};
+	"+rootEntityDescriptionName" = {
+	    ETEntityDescription = ETEntityDescription;
+	};
+	"+sharedInstance" = {
+	    ETStackTraceRecorder = ETStackTraceRecorder;
+	};
+	"+sharedRegistry" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"+show:" = {
+	    ETTranscript = ETTranscript;
+	};
+	"+socketConnectedToRemoteHost:forService:" = {
+	    ETSocket = ETSocket;
+	};
+	"+transientTypeWithSupertypeStrings:" = {
+	    ETUTI = ETUTI;
+	};
+	"+transientTypeWithSupertypes:" = {
+	    ETUTI = ETUTI;
+	};
+	"+typePrefix" = {
+	    "NSObject(Etoile)" = "NSObject+Etoile";
+	};
+	"+typeWithClass:" = {
+	    ETUTI = ETUTI;
+	};
+	"+typeWithFileExtension:" = {
+	    ETUTI = ETUTI;
+	};
+	"+typeWithMIMEType:" = {
+	    ETUTI = ETUTI;
+	};
+	"+typeWithPath:" = {
+	    ETUTI = ETUTI;
+	};
+	"+typeWithString:" = {
+	    ETUTI = ETUTI;
+	};
+	"+validResult:" = {
+	    ETValidationResult = ETValidationResult;
+	};
+	"+validationResultWithValue:isValid:error:" = {
+	    ETValidationResult = ETValidationResult;
+	};
+	"+viewpointWithName:representedObject:" = {
+	    "(ETPropertyViewpoint)" = ETViewpoint;
+	    ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	};
+	"-MIMETypes" = {
+	    ETUTI = ETUTI;
+	};
+	"-UTI" = {
+	    "NSObject(Etoile)" = "NSObject+Etoile";
+	};
+	"-UUIDForKey:" = {
+	    "NSUserDefaults(ETUUID)" = ETUUID;
+	};
+	"-UUIDValue" = {
+	    ETUUID = ETUUID;
+	};
+	"-addDescription:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-addEntityDescription:" = {
+	    ETPackageDescription = ETPackageDescription;
+	};
+	"-addMethod:fromBlock:" = {
+	    "NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	};
+	"-addObject:" = {
+	    ETHistory = ETHistory;
+	};
+	"-addObject:forKey:" = {
+	    "NSMutableDictionary(Etoile)" = "NSDictionary+Etoile";
+	};
+	"-addPropertyDescription:" = {
+	    ETEntityDescription = ETEntityDescription;
+	    ETPackageDescription = ETPackageDescription;
+	};
+	"-addUnresolvedDescription:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-adoptedProtocolMirrors" = {
+	    "(ETClassMirror)" = ETReflection;
+	};
+	"-allAdoptedProtocolMirrors" = {
+	    "(ETClassMirror)" = ETReflection;
+	};
+	"-allAncestorProtocolMirrors" = {
+	    "(ETProtocolMirror)" = ETReflection;
+	};
+	"-allInstanceVariableMirrors" = {
+	    "(ETClassMirror)" = ETReflection;
+	    "(ETObjectMirror)" = ETReflection;
+	};
+	"-allInstanceVariableMirrorsWithOwnerMirror:" = {
+	    "(ETClassMirror)" = ETReflection;
+	};
+	"-allKeys" = {
+	    "NSMapTable(Etoile)" = "NSMapTable+Etoile";
+	};
+	"-allMethodMirrors" = {
+	    "(ETClassMirror)" = ETReflection;
+	    "(ETObjectMirror)" = ETReflection;
+	    "(ETProtocolMirror)" = ETReflection;
+	};
+	"-allSlotMirrors" = {
+	    "(ETObjectMirror)" = ETReflection;
+	};
+	"-allSubclassMirrors" = {
+	    "(ETClassMirror)" = ETReflection;
+	};
+	"-allSubtypes" = {
+	    ETUTI = ETUTI;
+	};
+	"-allSupertypes" = {
+	    ETUTI = ETUTI;
+	};
+	"-allValues" = {
+	    "NSMapTable(Etoile)" = "NSMapTable+Etoile";
+	};
+	"-ancestorProtocolMirrors" = {
+	    "(ETProtocolMirror)" = ETReflection;
+	};
+	"-appendTranscriptString:" = {
+	    "(ETTranscriptDelegate)" = ETTranscript;
+	};
+	"-applyMutableViewpointTraitForValue:" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETViewpointTrait = ETViewpoint;
+	};
+	"-arrayByRemovingObject:" = {
+	    "NSArray(Etoile)" = "NSArray+Etoile";
+	};
+	"-arrayByRemovingObjectsInArray:" = {
+	    "NSArray(Etoile)" = "NSArray+Etoile";
+	};
+	"-arrayRepresentation" = {
+	    "(ETKeyedCollection)" = ETCollection;
+	    "NSDictionary(ETCollection)" = ETCollection;
+	};
+	"-back" = {
+	    ETHistory = ETHistory;
+	};
+	"-base64DecodedData" = {
+	    "NSString(ETBase64)" = "NSData+Hash";
+	};
+	"-base64String" = {
+	    "NSData(ETHash)" = "NSData+Hash";
+	};
+	"-checkConstraints:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	    ETModelElementDescription = ETModelElementDescription;
+	    ETPackageDescription = ETPackageDescription;
+	};
+	"-checkNotFrozen" = {
+	    ETModelElementDescription = ETModelElementDescription;
+	};
+	"-classForEntityDescription:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-classMirror" = {
+	    "(ETObjectMirror)" = ETReflection;
+	};
+	"-className" = {
+	    "NSObject(Etoile)" = "NSObject+Etoile";
+	};
+	"-classValue" = {
+	    ETUTI = ETUTI;
+	};
+	"-clear" = {
+	    ETHistory = ETHistory;
+	};
+	"-clone" = {
+	    "NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	};
+	"-collectEntityDescriptionsFromClass:excludedClasses:resolveNow:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-collectionArrayAndInfo:" = {
+	    "NSDictionary(ETCollectionHOM)" = "ETCollection+HOM";
+	    "NSObject(ETCollectionHOMIntegrationInformalProtocol)" = "ETCollection+HOM";
+	};
+	"-conformsToType:" = {
+	    ETUTI = ETUTI;
+	};
+	"-containsCollection:" = {
+	    "(ETCollection)" = ETCollection;
+	};
+	"-containsKey:" = {
+	    "NSDictionary(Etoile)" = "NSDictionary+Etoile";
+	};
+	"-containsObject:" = {
+	    "(ETCollection)" = ETCollection;
+	};
+	"-content" = {
+	    "(ETCollection)" = ETCollection;
+	    ETCollectionViewpoint = ETCollectionViewpoint;
+	    "NSArray(ETCollection)" = ETCollection;
+	    "NSDictionary(ETCollection)" = ETCollection;
+	    "NSIndexSet(ETCollection)" = ETCollection;
+	    "NSSet(ETCollection)" = ETCollection;
+	};
+	"-contentArray" = {
+	    "(ETCollection)" = ETCollection;
+	    "NSArray(ETCollection)" = ETCollection;
+	    "NSDictionary(ETCollection)" = ETCollection;
+	    "NSIndexSet(ETCollection)" = ETCollection;
+	    "NSSet(ETCollection)" = ETCollection;
+	};
+	"-count" = {
+	    "(ETCollection)" = ETCollection;
+	};
+	"-countByEnumeratingWithState:objects:count:" = {
+	    "(ETCollection)" = ETCollection;
+	};
+	"-currentObject" = {
+	    ETHistory = ETHistory;
+	};
+	"-dataValue" = {
+	    ETUUID = ETUUID;
+	};
+	"-descriptionForName:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-descriptionWithOptions:" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-dictionaryByAddingEntriesFromDictionary:" = {
+	    "NSDictionary(Etoile)" = "NSDictionary+Etoile";
+	};
+	"-dictionaryRepresentation" = {
+	    "NSArray(ETKeyValuePairRepresentation)" = ETKeyValuePair;
+	};
+	"-didChangeValueForKey:atIndexes:withObjects:mutationKind:" = {
+	    "NSObject(ETCollectionMutationKVOSupport)" = ETCollection;
+	};
+	"-didUpdate" = {
+	    ETCollectionViewpoint = ETCollectionViewpoint;
+	};
+	"-disableAllocationRecordingForClass:" = {
+	    ETStackTraceRecorder = ETStackTraceRecorder;
+	};
+	"-displayName" = {
+	    ETHistory = ETHistory;
+	    ETKeyValuePair = ETKeyValuePair;
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-doubleDispatchPrefix" = {
+	    "NSObject(ETDoubleDispatch)" = "NSObject+DoubleDispatch";
+	};
+	"-doubleDispatchSelectorWithObject:ofType:" = {
+	    "NSObject(ETDoubleDispatch)" = "NSObject+DoubleDispatch";
+	};
+	"-each" = {
+	    "NSObject(ETEachHOM)" = "ETCollection+HOM";
+	};
+	"-enableAllocationRecordingForClass:" = {
+	    ETStackTraceRecorder = ETStackTraceRecorder;
+	};
+	"-entityDescriptionForClass:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-fileExtensions" = {
+	    ETUTI = ETUTI;
+	};
+	"-filter" = {
+	    "(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	};
+	"-filterData:" = {
+	    "(ETSocketFilter)" = ETSocket;
+	};
+	"-filterOut" = {
+	    "(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	};
+	"-filterOutWithBlock:" = {
+	    "(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	};
+	"-filterWithBlock:" = {
+	    "(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	};
+	"-filteredArrayUsingPredicate:ignoringObjects:" = {
+	    "NSArray(Etoile)" = "NSArray+Etoile";
+	};
+	"-filteredCollectionWithBlock:" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-filteredOutCollectionWithBlock:" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-firstIndex" = {
+	    "NSIndexPath(Etoile)" = "NSIndexPath+Etoile";
+	};
+	"-firstObject" = {
+	    "NSArray(Etoile)" = "NSArray+Etoile";
+	};
+	"-firstObjectMatchingValue:forKey:" = {
+	    "NSArray(Etoile)" = "NSArray+Etoile";
+	};
+	"-firstPathComponent" = {
+	    "NSString(Etoile)" = "NSString+Etoile";
+	};
+	"-forward" = {
+	    ETHistory = ETHistory;
+	};
+	"-hasNext" = {
+	    ETHistory = ETHistory;
+	};
+	"-hasPrevious" = {
+	    ETHistory = ETHistory;
+	};
+	"-ifResponds" = {
+	    "NSObject(ETHOM)" = "NSObject+HOM";
+	};
+	"-indexPathByRemovingFirstIndex" = {
+	    "NSIndexPath(Etoile)" = "NSIndexPath+Etoile";
+	};
+	"-indexPathBySplittingPathWithSeparator:" = {
+	    "NSString(Etoile)" = "NSString+Etoile";
+	};
+	"-indexPaths" = {
+	    "NSIndexSet(Etoile)" = "NSIndexSet+Etoile";
+	};
+	"-init" = {
+	    ETHistory = ETHistory;
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	    ETModelElementDescription = ETModelElementDescription;
+	    ETStackTrace = ETStackTraceRecorder;
+	    ETStackTraceRecorder = ETStackTraceRecorder;
+	    ETUUID = ETUUID;
+	};
+	"-initForAddress:onPort:" = {
+	    ETListenSocket = ETSocket;
+	};
+	"-initOnPort:" = {
+	    ETListenSocket = ETSocket;
+	};
+	"-initWithClass:" = {
+	    ETClassMirror = ETClassMirror;
+	};
+	"-initWithIndex:value:representedObject:" = {
+	    ETIndexValuePair = ETIndexValuePair;
+	};
+	"-initWithIvar:ownerMirror:" = {
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"-initWithKey:value:" = {
+	    ETKeyValuePair = ETKeyValuePair;
+	};
+	"-initWithMethod:isClassMethod:" = {
+	    ETMethodMirror = ETMethodMirror;
+	};
+	"-initWithMethodName:isClassMethod:" = {
+	    ETMethodDescriptionMirror = ETMethodMirror;
+	};
+	"-initWithName:" = {
+	    ETModelElementDescription = ETModelElementDescription;
+	};
+	"-initWithName:representedObject:" = {
+	    ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	};
+	"-initWithObject:" = {
+	    ETObjectMirror = ETObjectMirror;
+	};
+	"-initWithProtocol:" = {
+	    ETProtocolMirror = ETProtocolMirror;
+	};
+	"-initWithSocketAddress:" = {
+	    ETListenSocket = ETSocket;
+	};
+	"-initWithString:" = {
+	    ETUUID = ETUUID;
+	};
+	"-initWithUUID:" = {
+	    ETUUID = ETUUID;
+	};
+	"-initWithValue:isValid:error:" = {
+	    ETValidationResult = ETValidationResult;
+	};
+	"-insertCollection:atIndexes:" = {
+	    "NSObject(ETBatchCollectionMutation)" = ETCollection;
+	};
+	"-insertObject:atIndex:" = {
+	    "(ETCollectionMutation)" = ETCollection;
+	};
+	"-insertObject:atIndex:hint:" = {
+	    "(ETCollectionMutation)" = ETCollection;
+	};
+	"-insertObjects:atIndexes:hints:" = {
+	    "(ETCollectionMutation)" = ETCollection;
+	};
+	"-insertionKeyForCollection:" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-instanceVariableMirrors" = {
+	    "(ETClassMirror)" = ETReflection;
+	    "(ETObjectMirror)" = ETReflection;
+	};
+	"-instanceVariableMirrorsWithOwnerMirror:" = {
+	    "(ETClassMirror)" = ETReflection;
+	};
+	"-invertIndex:" = {
+	    "NSMutableIndexSet(Etoile)" = "NSIndexSet+Etoile";
+	};
+	"-isClassMethod" = {
+	    "(ETMethodMirror)" = ETReflection;
+	};
+	"-isCollection" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-isCommonObjectValue" = {
+	    "NSDate(ETModel)" = "NSObject+Model";
+	    "NSNumber(ETModel)" = "NSObject+Model";
+	    "NSObject(ETModel)" = "NSObject+Model";
+	    "NSString(ETModel)" = "NSObject+Model";
+	};
+	"-isEmpty" = {
+	    "(ETCollection)" = ETCollection;
+	};
+	"-isGroup" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-isIndexValuePair" = {
+	    ETIndexValuePair = ETIndexValuePair;
+	    "NSObject(ETIndexValuePair)" = ETIndexValuePair;
+	};
+	"-isIndexValuePairCollection" = {
+	    ETCollectionViewpoint = ETCollectionViewpoint;
+	};
+	"-isKeyValuePair" = {
+	    ETKeyValuePair = ETKeyValuePair;
+	    "NSObject(ETKeyValuePair)" = ETKeyValuePair;
+	};
+	"-isKeyed" = {
+	    "(ETCollection)" = ETCollection;
+	    "NSDictionary(ETCollection)" = ETCollection;
+	};
+	"-isKindOfEntity:" = {
+	    ETEntityDescription = ETEntityDescription;
+	};
+	"-isMetaClass" = {
+	    "(ETClassMirror)" = ETReflection;
+	};
+	"-isMutable" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-isMutableCollection" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-isMutableValue" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETViewpointTrait = ETViewpoint;
+	};
+	"-isNumber" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-isObjectType" = {
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"-isOrdered" = {
+	    ETHistory = ETHistory;
+	    "NSArray(ETCollection)" = ETCollection;
+	};
+	"-isPrimitiveCollection" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-isPrototype" = {
+	    "(ETObjectMirror)" = ETReflection;
+	    "NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	};
+	"-isString" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-isValidValue:type:" = {
+	    ETEntityDescription = ETEntityDescription;
+	};
+	"-isViewpoint" = {
+	    ETViewpointTrait = ETViewpoint;
+	    "NSObject(ETViewpointAdditions)" = ETViewpoint;
+	};
+	"-key" = {
+	    ETKeyValuePair = ETKeyValuePair;
+	};
+	"-lastIndex" = {
+	    "NSIndexPath(Etoile)" = "NSIndexPath+Etoile";
+	};
+	"-leftFold" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-leftFoldWithInitialValue:intoBlock:" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-loadPlugInAtPath:" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-loadPlugInsFromPath:ofType:" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-loadPlugInsOfType:" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-loadedPlugIns" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-makeFrozen" = {
+	    ETModelElementDescription = ETModelElementDescription;
+	    ETPropertyDescription = ETPropertyDescription;
+	};
+	"-map" = {
+	    "(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	};
+	"-mapWithBlock:" = {
+	    "(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	};
+	"-mappedCollection" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-mappedCollectionWithBlock:" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-maxHistorySize" = {
+	    ETHistory = ETHistory;
+	};
+	"-md5" = {
+	    "NSData(ETHash)" = "NSData+Hash";
+	};
+	"-methodMirrors" = {
+	    "(ETClassMirror)" = ETReflection;
+	    "(ETObjectMirror)" = ETReflection;
+	    "(ETProtocolMirror)" = ETReflection;
+	};
+	"-name" = {
+	    "(ETMirror)" = ETReflection;
+	    "(ETPropertyViewpoint)" = ETViewpoint;
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"-negotiateSSL" = {
+	    ETSocket = ETSocket;
+	};
+	"-newConnection:fromSocket:" = {
+	    "NSObject(ETListenSocketDelegate)" = ETSocket;
+	};
+	"-nextObject" = {
+	    ETHistory = ETHistory;
+	};
+	"-numberOfFrames" = {
+	    ETStackTrace = ETStackTraceRecorder;
+	};
+	"-objectEnumerator" = {
+	    "(ETCollection)" = ETCollection;
+	    "NSIndexSet(ETCollection)" = ETCollection;
+	};
+	"-objectValue" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-objectsMatchingValue:forKey:" = {
+	    "NSArray(Etoile)" = "NSArray+Etoile";
+	};
+	"-observableKeyPaths" = {
+	    ETIndexValuePair = ETIndexValuePair;
+	    ETKeyValuePair = ETKeyValuePair;
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-ownerMirror" = {
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"-ownerObjectMirror" = {
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"-peek:" = {
+	    ETHistory = ETHistory;
+	};
+	"-placeObject:atIndex:inCollection:basedOnFilter:info:" = {
+	    "(ETCollectionHOMFilterIntegration)" = "ETCollection+HOM";
+	};
+	"-placeObject:inCollection:insteadOfObject:atIndex:havingAlreadyMapped:info:" = {
+	    "(ETCollectionHOMMapIntegration)" = "ETCollection+HOM";
+	};
+	"-plugInIconPathForBundle:" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-plugInIdentifierForBundle:" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-plugInNameForBundle:" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-previousObject" = {
+	    ETHistory = ETHistory;
+	};
+	"-primitiveDescription" = {
+	    "NSObject(ETModel)" = "NSObject+Model";
+	};
+	"-propertyDescriptionForName:" = {
+	    ETEntityDescription = ETEntityDescription;
+	};
+	"-propertyDescriptionsForNames:" = {
+	    ETEntityDescription = ETEntityDescription;
+	};
+	"-propertyNames" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETKeyValuePair = ETKeyValuePair;
+	    "NSDictionary(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	    "NSObject(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	};
+	"-prototype" = {
+	    "NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	};
+	"-prototypeMirror" = {
+	    "(ETObjectMirror)" = ETReflection;
+	};
+	"-receivedData:fromSocket:" = {
+	    "NSObject(ETSocketDelegate)" = ETSocket;
+	};
+	"-recordForObject:" = {
+	    ETStackTraceRecorder = ETStackTraceRecorder;
+	};
+	"-recordStackTrace" = {
+	    "NSObject(ETStackTraceRecorderConveniency)" = ETStackTraceRecorder;
+	};
+	"-recordedStackTraces" = {
+	    "NSObject(ETStackTraceRecorderConveniency)" = ETStackTraceRecorder;
+	};
+	"-recordedStackTracesForObject:" = {
+	    ETStackTraceRecorder = ETStackTraceRecorder;
+	};
+	"-registerEntityDescriptionsForClasses:resolveNow:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-removeDescription:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-removeEntityDescription:" = {
+	    ETPackageDescription = ETPackageDescription;
+	};
+	"-removeObject:" = {
+	    "(ETCollectionMutation)" = ETCollection;
+	};
+	"-removeObject:atIndex:hint:" = {
+	    "(ETCollectionMutation)" = ETCollection;
+	};
+	"-removeObjectAtIndex:" = {
+	    "(ETCollectionMutation)" = ETCollection;
+	};
+	"-removeObjectAtIndexes:" = {
+	    "NSObject(ETBatchCollectionMutation)" = ETCollection;
+	};
+	"-removeObjects:atIndexes:hints:" = {
+	    "(ETCollectionMutation)" = ETCollection;
+	};
+	"-removeObjectsFromIndex:" = {
+	    "NSMutableArray(Etoile)" = "NSArray+Etoile";
+	};
+	"-removePropertyDescription:" = {
+	    ETEntityDescription = ETEntityDescription;
+	    ETPackageDescription = ETPackageDescription;
+	};
+	"-removesCollection:" = {
+	    "NSObject(ETBatchCollectionMutation)" = ETCollection;
+	};
+	"-representedClass" = {
+	    ETClassMirror = ETClassMirror;
+	};
+	"-representedObject" = {
+	    "(ETObjectMirror)" = ETReflection;
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETKeyValuePair = ETKeyValuePair;
+	    ETObjectMirror = ETObjectMirror;
+	};
+	"-requiresKeyValueCodingForAccessingProperties" = {
+	    "NSObject(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	};
+	"-resolveNamedObjectReferences" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-rightFold" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-rightFoldWithInitialValue:intoBlock:" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-ripemd160" = {
+	    "NSData(ETHash)" = "NSData+Hash";
+	};
+	"-searchPaths" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-sendData:" = {
+	    ETSocket = ETSocket;
+	};
+	"-setContent:" = {
+	    ETCollectionViewpoint = ETCollectionViewpoint;
+	};
+	"-setDelegate:" = {
+	    ETSocket = ETSocket;
+	};
+	"-setEntityDescription:forClass:" = {
+	    ETModelDescriptionRepository = ETModelDescriptionRepository;
+	};
+	"-setFuture:" = {
+	    ETHistory = ETHistory;
+	};
+	"-setKey:" = {
+	    ETKeyValuePair = ETKeyValuePair;
+	};
+	"-setMaxHistorySize:" = {
+	    ETHistory = ETHistory;
+	};
+	"-setMethod:forSelector:" = {
+	    "NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	};
+	"-setRepresentedObject:" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETKeyValuePair = ETKeyValuePair;
+	};
+	"-setRepresentedObject:oldObservedKeyPath:newObservedKeyPath:" = {
+	    ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	};
+	"-setShouldInstantiatePlugInClass:" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-setUUID:forKey:" = {
+	    "NSUserDefaults(ETUUID)" = ETUUID;
+	};
+	"-setValue:" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETIndexValuePair = ETIndexValuePair;
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	    ETKeyValuePair = ETKeyValuePair;
+	};
+	"-setValue:forContentKey:" = {
+	    "NSObject(ETViewpointAdditions)" = ETViewpoint;
+	};
+	"-setValue:forContentKeyPath:" = {
+	    "NSObject(ETViewpointAdditions)" = ETViewpoint;
+	};
+	"-setValue:forProperty:" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETAdaptiveModelObject = ETAdaptiveModelObject;
+	    ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	    "NSDictionary(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	    "NSMutableDictionary(ETMutablePropertyValueCoding)" = ETPropertyValueCoding;
+	    "NSObject(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	};
+	"-setValue:forPropertyPath:" = {
+	    "NSObject(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	};
+	"-sha1" = {
+	    "NSData(ETHash)" = "NSData+Hash";
+	};
+	"-shouldInstantiatePlugInClass" = {
+	    ETPlugInRegistry = ETPlugInRegistry;
+	};
+	"-slotMirrors" = {
+	    "(ETObjectMirror)" = ETReflection;
+	};
+	"-slotValueForKey:" = {
+	    "NSObject(ETPrototypes)" = "NSObject+Prototypes";
+	};
+	"-startObserveRepresentedObject:forKeyPath:" = {
+	    ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	};
+	"-stopObserveRepresentedObject:forKeyPath:" = {
+	    ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	};
+	"-stringByCapitalizingFirstLetter" = {
+	    "NSString(Etoile)" = "NSString+Etoile";
+	};
+	"-stringByDeletingFirstPathComponent" = {
+	    "NSString(Etoile)" = "NSString+Etoile";
+	};
+	"-stringByJoiningIndexPathWithSeparator:" = {
+	    "NSIndexPath(Etoile)" = "NSIndexPath+Etoile";
+	};
+	"-stringByLowercasingFirstLetter" = {
+	    "NSString(Etoile)" = "NSString+Etoile";
+	};
+	"-stringBySpacingCapitalizedWords" = {
+	    "NSString(Etoile)" = "NSString+Etoile";
+	};
+	"-stringByStandardizingIntoAbsolutePath" = {
+	    "NSString(Etoile)" = "NSString+Etoile";
+	};
+	"-stringForObjectValue:" = {
+	    ETByteSizeFormatter = ETByteSizeFormatter;
+	};
+	"-stringValue" = {
+	    ETUTI = ETUTI;
+	    ETUUID = ETUUID;
+	    "NSIndexPath(Etoile)" = "NSIndexPath+Etoile";
+	};
+	"-subarrayFromIndex:" = {
+	    "NSArray(Etoile)" = "NSArray+Etoile";
+	};
+	"-subclassMirrors" = {
+	    "(ETClassMirror)" = ETReflection;
+	};
+	"-subdictionaryForKeys:" = {
+	    "NSDictionary(Etoile)" = "NSDictionary+Etoile";
+	};
+	"-substringFromIndex:toIndex:" = {
+	    "NSString(Etoile)" = "NSString+Etoile";
+	};
+	"-subtypes" = {
+	    ETUTI = ETUTI;
+	};
+	"-superclassMirror" = {
+	    "(ETClassMirror)" = ETReflection;
+	    "(ETObjectMirror)" = ETReflection;
+	};
+	"-supertypes" = {
+	    ETUTI = ETUTI;
+	};
+	"-supportsDoubleDispatchWithObject:" = {
+	    "NSObject(ETDoubleDispatch)" = "NSObject+DoubleDispatch";
+	};
+	"-tempDirectory" = {
+	    "NSFileManager(ETTempFile)" = "NSFileManager+TempFile";
+	};
+	"-tempFile" = {
+	    "NSFileManager(ETTempFile)" = "NSFileManager+TempFile";
+	};
+	"-tryToPerformSelector:withObject:result:" = {
+	    "NSObject(ETDoubleDispatch)" = "NSObject+DoubleDispatch";
+	};
+	"-type" = {
+	    "(ETMirror)" = ETReflection;
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"-typeDescription" = {
+	    ETUTI = ETUTI;
+	};
+	"-typeEncoding" = {
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"-typeName" = {
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	    "NSObject(Etoile)" = "NSObject+Etoile";
+	};
+	"-unapplyMutableViewpointTraitForValue:" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETViewpointTrait = ETViewpoint;
+	};
+	"-validateMutationForObjects:atIndexes:hints:isRemoval:" = {
+	    "(ETCollectionMutation)" = ETCollection;
+	};
+	"-validateValue:forKey:" = {
+	    ETEntityDescription = ETEntityDescription;
+	    ETPropertyDescription = ETPropertyDescription;
+	    ETRoleDescription = ETRoleDescription;
+	};
+	"-value" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETIndexValuePair = ETIndexValuePair;
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	    ETKeyValuePair = ETKeyValuePair;
+	};
+	"-valueForContentKey:" = {
+	    "NSObject(ETViewpointAdditions)" = ETViewpoint;
+	};
+	"-valueForContentKeyPath:" = {
+	    "NSObject(ETViewpointAdditions)" = ETViewpoint;
+	};
+	"-valueForProperty:" = {
+	    "(ETViewpoint)" = ETViewpoint;
+	    ETAdaptiveModelObject = ETAdaptiveModelObject;
+	    ETMutableObjectViewpoint = ETMutableObjectViewpoint;
+	    "NSDictionary(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	    "NSObject(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	};
+	"-valueForPropertyPath:" = {
+	    "NSObject(ETPropertyValueCoding)" = ETPropertyValueCoding;
+	};
+	"-valueMirror" = {
+	    ETInstanceVariableMirror = ETInstanceVariableMirror;
+	};
+	"-viewpointArray" = {
+	    "(ETCollection)" = ETCollection;
+	    "NSArray(ETCollection)" = ETCollection;
+	    "NSDictionary(ETCollection)" = ETCollection;
+	    "NSSet(ETCollection)" = ETCollection;
+	};
+	"-visit:" = {
+	    "NSObject(ETDoubleDispatch)" = "NSObject+DoubleDispatch";
+	};
+	"-visit:result:" = {
+	    "NSObject(ETDoubleDispatch)" = "NSObject+DoubleDispatch";
+	};
+	"-warningWithMessage:" = {
+	    ETModelElementDescription = ETModelElementDescription;
+	};
+	"-willChangeValueForKey:atIndexes:withObjects:mutationKind:" = {
+	    "NSObject(ETCollectionMutationKVOSupport)" = ETCollection;
+	};
+	"-zipWithCollection:" = {
+	    "(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	};
+	"-zipWithCollection:andBlock:" = {
+	    "(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	};
+	"-zippedCollectionWithCollection:" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+	"-zippedCollectionWithCollection:andBlock:" = {
+	    "(ETCollectionHOM)" = "ETCollection+HOM";
+	};
+    };
+    output = {
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETAdaptiveModelObject.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETAdaptiveModelObject.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETByteSizeFormatter.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETByteSizeFormatter.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.c" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETCArray.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETCArray.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETClassMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETClassMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETCollection+HOM.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETCollection+HOM.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETCollection.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETCollection.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollectionViewpoint.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETCollectionViewpoint.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETEntityDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETEntityDescription.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETException.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETException.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETGetOptionsDictionary.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETGetOptionsDictionary.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETHistory.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETHistory.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETIndexValuePair.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETIndexValuePair.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETInstanceVariableMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETInstanceVariableMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETKeyValuePair.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETKeyValuePair.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETMethodMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETMethodMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelDescriptionRepository.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETModelDescriptionRepository.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelElementDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETModelElementDescription.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMutableObjectViewpoint.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETMutableObjectViewpoint.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETObjectMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETObjectMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPackageDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETPackageDescription.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETPlugInRegistry.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETPlugInRegistry.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETPropertyDescription.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETPropertyValueCoding.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETPropertyValueCoding.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETProtocolMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETProtocolMirror.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETReflection.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETReflection.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETRoleDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETRoleDescription.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETSocket.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETSocket.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETStackTraceRecorder.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETStackTraceRecorder.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETTranscript.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETTranscript.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUTI.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETUTI.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUUID.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETUUID.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUnionViewpoint.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETUnionViewpoint.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETValidationResult.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETValidationResult.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETViewpoint.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/ETViewpoint.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/EtoileFoundation.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/EtoileFoundation.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/Macros.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/Macros.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSArray+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSArray+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSData+Hash.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSData+Hash.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSDictionary+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSDictionary+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSFileHandle+Socket.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSFileHandle+Socket.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSFileManager+TempFile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSFileManager+TempFile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSIndexPath+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSIndexPath+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSIndexSet+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSIndexSet+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSInvocation+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSInvocation+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSMapTable+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSMapTable+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+DoubleDispatch.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+DoubleDispatch.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+HOM.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+HOM.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+Model.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+Model.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+Prototypes.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+Prototypes.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+Trait.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSObject+Trait.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSString+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/NSString+Etoile.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/glibc_hack_unistd.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/glibc_hack_unistd.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/runtime.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/GSDoc/runtime.gsdoc"
+	);
+    };
+    protocol = {
+	"(ETClassMirror)" = ETReflection;
+	"(ETCollection)" = ETCollection;
+	"(ETCollectionHOM)" = "ETCollection+HOM";
+	"(ETCollectionHOMFilterIntegration)" = "ETCollection+HOM";
+	"(ETCollectionHOMIntegration)" = "ETCollection+HOM";
+	"(ETCollectionHOMMapIntegration)" = "ETCollection+HOM";
+	"(ETCollectionMutation)" = ETCollection;
+	"(ETCollectionMutationHOM)" = "ETCollection+HOM";
+	"(ETInstanceVariableMirror)" = ETReflection;
+	"(ETKeyedCollection)" = ETCollection;
+	"(ETMethodMirror)" = ETReflection;
+	"(ETMirror)" = ETReflection;
+	"(ETObjectMirror)" = ETReflection;
+	"(ETPropertyViewpoint)" = ETViewpoint;
+	"(ETProtocolMirror)" = ETReflection;
+	"(ETSocketFilter)" = ETSocket;
+	"(ETTranscriptDelegate)" = ETTranscript;
+	"(ETViewpoint)" = ETViewpoint;
+	"(ETViewpointMutation)" = ETViewpoint;
+	"NSObject(ETBatchCollectionMutation)" = ETCollection;
+	"NSObject(ETCollectionHOMIntegrationInformalProtocol)" = "ETCollection+HOM";
+	"NSObject(ETIndexValuePair)" = ETIndexValuePair;
+	"NSObject(ETListenSocketDelegate)" = ETSocket;
+	"NSObject(ETSocketDelegate)" = ETSocket;
+	"NSObject(ETViewpointAdditions)" = ETViewpoint;
+    };
+    source = {
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETAdaptiveModelObject.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETAdaptiveModelObject.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETAdaptiveModelObject.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETAdaptiveModelObject.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETByteSizeFormatter.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.c" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.c",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.c",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.c"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCArray.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETClassMirror.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection+HOM.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollection.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollectionViewpoint.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollectionViewpoint.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollectionViewpoint.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETCollectionViewpoint.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETEntityDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETEntityDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETEntityDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETEntityDescription.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETException.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETGetOptionsDictionary.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETHistory.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETHistory.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETHistory.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETHistory.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETIndexValuePair.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETIndexValuePair.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETIndexValuePair.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETIndexValuePair.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETInstanceVariableMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETInstanceVariableMirror.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETInstanceVariableMirror.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETInstanceVariableMirror.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETKeyValuePair.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMethodMirror.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelDescriptionRepository.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelDescriptionRepository.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelDescriptionRepository.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelDescriptionRepository.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelElementDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelElementDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelElementDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETModelElementDescription.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMutableObjectViewpoint.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMutableObjectViewpoint.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMutableObjectViewpoint.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETMutableObjectViewpoint.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETObjectMirror.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPackageDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPackageDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPackageDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPackageDescription.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPlugInRegistry.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyDescription.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETPropertyValueCoding.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETProtocolMirror.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETReflection.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETRoleDescription.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETRoleDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETRoleDescription.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETRoleDescription.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETSocket.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETStackTraceRecorder.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETTranscript.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUTI.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUTI.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUTI.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUTI.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUUID.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUUID.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUUID.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUUID.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUnionViewpoint.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUnionViewpoint.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUnionViewpoint.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETUnionViewpoint.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETValidationResult.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETValidationResult.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETValidationResult.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETValidationResult.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETViewpoint.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETViewpoint.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETViewpoint.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/ETViewpoint.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/EtoileFoundation.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/EtoileFoundation.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/EtoileFoundation.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/EtoileFoundation.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/Macros.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/Macros.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/Macros.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/Macros.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSArray+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSData+Hash.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSDictionary+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileHandle+Socket.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSFileManager+TempFile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexPath+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSIndexSet+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSInvocation+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSMapTable+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+DoubleDispatch.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+HOM.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Model.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Prototypes.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSObject+Trait.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/NSString+Etoile.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/glibc_hack_unistd.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/glibc_hack_unistd.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/glibc_hack_unistd.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/glibc_hack_unistd.h"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/runtime.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/runtime.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/runtime.h",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Frameworks/EtoileFoundation/Documentation/ObjC/runtime.h"
+	);
+    };
+    super = {
+	ETAdaptiveModelObject = NSObject;
+	ETByteSizeFormatter = NSFormatter;
+	ETCPrimitiveEntityDescription = ETPrimitiveEntityDescription;
+	ETClassMirror = NSObject;
+	ETCollectionTrait = NSObject;
+	ETCollectionViewpoint = ETMutableObjectViewpoint;
+	ETEntityDescription = ETModelElementDescription;
+	ETHistory = NSObject;
+	ETIndexValuePair = NSObject;
+	ETInstanceVariableMirror = NSObject;
+	ETKeyValuePair = NSObject;
+	ETListenSocket = ETSocket;
+	ETMethodDescriptionMirror = NSObject;
+	ETMethodMirror = NSObject;
+	ETModelDescriptionRepository = NSObject;
+	ETModelElementDescription = NSObject;
+	ETMultiOptionsRole = ETRoleDescription;
+	ETMutableCollectionTrait = ETCollectionTrait;
+	ETMutableObjectViewpoint = NSObject;
+	ETNumberRole = ETRoleDescription;
+	ETObjectMirror = NSObject;
+	ETPackageDescription = ETModelElementDescription;
+	ETPlugInRegistry = NSObject;
+	ETPrimitiveEntityDescription = ETEntityDescription;
+	ETPropertyDescription = ETModelElementDescription;
+	ETProtocolMirror = NSObject;
+	ETReflection = NSObject;
+	ETRelationshipRole = ETRoleDescription;
+	ETRoleDescription = NSObject;
+	ETSocket = NSObject;
+	ETStackTrace = NSObject;
+	ETStackTraceRecorder = NSObject;
+	ETTranscript = NSObject;
+	ETUTI = NSObject;
+	ETUUID = NSObject;
+	ETUnionViewpoint = ETCollectionViewpoint;
+	ETValidationResult = NSObject;
+	ETViewpointTrait = NSObject;
+    };
+    title = {
+	ETAdaptiveModelObject = "ETAdaptiveModelObject class documentation";
+	ETByteSizeFormatter = "ETByteSizeFormatter class documentation";
+	ETCArray = "ETCArray documentation";
+	ETClassMirror = "ETClassMirror class documentation";
+	ETCollection = "ETCollection documentation";
+	"ETCollection+HOM" = "ETCollection+HOM documentation";
+	ETCollectionViewpoint = "ETCollectionViewpoint class documentation";
+	ETEntityDescription = "ETEntityDescription documentation";
+	ETException = "ETException documentation";
+	ETGetOptionsDictionary = "ETGetOptionsDictionary documentation";
+	ETHistory = "ETHistory class documentation";
+	ETIndexValuePair = "ETIndexValuePair class documentation";
+	ETInstanceVariableMirror = "ETInstanceVariableMirror class documentation";
+	ETKeyValuePair = "ETKeyValuePair class documentation";
+	ETMethodMirror = "ETMethodMirror documentation";
+	ETModelDescriptionRepository = "ETModelDescriptionRepository class documentation";
+	ETModelElementDescription = "ETModelElementDescription class documentation";
+	ETMutableObjectViewpoint = "ETMutableObjectViewpoint class documentation";
+	ETObjectMirror = "ETObjectMirror class documentation";
+	ETPackageDescription = "ETPackageDescription class documentation";
+	ETPlugInRegistry = "ETPlugInRegistry class documentation";
+	ETPropertyDescription = "ETPropertyDescription class documentation";
+	ETPropertyValueCoding = "ETPropertyValueCoding documentation";
+	ETProtocolMirror = "ETProtocolMirror class documentation";
+	ETReflection = "ETReflection class documentation";
+	ETRoleDescription = "ETRoleDescription documentation";
+	ETSocket = "ETSocket documentation";
+	ETStackTraceRecorder = "ETStackTraceRecorder documentation";
+	ETTranscript = "ETTranscript class documentation";
+	ETUTI = "ETUTI class documentation";
+	ETUUID = "ETUUID class documentation";
+	ETUnionViewpoint = "ETUnionViewpoint class documentation";
+	ETValidationResult = "ETValidationResult class documentation";
+	ETViewpoint = "ETViewpointTrait class documentation";
+	Macros = "Macros documentation";
+	"NSArray+Etoile" = "NSArray+Etoile documentation";
+	"NSData+Hash" = "NSData+Hash documentation";
+	"NSDictionary+Etoile" = "NSDictionary+Etoile documentation";
+	"NSFileHandle+Socket" = "NSFileHandle+Socket documentation";
+	"NSFileManager+TempFile" = "NSFileManager+TempFile documentation";
+	"NSIndexPath+Etoile" = "NSIndexPath+Etoile documentation";
+	"NSIndexSet+Etoile" = "NSIndexSet+Etoile documentation";
+	"NSInvocation+Etoile" = "NSInvocation+Etoile documentation";
+	"NSMapTable+Etoile" = "NSMapTable+Etoile documentation";
+	"NSObject+DoubleDispatch" = "NSObject+DoubleDispatch documentation";
+	"NSObject+Etoile" = "NSObject+Etoile documentation";
+	"NSObject+HOM" = "NSObject+HOM documentation";
+	"NSObject+Model" = "NSObject+Model documentation";
+	"NSObject+Prototypes" = "NSObject+Prototypes documentation";
+	"NSObject+Trait" = "NSObject+Trait documentation";
+	"NSString+Etoile" = "NSString+Etoile documentation";
+    };
+    type = {
+	ETCArray = ETCArray;
+	ETCollectionMutationKind = ETCollection;
+	ETExceptionType = ETException;
+	ETHandler = ETException;
+    };
+    unitmethods = {
+	"(ETClassMirror)" = {
+	    "-adoptedProtocolMirrors" = ETReflection;
+	    "-allAdoptedProtocolMirrors" = ETReflection;
+	    "-allInstanceVariableMirrors" = ETReflection;
+	    "-allInstanceVariableMirrorsWithOwnerMirror:" = ETReflection;
+	    "-allMethodMirrors" = ETReflection;
+	    "-allSubclassMirrors" = ETReflection;
+	    "-instanceVariableMirrors" = ETReflection;
+	    "-instanceVariableMirrorsWithOwnerMirror:" = ETReflection;
+	    "-isMetaClass" = ETReflection;
+	    "-methodMirrors" = ETReflection;
+	    "-subclassMirrors" = ETReflection;
+	    "-superclassMirror" = ETReflection;
+	};
+	"(ETCollection)" = {
+	    "-containsCollection:" = ETCollection;
+	    "-containsObject:" = ETCollection;
+	    "-content" = ETCollection;
+	    "-contentArray" = ETCollection;
+	    "-count" = ETCollection;
+	    "-countByEnumeratingWithState:objects:count:" = ETCollection;
+	    "-isEmpty" = ETCollection;
+	    "-isKeyed" = ETCollection;
+	    "-objectEnumerator" = ETCollection;
+	    "-viewpointArray" = ETCollection;
+	};
+	"(ETCollectionHOM)" = {
+	    "-filteredCollectionWithBlock:" = "ETCollection+HOM";
+	    "-filteredOutCollectionWithBlock:" = "ETCollection+HOM";
+	    "-leftFold" = "ETCollection+HOM";
+	    "-leftFoldWithInitialValue:intoBlock:" = "ETCollection+HOM";
+	    "-mappedCollection" = "ETCollection+HOM";
+	    "-mappedCollectionWithBlock:" = "ETCollection+HOM";
+	    "-rightFold" = "ETCollection+HOM";
+	    "-rightFoldWithInitialValue:intoBlock:" = "ETCollection+HOM";
+	    "-zippedCollectionWithCollection:" = "ETCollection+HOM";
+	    "-zippedCollectionWithCollection:andBlock:" = "ETCollection+HOM";
+	};
+	"(ETCollectionHOMFilterIntegration)" = {
+	    "-placeObject:atIndex:inCollection:basedOnFilter:info:" = "ETCollection+HOM";
+	};
+	"(ETCollectionHOMMapIntegration)" = {
+	    "-placeObject:inCollection:insteadOfObject:atIndex:havingAlreadyMapped:info:" = "ETCollection+HOM";
+	};
+	"(ETCollectionMutation)" = {
+	    "-insertObject:atIndex:" = ETCollection;
+	    "-insertObject:atIndex:hint:" = ETCollection;
+	    "-insertObjects:atIndexes:hints:" = ETCollection;
+	    "-removeObject:" = ETCollection;
+	    "-removeObject:atIndex:hint:" = ETCollection;
+	    "-removeObjectAtIndex:" = ETCollection;
+	    "-removeObjects:atIndexes:hints:" = ETCollection;
+	    "-validateMutationForObjects:atIndexes:hints:isRemoval:" = ETCollection;
+	};
+	"(ETCollectionMutationHOM)" = {
+	    "-filter" = "ETCollection+HOM";
+	    "-filterOut" = "ETCollection+HOM";
+	    "-filterOutWithBlock:" = "ETCollection+HOM";
+	    "-filterWithBlock:" = "ETCollection+HOM";
+	    "-map" = "ETCollection+HOM";
+	    "-mapWithBlock:" = "ETCollection+HOM";
+	    "-zipWithCollection:" = "ETCollection+HOM";
+	    "-zipWithCollection:andBlock:" = "ETCollection+HOM";
+	};
+	"(ETKeyedCollection)" = {
+	    "-arrayRepresentation" = ETCollection;
+	};
+	"(ETMethodMirror)" = {
+	    "-isClassMethod" = ETReflection;
+	};
+	"(ETMirror)" = {
+	    "-name" = ETReflection;
+	    "-type" = ETReflection;
+	};
+	"(ETObjectMirror)" = {
+	    "-allInstanceVariableMirrors" = ETReflection;
+	    "-allMethodMirrors" = ETReflection;
+	    "-allSlotMirrors" = ETReflection;
+	    "-classMirror" = ETReflection;
+	    "-instanceVariableMirrors" = ETReflection;
+	    "-isPrototype" = ETReflection;
+	    "-methodMirrors" = ETReflection;
+	    "-prototypeMirror" = ETReflection;
+	    "-representedObject" = ETReflection;
+	    "-slotMirrors" = ETReflection;
+	    "-superclassMirror" = ETReflection;
+	};
+	"(ETPropertyViewpoint)" = {
+	    "+viewpointWithName:representedObject:" = ETViewpoint;
+	    "-name" = ETViewpoint;
+	};
+	"(ETProtocolMirror)" = {
+	    "-allAncestorProtocolMirrors" = ETReflection;
+	    "-allMethodMirrors" = ETReflection;
+	    "-ancestorProtocolMirrors" = ETReflection;
+	    "-methodMirrors" = ETReflection;
+	};
+	"(ETSocketFilter)" = {
+	    "-filterData:" = ETSocket;
+	};
+	"(ETTranscriptDelegate)" = {
+	    "-appendTranscriptString:" = ETTranscript;
+	};
+	"(ETViewpoint)" = {
+	    "-applyMutableViewpointTraitForValue:" = ETViewpoint;
+	    "-isMutableValue" = ETViewpoint;
+	    "-propertyNames" = ETViewpoint;
+	    "-representedObject" = ETViewpoint;
+	    "-setRepresentedObject:" = ETViewpoint;
+	    "-setValue:" = ETViewpoint;
+	    "-setValue:forProperty:" = ETViewpoint;
+	    "-unapplyMutableViewpointTraitForValue:" = ETViewpoint;
+	    "-value" = ETViewpoint;
+	    "-valueForProperty:" = ETViewpoint;
+	};
+	"(ETViewpointMutation)" = {
+	    "+mutableViewpointClass" = ETViewpoint;
+	};
+	ETAdaptiveModelObject = {
+	    "-setValue:forProperty:" = ETAdaptiveModelObject;
+	    "-valueForProperty:" = ETAdaptiveModelObject;
+	};
+	ETByteSizeFormatter = {
+	    "-stringForObjectValue:" = ETByteSizeFormatter;
+	};
+	ETClassMirror = {
+	    "+mirrorWithClass:" = ETClassMirror;
+	    "-initWithClass:" = ETClassMirror;
+	    "-representedClass" = ETClassMirror;
+	};
+	ETCollectionViewpoint = {
+	    "-content" = ETCollectionViewpoint;
+	    "-didUpdate" = ETCollectionViewpoint;
+	    "-isIndexValuePairCollection" = ETCollectionViewpoint;
+	    "-setContent:" = ETCollectionViewpoint;
+	};
+	ETEntityDescription = {
+	    "+newEntityDescription" = ETEntityDescription;
+	    "+rootEntityDescriptionName" = ETEntityDescription;
+	    "-addPropertyDescription:" = ETEntityDescription;
+	    "-isKindOfEntity:" = ETEntityDescription;
+	    "-isValidValue:type:" = ETEntityDescription;
+	    "-propertyDescriptionForName:" = ETEntityDescription;
+	    "-propertyDescriptionsForNames:" = ETEntityDescription;
+	    "-removePropertyDescription:" = ETEntityDescription;
+	    "-validateValue:forKey:" = ETEntityDescription;
+	};
+	ETHistory = {
+	    "+history" = ETHistory;
+	    "-addObject:" = ETHistory;
+	    "-back" = ETHistory;
+	    "-clear" = ETHistory;
+	    "-currentObject" = ETHistory;
+	    "-displayName" = ETHistory;
+	    "-forward" = ETHistory;
+	    "-hasNext" = ETHistory;
+	    "-hasPrevious" = ETHistory;
+	    "-init" = ETHistory;
+	    "-isOrdered" = ETHistory;
+	    "-maxHistorySize" = ETHistory;
+	    "-nextObject" = ETHistory;
+	    "-peek:" = ETHistory;
+	    "-previousObject" = ETHistory;
+	    "-setFuture:" = ETHistory;
+	    "-setMaxHistorySize:" = ETHistory;
+	};
+	ETIndexValuePair = {
+	    "-initWithIndex:value:representedObject:" = ETIndexValuePair;
+	    "-isIndexValuePair" = ETIndexValuePair;
+	    "-observableKeyPaths" = ETIndexValuePair;
+	    "-setValue:" = ETIndexValuePair;
+	    "-value" = ETIndexValuePair;
+	};
+	ETInstanceVariableMirror = {
+	    "+mirrorWithIvar:ownerMirror:" = ETInstanceVariableMirror;
+	    "-initWithIvar:ownerMirror:" = ETInstanceVariableMirror;
+	    "-isObjectType" = ETInstanceVariableMirror;
+	    "-name" = ETInstanceVariableMirror;
+	    "-ownerMirror" = ETInstanceVariableMirror;
+	    "-ownerObjectMirror" = ETInstanceVariableMirror;
+	    "-setValue:" = ETInstanceVariableMirror;
+	    "-type" = ETInstanceVariableMirror;
+	    "-typeEncoding" = ETInstanceVariableMirror;
+	    "-typeName" = ETInstanceVariableMirror;
+	    "-value" = ETInstanceVariableMirror;
+	    "-valueMirror" = ETInstanceVariableMirror;
+	};
+	ETKeyValuePair = {
+	    "+pairWithKey:value:" = ETKeyValuePair;
+	    "-displayName" = ETKeyValuePair;
+	    "-initWithKey:value:" = ETKeyValuePair;
+	    "-isKeyValuePair" = ETKeyValuePair;
+	    "-key" = ETKeyValuePair;
+	    "-observableKeyPaths" = ETKeyValuePair;
+	    "-propertyNames" = ETKeyValuePair;
+	    "-representedObject" = ETKeyValuePair;
+	    "-setKey:" = ETKeyValuePair;
+	    "-setRepresentedObject:" = ETKeyValuePair;
+	    "-setValue:" = ETKeyValuePair;
+	    "-value" = ETKeyValuePair;
+	};
+	ETListenSocket = {
+	    "+listenSocketForAddress:onPort:" = ETSocket;
+	    "+listenSocketOnPort:" = ETSocket;
+	    "-initForAddress:onPort:" = ETSocket;
+	    "-initOnPort:" = ETSocket;
+	    "-initWithSocketAddress:" = ETSocket;
+	};
+	ETMethodDescriptionMirror = {
+	    "+mirrorWithMethodName:isClassMethod:" = ETMethodMirror;
+	    "-initWithMethodName:isClassMethod:" = ETMethodMirror;
+	};
+	ETMethodMirror = {
+	    "+mirrorWithMethod:isClassMethod:" = ETMethodMirror;
+	    "-initWithMethod:isClassMethod:" = ETMethodMirror;
+	};
+	ETModelDescriptionRepository = {
+	    "+mainRepository" = ETModelDescriptionRepository;
+	    "+newEntityDescription" = ETModelDescriptionRepository;
+	    "-addDescription:" = ETModelDescriptionRepository;
+	    "-addUnresolvedDescription:" = ETModelDescriptionRepository;
+	    "-checkConstraints:" = ETModelDescriptionRepository;
+	    "-classForEntityDescription:" = ETModelDescriptionRepository;
+	    "-collectEntityDescriptionsFromClass:excludedClasses:resolveNow:" = ETModelDescriptionRepository;
+	    "-descriptionForName:" = ETModelDescriptionRepository;
+	    "-entityDescriptionForClass:" = ETModelDescriptionRepository;
+	    "-init" = ETModelDescriptionRepository;
+	    "-registerEntityDescriptionsForClasses:resolveNow:" = ETModelDescriptionRepository;
+	    "-removeDescription:" = ETModelDescriptionRepository;
+	    "-resolveNamedObjectReferences" = ETModelDescriptionRepository;
+	    "-setEntityDescription:forClass:" = ETModelDescriptionRepository;
+	};
+	ETModelElementDescription = {
+	    "+descriptionWithName:" = ETModelElementDescription;
+	    "+newEntityDescription" = ETModelElementDescription;
+	    "-checkConstraints:" = ETModelElementDescription;
+	    "-checkNotFrozen" = ETModelElementDescription;
+	    "-init" = ETModelElementDescription;
+	    "-initWithName:" = ETModelElementDescription;
+	    "-makeFrozen" = ETModelElementDescription;
+	    "-warningWithMessage:" = ETModelElementDescription;
+	};
+	ETMutableObjectViewpoint = {
+	    "+viewpointWithName:representedObject:" = ETMutableObjectViewpoint;
+	    "-initWithName:representedObject:" = ETMutableObjectViewpoint;
+	    "-setRepresentedObject:oldObservedKeyPath:newObservedKeyPath:" = ETMutableObjectViewpoint;
+	    "-setValue:forProperty:" = ETMutableObjectViewpoint;
+	    "-startObserveRepresentedObject:forKeyPath:" = ETMutableObjectViewpoint;
+	    "-stopObserveRepresentedObject:forKeyPath:" = ETMutableObjectViewpoint;
+	    "-valueForProperty:" = ETMutableObjectViewpoint;
+	};
+	ETObjectMirror = {
+	    "+mirrorWithObject:" = ETObjectMirror;
+	    "-initWithObject:" = ETObjectMirror;
+	    "-representedObject" = ETObjectMirror;
+	};
+	ETPackageDescription = {
+	    "+newEntityDescription" = ETPackageDescription;
+	    "-addEntityDescription:" = ETPackageDescription;
+	    "-addPropertyDescription:" = ETPackageDescription;
+	    "-checkConstraints:" = ETPackageDescription;
+	    "-removeEntityDescription:" = ETPackageDescription;
+	    "-removePropertyDescription:" = ETPackageDescription;
+	};
+	ETPlugInRegistry = {
+	    "+sharedRegistry" = ETPlugInRegistry;
+	    "-loadPlugInAtPath:" = ETPlugInRegistry;
+	    "-loadPlugInsFromPath:ofType:" = ETPlugInRegistry;
+	    "-loadPlugInsOfType:" = ETPlugInRegistry;
+	    "-loadedPlugIns" = ETPlugInRegistry;
+	    "-plugInIconPathForBundle:" = ETPlugInRegistry;
+	    "-plugInIdentifierForBundle:" = ETPlugInRegistry;
+	    "-plugInNameForBundle:" = ETPlugInRegistry;
+	    "-searchPaths" = ETPlugInRegistry;
+	    "-setShouldInstantiatePlugInClass:" = ETPlugInRegistry;
+	    "-shouldInstantiatePlugInClass" = ETPlugInRegistry;
+	};
+	ETPropertyDescription = {
+	    "+descriptionWithName:type:" = ETPropertyDescription;
+	    "+descriptionWithName:typeName:" = ETPropertyDescription;
+	    "+newEntityDescription" = ETPropertyDescription;
+	    "-makeFrozen" = ETPropertyDescription;
+	    "-validateValue:forKey:" = ETPropertyDescription;
+	};
+	ETProtocolMirror = {
+	    "+mirrorWithProtocol:" = ETProtocolMirror;
+	    "-initWithProtocol:" = ETProtocolMirror;
+	};
+	ETReflection = {
+	    "+reflectAllRootClasses" = ETReflection;
+	    "+reflectClass:" = ETReflection;
+	    "+reflectClassWithName:" = ETReflection;
+	    "+reflectObject:" = ETReflection;
+	    "+reflectProtocol:" = ETReflection;
+	    "+reflectProtocolWithName:" = ETReflection;
+	};
+	ETRoleDescription = {
+	    "-validateValue:forKey:" = ETRoleDescription;
+	};
+	ETSocket = {
+	    "+socketConnectedToRemoteHost:forService:" = ETSocket;
+	    "-negotiateSSL" = ETSocket;
+	    "-sendData:" = ETSocket;
+	    "-setDelegate:" = ETSocket;
+	};
+	ETStackTrace = {
+	    "-init" = ETStackTraceRecorder;
+	    "-numberOfFrames" = ETStackTraceRecorder;
+	};
+	ETStackTraceRecorder = {
+	    "+sharedInstance" = ETStackTraceRecorder;
+	    "-disableAllocationRecordingForClass:" = ETStackTraceRecorder;
+	    "-enableAllocationRecordingForClass:" = ETStackTraceRecorder;
+	    "-init" = ETStackTraceRecorder;
+	    "-recordForObject:" = ETStackTraceRecorder;
+	    "-recordedStackTracesForObject:" = ETStackTraceRecorder;
+	};
+	ETTranscript = {
+	    "+appendString:" = ETTranscript;
+	    "+cr" = ETTranscript;
+	    "+show:" = ETTranscript;
+	};
+	ETUTI = {
+	    "+registerTypeWithString:description:supertypeStrings:typeTags:" = ETUTI;
+	    "+registerTypesFromBundle:" = ETUTI;
+	    "+transientTypeWithSupertypeStrings:" = ETUTI;
+	    "+transientTypeWithSupertypes:" = ETUTI;
+	    "+typeWithClass:" = ETUTI;
+	    "+typeWithFileExtension:" = ETUTI;
+	    "+typeWithMIMEType:" = ETUTI;
+	    "+typeWithPath:" = ETUTI;
+	    "+typeWithString:" = ETUTI;
+	    "-MIMETypes" = ETUTI;
+	    "-allSubtypes" = ETUTI;
+	    "-allSupertypes" = ETUTI;
+	    "-classValue" = ETUTI;
+	    "-conformsToType:" = ETUTI;
+	    "-fileExtensions" = ETUTI;
+	    "-stringValue" = ETUTI;
+	    "-subtypes" = ETUTI;
+	    "-supertypes" = ETUTI;
+	    "-typeDescription" = ETUTI;
+	};
+	ETUUID = {
+	    "+UUID" = ETUUID;
+	    "+UUIDWithData:" = ETUUID;
+	    "+UUIDWithString:" = ETUUID;
+	    "-UUIDValue" = ETUUID;
+	    "-dataValue" = ETUUID;
+	    "-init" = ETUUID;
+	    "-initWithString:" = ETUUID;
+	    "-initWithUUID:" = ETUUID;
+	    "-stringValue" = ETUUID;
+	};
+	ETUnionViewpoint = {
+	    "+mixedValueMarker" = ETUnionViewpoint;
+	};
+	ETValidationResult = {
+	    "+invalidResultWithError:" = ETValidationResult;
+	    "+validResult:" = ETValidationResult;
+	    "+validationResultWithValue:isValid:error:" = ETValidationResult;
+	    "-initWithValue:isValid:error:" = ETValidationResult;
+	};
+	ETViewpointTrait = {
+	    "-applyMutableViewpointTraitForValue:" = ETViewpoint;
+	    "-isMutableValue" = ETViewpoint;
+	    "-isViewpoint" = ETViewpoint;
+	    "-unapplyMutableViewpointTraitForValue:" = ETViewpoint;
+	};
+	"NSArray(ETCollection)" = {
+	    "+mutableClass" = ETCollection;
+	    "-content" = ETCollection;
+	    "-contentArray" = ETCollection;
+	    "-isOrdered" = ETCollection;
+	    "-viewpointArray" = ETCollection;
+	};
+	"NSArray(ETKeyValuePairRepresentation)" = {
+	    "-dictionaryRepresentation" = ETKeyValuePair;
+	};
+	"NSArray(Etoile)" = {
+	    "-arrayByRemovingObject:" = "NSArray+Etoile";
+	    "-arrayByRemovingObjectsInArray:" = "NSArray+Etoile";
+	    "-filteredArrayUsingPredicate:ignoringObjects:" = "NSArray+Etoile";
+	    "-firstObject" = "NSArray+Etoile";
+	    "-firstObjectMatchingValue:forKey:" = "NSArray+Etoile";
+	    "-objectsMatchingValue:forKey:" = "NSArray+Etoile";
+	    "-subarrayFromIndex:" = "NSArray+Etoile";
+	};
+	"NSCountedSet(ETCollection)" = {
+	    "+mutableClass" = ETCollection;
+	};
+	"NSData(ETHash)" = {
+	    "-base64String" = "NSData+Hash";
+	    "-md5" = "NSData+Hash";
+	    "-ripemd160" = "NSData+Hash";
+	    "-sha1" = "NSData+Hash";
+	};
+	"NSDate(ETModel)" = {
+	    "-isCommonObjectValue" = "NSObject+Model";
+	};
+	"NSDictionary(ETCollection)" = {
+	    "+mutableClass" = ETCollection;
+	    "-arrayRepresentation" = ETCollection;
+	    "-content" = ETCollection;
+	    "-contentArray" = ETCollection;
+	    "-isKeyed" = ETCollection;
+	    "-viewpointArray" = ETCollection;
+	};
+	"NSDictionary(ETCollectionHOM)" = {
+	    "-collectionArrayAndInfo:" = "ETCollection+HOM";
+	};
+	"NSDictionary(ETPropertyValueCoding)" = {
+	    "-propertyNames" = ETPropertyValueCoding;
+	    "-setValue:forProperty:" = ETPropertyValueCoding;
+	    "-valueForProperty:" = ETPropertyValueCoding;
+	};
+	"NSDictionary(Etoile)" = {
+	    "-containsKey:" = "NSDictionary+Etoile";
+	    "-dictionaryByAddingEntriesFromDictionary:" = "NSDictionary+Etoile";
+	    "-subdictionaryForKeys:" = "NSDictionary+Etoile";
+	};
+	"NSException(ETException)" = {
+	    "+enableEtoileExceptions" = ETException;
+	    "+popHandlerForException:" = ETException;
+	    "+pushHandler:forException:" = ETException;
+	};
+	"NSFileHandle(ETSocketAdditions)" = {
+	    "+fileHandleConnectedToRemoteHost:forService:" = "NSFileHandle+Socket";
+	};
+	"NSFileManager(ETTempFile)" = {
+	    "-tempDirectory" = "NSFileManager+TempFile";
+	    "-tempFile" = "NSFileManager+TempFile";
+	};
+	"NSIndexPath(Etoile)" = {
+	    "+indexPath" = "NSIndexPath+Etoile";
+	    "+indexPathWithString:" = "NSIndexPath+Etoile";
+	    "-firstIndex" = "NSIndexPath+Etoile";
+	    "-indexPathByRemovingFirstIndex" = "NSIndexPath+Etoile";
+	    "-lastIndex" = "NSIndexPath+Etoile";
+	    "-stringByJoiningIndexPathWithSeparator:" = "NSIndexPath+Etoile";
+	    "-stringValue" = "NSIndexPath+Etoile";
+	};
+	"NSIndexSet(ETCollection)" = {
+	    "+mutableClass" = ETCollection;
+	    "-content" = ETCollection;
+	    "-contentArray" = ETCollection;
+	    "-objectEnumerator" = ETCollection;
+	};
+	"NSIndexSet(Etoile)" = {
+	    "-indexPaths" = "NSIndexSet+Etoile";
+	};
+	"NSInvocation(Etoile)" = {
+	    "+invocationWithTarget:selector:arguments:" = "NSInvocation+Etoile";
+	};
+	"NSMapTable(Etoile)" = {
+	    "-allKeys" = "NSMapTable+Etoile";
+	    "-allValues" = "NSMapTable+Etoile";
+	};
+	"NSMutableArray(Etoile)" = {
+	    "-removeObjectsFromIndex:" = "NSArray+Etoile";
+	};
+	"NSMutableDictionary(ETMutablePropertyValueCoding)" = {
+	    "-setValue:forProperty:" = ETPropertyValueCoding;
+	};
+	"NSMutableDictionary(Etoile)" = {
+	    "-addObject:forKey:" = "NSDictionary+Etoile";
+	};
+	"NSMutableIndexSet(Etoile)" = {
+	    "-invertIndex:" = "NSIndexSet+Etoile";
+	};
+	"NSNumber(ETModel)" = {
+	    "-isCommonObjectValue" = "NSObject+Model";
+	};
+	"NSObject(ETBatchCollectionMutation)" = {
+	    "-insertCollection:atIndexes:" = ETCollection;
+	    "-removeObjectAtIndexes:" = ETCollection;
+	    "-removesCollection:" = ETCollection;
+	};
+	"NSObject(ETCollectionHOMIntegrationInformalProtocol)" = {
+	    "-collectionArrayAndInfo:" = "ETCollection+HOM";
+	};
+	"NSObject(ETCollectionMutationKVOSupport)" = {
+	    "-didChangeValueForKey:atIndexes:withObjects:mutationKind:" = ETCollection;
+	    "-willChangeValueForKey:atIndexes:withObjects:mutationKind:" = ETCollection;
+	};
+	"NSObject(ETDoubleDispatch)" = {
+	    "-doubleDispatchPrefix" = "NSObject+DoubleDispatch";
+	    "-doubleDispatchSelectorWithObject:ofType:" = "NSObject+DoubleDispatch";
+	    "-supportsDoubleDispatchWithObject:" = "NSObject+DoubleDispatch";
+	    "-tryToPerformSelector:withObject:result:" = "NSObject+DoubleDispatch";
+	    "-visit:" = "NSObject+DoubleDispatch";
+	    "-visit:result:" = "NSObject+DoubleDispatch";
+	};
+	"NSObject(ETEachHOM)" = {
+	    "-each" = "ETCollection+HOM";
+	};
+	"NSObject(ETHOM)" = {
+	    "-ifResponds" = "NSObject+HOM";
+	};
+	"NSObject(ETIndexValuePair)" = {
+	    "-isIndexValuePair" = ETIndexValuePair;
+	};
+	"NSObject(ETKeyValuePair)" = {
+	    "-isKeyValuePair" = ETKeyValuePair;
+	};
+	"NSObject(ETListenSocketDelegate)" = {
+	    "-newConnection:fromSocket:" = ETSocket;
+	};
+	"NSObject(ETModel)" = {
+	    "+mutableClass" = "NSObject+Model";
+	    "+newBasicEntityDescription" = "NSObject+Model";
+	    "+newEntityDescription" = "NSObject+Model";
+	    "-descriptionWithOptions:" = "NSObject+Model";
+	    "-displayName" = "NSObject+Model";
+	    "-insertionKeyForCollection:" = "NSObject+Model";
+	    "-isCollection" = "NSObject+Model";
+	    "-isCommonObjectValue" = "NSObject+Model";
+	    "-isGroup" = "NSObject+Model";
+	    "-isMutable" = "NSObject+Model";
+	    "-isMutableCollection" = "NSObject+Model";
+	    "-isNumber" = "NSObject+Model";
+	    "-isPrimitiveCollection" = "NSObject+Model";
+	    "-isString" = "NSObject+Model";
+	    "-objectValue" = "NSObject+Model";
+	    "-observableKeyPaths" = "NSObject+Model";
+	    "-primitiveDescription" = "NSObject+Model";
+	};
+	"NSObject(ETPropertyValueCoding)" = {
+	    "-propertyNames" = ETPropertyValueCoding;
+	    "-requiresKeyValueCodingForAccessingProperties" = ETPropertyValueCoding;
+	    "-setValue:forProperty:" = ETPropertyValueCoding;
+	    "-setValue:forPropertyPath:" = ETPropertyValueCoding;
+	    "-valueForProperty:" = ETPropertyValueCoding;
+	    "-valueForPropertyPath:" = ETPropertyValueCoding;
+	};
+	"NSObject(ETPrototypes)" = {
+	    "+addClassMethod:fromBlock:" = "NSObject+Prototypes";
+	    "+addInstanceMethod:fromBlock:" = "NSObject+Prototypes";
+	    "-addMethod:fromBlock:" = "NSObject+Prototypes";
+	    "-clone" = "NSObject+Prototypes";
+	    "-isPrototype" = "NSObject+Prototypes";
+	    "-prototype" = "NSObject+Prototypes";
+	    "-setMethod:forSelector:" = "NSObject+Prototypes";
+	    "-slotValueForKey:" = "NSObject+Prototypes";
+	};
+	"NSObject(ETSocketDelegate)" = {
+	    "-receivedData:fromSocket:" = ETSocket;
+	};
+	"NSObject(ETStackTraceRecorderConveniency)" = {
+	    "-recordStackTrace" = ETStackTraceRecorder;
+	    "-recordedStackTraces" = ETStackTraceRecorder;
+	};
+	"NSObject(ETTrait)" = {
+	    "+applyTraitFromClass:" = "NSObject+Trait";
+	    "+applyTraitFromClass:excludedMethodNames:aliasedMethodNames:" = "NSObject+Trait";
+	    "+applyTraitFromClass:excludedMethodNames:aliasedMethodNames:allowsOverride:" = "NSObject+Trait";
+	};
+	"NSObject(ETViewpointAdditions)" = {
+	    "-isViewpoint" = ETViewpoint;
+	    "-setValue:forContentKey:" = ETViewpoint;
+	    "-setValue:forContentKeyPath:" = ETViewpoint;
+	    "-valueForContentKey:" = ETViewpoint;
+	    "-valueForContentKeyPath:" = ETViewpoint;
+	};
+	"NSObject(Etoile)" = {
+	    "+allSubclasses" = "NSObject+Etoile";
+	    "+directSubclasses" = "NSObject+Etoile";
+	    "+typePrefix" = "NSObject+Etoile";
+	    "-UTI" = "NSObject+Etoile";
+	    "-className" = "NSObject+Etoile";
+	    "-typeName" = "NSObject+Etoile";
+	};
+	"NSSet(ETCollection)" = {
+	    "+mutableClass" = ETCollection;
+	    "-content" = ETCollection;
+	    "-contentArray" = ETCollection;
+	    "-viewpointArray" = ETCollection;
+	};
+	"NSString(ETBase64)" = {
+	    "-base64DecodedData" = "NSData+Hash";
+	};
+	"NSString(ETModel)" = {
+	    "-isCommonObjectValue" = "NSObject+Model";
+	};
+	"NSString(ETUUID)" = {
+	    "+UUIDString" = ETUUID;
+	};
+	"NSString(Etoile)" = {
+	    "-firstPathComponent" = "NSString+Etoile";
+	    "-indexPathBySplittingPathWithSeparator:" = "NSString+Etoile";
+	    "-stringByCapitalizingFirstLetter" = "NSString+Etoile";
+	    "-stringByDeletingFirstPathComponent" = "NSString+Etoile";
+	    "-stringByLowercasingFirstLetter" = "NSString+Etoile";
+	    "-stringBySpacingCapitalizedWords" = "NSString+Etoile";
+	    "-stringByStandardizingIntoAbsolutePath" = "NSString+Etoile";
+	    "-substringFromIndex:toIndex:" = "NSString+Etoile";
+	};
+	"NSUserDefaults(ETUUID)" = {
+	    "-UUIDForKey:" = ETUUID;
+	    "-setUUID:forKey:" = ETUUID;
+	};
+    };
+    variable = {
+	ETSocketException = ETSocket;
+	"GLOBAL_EXCEPTION_STATE" = ETException;
+	kTranscriptDelegate = ETTranscript;
+    };
+}

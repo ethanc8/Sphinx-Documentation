@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocDeclarationReorderer class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocDeclarationReorderer">DocDeclarationReorderer class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      
+      A DocPageWeaver decorator which can be used to reorder GSDoc
+      symbols declarations, in order to match the source
+      header.
+    
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2010 Quentin Mathe</p>
+
+        <div>
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocDeclarationReorderer
+        class
+      </a></h1>
+    <h2><a name="class$DocDeclarationReorderer">DocDeclarationReorderer</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocDeclarationReorderer.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="DocPageWeaver.html#protocol$(DocWeaving)">DocWeaving</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group GSDoc Parsing
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocPageWeaver uses this class internally.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            See
+            <a rel="gsdoc" href="#method$DocDeclarationReorderer-initWithWeaver$orderedSymbols$">
+              -initWithWeaver:orderedSymbols:
+            </a>
+
+            .
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocDeclarationReorderer.html#method$DocDeclarationReorderer-initWithWeaver$orderedSymbols$">-initWithWeaver:orderedSymbols:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocDeclarationReorderer-initWithWeaver$orderedSymbols$">initWithWeaver:&nbsp;orderedSymbols:&nbsp;</a></h3>
+    - (id) <b>initWithWeaver:</b> (id<<a rel="gsdoc" href="DocPageWeaver.html#protocol$(DocWeaving)">DocWeaving</a>>)aWeaver<b> orderedSymbols:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)symbolArraysByKind;<br />
+This is a designated initialiser for the class.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Initializes and returns a new reorderer that
+              can receive parsed symbols through DocWeaving
+              protocol it implements, and emit reordered
+              symbols by invoking DocWeaving methods on the
+              weaver.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The weaver argument should be a DocPageWeaver object.
+              <br /> The parser calling DocWeaving methods on a
+              DocDeclarationReorderer object
+              should be a GSDocParser. <br />
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The returned object reorders the symbols to match
+              their ordering in the given property list, whose
+              structure must match
+              <em>OrderedSymbolDeclarations.plist</em> output by
+              autogsdoc.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocMethod class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocMethod">DocMethod class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Nicolas Roard</dt>
+      <dd>
+      </dd>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      Methods in the doc element tree.
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2008 Nicolas Roard</p>
+
+        <div>
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocMethod class
+      </a></h1>
+    <h2><a name="class$DocMethod">DocMethod</a> : <a rel="gsdoc" href="DocElement.html#class$DocSubroutine">DocSubroutine</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocMethod.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="GSDocParser.html#protocol$(GSDocParserDelegate)">GSDocParserDelegate</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Doc Element Tree
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            A DocMethod object represents a method in the
+            documentation element tree.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocMethod.html#method$DocMethod-isClassMethod">-isClassMethod</a></li>
+      <li><a rel="gsdoc" href="DocMethod.html#method$DocMethod-parseProgramComponent$">-parseProgramComponent:</a></li>
+      <li><a rel="gsdoc" href="DocMethod.html#method$DocMethod-refMarkup">-refMarkup</a></li>
+      <li><a rel="gsdoc" href="DocMethod.html#method$DocMethod-refMarkupWithClassName$">-refMarkupWithClassName:</a></li>
+      <li><a rel="gsdoc" href="DocMethod.html#method$DocMethod-refMarkupWithProtocolName$">-refMarkupWithProtocolName:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocMethod-isClassMethod">isClassMethod&nbsp;</a></h3>
+    - (BOOL) <b>isClassMethod</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Method Kind
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns <code>NO</code> when the receiver
+              represents an instance method, otherwise
+              returns <code>YES</code>.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocMethod-parseProgramComponent$">parseProgramComponent:&nbsp;</a></h3>
+    - (void) <b>parseProgramComponent:</b> (SCKMethod*)programComponent;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocMethod-refMarkup">refMarkup&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>refMarkup</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Link Generation
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns a valid ETDoc method link, relative to
+              the current class in the documentation page, that can
+              be turned into a real link in the output
+              representation such as HTML.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              For example, would return
+              <em>
+                <a rel="gsdoc" href="#method$DocMethod-refMarkup">
+                  -refMarkup
+                </a>
+
+              </em>
+              for this method.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              -[DocElement
+              insertLinksWithDocIndex:forString:]
+              can detect the links returned by these refMarkupXXX
+              methods and hand them to a HTMLDocIndex, which in
+              turn will return a HTML link to replace this markup.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocMethod-refMarkupWithClassName$">refMarkupWithClassName:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>refMarkupWithClassName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClassName;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns a valid ETDoc method link, relative to
+              the given class, that can be turned into a real link
+              in the output representation such as HTML.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              For example, would return
+              <em>-[DocMethod refMarkup]</em> for this method.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See also
+              <a rel="gsdoc" href="#method$DocMethod-refMarkup">
+                -refMarkup
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocMethod-refMarkupWithProtocolName$">refMarkupWithProtocolName:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>refMarkupWithProtocolName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aProtocolName;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns a valid ETDoc method link, relative to
+              the given protocol, that can be turned into a real
+              link in the output representation such as HTML.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              For example, would return
+              <em>-[(DocMethod) refMarkup]</em> for this method.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See also
+              <a rel="gsdoc" href="#method$DocMethod-refMarkup">
+                -refMarkup
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

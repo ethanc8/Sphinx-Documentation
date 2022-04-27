@@ -1,0 +1,411 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base Additions</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h1>NSObject categories documentation</h1><div class="meta">
+<p class="metadesc"><em>All the public Categories which extend NSObject class.</em></p><table></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div class="methodGroup">
+<div class="header">
+<h2>GNUstepBase</h2>NSObject (GNUstepBase)<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>GNUstepBase/NSObject+GNUstepBase.h</td></tr></table></div>
+</div>
+<div>
+<h3>Default</h3><div class="method">
+<a name="-[NSObject(GNUstepBase)_compare:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSComparisonResult)</span><span class="selector"> compare: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+WARNING: The  -compare:  method for NSObject is deprecated due to subclasses declaring the same selector with conflicting signatures. Comparision of arbitrary objects is not just meaningless but also dangerous as most concrete implementations expect comparable objects as arguments often accessing instance variables directly. This method will be removed in a future release.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(GNUstepBase)_isInstance]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isInstance </span></span></dt>
+<dd><div class="methodDescription">
+For backward compatibility only... use  class_isMetaClass()  on the class of the receiver instead.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(GNUstepBase)_makeImmutableCopyOnFail:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> makeImmutableCopyOnFail: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">force</span></span></span></dt>
+<dd><div class="methodDescription">
+DEPRECATED... do not use. Transmutes the receiver into an immutable version of the same object and returns the result. <br></br> If the receiver is not a mutable object or cannot be simply transmuted, then this method either returns the receiver unchanged or, if the <var>force</var> flag is set to <var>YES</var>, returns an autoreleased copy of the receiver. <br></br> Mutable classes should override this default implementation. <br></br> This method is used in methods which are declared to return immutable objects (eg. an NSArray), but which create and build mutable ones internally.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(GNUstepBase)_makeImmutable]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> makeImmutable </span></span></dt>
+<dd><div class="methodDescription">
+Transmutes the receiver into an immutable version of the same object. Returns <var>YES</var> if the receiver has become immutable, <var>NO</var> otherwise. <br></br> The default implementation returns <var>NO</var>. <br></br> Mutable classes which have an immutable counterpart they can efficiently change into, should override to transmute themselves and return <var>YES</var>. <br></br> Immutable classes should override this to simply return <var>YES</var> with no further action. <br></br> This method is used in methods which are declared to return immutable objects (eg. an NSArray), but which create and build mutable ones internally.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(GNUstepBase)_notImplemented:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> notImplemented: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSel</span></span></span></dt>
+<dd><div class="methodDescription">
+Message sent when an implementation wants to explicitly exclude a method (but cannot due to compiler constraint), and wants to make sure it is not called by mistake. Default implementation raises an exception at runtime.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(GNUstepBase)_subclassResponsibility:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> subclassResponsibility: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSel</span></span></span></dt>
+<dd><div class="methodDescription">
+Message sent when an implementation wants to explicitly require a subclass to implement a method (but cannot at compile time since there is no <var>abstract</var> keyword in Objective-C). Default implementation raises an exception at runtime to alert developer that he/she forgot to override a method.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(GNUstepBase)_shouldNotImplement:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> shouldNotImplement: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSel</span></span></span></dt>
+<dd><div class="methodDescription">
+Message sent when an implementation wants to explicitly exclude a method (but cannot due to compiler constraint) and forbid that subclasses implement it. Default implementation raises an exception at runtime. If a subclass <em>does</em> implement this method, however, the superclass's implementation will not be called, so this is not a perfect mechanism.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="methodGroup">
+<div class="header">
+<h2>GSAtExit</h2>NSObject (GSAtExit)<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>GNUstepBase/NSObject+GNUstepBase.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p>This is an informal protocol... classes may implement the method and register themselves to have it called on process exit.</p></div>
+</div>
+<hr></hr><div>
+<h3>Default</h3><div class="method">
+<a name="+[NSObject(GSAtExit)_atExit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> atExit </span></span></dt>
+<dd><div class="methodDescription">
+This method is called on exit for any class which implements it and which has called  +registerAtExit  to register it to be called. <br></br> The order in which methods for different classes is called is the reverse of the order in which the classes were registered, but it's best to assume the method can not depend on any other class being in a usable state at the point when the method is called (rather like +load). <br></br> Typical use would be to release memory occupied by class data structures so that memory usage analysis software will not think the memory has been leaked.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="methodGroup">
+<div class="header">
+<h2>GSCleanup</h2>NSObject (GSCleanup)<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>GNUstepBase/NSObject+GNUstepBase.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p>Category for methods handling leaked memory cleanup on exit of process (for use when debugging memory leaks). <br></br> You enable this by calling the  +setShouldCleanUp:  method (done implicitly by gnustep-base if the GNUSTEP_SHOULD_CLEAN_UP environment variable is set to <var>YES</var>). <br></br> Your class then has two options for performing cleanup when the process ends: <p> 1. Use the +leak: method to register objects which are simply to be retained until the process ends, and then either ignored or released depending on the cleanup setting in force. This mechanism is simple and should be sufficient for many classes. </p> <p> 2. Implement a  +atExit  method to be run when the process ends and, within your  +initialize  implementation, call  +shouldCleanUp  to determine whether cleanup should be done, and if it returns <var>YES</var> then call  +registerAtExit  to have your  +atExit  method called when the process terminates. </p> <p> The order in which 'leaked' objects are released and  +atExit  methods are called on process exist is the reverse of the order in which they werse set up suing this API. </p></p></div>
+</div>
+<hr></hr><div>
+<h3>Default</h3><div class="method">
+<a name="+[NSObject(GSCleanup)_leak:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> leak: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+This method simply retains its argument so that it will never be deallocated during normal operation, but keeps track of it so that it is released during process exit if cleanup is enabled. <br></br> Returns its argument.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSObject(GSCleanup)_leakAt:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> leakAt: </span><span class="parameter"><span class="type">(id*)</span><span class="arg">anAddress</span></span></span></dt>
+<dd><div class="methodDescription">
+This method retains the object at *anAddress so that it will never be deallocated during normal operation, but keeps track of the address so that the object is released and the address is zeroed during process exit if cleanup is enabled. <br></br> Returns the object at *anAddress.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSObject(GSCleanup)_registerAtExit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> registerAtExit </span></span></dt>
+<dd><div class="methodDescription">
+Sets the receiver to have its  +atExit  method called at the point when the process terminates. <br></br> Returns <var>YES</var> on success and <var>NO</var> on failure (if the class does not implement the method or if it is already registered to call it). <br></br> Implemented as a call to  +registerAtExit:  with the selector for the  +atExit  method as its argument.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSObject(GSCleanup)_registerAtExit:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> registerAtExit: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the receiver to have the specified method called at the point when the process terminates. <br></br> Returns <var>YES</var> on success and <var>NO</var> on failure (if the class does not implement the method ir if it is already registered to call it).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSObject(GSCleanup)_setShouldCleanUp:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> setShouldCleanUp: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">aFlag</span></span></span></dt>
+<dd><div class="methodDescription">
+Specifies the default cleanup behavior on process exit... the value returned by the NSObject implementation of the  +shouldClanUp  method. <br></br> Calling this method with a <var>YES</var> argument implicitly calls the  +enableAtExit  method as well. <br></br> The GNUstep Base library calls this method with the value obtained from the GNUSTEP_SHOULD_CLEAN_UP environment variable when NSObject is initialised.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSObject(GSCleanup)_shouldCleanUp]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> shouldCleanUp </span></span></dt>
+<dd><div class="methodDescription">
+Returns a flag indicating whether the receiver should clean up its data structures etc at process exit. <br></br> The NSObject implementation returns the value set by the  +setShouldCleanUp:  method but subclasses may override this.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+</div>
+<div class="methodGroup">
+<div class="header">
+<h2>MemoryFootprint</h2>NSObject (MemoryFootprint)<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>GNUstepBase/NSObject+GNUstepBase.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p>This is an informal protocol; classes may implement the +contentSizeOf:declaredIn:excluding: method to report how much memory is used by any objects/pointers it acts as a container for. <br></br> Code may call the -sizeInBytesExcluding: or -sizeinBytes method to determine how much heap memory an object (and its content) occupies.</p></div>
+</div>
+<hr></hr><div>
+<h3>Default</h3><div class="method">
+<a name="+[NSObject(MemoryFootprint)_contentSizeOf:excluding:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSUInteger)</span><span class="selector"> contentSizeOf: </span><span class="parameter"><span class="type">(NSObject *)</span><span class="arg">obj</span></span><span class="selector"> excluding: </span><span class="parameter"><span class="type">(NSHashTable *)</span><span class="arg">exclude</span></span></span></dt>
+<dd><div class="methodDescription">
+This method returns the size of the memory used by the object instance variables of the target object (excluding any in the specified set). <br></br> This is not the memory occupied by instance variable pointers. It is the memory referenced by any objects inside the target. <br></br> This method is not intended to be overridden, rather it is provided for use as a helper for the  -sizeOfContentExcluding:  method. <br></br> This method must not be called for a mutable object unless it is protected by a locking mechanism to prevent mutation while it is examining the instance variables of the object. 
+<pre>
+ @interface	foo : bar
+ {
+   id	a;		// Some object
+   id b;		// More storage
+   unsigned capacity;	// Buffer size
+   char *p;		// The buffer
+ }
+ @end
+ @implementation foo
+ - (NSUInteger) sizeOfContentExcluding: (NSHashTable*)exclude
+{ 
+  NSUInteger	size;
+
+  // get the size of the objects (a and b)
+  size = [NSObject contentSizeOf: self
+			 excluding: exclude];
+  // add the memory pointed to by p
+  size += capacity * sizeof(char);
+  return size;
+}
+@end
+ </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(MemoryFootprint)_sizeInBytesExcluding:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> sizeInBytesExcluding: </span><span class="parameter"><span class="type">(NSHashTable *)</span><span class="arg">exclude</span></span></span></dt>
+<dd><div class="methodDescription">
+This method returns the memory usage of the receiver, excluding any objects already present in the <var>exclude</var> table. <br></br> The argument is a hash table configured to hold non-retained pointer objects and is used to inform the receiver that its size should not be counted again if it's already in the table. <br></br> The NSObject implementation returns zero if the receiver is in the table, but otherwise adds itself to the table and returns its memory footprint (the sum of all of its instance variables, plus the result of calling  -sizeOfContentExcluding:  for the instance). <br></br> Classes should not override this method, instead they should implement  -sizeOfContentExcluding:  to return the extra memory usage of the pointer/object instance variables (heap memory) they add to their superclass. <br></br> NB. mutable objects must either prevent mutation while calculating their content size, or must override  -sizeOfContentExcluding:  to refrain from dealing with content which might change.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(MemoryFootprint)_sizeInBytes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> sizeInBytes </span></span></dt>
+<dd><div class="methodDescription">
+Convenience method calling  -sizeInBytesExcluding:  with a newly created exclusion hash table, and destroying the table once the size is calculated.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(MemoryFootprint)_sizeOfContentExcluding:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> sizeOfContentExcluding: </span><span class="parameter"><span class="type">(NSHashTable *)</span><span class="arg">exclude</span></span></span></dt>
+<dd><div class="methodDescription">
+This method is called by  -sizeInBytesExcluding:  to calculate the size of any objects or heap memory contained by the receiver. <br></br> The base class implementation simply returns zero (as it is not possible to safely calculate content sizes of mutable objects), but subclasses should override it to provide correct information where possible (eg if the object is immutable or if locking is used to prevent mutation while calculating content size). <br></br> Subclasses may use the  +contentSizeOf:excluding:  method as a convenience to provide the sizes of object instnce variables.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSObject(MemoryFootprint)_sizeOfInstance]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> sizeOfInstance </span></span></dt>
+<dd><div class="methodDescription">
+Helper method called by  -sizeInBytesExcluding:  to return the size of the instance excluding any contents (things referenced by pointers).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base Additions</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="GCArray.html#GCArray">GCArray</a></li><li><a href="GCDictionary.html#GCDictionary">GCDictionary</a></li><li><a href="GCMutableArray.html#GCMutableArray">GCMutableArray</a></li><li><a href="GCMutableDictionary.html#GCMutableDictionary">GCMutableDictionary</a></li><li><a href="GCObject.html#GCObject">GCObject</a></li><li><a href="GSHTMLParser.html#GSHTMLParser">GSHTMLParser</a></li><li><a href="GSHTMLSAXHandler.html#GSHTMLSAXHandler">GSHTMLSAXHandler</a></li><li><a href="GSLazyLock.html#GSLazyLock">GSLazyLock</a></li><li><a href="GSLazyRecursiveLock.html#GSLazyRecursiveLock">GSLazyRecursiveLock</a></li><li><a href="GSSAXHandler.html#GSSAXHandler">GSSAXHandler</a></li><li><a href="GSTLSCertificateList.html#GSTLSCertificateList">GSTLSCertificateList</a></li><li><a href="GSTLSCredentials.html#GSTLSCredentials">GSTLSCredentials</a></li><li><a href="GSTLSDHParams.html#GSTLSDHParams">GSTLSDHParams</a></li><li><a href="GSTLSObject.html#GSTLSObject">GSTLSObject</a></li><li><a href="GSTLSPrivateKey.html#GSTLSPrivateKey">GSTLSPrivateKey</a></li><li><a href="GSTLSSession.html#GSTLSSession">GSTLSSession</a></li><li><a href="GSTreeSAXHandler.html#GSTreeSAXHandler">GSTreeSAXHandler</a></li><li><a href="GSXMLAttribute.html#GSXMLAttribute">GSXMLAttribute</a></li><li><a href="GSXMLDocument.html#GSXMLDocument">GSXMLDocument</a></li><li><a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a></li><li><a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a></li><li><a href="GSXMLParser.html#GSXMLParser">GSXMLParser</a></li><li><a href="GSXMLRPC.html#GSXMLRPC">GSXMLRPC</a></li><li><a href="GSXPathBoolean.html#GSXPathBoolean">GSXPathBoolean</a></li><li><a href="GSXPathContext.html#GSXPathContext">GSXPathContext</a></li><li><a href="GSXPathNodeSet.html#GSXPathNodeSet">GSXPathNodeSet</a></li><li><a href="GSXPathNumber.html#GSXPathNumber">GSXPathNumber</a></li><li><a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a></li><li><a href="GSXPathString.html#GSXPathString">GSXPathString</a></li></ul></div>
+
+<ul><li><a href="GSMime.html">GSMime (buggy documentation)</a></li></ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="GCObjectCategories.html#GCObject(Extra)">GCObject</a></li><li><a href="GSXMLDocumentCategories.html#GSXMLDocument(XSLT)">GSXMLDocument</a></li><li><a href="GSXMLRPCCategories.html#GSXMLRPC(Delegate)">GSXMLRPC</a></li><li><a href="NSArrayCategories.html#NSArray(GNUstepBase)">NSArray</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(GNUstepBase)">NSAttributedString</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstepBase)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GNUstepBase)">NSCalendarDate</a></li><li><a href="NSDataCategories.html#NSData(GNUstepBase)">NSData</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepBase)">NSFileHandle</a></li><li><a href="NSLockCategories.html#NSLock(GNUstepBase)">NSLock</a></li><li><a href="NSMutableStringCategories.html#NSMutableString(GNUstepBase)">NSMutableString</a></li><li><a href="NSNumberCategories.html#NSNumber(GNUstepBase)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstepBase)">NSObject</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstepBase)">NSProcessInfo</a></li><li><a href="NSRecursiveLockCategories.html#NSRecursiveLock(GNUstepBase)">NSRecursiveLock</a></li><li><a href="NSStringCategories.html#NSString(GNUstepBase)">NSString</a></li><li><a href="NSTaskCategories.html#NSTask(GNUstepBase)">NSTask</a></li><li><a href="NSThreadCategories.html#NSThread(GNUstepBase)">NSThread</a></li><li><a href="NSURLCategories.html#NSURL(GNUstepBase)">NSURL</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

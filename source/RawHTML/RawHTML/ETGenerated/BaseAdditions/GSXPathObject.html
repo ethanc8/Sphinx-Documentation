@@ -1,0 +1,161 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base Additions</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>The XML and HTML parsing system</h2>GSXPathObject : NSObject<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Michael Pakhantsov Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>GNUstepBase/GSXML.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p>XPath queries return a <a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a>. <a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a> in itself is an abstract class; there are four types of completely different <a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a> types, listed below. I'm afraid you need to check the returned type of each GSXPath query to make sure it's what you meant it to be. <br></br> <p> You don't create <a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a> instances, instead the XPATH system creates them and returns them as the result of the [<a href="GSXPathContext.html#GSXPathContext">GSXPathContext</a> -evaluateExpression:] method. </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<p><i>No public API available</i></p>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base Additions</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="GCArray.html#GCArray">GCArray</a></li><li><a href="GCDictionary.html#GCDictionary">GCDictionary</a></li><li><a href="GCMutableArray.html#GCMutableArray">GCMutableArray</a></li><li><a href="GCMutableDictionary.html#GCMutableDictionary">GCMutableDictionary</a></li><li><a href="GCObject.html#GCObject">GCObject</a></li><li><a href="GSHTMLParser.html#GSHTMLParser">GSHTMLParser</a></li><li><a href="GSHTMLSAXHandler.html#GSHTMLSAXHandler">GSHTMLSAXHandler</a></li><li><a href="GSLazyLock.html#GSLazyLock">GSLazyLock</a></li><li><a href="GSLazyRecursiveLock.html#GSLazyRecursiveLock">GSLazyRecursiveLock</a></li><li><a href="GSSAXHandler.html#GSSAXHandler">GSSAXHandler</a></li><li><a href="GSTLSCertificateList.html#GSTLSCertificateList">GSTLSCertificateList</a></li><li><a href="GSTLSCredentials.html#GSTLSCredentials">GSTLSCredentials</a></li><li><a href="GSTLSDHParams.html#GSTLSDHParams">GSTLSDHParams</a></li><li><a href="GSTLSObject.html#GSTLSObject">GSTLSObject</a></li><li><a href="GSTLSPrivateKey.html#GSTLSPrivateKey">GSTLSPrivateKey</a></li><li><a href="GSTLSSession.html#GSTLSSession">GSTLSSession</a></li><li><a href="GSTreeSAXHandler.html#GSTreeSAXHandler">GSTreeSAXHandler</a></li><li><a href="GSXMLAttribute.html#GSXMLAttribute">GSXMLAttribute</a></li><li><a href="GSXMLDocument.html#GSXMLDocument">GSXMLDocument</a></li><li><a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a></li><li><a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a></li><li><a href="GSXMLParser.html#GSXMLParser">GSXMLParser</a></li><li><a href="GSXMLRPC.html#GSXMLRPC">GSXMLRPC</a></li><li><a href="GSXPathBoolean.html#GSXPathBoolean">GSXPathBoolean</a></li><li><a href="GSXPathContext.html#GSXPathContext">GSXPathContext</a></li><li><a href="GSXPathNodeSet.html#GSXPathNodeSet">GSXPathNodeSet</a></li><li><a href="GSXPathNumber.html#GSXPathNumber">GSXPathNumber</a></li><li><a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a></li><li><a href="GSXPathString.html#GSXPathString">GSXPathString</a></li></ul></div>
+
+<ul><li><a href="GSMime.html">GSMime (buggy documentation)</a></li></ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="GCObjectCategories.html#GCObject(Extra)">GCObject</a></li><li><a href="GSXMLDocumentCategories.html#GSXMLDocument(XSLT)">GSXMLDocument</a></li><li><a href="GSXMLRPCCategories.html#GSXMLRPC(Delegate)">GSXMLRPC</a></li><li><a href="NSArrayCategories.html#NSArray(GNUstepBase)">NSArray</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(GNUstepBase)">NSAttributedString</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstepBase)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GNUstepBase)">NSCalendarDate</a></li><li><a href="NSDataCategories.html#NSData(GNUstepBase)">NSData</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepBase)">NSFileHandle</a></li><li><a href="NSLockCategories.html#NSLock(GNUstepBase)">NSLock</a></li><li><a href="NSMutableStringCategories.html#NSMutableString(GNUstepBase)">NSMutableString</a></li><li><a href="NSNumberCategories.html#NSNumber(GNUstepBase)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstepBase)">NSObject</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstepBase)">NSProcessInfo</a></li><li><a href="NSRecursiveLockCategories.html#NSRecursiveLock(GNUstepBase)">NSRecursiveLock</a></li><li><a href="NSStringCategories.html#NSString(GNUstepBase)">NSString</a></li><li><a href="NSTaskCategories.html#NSTask(GNUstepBase)">NSTask</a></li><li><a href="NSThreadCategories.html#NSThread(GNUstepBase)">NSThread</a></li><li><a href="NSURLCategories.html#NSURL(GNUstepBase)">NSURL</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

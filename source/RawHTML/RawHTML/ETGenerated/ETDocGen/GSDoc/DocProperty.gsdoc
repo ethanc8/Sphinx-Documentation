@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="DocProperty">
+  <head>
+    <title>DocProperty class documentation</title>
+    <author name="Muhammad Hussein Nasrollahpour">
+      <email address="iapplechocolate@me.com">
+        iapplechocolate@me.com
+      </email>
+    </author>
+    <copy>2013 Muhammad Hussein Nasrollahpour</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the DocProperty class
+      </heading>
+      <class name="DocProperty" super="DocElement">
+        <declared>DocProperty.h</declared>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+        <method type="void">
+          <sel>parseProgramComponent:</sel>
+          <arg type="SCKProperty*">aProperty</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </class>
+    </chapter>
+  </body>
+</gsdoc>

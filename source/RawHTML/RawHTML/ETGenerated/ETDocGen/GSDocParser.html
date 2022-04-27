@@ -1,0 +1,291 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>DocGenerator</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>GSDocParser class documentation</h2>GSDocParser : NSObject &lt;<a href="_DocSourceParsing.html#DocSourceParsing">DocSourceParsing</a>, <a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a>, NSXMLParserDelegate&gt;<div class="meta">
+<p class="metadesc"><em>GSDoc parser that can drive a <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> through       <a href="_DocWeaving.html#DocWeaving">DocWeaving</a> protocol.</em></p><table><tr><th>Authors</th><td>Nicolas Roard Quentin Mathe </td></tr><tr><th>Declared in</th><td>GSDocParser.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> Main GSDoc parser which wraps a NSXMLParser internally, handles the basic XML parsing and preprocessing, but delegates the rest to <a href="DocElement.html#DocElement">DocElement</a> objects instantiated based on the class returned by  <a href="GSDocParser.html#-[GSDocParser_elementClassForName:]">-elementClassForName:</a>  . <br></br> For example &lt;method&gt; is delegated to <a href="DocMethod.html#DocMethod">DocMethod</a> through <a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a> methods. </p> <p> The parsing state is managed as a delegate parser stack that contains the receiver itself and zero or more <a href="DocElement.html#DocElement">DocElement</a> objects pushed on top. </p> <p> To parse a GDoc document, you have to initialize a new <a href="GSDocParser.html#GSDocParser">GSDocParser</a>, use  <a href="GSDocParser.html#-[GSDocParser_setWeaver:]">-setWeaver:</a>  to set the object which handles the parsing ouput such <a href="DocDeclarationReorderer.html#DocDeclarationReorderer">DocDeclarationReorderer</a> or <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a>, and triggers the parsing with  <a href="GSDocParser.html#-[GSDocParser_parseAndWeave]">-parseAndWeave</a>  . </p> <p> All XML parsing related methods are used internally, you can ignore them. </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Initialization</h3><div class="method">
+<a name="-[GSDocParser_initWithSourceFile:additionalParserFiles:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithSourceFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aSourceFile</span></span><span class="selector"> additionalParserFiles: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">additionalFiles</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a GSDoc parser initialized with the given GSDoc document. </p> <p> Call  <a href="GSDocParser.html#-[GSDocParser_setWeaver:]">-setWeaver:</a>  on the returned object to be ready to parse. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDocParser_setWeaver:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setWeaver: </span><span class="parameter"><span class="type">(id <<a href="_DocWeaving.html#DocWeaving">DocWeaving</a>>)</span><span class="arg">aDocWeaver</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the weaver on which the receiver should call back <a href="_DocWeaving.html#DocWeaving">DocWeaving</a> methods while parsing the GSDoc XML provided at initialization time. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDocParser_weaver]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id <<a href="_DocWeaving.html#DocWeaving">DocWeaving</a>>)</span><span class="selector"> weaver </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the weaver currently in use or <var>nil</var>. </p> <p> See also  <a href="GSDocParser.html#-[GSDocParser_setWeaver:]">-setWeaver:</a>  . </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Parsing and Weaving</h3><div class="method">
+<a name="-[GSDocParser_parseAndWeave]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> parseAndWeave </span></span></dt>
+<dd><div class="methodDescription">
+<p> Parses the GSDoc XML with which the receiver was initialized, and at the same time weaves the produced doc elements through <a href="_DocWeaving.html#DocWeaving">DocWeaving</a> methods. </p> <p> <a href="DocElement.html#DocElement">DocElement</a> subclass objects are created, when parsing an XML element to which a valid class is bound to with  <a href="GSDocParser.html#-[GSDocParser_elementClassForName:]">-elementClassForName:</a>  . </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>XML Parsing</h3><div class="method">
+<a name="-[GSDocParser_newContent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> newContent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Reinitializes the current CDATA stored in the content variable. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDocParser_elementClassForName:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(Class)</span><span class="selector"> elementClassForName: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">anElementName</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the class to be instantiated while parsing the given XML element. </p> <p> When a valid class is returned, once instantiated, the parsing gets delegated to it through <a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a> until the given XML element end is reached. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDocParser_parserDelegate]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id <<a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a>>)</span><span class="selector"> parserDelegate </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the current parser delegate. </p> <p> The parser delegate is usually a <a href="DocElement.html#DocElement">DocElement</a> object or the receiver iself. </p> <p> Never returns <var>nil</var>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDocParser_pushParserDelegate:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> pushParserDelegate: </span><span class="parameter"><span class="type">(id <<a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a>>)</span><span class="arg">aDelegate</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Pushes a new parser delegate to which the XML parsing should be delegated to. </p> <p> Will be popped once we reach the end of the XML element that triggered the delegate creation. </p> <p> You usually don't have to call this method, it is called each time  <a href="GSDocParser.html#-[GSDocParser_elementClassForName:]">-elementClassForName:</a>  returns a valid class. </p> <p> The given delegate must not be <var>nil</var>. </p> <p> See also  <a href="GSDocParser.html#-[GSDocParser_popParserDelegate]">-popParserDelegate</a>  and  <a href="GSDocParser.html#-[GSDocParser_parserDelegate]">-parserDelegate</a>  . </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDocParser_popParserDelegate]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> popParserDelegate </span></span></dt>
+<dd><div class="methodDescription">
+<p> Pops the last pushed parser delegate to which the XML parsing was delegated to until now. </p> <p> You usually don't have to call this method, it is called each time we reach the end of an XML element bound to a valid class in  <a href="GSDocParser.html#-[GSDocParser_elementClassForName:]">-elementClassForName:</a>  . </p> <p> See also  <a href="GSDocParser.html#-[GSDocParser_pushParserDelegate:]">-pushParserDelegate:</a>  and  <a href="GSDocParser.html#-[GSDocParser_parserDelegate]">-parserDelegate</a>  . </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDocParser_indentSpaces]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> indentSpaces </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the current indenting in use. </p> <p> The indentation varies each time a parser delegate is popped or pushed. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>XML Attribute Retrieval</h3><div class="method">
+<a name="-[GSDocParser_currentAttributes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSDictionary *)</span><span class="selector"> currentAttributes </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the XML attributes in the last parsed element. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSDocParser_argTypeFromArgsAttributes:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> argTypeFromArgsAttributes: </span><span class="parameter"><span class="type">(NSDictionary *)</span><span class="arg">attributeDict</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Retrieves the value for the <em>type</em> key in the given XML attributes, usually retrieved with  <a href="GSDocParser.html#-[GSDocParser_currentAttributes]">-currentAttributes</a>  when parsing the element <em>arg</em>, and returns the type or a blank string if no type is declared. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Utility</h3><div class="method">
+<a name="-[GSDocParser_isInformalProtocolSymbolName:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isInformalProtocolSymbolName: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aSymbolName</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the given symbol name is declared as an an informal protocol in the GSDoc index. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>DocGenerator</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="DocCategoryPage.html#DocCategoryPage">DocCategoryPage</a></li><li><a href="DocCDataType.html#DocCDataType">DocCDataType</a></li><li><a href="DocConstant.html#DocConstant">DocConstant</a></li><li><a href="DocDeclarationReorderer.html#DocDeclarationReorderer">DocDeclarationReorderer</a></li><li><a href="DocDescriptionParser.html#DocDescriptionParser">DocDescriptionParser</a></li><li><a href="DocElement.html#DocElement">DocElement</a></li><li><a href="DocElementGroup.html#DocElementGroup">DocElementGroup</a></li><li><a href="DocFunction.html#DocFunction">DocFunction</a></li><li><a href="DocGraphWriter.html#DocGraphWriter">DocGraphWriter</a></li><li><a href="DocHeader.html#DocHeader">DocHeader</a></li><li><a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a></li><li><a href="DocHTMLIndex.html#DocHTMLIndex">DocHTMLIndex</a></li><li><a href="DocIndex.html#DocIndex">DocIndex</a></li><li><a href="DocIVar.html#DocIVar">DocIVar</a></li><li><a href="DocMacro.html#DocMacro">DocMacro</a></li><li><a href="DocMethod.html#DocMethod">DocMethod</a></li><li><a href="DocMethodGroupDescriptionParser.html#DocMethodGroupDescriptionParser">DocMethodGroupDescriptionParser</a></li><li><a href="DocPage.html#DocPage">DocPage</a></li><li><a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a></li><li><a href="DocParameter.html#DocParameter">DocParameter</a></li><li><a href="DocProperty.html#DocProperty">DocProperty</a></li><li><a href="DocSourceCodeParser.html#DocSourceCodeParser">DocSourceCodeParser</a></li><li><a href="DocSubroutine.html#DocSubroutine">DocSubroutine</a></li><li><a href="DocTOCPage.html#DocTOCPage">DocTOCPage</a></li><li><a href="DocVariable.html#DocVariable">DocVariable</a></li><li><a href="GSDocParser.html#GSDocParser">GSDocParser</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_DocSourceParsing.html#DocSourceParsing">DocSourceParsing</a></li><li><a href="_DocWeaving.html#DocWeaving">DocWeaving</a></li><li><a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="DocHTMLElementCategories.html#DocHTMLElement(CommonUseCases)">DocHTMLElement</a></li><li><a href="NSStringCategories.html#NSString(DocGenerator)">NSString</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

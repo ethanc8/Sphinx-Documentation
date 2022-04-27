@@ -1,0 +1,2121 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui (Application Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSView</h2>NSView : <a href="NSResponder.html#NSResponder">NSResponder</a><div class="meta">
+<p class="metadesc"><em>The view class which encapsulates all drawing functionality</em></p><table><tr><th>Authors</th><td>Scott Christley Felipe A. Rodriguez Ovidiu Predescu Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>AppKit/NSView.h</td></tr></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[NSView_initWithFrame:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">frameRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_addSubview:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addSubview: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+Adds <var>aView</var> as a subview of the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_addSubview:positioned:relativeTo:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addSubview: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span><span class="selector"> positioned: </span><span class="parameter"><span class="type">(NSWindowOrderingMode)</span><span class="arg">place</span></span><span class="selector"> relativeTo: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">otherView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_ancestorSharedWithView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> ancestorSharedWithView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns self if <var>aView</var> is the receiver or <var>aView</var> is a subview of the receiver, the ancestor view shared by <var>aView</var> and the receiver if any, or <var>aView</var> if it is an ancestor of the receiver, otherwise returns <var>nil</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_isDescendantOf:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isDescendantOf: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> if <var>aView</var> is an ancestor of the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_opaqueAncestor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> opaqueAncestor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_removeFromSuperviewWithoutNeedingDisplay]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeFromSuperviewWithoutNeedingDisplay </span></span></dt>
+<dd><div class="methodDescription">
+Removes the receiver from its superviews list of subviews.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_removeFromSuperview]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeFromSuperview </span></span></dt>
+<dd><div class="methodDescription">
+<p> Removes the receiver from its superviews list of subviews and marks the rectangle that the reciever occupied in the superview as needing redisplay. </p> <p> This is dangerous to use during display, since it alters the rectangles needing display. In this case, you can use the <a href="NSView.html#-[NSView_removeFromSuperviewWithoutNeedingDisplay]">-removeFromSuperviewWithoutNeedingDisplay</a> method instead. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_removeSubview:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeSubview: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Removes aSubview from the receivers list of subviews and from the responder chain. </p> <p> Also invokes  <a href="NSView.html#-[NSView_viewWillMoveToWindow:]">-viewWillMoveToWindow:</a>  on <var>aView</var> with a <var>nil</var> argument, to handle removal of <var>aView</var> (and recursively, its children) from its window - performing tidyup by invalidating cursor rects etc. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_replaceSubview:with:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> replaceSubview: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">oldView</span></span><span class="selector"> with: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">newView</span></span></span></dt>
+<dd><div class="methodDescription">
+Removes <var>oldView</var>, which should be a subview of the receiver, from the receiver and places <var>newView</var> in its place. If <var>newView</var> is <var>nil</var>, just removes <var>oldView</var>. If <var>oldView</var> is <var>nil</var>, just adds <var>newView</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_sortSubviewsUsingFunction:context:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sortSubviewsUsingFunction: </span><span class="parameter"><span class="type">(NSComparisonResult( *)(id,id,void*))</span><span class="arg">compare</span></span><span class="selector"> context: </span><span class="parameter"><span class="type">(void*)</span><span class="arg">context</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_subviews]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> subviews </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setSubviews:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setSubviews: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">newSubviews</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_superview]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> superview </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_window]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSWindow.html#NSWindow">NSWindow</a> *)</span><span class="selector"> window </span></span></dt>
+<dd><div class="methodDescription">
+Returns the window in which the receiver resides.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_viewWillMoveToSuperview:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> viewWillMoveToSuperview: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">newSuper</span></span></span></dt>
+<dd><div class="methodDescription">
+Notifies the receiver that its superview is being changed to <var>newSuper</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_viewWillMoveToWindow:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> viewWillMoveToWindow: </span><span class="parameter"><span class="type">(<a href="NSWindow.html#NSWindow">NSWindow</a> *)</span><span class="arg">newWindow</span></span></span></dt>
+<dd><div class="methodDescription">
+Notifies the receiver that it will now be a view of <var>newWindow</var>. Note, this method is also used when removing a view from a window (in which case, <var>newWindow</var> is <var>nil</var>) to let all the subviews know that they have also been removed from the window.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_didAddSubview:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> didAddSubview: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">subview</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_viewDidMoveToSuperview]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> viewDidMoveToSuperview </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_viewDidMoveToWindow]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> viewDidMoveToWindow </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_willRemoveSubview:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> willRemoveSubview: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">subview</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_tag]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> tag </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_viewWithTag:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> viewWithTag: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">aTag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_frameRotation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> frameRotation </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_frame]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> frame </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setFrame:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">frameRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setFrameOrigin:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFrameOrigin: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">newOrigin</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setFrameRotation:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFrameRotation: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">angle</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setFrameSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFrameSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">newSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_boundsRotation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> boundsRotation </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_bounds]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> bounds </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setBounds:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBounds: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setBoundsOrigin:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBoundsOrigin: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">newOrigin</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setBoundsRotation:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBoundsRotation: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">angle</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setBoundsSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBoundsSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">newSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_translateOriginToPoint:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> translateOriginToPoint: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">point</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_scaleUnitSquareToSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> scaleUnitSquareToSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">newSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_rotateByAngle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> rotateByAngle: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">angle</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_isFlipped]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isFlipped </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_isRotatedFromBase]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isRotatedFromBase </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_isRotatedOrScaledFromBase]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isRotatedOrScaledFromBase </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_alphaValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> alphaValue </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setAlphaValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAlphaValue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_frameCenterRotation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> frameCenterRotation </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setFrameCenterRotation:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFrameCenterRotation: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">rot</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_centerScanRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> centerScanRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertPoint:fromView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> convertPoint: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span><span class="selector"> fromView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertPoint:toView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> convertPoint: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span><span class="selector"> toView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertRect:fromView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> convertRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> fromView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+Converts <var>aRect</var> from the coordinate system of <var>aView</var> to the coordinate system of the receiver, ie. returns the bounding rectangle in the receiver of <var>aRect</var> in <var>aView</var>. <br></br> <var>aView</var> and the receiver must be in the same window. If <var>aView</var> is <var>nil</var>, converts from the receiver's window's coordinate system.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertRect:toView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> convertRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> toView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+Converts <var>aRect</var> from the coordinate system of the receiver to the coordinate system of <var>aView</var>, ie. returns the bounding rectangle in <var>aView</var> of <var>aRect</var> in the receiver. <br></br> <var>aView</var> and the receiver must be in the same window. If <var>aView</var> is <var>nil</var>, converts to the receiver's window's coordinate system.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertSize:fromView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> convertSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">aSize</span></span><span class="selector"> fromView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertSize:toView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> convertSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">aSize</span></span><span class="selector"> toView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertPointFromBase:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> convertPointFromBase: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertPointToBase:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> convertPointToBase: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertRectFromBase:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> convertRectFromBase: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertRectToBase:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> convertRectToBase: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertSizeFromBase:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> convertSizeFromBase: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">aSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_convertSizeToBase:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> convertSizeToBase: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">aSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setPostsFrameChangedNotifications:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPostsFrameChangedNotifications: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets whether the receiver should post NSViewFrameDidChangeNotification when its frame changed.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_postsFrameChangedNotifications]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> postsFrameChangedNotifications </span></span></dt>
+<dd><div class="methodDescription">
+Returns whether the receiver posts NSViewFrameDidChangeNotification when its frame changed. Returns <var>YES</var> by default (as documented in Cocoa View Programming Guide).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setPostsBoundsChangedNotifications:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPostsBoundsChangedNotifications: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets whether the receiver should post NSViewBoundsDidChangeNotification when its bound changed.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_postsBoundsChangedNotifications]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> postsBoundsChangedNotifications </span></span></dt>
+<dd><div class="methodDescription">
+Returns whether the receiver posts NSViewBoundsDidChangeNotification when its bound changed. Returns <var>YES</var> by default (as documented in Cocoa View Programming Guide).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_resizeSubviewsWithOldSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> resizeSubviewsWithOldSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">oldSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setAutoresizesSubviews:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAutoresizesSubviews: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_autoresizesSubviews]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> autoresizesSubviews </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setAutoresizingMask:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAutoresizingMask: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">mask</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_autoresizingMask]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> autoresizingMask </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_resizeWithOldSuperviewSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> resizeWithOldSuperviewSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">oldSize</span></span></span></dt>
+<dd><div class="methodDescription">
+Perform rounding to pixel-align the frame if we are not rotated<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSView_focusView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> focusView </span></span></dt>
+<dd><div class="methodDescription">
+Return the view at the top of graphics contexts stack or <var>nil</var> if none is focused.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_lockFocus]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> lockFocus </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_unlockFocus]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> unlockFocus </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_lockFocusIfCanDraw]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> lockFocusIfCanDraw </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_lockFocusInRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> lockFocusInRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_lockFocusIfCanDrawInContext:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> lockFocusIfCanDrawInContext: </span><span class="parameter"><span class="type">(<a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a> *)</span><span class="arg">context</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_display]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> display </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_displayIfNeeded]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> displayIfNeeded </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_displayIfNeededIgnoringOpacity]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> displayIfNeededIgnoringOpacity </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_displayIfNeededInRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> displayIfNeededInRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_displayIfNeededInRectIgnoringOpacity:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> displayIfNeededInRectIgnoringOpacity: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_displayRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> displayRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+Causes the area of the view specified by <var>aRect</var> to be displayed. This is done by moving up the view hierarchy until an opaque view is found, then asking that view to update the appropriate area.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_displayRectIgnoringOpacity:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> displayRectIgnoringOpacity: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_displayRectIgnoringOpacity:inContext:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> displayRectIgnoringOpacity: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> inContext: </span><span class="parameter"><span class="type">(<a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a> *)</span><span class="arg">context</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_needsDisplay]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> needsDisplay </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setNeedsDisplay:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNeedsDisplay: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+As an exception to the general rules for threads and gui, this method is thread-safe and may be called from any thread. Display will always be done in the main thread. (Note that other methods are in general not thread-safe; if you want to access other properties of views from multiple threads, you need to provide the synchronization.)<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setNeedsDisplayInRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNeedsDisplayInRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">invalidRect</span></span></span></dt>
+<dd><div class="methodDescription">
+Inform the view system that the specified rectangle is invalid and requires updating. This automatically informs any superviews of any updating they need to do. As an exception to the general rules for threads and gui, this method is thread-safe and may be called from any thread. Display will always be done in the main thread. (Note that other methods are in general not thread-safe; if you want to access other properties of views from multiple threads, you need to provide the synchronization.)<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_isOpaque]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isOpaque </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSView_defaultFocusRingType]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSFocusRingType)</span><span class="selector"> defaultFocusRingType </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setKeyboardFocusRingNeedsDisplayInRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setKeyboardFocusRingNeedsDisplayInRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setFocusRingType:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFocusRingType: </span><span class="parameter"><span class="type">(NSFocusRingType)</span><span class="arg">focusRingType</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_focusRingType]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSFocusRingType)</span><span class="selector"> focusRingType </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setHidden:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setHidden: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_isHidden]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isHidden </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_isHiddenOrHasHiddenAncestor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isHiddenOrHasHiddenAncestor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_drawRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> drawRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span></span></dt>
+<dd><div class="methodDescription">
+This method is invoked to handle drawing inside the view. The default NSView's implementation does nothing; subclasses might override it to draw something inside the view. Since NSView's implementation is guaranteed to be empty, you should not call super's implementation when you override it in subclasses. drawRect: is invoked when the focus has already been locked on the view; you can use arbitrary postscript functions in drawRect: to draw inside your view; the coordinate system in which you draw is the view's own coordinate system (this means for example that you should refer to the rectangle covered by the view using its bounds, and not its frame). The argument of drawRect: is the rectangle which needs to be redrawn. In a lossy implementation, you can ignore the argument and redraw the whole view; if you are aiming at performance, you may want to redraw only what is inside the rectangle which needs to be redrawn; this usually improves drawing performance considerably.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_visibleRect]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> visibleRect </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_canDraw]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> canDraw </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_shouldDrawColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> shouldDrawColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_bitmapImageRepForCachingDisplayInRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a> *)</span><span class="selector"> bitmapImageRepForCachingDisplayInRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_cacheDisplayInRect:toBitmapImageRep:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> cacheDisplayInRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span><span class="selector"> toBitmapImageRep: </span><span class="parameter"><span class="type">(<a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a> *)</span><span class="arg">bitmap</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_wantsDefaultClipping]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> wantsDefaultClipping </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_needsToDrawRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> needsToDrawRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_getRectsBeingDrawn:count:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getRectsBeingDrawn: </span><span class="parameter"><span class="type">(const  NSRect **)</span><span class="arg">rects</span></span><span class="selector"> count: </span><span class="parameter"><span class="type">(NSInteger *)</span><span class="arg">count</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_inLiveResize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> inLiveResize </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_viewWillStartLiveResize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> viewWillStartLiveResize </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_viewDidEndLiveResize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> viewDidEndLiveResize </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_preservesContentDuringLiveResize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> preservesContentDuringLiveResize </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_getRectsExposedDuringLiveResize:count:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getRectsExposedDuringLiveResize: </span><span class="parameter"><span class="type">(NSRect[4])</span><span class="arg">exposedRects</span></span><span class="selector"> count: </span><span class="parameter"><span class="type">(NSInteger *)</span><span class="arg">count</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_rectPreservedDuringLiveResize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> rectPreservedDuringLiveResize </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_allocateGState]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> allocateGState </span></span></dt>
+<dd><div class="methodDescription">
+<p> Tell the view to maintain a private gstate object which encapsulates all the information about drawing, such as coordinate transforms, line widths, etc. If you do not invoke this method, a gstate object is constructed each time the view is lockFocused. Allocating a private gstate may improve the performance of views that are focused a lot and have a lot of customized drawing parameters. </p> <p> View subclasses should override the setUpGstate method to set these custom parameters. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_releaseGState]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> releaseGState </span></span></dt>
+<dd><div class="methodDescription">
+Frees the gstate object, if there is one.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_gState]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> gState </span></span></dt>
+<dd><div class="methodDescription">
+Returns an identifier that represents the view's gstate object, which is used to encapsulate drawing information about the view. Most of the time a gstate object is created from scratch when the view is focused, so if the view is not currently focused or allocateGState has not been called, then this method will return 0. FIXME: The above is what the OpenStep and Cocoa specification say, but gState is 0 unless allocateGState has been called.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_renewGState]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> renewGState </span></span></dt>
+<dd><div class="methodDescription">
+Invalidates the view's gstate object so it will be set up again using setUpGState the next time the view is focused.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setUpGState]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setUpGState </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_acceptsFirstMouse:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> acceptsFirstMouse: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> if the view object will accept the first click received when in an inactive window, and <var>NO</var> otherwise.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_hitTest:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> hitTest: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the subview, lowest in the receiver's hierarchy, which contains <var>aPoint</var>, or <var>nil</var> if there is no such view.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_mouse:inRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> mouse: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span><span class="selector"> inRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns whether or not <var>aPoint</var> lies within <var>aRect</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_performKeyEquivalent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> performKeyEquivalent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_performMnemonic:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> performMnemonic: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_mouseDownCanMoveWindow]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> mouseDownCanMoveWindow </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_dragFile:fromRect:slideBack:event:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> dragFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">filename</span></span><span class="selector"> fromRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span><span class="selector"> slideBack: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">slideFlag</span></span><span class="selector"> event: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">event</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_dragImage:at:offset:event:pasteboard:source:slideBack:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> dragImage: </span><span class="parameter"><span class="type">(<a href="NSImage.html#NSImage">NSImage</a> *)</span><span class="arg">anImage</span></span><span class="selector"> at: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">viewLocation</span></span><span class="selector"> offset: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">initialOffset</span></span><span class="selector"> event: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">event</span></span><span class="selector"> pasteboard: </span><span class="parameter"><span class="type">(NSPasteboard *)</span><span class="arg">pboard</span></span><span class="selector"> source: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sourceObject</span></span><span class="selector"> slideBack: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">slideFlag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_registerForDraggedTypes:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> registerForDraggedTypes: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">newTypes</span></span></span></dt>
+<dd><div class="methodDescription">
+Registers the fact that the receiver should accept dragged data of any of the specified types. You need to do this if you want your view to support drag and drop.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_unregisterDraggedTypes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> unregisterDraggedTypes </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_shouldDelayWindowOrderingForEvent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> shouldDelayWindowOrderingForEvent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">anEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_dragPromisedFilesOfTypes:fromRect:source:slideBack:event:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> dragPromisedFilesOfTypes: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">typeArray</span></span><span class="selector"> fromRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> source: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sourceObject</span></span><span class="selector"> slideBack: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">slideBack</span></span><span class="selector"> event: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_registeredDraggedTypes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> registeredDraggedTypes </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_addCursorRect:cursor:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addCursorRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> cursor: </span><span class="parameter"><span class="type">(<a href="NSCursor.html#NSCursor">NSCursor</a> *)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+Adds a cursor rectangle. This provides for automatic update of the cursor to be <var>anObject</var> while the mouse is in <var>aRect</var>. <br></br> The cursor ( <var>anObject</var>) is retained until the cursor rectangle is removed or discarded. <br></br> Generally your subviews should call this in their implementation of the  <a href="NSView.html#-[NSView_resetCursorRects]">-resetCursorRects</a>  method. <br></br> It is your responsibility to ensure that <var>aRect</var> lies within your veiw's visible rectangle.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_discardCursorRects]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> discardCursorRects </span></span></dt>
+<dd><div class="methodDescription">
+Removes all the cursor rectancles which have been set up for the receiver. This is equivalent to calling  <a href="NSView.html#-[NSView_removeCursorRect:cursor:]">-removeCursorRect:cursor:</a>  for all cursor rectangles which have been set up. <br></br> This is called automatically before the system calls  <a href="NSView.html#-[NSView_resetCursorRects]">-resetCursorRects</a>  so you never need to call it.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_removeCursorRect:cursor:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeCursorRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> cursor: </span><span class="parameter"><span class="type">(<a href="NSCursor.html#NSCursor">NSCursor</a> *)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+Removes the cursor rectangle which was set up for the specified rectangle and cursor.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_resetCursorRects]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> resetCursorRects </span></span></dt>
+<dd><div class="methodDescription">
+This is called to establish a new set of cursor rectangles whenever the receiver needs to do so (eg the view has been resized). The default implementation does nothing, but subclasses should use it to make calls to  <a href="NSView.html#-[NSView_addCursorRect:cursor:]">-addCursorRect:cursor:</a>  to establish their new cursor rectangles.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_addToolTipRect:owner:userData:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSToolTipTag)</span><span class="selector"> addToolTipRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> owner: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span><span class="selector"> userData: </span><span class="parameter"><span class="type">(void*)</span><span class="arg">data</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_removeAllToolTips]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeAllToolTips </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_removeToolTip:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeToolTip: </span><span class="parameter"><span class="type">(NSToolTipTag)</span><span class="arg">tag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setToolTip:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setToolTip: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_toolTip]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> toolTip </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_removeTrackingRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeTrackingRect: </span><span class="parameter"><span class="type">(NSTrackingRectTag)</span><span class="arg">tag</span></span></span></dt>
+<dd><div class="methodDescription">
+Removes a tracking rectangle which was previously established using the <a href="NSView.html#-[NSView_addTrackingRect:owner:userData:assumeInside:]">-addTrackingRect:owner:userData:assumeInside:</a> method. <br></br> The value of <var>tag</var> must be the value returned by the method used to add the rectangle.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_addTrackingRect:owner:userData:assumeInside:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSTrackingRectTag)</span><span class="selector"> addTrackingRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> owner: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span><span class="selector"> userData: </span><span class="parameter"><span class="type">(void*)</span><span class="arg">data</span></span><span class="selector"> assumeInside: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Adds a tracking rectangle to monitor mouse movement and generate mouse-entered and mouse-exited events. <br></br> The event messages are sent to <var>anObject</var>, which is <em>not</em> retained and must therefore be sure to remove any tracking rectangles using it before it is deallocated. <br></br> The value of <var>data</var> is supplied as the user <var>data</var> in the event objects generated. <br></br> If <var>flag</var> is <var>YES</var> then the mouse is assumed to be inside the tracking rectangle and the first event generated will therefore be a mouse exit, if it is <var>NO</var> then the first event generated will be a mouse entry.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_adjustScroll:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> adjustScroll: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">newVisible</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_autoscroll:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> autoscroll: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+Finds the nearest enclosing <a href="NSClipView.html#NSClipView">NSClipView</a> and, if the location of the event is outside it, scrolls the <a href="NSClipView.html#NSClipView">NSClipView</a> in the direction of the event. The amount scrolled is proportional to how far outside the <a href="NSClipView.html#NSClipView">NSClipView</a> the event's location is. This method is suitable for calling periodically from a modal event tracking loop when the mouse is dragged outside the tracking view. The suggested period of the calls is 0.1 seconds.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_enclosingScrollView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSScrollView.html#NSScrollView">NSScrollView</a> *)</span><span class="selector"> enclosingScrollView </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_scrollPoint:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> scrollPoint: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_scrollRect:by:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> scrollRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> by: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">delta</span></span></span></dt>
+<dd><div class="methodDescription">
+Copy on scroll method, should be called from [<a href="NSClipView.html#NSClipView">NSClipView</a> setBoundsOrigin].<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_scrollRectToVisible:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> scrollRectToVisible: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+Scrolls the nearest enclosing clip view the minimum required distance necessary to make <var>aRect</var> (or as much of it possible) in the receiver visible. Returns <var>YES</var> iff any scrolling was done.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_reflectScrolledClipView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> reflectScrolledClipView: </span><span class="parameter"><span class="type">(<a href="NSClipView.html#NSClipView">NSClipView</a> *)</span><span class="arg">aClipView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_scrollClipView:toPoint:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> scrollClipView: </span><span class="parameter"><span class="type">(<a href="NSClipView.html#NSClipView">NSClipView</a> *)</span><span class="arg">aClipView</span></span><span class="selector"> toPoint: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSView_defaultMenu]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> defaultMenu </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the default menu to be used for instances of the current class; if no menu has been set through setMenu: this default menu will be used. </p> <p> NSView's implementation returns <var>nil</var> . You should override this method if you want all instances of your custom view to use the same menu. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_menuForEvent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> menuForEvent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the menu that it appropriates for the given event. NSView's implementation returns the default menu of the view. </p> <p> This methods is intended to be overriden so that it can return a context-sensitive for appropriate mouse's events. ((although it seems it can be used for any kind of event) </p> <p> This method is used by NSView's rightMouseDown: method, and the returned <a href="NSMenu.html#NSMenu">NSMenu</a> is displayed as a context menu </p> <p> Use of this method is discouraged in GNUstep as it breaks many user interface guidelines. At the very least, menu items that appear in a context sensitive menu should also always appear in a normal menu. Otherwise, users are faced with an inconsistant interface where the menu items they want are only available in certain (possibly unknown) cases, making it difficult for the user to understand how the application operates </p> <p> see [<a href="NSResponder.html#NSResponder">NSResponder</a> -menu], [<a href="NSResponder.html#NSResponder">NSResponder</a> -setMenu:], [<a href="NSView.html#NSView">NSView</a> <a href="NSView.html#+[NSView_defaultMenu]">+defaultMenu</a>] and [<a href="NSView.html#NSView">NSView</a> -menu]. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_needsPanelToBecomeKey]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> needsPanelToBecomeKey </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setNextKeyView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNextKeyView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> The effect of the  <a href="NSView.html#-[NSView_setNextKeyView:]">-setNextKeyView:</a>  method is to set <var>aView</var> to be the value returned by subsequent calls to the receivers  <a href="NSView.html#-[NSView_nextKeyView]">-nextKeyView</a>  method. This also has the effect of setting the previous key view of <var>aView</var>, so that subsequent calls to its  <a href="NSView.html#-[NSView_previousKeyView]">-previousKeyView</a>  method will return the receiver. </p> <p> As a special case, if you pass <var>nil</var> as <var>aView</var> then the  <a href="NSView.html#-[NSView_previousKeyView]">-previousKeyView</a>  of the receivers current  <a href="NSView.html#-[NSView_nextKeyView]">-nextKeyView</a>  is set to <var>nil</var> as well as the receivers  <a href="NSView.html#-[NSView_nextKeyView]">-nextKeyView</a>  being set to <var>nil</var>. <br></br> This behavior provides MacOS-X compatibility. </p> <p> If you pass a non-view object other than <var>nil</var>, an NSInternaInconsistencyException is raised. </p> <p> <strong>NB</strong> This method does <em>NOT</em> cause <var>aView</var> to be retained, and if <var>aView</var> is deallocated, the  [<a href="NSView.html#NSView">NSView</a> -dealloc]  method will automatically remove it from the key view chain it is in. </p> <p> For keyboard navigation, views are linked together in a chain, so that the current first responder view can be changed by stepping backward and forward in that chain. This is the method for building and modifying that chain. </p> <p> The MacOS-X documentation refers to this chain as a <em>loop</em>, but the actual implementation is not a loop at all (except as a special case when you make the chain into a loop). In fact, while each view may have only zero or one <em>next</em> view, and zero or one <em>previous</em> view, several views may have their <em>next</em> view set to a single view and/or their <em>previous</em> views set to a single view. So the actual setup is a directed graph rather than a loop. </p> <p> While a directed graph is a very powerful and flexible way of managing the way views get keyboard focus in response to tabs etc, it can be confusing if misused. It is probably best therefore, to set your views up as a single loop within each window. </p> 
+<pre>
+   [a setNextKeyView: b];
+   [b setNextKeyView: c];
+   [c setNextKeyView: d];
+   [d setNextKeyView: a];
+ </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_nextKeyView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> nextKeyView </span></span></dt>
+<dd><div class="methodDescription">
+Returns the next view after the receiver in the key view chain. <br></br> Returns <var>nil</var> if there is no view after the receiver. <br></br> The next view is set up using the  <a href="NSView.html#-[NSView_setNextKeyView:]">-setNextKeyView:</a>  method. <br></br> The key view chain is used to determine the order in which views become first responder when using keyboard navigation.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_nextValidKeyView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> nextValidKeyView </span></span></dt>
+<dd><div class="methodDescription">
+Returns the first available view after the receiver which is actually able to become first responder. See  <a href="NSView.html#-[NSView_nextKeyView]">-nextKeyView</a>  and [<a href="NSResponder.html#NSResponder">NSResponder</a> -acceptsFirstResponder]<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setPreviousKeyView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPreviousKeyView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+GNUstep addition... a conveninece method to insert a view in the key view chain before the receiver, using the  <a href="NSView.html#-[NSView_previousKeyView]">-previousKeyView</a>  and  <a href="NSView.html#-[NSView_setNextKeyView:]">-setNextKeyView:</a>  methods.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_previousKeyView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> previousKeyView </span></span></dt>
+<dd><div class="methodDescription">
+Returns the view before the receiver in the key view chain. <br></br> Returns <var>nil</var> if there is no view before the receiver in the chain. <br></br> The previous view of the receiver was set up by passing it as the argument to a call of  <a href="NSView.html#-[NSView_setNextKeyView:]">-setNextKeyView:</a>  on that view. <br></br> The key view chain is used to determine the order in which views become first responder when using keyboard navigation.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_previousValidKeyView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> previousValidKeyView </span></span></dt>
+<dd><div class="methodDescription">
+Returns the first available view before the receiver which is actually able to become first responder. See  <a href="NSView.html#-[NSView_nextKeyView]">-nextKeyView</a>  and [<a href="NSResponder.html#NSResponder">NSResponder</a> -acceptsFirstResponder]<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_canBecomeKeyView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> canBecomeKeyView </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_fax:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> fax: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_print:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> print: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_dataWithEPSInsideRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSData *)</span><span class="selector"> dataWithEPSInsideRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_writeEPSInsideRect:toPasteboard:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> writeEPSInsideRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span><span class="selector"> toPasteboard: </span><span class="parameter"><span class="type">(NSPasteboard *)</span><span class="arg">pasteboard</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_dataWithPDFInsideRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSData *)</span><span class="selector"> dataWithPDFInsideRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_writePDFInsideRect:toPasteboard:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> writePDFInsideRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> toPasteboard: </span><span class="parameter"><span class="type">(NSPasteboard *)</span><span class="arg">pboard</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_printJobTitle]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> printJobTitle </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_adjustPageHeightNew:top:bottom:limit:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> adjustPageHeightNew: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">newBottom</span></span><span class="selector"> top: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">oldTop</span></span><span class="selector"> bottom: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">oldBottom</span></span><span class="selector"> limit: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">bottomLimit</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_adjustPageWidthNew:left:right:limit:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> adjustPageWidthNew: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">newRight</span></span><span class="selector"> left: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">oldLeft</span></span><span class="selector"> right: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">oldRight</span></span><span class="selector"> limit: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">rightLimit</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_heightAdjustLimit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> heightAdjustLimit </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_knowsPagesFirst:last:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> knowsPagesFirst: </span><span class="parameter"><span class="type">(int*)</span><span class="arg">firstPageNum</span></span><span class="selector"> last: </span><span class="parameter"><span class="type">(int*)</span><span class="arg">lastPageNum</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_knowsPageRange:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> knowsPageRange: </span><span class="parameter"><span class="type">(NSRange *)</span><span class="arg">range</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_locationOfPrintRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> locationOfPrintRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_rectForPage:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> rectForPage: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">page</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_widthAdjustLimit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> widthAdjustLimit </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_addToPageSetup]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addToPageSetup </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_beginPage:label:bBox:fonts:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> beginPage: </span><span class="parameter"><span class="type">(int)</span><span class="arg">ordinalNum</span></span><span class="selector"> label: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span><span class="selector"> bBox: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">pageRect</span></span><span class="selector"> fonts: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">fontNames</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_beginPageSetupRect:placement:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> beginPageSetupRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> placement: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">location</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_beginPrologueBBox:creationDate:createdBy:fonts:forWhom:pages:title:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> beginPrologueBBox: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">boundingBox</span></span><span class="selector"> creationDate: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">dateCreated</span></span><span class="selector"> createdBy: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">anApplication</span></span><span class="selector"> fonts: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">fontNames</span></span><span class="selector"> forWhom: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">user</span></span><span class="selector"> pages: </span><span class="parameter"><span class="type">(int)</span><span class="arg">numPages</span></span><span class="selector"> title: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aTitle</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_beginSetup]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> beginSetup </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_beginTrailer]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> beginTrailer </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_drawPageBorderWithSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> drawPageBorderWithSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">borderSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_drawSheetBorderWithSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> drawSheetBorderWithSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">borderSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_endHeaderComments]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> endHeaderComments </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_endPrologue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> endPrologue </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_endSetup]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> endSetup </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_endPageSetup]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> endPageSetup </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_endPage]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> endPage </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_endTrailer]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> endTrailer </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_beginDocument]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> beginDocument </span></span></dt>
+<dd><div class="methodDescription">
+Writes header and job information for the PostScript document. This includes at a minimum, PostScript header information. It may also include job setup information if the output is intended for a printer (i.e. not an EPS file). Most of the information for writing the header comes from the <a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a> and <a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a> objects associated with the current print operation. There isn't normally anything that the program needs to override at the beginning of a document, although if there is additional setup that needs to be done, you can override the NSView's methods endHeaderComments, endPrologue, beginSetup, and/or endSetup. This method calls the above methods in the listed order before or after writing the required information. For an EPS operation, the beginSetup and endSetup methods aren't used.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_beginPageInRect:atPlacement:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> beginPageInRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> atPlacement: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">location</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_endDocument]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> endDocument </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_pageFooter]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSAttributedString *)</span><span class="selector"> pageFooter </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_pageHeader]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSAttributedString *)</span><span class="selector"> pageHeader </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_layerContentsPlacement]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSViewLayerContentsPlacement)</span><span class="selector"> layerContentsPlacement </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setLayerContentsPlacement:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLayerContentsPlacement: </span><span class="parameter"><span class="type">(NSViewLayerContentsPlacement)</span><span class="arg">placement</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_layerContentsRedrawPolicy]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSViewLayerContentsRedrawPolicy)</span><span class="selector"> layerContentsRedrawPolicy </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setLayerContentsRedrawPolicy:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLayerContentsRedrawPolicy: </span><span class="parameter"><span class="type">(NSViewLayerContentsRedrawPolicy)</span><span class="arg">pol</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_userInterfaceLayoutDirection]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUserInterfaceLayoutDirection)</span><span class="selector"> userInterfaceLayoutDirection </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSView_setUserInterfaceLayoutDirection:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setUserInterfaceLayoutDirection: </span><span class="parameter"><span class="type">(NSUserInterfaceLayoutDirection)</span><span class="arg">dir</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui (Application Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSActionCell.html#NSActionCell">NSActionCell</a></li><li><a href="NSBezierPath.html#NSBezierPath">NSBezierPath</a></li><li><a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a></li><li><a href="NSBox.html#NSBox">NSBox</a></li><li><a href="NSBrowser.html#NSBrowser">NSBrowser</a></li><li><a href="NSBrowserCell.html#NSBrowserCell">NSBrowserCell</a></li><li><a href="NSButton.html#NSButton">NSButton</a></li><li><a href="NSButtonCell.html#NSButtonCell">NSButtonCell</a></li><li><a href="NSCachedImageRep.html#NSCachedImageRep">NSCachedImageRep</a></li><li><a href="NSCell.html#NSCell">NSCell</a></li><li><a href="NSClipView.html#NSClipView">NSClipView</a></li><li><a href="NSColor.html#NSColor">NSColor</a></li><li><a href="NSColorList.html#NSColorList">NSColorList</a></li><li><a href="NSColorPanel.html#NSColorPanel">NSColorPanel</a></li><li><a href="NSColorPicker.html#NSColorPicker">NSColorPicker</a></li><li><a href="NSColorWell.html#NSColorWell">NSColorWell</a></li><li><a href="NSComboBox.html#NSComboBox">NSComboBox</a></li><li><a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a></li><li><a href="NSControl.html#NSControl">NSControl</a></li><li><a href="NSCursor.html#NSCursor">NSCursor</a></li><li><a href="NSCustomImageRep.html#NSCustomImageRep">NSCustomImageRep</a></li><li><a href="NSDataLink.html#NSDataLink">NSDataLink</a></li><li><a href="NSDataLinkManager.html#NSDataLinkManager">NSDataLinkManager</a></li><li><a href="NSDataLinkPanel.html#NSDataLinkPanel">NSDataLinkPanel</a></li><li><a href="NSDocument.html#NSDocument">NSDocument</a></li><li><a href="NSDocumentController.html#NSDocumentController">NSDocumentController</a></li><li><a href="NSDrawer.html#NSDrawer">NSDrawer</a></li><li><a href="NSDrawerDelegate.html#NSDrawerDelegate">NSDrawerDelegate</a></li><li><a href="NSEPSImageRep.html#NSEPSImageRep">NSEPSImageRep</a></li><li><a href="NSEvent.html#NSEvent">NSEvent</a></li><li><a href="NSFont.html#NSFont">NSFont</a></li><li><a href="NSFontManager.html#NSFontManager">NSFontManager</a></li><li><a href="NSFontPanel.html#NSFontPanel">NSFontPanel</a></li><li><a href="NSForm.html#NSForm">NSForm</a></li><li><a href="NSFormCell.html#NSFormCell">NSFormCell</a></li><li><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a></li><li><a href="NSHelpManager.html#NSHelpManager">NSHelpManager</a></li><li><a href="NSHelpPanel.html#NSHelpPanel">NSHelpPanel</a></li><li><a href="NSImage.html#NSImage">NSImage</a></li><li><a href="NSImageCell.html#NSImageCell">NSImageCell</a></li><li><a href="NSImageRep.html#NSImageRep">NSImageRep</a></li><li><a href="NSImageView.html#NSImageView">NSImageView</a></li><li><a href="NSInputManager.html#NSInputManager">NSInputManager</a></li><li><a href="NSInputServer.html#NSInputServer">NSInputServer</a></li><li><a href="NSLayoutManager.html#NSLayoutManager">NSLayoutManager</a></li><li><a href="NSMatrix.html#NSMatrix">NSMatrix</a></li><li><a href="NSMenu.html#NSMenu">NSMenu</a></li><li><a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a></li><li><a href="NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="NSMutableParagraphStyle.html#NSMutableParagraphStyle">NSMutableParagraphStyle</a></li><li><a href="NSNib.html#NSNib">NSNib</a></li><li><a href="NSOpenGLContext.html#NSOpenGLContext">NSOpenGLContext</a></li><li><a href="NSOpenGLPixelFormat.html#NSOpenGLPixelFormat">NSOpenGLPixelFormat</a></li><li><a href="NSOpenGLView.html#NSOpenGLView">NSOpenGLView</a></li><li><a href="NSOpenPanel.html#NSOpenPanel">NSOpenPanel</a></li><li><a href="NSOutlineView.html#NSOutlineView">NSOutlineView</a></li><li><a href="NSPageLayout.html#NSPageLayout">NSPageLayout</a></li><li><a href="NSPanel.html#NSPanel">NSPanel</a></li><li><a href="NSParagraphStyle.html#NSParagraphStyle">NSParagraphStyle</a></li><li><a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a></li><li><a href="NSPopUpButtonCell.html#NSPopUpButtonCell">NSPopUpButtonCell</a></li><li><a href="NSPrinter.html#NSPrinter">NSPrinter</a></li><li><a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a></li><li><a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a></li><li><a href="NSPrintPanel.html#NSPrintPanel">NSPrintPanel</a></li><li><a href="NSProgressIndicator.html#NSProgressIndicator">NSProgressIndicator</a></li><li><a href="NSResponder.html#NSResponder">NSResponder</a></li><li><a href="NSRulerMarker.html#NSRulerMarker">NSRulerMarker</a></li><li><a href="NSRulerView.html#NSRulerView">NSRulerView</a></li><li><a href="NSSavePanel.html#NSSavePanel">NSSavePanel</a></li><li><a href="NSScreen.html#NSScreen">NSScreen</a></li><li><a href="NSScroller.html#NSScroller">NSScroller</a></li><li><a href="NSScrollView.html#NSScrollView">NSScrollView</a></li><li><a href="NSSecureTextField.html#NSSecureTextField">NSSecureTextField</a></li><li><a href="NSSecureTextFieldCell.html#NSSecureTextFieldCell">NSSecureTextFieldCell</a></li><li><a href="NSSelection.html#NSSelection">NSSelection</a></li><li><a href="NSSlider.html#NSSlider">NSSlider</a></li><li><a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a></li><li><a href="NSSound.html#NSSound">NSSound</a></li><li><a href="NSSpellChecker.html#NSSpellChecker">NSSpellChecker</a></li><li><a href="NSSplitView.html#NSSplitView">NSSplitView</a></li><li><a href="NSStepper.html#NSStepper">NSStepper</a></li><li><a href="NSStepperCell.html#NSStepperCell">NSStepperCell</a></li><li><a href="NSTableColumn.html#NSTableColumn">NSTableColumn</a></li><li><a href="NSTableHeaderCell.html#NSTableHeaderCell">NSTableHeaderCell</a></li><li><a href="NSTableHeaderView.html#NSTableHeaderView">NSTableHeaderView</a></li><li><a href="NSTableView.html#NSTableView">NSTableView</a></li><li><a href="NSTabView.html#NSTabView">NSTabView</a></li><li><a href="NSTabViewItem.html#NSTabViewItem">NSTabViewItem</a></li><li><a href="NSText.html#NSText">NSText</a></li><li><a href="NSTextAttachment.html#NSTextAttachment">NSTextAttachment</a></li><li><a href="NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="NSTextContainer.html#NSTextContainer">NSTextContainer</a></li><li><a href="NSTextField.html#NSTextField">NSTextField</a></li><li><a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a></li><li><a href="NSTextStorage.html#NSTextStorage">NSTextStorage</a></li><li><a href="NSTextTab.html#NSTextTab">NSTextTab</a></li><li><a href="NSTextView.html#NSTextView">NSTextView</a></li><li><a href="NSToolbar.html#NSToolbar">NSToolbar</a></li><li><a href="NSToolbarItem.html#NSToolbarItem">NSToolbarItem</a></li><li><a href="NSView.html#NSView">NSView</a></li><li><a href="NSWindow.html#NSWindow">NSWindow</a></li><li><a href="NSWindowController.html#NSWindowController">NSWindowController</a></li><li><a href="NSWorkspace.html#NSWorkspace">NSWorkspace</a></li></ul></div>
+
+<ul>
+    <li><a href="NSPasteboard.html">NSPasteboard (buggy documentation)</a></li>
+    <li><a href="NSApplication.html">NSApplication (buggy documentation)</a></li>
+</ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSImageDelegateProtocol.html#GSImageDelegateProtocol">GSImageDelegateProtocol</a></li><li><a href="_NSComboBoxCellDataSource.html#NSComboBoxCellDataSource">NSComboBoxCellDataSource</a></li><li><a href="_NSControlTextEditingDelegate.html#NSControlTextEditingDelegate">NSControlTextEditingDelegate</a></li><li><a href="_NSInputServerMouseTracker.html#NSInputServerMouseTracker">NSInputServerMouseTracker</a></li><li><a href="_NSInputServiceProvider.html#NSInputServiceProvider">NSInputServiceProvider</a></li><li><a href="_NSMatrixDelegate.html#NSMatrixDelegate">NSMatrixDelegate</a></li><li><a href="_NSMenuDelegate.html#NSMenuDelegate">NSMenuDelegate</a></li><li><a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="_NSMenuValidation.html#NSMenuValidation">NSMenuValidation</a></li><li><a href="_NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="_NSOpenSavePanelDelegate.html#NSOpenSavePanelDelegate">NSOpenSavePanelDelegate</a></li><li><a href="_NSOutlineViewDataSource.html#NSOutlineViewDataSource">NSOutlineViewDataSource</a></li><li><a href="_NSOutlineViewDelegate.html#NSOutlineViewDelegate">NSOutlineViewDelegate</a></li><li><a href="_NSPrintPanelAccessorizing.html#NSPrintPanelAccessorizing">NSPrintPanelAccessorizing</a></li><li><a href="_NSTableViewDataSource.html#NSTableViewDataSource">NSTableViewDataSource</a></li><li><a href="_NSTableViewDelegate.html#NSTableViewDelegate">NSTableViewDelegate</a></li><li><a href="_NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="_NSTextFieldDelegate.html#NSTextFieldDelegate">NSTextFieldDelegate</a></li><li><a href="_NSTextInput.html#NSTextInput">NSTextInput</a></li><li><a href="_NSTextViewDelegate.html#NSTextViewDelegate">NSTextViewDelegate</a></li><li><a href="_NSWindowDelegate.html#NSWindowDelegate">NSWindowDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSAffineTransformCategories.html#NSAffineTransform(GNUstep)">NSAffineTransform</a></li><li><a href="NSApplicationCategories.html#NSApplication(NSColorPanel)">NSApplication</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(AppKit)">NSAttributedString</a></li><li><a href="NSBitmapImageRepCategories.html#NSBitmapImageRep(GNUstepExtension)">NSBitmapImageRep</a></li><li><a href="NSBundleCategories.html#NSBundle(NSHelpManager)">NSBundle</a></li><li><a href="NSCellCategories.html#NSCell(PrivateMethods)">NSCell</a></li><li><a href="NSCoderCategories.html#NSCoder(NSCoderAdditions)">NSCoder</a></li><li><a href="NSColorCategories.html#NSColor(GSQuartz)">NSColor</a></li><li><a href="NSFontCategories.html#NSFont(GNUstep)">NSFont</a></li><li><a href="NSGraphicsContextCategories.html#NSGraphicsContext(GNUstep)">NSGraphicsContext</a></li><li><a href="NSImageCategories.html#NSImage(GSQuartz)">NSImage</a></li><li><a href="NSImageRepCategories.html#NSImageRep(GSQuartz)">NSImageRep</a></li><li><a href="NSImageViewCategories.html#NSImageView(GNUstep)">NSImageView</a></li><li><a href="NSLayoutManagerCategories.html#NSLayoutManager(drawing)">NSLayoutManager</a></li><li><a href="NSMenuCategories.html#NSMenu(GNUstepExtra)">NSMenu</a></li><li><a href="NSMenuItemCategories.html#NSMenuItem(GNUstepExtra)">NSMenuItem</a></li><li><a href="NSMutableAttributedStringCategories.html#NSMutableAttributedString(AppKit)">NSMutableAttributedString</a></li><li><a href="NSObjectCategories.html#NSObject(NSComboBoxCellDataSource)">NSObject</a></li><li><a href="NSPrinterCategories.html#NSPrinter(PPDParsing)">NSPrinter</a></li><li><a href="NSPrintOperationCategories.html#NSPrintOperation(Private)">NSPrintOperation</a></li><li><a href="NSPrintPanelCategories.html#NSPrintPanel(Private)">NSPrintPanel</a></li><li><a href="NSProgressIndicatorCategories.html#NSProgressIndicator(GNUstepExtensions)">NSProgressIndicator</a></li><li><a href="NSResponderCategories.html#NSResponder(OptionalActionMethods)">NSResponder</a></li><li><a href="NSSplitViewCategories.html#NSSplitView(GNUstepExtra)">NSSplitView</a></li><li><a href="NSStringCategories.html#NSString(NSStringDrawing)">NSString</a></li><li><a href="NSTableViewCategories.html#NSTableView(GNUPrivate)">NSTableView</a></li><li><a href="NSTabViewItemCategories.html#NSTabViewItem(GNUstep)">NSTabViewItem</a></li><li><a href="NSTextCategories.html#NSText(GNUstepExtensions)">NSText</a></li><li><a href="NSTextFieldCellCategories.html#NSTextFieldCell(PrivateMethods)">NSTextFieldCell</a></li><li><a href="NSTextStorageCategories.html#NSTextStorage(Scripting)">NSTextStorage</a></li><li><a href="NSTextViewCategories.html#NSTextView(GSTextViewSync)">NSTextView</a></li><li><a href="NSViewCategories.html#NSView(PrivateMethods)">NSView</a></li><li><a href="NSWindowCategories.html#NSWindow(GNUstepBackend)">NSWindow</a></li><li><a href="NSWorkspaceCategories.html#NSWorkspace(GNUstep)">NSWorkspace</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

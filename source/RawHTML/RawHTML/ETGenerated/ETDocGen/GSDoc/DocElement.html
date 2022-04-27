@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocElement documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocElement">DocElement documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Nicolas Roard</dt>
+      <dd>
+      </dd>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      
+      Base class to represent element in a doc element tree.
+    
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2008 Nicolas Roard</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the DocElement class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the DocElementGroup class</a>
+        </li>
+        <li>
+          <a href="#003000000000">Software documentation for the DocSubroutine class</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocElement class
+      </a></h1>
+    <h2><a name="class$DocElement">DocElement</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocElement.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSCopying)">NSCopying</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Doc Element Tree
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocElement is an abstract class, whose
+            subclasses represents concrete nodes such as
+            methods, constants, etc. in the documentation
+            element tree.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Each DocElement subclass is expected to implement both
+            the GSDoc parsing and HTML generation that pertains to
+            the element type.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Any ETDoc markup parsing should be delegated to
+            DocDescriptionParser, see
+            <a rel="gsdoc" href="#method$DocElement-addInformationFrom$">
+              -addInformationFrom:
+            </a>
+
+            .
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            The doc element tree is rooted in a page. See DocPage.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement+defaultTask">+defaultTask</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement+forthcomingDescription">+forthcomingDescription</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement-GSDocElementName">-GSDocElementName</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement-HTMLDescriptionWithDocIndex$">-HTMLDescriptionWithDocIndex:</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement-HTMLRepresentation">-HTMLRepresentation</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement-addInformationFrom$">-addInformationFrom:</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement-appendToRawDescription$">-appendToRawDescription:</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement-insertLinksWithDocIndex$forString$">-insertLinksWithDocIndex:forString:</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement-rawDescription">-rawDescription</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElement-weaveSelector">-weaveSelector</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocElement+defaultTask">defaultTask&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>defaultTask</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Basic Documentation Properties
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the task name returned by
+              
+                -task
+              
+
+              when no custom task was set.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The default task name is <em>Default</em>.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement+forthcomingDescription">forthcomingDescription&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>forthcomingDescription</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Attached Description
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the text to denote a empty description
+              yet to be written.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              For every missing or empty descriptions in a header
+              or source file, autogsdoc inserts this text.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement-GSDocElementName">GSDocElementName&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>GSDocElementName</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit GSDoc Parsing
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the GSDoc element name to be parsed to
+              initialize the instance.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Can be overriden to return an element name, and then
+              called in the GSDocParserDelegate methods to reuse
+              their implementation in a subclass hierarchy.
+              <br /> For example, DocCDataType returns
+              <em>type</em> and its subclass DocConstant returns
+              <em>constant</em>, this way DocConstant doesn&apos;t
+              override
+              <a rel="gsdoc" href="GSDocParser.html#method$(GSDocParserDelegate)-parser$startElement$withAttributes$">-parser:startElement:withAttributes:</a>
+ but inherits DocCDataType implementation:
+                </p>
+    <p>
+      
+
+<pre>
+	if ([elementName isEqualToString: [self GSDocElementName]])
+	{
+		[self setName: [attributeDict objectForKey: @&quot;name&quot;]];
+		// more code
+	}
+</pre>
+      
+            
+    </p>
+    <p>
+
+              By default, returns <em>type</em>.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement-HTMLDescriptionWithDocIndex$">HTMLDescriptionWithDocIndex:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>HTMLDescriptionWithDocIndex:</b> (<a rel="gsdoc" href="DocIndex.html#class$DocHTMLIndex">DocHTMLIndex</a>*)aDocIndex;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit HTML Generation
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns a HTML formatted description from the
+              filtered description.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The returned description includes API symbol links.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See
+              
+                -filteredDescription
+              
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement-HTMLRepresentation">HTMLRepresentation&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHTMLElement.html#class$DocHTMLElement">DocHTMLElement</a>*) <b>HTMLRepresentation</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the HTML element tree into which the
+              receiver should be rendered.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              By default, returns the +[DocHTMLElement
+              blankElement].
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Should be overriden to return a custom
+              representation.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement-addInformationFrom$">addInformationFrom:&nbsp;</a></h3>
+    - (void) <b>addInformationFrom:</b> (<a rel="gsdoc" href="DocDescriptionParser.html#class$DocDescriptionParser">DocDescriptionParser</a>*)aParser;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Updates the receiver properties listed below
+              based on the values parsed in the raw description
+              by the given DocDescriptionParser object.
+                </p>
+    <p>
+      
+            
+      <ul>
+        <li>
+          task
+        </li>
+        <li>
+          task unit
+        </li>
+        <li>
+          filtered description
+        </li>
+      </ul>
+      
+            
+    </p>
+    <p>
+
+              You usually call this method to parse an element
+              description and initialize the receiver. For
+              example, when handling the closing tag in
+              -[(GSDocParserDelegate)
+              parser:endElement:withContent:]
+              a subclass can do:
+                </p>
+    <p>
+      
+
+<pre>
+DocDescriptionParser *descParser = AUTORELEASE([[DocDescriptionParser alloc] init]);
+
+[descParser parse: [self rawDescription]];
+[self addInformationFrom: descParser];
+</pre>
+      
+            
+    </p>
+    <p>
+
+              Can be overriden in a subclass to update additional
+              markup values.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement-appendToRawDescription$">appendToRawDescription:&nbsp;</a></h3>
+    - (void) <b>appendToRawDescription:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aDescription;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Appends the given text to the raw description.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              For example, subclasses call this method in their
+              GSDocParserDelegate method
+              implementations.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See also
+              <a rel="gsdoc" href="#method$DocElement-rawDescription">
+                -rawDescription
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement-insertLinksWithDocIndex$forString$">insertLinksWithDocIndex:&nbsp;forString:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>insertLinksWithDocIndex:</b> (<a rel="gsdoc" href="DocIndex.html#class$DocIndex">DocIndex</a>*)aDocIndex<b> forString:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aDescription;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Parses valid ETDoc symbol names in the given
+              description and replaces them with links
+              built by the given doc index.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Symbol names can be detected even when not
+              surrounded by whitespaces, but enclosed by
+              common punctuation patterns.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement-rawDescription">rawDescription&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>rawDescription</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the raw description which still contains
+              ETDoc markup.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElement-weaveSelector">weaveSelector&nbsp;</a></h3>
+    - (SEL) <b>weaveSelector</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the selector matching a CodeDocWeaving
+              method, that should be used to weave the receiver
+              into a page.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The returned selector must take a single argument.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              e.g. -[(CodeDocWeaving) weaveOtherDataType:] or
+              -[(CodeDocWeaving) weaveConstant:].
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="002000000000">
+        Software documentation for the DocElementGroup class
+      </a></h1>
+    <h2><a name="class$DocElementGroup">DocElementGroup</a> : <a rel="gsdoc" href="#class$DocElement">DocElement</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocElement.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Doc Element Tree @abstract Base class to
+            represent related element constructs in a doc
+            element tree.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocElementGroup can be used to represent
+            arbitrary element grouping in a page layout.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Alternatively subclasses can be created to
+            represent concrete language constructs such as a
+            class, a category etc.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElementGroup-addElement$">-addElement:</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocElementGroup-initWithHeader$subgroupKey$">-initWithHeader:subgroupKey:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocElementGroup-addElement$">addElement:&nbsp;</a></h3>
+    - (void) <b>addElement:</b> (<a rel="gsdoc" href="#class$DocElement">DocElement</a>*)anElement;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Element Collection
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Adds the given element to the receiver.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The element must be KVC-compliant for
+              
+                -subgroupKey
+              
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocElementGroup-initWithHeader$subgroupKey$">initWithHeader:&nbsp;subgroupKey:&nbsp;</a></h3>
+    - (id) <b>initWithHeader:</b> (<a rel="gsdoc" href="DocHeader.html#class$DocHeader">DocHeader</a>*)aHeader<b> subgroupKey:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKey;<br />
+This is a designated initialiser for the class.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Initialization
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Initializes and returns a new doc element
+              group whose HTML representation should start with
+              the given header.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The elements hold in the receiver will be organized
+              into subgroups based on the subgroup key. See
+              
+                -subgroupKey
+              
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="003000000000">
+        Software documentation for the DocSubroutine class
+      </a></h1>
+    <h2><a name="class$DocSubroutine">DocSubroutine</a> : <a rel="gsdoc" href="#class$DocElement">DocElement</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocElement.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Doc Element Tree @abstract Base class to
+            represent function-like constructs in a doc
+            element tree.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocSubroutine is an abstract class whose
+            subclasses represent function-like constructs
+            suchs methods, C functions or macros.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocSubroutine-HTMLAddendumRepresentation">-HTMLAddendumRepresentation</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocSubroutine-addParameter$">-addParameter:</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocSubroutine-parameters">-parameters</a></li>
+      <li><a rel="gsdoc" href="DocElement.html#method$DocSubroutine-returnParameter">-returnParameter</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocSubroutine-HTMLAddendumRepresentation">HTMLAddendumRepresentation&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHTMLElement.html#class$DocHTMLElement">DocHTMLElement</a>*) <b>HTMLAddendumRepresentation</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit HTML Generation
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the HTML element tree that corresponds to
+              the described parameters and return value.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Subclasses can use this method to include this
+              addendum representation into the HTML element
+              tree returned by
+              <a rel="gsdoc" href="#method$DocElement-HTMLRepresentation">
+                -HTMLRepresentation
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocSubroutine-addParameter$">addParameter:&nbsp;</a></h3>
+    - (void) <b>addParameter:</b> (<a rel="gsdoc" href="DocParameter.html#class$DocParameter">DocParameter</a>*)aParameter;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Parameters
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Declares a new parameter that follow any
+              previously added parameters.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocSubroutine-parameters">parameters&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>parameters</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the parameters.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocSubroutine-returnParameter">returnParameter&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocParameter.html#class$DocParameter">DocParameter</a>*) <b>returnParameter</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the return type as an anonymous parameter
+              object to which a HTML representation of the type
+              can be asked.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              When generating the HTML representation for the
+              return type, the parameter object will insert
+              symbol links and apply standard formatting (e.g.
+              class name + space + star) as expected.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

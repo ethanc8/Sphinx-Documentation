@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocParameter class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocParameter">DocParameter class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Nicolas Roard</dt>
+      <dd>
+      </dd>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2008 Nicolas Roard</p>
+
+        <div>
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocParameter class
+      </a></h1>
+    <h2><a name="class$DocParameter">DocParameter</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocParameter.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Doc Element Tree @abstract Parameters in the
+            doc element tree.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            A DocParameter object can be used to represent both
+            method argument, and function or macro parameter in
+            the documentation element tree.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            This class is used by DocSubroutine class and
+            subclasses such DocMethod, DocFunction and
+            DocMacro.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocParameter can extract class, protocol
+            names, and some type modifiers used in prefix or
+            suffix position. See
+            <a rel="gsdoc" href="#method$DocParameter-parseType$">
+              -parseType:
+            </a>
+
+            which documents the type parsing support.
+              </p>
+    <p>
+      
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_DocParameter_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocParameter.html#method$DocParameter+parameterWithName$type$">+parameterWithName:type:</a></li>
+      <li><a rel="gsdoc" href="DocParameter.html#method$DocParameter-HTMLRepresentationWithParentheses$">-HTMLRepresentationWithParentheses:</a></li>
+      <li><a rel="gsdoc" href="DocParameter.html#method$DocParameter-initWithName$type$">-initWithName:type:</a></li>
+      <li><a rel="gsdoc" href="DocParameter.html#method$DocParameter-parseType$">-parseType:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocParameter+parameterWithName$type$">parameterWithName:&nbsp;type:&nbsp;</a></h3>
+    + (id) <b>parameterWithName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName<b> type:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aType;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Initialization and Factory Methods
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns a new autoreleased parameter with the
+              given name and type.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocParameter-HTMLRepresentationWithParentheses$">HTMLRepresentationWithParentheses:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHTMLElement.html#class$DocHTMLElement">DocHTMLElement</a>*) <b>HTMLRepresentationWithParentheses:</b> (BOOL)usesParentheses;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit HTML Generation
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the parameter rendered as a HTML element
+              tree.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              When <var>usesParentheses</var> is <code>YES</code>,
+              the ouput will be wrapped into parentheses e.g.
+              <em>(NSString *)</em> rather than
+              <em>NSString *</em>.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The ouput includes both the name and the type.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocParameter-initWithName$type$">initWithName:&nbsp;type:&nbsp;</a></h3>
+    - (id) <b>initWithName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName<b> type:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aType;<br />
+This is a designated initialiser for the class.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Initializes and returns a new parameter with
+              the given name and type.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocParameter-parseType$">parseType:&nbsp;</a></h3>
+    - (void) <b>parseType:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aType;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Type Infos
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              We support parsing protocol and classe type such as:
+                </p>
+    <p>
+      
+            
+      <ul>
+        <li>
+          id&lt;ProtocolName&gt;
+        </li>
+        <li>
+          id&lt;ProtocolName&gt;*
+        </li>
+        <li>
+          ClassName*
+        </li>
+        <li>
+          ClassName**
+        </li>
+        <li>
+          ClassName&lt;ProtocolName&gt;*
+        </li>
+        <li>
+          ClassName&lt;ProtocolName&gt;**
+        </li>
+      </ul>
+      
+            
+    </p>
+    <p>
+
+              These declarations can be wrapped with a prefix and
+              suffix too, but this isn&apos;t well tested yet. e.g.
+              const.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              We won&apos;t parse a protocol name that doesn&apos;t begin with
+              a uppercase letter (parsing code limitation). Doesn&apos;t
+              matter so much given we have no way to recognize a
+              class name without a uppercase letter (unless we
+              use the doc index to check its existence, but that
+              would make the parsing slower without observable
+              benefit since ObjC tradition requires class and
+              protocol names to use camel case).
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              We support parsing protocol and classe type such as:
+                </p>
+    <p>
+      
+            
+      <ul>
+        <li>
+          id&lt;ProtocolName&gt;
+        </li>
+        <li>
+          id&lt;ProtocolName&gt;*
+        </li>
+        <li>
+          ClassName*
+        </li>
+        <li>
+          ClassName**
+        </li>
+        <li>
+          ClassName&lt;ProtocolName&gt;*
+        </li>
+        <li>
+          ClassName&lt;ProtocolName&gt;**
+        </li>
+      </ul>
+      
+            
+    </p>
+    <p>
+
+              These declarations can be wrapped with a prefix and
+              suffix too, but this isn&apos;t well tested yet. e.g.
+              const.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              We won&apos;t parse a protocol name that doesn&apos;t begin with
+              a uppercase letter (parsing code limitation). Doesn&apos;t
+              matter so much given we have no way to recognize a
+              class name without a uppercase letter (unless we
+              use the doc index to check its existence, but that
+              would make the parsing slower without observable
+              benefit since ObjC tradition requires class and
+              protocol names to use camel case).
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_DocParameter_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for DocParameter Class</h2>
+    <h3><a name="ivariable$DocParameter*className">className</a></h3>
+    @protected NSString* <b>className</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocParameter*description">description</a></h3>
+    @protected NSString* <b>description</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocParameter*name">name</a></h3>
+    @protected NSString* <b>name</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocParameter*protocolName">protocolName</a></h3>
+    @protected NSString* <b>protocolName</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocParameter*type">type</a></h3>
+    @protected NSString* <b>type</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocParameter*typePrefix">typePrefix</a></h3>
+    @protected NSString* <b>typePrefix</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocParameter*typeSuffix">typeSuffix</a></h3>
+    @protected NSString* <b>typeSuffix</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+    <br />
+    </font>
+</body>
+</html>

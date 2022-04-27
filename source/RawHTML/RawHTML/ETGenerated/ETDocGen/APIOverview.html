@@ -1,0 +1,463 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>DocGenerator</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>API Overview</h2><div class="meta">
+<p class="metadesc"><em>Classes, Protocols and Categories by Groups</em></p></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Doc Element Tree</h3><img src="graph-Doc_Element_Tree.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;DocElement.html#DocElement&quot;&gt;DocElement&lt;/a&gt;" title="DocElement" alt="" coords="173,63,259,93"/>
+<area shape="rect" id="node3" href="&lt;a href=&quot;DocMacro.html#DocMacro&quot;&gt;DocMacro&lt;/a&gt;" title="DocMacro" alt="" coords="155,242,229,271"/>
+<area shape="rect" id="node4" href="&lt;a href=&quot;DocFunction.html#DocFunction&quot;&gt;DocFunction&lt;/a&gt;" title="DocFunction" alt="" coords="148,182,236,212"/>
+<area shape="rect" id="node5" href="&lt;a href=&quot;DocSubroutine.html#DocSubroutine&quot;&gt;DocSubroutine&lt;/a&gt;" title="DocSubroutine" alt="" coords="141,122,243,152"/>
+<area shape="rect" id="node7" href="&lt;a href=&quot;DocCDataType.html#DocCDataType&quot;&gt;DocCDataType&lt;/a&gt;" title="DocCDataType" alt="" coords="415,122,516,152"/>
+<area shape="rect" id="node8" href="&lt;a href=&quot;DocParameter.html#DocParameter&quot;&gt;DocParameter&lt;/a&gt;" title="DocParameter" alt="" coords="244,242,342,271"/>
+<area shape="rect" id="node9" href="&lt;a href=&quot;DocMethod.html#DocMethod&quot;&gt;DocMethod&lt;/a&gt;" title="DocMethod" alt="" coords="252,182,333,212"/>
+<area shape="rect" id="node10" href="&lt;a href=&quot;DocHeader.html#DocHeader&quot;&gt;DocHeader&lt;/a&gt;" title="DocHeader" alt="" coords="258,122,338,152"/>
+<area shape="rect" id="node11" href="&lt;a href=&quot;DocElementGroup.html#DocElementGroup&quot;&gt;DocElementGroup&lt;/a&gt;" title="DocElementGroup" alt="" coords="3,122,126,152"/>
+<area shape="rect" id="node12" href="&lt;a href=&quot;DocConstant.html#DocConstant&quot;&gt;DocConstant&lt;/a&gt;" title="DocConstant" alt="" coords="384,182,473,212"/>
+<area shape="rect" id="node13" href="&lt;a href=&quot;DocVariable.html#DocVariable&quot;&gt;DocVariable&lt;/a&gt;" title="DocVariable" alt="" coords="488,182,573,212"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocElement.html#DocElement">DocElement</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Base class to represent element in a doc element tree.</strong></p><p><p> <a href="DocElement.html#DocElement">DocElement</a> is an abstract class, whose subclasses represents concrete nodes such as methods, constants, etc. in the documentation element tree. </p> <p> Each <a href="DocElement.html#DocElement">DocElement</a> subclass is expected to implement both the GSDoc parsing and HTML generation that pertains to the element type. </p> <p> Any ETDoc markup parsing should be delegated to <a href="DocDescriptionParser.html#DocDescriptionParser">DocDescriptionParser</a>, see  <a href="DocElement.html#-[DocElement_addInformationFrom:]">-addInformationFrom:</a>  . </p> <p> The doc element tree is rooted in a page. See <a href="DocPage.html#DocPage">DocPage</a>. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocMacro.html#DocMacro">DocMacro</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Macros in the doc element tree.</strong></p><p><p> A <a href="DocMacro.html#DocMacro">DocMacro</a> object represents a macro in the documentation element tree. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocFunction.html#DocFunction">DocFunction</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Functions in the doc element tree.</strong></p><p><p> A <a href="DocFunction.html#DocFunction">DocFunction</a> object represents a function in the documentation element tree. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocCDataType.html#DocCDataType">DocCDataType</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>C data types in the doc element tree.</strong></p><p><p> <a href="DocCDataType.html#DocCDataType">DocCDataType</a> objects are used to represent various C data types: </p> <ul> <li>structure</li> <li>function pointer</li> </ul> <p> Enum and union are represented with <a href="DocConstant.html#DocConstant">DocConstant</a>  <a href="DocCDataType.html#-[DocCDataType_weaveSelector]">-weaveSelector</a>  . </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocParameter.html#DocParameter">DocParameter</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Parameters in the doc element tree.</strong></p><p><p> A <a href="DocParameter.html#DocParameter">DocParameter</a> object can be used to represent both method argument, and function or macro parameter in the documentation element tree. </p> <p> This class is used by <a href="DocSubroutine.html#DocSubroutine">DocSubroutine</a> class and subclasses such <a href="DocMethod.html#DocMethod">DocMethod</a>, <a href="DocFunction.html#DocFunction">DocFunction</a> and <a href="DocMacro.html#DocMacro">DocMacro</a>. </p> <p> <a href="DocParameter.html#DocParameter">DocParameter</a> can extract class, protocol names, and some type modifiers used in prefix or suffix position. See  <a href="DocParameter.html#-[DocParameter_parseType:]">-parseType:</a>  which documents the type parsing support. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocMethod.html#DocMethod">DocMethod</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Methods in the doc element tree.</strong></p><p><p> A <a href="DocMethod.html#DocMethod">DocMethod</a> object represents a method in the documentation element tree. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocHeader.html#DocHeader">DocHeader</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Documentation page header or subheader.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocElementGroup.html#DocElementGroup">DocElementGroup</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Base class to represent related element constructs in a doc element tree.</strong></p><p><p> <a href="DocElementGroup.html#DocElementGroup">DocElementGroup</a> can be used to represent arbitrary element grouping in a page layout. </p> <p> Alternatively subclasses can be created to represent concrete language constructs such as a class, a category etc. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocSubroutine.html#DocSubroutine">DocSubroutine</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Base class to represent function-like constructs in a doc element tree.</strong></p><p><p> <a href="DocSubroutine.html#DocSubroutine">DocSubroutine</a> is an abstract class whose subclasses represent function-like constructs suchs methods, C functions or macros. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocConstant.html#DocConstant">DocConstant</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>C constant-like types in the doc element tree.</strong></p><p><p> <a href="DocConstant.html#DocConstant">DocConstant</a> objects are used to represent various constant-like C data types: </p> <ul> <li>const variable or pointer</li> <li>enum</li> <li>union</li> </ul></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocVariable.html#DocVariable">DocVariable</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Global variables in the doc element tree.</strong></p><p><p> <a href="DocVariable.html#DocVariable">DocVariable</a> objects are used to represent global variables not declared as constants (in that <a href="DocConstant.html#DocConstant">DocConstant</a> would be used). </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Page Generation</h3><img src="graph-Page_Generation.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;DocPageWeaver.html#DocPageWeaver&quot;&gt;DocPageWeaver&lt;/a&gt;" title="DocPageWeaver" alt="" coords="6,76,137,112"/>
+<area shape="rect" id="node3" href="&lt;a href=&quot;DocCategoryPage.html#DocCategoryPage&quot;&gt;DocCategoryPage&lt;/a&gt;" title="DocCategoryPage" alt="" coords="155,76,298,112"/>
+<area shape="rect" id="node4" href="&lt;a href=&quot;DocPage.html#DocPage&quot;&gt;DocPage&lt;/a&gt;" title="DocPage" alt="" coords="260,4,338,40"/>
+<area shape="rect" id="node5" href="&lt;a href=&quot;DocTOCPage.html#DocTOCPage&quot;&gt;DocTOCPage&lt;/a&gt;" title="DocTOCPage" alt="" coords="316,76,425,112"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A documentation builder that produce pages based on the input
+      content.</strong></p><p><p> <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> is DocGenerator core class that controls the documentation generation process. <br></br> <em>etdocgen</em> tool creates a new page weaver based on the options and arguments the user provides on the command-line, then triggers the page generation with  <a href="DocPageWeaver.html#-[DocPageWeaver_weaveAllPages]">-weaveAllPages</a>  which in turn returns the final pages. See <a href="DocPage.html#DocPage">DocPage</a> API to understand how these pages can be turned into HTML. </p> <p> You initialize a new page weaver with various input documentation source files and an optional template file. Based on the source file types, <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> looks up a parser. When no parser is available, it hands the file content directly to a new documentation page (see <a href="DocPage.html#DocPage">DocPage</a> that provides a template-based substitution mechanism). Otherwise it delegates the source file parsing to the right parser e.g. <a href="GSDocParser.html#GSDocParser">GSDocParser</a>, which will instantiate new doc elements and weave them through the <a href="_DocWeaving.html#DocWeaving">DocWeaving</a> protocol as the parsing goes. </p> <p> <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> is free to weave multiple pages from a single source file, or gather doc elements and consolidate them onto a common page. <br></br> So in addition to act as coordinator in the doc generation process, <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> implements a strategy to organize the doc elements into a book-like structure. </p> <p> By invoking  <a href="DocPageWeaver.html#-[DocPageWeaver_weaveNewPage]">-weaveNewPage</a>  based on some precise criterias (e.g.  <a href="_DocWeaving.html#-[(DocWeaving)_weaveClassNamed:superclassName:]">-weaveClassNamed:superclassName:</a>  was called), <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> defines page generation rules which correspond to a precise book-like structure. <br></br> The doc element arrangement on each weaved page is delegated to <a href="DocPage.html#DocPage">DocPage</a> class and subclasses. </p> <p> Subclassing altough experimental and untested, can be used to customize the existing page generation strategy or implement a new one. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocCategoryPage.html#DocCategoryPage">DocCategoryPage</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>DocCategoryPage represents a page where all the
+      categories on the same class are regrouped.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocTOCPage.html#DocTOCPage">DocTOCPage</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>DocTOCPage represents a Table Of Contents page.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocPage.html#DocPage">DocPage</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>DocPage represents a documentation page.</strong></p><p><p> A documentation page that weaves various HTML, GSDoc, Markdown, plist, and ObjC files (usually provided on the command-line), into a new HTML representation based on the template tags embedded in the HTML or Markdown content. </p> <p> You usually don't instantiate this class, but give the documentation input files to <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> which will create new <a href="DocPage.html#DocPage">DocPage</a> instances and return them. <br></br> The returned pages can then be written to disk with  <a href="DocPage.html#-[DocPage_writeToURL:]">-writeToURL:</a>  or their HTML representation retrieved with  <a href="DocPage.html#-[DocPage_HTMLString]">-HTMLString</a>  . </p> <p> Subclasses can be written to customize the presentation and how the various elements (methods, macros, menu etc.) are laid out. Subclassing support is experimental and untested. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>GSDoc Parsing</h3><img src="graph-GSDoc_Parsing.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;GSDocParser.html#GSDocParser&quot;&gt;GSDocParser&lt;/a&gt;" title="GSDocParser" alt="" coords="177,174,249,198"/>
+<area shape="circle" id="node3" href="&lt;a href=&quot;_GSDocParserDelegate.html#GSDocParserDelegate&quot;&gt;GSDocParserDelegate&lt;/a&gt;" title="GSDocParserDelegate" alt="" coords="213,77,74"/>
+<area shape="rect" id="node5" href="&lt;a href=&quot;DocDeclarationReorderer.html#DocDeclarationReorderer&quot;&gt;DocDeclarationReorderer&lt;/a&gt;" title="DocDeclarationReorderer" alt="" coords="444,174,573,198"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="GSDocParser.html#GSDocParser">GSDocParser</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>GSDoc parser that can drive a DocPageWeaver through
+      DocWeaving protocol.</strong></p><p><p> Main GSDoc parser which wraps a NSXMLParser internally, handles the basic XML parsing and preprocessing, but delegates the rest to <a href="DocElement.html#DocElement">DocElement</a> objects instantiated based on the class returned by  <a href="GSDocParser.html#-[GSDocParser_elementClassForName:]">-elementClassForName:</a>  . <br></br> For example &lt;method&gt; is delegated to <a href="DocMethod.html#DocMethod">DocMethod</a> through <a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a> methods. </p> <p> The parsing state is managed as a delegate parser stack that contains the receiver itself and zero or more <a href="DocElement.html#DocElement">DocElement</a> objects pushed on top. </p> <p> To parse a GDoc document, you have to initialize a new <a href="GSDocParser.html#GSDocParser">GSDocParser</a>, use  <a href="GSDocParser.html#-[GSDocParser_setWeaver:]">-setWeaver:</a>  to set the object which handles the parsing ouput such <a href="DocDeclarationReorderer.html#DocDeclarationReorderer">DocDeclarationReorderer</a> or <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a>, and triggers the parsing with  <a href="GSDocParser.html#-[GSDocParser_parseAndWeave]">-parseAndWeave</a>  . </p> <p> All XML parsing related methods are used internally, you can ignore them. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocDeclarationReorderer.html#DocDeclarationReorderer">DocDeclarationReorderer</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A DocPageWeaver decorator which can be used to reorder GSDoc
+      symbols declarations, in order to match the source
+      header.</strong></p><p><p> <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> uses this class internally. </p> <p> See  <a href="DocDeclarationReorderer.html#-[DocDeclarationReorderer_initWithWeaver:orderedSymbols:]">-initWithWeaver:orderedSymbols:</a>  . </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_GSDocParserDelegate.html#GSDocParserDelegate">&lt;GSDocParserDelegate&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>GSDoc parser that can drive a DocPageWeaver through
+      DocWeaving protocol.</strong></p><p><p> @abstract None </p> <p> Parsing protocol usually implemented by <a href="DocElement.html#DocElement">DocElement</a> subclass, so the parsing can be delegated per major XML elements (e.g. class, method etc.) to a newly instantied doc element and initialize it in this way. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Link Generation</h3><img src="graph-Link_Generation.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;DocHTMLIndex.html#DocHTMLIndex&quot;&gt;DocHTMLIndex&lt;/a&gt;" title="DocHTMLIndex" alt="" coords="4,76,132,112"/>
+<area shape="rect" id="node2" href="&lt;a href=&quot;DocIndex.html#DocIndex&quot;&gt;DocIndex&lt;/a&gt;" title="DocIndex" alt="" coords="27,4,110,40"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocHTMLIndex.html#DocHTMLIndex">DocHTMLIndex</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A documentation index that can be used to create links.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocIndex.html#DocIndex">DocIndex</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A documentation index that can be used to create links.</strong></p><p><p> <a href="DocIndex.html#DocIndex">DocIndex</a> represents an autgsdoc-compatible documentation index. </p> <p> It must be initialized with the igsdoc file corresponding to the gsdoc sources passed to the <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> instance in use. </p> <p> Concrete subclasses such <a href="DocHTMLIndex.html#DocHTMLIndex">DocHTMLIndex</a> can be used to create links. For example, <a href="DocHTMLIndex.html#DocHTMLIndex">DocHTMLIndex</a> can be used in <a href="DocElement.html#-[DocElement_HTMLRepresentation]">-[DocElement HTMLRepresentation]</a>  code to wrap every symbol name in a HTML link. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Misc</h3><img src="graph-Misc.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;DocSourceCodeParser.html#DocSourceCodeParser&quot;&gt;DocSourceCodeParser&lt;/a&gt;" title="DocSourceCodeParser" alt="" coords="10,68,167,100"/>
+<area shape="rect" id="node3" href="&lt;a href=&quot;DocIVar.html#DocIVar&quot;&gt;DocIVar&lt;/a&gt;" title="DocIVar" alt="" coords="183,68,248,100"/>
+<area shape="rect" id="node4" href="&lt;a href=&quot;DocProperty.html#DocProperty&quot;&gt;DocProperty&lt;/a&gt;" title="DocProperty" alt="" coords="264,68,360,100"/>
+<area shape="rect" id="node5" href="NSString" title="NSString" alt="" coords="437,4,511,36"/>
+<area shape="poly" id="node6" href="DocGenerator" title="DocGenerator" alt="" coords="572,68,416,68,376,100,532,100"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocSourceCodeParser.html#DocSourceCodeParser">DocSourceCodeParser</a></span></dt>
+<dd><div class="symbolDescription">
+<p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocIVar.html#DocIVar">DocIVar</a></span></dt>
+<dd><div class="symbolDescription">
+<p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocProperty.html#DocProperty">DocProperty</a></span></dt>
+<dd><div class="symbolDescription">
+<p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSStringCategories.html#NSString(DocGenerator)">NSString (DocGenerator)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>None</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>HTML Support</h3><img src="graph-HTML_Support.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;DocHTMLElement.html#DocHTMLElement&quot;&gt;DocHTMLElement&lt;/a&gt;" title="DocHTMLElement" alt="" coords="72,4,220,40"/>
+<area shape="poly" id="node2" href="CommonUseCases" title="CommonUseCases" alt="" coords="288,76,62,76,4,112,230,112"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>HTML element class to output HTML in a concise way.</strong></p><p><p> <a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> is a Seaside-inspired class that provides a DSL to write compact HTML generation code. </p> <p> <a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> comes with null-like element that doesn't emit the element markup when evaluated. See  <a href="DocHTMLElement.html#+[DocHTMLElement_blankElement]">+blankElement</a>  . </p> <p> TODO: <a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> DSL should be more clean and formalized. For example,  <a href="DocHTMLElement.html#-[DocHTMLElement_and:]">-and:</a>  , <a href="DocHTMLElement.html#-[DocHTMLElement_with:]">-with:</a> and  <a href="DocHTMLElement.html#-[DocHTMLElement_add:]">-add:</a>  are the same, but it isn't entirely clear-cut when one should be preferred to the others. <br></br> For now, a single <a href="DocHTMLElement.html#-[DocHTMLElement_with:]">-with:</a> should be used per message chains. Any subsequent concatenation messages should use  <a href="DocHTMLElement.html#-[DocHTMLElement_and:]">-and:</a>  . e.g.  <a href="DocHTMLElementCategories.html#-[DocHTMLElement_with:and:and:]">-with:and:and:</a>  is valid but  -with:with:and:  is not. <br></br> The obscure point is what to do when we send a single concatenation message. Should we recommend  <a href="DocHTMLElement.html#-[DocHTMLElement_with:]">-with:</a>  , <a href="DocHTMLElement.html#-[DocHTMLElement_and:]">-and:</a> or <a href="DocHTMLElement.html#-[DocHTMLElement_add:]">-add:</a>? Should we take in account the type of the concatened content such <a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> or NSString, then make a distinction between  <a href="DocHTMLElement.html#-[DocHTMLElement_add:]">-add:</a>  and <a href="DocHTMLElement.html#-[DocHTMLElement_addText:]">-addText:</a>. <br></br> Is <a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> DSL really needed or the right answer to what we need? </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocHTMLElementCategories.html#DocHTMLElement(CommonUseCases)">DocHTMLElement (CommonUseCases)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>HTML element class to output HTML in a concise way.</strong></p><p><p> Category on <a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> to prevent compiler warning since <a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> has no fixed API but support a large number of message chaining variations. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>ETDoc Parsing</h3><img src="graph-ETDoc_Parsing.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;DocDescriptionParser.html#DocDescriptionParser&quot;&gt;DocDescriptionParser&lt;/a&gt;" title="DocDescriptionParser" alt="" coords="54,4,227,40"/>
+<area shape="rect" id="node2" href="&lt;a href=&quot;DocMethodGroupDescriptionParser.html#DocMethodGroupDescriptionParser&quot;&gt;DocMethodGroupDescriptionParser&lt;/a&gt;" title="DocMethodGroupDescriptionParser" alt="" coords="4,76,276,112"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocDescriptionParser.html#DocDescriptionParser">DocDescriptionParser</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETDoc markup parser.</strong></p><p><p> Parser to extract ETDoc markup located in method, function and macro descriptions. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocMethodGroupDescriptionParser.html#DocMethodGroupDescriptionParser">DocMethodGroupDescriptionParser</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETDoc markup parser.</strong></p><p><p> Parser to extract ETDoc markup located in class, protocol or category descriptions. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Model and Metamodel</h3><img src="graph-Model_and_Metamodel.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;DocGraphWriter.html#DocGraphWriter&quot;&gt;DocGraphWriter&lt;/a&gt;" title="DocGraphWriter" alt="" coords="4,4,138,40"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="DocGraphWriter.html#DocGraphWriter">DocGraphWriter</a></span></dt>
+<dd><div class="symbolDescription">
+<p><p> Abstract base class used by Model Description core classes. </p> <p> Also implements NestedElement and NamedElement protocols that exist in FAME/EMOF. </p> <h4> FAME Teminology Change Summary </h4> <p> Those changes were made to further simplify the FAME terminology which can get obscure since it overlaps with the host language object model, prevent any conflict with existing GNUstep/Cocoa API and reuse GNUstep/Cocoa naming habits. </p> <p> We list the FAME term first, then its equivalent name in EtoileFoundation: </p> <dl> <dt>FM3.Element</dt> <dd>ETModelElementDescription</dd> <dt>FM3.Class</dt> <dd>ETEntityDescription</dd> <dt>FM3.Property</dt> <dd>ETPropertyDescription</dd> <dt>FM3.RuntimeElement</dt> <dd>ETAdaptiveModelObject</dd> <dt>attributes (in <strong>Class</strong>)</dt> <dd> propertyDescriptions (in ETEntityDescription) </dd> <dt> allAttributes (in <strong>Class</strong>) </dt> <dd> allPropertyDescriptions (in ETEntityDescription) </dd> <dt>superclass (in <strong>Class</strong>)</dt> <dd>parent (in ETEntityDescription)</dd> <dt>class (in Property)</dt> <dd>owner (in ETPropertyDescription)</dd> </dl> <p> For the last point class vs owner, we can consider they have been merged into a single property in EtoileFoundation since they were redundant. </p> <h4> Additions to FAME </h4> <p> itemIdentifier has been added as a mean to get precise control over the UI generation with EtoileUI. </p> <h4> Removals to FAME/EMOF </h4> <p> NamedElement and NestedElement protocols don't exist explicitly. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Weaving and Parsing</h3><img src="graph-Weaving_and_Parsing.png"><map id="g" name="g">
+<area shape="circle" id="node1" href="&lt;a href=&quot;_DocSourceParsing.html#DocSourceParsing&quot;&gt;DocSourceParsing&lt;/a&gt;" title="DocSourceParsing" alt="" coords="100,172,95"/>
+<area shape="circle" id="node2" href="&lt;a href=&quot;_DocWeaving.html#DocWeaving&quot;&gt;DocWeaving&lt;/a&gt;" title="DocWeaving" alt="" coords="281,172,67"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_DocSourceParsing.html#DocSourceParsing">&lt;DocSourceParsing&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A weaver such as DocPageWeaver controls a documentation source parser through this protocol.</strong></p><p><p> Any documentation source parser must implement this protocol to let the weaver initiates the parsing. In addition, the parser must reports its parsing result to the weaver through the <a href="_DocWeaving.html#DocWeaving">DocWeaving</a> protocol. <br></br> Parsing usually involves to build new <a href="DocElement.html#DocElement">DocElement</a> subclass instances and hand them to the weaver. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_DocWeaving.html#DocWeaving">&lt;DocWeaving&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A documentation source parser reports parsing result to a weaver through this protocol.</strong></p><p><p> Any weaver must implement this protocol. <br></br> When required, multiple weavers can be chained. For instance, parsing GSDoc documents requires to reorder the parsed declarations with DocDeclarationReorder before handing them to <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a>. Hence the weaver set on <a href="GSDocParser.html#GSDocParser">GSDocParser</a> is then a <a href="DocDeclarationReorderer.html#DocDeclarationReorderer">DocDeclarationReorderer</a> instance rather than a <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> one. </p> <p> Each time a documentation source document (e.g. a gsdoc file) has been parsed, the parser must invoke  <a href="_DocWeaving.html#-[(DocWeaving)_finishWeaving]">-finishWeaving</a>  . </p> <p> New page creation is entirely up to the weaver e.g. in reaction to a <a href="_DocWeaving.html#DocWeaving">DocWeaving</a> method called back by the parser. </p></p></div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>DocGenerator</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="DocCategoryPage.html#DocCategoryPage">DocCategoryPage</a></li><li><a href="DocCDataType.html#DocCDataType">DocCDataType</a></li><li><a href="DocConstant.html#DocConstant">DocConstant</a></li><li><a href="DocDeclarationReorderer.html#DocDeclarationReorderer">DocDeclarationReorderer</a></li><li><a href="DocDescriptionParser.html#DocDescriptionParser">DocDescriptionParser</a></li><li><a href="DocElement.html#DocElement">DocElement</a></li><li><a href="DocElementGroup.html#DocElementGroup">DocElementGroup</a></li><li><a href="DocFunction.html#DocFunction">DocFunction</a></li><li><a href="DocGraphWriter.html#DocGraphWriter">DocGraphWriter</a></li><li><a href="DocHeader.html#DocHeader">DocHeader</a></li><li><a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a></li><li><a href="DocHTMLIndex.html#DocHTMLIndex">DocHTMLIndex</a></li><li><a href="DocIndex.html#DocIndex">DocIndex</a></li><li><a href="DocIVar.html#DocIVar">DocIVar</a></li><li><a href="DocMacro.html#DocMacro">DocMacro</a></li><li><a href="DocMethod.html#DocMethod">DocMethod</a></li><li><a href="DocMethodGroupDescriptionParser.html#DocMethodGroupDescriptionParser">DocMethodGroupDescriptionParser</a></li><li><a href="DocPage.html#DocPage">DocPage</a></li><li><a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a></li><li><a href="DocParameter.html#DocParameter">DocParameter</a></li><li><a href="DocProperty.html#DocProperty">DocProperty</a></li><li><a href="DocSourceCodeParser.html#DocSourceCodeParser">DocSourceCodeParser</a></li><li><a href="DocSubroutine.html#DocSubroutine">DocSubroutine</a></li><li><a href="DocTOCPage.html#DocTOCPage">DocTOCPage</a></li><li><a href="DocVariable.html#DocVariable">DocVariable</a></li><li><a href="GSDocParser.html#GSDocParser">GSDocParser</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_DocSourceParsing.html#DocSourceParsing">DocSourceParsing</a></li><li><a href="_DocWeaving.html#DocWeaving">DocWeaving</a></li><li><a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="DocHTMLElementCategories.html#DocHTMLElement(CommonUseCases)">DocHTMLElement</a></li><li><a href="NSStringCategories.html#NSString(DocGenerator)">NSString</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

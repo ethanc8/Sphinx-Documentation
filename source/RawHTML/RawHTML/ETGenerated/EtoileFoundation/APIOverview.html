@@ -1,0 +1,1438 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>Documentation</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>API Overview</h2><div class="meta">
+<p class="metadesc"><em>Classes, Protocols and Categories by Groups</em></p></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&rarr; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&rarr; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Language Extensions</h3><img src="graph-Language_Extensions.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="NSObject" title="NSObject" alt="" coords="207,2,255,22"/>
+<area shape="poly" id="node2" href="ETDoubleDispatch" title="ETDoubleDispatch" alt="" coords="160,42,35,42,2,62,128,62"/>
+<area shape="rect" id="node3" href="NSInvocation" title="NSInvocation" alt="" coords="388,2,451,22"/>
+<area shape="poly" id="node4" href="Etoile" title="Etoile" alt="" coords="450,42,401,42,388,62,438,62"/>
+<area shape="rect" id="node5" href="NSException" title="NSException" alt="" coords="486,2,548,22"/>
+<area shape="poly" id="node6" href="ETException" title="ETException" alt="" coords="574,42,484,42,460,62,551,62"/>
+<area shape="poly" id="node7" href="ETPrototypes" title="ETPrototypes" alt="" coords="291,42,195,42,170,62,267,62"/>
+<area shape="poly" id="node8" href="ETTrait" title="ETTrait" alt="" coords="378,42,317,42,301,62,362,62"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETDoubleDispatch)">NSObject (ETDoubleDispatch)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Objective-C <strong>double</strong> dispatch support.</strong></p><p><p> This category provides a visitor which supports double-dispatch on all visited objects without implementing extra methods (such as <em>accept:</em> on the visited object side). </p> <p> For a more detailed discussion, see  -visit:  . </p> <p> Here is a visitor example: </p> 
+<pre>
+
+@interface ETView : NSView
+@end
+
+@interface UIVisitor : NSObject
+@end
+
+@implementation ETView
+
++ (NSString *) typePrefix
+{
+    return @"ET";
+}
+
+@end
+
+// To start using the visitor, instantiate a visitor and do [visitor visit: someWindow]
+@implementation UIVisitor
+
+// visitXXX methods return id, but returning void would be valid
+
+- (id) visitWindow: (NSWindow *)aWindow
+{
+    NSLog(@"Visiting window %@", aWindow);
+    return [self visit: [aWindow contentView]];
+}
+
+- (id) visitView: (NSView *)aView
+{
+    NSLog(@"Visiting view %@", aView);
+    for (NSView *subview in [aView subviews])
+    {
+        [self visit: subview];
+    }
+    return nil;
+}
+
+// Show how you can include the class name prefix and how such a method has 
+// priority over a method without any type prefix such as -visitView:.
+- (id) visitETView: (ETView *)aSpecialView
+{
+    NSLog(@"Visiting special view %@", aSpecialView);
+    return nil;
+}
+
+@end
+</pre>
+</p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSInvocationCategories.html#NSInvocation(Etoile)">NSInvocation (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>NSInvocation additions.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSExceptionCategories.html#NSException(ETException)">NSException (ETException)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Objective-C resumable and restartable exception support.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETPrototypes)">NSObject (ETPrototypes)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Objective-C prototype support.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETTrait)">NSObject (ETTrait)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Objective-C trait support.</strong></p><p><p> Adds traits to Objective-C, to support class composition, in addition to inheritance. Traits allow methods to be added to another class. </p> <p> The trait support in EtoileFoundation is based on: </p> <ul> <li> http://scg.unibe.ch/archive/papers/Scha03aTraits.pdf (original and <strong>short</strong> one) </li> <li> http://scg.unibe.ch/archive/papers/Duca06bTOPLASTraits.pdf (most recent and quite lengthy) </li> </ul> <p> To get an introduction to the trait model and its various rules, you should read the <strong>short</strong> paper listed above. </p> <h4> Objective-C Trait Overview and Restrictions </h4> <p> The trait API supports both trait operators (exclusion, aliasing) and composite trait (a trait with subtraits). However there are two important restrictions: </p> <ul> <li> the super keyword must not be used in a trait method </li> <li> instances variables must not be accessed directly but only through accessors </li> </ul> <p> If these restrictions are ignored, the code may compile, but will surely result in a buggy behavior at runtime. </p> <p> With the current implementation, the limitations below should be kept in mind: </p> <ul> <li> trait applications don't take in account class methods </li> <li> no mechanism to declare and check non-trait methods required by trait methods (so you get a runtime exception instead) </li> </ul> <h4> Basic example and Terminology </h4> <p> To apply a trait, the basic API is  +applyTraitFromClass:  , and we use the terminology below: </p> <dl> <dt>trait class</dt> <dd> the class which represents a trait and whose methods are called trait methods. The superclass methods are ignored if the class is used as a trait </dd> <dt>target class</dt> <dd> the class to which a trait class is applied to </dd> <dt>trait application</dt> <dd> a trait use that involves a trait class, a target class and operator-related arguments </dd> </dl> <p> For example: </p> 
+<pre>
+// Traits should be applied as early as possible usually, that's why we use +initialize
++ (void) initialize
+{
+    if (self != [MyClass class])
+        return;
+
+    [aTargetClass applyTraitFromClass: aTraitClass];
+}
+</pre>
+ <h4> Detailed Examples </h4> <p> Here is a more complex example that applies two subtraits (BasicTrait and ComplexTrait) to another trait (CompositeTrait), then the resulting is applied to the target class (the receiver's class). </p> 
+<pre>
+    // -wanderWhere: from Basic method will be renamed -lost: in CompositeTrait
+    [[CompositeTrait class] applyTraitFromClass: [BasicTrait class]
+                            excludedMethodNames: S(@"isOrdered")
+                             aliasedMethodNames: D(@"lost:", @"wanderWhere:")];
+
+    [[CompositeTrait class] applyTraitFromClass: [ComplexTrait class]];
+
+    [[self class] applyTraitFromClass: [CompositeTrait class]];
+</pre>
+ <p> As a concrete example, collection protocols are now implemented by most classes in Étoilé frameworks through two new <a href="ETCollectionTrait.html#ETCollectionTrait">ETCollectionTrait</a> and <a href="ETMutableCollectionTrait.html#ETMutableCollectionTrait">ETMutableCollectionTrait</a>. </p> <h4> Trait Validation </h4> <p> Trait applications are memorized to support composite traits and multiple trait applications to the same target class. Each time a trait is applied, it gets validated against the trait tree already bound to the target class. This ensures operators, overriding rule and flattening property will remain valid in the new trait tree. Unlike Squeak trait support, a trait can be applied at any time. </p> <h4> Mixin-style Application </h4> <p> In addition, it's possible to apply a trait without the overriding rule (that states target class overrides trait methods), which means methods in the target class can be replaced by methods from a trait. </p> 
+<pre>
+    // With YES, we allow the trait to override/replace methods in the target class
+    [[self class] applyTraitFromClass: [BasicTrait class]
+                  excludedMethodNames: S(@"isOrdered")
+                   aliasedMethodNames: D(@"lost:", @"wanderWhere:")
+                       allowsOverride: YES];
+</pre>
+ <p> Trait applications are commutative, so the ordering in which you apply traits doesn't matter… but when this mixin-style composition is used, traits are not commutative and the ordering matters. That's why we'd rather discourage its use. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>High Order Messaging and Blocks</h3><img src="graph-High_Order_Messaging_and_Blocks.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="NSArray" title="NSArray" alt="" coords="118,404,149,419"/>
+<area shape="circle" id="node2" href="&lt;a href=&quot;_ETCollectionHOM.html#ETCollectionHOM&quot;&gt;ETCollectionHOM&lt;/a&gt;" title="ETCollectionHOM" alt="" coords="134,352,38"/>
+<area shape="rect" id="node5" href="NSDictionary" title="NSDictionary" alt="" coords="14,286,59,300"/>
+<area shape="circle" id="node6" href="&lt;a href=&quot;_ETCollectionHOMIntegration.html#ETCollectionHOMIntegration&quot;&gt;ETCollectionHOMIntegration&lt;/a&gt;" title="ETCollectionHOMIntegration" alt="" coords="71,213,58"/>
+<area shape="rect" id="node7" href="NSIndexSet" title="NSIndexSet" alt="" coords="82,286,123,300"/>
+<area shape="rect" id="node8" href="NSMutableArray" title="NSMutableArray" alt="" coords="277,286,332,300"/>
+<area shape="circle" id="node9" href="&lt;a href=&quot;_ETCollectionMutationHOM.html#ETCollectionMutationHOM&quot;&gt;ETCollectionMutationHOM&lt;/a&gt;" title="ETCollectionMutationHOM" alt="" coords="191,213,55"/>
+<area shape="circle" id="node10" href="&lt;a href=&quot;_ETCollectionHOMMapIntegration.html#ETCollectionHOMMapIntegration&quot;&gt;ETCollectionHOMMapIntegration&lt;/a&gt;" title="ETCollectionHOMMapIntegration" alt="" coords="305,71,67"/>
+<area shape="rect" id="node11" href="NSMutableDictionary" title="NSMutableDictionary" alt="" coords="145,286,214,300"/>
+<area shape="rect" id="node12" href="NSMutableIndexSet" title="NSMutableIndexSet" alt="" coords="340,286,404,300"/>
+<area shape="rect" id="node13" href="NSMutableSet" title="NSMutableSet" alt="" coords="221,286,270,300"/>
+<area shape="rect" id="node16" href="NSSet" title="NSSet" alt="" coords="427,286,451,300"/>
+<area shape="rect" id="node3" href="NSObject" title="NSObject" alt="" coords="335,345,369,359"/>
+<area shape="poly" id="node4" href="ETHOM" title="ETHOM" alt="" coords="213,404,168,404,157,419,202,419"/>
+<area shape="circle" id="node17" href="&lt;a href=&quot;_ETCollectionHOMFilterIntegration.html#ETCollectionHOMFilterIntegration&quot;&gt;ETCollectionHOMFilterIntegration&lt;/a&gt;" title="ETCollectionHOMFilterIntegration" alt="" coords="71,71,69"/>
+<area shape="poly" id="node14" href="ETCollectionHOMIntegrationInformalProtocol" title="ETCollectionHOMIntegrationInformalProtocol" alt="" coords="484,404,274,404,220,419,430,419"/>
+<area shape="poly" id="node15" href="ETEachHOM" title="ETEachHOM" alt="" coords="574,404,508,404,491,419,557,419"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSArrayCategories.html#NSArray(ETCollectionHOM)">NSArray (ETCollectionHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging support for NSArray.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETHOM)">NSObject (ETHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>High-order messaging additions to NSObject.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSDictionaryCategories.html#NSDictionary(ETCollectionHOM)">NSDictionary (ETCollectionHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging support for NSDictionary.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSIndexSetCategories.html#NSIndexSet(ETCollectionHOM)">NSIndexSet (ETCollectionHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging support for NSIndexSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableArrayCategories.html#NSMutableArray(ETCollectionHOM)">NSMutableArray (ETCollectionHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging with in-place mutation support for NSMutableArray.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableDictionaryCategories.html#NSMutableDictionary(ETCollectionHOM)">NSMutableDictionary (ETCollectionHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging with in-place mutation support for NSMutableDictionary.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableIndexSetCategories.html#NSMutableIndexSet(ETCollectionHOM)">NSMutableIndexSet (ETCollectionHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging with in-place mutation support for NSMutableIndexSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableSetCategories.html#NSMutableSet(ETCollectionHOM)">NSMutableSet (ETCollectionHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging with in-place mutation support for NSMutableSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETCollectionHOMIntegrationInformalProtocol)">NSObject (ETCollectionHOMIntegrationInformalProtocol)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Procotol to integrate high-order messaging with collections that require special treatments of their elements.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETEachHOM)">NSObject (ETEachHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Extends ETCollection to support the 'each' higher-order message.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSSetCategories.html#NSSet(ETCollectionHOM)">NSSet (ETCollectionHOM)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging support for NSSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETCollectionHOM.html#ETCollectionHOM">&lt;ETCollectionHOM&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging additions to ETCollection.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETCollectionHOMFilterIntegration.html#ETCollectionHOMFilterIntegration">&lt;ETCollectionHOMFilterIntegration&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection optional protocol to support the filter operation.</strong></p><p><p> The <a href="_ETCollectionHOMFilterIntegration.html#ETCollectionHOMFilterIntegration">ETCollectionHOMFilterIntegration</a> protocol defines a hook that collections can use to tie into higher-order messaging if they need special treatment of their elements. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETCollectionHOMIntegration.html#ETCollectionHOMIntegration">&lt;ETCollectionHOMIntegration&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection optional protocol to support map, zip and filter operations.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETCollectionHOMMapIntegration.html#ETCollectionHOMMapIntegration">&lt;ETCollectionHOMMapIntegration&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection optional protocol to support the map and zip operations.</strong></p><p><p> The <a href="_ETCollectionHOMMapIntegration.html#ETCollectionHOMMapIntegration">ETCollectionHOMMapIntegration</a> protocol defines a hook that collections can use to tie into higher-order messaging if they need special treatment of their elements. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETCollectionMutationHOM.html#ETCollectionMutationHOM">&lt;ETCollectionMutationHOM&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Higher-order messaging additions to ETCollectionMutation.</strong></p><p><p> These higher-order methods mutate the receiver collection in-place. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Collection Additions</h3><img src="graph-Collection_Additions.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="NSIndexSet" title="NSIndexSet" alt="" coords="89,1,121,12"/>
+<area shape="poly" id="node2" href="Etoile" title="Etoile" alt="" coords="219,23,192,23,185,35,212,35"/>
+<area shape="rect" id="node3" href="NSArray" title="NSArray" alt="" coords="60,1,84,12"/>
+<area shape="rect" id="node4" href="NSMapTable" title="NSMapTable" alt="" coords="126,1,160,12"/>
+<area shape="rect" id="node9" href="NSIndexPath" title="NSIndexPath" alt="" coords="165,1,199,12"/>
+<area shape="rect" id="node10" href="NSDictionary" title="NSDictionary" alt="" coords="205,1,240,12"/>
+<area shape="rect" id="node13" href="NSMutableIndexSet" title="NSMutableIndexSet" alt="" coords="245,1,295,12"/>
+<area shape="rect" id="node14" href="NSMutableArray" title="NSMutableArray" alt="" coords="300,1,343,12"/>
+<area shape="rect" id="node16" href="NSMutableDictionary" title="NSMutableDictionary" alt="" coords="348,1,401,12"/>
+<area shape="poly" id="node5" href="ETKeyValuePair" title="ETKeyValuePair" alt="" coords="545,23,484,23,468,35,530,35"/>
+<area shape="rect" id="node6" href="NSObject" title="NSObject" alt="" coords="455,1,482,12"/>
+<area shape="rect" id="node11" href="&lt;a href=&quot;ETHistory.html#ETHistory&quot;&gt;ETHistory&lt;/a&gt;" title="ETHistory" alt="" coords="435,23,463,35"/>
+<area shape="poly" id="node15" href="ETKeyValuePairRepresentation" title="ETKeyValuePairRepresentation" alt="" coords="142,23,30,23,1,35,113,35"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSIndexSetCategories.html#NSIndexSet(Etoile)">NSIndexSet (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Additions to NSIndexSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSArrayCategories.html#NSArray(Etoile)">NSArray (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Additions to NSArray.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMapTableCategories.html#NSMapTable(Etoile)">NSMapTable (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Additions to NSMapTable.</strong></p><p><p> For now, this category is limited to NSDictionary-compatibility methods. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETKeyValuePair.html#ETKeyValuePair">ETKeyValuePair</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A key/value association.</strong></p><p><p> Key value pairs are used by EtoileUI to present and interact with keyed data structures. </p> <p> If you put them in an array, the resulting data structure is roughly equivalent to an ordered dictionary or a multi-value collection. </p> <p> For now, <a href="ETKeyValuePair.html#ETKeyValuePair">ETKeyValuePair</a> doesn't support subclassing. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSIndexPathCategories.html#NSIndexPath(Etoile)">NSIndexPath (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Additions to NSIndexPath.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSDictionaryCategories.html#NSDictionary(Etoile)">NSDictionary (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Additions to NSDictionary.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETHistory.html#ETHistory">ETHistory</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A generic history class which can contain arbitary entries located in the past or the future.</strong></p><p><p> <a href="ETHistory.html#ETHistory">ETHistory</a> keeps a history of objects of some kind. After going back in time, it can go forward again towards the most recent object. Adding an object while at a historic point will discard the forward history. </p> <p> It is also possible to give <a href="ETHistory.html#ETHistory">ETHistory</a> an NSEnumerator to use as a lazy source for the forward history. This way, a collection of objects can be added as a "future", replacing the current forward history. </p> <p> <a href="ETHistory.html#ETHistory">ETHistory</a> supports <a href="_ETCollection.html#ETCollection">ETCollection</a> protocol, but not <a href="_ETCollectionMutation.html#ETCollectionMutation">ETCollectionMutation</a> which means <a href="NSObjectCategories.html#-[NSObject_isMutableCollection]">-[NSObject isMutableCollection]</a>  returns <var>NO</var> and an history won't be considered as a mutable represented object by EtoileUI. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableIndexSetCategories.html#NSMutableIndexSet(Etoile)">NSMutableIndexSet (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Additions to NSMutableIndexSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableArrayCategories.html#NSMutableArray(Etoile)">NSMutableArray (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Additions to NSMutableArray.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSArrayCategories.html#NSArray(ETKeyValuePairRepresentation)">NSArray (ETKeyValuePairRepresentation)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETKeyValuePair-related extensions to NSArray.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETKeyValuePair)">NSObject (ETKeyValuePair)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETKeyValuePair-related extensions to NSObject.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableDictionaryCategories.html#NSMutableDictionary(Etoile)">NSMutableDictionary (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Extension to NSMutableDictionary for a common case where each key may map to several values.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>UUID</h3><img src="graph-UUID.png"><map id="g" name="g">
+<area shape="poly" id="node1" href="ETUUID" title="ETUUID" alt="" coords="263,76,147,76,117,112,233,112"/>
+<area shape="rect" id="node3" href="NSString" title="NSString" alt="" coords="149,4,232,40"/>
+<area shape="rect" id="node4" href="NSUserDefaults" title="NSUserDefaults" alt="" coords="250,4,383,40"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETUUID.html#ETUUID">ETUUID</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>An implementation of the Universally Unique Identifier standard.</strong></p><p><p> When an <a href="ETUUID.html#ETUUID">ETUUID</a> is instantiated, the underlying UUID is generated with the version 4 (aka random) generation scheme. <br></br> Take note the random scheme used on Linux and BSD platforms is based on a strong random number, unlike other platforms where a simpler random scheme is used. Which means collisions can occur on these platforms if you try to generate <a href="ETUUID.html#ETUUID">ETUUID</a> in a tight loop. </p> <p> You can use  -isEqual:  to check the equality between two <a href="ETUUID.html#ETUUID">ETUUID</a> instances. </p> <p> <a href="ETUUID.html#ETUUID">ETUUID</a> does not have a designated initializer. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSStringCategories.html#NSString(ETUUID)">NSString (ETUUID)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>UUID related additions to NSString.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSUserDefaultsCategories.html#NSUserDefaults(ETUUID)">NSUserDefaults (ETUUID)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Conveniency methods to easily read and write UUIDs in the default database.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Metamodel</h3><img src="graph-Metamodel.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;ETCPrimitiveEntityDescription.html#ETCPrimitiveEntityDescription&quot;&gt;ETCPrimitiveEntityDescription&lt;/a&gt;" title="ETCPrimitiveEntityDescription" alt="" coords="140,85,233,99"/>
+<area shape="rect" id="node2" href="&lt;a href=&quot;ETPrimitiveEntityDescription.html#ETPrimitiveEntityDescription&quot;&gt;ETPrimitiveEntityDescription&lt;/a&gt;" title="ETPrimitiveEntityDescription" alt="" coords="142,57,231,71"/>
+<area shape="rect" id="node13" href="&lt;a href=&quot;ETEntityDescription.html#ETEntityDescription&quot;&gt;ETEntityDescription&lt;/a&gt;" title="ETEntityDescription" alt="" coords="155,30,218,44"/>
+<area shape="rect" id="node3" href="&lt;a href=&quot;ETMultiOptionsRole.html#ETMultiOptionsRole&quot;&gt;ETMultiOptionsRole&lt;/a&gt;" title="ETMultiOptionsRole" alt="" coords="240,85,303,99"/>
+<area shape="rect" id="node4" href="&lt;a href=&quot;ETRoleDescription.html#ETRoleDescription&quot;&gt;ETRoleDescription&lt;/a&gt;" title="ETRoleDescription" alt="" coords="305,57,364,71"/>
+<area shape="rect" id="node5" href="&lt;a href=&quot;ETValidationResult.html#ETValidationResult&quot;&gt;ETValidationResult&lt;/a&gt;" title="ETValidationResult" alt="" coords="434,85,493,99"/>
+<area shape="rect" id="node6" href="&lt;a href=&quot;ETPropertyDescription.html#ETPropertyDescription&quot;&gt;ETPropertyDescription&lt;/a&gt;" title="ETPropertyDescription" alt="" coords="2,30,72,44"/>
+<area shape="rect" id="node7" href="&lt;a href=&quot;ETModelElementDescription.html#ETModelElementDescription&quot;&gt;ETModelElementDescription&lt;/a&gt;" title="ETModelElementDescription" alt="" coords="70,2,157,16"/>
+<area shape="rect" id="node8" href="&lt;a href=&quot;ETPackageDescription.html#ETPackageDescription&quot;&gt;ETPackageDescription&lt;/a&gt;" title="ETPackageDescription" alt="" coords="79,30,148,44"/>
+<area shape="rect" id="node11" href="&lt;a href=&quot;ETModelDescriptionRepository.html#ETModelDescriptionRepository&quot;&gt;ETModelDescriptionRepository&lt;/a&gt;" title="ETModelDescriptionRepository" alt="" coords="232,30,325,44"/>
+<area shape="rect" id="node12" href="&lt;a href=&quot;ETAdaptiveModelObject.html#ETAdaptiveModelObject&quot;&gt;ETAdaptiveModelObject&lt;/a&gt;" title="ETAdaptiveModelObject" alt="" coords="501,85,574,99"/>
+<area shape="rect" id="node14" href="&lt;a href=&quot;ETNumberRole.html#ETNumberRole&quot;&gt;ETNumberRole&lt;/a&gt;" title="ETNumberRole" alt="" coords="310,85,359,99"/>
+<area shape="rect" id="node15" href="&lt;a href=&quot;ETRelationshipRole.html#ETRelationshipRole&quot;&gt;ETRelationshipRole&lt;/a&gt;" title="ETRelationshipRole" alt="" coords="366,85,427,99"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETCPrimitiveEntityDescription.html#ETCPrimitiveEntityDescription">ETCPrimitiveEntityDescription</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A description of an entity bound to C attributes in the metamodel, and C values in the model.</strong></p><p><p> Used to describe the (meta)model C primitives: <strong>float</strong>, BOOL, etc. See -[ETEntityDescription isCPrimitive] . </p> <p> This class is used internally. You can possibly use it to support new primitives. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETMultiOptionsRole.html#ETMultiOptionsRole">ETMultiOptionsRole</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Description of a property's role, whose value is restricted to a predetermined set.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETValidationResult.html#ETValidationResult">ETValidationResult</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A model validation result returned by the metamodel.</strong></p><p><p> Helper class used as the return value of a validation, rather than passing pointers to objects and modifying them. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Description of an entity's property.</strong></p><p><p> A property description represents either an attribute or a relationship that belongs to an entity. Whether a property represents an attribute or relationships depends on the  -type  (the entity description for the propery value). </p> <p> For a primitive type (see -[ETEntityDescription isPrimitive] ), the property is an attribute. For a non-primitive type, it is a relationship. For more explanations,  -isAttribute  and  -isRelationship  . </p> <h4> Conceptual Model </h4> <p> For a Metamodel overview, see <a href="ETModelElementDescription.html#ETModelElementDescription">ETModelElementDescription</a>. </p> <h4> Model Description </h4> <p> <a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a> provides a large number of properties to describe the model, these properties can be split into three categories: </p> <dl> <dt>Model Specification</dt> <dd> Properties to describe new and existing model and metamodel (the FAME-based metamodel) </dd> <dt>Persistency Specification</dt> <dd> Properties to describe persistent model and persistency rules (can be leveraged or not by a Persistency framework e.g. CoreObject) </dd> <dt>Model Presentation Specification</dt> <dd> Properties to describe model presentation in the UI, and model-driven generation (can be leveraged or not by a UI or Model Generation framework) </dd> </dl> <p> The Model Specification properties must be edited to get working metamodel. </p> <p> Both Persistency and Model Presentation Specifications are optional. These additional specifications are usually generic enough to be reused by Persistency and UI frameworks other than CoreObject and EtoileUI. </p> <p> Warning: For now, CoreObject validation rules are hardcoded into -[ETPropertyDescription checkConstraints:] , and this limits the possibility to reuse the Persistency Specification without CoreObject. </p> <p> Additional properties or specification can be added by subclassing <a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a>. In the future, we will probably support extending the metamodel dynamically at run-time too. </p> <h4> Role and Validation </h4> <p> A role can be set to provide validation rules that describe attribute or relationship constraints in a particular metamodel. The role must be compatible with the current -type. For example, when  -isRelationship  is <var>NO</var>, setting a <a href="ETRelationshipRole.html#ETRelationshipRole">ETRelationshipRole</a> will cause a warning in  -checkConstraints  . </p> <p> The validation is delegated to the role by  <a href="ETPropertyDescription.html#-[ETPropertyDescription_validateValue:forKey:]">-validateValue:forKey:</a>  . </p> <h4> Multivalues </h4> <p> Both attributes and relationships can be univalued or multivalued. A multivalued relationship is a too-many relationship, while a univalued relationship is a to-one relationship. A multivalued attribute is a value object collection (multivalued relationships are entity object collections). </p> <h4> Late-Bound References </h4> <p> For easily creating property descriptions that refer to each other or entity descriptions, without worrying about the dependencies accross all the model element descriptions, ETPropertyDescriptions includes properties such as  -setOppositeName:  or  -setTypeName:  that can be used to refer to other <a href="ETModelElementDescription.html#ETModelElementDescription">ETModelElementDescription</a> objects by their -name or  -fullName  . </p> <p> When all these related descriptions are added to a repository with <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_addUnresolvedDescription:]">-[ETModelDescriptionRepository addUnresolvedDescription:]</a> , <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_resolveNamedObjectReferences]">-[ETModelDescriptionRepository resolveNamedObjectReferences]</a>  can be called to resolve the name references to their real objects. </p> <p> For example, the  -opposite  is set based on the <a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a> object returned by <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_descriptionForName:]">-[ETModelDescriptionRepository descriptionForName:]</a>  for  -oppositeName  . </p> <p> For properties descriptions added to entity descriptions returned by <a href="NSObjectCategories.html#+[NSObject_newEntityDescription]">+[NSObject newEntityDescription]</a> , all these model element descriptions are collected and resolved in the main repository. For other repositories or entity descriptions created outside of <a href="NSObjectCategories.html#+[NSObject_newEntityDescription]">+[NSObject newEntityDescription]</a> , you must call <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_resolveNamedObjectReferences]">-[ETModelDescriptionRepository resolveNamedObjectReferences]</a>  manually. </p> <h4> Freezing </h4> <p> If  -isPersistent  returns <var>NO</var> and the opposite is not persistent either, the property description won't be frozen when the owner is, and mutating the property description state will remain possible (except turning it into a persistent property description). </p> <p> If -isFrozen is <var>YES</var>, the property description is largely immutable, only the properties declared in Model Presentation remains mutable (to support customizing the UI generation for persistent objects at run-time). </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETPackageDescription.html#ETPackageDescription">ETPackageDescription</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Collection of related entity descriptions, usually equivalent to a data model.</strong></p><p><p> A package can also include extensions to other entity descriptions. An extension is a property description whose owner doesn't belong to the package it gets added to. <br></br> For example, a category can be described with a property description array, and these property descriptions packaged as extensions to be resolved later (usually when the package is imported/deserialized). </p> <p> From a Model Builder perspective, a package is the document you work on to specify a data model. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETModelDescriptionRepository.html#ETModelDescriptionRepository">ETModelDescriptionRepository</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Repository used to store the entity descriptions at runtime.</strong></p><p><p> Each repository manages a closed model description graph. Model element descriptions present in a repository must only reference objects that belong to the same repository. </p> <p> The repository contains three type of element descriptions: </p> <ul> <li>ETPackageDescription</li> <li>ETEntityDescription</li> <li>ETPropertyDescription</li> </ul> <h4> Main and Additional Repositories </h4> <p> A  <a href="ETModelDescriptionRepository.html#+[ETModelDescriptionRepository_mainRepository]">+mainRepository</a>  is created in every tool or application at launch time. In addition to the core metamodel (Object, String, Number etc.) present in all repositories, it contains the meta-metamodel right from the start. </p> <p> Additional repositories can be created. For example, to store variations on the main repository data model. </p> <p> All repositories are mostly empty initially. You can collect entity descriptions provided through <a href="NSObjectCategories.html#+[NSObject_newEntityDescription]">+[NSObject newEntityDescription]</a>  in additional repositories with -collectEntityDescriptionsFromClass:excludedClasses:resolvedNow: or <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_registerEntityDescriptionsForClasses:resolveNow:]">-registerEntityDescriptionsForClasses:resolveNow:</a>. Both methods will automatically attempt to invoke <a href="ETModelDescriptionRepository.html#+[ETModelDescriptionRepository_newEntityDescription]">+newEntityDescription</a> on unknown property or parent types, and register these additional entity descriptions. Don't forget to call <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_checkConstraints:]">-checkConstraints:</a> before using the repository. </p> <h4> Registering Model Description </h4> <p> To register an entity description, you must register the entity and its property descriptions, and do the same for the parent entity in case it is not registered yet. </p> 
+<pre>
+[repo addDescription: entityDesc];
+[repo addDescriptions: [entityDesc propertyDescriptions]];
+
+[repo addDescription: [entityDesc parentEntity]];
+[repo addDescriptions: [[entityDesc parentEntity] propertyDescriptions]];
+
+// and so on
+</pre>
+ <p> You must also register at the same time any entity description used as -[ETPropertyDescription type]  or -[ETPropertyDescription persistentType] , and any property description referred to by -[ETPropertyDescription opposite] . If this last property description itself belongs to an unregisted entity, you must register this entity description as described previously and so on. </p> <p> To register a package description, you must register the entities (and all the property and entity descriptions they refer to) and the property extensions in a way similar to the previous example. </p> <p> Note: If the entity describes a class, once registered, you usually bind it to its class as described in the section Entity and <strong>Class</strong> Description Binding. </p> <h4> Resolving Named References </h4> <p> If your model element descriptions contains named references (rather than explicit ones to the real objects) e.g. -[ETProprertyDescription oppositeName] , these descriptions must be added with  <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_addUnresolvedDescription:]">-addUnresolvedDescription:</a>  , and  <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_resolveNamedObjectReferences]">-resolveNamedObjectReferences</a>  must be called once you don't need to call  <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_addDescription:]">-addDescription:</a>  and  <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_addUnresolvedDescription:]">-addUnresolvedDescription:</a>  anymore. </p> <p> For references pointing to a package name -[ETEntityDescription ownerName]  and -[ETPropertyDescription packageName] ,  <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_resolveNamedObjectReferences]">-resolveNamedObjectReferences</a>  will automatically create and register the missing package descriptions. </p> <h4> Entity and <strong>Class</strong> Description Binding </h4> <p> By default, a repository can contain entity descriptions that apply to: </p> <ul> <li> a prototype or a similar object (a free-standing entity is usually used with <a href="ETAdaptiveModelObject.html#ETAdaptiveModelObject">ETAdaptiveModelObject</a>) </li> <li>a class</li> </ul> <p> For entity descriptions describing a class, the two-way binding is established with  <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_setEntityDescription:forClass:]">-setEntityDescription:forClass:</a>  . </p> <p> If no bound entity description or class can be found,  <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_entityDescriptionForClass:]">-entityDescriptionForClass:</a>  and  -classForEntityDescription  both attempt to return a parent entity or superclass. </p> <h4> Consistency Checking </h4> <p> Every time entity or package descriptions are added to the repository, you must check the model description graph consistency with  <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_checkConstraints:]">-checkConstraints:</a>  . </p> <p> It is up to you to do it, because the repository has no way to know when you are done adding descriptions and the repository content is in a coherent state that won't raise warnings. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETModelElementDescription.html#ETModelElementDescription">ETModelElementDescription</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Abstract base class used by Model Description core classes.</strong></p><p><p> The Model Description classes implement a Metamodel framework inspired by FAME (http://scg.unibe.ch/wiki/projects/fame). </p> <p> Within this Metamodel, <a href="ETModelElementDescription.html#ETModelElementDescription">ETModelElementDescription</a> provide basic abilities: </p> <ul> <li> Unique Naming per element in a <a href="ETModelDescriptionRepository.html#ETModelDescriptionRepository">ETModelDescriptionRepository</a>, see  -fullName  </li> <li> Ownership per element in a <a href="ETPackageDescription.html#ETPackageDescription">ETPackageDescription</a>, see  -owner  </li> <li> Constraint Checking, see  <a href="ETModelElementDescription.html#-[ETModelElementDescription_checkConstraints:]">-checkConstraints:</a>  </li> <li> Freezing to prevent changes to a Metamodel (useful to support immutable versioned metamodels, e.g. a Persistency Schema), see  <a href="ETModelElementDescription.html#-[ETModelElementDescription_makeFrozen]">-makeFrozen</a>  </li> </ul> <p> <a href="ETEntityDescription.html#ETEntityDescription">ETEntityDescription</a>, <a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a> and <a href="ETPackageDescription.html#ETPackageDescription">ETPackageDescription</a> all inherit from <a href="ETModelElementDescription.html#ETModelElementDescription">ETModelElementDescription</a>. A model element description can be registered inside a model description repository using <a href="ETModelDescriptionRepository.html#-[ETModelDescriptionRepository_addDescription:]">-[ETModelDescriptionRepository addDescription:]</a> . </p> <h4> Conceptual Model </h4> <p> This metamodel is based on the [FM3 specification](http://scg.unibe.ch/wiki/projects/fame/fm3). </p> <p> For a good introduction, read the paper [FAME — A Polyglot Library for Metamodeling at Runtime](http://www.iam.unibe.ch/~akuhn/d/Kuhn-2008-MRT-Fame.pdf) </p> <p> We support the entire FM3 specification with some minor adjustements, however the tower (model, metamodel, meta-metamodel) is not explicitly modeled in the API unlike in FAME. </p> <p> The MSE serialization format is also unsupported. In the future, we will provide our own exchange format based on JSON. </p> <h4> FAME Terminology Change Summary </h4> <p> Those changes were made to further simplify the FAME terminology which can get obscure since it overlaps with the host language object model, prevent any conflict with existing GNUstep/Cocoa API and reuse GNUstep/Cocoa naming habits. </p> <p> We list the FAME term first, then its equivalent name in EtoileFoundation: </p> <dl> <dt>FM3.Element</dt> <dd>ETModelElementDescription</dd> <dt>FM3.Class</dt> <dd>ETEntityDescription</dd> <dt>FM3.Property</dt> <dd>ETPropertyDescription</dd> <dt>FM3.RuntimeElement</dt> <dd>ETAdaptiveModelObject</dd> <dt> attributes (in <strong>Class</strong>) </dt> <dd> propertyDescriptions (in <a href="ETEntityDescription.html#ETEntityDescription">ETEntityDescription</a>) </dd> <dt> allAttributes (in <strong>Class</strong>) </dt> <dd> allPropertyDescriptions (in <a href="ETEntityDescription.html#ETEntityDescription">ETEntityDescription</a>) </dd> <dt> superclass (in <strong>Class</strong>) </dt> <dd>parent (in ETEntityDescription)</dd> <dt>package (in <strong>Class</strong>)</dt> <dd>owner (in ETEntityDescription)</dd> <dt>class (in Property)</dt> <dd>owner (in ETPropertyDescription)</dd> </dl> <p> For the last two points, we can consider FM3.Property.class and FM3.Class.package have been merged into a single FM3.Element.owner property in EtoileFoundation since they were redundant. </p> <h4> Changes to FAME </h4> <p> In EtoileFoundation, there is a  -owner  property that represents either: </p> <ul> <li> a owning entity in <a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a> </li> <li> an owning package in <a href="ETEntityDescription.html#ETEntityDescription">ETEntityDescription</a> </li> <li> no owner (-owner returns <var>nil</var>) in <a href="ETPackageDescription.html#ETPackageDescription">ETPackageDescription</a> </li> </ul> <p> While in FAME, owner is a derived property and these various owner kinds are each modeled using a distinct property (class in FM3.Property and package in FM3.Class). </p> <p> In FAME, container implies not multivalued. In EtoileFoundation, multivalued now controls whether a property is a container or not, and  -isContainer  is now derived. </p> <p> Unlike FAME, EtoileFoundation does support overriding property descriptions. This is mainly useful, for read-only properties overriden as read-write in subclasses/subentities. </p> <h4> Additions to FAME </h4> <p>  -isPersistent  has been added to control the persistency, how the interpret the metamodel and its constraints for the framework providing the persistent support is up to this framework. For now, some CoreObject constraints are harcoded in the metamodel. </p> <p>  -isReadOnly  has been added to support set-once properties. </p> <p>  -itemIdentifier  has been added as a mean to get precise control over the UI generation with EtoileUI. </p> <h4> Removals to FAME/EMOF </h4> <p> NamedElement and NestedElement protocols don't exist explicitly. </p> <p> Property description names can be in upper case (FAME was imposing lower case as a constraint). </p> <h4> Metamodel Constraint Summary </h4> <p> Metamodel constraints are checked in  <a href="ETModelElementDescription.html#-[ETModelElementDescription_checkConstraints:]">-checkConstraints:</a>  , while model constraints are validated in <a href="ETPropertyDescription.html#-[ETPropertyDescription_validateValue:forKey:]">-[ETPropertyDescription validateValue:forKey:]</a> . </p> <p> Note: In the future,  <a href="ETModelElementDescription.html#-[ETModelElementDescription_checkConstraints:]">-checkConstraints:</a>  should probably be delegated to <a href="ETPropertyDescription.html#-[ETPropertyDescription_validateValue:forKey:]">-[ETPropertyDescription validateValue:forKey:]</a>  in the meta-metamodel </p> <p> If we sum up the changes to the FAME conceptual model, for the new <a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a>, the metamodel constraints are: </p> <ul> <li> composite is derived from opposite.container </li> <li> derived and not multivalued implies container </li> <li>derived implies not persistent</li> <li> if set, opposite.opposite must be self (i.e. opposite properties must refer to each other) </li> <li>if set, opposite.owner must be type</li> <li>owner must not be <var>nil</var></li> <li>type must not be <var>nil</var></li> </ul> <p> At the model level, the semantics are: </p> <ul> <li> container property chains may not include cycles </li> <li> opposite properties must refer to each other </li> <li> any multivalued property defaults to empty </li> <li>boolean properties default to false</li> <li> non primitive properties default to <var>nil</var> </li> <li> string and number properties do not have a default value (could be changed later) </li> </ul> <p> Note: The two first points are model constraints, but <a href="ETPropertyDescription.html#-[ETPropertyDescription_validateValue:forKey:]">-[ETPropertyDescription validateValue:forKey:]</a>  doesn't check them. </p> <p> Since the metamodel is the model of the meta-metamodel, the model semantics apply to the metamodel too. </p> <p> For the new <a href="ETEntityDescription.html#ETEntityDescription">ETEntityDescription</a>, the metamodel constraints are: </p> <ul> <li>parent is not <var>nil</var></li> <li> parent must not be a primitive, unless self is a primitive </li> <li> parent chain may not include cycles (could be removed, this comes from 'container property chains may not include cycles' in the model semantics of <a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a>) </li> <li>package must not be <var>nil</var></li> <li> allPropertyDescriptions is derived as union of propertyDescription and parent.allPropertyDescriptions </li> <li> elements in propertyDescriptions override identically named elements from parent.propertyDescriptions in allPropertyDescriptions </li> <li> allPropertyDescriptions must have unique names </li> </ul> <h4> Discussion of Composite and Aggregate Terminology in UML <p> To recap the relationship types from UML: </h4> <dl> <dt>association</dt> <dd> a relationship between two objects with no additional constraints. </dd> <dt>aggregation</dt> <dd> a type of association, with the constraint that all of the pointers in an object graph belonging to aggregation relationships form a DAG (this doesn’t preclude the relationship being many:many). Aggregation represents a whole-part relationship, and descendent objects in this DAG can be considered a “part of” all of their ancestors. </dd> <dt>composition</dt> <dd> a type of aggregation, with the additional constraint that an object can only have one composite pointer to it at a time (across all incoming relationships). </dd> </dl> <p> I think these definitions are complete, but for more info, see "association", "aggregate", and "composite" in “The Unified Modeling Language Reference Manual”. Note that aggregation and composite are just restrictions on the object graph, and they are orthogonal to relationship cardinality (one:one, one:many, many:many), although composite relationships can’t be many:many as a consequence of the definition of composite. </p> <p> CoreObject implements a subset of the UML design with some of our own restrictions: If a relationship is many:many, we add no additional constraints (it’s a UML association). If a relationship is one:many or one:one, and bidirectional, we treat it as a UML aggregation. Note that CoreObject doesn’t support UML the composition constraint described above. Unfortunately the CoreObject source code uses the term “composite” a lot in ways that don’t match UML. </p> <p> Also note that an UML aggregation relationship with a one:one/many constraint is similar to UML composition; the only difference is that UML composition adds the additional constraint that the object can have only one incoming composite reference across all of its relationships. </p> <p> It could be worth supporting the full UML model, or supporting FAME’s model, because CoreObject’s current model is a bit weird in that relationship cardinality determines object graph constraints (association, aggregation, composition). For example, in CoreObject it’s impossible to model associations that are one:one or one:many, but are not aggregations (so you want to allow cycles). It’s also strange that a relationship in CoreObject can only be aggregation if it’s also bidirectional, this should probably be changed. However, I'm not sure about these points; any changes need to be carefully considered, especially with respect to COCopier. </p> <h4> Composite and Aggregate in FAME </h4> <p> FAME lacks the aggregation/composition distinction, it only has composition. Composition in FAME is almost the same as UML (no cycles in the pointers making up composite relationships between objects, plus every object can only have a single incoming composite pointer). For the second condition, FAME is slightly stricter in that a <strong>Class</strong> can only have a single incoming composite relationship, whereas UML permits multiple incoming composite relationships as <strong>long</strong> as only one of them is non-NULL at a time (roughly speaking, UML puts the constraint at runtime, FAME puts the constraint at compile time). </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETAdaptiveModelObject.html#ETAdaptiveModelObject">ETAdaptiveModelObject</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Model object under the metamodel control.</strong></p><p><p> WARNING: This class is under development and must be ignored. </p> <p> Very simple implementation of an adaptive model object that is causally connected to its description. This means that changes to the entity description immediately take effect in the instance of <a href="ETAdaptiveModelObject.html#ETAdaptiveModelObject">ETAdaptiveModelObject</a>. </p> <p> Causal connection is ensured through the implementation of  <a href="ETAdaptiveModelObject.html#-[ETAdaptiveModelObject_valueForProperty:]">-valueForProperty:</a>  and  <a href="ETAdaptiveModelObject.html#-[ETAdaptiveModelObject_setValue:forProperty:]">-setValue:forProperty:</a>  . </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETEntityDescription.html#ETEntityDescription">ETEntityDescription</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A description of an entity, which can either be a class or a prototype.</strong></p><p><p> For an introduction, see <a href="ETModelElementDescription.html#ETModelElementDescription">ETModelElementDescription</a>. </p> <h4> Freezing </h4> <p> If -isFrozen is <var>YES</var>, the entity description is largely immutable, you can only add or remove transient property descriptions with  <a href="ETEntityDescription.html#-[ETEntityDescription_addPropertyDescription:]">-addPropertyDescription:</a>  and  -removePropertyDescription  . </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETPrimitiveEntityDescription.html#ETPrimitiveEntityDescription">ETPrimitiveEntityDescription</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A description of an entity bound to attributes in the metamodel, and value objects in the model.</strong></p><p><p> Used to describe the (meta)model primitives: object, string, boolean etc. See -[ETEntityDescription isPrimitive] . </p> <p> This class is used internally. You can possibly use it to support new primitives. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETNumberRole.html#ETNumberRole">ETNumberRole</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Description of a property's role, whose value is a number.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETRelationshipRole.html#ETRelationshipRole">ETRelationshipRole</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Description of a relationship's role.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETRoleDescription.html#ETRoleDescription">ETRoleDescription</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Description of a property's role.</strong></p><p><p> These allow a pluggable, more precise property description. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Reflection</h3><img src="graph-Reflection.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;ETMethodDescriptionMirror.html#ETMethodDescriptionMirror&quot;&gt;ETMethodDescriptionMirror&lt;/a&gt;" title="ETMethodDescriptionMirror" alt="" coords="474,237,574,253"/>
+<area shape="rect" id="node2" href="NSObject" title="NSObject" alt="" coords="255,2,294,18"/>
+<area shape="circle" id="node3" href="&lt;a href=&quot;_ETMethodMirror.html#ETMethodMirror&quot;&gt;ETMethodMirror&lt;/a&gt;" title="ETMethodMirror" alt="" coords="43,160,40"/>
+<area shape="circle" id="node11" href="&lt;a href=&quot;_ETMirror.html#ETMirror&quot;&gt;ETMirror&lt;/a&gt;" title="ETMirror" alt="" coords="312,59,24"/>
+<area shape="circle" id="node4" href="&lt;a href=&quot;_ETInstanceVariableMirror.html#ETInstanceVariableMirror&quot;&gt;ETInstanceVariableMirror&lt;/a&gt;" title="ETInstanceVariableMirror" alt="" coords="160,160,60"/>
+<area shape="circle" id="node6" href="&lt;a href=&quot;_ETProtocolMirror.html#ETProtocolMirror&quot;&gt;ETProtocolMirror&lt;/a&gt;" title="ETProtocolMirror" alt="" coords="279,160,42"/>
+<area shape="circle" id="node7" href="&lt;a href=&quot;_ETObjectMirror.html#ETObjectMirror&quot;&gt;ETObjectMirror&lt;/a&gt;" title="ETObjectMirror" alt="" coords="376,160,38"/>
+<area shape="poly" id="node8" href="Etoile" title="Etoile" alt="" coords="204,51,164,51,153,67,194,67"/>
+<area shape="rect" id="node9" href="&lt;a href=&quot;ETReflection.html#ETReflection&quot;&gt;ETReflection&lt;/a&gt;" title="ETReflection" alt="" coords="212,51,262,67"/>
+<area shape="circle" id="node10" href="&lt;a href=&quot;_ETClassMirror.html#ETClassMirror&quot;&gt;ETClassMirror&lt;/a&gt;" title="ETClassMirror" alt="" coords="467,160,36"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETMethodDescriptionMirror.html#ETMethodDescriptionMirror">ETMethodDescriptionMirror</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Mirror class that represents an Objective-C method, used to mirror a method when we only know its name.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETInstanceVariableMirror.html#ETInstanceVariableMirror">ETInstanceVariableMirror</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Mirror class that represents an Objective-C instance variable.</strong></p><p><p> <a href="ETInstanceVariableMirror.html#ETInstanceVariableMirror">ETInstanceVariableMirror</a> implements the collection protocol to allow ivar content to be recursively traversed when ivars are presented in a UI inspector. For example,the inspector can use an outline view which makes possible to look at the "subivars" that makes up the object which corresponds to each ivar value. <br></br> If the ivar isn't an object type, the ivar is not traversable. <br></br> See also ETViewModelLayout in EtoileUI. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETProtocolMirror.html#ETProtocolMirror">ETProtocolMirror</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Mirror class that represents an Objective-C protocol.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETObjectMirror.html#ETObjectMirror">ETObjectMirror</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Mirror class that represents an Objective-C object.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(Etoile)">NSObject (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>NSObject basic reflection additions.</strong></p><p><p> This category extends NSObject reflection API in a minimal way. </p> <p> The true Etoile reflection API is declared in ETReflection.h. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETReflection.html#ETReflection">ETReflection</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Mirror-based reflection for Etoile.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETClassMirror.html#ETClassMirror">ETClassMirror</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Mirror class that represents an Objective-C class.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETMethodMirror.html#ETMethodMirror">ETMethodMirror</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Mirror class that represents an Objective-C method.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETClassMirror.html#ETClassMirror">&lt;ETClassMirror&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Protocol for a mirror that represents a class.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETInstanceVariableMirror.html#ETInstanceVariableMirror">&lt;ETInstanceVariableMirror&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Protocol for a mirror that represents an instance variable.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETMethodMirror.html#ETMethodMirror">&lt;ETMethodMirror&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Protocol for a mirror that represents a method.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETMirror.html#ETMirror">&lt;ETMirror&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Base protocol for all mirror classes that represent introspected language constructs.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETObjectMirror.html#ETObjectMirror">&lt;ETObjectMirror&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Protocol for a mirror that represents an object.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETProtocolMirror.html#ETProtocolMirror">&lt;ETProtocolMirror&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Protocol for a mirror that represents a protocol.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Network and Communication</h3><img src="graph-Network_and_Communication.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="NSFileHandle" title="NSFileHandle" alt="" coords="47,40,108,58"/>
+<area shape="poly" id="node2" href="ETSocketAdditions" title="ETSocketAdditions" alt="" coords="153,110,33,110,2,128,122,128"/>
+<area shape="rect" id="node3" href="&lt;a href=&quot;ETListenSocket.html#ETListenSocket&quot;&gt;ETListenSocket&lt;/a&gt;" title="ETListenSocket" alt="" coords="162,110,229,128"/>
+<area shape="rect" id="node4" href="&lt;a href=&quot;ETSocket.html#ETSocket&quot;&gt;ETSocket&lt;/a&gt;" title="ETSocket" alt="" coords="174,40,218,58"/>
+<area shape="rect" id="node5" href="NSObject" title="NSObject" alt="" coords="174,2,218,21"/>
+<area shape="poly" id="node6" href="ETListenSocketDelegate" title="ETListenSocketDelegate" alt="" coords="418,40,266,40,227,58,379,58"/>
+<area shape="poly" id="node7" href="ETSocketDelegate" title="ETSocketDelegate" alt="" coords="574,40,457,40,427,58,544,58"/>
+<area shape="circle" id="node8" href="&lt;a href=&quot;_ETSocketFilter.html#ETSocketFilter&quot;&gt;ETSocketFilter&lt;/a&gt;" title="ETSocketFilter" alt="" coords="281,119,42"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSFileHandleCategories.html#NSFileHandle(ETSocketAdditions)">NSFileHandle (ETSocketAdditions)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Category on NSFileHandle which adds support for creating protocol-agnostic sockets.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETListenSocket.html#ETListenSocket">ETListenSocket</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A server socket that accepts incoming connections.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETSocket.html#ETSocket">ETSocket</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>The ETSocket class provides a simple wrapper around a socket.</strong></p><p><p> The socket is opened when the object is created, and closed when it is destroyed. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETListenSocketDelegate)">NSObject (ETListenSocketDelegate)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Informal protocol for delegates to listening sockets.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETSocketDelegate)">NSObject (ETSocketDelegate)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Informal protocol for socket delegates.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETSocketFilter.html#ETSocketFilter">&lt;ETSocketFilter&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Protocol for socket data filters.</strong></p><p><p> Data sent or received by an <a href="ETSocket.html#ETSocket">ETSocket</a> instance will be pushed through a chain of filters conforming to this protocol. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Collection Protocols</h3><img src="graph-Collection_Protocols.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;ETCollectionTrait.html#ETCollectionTrait&quot;&gt;ETCollectionTrait&lt;/a&gt;" title="ETCollectionTrait" alt="" coords="216,141,251,150"/>
+<area shape="rect" id="node2" href="NSObject" title="NSObject" alt="" coords="223,58,244,67"/>
+<area shape="circle" id="node3" href="&lt;a href=&quot;_ETCollection.html#ETCollection&quot;&gt;ETCollection&lt;/a&gt;" title="ETCollection" alt="" coords="343,92,17"/>
+<area shape="rect" id="node6" href="NSArray" title="NSArray" alt="" coords="248,58,268,67"/>
+<area shape="rect" id="node7" href="NSCountedSet" title="NSCountedSet" alt="" coords="272,58,302,67"/>
+<area shape="rect" id="node8" href="NSDictionary" title="NSDictionary" alt="" coords="306,58,334,67"/>
+<area shape="circle" id="node9" href="&lt;a href=&quot;_ETKeyedCollection.html#ETKeyedCollection&quot;&gt;ETKeyedCollection&lt;/a&gt;" title="ETKeyedCollection" alt="" coords="343,25,24"/>
+<area shape="rect" id="node10" href="NSIndexSet" title="NSIndexSet" alt="" coords="352,58,377,67"/>
+<area shape="rect" id="node18" href="NSOrderedSet" title="NSOrderedSet" alt="" coords="381,58,411,67"/>
+<area shape="rect" id="node19" href="NSSet" title="NSSet" alt="" coords="415,58,430,67"/>
+<area shape="rect" id="node4" href="&lt;a href=&quot;ETMutableCollectionTrait.html#ETMutableCollectionTrait&quot;&gt;ETMutableCollectionTrait&lt;/a&gt;" title="ETMutableCollectionTrait" alt="" coords="209,182,258,191"/>
+<area shape="circle" id="node5" href="&lt;a href=&quot;_ETCollectionMutation.html#ETCollectionMutation&quot;&gt;ETCollectionMutation&lt;/a&gt;" title="ETCollectionMutation" alt="" coords="473,146,27"/>
+<area shape="rect" id="node11" href="NSMutableArray" title="NSMutableArray" alt="" coords="369,88,402,97"/>
+<area shape="rect" id="node12" href="NSMutableDictionary" title="NSMutableDictionary" alt="" coords="407,88,448,97"/>
+<area shape="rect" id="node13" href="NSMutableIndexSet" title="NSMutableIndexSet" alt="" coords="453,88,492,97"/>
+<area shape="rect" id="node14" href="NSMutableOrderedSet" title="NSMutableOrderedSet" alt="" coords="497,88,541,97"/>
+<area shape="rect" id="node15" href="NSMutableSet" title="NSMutableSet" alt="" coords="545,88,575,97"/>
+<area shape="poly" id="node16" href="ETBatchCollectionMutation" title="ETBatchCollectionMutation" alt="" coords="100,88,21,88,1,97,80,97"/>
+<area shape="poly" id="node17" href="ETCollectionMutationKVOSupport" title="ETCollectionMutationKVOSupport" alt="" coords="227,88,130,88,105,97,202,97"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETCollectionTrait.html#ETCollectionTrait">ETCollectionTrait</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A basic and reusable ETCollection implementation.</strong></p><p><p> This trait implements all <a href="_ETCollection.html#ETCollection">ETCollection</a> protocol methods, except  <a href="_ETCollection.html#-[(ETCollection)_content]">-content</a>  and  <a href="_ETCollection.html#-[(ETCollection)_contentArray]">-contentArray</a>  , for which concrete implementations must be provided by the target class. </p> <p> Any method provided by <a href="ETCollectionTrait.html#ETCollectionTrait">ETCollectionTrait</a> can be overriden by implementing the method in the target class. </p> <p> Here is a simple example that implements a complete mutable collection API. In addition to <a href="ETCollectionTrait.html#ETCollectionTrait">ETCollectionTrait</a>, it also leverages <a href="ETMutableCollectionTrait.html#ETMutableCollectionTrait">ETMutableCollectionTrait</a> to do so. </p> 
+<pre>
+@interface MyCollection : NSObject &gt;ETCollection, ETCollectionMutation&lt;
+{
+    NSMutableArray *things;
+}
+
+@end
+
+@implementation
+
++ (void) initialize
+{
+    if (self != [MyCollection class])
+        return;
+
+    [self applyTraitFromClass: [ETCollection class]];
+    [self applyTraitFromClass: [ETMutableCollection class]];
+}
+
+// Omitted initialization and deallocation methods
+
+- (id) content
+{
+    return things;
+}
+
+- (NSArray *) contentArray
+{
+    return [NSArray arrayWithArray: things];
+}
+
+- (void) insertObject: (id)object atIndex: (NSUInteger)index hint: (id)hint
+{
+    if (index == ETUndeterminedIndex)
+    {
+        [things addObject: object];
+    }
+    else
+    {
+        [things insertObject: object atIndex: index];
+    }
+}
+
+- (void) removeObject: (id)object atIndex: (NSUInteger)index hint: (id)hint
+{
+    if (index == ETUndeterminedIndex)
+    {
+        [things removeObject: object];
+    }
+    else
+    {
+        [things removeObjectAtIndex: index];
+    }
+}
+
+@end 
+</pre>
+</p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETMutableCollectionTrait.html#ETMutableCollectionTrait">ETMutableCollectionTrait</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A basic and reusable ETCollectionMutation implementation.</strong></p><p><p> This trait implements all <a href="_ETCollectionMutation.html#ETCollectionMutation">ETCollectionMutation</a> protocol methods, except  <a href="_ETCollectionMutation.html#-[(ETCollectionMutation)_insertObject:atIndex:hint:]">-insertObject:atIndex:hint:</a>  and  <a href="_ETCollectionMutation.html#-[(ETCollectionMutation)_removeObject:atIndex:hint:]">-removeObject:atIndex:hint:</a>  , for which concrete implementations must be provided by the target class. </p> <p> Any method provided by <a href="ETMutableCollectionTrait.html#ETMutableCollectionTrait">ETMutableCollectionTrait</a> can be overriden by implementing the method in the target class. </p> <p> For a use case example, see <a href="ETCollectionTrait.html#ETCollectionTrait">ETCollectionTrait</a>. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSArrayCategories.html#NSArray(ETCollection)">NSArray (ETCollection)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection support for NSArray.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSCountedSetCategories.html#NSCountedSet(ETCollection)">NSCountedSet (ETCollection)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection support for NSCountedSet.</strong></p><p><p> NSCountedSet is a NSMutableSet subclass and thereby inherits the collection protocol methods implemented in NSSet(ETCollection). </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSDictionaryCategories.html#NSDictionary(ETCollection)">NSDictionary (ETCollection)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection and ETKeyedCollection support for NSDictionary.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSIndexSetCategories.html#NSIndexSet(ETCollection)">NSIndexSet (ETCollection)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection support for NSIndexSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableArrayCategories.html#NSMutableArray(ETCollectionMutation)">NSMutableArray (ETCollectionMutation)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollectionMutation support for NSMutableArray.</strong></p><p><p> For NSMutableArray,  <a href="_ETCollectionMutation.html#-[(ETCollectionMutation)_insertObject:atIndex:]">-insertObject:atIndex:</a>  raises an exception when the index is ETUndeterminedIndex. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableDictionaryCategories.html#NSMutableDictionary(ETCollectionMutation)">NSMutableDictionary (ETCollectionMutation)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollectionMutation support for NSMutableDictionary.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableIndexSetCategories.html#NSMutableIndexSet(ETCollectionMutation)">NSMutableIndexSet (ETCollectionMutation)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollectionMutation support for NSMutableIndexSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableOrderedSetCategories.html#NSMutableOrderedSet(ETCollectionMutation)">NSMutableOrderedSet (ETCollectionMutation)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollectionMutation support for NSMutableOrderedSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableSetCategories.html#NSMutableSet(ETCollectionMutation)">NSMutableSet (ETCollectionMutation)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollectionMutation support for NSMutableSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETBatchCollectionMutation)">NSObject (ETBatchCollectionMutation)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Optional batch mutation protocol methods for ETCollectionMutation.</strong></p><p><p> Any mutable collection can also implement the optional methods listed below. </p> <p> EtoileUI will use these methods when possible. <br></br> Initially you can skip implementing them. Later, they can be implemented to speed up the communication between your model collections and the layout items that represent them at the UI level. In addition, these methods allows to react to batch insertion and removal at the model level (e.g. in reply to a pick and drop). </p> <p> You are not required to implement every method when a class adopts this informal protocol. </p> <p> When a collection is received in argument, the collection type can be checked to know whether the code needs to convert the collection or not, to remove or insert its content in the receiver. In most cases, the code below is a useless optimization (the else branch is good enough). </p> 
+<pre>
+if ([[aCollection content] isArray] == NO)
+{
+    [personIvarArray addObjectsFromArray: (NSArray *)aCollection];
+}
+else
+{
+    [personIvarArray addObjectsFromArray: [aCollection contentArray]];
+}
+</pre>
+ <p> See NSObject+Model for other methods such as  -isArray  . </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETCollectionMutationKVOSupport)">NSObject (ETCollectionMutationKVOSupport)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Unified protocol to post key-value observing change notifications for any collections that conform to ETCollection.</strong></p><p><p> This lets you easily change the collection type, without rewriting all the mutation notifications. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSOrderedSetCategories.html#NSOrderedSet(ETCollection)">NSOrderedSet (ETCollection)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection support for NSOrderedSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSSetCategories.html#NSSet(ETCollection)">NSSet (ETCollection)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETCollection support for NSSet.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETCollection.html#ETCollection">&lt;ETCollection&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Unified protocol to interact with collections.</strong></p><p><p> Basic collection protocol that all collections must support. EtoileFoundation extends Foundation classes such as NSArray, NSDictionary, NSSet and NSIndexSet to adopt this protocol. EtoileUI extends NSView in the same way. </p> <p> With this protocol, the collection content can be accessed and queried in various ways but cannot be mutated. </p> <p> Given most protocol method implementations remains the same accross collection classes, we provide <a href="ETCollectionTrait.html#ETCollectionTrait">ETCollectionTrait</a> as a reusable <a href="_ETCollection.html#ETCollection">ETCollection</a> implementation. </p> <p> The two primitives methods are  <a href="_ETCollection.html#-[(ETCollection)_content]">-content</a>  and  <a href="_ETCollection.html#-[(ETCollection)_contentArray]">-contentArray</a>  . These methods must be implemented in the collection class in all cases. See <a href="ETCollectionTrait.html#ETCollectionTrait">ETCollectionTrait</a>. </p> <p> When you write a new class that includes a to-many relationship, it should conform to <a href="_ETCollection.html#ETCollection">ETCollection</a>. If several to-many relationships exist, you should pick the dominant relationship that best represents the main content. A good hint is to pick the most recurrent way to browse the content with a UI, and the relationship traversed in such a case. <br></br> EtoileUI can automatically present collection-like content and support navigation into it when represented objects bound to ETLayoutItemGroup conform to <a href="_ETCollection.html#ETCollection">ETCollection</a>. </p> <p> Note: In future, we will provide a viewpoint mechanism to view or traverse objects through their non-dominant to-many relationships. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETCollectionMutation.html#ETCollectionMutation">&lt;ETCollectionMutation&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Unified protocol to mutate collections.</strong></p><p><p> Additional collection protocol that all mutable collections must support. EtoileFoundation extends Foundation classes such as NSMutableArray, NSMutableDictionary, NSMutableSet, NSCountedSet and NSMutableIndexSet to adopt this protocol. EtoileUI extends NSView in the same way. </p> <p> Given most protocol method implementations remains the same accross collection classes, we provide <a href="ETMutableCollectionTrait.html#ETMutableCollectionTrait">ETMutableCollectionTrait</a> as a reusable <a href="_ETCollectionMutation.html#ETCollectionMutation">ETCollectionMutation</a> implementation. </p> <p> The two primitive methods are  <a href="_ETCollectionMutation.html#-[(ETCollectionMutation)_insertObject:atIndex:hint:]">-insertObject:atIndex:hint:</a>  and  <a href="_ETCollectionMutation.html#-[(ETCollectionMutation)_removeObject:atIndex:hint:]">-removeObject:atIndex:hint:</a>  . These methods must be implemented in the collection class in all cases. See <a href="ETMutableCollectionTrait.html#ETMutableCollectionTrait">ETMutableCollectionTrait</a>. </p> <p> When you write a new class that includes a mutable to-many relationship, it should conform to <a href="_ETCollectionMutation.html#ETCollectionMutation">ETCollectionMutation</a>, based on the rules presented in <a href="_ETCollection.html#ETCollection">ETCollection</a> documentation. <br></br> EtoileUI can automatically mutate collection-like content and support turning user actions (e.g. drag an drop) into collection operations, when represented objects bound to ETLayoutItemGroup conform to <a href="_ETCollectionMutation.html#ETCollectionMutation">ETCollectionMutation</a> in addition to <a href="_ETCollection.html#ETCollection">ETCollection</a>. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETKeyedCollection.html#ETKeyedCollection">&lt;ETKeyedCollection&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Unified protocol to interact with collections composed of key-value pairs.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Viewpoints</h3><img src="graph-Viewpoints.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;ETViewpointTrait.html#ETViewpointTrait&quot;&gt;ETViewpointTrait&lt;/a&gt;" title="ETViewpointTrait" alt="" coords="23,163,76,177"/>
+<area shape="rect" id="node2" href="NSObject" title="NSObject" alt="" coords="107,102,139,115"/>
+<area shape="circle" id="node3" href="&lt;a href=&quot;_ETViewpoint.html#ETViewpoint&quot;&gt;ETViewpoint&lt;/a&gt;" title="ETViewpoint" alt="" coords="59,28,26"/>
+<area shape="rect" id="node4" href="&lt;a href=&quot;ETCollectionViewpoint.html#ETCollectionViewpoint&quot;&gt;ETCollectionViewpoint&lt;/a&gt;" title="ETCollectionViewpoint" alt="" coords="89,190,156,204"/>
+<area shape="rect" id="node5" href="&lt;a href=&quot;ETMutableObjectViewpoint.html#ETMutableObjectViewpoint&quot;&gt;ETMutableObjectViewpoint&lt;/a&gt;" title="ETMutableObjectViewpoint" alt="" coords="83,163,163,177"/>
+<area shape="circle" id="node8" href="&lt;a href=&quot;_ETPropertyViewpoint.html#ETPropertyViewpoint&quot;&gt;ETPropertyViewpoint&lt;/a&gt;" title="ETPropertyViewpoint" alt="" coords="59,108,41"/>
+<area shape="rect" id="node9" href="&lt;a href=&quot;ETUnionViewpoint.html#ETUnionViewpoint&quot;&gt;ETUnionViewpoint&lt;/a&gt;" title="ETUnionViewpoint" alt="" coords="95,253,151,266"/>
+<area shape="poly" id="node10" href="ETIndexValuePair" title="ETIndexValuePair" alt="" coords="403,163,322,163,301,177,382,177"/>
+<area shape="poly" id="node11" href="ETViewpointAdditions" title="ETViewpointAdditions" alt="" coords="294,163,195,163,169,177,269,177"/>
+<area shape="circle" id="node12" href="&lt;a href=&quot;_ETViewpointMutation.html#ETViewpointMutation&quot;&gt;ETViewpointMutation&lt;/a&gt;" title="ETViewpointMutation" alt="" coords="200,259,42"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETViewpointTrait.html#ETViewpointTrait">ETViewpointTrait</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A basic and reusable ETViewpoint protocol implementation.</strong></p><p><p> If you implement a class that conforms to <a href="_ETViewpoint.html#ETViewpoint">ETViewpoint</a>, the core implementation of the protocol is usually the same. You can adopt this trait to get all the basic viewpoint behavior without writing code, and just implement or reimplement the parts that matter. </p> <p> For example, <a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a> uses this trait. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A proxy giving access to a model property as a mutable collection.</strong></p><p><p> <a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a> turns a collection property belonging to a represented object into a immutable or mutable collection proxy that implements the collection protocols. </p> <p> Using it as an immutable collection proxy doesn't bring a lot of benefits. However <a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a> can use Key-Value-Coding accessors to support mutating the collection without implementing <a href="_ETCollection.html#ETCollection">ETCollection</a> and <a href="_ETCollectionMutation.html#ETCollectionMutation">ETCollectionMutation</a> on the represented object (for the property that holds the collection). <br></br> A model object usually implements collection protocols providing access to its dominant/main collection aspect, but the represent object doesn't support these protocols to access other collections exposed as properties. <a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a> exposes these other collections as the main collection is usually exposed. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A proxy giving access to a model property as a mutable object.</strong></p><p><p> <a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a> turns an attribute or to-one relationship property belonging to a represented object, into a mutable object proxy that updates the model property with a new immutable object in reaction to  <a href="ETMutableObjectViewpoint.html#-[ETMutableObjectViewpoint_setValue:forProperty:]">-setValue:forProperty:</a>  . </p> <p> <a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a> doesn't work as a mutable collection proxy for a to-many relationship property, you must use <a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a> instead. </p> <p> Using a mutable object as <a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a> value doesn't bring a lot of benefits, but is well supported and works transparently. </p> <p> For supporting editing a mutable object class, <a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a> must be subclassed. For example, for editing NSSortDescriptor, you must implement a new subclass such as ETMutableSortDescriptorViewpoint (this one is provided by EtoileUI though). </p> <p> This viewpoint uses Key-Value-Observing to detect any property changes on the represented object. </p> <p> The name is usually a property name, but can be a property path such as <em>currentColor.redComponent</em>. For a property path, the viewpoint observes just the first property (e.g. currentColor) that belongs to the represented object and not subsequent properties (e.g. redComoponent) in other objects. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETUnionViewpoint.html#ETUnionViewpoint">ETUnionViewpoint</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A proxy giving access to a model property as a mutable collection.</strong></p><p><p> <a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a> turns a collection property belonging to a represented object into a immutable or mutable collection proxy that implements the collection protocols. </p> <p> Using it as an immutable collection proxy doesn't bring a lot of benefits. However <a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a> can use Key-Value-Coding accessors to support mutating the collection without implementing <a href="_ETCollection.html#ETCollection">ETCollection</a> and <a href="_ETCollectionMutation.html#ETCollectionMutation">ETCollectionMutation</a> on the represented object (for the property that holds the collection). <br></br> A model object usually implements collection protocols providing access to its dominant/main collection aspect, but the represent object doesn't support these protocols to access other collections exposed as properties. <a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a> exposes these other collections as the main collection is usually exposed. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETIndexValuePair.html#ETIndexValuePair">ETIndexValuePair</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>An index/value association.</strong></p><p><p> <a href="ETIndexValuePair.html#ETIndexValuePair">ETIndexValuePair</a> doesn't support subclassing. </p> <p> Note: this class is deprecated and will be removed in a next release. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETViewpointAdditions)">NSObject (ETViewpointAdditions)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A mechanism to access a represented collection when a viewpoint content is another viewpoint.</strong></p><p><p> This is an unstable API (will probably be removed or changed later). </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETPropertyViewpoint.html#ETPropertyViewpoint">&lt;ETPropertyViewpoint&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A viewpoint protocol to represent an object property.</strong></p><p><p> A property viewpoint is an adaptor that represents an object property and handles reading and writing the property value through  <a href="_ETViewpoint.html#-[(ETViewpoint)_value]">-value</a>  and -setValue. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETViewpoint.html#ETViewpoint">&lt;ETViewpoint&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>The base viewpoint protocol.</strong></p><p><p> A viewpoint is an adaptor that exposes a value derived from a represented object and handles reading and writing the properties of this value through  <a href="_ETViewpoint.html#-[(ETViewpoint)_valueForProperty:]">-valueForProperty:</a>  and  <a href="_ETViewpoint.html#-[(ETViewpoint)_setValue:forProperty:]">-setValue:forProperty:</a>  . </p> <p> The derived value object can be read and write through  <a href="_ETViewpoint.html#-[(ETViewpoint)_value]">-value</a>  and <a href="_ETViewpoint.html#-[(ETViewpoint)_setValue:]">-setValue:</a> . </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETViewpointMutation.html#ETViewpointMutation">&lt;ETViewpointMutation&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Protocol to provide a viewpoint that simulates mutability for immutable objects.</strong></p><p><p> For each immutable object class, a distinct <a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a> subclass must exist. </p> <p> Immutable object class that wants to support editing or mutation through a <a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a> must implement this protocol. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETIndexValuePair)">NSObject (ETIndexValuePair)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>ETIndexValuePair-related extensions to NSObject.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Debugging</h3><img src="graph-Debugging.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;ETStackTrace.html#ETStackTrace&quot;&gt;ETStackTrace&lt;/a&gt;" title="ETStackTrace" alt="" coords="3,51,80,75"/>
+<area shape="rect" id="node2" href="NSObject" title="NSObject" alt="" coords="125,3,182,27"/>
+<area shape="rect" id="node3" href="&lt;a href=&quot;ETStackTraceRecorder.html#ETStackTraceRecorder&quot;&gt;ETStackTraceRecorder&lt;/a&gt;" title="ETStackTraceRecorder" alt="" coords="93,51,214,75"/>
+<area shape="poly" id="node4" href="ETStackTraceRecorderConveniency" title="ETStackTraceRecorderConveniency" alt="" coords="573,51,297,51,226,75,502,75"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETStackTrace.html#ETStackTrace">ETStackTrace</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Represents a stack trace built from an array of call stack symbols.</strong></p><p><p> You usually don't need to instantiate stack trace objects directly, <a href="ETStackTraceRecorder.html#ETStackTraceRecorder">ETStackTraceRecorder</a> does it. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETStackTraceRecorder.html#ETStackTraceRecorder">ETStackTraceRecorder</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A debug utility to record stack traces in relation to an instance.</strong></p><p><p> A stack trace recorder allows to snapshot the call stack symbols and inspect these snapshots later on. </p> <p> You invoke  <a href="ETStackTraceRecorder.html#-[ETStackTraceRecorder_recordForObject:]">-recordForObject:</a>  to snapshot the current call stack symbols and  <a href="ETStackTraceRecorder.html#-[ETStackTraceRecorder_recordedStackTracesForObject:]">-recordedStackTracesForObject:</a>  to get all the call stack traces recorded until now. </p> <p> A stack trace recorder is very handy to debug memory management issues. e.g. You can easily discover where an over-released object was allocated in a vein similar to <em>malloc_history</em> on Mac OS X. <br></br> Take note that +enableAllocationRecordingForClass: is only available on GNUstep and the example detailed below doesn't apply to Mac OS X where you must use malloc_history instead. <br></br> To get meaningfull backtrace on GNUstep, you must install the GNU bin utils (e.g. binutils-dev package on Ubuntu) and configure GNUstep Base with <em>--enable-bfd</em>. <br></br> Be aware that the resulting gnustep-base library will be GPL-licensed and transively all the code that links it will become GPL-licensed too. </p> <h4> Use Case Example </h4> <p> For a retain/release crash, note the instance class that got double-released, then add in main() or equivalent: </p> 
+<pre>[[ETStackTraceRecorder sharedInstance] enableAllocationRecordingForClass: [MyClass class]];</pre>
+          <p>
+            To prevent the instance to be deallocated, set
+            NSZombieEnabled to <var>YES</var> (e.g.
+            <em>export NSZombieEnabled <var>YES</var></em> in
+            the shell). Finally compile and run the program in GDB
+            and at crash time, type on the GDB prompt:
+          </p>
+ 
+<pre>po [[ETStackTraceRecorder sharedInstance] recordedStackTracesForObject: instance] firstObject]</pre>
+          <p>
+            Where <em>instance</em> is the instance address or a
+            variable pointing on the instance. Then GDB prints
+            the stack trace which points back to the code that
+            allocated the instance. <br></br> You can also put a
+            breakpoint on -[NSZombie forwardInvocation:],
+            but take note that NSZombie doesn't respond to
+            
+              -recordedStackTraces
+            
+            (at least on GNUstep).
+          </p>
+          <h4> Thread Safety
+          </h4>
+          <p>
+            ETStackTraceRecorder is thread-safe
+            (not fully yet), multiple threads can invoke
+            
+              -recordForObject:
+            
+            .
+          </p>
+</p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETStackTraceRecorderConveniency)">NSObject (ETStackTraceRecorderConveniency)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Conveniency methods that makes easier to work ETStackTraceRecorder.</strong></p><p><p> You can use these methods to record stack traces with <a href="ETStackTraceRecorder.html#+[ETStackTraceRecorder_sharedInstance]">+[ETStackTraceRecorder sharedInstance]</a> . </p> <p> For example, in GDB you can type [self recordStackTrace] to keep a trace of the current call stack. <br></br> And you can print all the stack traces recorded for the current object with 'po [[self recordedStackTraces] stringValue]'. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Logging</h3><img src="graph-Logging.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;ETTranscript.html#ETTranscript&quot;&gt;ETTranscript&lt;/a&gt;" title="ETTranscript" alt="" coords="4,100,116,136"/>
+<area shape="circle" id="node2" href="&lt;a href=&quot;_ETTranscriptDelegate.html#ETTranscriptDelegate&quot;&gt;ETTranscriptDelegate&lt;/a&gt;" title="ETTranscriptDelegate" alt="" coords="248,118,114"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETTranscript.html#ETTranscript">ETTranscript</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A simple logging class designed for compatibility with Smalltalkers' expectations.</strong></p><p><p> In the future, it may become possible to change the standard transcripts destination. <a href="ETTranscript.html#ETTranscript">ETTranscript</a> will then take the role of an additional level of indirection. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="_ETTranscriptDelegate.html#ETTranscriptDelegate">&lt;ETTranscriptDelegate&gt;</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A Smalltalk-80 like Transcript implementation.</strong></p><p><p> Protocol for transcript delegates. Store an object implementing the methods in this protocol in the thread's dictionary with the kTranscriptDelegate key and transcript messages will be sent to it instead of the standard output. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>File Management</h3><img src="graph-File_Management.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="NSFileManager" title="NSFileManager" alt="" coords="38,4,167,40"/>
+<area shape="poly" id="node2" href="ETTempFile" title="ETTempFile" alt="" coords="200,76,44,76,4,112,160,112"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSFileManagerCategories.html#NSFileManager(ETTempFile)">NSFileManager (ETTempFile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>NSFileManager additions for creating temporary files and directories.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Model Additions</h3><img src="graph-Model_Additions.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="NSDate" title="NSDate" alt="" coords="2,2,39,20"/>
+<area shape="poly" id="node2" href="ETModel" title="ETModel" alt="" coords="126,39,64,39,48,57,110,57"/>
+<area shape="rect" id="node5" href="NSNumber" title="NSNumber" alt="" coords="48,2,98,20"/>
+<area shape="rect" id="node6" href="NSObject" title="NSObject" alt="" coords="158,2,202,20"/>
+<area shape="rect" id="node7" href="NSString" title="NSString" alt="" coords="107,2,149,20"/>
+<area shape="rect" id="node3" href="NSDictionary" title="NSDictionary" alt="" coords="211,2,269,20"/>
+<area shape="poly" id="node4" href="ETPropertyValueCoding" title="ETPropertyValueCoding" alt="" coords="324,39,179,39,141,57,287,57"/>
+<area shape="rect" id="node8" href="NSMutableDictionary" title="NSMutableDictionary" alt="" coords="410,2,497,20"/>
+<area shape="poly" id="node9" href="ETMutablePropertyValueCoding" title="ETMutablePropertyValueCoding" alt="" coords="574,39,382,39,333,57,525,57"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSDateCategories.html#NSDate(ETModel)">NSDate (ETModel)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSDictionaryCategories.html#NSDictionary(ETPropertyValueCoding)">NSDictionary (ETPropertyValueCoding)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Property reading support for NSDictionary.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSNumberCategories.html#NSNumber(ETModel)">NSNumber (ETModel)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETModel)">NSObject (ETModel)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>NSObject additions providing basic management of model objects.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSStringCategories.html#NSString(ETModel)">NSString (ETModel)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>NSObject additions providing basic management of model objects.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSMutableDictionaryCategories.html#NSMutableDictionary(ETMutablePropertyValueCoding)">NSMutableDictionary (ETMutablePropertyValueCoding)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Property writing support for NSMutableDictionary.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSObjectCategories.html#NSObject(ETPropertyValueCoding)">NSObject (ETPropertyValueCoding)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Protocol to read and write properties.</strong></p><p><p> Property-Value Coding allows to access properties of objects in a uniform manner, while still supporting Key-Value Coding. </p> <p> Key-Value Coding is similar but tends to be overriden in many subclasses. As a result, <var>-[NSDictionary valueForKey: @"count"]</var> doesn't return the count value, but attemps to look a value using [NSDictionary objectForKey: @"count"]. So Key-Value Coding doesn't constitute a mechanism versatile enough to introspect or access object properties. In addition,  -valueForKey:  doesn't accept invalid key unlike  -valueForProperty:  . This is important for presenting unrelated objects in a table UI (mapping properties to columns) where each object has its own property set. More generally this matters for manipulating properties of unrelated objects using the same code. </p> <p> ETPropertyValueCoding protocol is usually adopted by root object classes such as NSObject and overriden in subclasses. See NSObject(Model). </p> <p> The basic behavior of the Property-Value-Coding is implemented in NSObject(ETModelAdditions), but few classes such as <a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a> and ETLayoutItem in EtoileUI overrides the NSObject semantic for  -valueForProperty:  and  -setValue:forProperty:  . </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>String Manipulation and Formatting</h3><img src="graph-String_Manipulation_and_Formatting.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="NSString" title="NSString" alt="" coords="19,4,102,40"/>
+<area shape="poly" id="node2" href="Etoile" title="Etoile" alt="" coords="116,76,27,76,4,112,93,112"/>
+<area shape="rect" id="node3" href="&lt;a href=&quot;ETByteSizeFormatter.html#ETByteSizeFormatter&quot;&gt;ETByteSizeFormatter&lt;/a&gt;" title="ETByteSizeFormatter" alt="" coords="134,76,306,112"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSStringCategories.html#NSString(Etoile)">NSString (Etoile)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>NSString additions.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETByteSizeFormatter.html#ETByteSizeFormatter">ETByteSizeFormatter</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Formatter subclass to convert numbers expressed in bytes to a human-readable format.</strong></p><p><p> <a href="ETByteSizeFormatter.html#ETByteSizeFormatter">ETByteSizeFormatter</a> supports to format NSNumber objects up the terabyte unit as detailed in  <a href="ETByteSizeFormatter.html#-[ETByteSizeFormatter_stringForObjectValue:]">-stringForObjectValue:</a>  . </p> <p> <a href="ETByteSizeFormatter.html#ETByteSizeFormatter">ETByteSizeFormatter</a> is now deprecated in favor of NSByteCountFormatter, we still support it on Mac OS X for backward compatibility with 10.6 and 10.7. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Plug-Ins</h3><img src="graph-Plug-Ins.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;ETPlugInRegistry.html#ETPlugInRegistry&quot;&gt;ETPlugInRegistry&lt;/a&gt;" title="ETPlugInRegistry" alt="" coords="4,4,147,40"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETPlugInRegistry.html#ETPlugInRegistry">ETPlugInRegistry</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Plug-in manager class used to register new plug-ins and obtain already registered plug-ins.</strong></p><p><p> Each plug-in is represented by an NSMutableDictionary to which you can add your own entries as needed. The keys <a href="ETPlugInRegistry.html#ETPlugInRegistry">ETPlugInRegistry</a> adds to this dictionary are: </p> <dl> <dt>bundle</dt> <dd>NSBundle instance for this plug-in</dd> <dt>identifier</dt> <dd> Unique identifier for this plug-in (bundle identifier in current implementation), see  <a href="ETPlugInRegistry.html#-[ETPlugInRegistry_plugInIdentifierForBundle:]">-plugInIdentifierForBundle:</a>  </dd> <dt>image</dt> <dd> Icon (NSImage) of the plug-in (for display in toolbars etc.), see  <a href="ETPlugInRegistry.html#-[ETPlugInRegistry_plugInIconPathForBundle:]">-plugInIconPathForBundle:</a>  </dd> <dt>name</dt> <dd> Display name of the plug-in (for display in lists, toolbars etc.), see  <a href="ETPlugInRegistry.html#-[ETPlugInRegistry_plugInNameForBundle:]">-plugInNameForBundle:</a>  </dd> <dt>path</dt> <dd>Full path to the bundle.</dd> <dt>class</dt> <dd> Principal class (type <strong>Class</strong>) for this bundle, so you can instantiate it </dd> <dt>instance</dt> <dd> If  <a href="ETPlugInRegistry.html#-[ETPlugInRegistry_shouldInstantiatePlugInClass]">-shouldInstantiatePlugInClass</a>  is <var>YES</var>, this contains an instance of the principal class, instantiated using alloc+init </dd> </dl> <p> <a href="ETPlugInRegistry.html#ETPlugInRegistry">ETPlugInRegistry</a> is thread-safe. </p></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Hashing and Encoding</h3><img src="graph-Hashing_and_Encoding.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="NSData" title="NSData" alt="" coords="38,4,110,40"/>
+<area shape="poly" id="node2" href="ETHash" title="ETHash" alt="" coords="143,76,32,76,4,112,115,112"/>
+<area shape="rect" id="node3" href="NSString" title="NSString" alt="" coords="204,4,287,40"/>
+<area shape="poly" id="node4" href="ETBase64" title="ETBase64" alt="" coords="330,76,195,76,161,112,296,112"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSDataCategories.html#NSData(ETHash)">NSData (ETHash)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Hash and Base64 additions to NSData.</strong></p><p><p> This NSData category provides methods for base 64 encoding and decoding the value of an NSData object and computing hashes. Uses the OpenSSL base 64 encoding and decoding functionality. </p></p></div>
+</dd></dl>
+</div>
+<div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="NSStringCategories.html#NSString(ETBase64)">NSString (ETBase64)</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>Base64 additions to NSString.</strong></p><p><em>Description forthcoming.</em></p></div>
+</dd></dl>
+</div>
+<hr></hr><h3>Uniform Type Identifier</h3><img src="graph-Uniform_Type_Identifier.png"><map id="g" name="g">
+<area shape="rect" id="node1" href="&lt;a href=&quot;ETUTI.html#ETUTI&quot;&gt;ETUTI&lt;/a&gt;" title="ETUTI" alt="" coords="36,76,98,112"/>
+</map>
+</img><div class="symbol">
+<dl class="collapsable">
+<dt>
+<span class="symbolName"><span class="collapsedIndicator"></span><a href="ETUTI.html#ETUTI">ETUTI</a></span></dt>
+<dd><div class="symbolDescription">
+<p><strong>A type class to represent data types and aggregate various type representations into a common type model (Uniform Type Identifier).</strong></p><p><p> <a href="ETUTI.html#ETUTI">ETUTI</a> objects represent Uniform Type Identifiers (UTIs), strings written in reverse-DNS notation (e.g. <em>org.etoile.group</em>) which are used to describe data type. UTIs support multiple inheritance to indicate that certain types are refinements of one or more parent types. </p> <p> The <a href="ETUTI.html#ETUTI">ETUTI</a> implementation also integrates with the Objective-C runtime. UTI's can be automatically generated for a given class, which are given the form <em>org.etoile-project.objc.class.ClassName</em> </p> <p> EtoileFoundation provides a built-in UTI library and some class bindings (UTI supertypes to which ObjC classes conforms to). See UTIDefinitions.plist and ClassBindings.plist in the EtoileFoundation framework resources. </p> <p> Additional UTIs and class bindings can be provided in third-party applications or frameworks. At launch time, <a href="ETUTI.html#ETUTI">ETUTI</a> loads any UTIDefinitions.plist and ClassBindings.plist present in the main bundle and loaded frameworks, and merges the content into its runtime UTI database. You cannot redefine a UTI built into EtoileFoundation UTIDefinitions.plist. </p> <h4> iOS Support </h4> <p> EtoileFoundation UTIDefinitions.plist and UTIClassBindings.plist must be referenced by your application project, and bundled in the application with a Copy Files build phase where the subpath is a 'EtoileFoundation' subdirectory. </p> <p> A Copy Bundle Resources phase can follow to copy the additional UTIDefinitions.plist and UTIClassBindings.plist specific to your application. </p></p></div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>EtoileFoundation</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.Cocoa.html">Cocoa Installation</a></li>
+<li><a href="INSTALL.GNUstep.html">GNUstep Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="ETAdaptiveModelObject.html#ETAdaptiveModelObject">ETAdaptiveModelObject</a></li><li><a href="ETByteSizeFormatter.html#ETByteSizeFormatter">ETByteSizeFormatter</a></li><li><a href="ETClassMirror.html#ETClassMirror">ETClassMirror</a></li><li><a href="ETCollectionTrait.html#ETCollectionTrait">ETCollectionTrait</a></li><li><a href="ETCollectionViewpoint.html#ETCollectionViewpoint">ETCollectionViewpoint</a></li><li><a href="ETCPrimitiveEntityDescription.html#ETCPrimitiveEntityDescription">ETCPrimitiveEntityDescription</a></li><li><a href="ETEntityDescription.html#ETEntityDescription">ETEntityDescription</a></li><li><a href="ETHistory.html#ETHistory">ETHistory</a></li><li><a href="ETIndexValuePair.html#ETIndexValuePair">ETIndexValuePair</a></li><li><a href="ETInstanceVariableMirror.html#ETInstanceVariableMirror">ETInstanceVariableMirror</a></li><li><a href="ETKeyValuePair.html#ETKeyValuePair">ETKeyValuePair</a></li><li><a href="ETListenSocket.html#ETListenSocket">ETListenSocket</a></li><li><a href="ETMethodDescriptionMirror.html#ETMethodDescriptionMirror">ETMethodDescriptionMirror</a></li><li><a href="ETMethodMirror.html#ETMethodMirror">ETMethodMirror</a></li><li><a href="ETModelDescriptionRepository.html#ETModelDescriptionRepository">ETModelDescriptionRepository</a></li><li><a href="ETModelElementDescription.html#ETModelElementDescription">ETModelElementDescription</a></li><li><a href="ETMultiOptionsRole.html#ETMultiOptionsRole">ETMultiOptionsRole</a></li><li><a href="ETMutableCollectionTrait.html#ETMutableCollectionTrait">ETMutableCollectionTrait</a></li><li><a href="ETMutableObjectViewpoint.html#ETMutableObjectViewpoint">ETMutableObjectViewpoint</a></li><li><a href="ETNumberRole.html#ETNumberRole">ETNumberRole</a></li><li><a href="ETObjectMirror.html#ETObjectMirror">ETObjectMirror</a></li><li><a href="ETPackageDescription.html#ETPackageDescription">ETPackageDescription</a></li><li><a href="ETPlugInRegistry.html#ETPlugInRegistry">ETPlugInRegistry</a></li><li><a href="ETPrimitiveEntityDescription.html#ETPrimitiveEntityDescription">ETPrimitiveEntityDescription</a></li><li><a href="ETPropertyDescription.html#ETPropertyDescription">ETPropertyDescription</a></li><li><a href="ETProtocolMirror.html#ETProtocolMirror">ETProtocolMirror</a></li><li><a href="ETReflection.html#ETReflection">ETReflection</a></li><li><a href="ETRelationshipRole.html#ETRelationshipRole">ETRelationshipRole</a></li><li><a href="ETRoleDescription.html#ETRoleDescription">ETRoleDescription</a></li><li><a href="ETSocket.html#ETSocket">ETSocket</a></li><li><a href="ETStackTrace.html#ETStackTrace">ETStackTrace</a></li><li><a href="ETStackTraceRecorder.html#ETStackTraceRecorder">ETStackTraceRecorder</a></li><li><a href="ETTranscript.html#ETTranscript">ETTranscript</a></li><li><a href="ETUnionViewpoint.html#ETUnionViewpoint">ETUnionViewpoint</a></li><li><a href="ETUTI.html#ETUTI">ETUTI</a></li><li><a href="ETUUID.html#ETUUID">ETUUID</a></li><li><a href="ETValidationResult.html#ETValidationResult">ETValidationResult</a></li><li><a href="ETViewpointTrait.html#ETViewpointTrait">ETViewpointTrait</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_ETClassMirror.html#ETClassMirror">ETClassMirror</a></li><li><a href="_ETCollection.html#ETCollection">ETCollection</a></li><li><a href="_ETCollectionHOM.html#ETCollectionHOM">ETCollectionHOM</a></li><li><a href="_ETCollectionHOMFilterIntegration.html#ETCollectionHOMFilterIntegration">ETCollectionHOMFilterIntegration</a></li><li><a href="_ETCollectionHOMIntegration.html#ETCollectionHOMIntegration">ETCollectionHOMIntegration</a></li><li><a href="_ETCollectionHOMMapIntegration.html#ETCollectionHOMMapIntegration">ETCollectionHOMMapIntegration</a></li><li><a href="_ETCollectionMutation.html#ETCollectionMutation">ETCollectionMutation</a></li><li><a href="_ETCollectionMutationHOM.html#ETCollectionMutationHOM">ETCollectionMutationHOM</a></li><li><a href="_ETInstanceVariableMirror.html#ETInstanceVariableMirror">ETInstanceVariableMirror</a></li><li><a href="_ETKeyedCollection.html#ETKeyedCollection">ETKeyedCollection</a></li><li><a href="_ETMethodMirror.html#ETMethodMirror">ETMethodMirror</a></li><li><a href="_ETMirror.html#ETMirror">ETMirror</a></li><li><a href="_ETObjectMirror.html#ETObjectMirror">ETObjectMirror</a></li><li><a href="_ETPropertyViewpoint.html#ETPropertyViewpoint">ETPropertyViewpoint</a></li><li><a href="_ETProtocolMirror.html#ETProtocolMirror">ETProtocolMirror</a></li><li><a href="_ETSocketFilter.html#ETSocketFilter">ETSocketFilter</a></li><li><a href="_ETTranscriptDelegate.html#ETTranscriptDelegate">ETTranscriptDelegate</a></li><li><a href="_ETViewpoint.html#ETViewpoint">ETViewpoint</a></li><li><a href="_ETViewpointMutation.html#ETViewpointMutation">ETViewpointMutation</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSArrayCategories.html#NSArray(ETCollection)">NSArray</a></li><li><a href="NSCountedSetCategories.html#NSCountedSet(ETCollection)">NSCountedSet</a></li><li><a href="NSDataCategories.html#NSData(ETHash)">NSData</a></li><li><a href="NSDateCategories.html#NSDate(ETModel)">NSDate</a></li><li><a href="NSDictionaryCategories.html#NSDictionary(ETCollection)">NSDictionary</a></li><li><a href="NSExceptionCategories.html#NSException(ETException)">NSException</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(ETSocketAdditions)">NSFileHandle</a></li><li><a href="NSFileManagerCategories.html#NSFileManager(ETTempFile)">NSFileManager</a></li><li><a href="NSIndexPathCategories.html#NSIndexPath(Etoile)">NSIndexPath</a></li><li><a href="NSIndexSetCategories.html#NSIndexSet(ETCollection)">NSIndexSet</a></li><li><a href="NSInvocationCategories.html#NSInvocation(Etoile)">NSInvocation</a></li><li><a href="NSMapTableCategories.html#NSMapTable(Etoile)">NSMapTable</a></li><li><a href="NSMutableArrayCategories.html#NSMutableArray(ETCollectionHOM)">NSMutableArray</a></li><li><a href="NSMutableDictionaryCategories.html#NSMutableDictionary(ETCollectionHOM)">NSMutableDictionary</a></li><li><a href="NSMutableIndexSetCategories.html#NSMutableIndexSet(ETCollectionHOM)">NSMutableIndexSet</a></li><li><a href="NSMutableOrderedSetCategories.html#NSMutableOrderedSet(ETCollectionMutation)">NSMutableOrderedSet</a></li><li><a href="NSMutableSetCategories.html#NSMutableSet(ETCollectionHOM)">NSMutableSet</a></li><li><a href="NSNumberCategories.html#NSNumber(ETModel)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(ETBatchCollectionMutation)">NSObject</a></li><li><a href="NSOrderedSetCategories.html#NSOrderedSet(ETCollection)">NSOrderedSet</a></li><li><a href="NSSetCategories.html#NSSet(ETCollection)">NSSet</a></li><li><a href="NSStringCategories.html#NSString(ETBase64)">NSString</a></li><li><a href="NSUserDefaultsCategories.html#NSUserDefaults(ETUUID)">NSUserDefaults</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div>
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

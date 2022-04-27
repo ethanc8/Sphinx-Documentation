@@ -1,0 +1,570 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base Additions</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>The XML and HTML parsing system</h2>GSXMLNode : NSObject &lt;NSCopying&gt;<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Michael Pakhantsov Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>GNUstepBase/GSXML.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p>A <a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> object wraps part of the document structure of the underlying libxml library. It may have a parent, siblings, and children.</p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="+[GSXMLNode_descriptionFromType:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSString *)</span><span class="selector"> descriptionFromType: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">type</span></span></span></dt>
+<dd><div class="methodDescription">
+Return the string constant value for the node <var>type</var> given.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[GSXMLNode_typeFromDescription:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSInteger)</span><span class="selector"> typeFromDescription: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">desc</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Converts a node type string to a numeric constant which can be compared with the result of the <a href="GSXMLNode.html#-[GSXMLNode_type]">-type</a> method to determine what sort of node an instance is. Because this method is quite inefficient, you should cache the numeric type returned and re-use the cached value. </p> The node type names are - <ul> <li>XML_ELEMENT_NODE</li> <li>XML_ATTRIBUTE_NODE</li> <li>XML_TEXT_NODE</li> <li>XML_CDATA_SECTION_NODE</li> <li>XML_ENTITY_REF_NODE</li> <li>XML_ENTITY_NODE</li> <li>XML_PI_NODE</li> <li>XML_COMMENT_NODE</li> <li>XML_DOCUMENT_NODE</li> <li>XML_DOCUMENT_TYPE_NODE</li> <li>XML_DOCUMENT_FRAG_NODE</li> <li>XML_NOTATION_NODE</li> <li>XML_HTML_DOCUMENT_NODE</li> <li>XML_DTD_NODE</li> <li>XML_ELEMENT_DECL</li> <li>XML_ATTRIBUTE_DECL</li> <li>XML_ENTITY_DECL</li> </ul><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_attributes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSDictionary *)</span><span class="selector"> attributes </span></span></dt>
+<dd><div class="methodDescription">
+<p> Return attributes and values as a dictionary </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_content]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> content </span></span></dt>
+<dd><div class="methodDescription">
+Return node content as a string. This should return meaningful information for text nodes and for entity nodes containing only text nodes. <br></br> If entity substitution was not enabled during parsing, an element containing text may actually contain both text nodes and entity reference nodes, in this case you should not use this method to get the content of the element, but should examine the child nodes of the element individually and perform any entity reference you need to do explicitly. <br></br> NB. There are five standard entities which are automatically substituted into the content text rather than appearing as entity nodes in their own right. These are '&lt;', '&gt;', ''', '"' and '&'. If you with to receive content in which these characters are represented by the original entity escapes, you need to use the  <a href="GSXMLNode.html#-[GSXMLNode_escapedContent]">-escapedContent</a>  method.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_description]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> description </span></span></dt>
+<dd><div class="methodDescription">
+Returns a string representation of the node and all its children (ie the XML text) or <var>nil</var> if the node does not have reasonable contents.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_document]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLDocument.html#GSXMLDocument">GSXMLDocument</a> *)</span><span class="selector"> document </span></span></dt>
+<dd><div class="methodDescription">
+Return the document in which this node exists.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_escapedContent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> escapedContent </span></span></dt>
+<dd><div class="methodDescription">
+This performs the same function as the  <a href="GSXMLNode.html#-[GSXMLNode_content]">-content</a>  method, but retains escaped character information (the standard five entities &lt;, &gt;, &apos;, &quot;, and &amp;) which are normally replaced with their standard equivalents (&lt;, &gt;, ', ", and &).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_firstAttribute]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLAttribute.html#GSXMLAttribute">GSXMLAttribute</a> *)</span><span class="selector"> firstAttribute </span></span></dt>
+<dd><div class="methodDescription">
+Return the first attribute in this node.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_firstChild]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> firstChild </span></span></dt>
+<dd><div class="methodDescription">
+Return the first child node of this node. 
+<pre>
+    - (GSXMLNode*) elementRecursive: (GSXMLNode*)node
+    {
+      while (node != nil)
+        {
+          if ([node type] == XML_ELEMENT_NODE)
+            {
+              return node;
+            }
+          if ([node firstChild] != nil)
+            {
+              node = [self elementRecursive: [node firstChild]];
+            }
+          else
+            {
+              node = [node next];
+            }
+        }
+      return node;
+    }
+  </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_firstChildElement]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> firstChildElement </span></span></dt>
+<dd><div class="methodDescription">
+Return the first child element of this node. If you wish to step through all children of the node (including non-element nodes) you should use the  <a href="GSXMLNode.html#-[GSXMLNode_firstChild]">-firstChild</a>  method instead.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_isElement]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isElement </span></span></dt>
+<dd><div class="methodDescription">
+Convenience method, equivalent to calling  <a href="GSXMLNode.html#-[GSXMLNode_type]">-type</a>  and comparing it with the result of passing "XML_ELEMENT_NODE" to  <a href="GSXMLNode.html#+[GSXMLNode_typeFromDescription:]">+typeFromDescription:</a>  (but faster).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_isText]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isText </span></span></dt>
+<dd><div class="methodDescription">
+Convenience method, equivalent to calling  <a href="GSXMLNode.html#-[GSXMLNode_type]">-type</a>  and comparing it with the result of passing "XML_TEXT_NODE" to  <a href="GSXMLNode.html#+[GSXMLNode_typeFromDescription:]">+typeFromDescription:</a>  (but faster).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_lib]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void*)</span><span class="selector"> lib </span></span></dt>
+<dd><div class="methodDescription">
+Returns a pointer to the raw libxml data used by this document. <br></br> Only for use by libxml experts!<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_makeAttributeWithName:value:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLAttribute.html#GSXMLAttribute">GSXMLAttribute</a> *)</span><span class="selector"> makeAttributeWithName: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">name</span></span><span class="selector"> value: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">value</span></span></span></dt>
+<dd><div class="methodDescription">
+Create and return an attribute (unless the named attribute already exists, in which case we update them <var>value</var> of the existing attribute and return it.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_makeChildWithNamespace:name:content:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> makeChildWithNamespace: </span><span class="parameter"><span class="type">(<a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a> *)</span><span class="arg">ns</span></span><span class="selector"> name: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">name</span></span><span class="selector"> content: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">content</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Creation of a new child element, added at the end of parent children list. <var>ns</var> and <var>content</var> parameters are optional (may be <var>nil</var>). If <var>content</var> is non <var>nil</var>, a child list containing the TEXTs and ENTITY_REFs node will be created. Return previous node. </p> 
+<pre>
+
+ GSXMLNode *n1, *n2;
+ GSXMLDocument *d, *d1;
+
+ d = [GSXMLDocument documentWithVersion: @"1.0"];
+ [d setRoot: [d makeNodeWithNamespace: nil
+                                 name: @"plist"
+                              content: nil]];
+ [[d root] setObject: @"0.9" forKey: @"version"];
+ n1 = [[d root] makeChildWithNamespace: nil
+                                  name: @"dict"
+                               content: nil];
+ [n1 makeChildWithNamespace: nil name: @"key" content: @"Year Of Birth"];
+ [n1 makeChildWithNamespace: nil name: @"integer" content: @"65"];
+
+ [n1 makeChildWithNamespace: nil name: @"key" content: @"Pets Names"];
+ [n1 makeChildWithNamespace: nil name: @"array" content: nil];
+
+ </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_makeComment:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> makeComment: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">content</span></span></span></dt>
+<dd><div class="methodDescription">
+Creation of a new comment element, added at the end of parent children list. 
+<pre>
+ d = [GSXMLDocument documentWithVersion: @"1.0"];
+
+ [d setRoot: [d makeNodeWithNamespace: nil name: @"plist" content: nil]];
+ [[d root] setObject: @"0.9" forKey: @"version"];
+ n1 = [[d root] makeChildWithNamespace: nil name: @"dict" content: nil];
+ [n1 makeComment: @" this is a comment "];
+ </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_makeNamespaceHref:prefix:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a> *)</span><span class="selector"> makeNamespaceHref: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">href</span></span><span class="selector"> prefix: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">prefix</span></span></span></dt>
+<dd><div class="methodDescription">
+Create a namespace attached to this node.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_makePI:content:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> makePI: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">name</span></span><span class="selector"> content: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">content</span></span></span></dt>
+<dd><div class="methodDescription">
+Creation of a new process instruction element, added at the end of parent children list. 
+<pre>
+ d = [GSXMLDocument documentWithVersion: @"1.0"];
+
+ [d setRoot: [d makeNodeWithNamespace: nil name: @"plist" content: nil]];
+ [[d root] setObject: @"0.9" forKey: @"version"];
+ n1 = [[d root] makeChildWithNamespace: nil name: @"dict" content: nil];
+ [n1 makeComment: @" this is a comment "];
+ [n1 makePI: @"pi1" content: @"this is a process instruction"];
+ </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_makeText:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> makeText: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">content</span></span></span></dt>
+<dd><div class="methodDescription">
+Creation of a new text element, added at the end of parent children list. 
+<pre>
+ d = [GSXMLDocument documentWithVersion: @"1.0"];
+
+ [d setRoot: [d makeNodeWithNamespace: nil name: @"plist" content: nil]];
+ [[d root] setObject: @"0.9" forKey: @"version"];
+ n1 = [[d root] makeChildWithNamespace: nil name: @"dict" content: nil];
+ [n1 makeText: @" this is a text "];
+ </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_name]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> name </span></span></dt>
+<dd><div class="methodDescription">
+Return the node-name<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_namespace]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a> *)</span><span class="selector"> namespace </span></span></dt>
+<dd><div class="methodDescription">
+Return the namespace of the node.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_namespaceDefinitions]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a> *)</span><span class="selector"> namespaceDefinitions </span></span></dt>
+<dd><div class="methodDescription">
+Return namespace definitions for the node<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_next]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> next </span></span></dt>
+<dd><div class="methodDescription">
+Return the next node at this level. This method can return any type of node, and it may be more convenient to use the  <a href="GSXMLNode.html#-[GSXMLNode_nextElement]">-nextElement</a>  node if you are parsing a document where you wish to ignore non-element nodes such as whitespace text separating elements.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_nextElement]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> nextElement </span></span></dt>
+<dd><div class="methodDescription">
+Returns the next element node, skipping past any other node types (such as text nodes). If there is no element node to be returned, this method returns <var>nil</var>. <br></br> NB. This method is not available in java, as the method name conflicts with that of java's Enumerator class.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_objectForKey:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> objectForKey: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">key</span></span></span></dt>
+<dd><div class="methodDescription">
+Return the attribute value for the specified <var>key</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_parent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> parent </span></span></dt>
+<dd><div class="methodDescription">
+Return the parent of this node.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_previous]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> previous </span></span></dt>
+<dd><div class="methodDescription">
+Return the previous node at this level.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_previousElement]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a> *)</span><span class="selector"> previousElement </span></span></dt>
+<dd><div class="methodDescription">
+Return the previous element node at this level. <br></br> NB. This method is not available in java, as the method name conflicts with that of java's Enumerator class.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_propertiesAsDictionaryWithKeyTransformationSel:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> propertiesAsDictionaryWithKeyTransformationSel: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">keyTransformSel</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Return attributes and values as a dictionary, but applies the specified selector to each key before adding the key and value to the dictionary. The selector must be a method of NSString taking no arguments and returning an object suitable for use as a dictionary key. </p> <p> This method exists for the use of GSWeb... it is probably not of much use elsewhere. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_setObject:forKey:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setObject: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">value</span></span><span class="selector"> forKey: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">key</span></span></span></dt>
+<dd><div class="methodDescription">
+Set (or reset) an attribute carried by a node. 
+<pre>
+   [n1 setObject: @"prop1" forKey: @"name1"];
+   [n1 setObject: @"prop2" forKey: @"name2"];
+   [n1 setObject: @"prop3" forKey: @"name3"];
+ </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_type]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> type </span></span></dt>
+<dd><div class="methodDescription">
+Return node-type. The most efficient way of testing node types is to use this method and compare the return value with a value you previously obtained using the  <a href="GSXMLNode.html#+[GSXMLNode_typeFromDescription:]">+typeFromDescription:</a>  method.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_typeDescription]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> typeDescription </span></span></dt>
+<dd><div class="methodDescription">
+Return node type as a string.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSXMLNode_setNamespace:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNamespace: </span><span class="parameter"><span class="type">(<a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a> *)</span><span class="arg">space</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the namespace of the receiver to the value specified. <br></br> Supplying a <var>nil</var> namespace removes any namespace previously set or any namespace that the node inherited from a parent when it was created.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base Additions</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="GCArray.html#GCArray">GCArray</a></li><li><a href="GCDictionary.html#GCDictionary">GCDictionary</a></li><li><a href="GCMutableArray.html#GCMutableArray">GCMutableArray</a></li><li><a href="GCMutableDictionary.html#GCMutableDictionary">GCMutableDictionary</a></li><li><a href="GCObject.html#GCObject">GCObject</a></li><li><a href="GSHTMLParser.html#GSHTMLParser">GSHTMLParser</a></li><li><a href="GSHTMLSAXHandler.html#GSHTMLSAXHandler">GSHTMLSAXHandler</a></li><li><a href="GSLazyLock.html#GSLazyLock">GSLazyLock</a></li><li><a href="GSLazyRecursiveLock.html#GSLazyRecursiveLock">GSLazyRecursiveLock</a></li><li><a href="GSSAXHandler.html#GSSAXHandler">GSSAXHandler</a></li><li><a href="GSTLSCertificateList.html#GSTLSCertificateList">GSTLSCertificateList</a></li><li><a href="GSTLSCredentials.html#GSTLSCredentials">GSTLSCredentials</a></li><li><a href="GSTLSDHParams.html#GSTLSDHParams">GSTLSDHParams</a></li><li><a href="GSTLSObject.html#GSTLSObject">GSTLSObject</a></li><li><a href="GSTLSPrivateKey.html#GSTLSPrivateKey">GSTLSPrivateKey</a></li><li><a href="GSTLSSession.html#GSTLSSession">GSTLSSession</a></li><li><a href="GSTreeSAXHandler.html#GSTreeSAXHandler">GSTreeSAXHandler</a></li><li><a href="GSXMLAttribute.html#GSXMLAttribute">GSXMLAttribute</a></li><li><a href="GSXMLDocument.html#GSXMLDocument">GSXMLDocument</a></li><li><a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a></li><li><a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a></li><li><a href="GSXMLParser.html#GSXMLParser">GSXMLParser</a></li><li><a href="GSXMLRPC.html#GSXMLRPC">GSXMLRPC</a></li><li><a href="GSXPathBoolean.html#GSXPathBoolean">GSXPathBoolean</a></li><li><a href="GSXPathContext.html#GSXPathContext">GSXPathContext</a></li><li><a href="GSXPathNodeSet.html#GSXPathNodeSet">GSXPathNodeSet</a></li><li><a href="GSXPathNumber.html#GSXPathNumber">GSXPathNumber</a></li><li><a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a></li><li><a href="GSXPathString.html#GSXPathString">GSXPathString</a></li></ul></div>
+
+<ul><li><a href="GSMime.html">GSMime (buggy documentation)</a></li></ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="GCObjectCategories.html#GCObject(Extra)">GCObject</a></li><li><a href="GSXMLDocumentCategories.html#GSXMLDocument(XSLT)">GSXMLDocument</a></li><li><a href="GSXMLRPCCategories.html#GSXMLRPC(Delegate)">GSXMLRPC</a></li><li><a href="NSArrayCategories.html#NSArray(GNUstepBase)">NSArray</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(GNUstepBase)">NSAttributedString</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstepBase)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GNUstepBase)">NSCalendarDate</a></li><li><a href="NSDataCategories.html#NSData(GNUstepBase)">NSData</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepBase)">NSFileHandle</a></li><li><a href="NSLockCategories.html#NSLock(GNUstepBase)">NSLock</a></li><li><a href="NSMutableStringCategories.html#NSMutableString(GNUstepBase)">NSMutableString</a></li><li><a href="NSNumberCategories.html#NSNumber(GNUstepBase)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstepBase)">NSObject</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstepBase)">NSProcessInfo</a></li><li><a href="NSRecursiveLockCategories.html#NSRecursiveLock(GNUstepBase)">NSRecursiveLock</a></li><li><a href="NSStringCategories.html#NSString(GNUstepBase)">NSString</a></li><li><a href="NSTaskCategories.html#NSTask(GNUstepBase)">NSTask</a></li><li><a href="NSThreadCategories.html#NSThread(GNUstepBase)">NSThread</a></li><li><a href="NSURLCategories.html#NSURL(GNUstepBase)">NSURL</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

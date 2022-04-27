@@ -1,0 +1,536 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui (Application Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSComboBoxCell</h2>NSComboBoxCell : <a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a><div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Gerrit van Dyk Quentin Mathe </td></tr><tr><th>Declared in</th><td>AppKit/NSComboBoxCell.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><br></br> <p> No special instructions to use <a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a> or text to detail the implementation. </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[NSComboBoxCell_hasVerticalScroller]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> hasVerticalScroller </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> when the combo box cell displays a vertical scroller for its list, returns <var>NO</var> otherwise. Take note that the scroller will be displayed even when the sum of the items height in the list is inferior to the minimal height of the list displayed area.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_setHasVerticalScroller:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setHasVerticalScroller: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets whether the combo box cell list displays a vertical scroller, by default it is the case. When <var>flag</var> is <var>NO</var> and the combo cell list has more items (either in its default list or from its data source) than the number returned by <var>numberOfVisibleItems</var>, only a subset of them will be displayed. Uses scroll related methods to position this subset in the combo box cell list. Take note that the scroller will be displayed even when the sum of the items height in the list is inferior to the minimal height of the list displayed area.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_intercellSpacing]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> intercellSpacing </span></span></dt>
+<dd><div class="methodDescription">
+Returns the width and the height (as the values of an NSSize variable) between each item of the combo box cell list.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_setIntercellSpacing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setIntercellSpacing: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">aSize</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the width and the height between each item of the combo box cell list to the values in <var>aSize</var> .<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_itemHeight]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> itemHeight </span></span></dt>
+<dd><div class="methodDescription">
+Returns the height of the items in the combo box cell list.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_setItemHeight:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setItemHeight: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">itemHeight</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the height of the items in the combo box cell list to <var>itemHeight</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_numberOfVisibleItems]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> numberOfVisibleItems </span></span></dt>
+<dd><div class="methodDescription">
+Returns the maximum number of allowed items to be displayed in the combo box cell list.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_setNumberOfVisibleItems:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNumberOfVisibleItems: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">visibleItems</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the maximum number of allowed items to be displayed in the combo box cell list.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_reloadData]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> reloadData </span></span></dt>
+<dd><div class="methodDescription">
+Marks the combo box cell in order to have its items list reloaded in the case it uses a data source, and to have it redisplayed.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_noteNumberOfItemsChanged]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> noteNumberOfItemsChanged </span></span></dt>
+<dd><div class="methodDescription">
+Informs the combo box cell that the number of items in its data source has changed, in order to permit to the scrollers in its displayed list being updated without needing the reload of the data. It is recommended to use this method with a data source that continually receives data in the background, to keep the the combo box cell responsive to the user while the data is received. Take a look at the <var>NSComboBoxDataSource</var> informal protocol specification to know more on the messages <a href="NSComboBox.html#NSComboBox">NSComboBox</a> sends to its data source.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_usesDataSource]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> usesDataSource </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> when the combo box cell uses a data source (which is external) to populate its items list, otherwise returns <var>NO</var> in the case it uses its default list.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_setUsesDataSource:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setUsesDataSource: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets according to <var>flag</var> whether the combo box cell uses a data source (which is external) to populate its items list.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_scrollItemAtIndexToTop:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> scrollItemAtIndexToTop: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Scrolls the combo box cell list vertically in order to have the item at <var>index</var> in the closest position relative to the top. There is no need to have the list displayed when this method is invoked.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_scrollItemAtIndexToVisible:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> scrollItemAtIndexToVisible: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Scrolls the combo box cell list vertically in order to have the item at <var>index</var> visible. There is no need to have the list displayed when this method is invoked.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_selectItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> selectItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Selects the combo box cell list row at <var>index</var>. Take note no changes occurs in the combo box cell list when this method is called. Posts an NSComboBoxSelectionDidChangeNotification to the default notification center when there is a new selection different from the previous one.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_deselectItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> deselectItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Deselects the combo box cell list row at <var>index</var> in the case this row is selected. Posts an NSComboBoxSelectionDidChangeNotification to the default notification center, when there is a new selection.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_indexOfSelectedItem]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfSelectedItem </span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of the selected item in the combo box cell list or -1 when there is no selection, the selected item can be related to the data source object in the case <var>usesDataSource</var> returns <var>YES</var> else to the default items list.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_numberOfItems]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> numberOfItems </span></span></dt>
+<dd><div class="methodDescription">
+Returns the number of items in the the combo box cell list, the numbers of items can be be related to the data source object in the case <var>usesDataSource</var> returns <var>YES</var> else to the default items list.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_dataSource]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> dataSource </span></span></dt>
+<dd><div class="methodDescription">
+Returns the combo box cell data source object which is reponsible to provide the data to be displayed. To know how to implement a data source object, take a look at the NSComboBoxDataSource informal protocol description. In the case <var>usesDataSource</var> returns <var>NO</var>, this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_setDataSource:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDataSource: </span><span class="parameter"><span class="type">(id)</span><span class="arg">aSource</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the combo box cell data source to <var>aSource</var>. Just calling this method doesn't set <var>usesDataSource</var> to return <var>YES</var>, you must call <var>setUsesDataSource:</var> with <var>YES</var> before or a warning will be logged. To know how to implement a data source objects, take a look at the NSComboBoxDataSource informal protocol description. When <var>aSource</var> doesn't respond to the methods <var>numberOfItemsInComboBox:</var> <var>comboBox:objectValueForItemAtIndex:</var>, this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_addItemWithObjectValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addItemWithObjectValue: </span><span class="parameter"><span class="type">(id)</span><span class="arg">object</span></span></span></dt>
+<dd><div class="methodDescription">
+Adds an item to the combo box cell default items list which is used when <var>usesDataSource</var> returns <var>NO</var>. In the case <var>usesDataSource</var> returns <var>YES</var> , this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_addItemsWithObjectValues:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addItemsWithObjectValues: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">objects</span></span></span></dt>
+<dd><div class="methodDescription">
+Adds several items in an array to the combo box cell default items list which is used when <var>usesDataSource</var> returns <var>NO</var>. In the case <var>usesDataSource</var> returns <var>YES</var>, this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_insertItemWithObjectValue:atIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> insertItemWithObjectValue: </span><span class="parameter"><span class="type">(id)</span><span class="arg">object</span></span><span class="selector"> atIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Inserts an item in the combo box cell default items list which is used when <var>usesDataSource</var> returns <var>NO</var>. In the case <var>usesDataSource</var> returns <var>YES</var> , this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_removeItemWithObjectValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeItemWithObjectValue: </span><span class="parameter"><span class="type">(id)</span><span class="arg">object</span></span></span></dt>
+<dd><div class="methodDescription">
+Removes an item in the combo box cell default items list which is used when <var>usesDataSource</var> returns <var>NO</var>. In the case <var>usesDataSource</var> returns <var>YES</var> , this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_removeItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Removes the item with the specified <var>index</var> in the combo box cell default items list which is used when <var>usesDataSource</var> returns <var>NO</var>. In the case <var>usesDataSource</var> returns <var>YES</var> , this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_removeAllItems]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeAllItems </span></span></dt>
+<dd><div class="methodDescription">
+Removes all the items in the combo box cell default items list which is used when <var>usesDataSource</var> returns <var>NO</var>. In the case <var>usesDataSource</var> returns <var>YES</var>, this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_selectItemWithObjectValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> selectItemWithObjectValue: </span><span class="parameter"><span class="type">(id)</span><span class="arg">object</span></span></span></dt>
+<dd><div class="methodDescription">
+Selects the first item in the default combo box cell list which is equal to <var>object</var>. In the case <var>usesDataSource</var> returns <var>YES</var>, this method logs a warning. Take note that this method doesn't update the text field part value. Posts an NSComboBoxSelectionDidChange notification to the default notification center when the new selection is different than the previous one.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_itemObjectValueAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> itemObjectValueAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the object value at <var>index</var> within combo box cell default items list. When the <var>index</var> is beyond the end of the list, an NSRangeException is raised. In the case <var>usesDataSource</var> returns <var>YES</var> , this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_objectValueOfSelectedItem]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> objectValueOfSelectedItem </span></span></dt>
+<dd><div class="methodDescription">
+Returns the object value of the selected item in the combo box cell default items list or <var>nil</var> when there is no selection. In the case <var>usesDataSource</var> returns <var>YES</var>, this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_indexOfItemWithObjectValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfItemWithObjectValue: </span><span class="parameter"><span class="type">(id)</span><span class="arg">object</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the lowest index associated with a value in the combo box cell default items list, which is equal to <var>object</var>, and returns NSNotFound when there is no such value. In the case <var>usesDataSource</var> returns <var>YES</var> , this method logs a warning.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_objectValues]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> objectValues </span></span></dt>
+<dd><div class="methodDescription">
+Returns the combo box cell default items list in an array.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_trackMouse:inRect:ofView:untilMouseUp:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> trackMouse: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span><span class="selector"> inRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> ofView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span><span class="selector"> untilMouseUp: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Overrides <a href="NSCell.html#NSCell">NSCell</a> <var>trackMouse:inRect:ofView:untilMouseUp:</var> method to establish a new method behavior. In the case <var>flag</var> is <var>NO</var>, returns <var>NO</var> when the mouse down occurs in the text cell part or when the mouse down occurs in the button cell part followed by a mouse up outside, otherwise returns <var>YES</var> (when both the mouse down and the mouse up occurs in the button cell part). In the case <var>flag</var> is <var>YES</var>, returns <var>NO</var> when the mouse occurs in the text cell part, otherwise returns <var>YES</var> (when the mouse down occurs in the button cell part).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_completedString:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> completedString: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">substring</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns a string by looking in the combo box cell list for an item wich starts with <var>substring</var> , or <var>nil</var> when there is no such string. <var>substring</var> is equal to what the user entered in the text field part. You rarely needs to call this method explicitly in your code. By default, the implementation of this method first checks whether the combo box cell uses a data source and whether the data source responds to <var>comboBox:completedString:</var> or <var>comboBoxCell:completedString:</var>. When it is the case, it uses this method to return <var>str</var>, else this method goes through the combo box cell items one by one and returns the first item found starting with <var>substring</var>. In the case, you want another behavior, you can override this method without need to call the superclass method.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_setCompletes:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCompletes: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">completes</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets whether the combo box cell automatic completion is active or not. The automatic completion tries to complete what the user types in the text field part, it tries to complete only when the the user adds characters at the end of the string, not when it deletes characters or when the insertion point precedes the end of the string. To do the automatic completion, the <var>completedString:</var> method is called, and when the returned string is longer than the current one in the text field, the completion occurs and the completed part gets selected.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_completes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> completes </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> when the combo box cell automatic completion is active, returns <var>NO</var> otherwise. Take a look at the <var>setCompletes:</var> method documentation to know how the automatic completion works.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_isButtonBordered]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isButtonBordered </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSComboBoxCell_setButtonBordered:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setButtonBordered: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui (Application Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSActionCell.html#NSActionCell">NSActionCell</a></li><li><a href="NSBezierPath.html#NSBezierPath">NSBezierPath</a></li><li><a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a></li><li><a href="NSBox.html#NSBox">NSBox</a></li><li><a href="NSBrowser.html#NSBrowser">NSBrowser</a></li><li><a href="NSBrowserCell.html#NSBrowserCell">NSBrowserCell</a></li><li><a href="NSButton.html#NSButton">NSButton</a></li><li><a href="NSButtonCell.html#NSButtonCell">NSButtonCell</a></li><li><a href="NSCachedImageRep.html#NSCachedImageRep">NSCachedImageRep</a></li><li><a href="NSCell.html#NSCell">NSCell</a></li><li><a href="NSClipView.html#NSClipView">NSClipView</a></li><li><a href="NSColor.html#NSColor">NSColor</a></li><li><a href="NSColorList.html#NSColorList">NSColorList</a></li><li><a href="NSColorPanel.html#NSColorPanel">NSColorPanel</a></li><li><a href="NSColorPicker.html#NSColorPicker">NSColorPicker</a></li><li><a href="NSColorWell.html#NSColorWell">NSColorWell</a></li><li><a href="NSComboBox.html#NSComboBox">NSComboBox</a></li><li><a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a></li><li><a href="NSControl.html#NSControl">NSControl</a></li><li><a href="NSCursor.html#NSCursor">NSCursor</a></li><li><a href="NSCustomImageRep.html#NSCustomImageRep">NSCustomImageRep</a></li><li><a href="NSDataLink.html#NSDataLink">NSDataLink</a></li><li><a href="NSDataLinkManager.html#NSDataLinkManager">NSDataLinkManager</a></li><li><a href="NSDataLinkPanel.html#NSDataLinkPanel">NSDataLinkPanel</a></li><li><a href="NSDocument.html#NSDocument">NSDocument</a></li><li><a href="NSDocumentController.html#NSDocumentController">NSDocumentController</a></li><li><a href="NSDrawer.html#NSDrawer">NSDrawer</a></li><li><a href="NSDrawerDelegate.html#NSDrawerDelegate">NSDrawerDelegate</a></li><li><a href="NSEPSImageRep.html#NSEPSImageRep">NSEPSImageRep</a></li><li><a href="NSEvent.html#NSEvent">NSEvent</a></li><li><a href="NSFont.html#NSFont">NSFont</a></li><li><a href="NSFontManager.html#NSFontManager">NSFontManager</a></li><li><a href="NSFontPanel.html#NSFontPanel">NSFontPanel</a></li><li><a href="NSForm.html#NSForm">NSForm</a></li><li><a href="NSFormCell.html#NSFormCell">NSFormCell</a></li><li><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a></li><li><a href="NSHelpManager.html#NSHelpManager">NSHelpManager</a></li><li><a href="NSHelpPanel.html#NSHelpPanel">NSHelpPanel</a></li><li><a href="NSImage.html#NSImage">NSImage</a></li><li><a href="NSImageCell.html#NSImageCell">NSImageCell</a></li><li><a href="NSImageRep.html#NSImageRep">NSImageRep</a></li><li><a href="NSImageView.html#NSImageView">NSImageView</a></li><li><a href="NSInputManager.html#NSInputManager">NSInputManager</a></li><li><a href="NSInputServer.html#NSInputServer">NSInputServer</a></li><li><a href="NSLayoutManager.html#NSLayoutManager">NSLayoutManager</a></li><li><a href="NSMatrix.html#NSMatrix">NSMatrix</a></li><li><a href="NSMenu.html#NSMenu">NSMenu</a></li><li><a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a></li><li><a href="NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="NSMutableParagraphStyle.html#NSMutableParagraphStyle">NSMutableParagraphStyle</a></li><li><a href="NSNib.html#NSNib">NSNib</a></li><li><a href="NSOpenGLContext.html#NSOpenGLContext">NSOpenGLContext</a></li><li><a href="NSOpenGLPixelFormat.html#NSOpenGLPixelFormat">NSOpenGLPixelFormat</a></li><li><a href="NSOpenGLView.html#NSOpenGLView">NSOpenGLView</a></li><li><a href="NSOpenPanel.html#NSOpenPanel">NSOpenPanel</a></li><li><a href="NSOutlineView.html#NSOutlineView">NSOutlineView</a></li><li><a href="NSPageLayout.html#NSPageLayout">NSPageLayout</a></li><li><a href="NSPanel.html#NSPanel">NSPanel</a></li><li><a href="NSParagraphStyle.html#NSParagraphStyle">NSParagraphStyle</a></li><li><a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a></li><li><a href="NSPopUpButtonCell.html#NSPopUpButtonCell">NSPopUpButtonCell</a></li><li><a href="NSPrinter.html#NSPrinter">NSPrinter</a></li><li><a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a></li><li><a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a></li><li><a href="NSPrintPanel.html#NSPrintPanel">NSPrintPanel</a></li><li><a href="NSProgressIndicator.html#NSProgressIndicator">NSProgressIndicator</a></li><li><a href="NSResponder.html#NSResponder">NSResponder</a></li><li><a href="NSRulerMarker.html#NSRulerMarker">NSRulerMarker</a></li><li><a href="NSRulerView.html#NSRulerView">NSRulerView</a></li><li><a href="NSSavePanel.html#NSSavePanel">NSSavePanel</a></li><li><a href="NSScreen.html#NSScreen">NSScreen</a></li><li><a href="NSScroller.html#NSScroller">NSScroller</a></li><li><a href="NSScrollView.html#NSScrollView">NSScrollView</a></li><li><a href="NSSecureTextField.html#NSSecureTextField">NSSecureTextField</a></li><li><a href="NSSecureTextFieldCell.html#NSSecureTextFieldCell">NSSecureTextFieldCell</a></li><li><a href="NSSelection.html#NSSelection">NSSelection</a></li><li><a href="NSSlider.html#NSSlider">NSSlider</a></li><li><a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a></li><li><a href="NSSound.html#NSSound">NSSound</a></li><li><a href="NSSpellChecker.html#NSSpellChecker">NSSpellChecker</a></li><li><a href="NSSplitView.html#NSSplitView">NSSplitView</a></li><li><a href="NSStepper.html#NSStepper">NSStepper</a></li><li><a href="NSStepperCell.html#NSStepperCell">NSStepperCell</a></li><li><a href="NSTableColumn.html#NSTableColumn">NSTableColumn</a></li><li><a href="NSTableHeaderCell.html#NSTableHeaderCell">NSTableHeaderCell</a></li><li><a href="NSTableHeaderView.html#NSTableHeaderView">NSTableHeaderView</a></li><li><a href="NSTableView.html#NSTableView">NSTableView</a></li><li><a href="NSTabView.html#NSTabView">NSTabView</a></li><li><a href="NSTabViewItem.html#NSTabViewItem">NSTabViewItem</a></li><li><a href="NSText.html#NSText">NSText</a></li><li><a href="NSTextAttachment.html#NSTextAttachment">NSTextAttachment</a></li><li><a href="NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="NSTextContainer.html#NSTextContainer">NSTextContainer</a></li><li><a href="NSTextField.html#NSTextField">NSTextField</a></li><li><a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a></li><li><a href="NSTextStorage.html#NSTextStorage">NSTextStorage</a></li><li><a href="NSTextTab.html#NSTextTab">NSTextTab</a></li><li><a href="NSTextView.html#NSTextView">NSTextView</a></li><li><a href="NSToolbar.html#NSToolbar">NSToolbar</a></li><li><a href="NSToolbarItem.html#NSToolbarItem">NSToolbarItem</a></li><li><a href="NSView.html#NSView">NSView</a></li><li><a href="NSWindow.html#NSWindow">NSWindow</a></li><li><a href="NSWindowController.html#NSWindowController">NSWindowController</a></li><li><a href="NSWorkspace.html#NSWorkspace">NSWorkspace</a></li></ul></div>
+
+<ul>
+    <li><a href="NSPasteboard.html">NSPasteboard (buggy documentation)</a></li>
+    <li><a href="NSApplication.html">NSApplication (buggy documentation)</a></li>
+</ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSImageDelegateProtocol.html#GSImageDelegateProtocol">GSImageDelegateProtocol</a></li><li><a href="_NSComboBoxCellDataSource.html#NSComboBoxCellDataSource">NSComboBoxCellDataSource</a></li><li><a href="_NSControlTextEditingDelegate.html#NSControlTextEditingDelegate">NSControlTextEditingDelegate</a></li><li><a href="_NSInputServerMouseTracker.html#NSInputServerMouseTracker">NSInputServerMouseTracker</a></li><li><a href="_NSInputServiceProvider.html#NSInputServiceProvider">NSInputServiceProvider</a></li><li><a href="_NSMatrixDelegate.html#NSMatrixDelegate">NSMatrixDelegate</a></li><li><a href="_NSMenuDelegate.html#NSMenuDelegate">NSMenuDelegate</a></li><li><a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="_NSMenuValidation.html#NSMenuValidation">NSMenuValidation</a></li><li><a href="_NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="_NSOpenSavePanelDelegate.html#NSOpenSavePanelDelegate">NSOpenSavePanelDelegate</a></li><li><a href="_NSOutlineViewDataSource.html#NSOutlineViewDataSource">NSOutlineViewDataSource</a></li><li><a href="_NSOutlineViewDelegate.html#NSOutlineViewDelegate">NSOutlineViewDelegate</a></li><li><a href="_NSPrintPanelAccessorizing.html#NSPrintPanelAccessorizing">NSPrintPanelAccessorizing</a></li><li><a href="_NSTableViewDataSource.html#NSTableViewDataSource">NSTableViewDataSource</a></li><li><a href="_NSTableViewDelegate.html#NSTableViewDelegate">NSTableViewDelegate</a></li><li><a href="_NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="_NSTextFieldDelegate.html#NSTextFieldDelegate">NSTextFieldDelegate</a></li><li><a href="_NSTextInput.html#NSTextInput">NSTextInput</a></li><li><a href="_NSTextViewDelegate.html#NSTextViewDelegate">NSTextViewDelegate</a></li><li><a href="_NSWindowDelegate.html#NSWindowDelegate">NSWindowDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSAffineTransformCategories.html#NSAffineTransform(GNUstep)">NSAffineTransform</a></li><li><a href="NSApplicationCategories.html#NSApplication(NSColorPanel)">NSApplication</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(AppKit)">NSAttributedString</a></li><li><a href="NSBitmapImageRepCategories.html#NSBitmapImageRep(GNUstepExtension)">NSBitmapImageRep</a></li><li><a href="NSBundleCategories.html#NSBundle(NSHelpManager)">NSBundle</a></li><li><a href="NSCellCategories.html#NSCell(PrivateMethods)">NSCell</a></li><li><a href="NSCoderCategories.html#NSCoder(NSCoderAdditions)">NSCoder</a></li><li><a href="NSColorCategories.html#NSColor(GSQuartz)">NSColor</a></li><li><a href="NSFontCategories.html#NSFont(GNUstep)">NSFont</a></li><li><a href="NSGraphicsContextCategories.html#NSGraphicsContext(GNUstep)">NSGraphicsContext</a></li><li><a href="NSImageCategories.html#NSImage(GSQuartz)">NSImage</a></li><li><a href="NSImageRepCategories.html#NSImageRep(GSQuartz)">NSImageRep</a></li><li><a href="NSImageViewCategories.html#NSImageView(GNUstep)">NSImageView</a></li><li><a href="NSLayoutManagerCategories.html#NSLayoutManager(drawing)">NSLayoutManager</a></li><li><a href="NSMenuCategories.html#NSMenu(GNUstepExtra)">NSMenu</a></li><li><a href="NSMenuItemCategories.html#NSMenuItem(GNUstepExtra)">NSMenuItem</a></li><li><a href="NSMutableAttributedStringCategories.html#NSMutableAttributedString(AppKit)">NSMutableAttributedString</a></li><li><a href="NSObjectCategories.html#NSObject(NSComboBoxCellDataSource)">NSObject</a></li><li><a href="NSPrinterCategories.html#NSPrinter(PPDParsing)">NSPrinter</a></li><li><a href="NSPrintOperationCategories.html#NSPrintOperation(Private)">NSPrintOperation</a></li><li><a href="NSPrintPanelCategories.html#NSPrintPanel(Private)">NSPrintPanel</a></li><li><a href="NSProgressIndicatorCategories.html#NSProgressIndicator(GNUstepExtensions)">NSProgressIndicator</a></li><li><a href="NSResponderCategories.html#NSResponder(OptionalActionMethods)">NSResponder</a></li><li><a href="NSSplitViewCategories.html#NSSplitView(GNUstepExtra)">NSSplitView</a></li><li><a href="NSStringCategories.html#NSString(NSStringDrawing)">NSString</a></li><li><a href="NSTableViewCategories.html#NSTableView(GNUPrivate)">NSTableView</a></li><li><a href="NSTabViewItemCategories.html#NSTabViewItem(GNUstep)">NSTabViewItem</a></li><li><a href="NSTextCategories.html#NSText(GNUstepExtensions)">NSText</a></li><li><a href="NSTextFieldCellCategories.html#NSTextFieldCell(PrivateMethods)">NSTextFieldCell</a></li><li><a href="NSTextStorageCategories.html#NSTextStorage(Scripting)">NSTextStorage</a></li><li><a href="NSTextViewCategories.html#NSTextView(GSTextViewSync)">NSTextView</a></li><li><a href="NSViewCategories.html#NSView(PrivateMethods)">NSView</a></li><li><a href="NSWindowCategories.html#NSWindow(GNUstepBackend)">NSWindow</a></li><li><a href="NSWorkspaceCategories.html#NSWorkspace(GNUstep)">NSWorkspace</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

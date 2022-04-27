@@ -1,0 +1,1046 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocPageWeaver class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocPageWeaver">DocPageWeaver class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      
+      A documentation builder that produce pages based on the input
+      content.
+    
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2010 Quentin Mathe</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the DocPageWeaver class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the DocSourceParsing
+        protocol</a>
+        </li>
+        <li>
+          <a href="#003000000000">Software documentation for the DocWeaving protocol</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocPageWeaver class
+      </a></h1>
+    <h2><a name="class$DocPageWeaver">DocPageWeaver</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocPageWeaver.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="#protocol$(DocWeaving)">DocWeaving</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Page Generation
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocPageWeaver is DocGenerator core class that
+            controls the documentation generation process.
+            <br /> <em>etdocgen</em> tool creates a new page
+            weaver based on the options and arguments the user
+            provides on the command-line, then triggers the
+            page generation with
+            <a rel="gsdoc" href="#method$DocPageWeaver-weaveAllPages">
+              -weaveAllPages
+            </a>
+
+            which in turn returns the final pages. See DocPage
+            API to understand how these pages can be turned into
+            HTML.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            You initialize a new page weaver with various input
+            documentation source files and an optional
+            template file. Based on the source file types,
+            DocPageWeaver looks up a parser. When no
+            parser is available, it hands the file content
+            directly to a new documentation page (see DocPage
+            that provides a template-based substitution
+            mechanism). Otherwise it delegates the source
+            file parsing to the right parser e.g. GSDocParser,
+            which will instantiate new doc elements and weave
+            them through the DocWeaving protocol as the parsing
+            goes.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocPageWeaver is free to weave multiple pages
+            from a single source file, or gather doc elements and
+            consolidate them onto a common page. <br /> So
+            in addition to act as coordinator in the doc generation
+            process, DocPageWeaver implements a strategy to
+            organize the doc elements into a book-like
+            structure.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            By invoking
+            <a rel="gsdoc" href="#method$DocPageWeaver-weaveNewPage">
+              -weaveNewPage
+            </a>
+
+            based on some precise criterias (e.g.
+            <a rel="gsdoc" href="#method$(DocWeaving)-weaveClassNamed$superclassName$">
+              -weaveClassNamed:superclassName:
+            </a>
+
+            was called), DocPageWeaver defines page generation
+            rules which correspond to a precise book-like
+            structure. <br /> The doc element arrangement on
+            each weaved page is delegated to DocPage class and
+            subclasses.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Subclassing altough experimental and untested,
+            can be used to customize the existing page generation
+            strategy or implement a new one.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver+additionalSourceFileTypes">+additionalSourceFileTypes</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver+markdownFileTypes">+markdownFileTypes</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver+parserClassForFileType$">+parserClassForFileType:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-currentClassName">-currentClassName</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-currentHeader">-currentHeader</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-currentPage">-currentPage</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-currentSourceFile">-currentSourceFile</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-initWithParserSourceDirectory$fileTypes$rawSourceDirectories$additionalSourceFiles$templateFile$">-initWithParserSourceDirectory:fileTypes:rawSourceDirectories:additionalSourceFiles:templateFile:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-initWithSourceFiles$templateFile$">-initWithSourceFiles:templateFile:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-pathForRawSourceFileNamed$">-pathForRawSourceFileNamed:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-setExternalMappingFile$">-setExternalMappingFile:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-setMenuFile$">-setMenuFile:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-templateFileForSourceFile$">-templateFileForSourceFile:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-weaveAllPages">-weaveAllPages</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-weaveCurrentSourcePages">-weaveCurrentSourcePages</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-weaveNewPage">-weaveNewPage</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-weaveOverviewFile">-weaveOverviewFile</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$DocPageWeaver-weavePageForCategoryNamed$className$">-weavePageForCategoryNamed:className:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocPageWeaver+additionalSourceFileTypes">additionalSourceFileTypes&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>additionalSourceFileTypes</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns all the supported file extensions for
+              additional documentation files.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              This includes
+              <a rel="gsdoc" href="#method$DocPageWeaver+markdownFileTypes">
+                +markdownFileTypes
+              </a>
+
+              plus.html.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver+markdownFileTypes">markdownFileTypes&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>markdownFileTypes</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns all the supported Markdown file
+              extensions (.md and.text).
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver+parserClassForFileType$">parserClassForFileType:&nbsp;</a></h3>
+    + (Class) <b>parserClassForFileType:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aFileExtension;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Parser Choice
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the right parser class or Nil for the
+              given file type.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              For <em>gsdoc</em>, returns GSDocParser.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-currentClassName">currentClassName&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>currentClassName</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the name of the class whose documentation
+              is currently parsed from
+              <a rel="gsdoc" href="#method$DocPageWeaver-currentSourceFile">
+                -currentSourceFile
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-currentHeader">currentHeader&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHeader.html#class$DocHeader">DocHeader</a>*) <b>currentHeader</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the header of the page currently weaved.
+              See
+              <a rel="gsdoc" href="#method$DocPageWeaver-currentPage">
+                -currentPage
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-currentPage">currentPage&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocPage.html#class$DocPage">DocPage</a>*) <b>currentPage</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the documentation page currently weaved.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-currentSourceFile">currentSourceFile&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>currentSourceFile</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Progress and Status
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the documentation source file currently
+              parsed.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-initWithParserSourceDirectory$fileTypes$rawSourceDirectories$additionalSourceFiles$templateFile$">initWithParserSourceDirectory:&nbsp;fileTypes:&nbsp;rawSourceDirectories:&nbsp;additionalSourceFiles:&nbsp;templateFile:&nbsp;</a></h3>
+    - (id) <b>initWithParserSourceDirectory:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aParserDirPath<b> fileTypes:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)fileExtensions<b> rawSourceDirectories:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)otherDirPaths<b> additionalSourceFiles:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)additionalSourceFiles<b> templateFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aTemplatePath;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Initialization
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Initializes and returns a new weaver, which
+              will attempt to gather and parse every files from
+              the first directory argument that matches the given
+              file types, and will look up additional files in
+              HTML or Markdown to be directly inserted without
+              parsing in the second directory argument.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              A page template file, usually in HTML can be passed as
+              the last argument. Each DocPage class or subclass
+              instantiated by DocPageWeaver will be
+              initialized with this template, unless
+              <a rel="gsdoc" href="#method$DocPageWeaver-templateFileForSourceFile$">
+                -templateFileForSourceFile:
+              </a>
+
+              returns a custom one.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              TODO: Specify the argument constraints precisely
+              and clarify the template file use (it is currently
+              ignored all the time).
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-initWithSourceFiles$templateFile$">initWithSourceFiles:&nbsp;templateFile:&nbsp;</a></h3>
+    - (id) <b>initWithSourceFiles:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)paths<b> templateFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aTemplatePath;<br />
+This is a designated initialiser for the class.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Initializes and returns a new weaver that
+              will attempt to process and parse the given source
+              file <var>paths</var> based on their file types.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              A page template file, usually in HTML can be passed as
+              the last argument. Each DocPage class or subclass
+              instantiated by DocPageWeaver will be
+              initialized with this template, unless
+              templateFileForSourceFile:
+              returns a custom one.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              TODO: Specify the argument constraints precisely
+              and clarify the template file use (it is currently
+              ignored all the time).
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-pathForRawSourceFileNamed$">pathForRawSourceFileNamed:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>pathForRawSourceFileNamed:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the first source file path that matches
+              the given file name.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The source paths are the ones passed to
+              <a rel="gsdoc" href="#method$DocPageWeaver-initWithSourceFiles$templateFile$">-initWithSourceFiles:templateFile:</a>
+.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-setExternalMappingFile$">setExternalMappingFile:&nbsp;</a></h3>
+    - (void) <b>setExternalMappingFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aMappingPath;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Sets the external index file path.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-setMenuFile$">setMenuFile:&nbsp;</a></h3>
+    - (void) <b>setMenuFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aMenuPath;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Additional Sources
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Sets the menu template file path.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-templateFileForSourceFile$">templateFileForSourceFile:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>templateFileForSourceFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSourceFile;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the page template file path to be used to
+              initialize new DocPage objects when processing
+              the given source file.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              By default, returns the path to
+              <em>etoile-documentation-template.html</em> for a
+              <em>gsdoc</em> file, otherwise returns the path to
+              <em>etoile-documentation-markdown-template.html</em>
+              .
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Can be overriden to return custom page templates
+              based on the file types or even some other
+              criterias (for example the page weaver state).
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-weaveAllPages">weaveAllPages&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>weaveAllPages</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Weaving Pages
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Weaves one or more pages from all the source
+              files.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The number of weaved pages is unrelated to the number
+              of source files.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-weaveCurrentSourcePages">weaveCurrentSourcePages&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>weaveCurrentSourcePages</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Weaves one or more pages for the current source
+              file.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              You should usually call
+              <a rel="gsdoc" href="#method$DocPageWeaver-weaveAllPages">
+                -weaveAllPages
+              </a>
+
+              rather than this method directly.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See also
+              <a rel="gsdoc" href="#method$DocPageWeaver-currentSourceFile">
+                -currentSourceFile
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-weaveNewPage">weaveNewPage&nbsp;</a></h3>
+    - (void) <b>weaveNewPage</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Starts a new page into which doc elements can be
+              weaved.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Each time,
+              <a rel="gsdoc" href="#method$DocPageWeaver-weaveNewPage">
+                -weaveNewPage
+              </a>
+
+              is called,
+              <a rel="gsdoc" href="#method$DocPageWeaver-currentPage">
+                -currentPage
+              </a>
+
+              changes.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-weaveOverviewFile">weaveOverviewFile&nbsp;</a></h3>
+    - (void) <b>weaveOverviewFile</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Inserts an overview from a file if available,
+              into the current page.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPageWeaver-weavePageForCategoryNamed$className$">weavePageForCategoryNamed:&nbsp;className:&nbsp;</a></h3>
+    - (void) <b>weavePageForCategoryNamed:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aCategoryName<b> className:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClassName;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Consolidated Symbol Pages
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Looks up the page on which the given category
+              should be consolidated, if needed creates it, then
+              makes it the current page.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              By default, looks up the page that regroups the
+              categories on the class that appears in the
+              category symbol.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The category symbol syntax is
+              <em>ClassName(CategoryName)</em>.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="002000000000">
+        Software documentation for the DocSourceParsing
+        protocol
+      </a></h1>
+    <h2><a name="protocol$(DocSourceParsing)">DocSourceParsing</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocPageWeaver.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @abstract A weaver such as DocPageWeaver controls
+            a documentation source parser through this protocol.
+            @group Weaving and Parsing
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Any documentation source parser must implement this
+            protocol to let the weaver initiates the parsing.
+            In addition, the parser must reports its parsing result
+            to the weaver through the DocWeaving protocol. <br />
+            Parsing usually involves to build new DocElement
+            subclass instances and hand them to the weaver.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocSourceParsing)-initWithSourceFile$additionalParserFiles$">-initWithSourceFile:additionalParserFiles:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocSourceParsing)-parseAndWeave">-parseAndWeave</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocSourceParsing)-setWeaver$">-setWeaver:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocSourceParsing)-weaver">-weaver</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(DocSourceParsing)-initWithSourceFile$additionalParserFiles$">initWithSourceFile:&nbsp;additionalParserFiles:&nbsp;</a></h3>
+    - (id) <b>initWithSourceFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSourceFile<b> additionalParserFiles:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)additionalFiles;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocSourceParsing)-parseAndWeave">parseAndWeave&nbsp;</a></h3>
+    - (void) <b>parseAndWeave</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocSourceParsing)-setWeaver$">setWeaver:&nbsp;</a></h3>
+    - (void) <b>setWeaver:</b> (id<<a rel="gsdoc" href="#protocol$(DocWeaving)">DocWeaving</a>>)aDocWeaver;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocSourceParsing)-weaver">weaver&nbsp;</a></h3>
+    - (id<<a rel="gsdoc" href="#protocol$(DocWeaving)">DocWeaving</a>>) <b>weaver</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="003000000000">
+        Software documentation for the DocWeaving protocol
+      </a></h1>
+    <h2><a name="protocol$(DocWeaving)">DocWeaving</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocPageWeaver.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSObject)">NSObject</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Weaving and Parsing @abstract A documentation
+            source parser reports parsing result to a weaver
+            through this protocol.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Any weaver must implement this protocol. <br /> When
+            required, multiple weavers can be chained. For
+            instance, parsing GSDoc documents requires to
+            reorder the parsed declarations with
+            DocDeclarationReorder before handing
+            them to DocPageWeaver. Hence the weaver set on
+            GSDocParser is then a DocDeclarationReorderer
+            instance rather than a DocPageWeaver one.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Each time a documentation source document (e.g. a
+            gsdoc file) has been parsed, the parser must invoke
+            <a rel="gsdoc" href="#method$(DocWeaving)-finishWeaving">
+              -finishWeaving
+            </a>
+
+            .
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            New page creation is entirely up to the weaver e.g. in
+            reaction to a DocWeaving method called back by the
+            parser.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-currentHeader">-currentHeader</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-finishWeaving">-finishWeaving</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveCategoryNamed$className$isInformalProtocol$">-weaveCategoryNamed:className:isInformalProtocol:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveClassNamed$superclassName$">-weaveClassNamed:superclassName:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveConstant$">-weaveConstant:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveFunction$">-weaveFunction:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveHeader$">-weaveHeader:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveIVar$">-weaveIVar:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveMacro$">-weaveMacro:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveMethod$">-weaveMethod:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveOtherDataType$">-weaveOtherDataType:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveProperty$">-weaveProperty:</a></li>
+      <li><a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveProtocolNamed$">-weaveProtocolNamed:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(DocWeaving)-currentHeader">currentHeader&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHeader.html#class$DocHeader">DocHeader</a>*) <b>currentHeader</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-finishWeaving">finishWeaving&nbsp;</a></h3>
+    - (void) <b>finishWeaving</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveCategoryNamed$className$isInformalProtocol$">weaveCategoryNamed:&nbsp;className:&nbsp;isInformalProtocol:&nbsp;</a></h3>
+    - (void) <b>weaveCategoryNamed:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aCategoryName<b> className:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClassName<b> isInformalProtocol:</b> (BOOL)isInformalProtocol;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveClassNamed$superclassName$">weaveClassNamed:&nbsp;superclassName:&nbsp;</a></h3>
+    - (void) <b>weaveClassNamed:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClassName<b> superclassName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSuperclassName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveConstant$">weaveConstant:&nbsp;</a></h3>
+    - (void) <b>weaveConstant:</b> (<a rel="gsdoc" href="DocCDataType.html#class$DocConstant">DocConstant</a>*)aConstant;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveFunction$">weaveFunction:&nbsp;</a></h3>
+    - (void) <b>weaveFunction:</b> (<a rel="gsdoc" href="DocFunction.html#class$DocFunction">DocFunction</a>*)aFunction;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveHeader$">weaveHeader:&nbsp;</a></h3>
+    - (void) <b>weaveHeader:</b> (<a rel="gsdoc" href="DocHeader.html#class$DocHeader">DocHeader</a>*)aHeader;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveIVar$">weaveIVar:&nbsp;</a></h3>
+    - (void) <b>weaveIVar:</b> (<a rel="gsdoc" href="DocIVar.html#class$DocIVar">DocIVar</a>*)anIVar;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveMacro$">weaveMacro:&nbsp;</a></h3>
+    - (void) <b>weaveMacro:</b> (<a rel="gsdoc" href="DocMacro.html#class$DocMacro">DocMacro</a>*)aMacro;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveMethod$">weaveMethod:&nbsp;</a></h3>
+    - (void) <b>weaveMethod:</b> (<a rel="gsdoc" href="DocMethod.html#class$DocMethod">DocMethod</a>*)aMethod;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveOtherDataType$">weaveOtherDataType:&nbsp;</a></h3>
+    - (void) <b>weaveOtherDataType:</b> (<a rel="gsdoc" href="DocCDataType.html#class$DocCDataType">DocCDataType</a>*)aDataType;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveProperty$">weaveProperty:&nbsp;</a></h3>
+    - (void) <b>weaveProperty:</b> (<a rel="gsdoc" href="DocProperty.html#class$DocProperty">DocProperty</a>*)aProperty;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(DocWeaving)-weaveProtocolNamed$">weaveProtocolNamed:&nbsp;</a></h3>
+    - (void) <b>weaveProtocolNamed:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aProtocolName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

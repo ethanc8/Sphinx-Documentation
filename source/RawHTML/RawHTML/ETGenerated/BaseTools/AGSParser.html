@@ -1,0 +1,580 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base Tools Internals</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>AGSParser...a class to get documention info from ObjC
+      source</h2>AGSParser : NSObject<div class="meta">
+<p class="metadesc"><em>This is the <a href="AGSParser.html#AGSParser">AGSParser</a> class... and some autogsdoc examples.       The <a href="AGSParser.html#AGSParser">AGSParser</a> class is designed to produce a property-list       which can be handled by AGSOutput... one class is not much       use without the other.</em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>AGSParser.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p>The <a href="AGSParser.html#AGSParser">AGSParser</a> class parses Objective-C header and source files to produce a property-list which can be handled by <a href="AGSOutput.html#AGSOutput">AGSOutput</a> .</p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[AGSParser_info]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> info </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_orderedSymbolDeclarationsByUnit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSDictionary *)</span><span class="selector"> orderedSymbolDeclarationsByUnit </span></span></dt>
+<dd><div class="methodDescription">
+Returns the methods, functions and C data types in their header declaration order, by organizing them into arrays as described below. Methods are grouped by class, category or protocol references. For example, valid keys could be <em>ClassName</em>, <em>ClassName(CategoryName)</em> and <em>(ProtocolName)</em>. Functions and C data types are grouped by header file names. For example, <em>AGParser.h</em> would a valid key. TODO: Collect functions and C data types. Only methods are currently included in the returned dictionary.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_init]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> init </span></span></dt>
+<dd><div class="methodDescription">
+Simple initialiser<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_outputs]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableArray *)</span><span class="selector"> outputs </span></span></dt>
+<dd><div class="methodDescription">
+Return the list of known output files depending on this source/header. <br></br> If there are any classes, categories, or protocols, there will be an output file for them whose name is based on the name of the header. <br></br> If there are any constants, variables, typedefs or functions, there will either be a shared output file for them (defined by a template name set in the user defaults system), or they will go in the same file as classes etc.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseComment]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> parseComment </span></span></dt>
+<dd><div class="methodDescription">
+In spite of its trivial name, this is one of the key methods - it parses and skips past comments, but it also recognizes special comments (with an additional asterisk after the start of the block comment) and extracts their contents, accumulating them into the 'comment' instance variable. <br></br> When the data provided by a comment is appended to the data stored in the 'comment' instance variable, a line break (&lt;br /&gt;)is automatically forced to separate it from the proceding info. <br></br> In addition, the first extracted documentation is checked for the prsence of file header markup, which is extracted into the 'info' dictionary. <br></br> There are various sections we can extract from the document - at most one of each. If date and version are not supplied RCS Date and Revision tags will be extracted where available.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseDeclaration]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseDeclaration </span></span></dt>
+<dd><div class="methodDescription">
+We handle struct, union, and enum declarations by skipping the stuff enclosed in curly braces. If there was an identifier after the keyword we use it as the struct name, otherwise we use '...' to denote a nameless type.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseFile:isSource:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">name</span></span><span class="selector"> isSource: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">isSource</span></span></span></dt>
+<dd><div class="methodDescription">
+If this is parsing a header file (<var>isSource</var> == <var>NO</var>) then we reset the list of known source files associated with the header before proceeding. <br></br> We initially assume that the location of a source file is the same as the header, but if there is no file at that location, we expect the source to be in the documentatation directory or the current directory instead.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseIdentifier]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> parseIdentifier </span></span></dt>
+<dd><div class="methodDescription">
+Attempt to parse an identifier/keyword (with optional whitespace in front of it). Perform mappings using the wordMap dictionary. If a mapping produces an empty string, we treat it as if we had read whitespace and try again. If we read end of data, or anything which is invalid inside an identifier, we return <var>nil</var>. If we read a GS_GENERIC... macro, we return its first argument.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseImplementation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseImplementation </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseInterface]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseInterface </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseInstanceVariables]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseInstanceVariables </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseMacro]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseMacro </span></span></dt>
+<dd><div class="methodDescription">
+Parse a macro definition... we are expected to have read #define already <br></br> It's common to have macros which don't need commenting... like the ones used to protect a header against multiple inclusion for instance. For this reason, we ignore any macro which is not preceded by a documentation comment.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseMethodIsDeclaration:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseMethodIsDeclaration: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseMethodsAreDeclarations:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseMethodsAreDeclarations: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseMethodType]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> parseMethodType </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parsePreprocessor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> parsePreprocessor </span></span></dt>
+<dd><div class="methodDescription">
+Parse a preprocessor statement, handling preprocessor conditionals in a rudimentary way. We keep track of the level of conditional nesting, and we also track the use of #ifdef and #ifndef with some well-known constants to tell us which standards are currently supported.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseProtocol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableDictionary *)</span><span class="selector"> parseProtocol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseProtocolList]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableArray *)</span><span class="selector"> parseProtocolList </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseSpace:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> parseSpace: </span><span class="parameter"><span class="type">(NSCharacterSet *)</span><span class="arg">spaceSet</span></span></span></dt>
+<dd><div class="methodDescription">
+Skip past any whitespace characters (as defined by the supplied set) including comments. <br></br> Calls parseComment if neccesary, ensuring that any documentation in comments is appended to our 'comment' ivar.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseSpace]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> parseSpace </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_parseVersion]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> parseVersion </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_reset]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> reset </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_setDeclared:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDeclared: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">name</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the <var>name</var> of the file in which classes are to be documented as being declared. The default value of this is the last part of the path of the source file being parsed.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_setDocumentInstanceVariables:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDocumentInstanceVariables: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+This method is used to enable (or disable) documentation of instance variables. If it is turned off, instance variables will not be documented.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_setDocumentAllInstanceVariables:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDocumentAllInstanceVariables: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+This method is used to enable (or disable) documentation of all instance variables. If it is turned off, only those instance variables that are explicitly declared 'public' or 'protected' will be documented.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_setGenerateStandards:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setGenerateStandards: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Turn on or off parsing of preprocessor conditional compilation info indicating the standards complied with. When this is turned on, we assume that all standards are complied with by default. <br></br> You should only turn this on while parsing the GNUstep source code.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_setStandards:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setStandards: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">dict</span></span></span></dt>
+<dd><div class="methodDescription">
+Store the current standards information derived from preprocessor conditionals in the supplied dictionary... this will be used by the <a href="AGSOutput.html#AGSOutput">AGSOutput</a> class to put standards markup in the gsdoc output.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_setWordMap:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setWordMap: </span><span class="parameter"><span class="type">(NSDictionary *)</span><span class="arg">map</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets up a dictionary used for mapping identifiers/keywords to other words. This is used to help cope with cases where C preprocessor definitions are confusing the parsing process.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_setupBuffer]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setupBuffer </span></span></dt>
+<dd><div class="methodDescription">
+Read in the file to be parsed and store it in a temporary unicode buffer. Perform basic transformations on the buffer to simplify the parsing process later - including stripping out of escaped end-of-line sequences. Create mapping information to convert positions in the new character buffer to line numbers in the original data (for logging purposes).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipArray]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipArray </span></span></dt>
+<dd><div class="methodDescription">
+Skip until we encounter an ']' marking the end of an array. Expect the current character position to be pointing to the '[' at the start of an array.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipBlock]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipBlock </span></span></dt>
+<dd><div class="methodDescription">
+Skip a bracketed block. Expect the current character position to be pointing to the bracket at the start of a block.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipBlock:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipBlock: </span><span class="parameter"><span class="type">(BOOL *)</span><span class="arg">isEmpty</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipLiteral]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipLiteral </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipRemainderOfLine]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipRemainderOfLine </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipSpaces]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipSpaces </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipStatement]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipStatement </span></span></dt>
+<dd><div class="methodDescription">
+Skip until we encounter a semicolon or closing brace. Strictly speaking, we don't skip all statements that way, since we only skip part of an if...else statement.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipStatementLine]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipStatementLine </span></span></dt>
+<dd><div class="methodDescription">
+Special method to skip a statement and up to the end of the last line it was on, discarding any comments so they don't get used by the next construct that actually needs documenting.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipToEndOfLine]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipToEndOfLine </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_skipUnit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> skipUnit </span></span></dt>
+<dd><div class="methodDescription">
+Skip until we encounter an '@end' marking the end of an interface, implementation, or protocol.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSParser_sources]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMutableArray *)</span><span class="selector"> sources </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base Tools Internals</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>Tools</h3>
+<ul>
+    <li><a href="autogsdoc.html">autogsdoc</a></li>
+    <li><a href="cvtenc.html">cvtenc</a></li>
+    <li><a href="defaults.html">defaults</a></li>
+    <li><a href="gdnc.html">gdnc</a></li>
+    <li><a href="gdomap.html">gdomap</a></li>
+    <li><a href="gsdoc.html">gsdoc</a></li>
+    <li><a href="gspath.html">gspath</a></li>
+    <li><a href="pldes.html">pldes</a></li>
+    <li><a href="plmerge.html">plmerge</a></li>
+    <li><a href="plparse.html">plparse</a></li>
+    <li><a href="plser.html">plser</a></li>
+    <li><a href="sfparse.html">sfparse</a></li>
+    <li><a href="xmlparse.html">xmlparse</a></li>
+</ul>
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="AGSHtml.html#AGSHtml">AGSHtml</a></li><li><a href="AGSIndex.html#AGSIndex">AGSIndex</a></li><li><a href="AGSOutput.html#AGSOutput">AGSOutput</a></li><li><a href="AGSParser.html#AGSParser">AGSParser</a></li><li><a href="GDNCClient.html#GDNCClient">GDNCClient</a></li><li><a href="GDNCNotification.html#GDNCNotification">GDNCNotification</a></li><li><a href="GDNCObserver.html#GDNCObserver">GDNCObserver</a></li><li><a href="GDNCServer.html#GDNCServer">GDNCServer</a></li><li><a href="GSXMLParse.html#GSXMLParse">GSXMLParse</a></li><li><a href="NSDistributedNotificationCenterGDNCDummy.html#NSDistributedNotificationCenterGDNCDummy">NSDistributedNotificationCenterGDNCDummy</a></li></ul></div>
+
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

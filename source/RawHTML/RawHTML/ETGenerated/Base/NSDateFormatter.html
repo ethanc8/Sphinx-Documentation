@@ -1,0 +1,911 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base (Foundation Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSDateFormatter class reference</h2>NSDateFormatter : <a href="NSFormatter.html#NSFormatter">NSFormatter</a> &lt;<a href="_NSCoding.html#NSCoding">NSCoding</a>, <a href="_NSCopying.html#NSCopying">NSCopying</a>&gt;<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>Foundation/NSDateFormatter.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> <strong>Class</strong> for generating text representations of <a href="NSDate.html#NSDate">NSDate</a> s and <a href="NSCalendarDate.html#NSCalendarDate">NSCalendarDate</a> s, and for converting strings into instances of these objects. Note that <a href="NSDate.html#NSDate">NSDate</a> and NSCalendarDatedo contain some string conversion methods, but using this class provides more control over conversion.</p> <p> See the NSFormatterdocumentation for description of the basic methods for formatting and parsing that are available.</p> <p> The basic format of a format string uses "%" codes to represent components of the date. Thus, for example, <var>@"%b %d, %Y"</var> specifies strings similar to "June 18, 1991". The full list of codes is as follows: </p> <dl> <dt>%%</dt> <dd>a '%' character</dd> <dt>%a</dt> <dd>abbreviated weekday name</dd> <dt>%A</dt> <dd>full weekday name</dd> <dt>%b</dt> <dd>abbreviated month name</dd> <dt>%B</dt> <dd>full month name</dd> <dt>%c</dt> <dd> shorthand for "%X %x", the locale format for date and time </dd> <dt>%d</dt> <dd> day of the month as a decimal number (01-31) </dd> <dt>%e</dt> <dd> same as %d but does not print the leading 0 for days 1 through 9 (unlike  strftime()  , does not print a leading space) </dd> <dt>%F</dt> <dd> milliseconds as a decimal number (000-999) </dd> <dt>%H</dt> <dd> hour based on a 24-hour clock as a decimal number (00-23) </dd> <dt>%I</dt> <dd> hour based on a 12-hour clock as a decimal number (01-12) </dd> <dt>%j</dt> <dd> day of the year as a decimal number (001-366) </dd> <dt>%m</dt> <dd> month as a decimal number (01-12) </dd> <dt>%M</dt> <dd> minute as a decimal number (00-59) </dd> <dt>%p</dt> <dd> AM/PM designation for the locale </dd> <dt>%S</dt> <dd> second as a decimal number (00-59) </dd> <dt>%w</dt> <dd> weekday as a decimal number (0-6), where Sunday is 0 </dd> <dt>%x</dt> <dd> date using the date representation for the locale, including the time zone (produces different results from strftime()) </dd> <dt>%X</dt> <dd> time using the time representation for the locale (produces different results from strftime()) </dd> <dt>%y</dt> <dd>year without century (00-99)</dd> <dt>%Y</dt> <dd> year with century (such as 1990) </dd> <dt>%Z</dt> <dd> time zone name (such as Pacific Daylight Time; produces different results from strftime()) </dd> <dt>%z</dt> <dd> time zone offset in hours and minutes from GMT (HHMM) </dd> </dl></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[NSDateFormatter_initWithDateFormat:allowNaturalLanguage:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithDateFormat: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">format</span></span><span class="selector"> allowNaturalLanguage: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Initialize with given specifier string <var>format</var>. See class description for how to specify a <var>format</var> string. If <var>flag</var> is <var>YES</var>, string-to-object conversion will attempt to process strings as natural language dates, such as "yesterday", or "first Tuesday of next month" if straight format-based conversion fails.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_allowsNaturalLanguage]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> allowsNaturalLanguage </span></span></dt>
+<dd><div class="methodDescription">
+Returns whether initialized to support natural language formatting. If <var>YES</var>, string-to-object conversion will attempt to process strings as natural language dates, such as "yesterday", or "first Tuesday of next month" if straight format-based conversion fails.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_dateFormat]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> dateFormat </span></span></dt>
+<dd><div class="methodDescription">
+Returns format string initialized with, specifying how dates are formatted, for object-to-string conversion, and how they are parsed, for string-to-object conversion. For example, <var>@"%b %d, %Y"</var> specifies strings similar to "June 18, 1991".<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSDateFormatter_defaultFormatterBehavior]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSDateFormatterBehavior)</span><span class="selector"> defaultFormatterBehavior </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSDateFormatter_setDefaultFormatterBehavior:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> setDefaultFormatterBehavior: </span><span class="parameter"><span class="type">(NSDateFormatterBehavior)</span><span class="arg">behavior</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_formatterBehavior]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSDateFormatterBehavior)</span><span class="selector"> formatterBehavior </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setFormatterBehavior:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFormatterBehavior: </span><span class="parameter"><span class="type">(NSDateFormatterBehavior)</span><span class="arg">behavior</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_generatesCalendarDates]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> generatesCalendarDates </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setGeneratesCalendarDates:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setGeneratesCalendarDates: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_isLenient]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isLenient </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setLenient:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLenient: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_dateFromString:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="selector"> dateFromString: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_stringFromDate:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> stringFromDate: </span><span class="parameter"><span class="type">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="arg">date</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_getObjectValue:forString:range:error:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> getObjectValue: </span><span class="parameter"><span class="type">(out id*)</span><span class="arg">obj</span></span><span class="selector"> forString: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span><span class="selector"> range: </span><span class="parameter"><span class="type">(inout  NSRange *)</span><span class="arg">range</span></span><span class="selector"> error: </span><span class="parameter"><span class="type">(out  <a href="NSError.html#NSError">NSError</a> **)</span><span class="arg">error</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setDateFormat:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDateFormat: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_dateStyle]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSDateFormatterStyle)</span><span class="selector"> dateStyle </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setDateStyle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDateStyle: </span><span class="parameter"><span class="type">(NSDateFormatterStyle)</span><span class="arg">style</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_timeStyle]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSDateFormatterStyle)</span><span class="selector"> timeStyle </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setTimeStyle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTimeStyle: </span><span class="parameter"><span class="type">(NSDateFormatterStyle)</span><span class="arg">style</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_calendar]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSCalendar *)</span><span class="selector"> calendar </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setCalendar:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCalendar: </span><span class="parameter"><span class="type">(NSCalendar *)</span><span class="arg">calendar</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_defaultDate]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="selector"> defaultDate </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setDefaultDate:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDefaultDate: </span><span class="parameter"><span class="type">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="arg">date</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_locale]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSLocale *)</span><span class="selector"> locale </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setLocale:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLocale: </span><span class="parameter"><span class="type">(NSLocale *)</span><span class="arg">locale</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_timeZone]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSTimeZone.html#NSTimeZone">NSTimeZone</a> *)</span><span class="selector"> timeZone </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setTimeZone:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTimeZone: </span><span class="parameter"><span class="type">(<a href="NSTimeZone.html#NSTimeZone">NSTimeZone</a> *)</span><span class="arg">tz</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_twoDigitStartDate]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="selector"> twoDigitStartDate </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setTwoDigitStartDate:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTwoDigitStartDate: </span><span class="parameter"><span class="type">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="arg">date</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_AMSymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> AMSymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setAMSymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAMSymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_PMSymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> PMSymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setPMSymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPMSymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_weekdaySymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> weekdaySymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setWeekdaySymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setWeekdaySymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_shortWeekdaySymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> shortWeekdaySymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setShortWeekdaySymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setShortWeekdaySymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_monthSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> monthSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setMonthSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMonthSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_shortMonthSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> shortMonthSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setShortMonthSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setShortMonthSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_eraSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> eraSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setEraSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setEraSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_gregorianStartDate]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="selector"> gregorianStartDate </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setGregorianStartDate:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setGregorianStartDate: </span><span class="parameter"><span class="type">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="arg">date</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_longEraSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> longEraSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setLongEraSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLongEraSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_quarterSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> quarterSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setQuarterSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setQuarterSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_shortQuarterSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> shortQuarterSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setShortQuarterSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setShortQuarterSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_standaloneQuarterSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> standaloneQuarterSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setStandaloneQuarterSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setStandaloneQuarterSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_shortStandaloneQuarterSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> shortStandaloneQuarterSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setShortStandaloneQuarterSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setShortStandaloneQuarterSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_shortStandaloneMonthSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> shortStandaloneMonthSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setShortStandaloneMonthSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setShortStandaloneMonthSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_standaloneMonthSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> standaloneMonthSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setStandaloneMonthSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setStandaloneMonthSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_veryShortMonthSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> veryShortMonthSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setVeryShortMonthSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setVeryShortMonthSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_veryShortStandaloneMonthSymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> veryShortStandaloneMonthSymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setVeryShortStandaloneMonthSymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setVeryShortStandaloneMonthSymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_shortStandaloneWeekdaySymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> shortStandaloneWeekdaySymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setShortStandaloneWeekdaySymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setShortStandaloneWeekdaySymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_standaloneWeekdaySymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> standaloneWeekdaySymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setStandaloneWeekdaySymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setStandaloneWeekdaySymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_veryShortWeekdaySymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> veryShortWeekdaySymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setVeryShortWeekdaySymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setVeryShortWeekdaySymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_veryShortStandaloneWeekdaySymbols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="selector"> veryShortStandaloneWeekdaySymbols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setVeryShortStandaloneWeekdaySymbols:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setVeryShortStandaloneWeekdaySymbols: </span><span class="parameter"><span class="type">(<a href="NSArray.html#NSArray">NSArray</a> *)</span><span class="arg">array</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSDateFormatter_localizedStringFromDate:dateStyle:timeStyle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> localizedStringFromDate: </span><span class="parameter"><span class="type">(<a href="NSDate.html#NSDate">NSDate</a> *)</span><span class="arg">date</span></span><span class="selector"> dateStyle: </span><span class="parameter"><span class="type">(NSDateFormatterStyle)</span><span class="arg">dateStyle</span></span><span class="selector"> timeStyle: </span><span class="parameter"><span class="type">(NSDateFormatterStyle)</span><span class="arg">timeStyle</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSDateFormatter_dateFormatFromTemplate:options:locale:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> dateFormatFromTemplate: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">aTemplate</span></span><span class="selector"> options: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">opts</span></span><span class="selector"> locale: </span><span class="parameter"><span class="type">(NSLocale *)</span><span class="arg">locale</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_doesRelativeDateFormatting]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> doesRelativeDateFormatting </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSDateFormatter_setDoesRelativeDateFormatting:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDoesRelativeDateFormatting: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base (Foundation Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSAffineTransform.html#NSAffineTransform">NSAffineTransform</a></li><li><a href="NSArchiver.html#NSArchiver">NSArchiver</a></li><li><a href="NSArray.html#NSArray">NSArray</a></li><li><a href="NSAssertionHandler.html#NSAssertionHandler">NSAssertionHandler</a></li><li><a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a></li><li><a href="NSAutoreleasePool.html#NSAutoreleasePool">NSAutoreleasePool</a></li><li><a href="NSBundle.html#NSBundle">NSBundle</a></li><li><a href="NSCachedURLResponse.html#NSCachedURLResponse">NSCachedURLResponse</a></li><li><a href="NSCalendarDate.html#NSCalendarDate">NSCalendarDate</a></li><li><a href="NSCharacterSet.html#NSCharacterSet">NSCharacterSet</a></li><li><a href="NSClassDescription.html#NSClassDescription">NSClassDescription</a></li><li><a href="NSCoder.html#NSCoder">NSCoder</a></li><li><a href="NSCondition.html#NSCondition">NSCondition</a></li><li><a href="NSConditionLock.html#NSConditionLock">NSConditionLock</a></li><li><a href="NSConnection.html#NSConnection">NSConnection</a></li><li><a href="NSCountedSet.html#NSCountedSet">NSCountedSet</a></li><li><a href="NSData.html#NSData">NSData</a></li><li><a href="NSDate.html#NSDate">NSDate</a></li><li><a href="NSDateFormatter.html#NSDateFormatter">NSDateFormatter</a></li><li><a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a></li><li><a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a></li><li><a href="NSDeserializer.html#NSDeserializer">NSDeserializer</a></li><li><a href="NSDictionary.html#NSDictionary">NSDictionary</a></li><li><a href="NSDirectoryEnumerator.html#NSDirectoryEnumerator">NSDirectoryEnumerator</a></li><li><a href="NSDistantObject.html#NSDistantObject">NSDistantObject</a></li><li><a href="NSDistributedLock.html#NSDistributedLock">NSDistributedLock</a></li><li><a href="NSDistributedNotificationCenter.html#NSDistributedNotificationCenter">NSDistributedNotificationCenter</a></li><li><a href="NSEnumerator.html#NSEnumerator">NSEnumerator</a></li><li><a href="NSError.html#NSError">NSError</a></li><li><a href="NSException.html#NSException">NSException</a></li><li><a href="NSFileHandle.html#NSFileHandle">NSFileHandle</a></li><li><a href="NSFileManager.html#NSFileManager">NSFileManager</a></li><li><a href="NSFormatter.html#NSFormatter">NSFormatter</a></li><li><a href="NSHashTable.html#NSHashTable">NSHashTable</a></li><li><a href="NSHost.html#NSHost">NSHost</a></li><li><a href="NSHTTPCookie.html#NSHTTPCookie">NSHTTPCookie</a></li><li><a href="NSHTTPCookieStorage.html#NSHTTPCookieStorage">NSHTTPCookieStorage</a></li><li><a href="NSHTTPURLResponse.html#NSHTTPURLResponse">NSHTTPURLResponse</a></li><li><a href="NSIndexPath.html#NSIndexPath">NSIndexPath</a></li><li><a href="NSIndexSet.html#NSIndexSet">NSIndexSet</a></li><li><a href="NSInputStream.html#NSInputStream">NSInputStream</a></li><li><a href="NSInvocation.html#NSInvocation">NSInvocation</a></li><li><a href="NSKeyedArchiver.html#NSKeyedArchiver">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiver.html#NSKeyedUnarchiver">NSKeyedUnarchiver</a></li><li><a href="NSLock.html#NSLock">NSLock</a></li><li><a href="NSMapTable.html#NSMapTable">NSMapTable</a></li><li><a href="NSMessagePort.html#NSMessagePort">NSMessagePort</a></li><li><a href="NSMessagePortNameServer.html#NSMessagePortNameServer">NSMessagePortNameServer</a></li><li><a href="NSMethodSignature.html#NSMethodSignature">NSMethodSignature</a></li><li><a href="NSMutableArray.html#NSMutableArray">NSMutableArray</a></li><li><a href="NSMutableAttributedString.html#NSMutableAttributedString">NSMutableAttributedString</a></li><li><a href="NSMutableCharacterSet.html#NSMutableCharacterSet">NSMutableCharacterSet</a></li><li><a href="NSMutableData.html#NSMutableData">NSMutableData</a></li><li><a href="NSMutableDictionary.html#NSMutableDictionary">NSMutableDictionary</a></li><li><a href="NSMutableIndexSet.html#NSMutableIndexSet">NSMutableIndexSet</a></li><li><a href="NSMutableSet.html#NSMutableSet">NSMutableSet</a></li><li><a href="NSMutableString.html#NSMutableString">NSMutableString</a></li><li><a href="NSMutableURLRequest.html#NSMutableURLRequest">NSMutableURLRequest</a></li><li><a href="NSNetService.html#NSNetService">NSNetService</a></li><li><a href="NSNetServiceBrowser.html#NSNetServiceBrowser">NSNetServiceBrowser</a></li><li><a href="NSNotification.html#NSNotification">NSNotification</a></li><li><a href="NSNotificationCenter.html#NSNotificationCenter">NSNotificationCenter</a></li><li><a href="NSNotificationQueue.html#NSNotificationQueue">NSNotificationQueue</a></li><li><a href="NSNull.html#NSNull">NSNull</a></li><li><a href="NSNumber.html#NSNumber">NSNumber</a></li><li><a href="NSNumberFormatter.html#NSNumberFormatter">NSNumberFormatter</a></li><li><a href="NSObject.html#NSObject">NSObject</a></li><li><a href="NSOutputStream.html#NSOutputStream">NSOutputStream</a></li><li><a href="NSPipe.html#NSPipe">NSPipe</a></li><li><a href="NSPointerArray.html#NSPointerArray">NSPointerArray</a></li><li><a href="NSPointerFunctions.html#NSPointerFunctions">NSPointerFunctions</a></li><li><a href="NSPort.html#NSPort">NSPort</a></li><li><a href="NSPortCoder.html#NSPortCoder">NSPortCoder</a></li><li><a href="NSPortMessage.html#NSPortMessage">NSPortMessage</a></li><li><a href="NSPortNameServer.html#NSPortNameServer">NSPortNameServer</a></li><li><a href="NSProcessInfo.html#NSProcessInfo">NSProcessInfo</a></li><li><a href="NSPropertyListSerialization.html#NSPropertyListSerialization">NSPropertyListSerialization</a></li><li><a href="NSProtocolChecker.html#NSProtocolChecker">NSProtocolChecker</a></li><li><a href="NSProxy.html#NSProxy">NSProxy</a></li><li><a href="NSRecursiveLock.html#NSRecursiveLock">NSRecursiveLock</a></li><li><a href="NSRunLoop.html#NSRunLoop">NSRunLoop</a></li><li><a href="NSScanner.html#NSScanner">NSScanner</a></li><li><a href="NSSerializer.html#NSSerializer">NSSerializer</a></li><li><a href="NSSet.html#NSSet">NSSet</a></li><li><a href="NSSocketPort.html#NSSocketPort">NSSocketPort</a></li><li><a href="NSSocketPortNameServer.html#NSSocketPortNameServer">NSSocketPortNameServer</a></li><li><a href="NSStream.html#NSStream">NSStream</a></li><li><a href="NSString.html#NSString">NSString</a></li><li><a href="NSTask.html#NSTask">NSTask</a></li><li><a href="NSThread.html#NSThread">NSThread</a></li><li><a href="NSTimer.html#NSTimer">NSTimer</a></li><li><a href="NSTimeZone.html#NSTimeZone">NSTimeZone</a></li><li><a href="NSTimeZoneDetail.html#NSTimeZoneDetail">NSTimeZoneDetail</a></li><li><a href="NSUnarchiver.html#NSUnarchiver">NSUnarchiver</a></li><li><a href="NSUndoManager.html#NSUndoManager">NSUndoManager</a></li><li><a href="NSURL.html#NSURL">NSURL</a></li><li><a href="NSURLAuthenticationChallenge.html#NSURLAuthenticationChallenge">NSURLAuthenticationChallenge</a></li><li><a href="NSURLCache.html#NSURLCache">NSURLCache</a></li><li><a href="NSURLComponents.html#NSURLComponents">NSURLComponents</a></li><li><a href="NSURLConnection.html#NSURLConnection">NSURLConnection</a></li><li><a href="NSURLCredential.html#NSURLCredential">NSURLCredential</a></li><li><a href="NSURLCredentialStorage.html#NSURLCredentialStorage">NSURLCredentialStorage</a></li><li><a href="NSURLDownload.html#NSURLDownload">NSURLDownload</a></li><li><a href="NSURLHandle.html#NSURLHandle">NSURLHandle</a></li><li><a href="NSURLProtectionSpace.html#NSURLProtectionSpace">NSURLProtectionSpace</a></li><li><a href="NSURLProtocol.html#NSURLProtocol">NSURLProtocol</a></li><li><a href="NSURLQueryItem.html#NSURLQueryItem">NSURLQueryItem</a></li><li><a href="NSURLRequest.html#NSURLRequest">NSURLRequest</a></li><li><a href="NSURLResponse.html#NSURLResponse">NSURLResponse</a></li><li><a href="NSUserDefaults.html#NSUserDefaults">NSUserDefaults</a></li><li><a href="NSValue.html#NSValue">NSValue</a></li><li><a href="NSValueTransformer.html#NSValueTransformer">NSValueTransformer</a></li><li><a href="NSXMLDocument.html#NSXMLDocument">NSXMLDocument</a></li><li><a href="NSXMLDTD.html#NSXMLDTD">NSXMLDTD</a></li><li><a href="NSXMLDTDNode.html#NSXMLDTDNode">NSXMLDTDNode</a></li><li><a href="NSXMLElement.html#NSXMLElement">NSXMLElement</a></li><li><a href="NSXMLNode.html#NSXMLNode">NSXMLNode</a></li><li><a href="NSXMLParser.html#NSXMLParser">NSXMLParser</a></li><li><a href="NXConstantString.html#NXConstantString">NXConstantString</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSLogDelegate.html#GSLogDelegate">GSLogDelegate</a></li><li><a href="_NSCoding.html#NSCoding">NSCoding</a></li><li><a href="_NSCopying.html#NSCopying">NSCopying</a></li><li><a href="_NSDecimalNumberBehaviors.html#NSDecimalNumberBehaviors">NSDecimalNumberBehaviors</a></li><li><a href="_NSDiscardableContent.html#NSDiscardableContent">NSDiscardableContent</a></li><li><a href="_NSFastEnumeration.html#NSFastEnumeration">NSFastEnumeration</a></li><li><a href="_NSFileManagerDelegate.html#NSFileManagerDelegate">NSFileManagerDelegate</a></li><li><a href="_NSLocking.html#NSLocking">NSLocking</a></li><li><a href="_NSMutableCopying.html#NSMutableCopying">NSMutableCopying</a></li><li><a href="_NSNetServiceBrowserDelegate.html#NSNetServiceBrowserDelegate">NSNetServiceBrowserDelegate</a></li><li><a href="_NSNetServiceDelegate.html#NSNetServiceDelegate">NSNetServiceDelegate</a></li><li><a href="_NSObjCTypeSerializationCallBack.html#NSObjCTypeSerializationCallBack">NSObjCTypeSerializationCallBack</a></li><li><a href="_NSObject.html#NSObject">NSObject</a></li><li><a href="_NSSecureCoding.html#NSSecureCoding">NSSecureCoding</a></li><li><a href="_NSStreamDelegate.html#NSStreamDelegate">NSStreamDelegate</a></li><li><a href="_NSURLAuthenticationChallengeSender.html#NSURLAuthenticationChallengeSender">NSURLAuthenticationChallengeSender</a></li><li><a href="_NSURLConnectionDelegate.html#NSURLConnectionDelegate">NSURLConnectionDelegate</a></li><li><a href="_NSURLDownloadDelegate.html#NSURLDownloadDelegate">NSURLDownloadDelegate</a></li><li><a href="_NSURLHandleClient.html#NSURLHandleClient">NSURLHandleClient</a></li><li><a href="_NSURLProtocolClient.html#NSURLProtocolClient">NSURLProtocolClient</a></li><li><a href="_NSXMLParserDelegate.html#NSXMLParserDelegate">NSXMLParserDelegate</a></li><li><a href="_RunLoopEvents.html#RunLoopEvents">RunLoopEvents</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSArchiverCategories.html#NSArchiver(GNUstep)">NSArchiver</a></li><li><a href="NSArrayCategories.html#NSArray(NSKeyValueObserverRegistration)">NSArray</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstep)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GregorianDate)">NSCalendarDate</a></li><li><a href="NSCoderCategories.html#NSCoder(NSGeometryKeyedCoding)">NSCoder</a></li><li><a href="NSCountedSetCategories.html#NSCountedSet(GNU_Uniquing)">NSCountedSet</a></li><li><a href="NSDataCategories.html#NSData(GNUstepExtensions)">NSData</a></li><li><a href="NSDeserializerCategories.html#NSDeserializer(GNUstep)">NSDeserializer</a></li><li><a href="NSDictionaryCategories.html#NSDictionary(NSFileAttributes)">NSDictionary</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepExtensions)">NSFileHandle</a></li><li><a href="NSHostCategories.html#NSHost(GNUstep)">NSHost</a></li><li><a href="NSInvocationCategories.html#NSInvocation(GNUstep)">NSInvocation</a></li><li><a href="NSKeyedArchiverCategories.html#NSKeyedArchiver(Internal)">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiverCategories.html#NSKeyedUnarchiver(Internal)">NSKeyedUnarchiver</a></li><li><a href="NSMutableDataCategories.html#NSMutableData(GNUstepExtensions)">NSMutableData</a></li><li><a href="NSMutableURLRequestCategories.html#NSMutableURLRequest(GNUstep)">NSMutableURLRequest</a></li><li><a href="NSNumberCategories.html#NSNumber(NSDecimalNumber)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstep)">NSObject</a></li><li><a href="NSPointerArrayCategories.html#NSPointerArray(NSArrayConveniences)">NSPointerArray</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstep)">NSProcessInfo</a></li><li><a href="NSRunLoopCategories.html#NSRunLoop(GNUstepExtensions)">NSRunLoop</a></li><li><a href="NSSerializerCategories.html#NSSerializer(GNUstep)">NSSerializer</a></li><li><a href="NSThreadCategories.html#NSThread(CallStackSymbols)">NSThread</a></li><li><a href="NSUnarchiverCategories.html#NSUnarchiver(GNUstep)">NSUnarchiver</a></li><li><a href="NSURLCacheCategories.html#NSURLCache(NSURLSessionTaskAdditions)">NSURLCache</a></li><li><a href="NSURLConnectionCategories.html#NSURLConnection(NSURLConnectionSynchronousLoading)">NSURLConnection</a></li><li><a href="NSURLProtocolCategories.html#NSURLProtocol(Subclassing)">NSURLProtocol</a></li><li><a href="NSURLRequestCategories.html#NSURLRequest(NSHTTPURLRequest)">NSURLRequest</a></li><li><a href="NSValueCategories.html#NSValue(Subclassing)">NSValue</a></li><li><a href="NSXMLParserCategories.html#NSXMLParser(NSXMLParserLocatorAdditions)">NSXMLParser</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

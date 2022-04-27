@@ -1,0 +1,1451 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base Additions</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>Functions</h2><div class="meta">
+<p class="metadesc"><em>All the public Functions in GNUstep Base Additions</em></p><table></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div class="functions">
+<h3>Functions</h3><h4>Default</h4><div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void* </span><span class="selector"> _Block_copy</span>(<span class="parameter"><span class="type">const void* </span><span class="arg"></span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> _Block_release</span>(<span class="parameter"><span class="type">const void* </span><span class="arg"></span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> gs_consumed</span>(<span class="parameter"><span class="type">id </span><span class="arg">o</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void* </span><span class="selector"> GSAutoreleasedBuffer</span>(<span class="parameter"><span class="type">unsigned int </span><span class="arg">size</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Quickly return autoreleased data storage area.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIVar </span><span class="selector"> GSCGetInstanceVariableDefinition</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">name</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Deprecated.. use  class_getInstanceVariable()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">Class </span><span class="selector"> GSClassFromName</span>(<span class="parameter"><span class="type">const char* </span><span class="arg">name</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSClassFromName()  is deprecated... use  objc_lookUpClass()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unsigned int </span><span class="selector"> GSClassList</span>(<span class="parameter"><span class="type">Class * </span><span class="arg">buffer</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">max</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">clearCache</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Deprecated... use  objc_getClassList()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">const char* </span><span class="selector"> GSClassNameFromObject</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSClassNameFromObject()  is deprecated... use  object_getClass()  in conjunction with  class_getName()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSClassSwizzle</span>(<span class="parameter"><span class="type">id </span><span class="arg">instance</span></span>, <span class="parameter"><span class="type">Class </span><span class="arg">newClass</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Function to change the class of the specified <var>instance</var> to <var>newClass</var>. This handles memory debugging issues in GNUstep-base and also deals with class finalisation issues in a garbage collecting environment, so you should use this function rather than attempting to swizzle class pointers directly.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSFlushMethodCacheForClass</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Deprecated.. does nothing.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSMethod </span><span class="selector"> GSGetMethod</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">sel</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">searchInstanceMethods</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">searchSuperClasses</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns the pointer to the method structure for the selector in the specified class. Depending on <var>searchInstanceMethods</var>, this function searches either instance or class methods. Depending on searchSuperClassesm this function searches either the specified class only or also its superclasses. <br></br> To obtain the implementation pointer IMP use returnValue->method_imp which should be safe across all runtimes. <br></br> It should be safe to use this function in  +load  implementations. <br></br> This function should currently (June 2004) be considered WIP. Please follow potential changes (Name, parameters,...) closely until it stabilizes.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">const char* </span><span class="selector"> GSLastErrorStr</span>(<span class="parameter"><span class="type">long int </span><span class="arg">error_id</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">const char* </span><span class="selector"> GSNameFromClass</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSNameFromClass()  is deprecated... use  class_getName()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">const char* </span><span class="selector"> GSNameFromSelector</span>(<span class="parameter"><span class="type">SEL </span><span class="arg">sel</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSNameFromSelector()  is deprecated... use  sel_getName()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSObjCAddClassBehavior</span>(<span class="parameter"><span class="type">Class </span><span class="arg">receiver</span></span>, <span class="parameter"><span class="type">Class </span><span class="arg">behavior</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> A Behavior can be seen as a "Protocol with an implementation" or a "Class without any instance variables". A key feature of behaviors is that they give a degree of multiple inheritance. </p> <p> Behavior methods, when added to a class, override the class's superclass methods, but not the class's methods. </p> <p> Whan a <var>behavior</var> class is added to a <var>receiver</var> class, not only are the methods defined in the <var>behavior</var> class added, but the methods from the behavior's class hierarchy are also added (unless already present). </p> <p> It's not the case that a class adding behaviors from another class must have "no instance vars". The <var>receiver</var> class just has to have the same layout as the <var>behavior</var> class (optionally with some additional ivars after those of the <var>behavior</var> class). </p> <p> This function provides Behaviors without adding any new syntax to the Objective C language. Simply define a class with the methods you want to add, then call this function with that class as the <var>behavior</var> argument. </p> <p> This function should be called in the  +initialize  method of the <var>receiver</var>. </p> <p> If you add several behaviors to a class, be aware that the order of the additions is significant. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSObjCAddClassOverride</span>(<span class="parameter"><span class="type">Class </span><span class="arg">receiver</span></span>, <span class="parameter"><span class="type">Class </span><span class="arg">override</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> An Override can be seen as a "category implemented as a separate class and manually added to the <var>receiver</var> class under program control, rather than automatically added by the compiler/runtime. </p> <p> Override methods, when added to a <var>receiver</var> class, replace the class's class's methods of the same name (or are added if the class did not define methods with that name). </p> <p> It's not the case that a class adding overrides from another class must have "no instance vars". The <var>receiver</var> class just has to have the same layout as the <var>override</var> class (optionally with some additional ivars after those of the <var>override</var> class). </p> <p> This function provides overrides without adding any new syntax to the Objective C language. Simply define a class with the methods you want to add, then call this function with that class as the <var>override</var> argument. </p> <p> This function should usually be called in the  +initialize  method of the <var>receiver</var>. </p> <p> If you add several overrides to a class, be aware that the order of the additions is significant. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSObjCAddClasses</span>(<span class="parameter"><span class="type">NSArray * </span><span class="arg">classes</span></span>)</span></dt>
+<dd><div class="methodDescription">
+The <var>classes</var> argument is an array of NSValue objects containing pointers to <var>classes</var> previously created by the  GSObjCMakeClass()  function.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSObjCAddMethods</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>, <span class="parameter"><span class="type">Method * </span><span class="arg">list</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">replace</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Given a NULL terminated <var>list</var> of methods, add them to the class. <br></br> If the method already exists in a superclass, the new version overrides that one, but if the method already exists in the class itsself, the new one is quietly ignored (replace==NO) or replaced with the new version (if replace==YES). <br></br> To add class methods, <var>cls</var> should be the metaclass of the class to which the methods are being added.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> GSObjCAllSubclassesOfClass</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns an autoreleased array of subclasses of <strong>Class</strong> <var>cls</var>, including subclasses of subclasses.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSObjCBehaviorDebug</span>(<span class="parameter"><span class="type">int </span><span class="arg">setget</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Turn on (<var>YES</var>), off (<var>NO</var>) or test (-1) behavior debugging.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">Class </span><span class="selector"> GSObjCClass</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSObjCClass()  is deprecated... use  object_getClass()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> GSObjCDirectSubclassesOfClass</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns an autoreleased array containing subclasses directly descendent of <strong>Class</strong> <var>cls</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSObjCFindVariable</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">name</span></span>, <span class="parameter"><span class="type">const char** </span><span class="arg">type</span></span>, <span class="parameter"><span class="type">unsigned int* </span><span class="arg">size</span></span>, <span class="parameter"><span class="type">int* </span><span class="arg">offset</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This function is used to locate information about the instance variable of <var>obj</var> called <var>name</var>. It returns <var>YES</var> if the variable was found, <var>NO</var> otherwise. If it returns <var>YES</var>, then the values pointed to by <var>type</var>, <var>size</var>, and <var>offset</var> will be set (except where they are null pointers).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIVar </span><span class="selector"> GSObjCGetInstanceVariableDefinition</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">name</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Deprecated.. use  class_getInstanceVariable()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">id </span><span class="selector"> GSObjCGetVal</span>(<span class="parameter"><span class="type">NSObject * </span><span class="arg">self</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">key</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">sel</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">type</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">size</span></span>, <span class="parameter"><span class="type">int </span><span class="arg">offset</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This is used internally by the key-value coding methods, to get a value from an object either via an accessor method (if <var>sel</var> is supplied), or via direct access (if <var>type</var>, <var>size</var>, and <var>offset</var> are supplied). <br></br> Automatic conversion between NSNumber and C scalar types is performed. <br></br> If <var>type</var> is null and can't be determined from the selector, the [NSObject -handleQueryWithUnboundKey:] method is called to try to get a value.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSObjCGetVariable</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>, <span class="parameter"><span class="type">int </span><span class="arg">offset</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">size</span></span>, <span class="parameter"><span class="type">void* </span><span class="arg">data</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Gets the value from an instance variable in <var>obj</var> <br></br> This function performs no checking... you should use it only where you are providing information from a call to  GSObjCFindVariable()  and you know that the <var>data</var> area provided is the correct <var>size</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSObjCIsClass</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSObjCIsClass()  is deprecated... use  object_getClass()  in conjunction with  class_isMetaClass()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSObjCIsInstance</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSObjCIsInstance()  is deprecated... use  object_getClass()  in conjunction with  class_isMetaClass()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSObjCIsKindOf</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>, <span class="parameter"><span class="type">Class </span><span class="arg">other</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Test to see if class inherits from another class The argument to this function must NOT be <var>nil</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSValue * </span><span class="selector"> GSObjCMakeClass</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">name</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">superName</span></span>, <span class="parameter"><span class="type">NSDictionary * </span><span class="arg">iVars</span></span>)</span></dt>
+<dd><div class="methodDescription">
+references: http://www.macdevcenter.com/pub/a/mac/2002/05/31/runtime_parttwo.html?page=1 http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/9objc_runtime_reference/chapter_5_section_1.html http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/9objc_runtime_reference/chapter_5_section_21.html ObjcRuntimeUtilities.m by Nicola Pero <br></br> <p> Create a <strong>Class</strong> structure for use by the ObjectiveC runtime and return an NSValue object pointing to it. The class will not be added to the runtime (you must do that later using the  GSObjCAddClasses()  function). </p> <p> The <var>iVars</var> dictionary lists the instance variable names and their types. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> GSObjCMethodNames</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">recurse</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This method returns an array listing the names of all the instance methods available to <var>obj</var>, whether they belong to the class of <var>obj</var> or one of its superclasses. <br></br> If <var>obj</var> is a class, this returns the class methods. <br></br> Returns <var>nil</var> if <var>obj</var> is <var>nil</var> .<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSObjCSetVal</span>(<span class="parameter"><span class="type">NSObject * </span><span class="arg">self</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">key</span></span>, <span class="parameter"><span class="type">id </span><span class="arg">val</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">sel</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">type</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">size</span></span>, <span class="parameter"><span class="type">int </span><span class="arg">offset</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This is used internally by the key-value coding methods, to set a value in an object either via an accessor method (if <var>sel</var> is supplied), or via direct access (if <var>type</var>, <var>size</var>, and <var>offset</var> are supplied). <br></br> Automatic conversion between NSNumber and C scalar types is performed. <br></br> If <var>type</var> is null and can't be determined from the selector, the [NSObject -handleTakeValue:forUnboundKey:] method is called to try to set a value.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSObjCSetVariable</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>, <span class="parameter"><span class="type">int </span><span class="arg">offset</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">size</span></span>, <span class="parameter"><span class="type">const void* </span><span class="arg">data</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Sets the value in an instance variable in <var>obj</var> <br></br> This function performs no checking... you should use it only where you are providing information from a call to  GSObjCFindVariable()  and you know that the <var>data</var> area provided is the correct <var>size</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">Class </span><span class="selector"> GSObjCSuper</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSObjCSuper()  is deprecated... use  class_getSuperclass()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> GSObjCVariableNames</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">recurse</span></span>)</span></dt>
+<dd><div class="methodDescription">
+This method returns an array listing the names of all the instance variables present in the instance <var>obj</var>, whether they belong to the class of <var>obj</var> or one of its superclasses. <br></br> Returns <var>nil</var> if <var>obj</var> is <var>nil</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">int </span><span class="selector"> GSObjCVersion</span>(<span class="parameter"><span class="type">Class </span><span class="arg">cls</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSObjCVersion()  is deprecated... use  class_getVersion()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSPrintf</span>(<span class="parameter"><span class="type">FILE * </span><span class="arg">fptr</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">format</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Prints a message to <var>fptr</var> using the <var>format</var> string provided and any additional arguments. The <var>format</var> string is interpreted as by the NSString formatted initialisers, and understands the '%@' syntax for printing an object. </p> <p> The data is written to the file pointer in the default CString encoding if possible, as a UTF8 string otherwise. </p> <p> This function is recommended for printing general log messages. For debug messages use  NSDebugLog()  and friends. For error logging use  NSLog()  , and for warnings you might consider  NSWarnLog()  . </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">Protocol * </span><span class="selector"> GSProtocolFromName</span>(<span class="parameter"><span class="type">const char* </span><span class="arg">name</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns a protocol object with the corresponding <var>name</var>. This function searches the registered classes for any protocol with the supplied <var>name</var>. If one is found, it is cached in for future requests. If efficiency is a factor then use  GSRegisterProtocol()  to insert a protocol explicitly into the cache used by this function. If no protocol is found this function returns <var>nil</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">struct objc_method_description </span><span class="selector"> GSProtocolGetMethodDescriptionRecursive</span>(<span class="parameter"><span class="type">Protocol * </span><span class="arg">aProtocol</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">aSel</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">isRequired</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">isInstance</span></span>)</span></dt>
+<dd><div class="methodDescription">
+A variant of protocol_getMethodDescription which recursively searches parent protocols if the requested selector isn't found in the given protocol. Returns a {NULL, NULL} structure if the requested selector couldn't be found.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSRegisterProtocol</span>(<span class="parameter"><span class="type">Protocol * </span><span class="arg">proto</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Registers <var>proto</var> in the cache used by  GSProtocolFromName()  .<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">SEL </span><span class="selector"> GSSelectorFromName</span>(<span class="parameter"><span class="type">const char* </span><span class="arg">name</span></span>)</span></dt>
+<dd><div class="methodDescription">
+GSSelectorFromName()  is deprecated... use  sel_getUid()<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">SEL </span><span class="selector"> GSSelectorFromNameAndTypes</span>(<span class="parameter"><span class="type">const char* </span><span class="arg">name</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">types</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Return the selector for the specified <var>name</var> and <var>types</var>. <br></br> Returns a nul pointer if the <var>name</var> is nul. <br></br> Creates a new selector if necessary. <br></br> Code must NOT rely on this providing a selector with type information.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSSelectorTypesMatch</span>(<span class="parameter"><span class="type">const char* </span><span class="arg">types1</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">types2</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Compare only the type information ignoring qualifiers, the frame layout and register markers. Unlike sel_types_match, this function also handles comparisons of types with and without any layout information.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">const char* </span><span class="selector"> GSSkipTypeQualifierAndLayoutInfo</span>(<span class="parameter"><span class="type">const char* </span><span class="arg">types</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Takes full type information and skips forward to the actual type as specified in the _C_... constants.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">const char* </span><span class="selector"> GSTypesFromSelector</span>(<span class="parameter"><span class="type">SEL </span><span class="arg">sel</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Return the type information from the specified selector. <br></br> May return a nul pointer if the selector was a nul pointer or if it was not typed (or if the runtime does not support typed selectors). <br></br> Code must NOT rely on this providing any type information.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayAddItem</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayAddItemNoRetain</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unsigned int </span><span class="selector"> GSIArrayCapacity</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayCheckSort</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">NSComparisonResult( *) </span><span class="arg">sorter</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayClear</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIArray </span><span class="selector"> GSIArrayCopyWithZone</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">NSZone * </span><span class="arg">zone</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unsigned int </span><span class="selector"> GSIArrayCount</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayEmpty</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayGrow</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayGrowTo</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">next</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIArray </span><span class="selector"> GSIArrayInitWithZoneAndCapacity</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">NSZone * </span><span class="arg">zone</span></span>, <span class="parameter"><span class="type">size_t </span><span class="arg">capacity</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIArray </span><span class="selector"> GSIArrayInitWithZoneAndStaticCapacity</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">NSZone * </span><span class="arg">zone</span></span>, <span class="parameter"><span class="type">size_t </span><span class="arg">capacity</span></span>, <span class="parameter"><span class="type">GSIArrayItem * </span><span class="arg">buffer</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayInsertItem</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">index</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayInsertItemNoRetain</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">index</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayInsertSorted</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>, <span class="parameter"><span class="type">NSComparisonResult( *) </span><span class="arg">sorter</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayInsertSortedNoRetain</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>, <span class="parameter"><span class="type">NSComparisonResult( *) </span><span class="arg">sorter</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unsigned int </span><span class="selector"> GSIArrayInsertionPosition</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>, <span class="parameter"><span class="type">NSComparisonResult( *) </span><span class="arg">sorter</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIArrayItem </span><span class="selector"> GSIArrayItemAtIndex</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">index</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIArrayItem * </span><span class="selector"> GSIArrayItems</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIArrayItem </span><span class="selector"> GSIArrayLastItem</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayRemoveAllItems</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayRemoveItemAtIndex</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">index</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayRemoveItemAtIndexNoRelease</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">index</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayRemoveItemsFromIndex</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">index</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArrayRemoveLastItem</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unsigned int </span><span class="selector"> GSIArraySearch</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>, <span class="parameter"><span class="type">NSComparisonResult( *) </span><span class="arg">sorter</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIArraySetItemAtIndex</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>, <span class="parameter"><span class="type">GSIArrayItem </span><span class="arg">item</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">index</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSUInteger </span><span class="selector"> GSIArraySize</span>(<span class="parameter"><span class="type">GSIArray </span><span class="arg">array</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapAddKey</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapAddKeyNoRetain</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapAddNodeToBucket</span>(<span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">bucket</span></span>, <span class="parameter"><span class="type">GSIMapNode </span><span class="arg">node</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapAddNodeToMap</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapNode </span><span class="arg">node</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapAddPair</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>, <span class="parameter"><span class="type">GSIMapVal </span><span class="arg">value</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapAddPairNoRetain</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>, <span class="parameter"><span class="type">GSIMapVal </span><span class="arg">value</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapBucket </span><span class="selector"> GSIMapBucketForKey</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapCleanMap</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSUInteger </span><span class="selector"> GSIMapCountByEnumeratingWithStateObjectsCount</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">NSFastEnumerationState * </span><span class="arg">state</span></span>, <span class="parameter"><span class="type">id* </span><span class="arg">stackbuf</span></span>, <span class="parameter"><span class="type">NSUInteger </span><span class="arg">len</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Used to implement fast enumeration methods in classes that use GSIMap for their data storage.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapEmptyMap</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapEndEnumerator</span>(<span class="parameter"><span class="type">GSIMapEnumerator </span><span class="arg">enumerator</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Tidies up after map enumeration... effectively destroys the <var>enumerator</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapBucket </span><span class="selector"> GSIMapEnumeratorBucket</span>(<span class="parameter"><span class="type">GSIMapEnumerator </span><span class="arg">enumerator</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns the bucket from which the next node in the enumeration will come. Once the next node has been enumerated, you can use the bucket and node to remove the node from the map using the  GSIMapRemoveNodeFromMap()  function.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapEnumerator_t </span><span class="selector"> GSIMapEnumeratorForMap</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Enumerating <br></br> Create an return an enumerator for the specified <var>map</var>. <br></br> You must call  GSIMapEndEnumerator()  when you have finished with the enumerator. <br></br> <strong>WARNING</strong> You should not alter a <var>map</var> while an enumeration is in progress. The results of doing so are reasonably unpredictable. <br></br> Remember, DON'T MESS WITH A MAP WHILE YOU'RE ENUMERATING IT.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapEnumeratorNextNode</span>(<span class="parameter"><span class="type">GSIMapEnumerator </span><span class="arg">enumerator</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns the next node in the map, or a nul pointer if at the end.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapFirstNode</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapFreeNode</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapNode </span><span class="arg">node</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapInitWithZoneAndCapacity</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">NSZone * </span><span class="arg">zone</span></span>, <span class="parameter"><span class="type">uintptr_t </span><span class="arg">capacity</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapLinkNodeIntoBucket</span>(<span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">bucket</span></span>, <span class="parameter"><span class="type">GSIMapNode </span><span class="arg">node</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapMoreNodes</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">required</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapNodeForKey</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapNodeForKeyInBucket</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">bucket</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapNodeForSimpleKey</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapBucket </span><span class="selector"> GSIMapPickBucket</span>(<span class="parameter"><span class="type">unsigned int </span><span class="arg">hash</span></span>, <span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">buckets</span></span>, <span class="parameter"><span class="type">uintptr_t </span><span class="arg">bucketCount</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapRemangleBuckets</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">old_buckets</span></span>, <span class="parameter"><span class="type">uintptr_t </span><span class="arg">old_bucketCount</span></span>, <span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">new_buckets</span></span>, <span class="parameter"><span class="type">uintptr_t </span><span class="arg">new_bucketCount</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">GSIMapNode </span><span class="selector"> GSIMapRemoveAndFreeNode</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">uintptr_t </span><span class="arg">bkt</span></span>, <span class="parameter"><span class="type">GSIMapNode </span><span class="arg">node</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSIMapRemoveKey</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapKey </span><span class="arg">key</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Removes the item for the specified <var>key</var> from the <var>map</var>. If the <var>key</var> was present, returns <var>YES</var>, otherwise returns <var>NO</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapRemoveNodeFromBucket</span>(<span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">bucket</span></span>, <span class="parameter"><span class="type">GSIMapNode </span><span class="arg">node</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapRemoveNodeFromMap</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">bkt</span></span>, <span class="parameter"><span class="type">GSIMapNode </span><span class="arg">node</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapRemoveWeak</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapResize</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">uintptr_t </span><span class="arg">new_capacity</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapRightSizeMap</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>, <span class="parameter"><span class="type">uintptr_t </span><span class="arg">capacity</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSUInteger </span><span class="selector"> GSIMapSize</span>(<span class="parameter"><span class="type">GSIMapTable </span><span class="arg">map</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> GSIMapUnlinkNodeFromBucket</span>(<span class="parameter"><span class="type">GSIMapBucket </span><span class="arg">bucket</span></span>, <span class="parameter"><span class="type">GSIMapNode </span><span class="arg">node</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> GSDefaultLanguageLocale</span>()</span></dt>
+<dd><div class="methodDescription">
+Returns the locale string for LC_MESSAGES<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSDictionary * </span><span class="selector"> GSDomainFromDefaultLocale</span>()</span></dt>
+<dd><div class="methodDescription">
+Set the current locale to the system default, and backup what it was previously (should have been @"C"). <br></br> Restore the current locale to what we backed up (again, should be restored to @"C")<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> GSLanguageFromLocale</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">locale</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns a language name string for a given <var>locale</var>. e.g. GSLanguageFromLocale(@"en_CA") returns @"CanadaEnglish"<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> GSLanguagesFromLocale</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">locale</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Convenience function which calls GSLocaleVariants to expand the given <var>locale</var> to a list of variants, and then calls GSLanguageFromLocale on each. e.g. GSLanguagesFromLocale(@"en_CA") returns (@"CanadaEnglish", @"English")<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> GSLocaleVariants</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">locale</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Return an array of variants of a <var>locale</var>, formed by stripping off parts of the identifier, ordered from most similar to least similar. e.g. GSLocaleVariants(@"en_CA") returns (@"en_CA", @"en").<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> GSSetLocale</span>(<span class="parameter"><span class="type">int </span><span class="arg">category</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">locale</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">const char* </span><span class="selector"> GSSetLocaleC</span>(<span class="parameter"><span class="type">int </span><span class="arg">category</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">loc</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> GSFindNamedFile</span>(<span class="parameter"><span class="type">NSArray * </span><span class="arg">paths</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">aName</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">anExtension</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Try to locate file/directory (aName).( <var>anExtension</var> (<var>aName</var>).(anExtension) in <var>paths</var>. Will return the first found or <var>nil</var> if nothing is found. <br></br> Deprecated... may be removed in later release.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> GSDebugFunctionMsg</span>(<span class="parameter"><span class="type">const char* </span><span class="arg">func</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">file</span></span>, <span class="parameter"><span class="type">int </span><span class="arg">line</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">fmt</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Used to produce a format string for logging a message with function location details.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> GSDebugMethodMsg</span>(<span class="parameter"><span class="type">id </span><span class="arg">obj</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">sel</span></span>, <span class="parameter"><span class="type">const char* </span><span class="arg">file</span></span>, <span class="parameter"><span class="type">int </span><span class="arg">line</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">fmt</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Used to produce a format string for logging a message with method location details.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSDebugSet</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">level</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSThread * </span><span class="selector"> GSCurrentThread</span>()</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSMutableDictionary * </span><span class="selector"> GSCurrentThreadDictionary</span>()</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSStringEncoding </span><span class="selector"> GSEncodingForRegistry</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">registry</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">encoding</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns the NSStringEncoding that matches the specified character set <var>registry</var> and <var>encoding</var> information. For instance, for the iso8859-5 character set, the <var>registry</var> is iso8859 and the <var>encoding</var> is 5, and the returned NSStringEncoding is NSISOCyrillicStringEncoding. If there is no specific <var>encoding</var>, use @"0". Returns GSUndefinedEncoding if there is no match.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSStringEncoding </span><span class="selector"> GSEncodingFromLocale</span>(<span class="parameter"><span class="type">const char* </span><span class="arg">clocale</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Try to deduce the string encoding from the locale string <var>clocale</var>. This function looks in the Locale.encodings file installed as part of GNUstep Base if the encoding cannot be deduced from the <var>clocale</var> string itself. If <var>clocale</var> isn't set or no match can be found, returns GSUndefinedEncoding.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSFromUnicode</span>(<span class="parameter"><span class="type">unsigned char** </span><span class="arg">dst</span></span>, <span class="parameter"><span class="type">unsigned int* </span><span class="arg">size</span></span>, <span class="parameter"><span class="type">const unichar* </span><span class="arg">src</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">slen</span></span>, <span class="parameter"><span class="type">NSStringEncoding </span><span class="arg">enc</span></span>, <span class="parameter"><span class="type">NSZone * </span><span class="arg">zone</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">options</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Function to convert from 16-bit unicode to 8-bit data. <p> The <var>dst</var> argument is a pointer to a pointer to a buffer in which the converted data is to be stored. If it is a null pointer, this function discards converted data, and is used only to determine the length of the converted data. If the <var>zone</var> argument is non-nul, the function is free to allocate a larger buffer if necessary, and store this new buffer in the <var>dst</var> argument. It will *NOT* deallocate the original buffer! </p> <p> The <var>size</var> argument is a pointer to the initial <var>size</var> of the destination buffer. If the function changes the buffer <var>size</var>, this value will be altered to the new <var>size</var>. This is measured in bytes. </p> <p> The <var>src</var> argument is a pointer to the 16-bit unicode string which is to be converted to 8-bit data. </p> <p> The <var>slen</var> argument is the length of the 16-bit unicode string which is to be converted to 8-bit data. This is measured in 16-bit characters, not bytes. </p> <p> The <var>enc</var> argument specifies the encoding type of the 8-bit byte sequence which is to be produced from the 16-bit unicode. </p> <p> The <var>zone</var> argument specifies a memory <var>zone</var> in which the function may allocate a buffer to return data in. If this is nul, the function will fail if the originally supplied buffer is not big enough (unless <var>dst</var> is a null pointer... indicating that converted data is to be discarded). <br></br> If the library is built for garbage collecting, the <var>zone</var> argument is used only as a marker to say whether the function may allocate memory (<var>zone</var> is non-null) or not (<var>zone</var> is null). </p> The <var>options</var> argument controls some special behavior. <ul> <li> If GSUniStrict is set, the function will fail if a character is encountered in the source which can't be converted. Otherwise, some approximation or marker will be placed in the destination. </li> <li> If GSUniTerminate is set, the function is expected to nul terminate the output data, and will assume that it is safe to place the nul just beyond the end of the stated buffer <var>size</var>. Also, if the function grows the buffer, it will allow for an extra termination byte. </li> <li> If GSUniTemporary is set, the function will return the results in an autoreleased buffer rather than in a buffer that the caller must release. </li> <li> If GSUniBOM is set, the function will read the first unicode character as a byte order marker. </li> <li> If GSUniShortOk is set, the function will return a buffer containing any decoded characters even if the whole conversion fails. </li> </ul> <p> On return, the function result is a flag indicating success (<var>YES</var>) or failure ( <var>NO</var>), and on success, the value stored in <var>size</var> is the number of bytes in the converted data. The converted data itself is stored in the location given by <var>dst</var>. <br></br> NB. If the value stored in <var>dst</var> has been changed, it is a pointer to allocated memory which the caller is responsible for freeing, and the caller is <em>still</em> responsible for freeing the original buffer. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> GSToUnicode</span>(<span class="parameter"><span class="type">unichar** </span><span class="arg">dst</span></span>, <span class="parameter"><span class="type">unsigned int* </span><span class="arg">size</span></span>, <span class="parameter"><span class="type">const unsigned char* </span><span class="arg">src</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">slen</span></span>, <span class="parameter"><span class="type">NSStringEncoding </span><span class="arg">enc</span></span>, <span class="parameter"><span class="type">NSZone * </span><span class="arg">zone</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">options</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Function to convert from 8-bit data to 16-bit unicode characters. <p> The <var>dst</var> argument is a pointer to a pointer to a buffer in which the converted string is to be stored. If it is a null pointer, this function discards converted data, and is used only to determine the length of the converted string. If the <var>zone</var> argument is non-nul, the function is free to allocate a larger buffer if necessary, and store this new buffer in the <var>dst</var> argument. It will *NOT* deallocate the original buffer! </p> <p> The <var>size</var> argument is a pointer to the initial <var>size</var> of the destination buffer. If the function changes the buffer <var>size</var>, this value will be altered to the new <var>size</var>. This is measured in 16-bit unicode characters, not bytes. </p> <p> The <var>src</var> argument is a pointer to the byte sequence which is to be converted to 16-bit unicode. </p> <p> The <var>slen</var> argument is the length of the byte sequence which is to be converted to 16-bit unicode. This is measured in bytes. </p> <p> The <var>enc</var> argument specifies the encoding type of the 8-bit byte sequence which is to be converted to 16-bit unicode. </p> <p> The <var>zone</var> argument specifies a memory <var>zone</var> in which the function may allocate a buffer to return data in. If this is nul, the function will fail if the originally supplied buffer is not big enough (unless <var>dst</var> is a null pointer... indicating that converted data is to be discarded). <br></br> If the library is built for garbage collecting, the <var>zone</var> argument is used only as a marker to say whether the function may allocate memory (<var>zone</var> is non-null) or not (<var>zone</var> is null). </p> The <var>options</var> argument controls some special behavior. <ul> <li> If GSUniTerminate is set, the function is expected to null terminate the output string, and will assume that it is safe to place the nul just beyond the end of the stated buffer <var>size</var>. Also, if the function grows the buffer, it will allow for an extra termination character. </li> <li> If GSUniTemporary is set, the function will return the results in an autoreleased buffer rather than in a buffer that the caller must release. </li> <li> If GSUniBOM is set, the function will write the first unicode character as a byte order marker. </li> <li> If GSUniShortOk is set, the function will return a buffer containing any decoded characters even if the whole conversion fails. </li> </ul> <p> On return, the function result is a flag indicating success (<var>YES</var>) or failure ( <var>NO</var>), and on success, the value stored in <var>size</var> is the number of characters in the converted string. The converted string itself is stored in the location given by <var>dst</var>. <br></br> NB. If the value stored in <var>dst</var> has been changed, it is a pointer to allocated memory which the caller is responsible for freeing, and the caller is <em>still</em> responsible for freeing the original buffer. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unsigned int </span><span class="selector"> GSUnicode</span>(<span class="parameter"><span class="type">const unichar* </span><span class="arg">chars</span></span>, <span class="parameter"><span class="type">unsigned int </span><span class="arg">length</span></span>, <span class="parameter"><span class="type">BOOL * </span><span class="arg">isASCII</span></span>, <span class="parameter"><span class="type">BOOL * </span><span class="arg">isLatin1</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Function to check a block of data for validity as a unicode string and say whether it contains solely ASCII or solely Latin1 data. <br></br> Any leading BOM must already have been removed and the data must already be in native byte order. <br></br> Returns the number of characters which were found valid.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unsigned char </span><span class="selector"> uni_cop</span>(<span class="parameter"><span class="type">unichar </span><span class="arg">u</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unichar* </span><span class="selector"> uni_is_decomp</span>(<span class="parameter"><span class="type">unichar </span><span class="arg">u</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> uni_isnonsp</span>(<span class="parameter"><span class="type">unichar </span><span class="arg">u</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unichar </span><span class="selector"> uni_tolower</span>(<span class="parameter"><span class="type">unichar </span><span class="arg">ch</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Uses direct access into a two-level table to map cases. <br></br> The two-level table method is less space efficient (but still not bad) than a single table and a linear search, but it reduces the number of conditional statements to just one.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">unichar </span><span class="selector"> uni_toupper</span>(<span class="parameter"><span class="type">unichar </span><span class="arg">ch</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Uses direct access into a two-level table to map cases. <br></br> The two-level table method is less space efficient (but still not bad) than a single table and a linear search, but it reduces the number of conditional statements to just one.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base Additions</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="GCArray.html#GCArray">GCArray</a></li><li><a href="GCDictionary.html#GCDictionary">GCDictionary</a></li><li><a href="GCMutableArray.html#GCMutableArray">GCMutableArray</a></li><li><a href="GCMutableDictionary.html#GCMutableDictionary">GCMutableDictionary</a></li><li><a href="GCObject.html#GCObject">GCObject</a></li><li><a href="GSHTMLParser.html#GSHTMLParser">GSHTMLParser</a></li><li><a href="GSHTMLSAXHandler.html#GSHTMLSAXHandler">GSHTMLSAXHandler</a></li><li><a href="GSLazyLock.html#GSLazyLock">GSLazyLock</a></li><li><a href="GSLazyRecursiveLock.html#GSLazyRecursiveLock">GSLazyRecursiveLock</a></li><li><a href="GSSAXHandler.html#GSSAXHandler">GSSAXHandler</a></li><li><a href="GSTLSCertificateList.html#GSTLSCertificateList">GSTLSCertificateList</a></li><li><a href="GSTLSCredentials.html#GSTLSCredentials">GSTLSCredentials</a></li><li><a href="GSTLSDHParams.html#GSTLSDHParams">GSTLSDHParams</a></li><li><a href="GSTLSObject.html#GSTLSObject">GSTLSObject</a></li><li><a href="GSTLSPrivateKey.html#GSTLSPrivateKey">GSTLSPrivateKey</a></li><li><a href="GSTLSSession.html#GSTLSSession">GSTLSSession</a></li><li><a href="GSTreeSAXHandler.html#GSTreeSAXHandler">GSTreeSAXHandler</a></li><li><a href="GSXMLAttribute.html#GSXMLAttribute">GSXMLAttribute</a></li><li><a href="GSXMLDocument.html#GSXMLDocument">GSXMLDocument</a></li><li><a href="GSXMLNamespace.html#GSXMLNamespace">GSXMLNamespace</a></li><li><a href="GSXMLNode.html#GSXMLNode">GSXMLNode</a></li><li><a href="GSXMLParser.html#GSXMLParser">GSXMLParser</a></li><li><a href="GSXMLRPC.html#GSXMLRPC">GSXMLRPC</a></li><li><a href="GSXPathBoolean.html#GSXPathBoolean">GSXPathBoolean</a></li><li><a href="GSXPathContext.html#GSXPathContext">GSXPathContext</a></li><li><a href="GSXPathNodeSet.html#GSXPathNodeSet">GSXPathNodeSet</a></li><li><a href="GSXPathNumber.html#GSXPathNumber">GSXPathNumber</a></li><li><a href="GSXPathObject.html#GSXPathObject">GSXPathObject</a></li><li><a href="GSXPathString.html#GSXPathString">GSXPathString</a></li></ul></div>
+
+<ul><li><a href="GSMime.html">GSMime (buggy documentation)</a></li></ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="GCObjectCategories.html#GCObject(Extra)">GCObject</a></li><li><a href="GSXMLDocumentCategories.html#GSXMLDocument(XSLT)">GSXMLDocument</a></li><li><a href="GSXMLRPCCategories.html#GSXMLRPC(Delegate)">GSXMLRPC</a></li><li><a href="NSArrayCategories.html#NSArray(GNUstepBase)">NSArray</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(GNUstepBase)">NSAttributedString</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstepBase)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GNUstepBase)">NSCalendarDate</a></li><li><a href="NSDataCategories.html#NSData(GNUstepBase)">NSData</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepBase)">NSFileHandle</a></li><li><a href="NSLockCategories.html#NSLock(GNUstepBase)">NSLock</a></li><li><a href="NSMutableStringCategories.html#NSMutableString(GNUstepBase)">NSMutableString</a></li><li><a href="NSNumberCategories.html#NSNumber(GNUstepBase)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstepBase)">NSObject</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstepBase)">NSProcessInfo</a></li><li><a href="NSRecursiveLockCategories.html#NSRecursiveLock(GNUstepBase)">NSRecursiveLock</a></li><li><a href="NSStringCategories.html#NSString(GNUstepBase)">NSString</a></li><li><a href="NSTaskCategories.html#NSTask(GNUstepBase)">NSTask</a></li><li><a href="NSThreadCategories.html#NSThread(GNUstepBase)">NSThread</a></li><li><a href="NSURLCategories.html#NSURL(GNUstepBase)">NSURL</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>
