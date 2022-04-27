@@ -1,7 +1,7 @@
 # Objective-C Language Reference
 
 The Objective-C programming language is a powerful programming language.
-This section documents its features, and is intended as a companion to cppreference.com.
+This section documents its features, and is intended as a companion to <cppreference.com>.
 
 ```{toctree}
 ---

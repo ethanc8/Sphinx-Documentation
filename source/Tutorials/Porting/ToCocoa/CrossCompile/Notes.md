@@ -22,7 +22,7 @@ The SDK can be found here:
 
 ## Bypassing Gatekeeper
 
-You currently can't notarize the app from GNU/Linux. However, the app does not need to be signed if it was downloaded using `curl` or `wget`, or if it was embedded in an RTF.
+You currently can't notarize the app from GNU/Linux. However, the app does not need to be signed or notarized if it was downloaded using `curl` or `wget`, or if it was embedded in an RTF.
 
 * [`curl` workaround](https://lapcatsoftware.com/articles/without-notarization.html)
 * [TextEdit workaround](https://lapcatsoftware.com/articles/textedit-gatekeeper.html)
