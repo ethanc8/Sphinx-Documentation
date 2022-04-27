@@ -16,3 +16,33 @@ titlesonly: true
 HelpfulWebsites.md
 WhatsNext.md
 ```
+
+## 1 - First Steps
+
+[Read it here](1_FirstSteps/index.md)
+
+This tutorial gets GNUstep up and running. Start here.
+
+## 2 - Convertor
+
+Build your first app, which multiplies two numbers! It's intended to convert currencies given the conversion rate.
+
+This guide introduces you to the GNUstep IDE, which is composed of **ProjectCenter** and **Gorm**.
+
+Topics:
+* Using ProjectCenter
+* Using Gorm
+* Using AppKit, Foundation, and the Objective-C programming language
+
+## 3 - TimeMachine
+
+[Read online](http://gnustep.made-it.com/GSPT/xml/Tutorial_en.html#AEN501)
+
+Topics:
+* Updating your UI
+* Custom Views
+* Drawing custom shapes
+* Dynamically creating widgets
+* Modal Windows
+* Configuring your app
+* Notifications
