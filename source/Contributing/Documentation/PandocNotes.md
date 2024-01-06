@@ -29,3 +29,11 @@ for manpage in *.[1-9]; do
     pandoc --wrap=none -f man -t markdown_strict ${manpage} -o ${manpage}.md
 done
 ```
+
+DocBook to Markdown:
+
+```bash
+for docbook in *.docbook; do
+    pandoc --wrap=none -f docbook -t markdown_strict ${docbook} -o ${docbook}.md
+done
+```

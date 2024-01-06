@@ -25,7 +25,7 @@ titlesonly: true
 
 This section is **not** under an open-source license -- we hope to fix this undersight soon.
 
-This section was written by Pierre-Yves Rivaille, and [posted to gnustep.org](http://www.gnustep.org/experience/PierresDevTutorial/index.html). This copy is still incomplete.
+This section was written by Pierre-Yves Rivaille, and [posted to gnustep.org](http://www.gnustep.org/experience/PierresDevTutorial/index.html).
 
 Initial writing 07-07-2001 by Pierre-Yves Rivaille  
 Modified 02-Feb-2005 by Alex Perez  

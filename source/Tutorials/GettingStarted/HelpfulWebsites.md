@@ -72,7 +72,7 @@
 
 ## Currency Convertor and Discovering OPENSTEP
 
-[1996 - Discovering OPENSTEP: A Developer Tutorial (PDF)](http://bitsavers.org/pdf/next/OpenSTEP_Developers_Tutorial_4.0_Mach_1996.pdf)
+[1996 - Discovering OPENSTEP: A Developer Tutorial (PDF)](http://bitsavers.org/pdf/next/OpenSTEP_Developers_Tutorial_4.0_Mach_1996.pdf) | [HTML](https://web.archive.org/web/20010123233900if_/http://www.toodarkpark.org/computers/objc/)
 
 [1997 - Discovering OPENSTEP: A Developer Tutorial (PDFs in HTML frames)](https://web.archive.org/web/19970412203127if_/http://www.next.com/Pubs/Documents/OPENSTEP/DeveloperTutorial/)
 

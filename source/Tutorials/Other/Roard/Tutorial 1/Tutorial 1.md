@@ -2,7 +2,7 @@
 
 This article was originally published in Linux Magazine France n°49, April 2003
 
-**Authors:** Nicolas Roard and Fabien Vallon
+**Authors:** Nicolas Roard and Fabien Vallon  
 **Translation:** Gerold Rupprecht and Nicolas Roard
 
 This section is currently **not** under an open-source license.
@@ -300,7 +300,7 @@ What will be the controller actions ? We want to :
 *   add a task: `addTodo:`
 *   add a sub-task: `addSubTodo:`
 *   remove a task: `removeTodo:`
-*   update a task: updateTodo
+*   update a task: `updateTodo`
     
 
 Our controller will stock the task list in an array (`NSMutableArray`), the different actions will be directly linked to the buttons of our GUI. A click on a line in our task list will update the fields Note, Description, in order to view the contents of the selected task.

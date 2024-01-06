@@ -1,6 +1,6 @@
 Translated with Google Translate
 
-# NSWindowController and Design Pattern MVC
+# 2 - NSWindowController and Design Pattern MVC
 GNUstep has an NSWindowController class which will facilitate the implementation of the MVC Design Pattern.
 NSWindowController notably manages:
 

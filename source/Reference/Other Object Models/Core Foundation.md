@@ -1,1 +1,0 @@
-/home/pi/Projects/GNUstep/Sphinx-Documentation/source/Reference Documentation/Frameworks/Basic Frameworks/CoreFoundation/Object Model.md
