@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="EcUserDefaults">
+  <head>
+    <title>EcUserDefaults documentation</title>
+    <author name="Richard Frith-Macdonald">
+      <email address="rfm@gnu.org">
+        rfm@gnu.org
+      </email>
+    </author>
+    <copy>2012 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the
+        NSUserDefaults(EcUserDefaults)
+        category
+      </heading>
+      <category name="EcUserDefaults" class="NSUserDefaults">
+        <declared>EcUserDefaults.h</declared>
+        <desc>
+          This category simply provides an easy way to work with
+          user defaults where you want all keys to share a common
+          prefix.
+        </desc>
+        <method type="NSUserDefaults*" factory="yes">
+          <sel>prefixedDefaults</sel>
+          <desc>
+            Returns the latest prefixed version of the shared
+            user defaults, or <code>nil</code> if none has been
+            set up.
+          </desc>
+        </method>
+        <method type="void" factory="yes">
+          <sel>setDefaultLifetime:</sel>
+          <arg type="NSTimeInterval">t</arg>
+          <desc>
+            Sets the default lifetime for command values set using
+            the
+            <ref type="method" id="-setCommand:forKey:">
+              -setCommand:forKey:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="NSUserDefaults*" factory="yes">
+          <sel>userDefaultsWithPrefix:</sel>
+          <arg type="NSString*">aPrefix</arg>
+          <desc>
+            Returns a proxy to the shared user defaults
+            instance, which will allow <var>aPrefix</var> at
+            the start of every key. <br /> If <var>aPrefix</var> is
+            <code>nil</code>, the string given by the
+            EcUserDefaultsPrefix user default is
+            used. <br /> The proxy will read defaults using the
+            unprefixed key if no value is found for the
+            prefixed key.
+          </desc>
+        </method>
+        <method type="NSDictionary*">
+          <sel>commandExpiries</sel>
+          <desc>
+            Returns a dictionary listing all the command
+            override keys for which values are currently set.
+            The values in the dictionary are the timestamps after
+            which those values may be purged.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>commandObjectForKey:</sel>
+          <arg type="NSString*">aKey</arg>
+          <desc>
+            Returns the last value set for the specified key
+            using the
+            <ref type="method" id="-setCommand:forKey:">
+              -setCommand:forKey:
+            </ref>
+            method. This returns <code>nil</code> if no value
+            is currently set.
+          </desc>
+        </method>
+        <method type="NSDictionary*">
+          <sel>configuration</sel>
+          <desc>
+            Returns the current configuration settings
+            dictionary (as set using the
+            <ref type="method" id="-setConfiguration:">
+              -setConfiguration:
+            </ref>
+            method).
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>defaultsPrefix</sel>
+          <desc>
+            Returns the prefix used by the receiver, or
+            <code>nil</code> if no prefix is in use.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>key:</sel>
+          <arg type="NSString*">aKey</arg>
+          <desc>
+            Convenience method to prepend the prefix to the
+            supplied <var>aKey</var> value if it is not
+            already present.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>purgeSettings</sel>
+          <desc>
+            Removes all settings whose lifetime has passed.
+            Those settings must previously have been set up using
+            the
+            <ref type="method" id="-setCommand:forKey:lifetime:">
+              -setCommand:forKey:lifetime:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>revertSettings</sel>
+          <desc>
+            Removes all settings previously set up using the
+            <ref type="method" id="-setCommand:forKey:">
+              -setCommand:forKey:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>setCommand:</sel>
+          <arg type="id">val</arg>
+          <sel>forKey:</sel>
+          <arg type="NSString*">key</arg>
+          <desc>
+            Sets a value to take precedence over others (in the
+            volatile domain reserved for commands issued to
+            the current process by an operator). <br /> Values set
+            using this method will use the default lifetime.
+            <br /> This operates by using the
+            <ref type="method" id="-setCommand:forKey:lifetime:">
+              -setCommand:forKey:lifetime:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>setCommand:</sel>
+          <arg type="id">val</arg>
+          <sel>forKey:</sel>
+          <arg type="NSString*">key</arg>
+          <sel>lifetime:</sel>
+          <arg type="NSTimeInterval">t</arg>
+          <desc>
+            Sets a value to take precedence over others (in the
+            volatile domain reserved for commands issued to
+            the current process by an operator). <br /> Specifying
+            a non-zero lifetime will adjust the lifetime of an
+            existing setting irresepective of whether the
+            value is changed or not. <br /> Specifying a zero or
+            negative lifetime will remove the value for the
+            setting (as will setting a <code>nil</code> value).
+            <br /> Returns <code>YES</code> if the configuration
+            (actual value set) was changed, <code>NO</code>
+            otherwise (may have changed lifetime of setting).
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>setConfiguration:</sel>
+          <arg type="NSDictionary*">config</arg>
+          <desc>
+            Replaces the system central configuration
+            information for this process with the contents
+            of the dictionary. Values in this dictionary take
+            precedence over other configured values except
+            for those set using the
+            <ref type="method" id="-setCommand:forKey:">
+              -setCommand:forKey:
+            </ref>
+            method. <br /> Returns <code>YES</code> if the
+            configuration changed, <code>NO</code>
+            otherwise.
+          </desc>
+        </method>
+      </category>
+    </chapter>
+  </body>
+</gsdoc>

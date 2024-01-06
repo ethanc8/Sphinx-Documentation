@@ -1,0 +1,576 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui (Application Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSMenuView</h2>NSMenuView : <a href="NSView.html#NSView">NSView</a> &lt;NSCoding, <a href="_NSMenuView.html#NSMenuView">NSMenuView</a>&gt;<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Fred Kiefer David Lazaro Saz Michael Hanni </td></tr><tr><th>Declared in</th><td>AppKit/NSMenuView.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p>The <a href="NSMenu.html#NSMenu">NSMenu</a> class uses an object implementing the <a href="NSMenuView.html#NSMenuView">NSMenuView</a> protocol to do the actual drawing. <br></br> <br></br> Normally there is no good reason to write your own class implementing this protocol. However if you want to customize your menus you should implement this protocol to ensure that it works nicely together with sub/super menus not using your custom menu representation. <br></br> <br></br> <strong>How menus are drawn</strong> <br></br> <br></br> This class implements several menu look and feels at the same time. The looks and feels implemented are: <ul> <li> Ordinary vertically stacked menus with the NeXT submenu positioning behavour. </li> <li> Vertically stacked menus with the WindowMaker submenu placement. This behaviour is selected by choosing the <strong>GSWindowMakerInterfaceStyle</strong>. </li> <li> PopupButtons are actually menus. This class implements also the behaviour for the NSPopButtons. See for the the class NSPopButton. </li> </ul></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[NSMenuView_initAsTearOff]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initAsTearOff </span></span></dt>
+<dd><div class="methodDescription">
+Creates new instance and sets menu to torn off state with NSMenu's setTornOff:.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSMenuView_menuBarHeight]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(float)</span><span class="selector"> menuBarHeight </span></span></dt>
+<dd><div class="methodDescription">
+Returns the height of the menu bar.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setMenu:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">menu</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the <var>menu</var> to be displayed in to <var>menu</var>. Also this method adds this <var>menu</var> view to the menu's list of observers, mark view to force recalculation of layout with setNeedsSizing:YES, and updates itself with update method.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_menu]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> menu </span></span></dt>
+<dd><div class="methodDescription">
+Returns the <a href="NSMenu.html#NSMenu">NSMenu</a> associated with this menu view.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setHorizontal:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setHorizontal: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets menu orientation. If <var>YES</var> menu items are displayed from left to right, if <var>NO</var> from top to bottom (vertically). By default, menu items are displayed vertically.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_isHorizontal]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isHorizontal </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> if menu items are displayed horizontally, <var>NO</var> if vertically.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setFont:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFont: </span><span class="parameter"><span class="type">(<a href="NSFont.html#NSFont">NSFont</a> *)</span><span class="arg">font</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the default <var>font</var> to use when drawing the menu text.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_font]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSFont.html#NSFont">NSFont</a> *)</span><span class="selector"> font </span></span></dt>
+<dd><div class="methodDescription">
+Returns the default font used to draw the menu text.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setHighlightedItemIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setHighlightedItemIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Highlights item with at <var>index</var>. If <var>index</var> is -1 all highlighing is removed.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_highlightedItemIndex]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> highlightedItemIndex </span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of the highlighted item. Returns -1 if there is no highlighted item.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setMenuItemCell:forItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMenuItemCell: </span><span class="parameter"><span class="type">(<a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a> *)</span><span class="arg">cell</span></span><span class="selector"> forItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Replaces item <var>cell</var> at <var>index</var> with <var>cell</var>. Highlighting of item is preserved.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_menuItemCellForItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a> *)</span><span class="selector"> menuItemCellForItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns cell associated with item at <var>index</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_attachedMenuView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenuView.html#NSMenuView">NSMenuView</a> *)</span><span class="selector"> attachedMenuView </span></span></dt>
+<dd><div class="methodDescription">
+Returns menu view associated with visible attached submenu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_attachedMenu]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> attachedMenu </span></span></dt>
+<dd><div class="methodDescription">
+Returns visible attached submenu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_isAttached]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isAttached </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var>, if this object is an visivle attached submenu's view. Returns <var>NO</var> otherwise.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_isTornOff]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isTornOff </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var>, if this object is associated with torn off menu (menu with a close button on title bar).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_horizontalEdgePadding]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> horizontalEdgePadding </span></span></dt>
+<dd><div class="methodDescription">
+Returns horizontal space used for padding between menu item elements (state image, title image, title, key equivalent, submenu arrow image).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setHorizontalEdgePadding:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setHorizontalEdgePadding: </span><span class="parameter"><span class="type">(float)</span><span class="arg">pad</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets amount of pixels added between menu item elements to <var>pad</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_itemChanged:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> itemChanged: </span><span class="parameter"><span class="type">(NSNotification *)</span><span class="arg">notification</span></span></span></dt>
+<dd><div class="methodDescription">
+Marks menu item cell associated with the menu item and menu view as needing to be resized. This method is invoked when NSMenuDidChangeItemNotification received. The <var>notification</var> parameter contains index of changed menu item and can be accessed with NSMenuItemIndex key.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_itemAdded:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> itemAdded: </span><span class="parameter"><span class="type">(NSNotification *)</span><span class="arg">notification</span></span></span></dt>
+<dd><div class="methodDescription">
+Creates new item cell for the newly created menu item, marks cell and menu view as needing to be resized. This method is invoked when NSMenuDidAddItemNotification received. The <var>notification</var> parameter contains index of changed menu item and can be accessed with NSMenuItemIndex key.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_itemRemoved:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> itemRemoved: </span><span class="parameter"><span class="type">(NSNotification *)</span><span class="arg">notification</span></span></span></dt>
+<dd><div class="methodDescription">
+Removes cell associated with removed menu item, removes highlighting if removed menu item was highlighted, marks cell and menu view as needing to be resized. This method is invoked when NSMenuDidRemoveItemNotification received. The <var>notification</var> parameter contains index of changed menu item and can be accessed with NSMenuItemIndex key.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_detachSubmenu]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> detachSubmenu </span></span></dt>
+<dd><div class="methodDescription">
+Detaches currently visible submenu window from main menu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_attachSubmenuForItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> attachSubmenuForItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Attach submenu if the item at <var>index</var> is a submenu. It will figure out if the new submenu should be transient or not.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_update]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> update </span></span></dt>
+<dd><div class="methodDescription">
+Adds title view for application menu and submenus, removes title view if menu is owned by <a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a>, adds close button to title view for torn off menus and removes it for other type of menu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setNeedsSizing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNeedsSizing: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the <var>flag</var> whether layout needs to be resized. Set it to <var>YES</var> if menu contents changed and layout needs to be recalculated. This method is used internally. Yout should not invoke it directly from applications.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_needsSizing]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> needsSizing </span></span></dt>
+<dd><div class="methodDescription">
+Return <var>YES</var> if menu view contents changed and needs to be resized.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_sizeToFit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sizeToFit </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_stateImageOffset]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> stateImageOffset </span></span></dt>
+<dd><div class="methodDescription">
+Returns the starting horizontal position for drawing the state image.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_stateImageWidth]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> stateImageWidth </span></span></dt>
+<dd><div class="methodDescription">
+Returns the width of the state image.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_imageAndTitleOffset]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> imageAndTitleOffset </span></span></dt>
+<dd><div class="methodDescription">
+Returns the starting horizontal position for drawing the image and title.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_imageAndTitleWidth]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> imageAndTitleWidth </span></span></dt>
+<dd><div class="methodDescription">
+Returns the width of the image and title section. Tis section contains image and text of menu item.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_keyEquivalentOffset]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> keyEquivalentOffset </span></span></dt>
+<dd><div class="methodDescription">
+Returns the starting position for drawing the key equivalent. Key equivalent can be submenu arrow if menu item has submenu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_keyEquivalentWidth]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> keyEquivalentWidth </span></span></dt>
+<dd><div class="methodDescription">
+Returns the width of key equivalent text. Key equivalent can be submenu arrow if menu item has submenu<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_innerRect]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> innerRect </span></span></dt>
+<dd><div class="methodDescription">
+Returns bounds rectangle of the menu view. It is smaller by 1 pixel in width than menu window (dark gray border at left).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_rectOfItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> rectOfItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns frame rectangle of menu item cell. It is smaller by 1 pixel in width than menu window (dark gray border).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_indexOfItemAtPoint:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfItemAtPoint: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">point</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of the item below <var>point</var>. Returns -1 if mouse is not above a menu item.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setNeedsDisplayForItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNeedsDisplayForItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Calls setNeedsDisplayInRect: for rectangle occupied by item at <var>index</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_locationForSubmenu:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> locationForSubmenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">aSubmenu</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the correct frame origin for <var>aSubmenu</var> based on the location of the receiver. This location may depend on the current NSInterfaceStyle.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_setWindowFrameForAttachingToRect:onScreen:preferredEdge:popUpSelectedItem:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setWindowFrameForAttachingToRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">screenRect</span></span><span class="selector"> onScreen: </span><span class="parameter"><span class="type">(<a href="NSScreen.html#NSScreen">NSScreen</a> *)</span><span class="arg">screen</span></span><span class="selector"> preferredEdge: </span><span class="parameter"><span class="type">(NSRectEdge)</span><span class="arg">edge</span></span><span class="selector"> popUpSelectedItem: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">selectedItemIndex</span></span></span></dt>
+<dd><div class="methodDescription">
+Resize menu view frame to be appropriate in size to attach to <var>screenRect</var> at preferredEdge. For popup's menu, if <var>selectedItemIndex</var> is other than -1, position view so selected item covers the <a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a>. <br></br> <strong> NOTE: preffered <var>edge</var> positioning doesn't implemented yet! </strong><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_performActionWithHighlightingForItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> performActionWithHighlightingForItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenuView_trackWithEvent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> trackWithEvent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">event</span></span></span></dt>
+<dd><div class="methodDescription">
+This method is responsible for tracking the mouse while this menu is on the screen and the user is busy navigating the menu or one of it submenus. Responsible does not mean that this method does it all. For submenus for example it will call, indirectly, itself for submenu under consideration. It will return <var>YES</var> if user released mouse, not above a submenu item. <var>NO</var> in all other circumstances. Implementation detail: <ul> <li> It use periodic events to update the highlight state and attach / detach submenus. </li> <li> The flag justAttachedNewSubmenu is set to <var>YES</var> when a new submenu is attached. The effect is that the highlighting / attaching / detaching is supressed for this menu. This is done so the user is given a change to move the mouse pointer into the newly attached submenu. Otherwise it would immediately be removed as the mouse pointer move over another item. The logic for resetting the flag is rather adhoc. </li> <li> the flag subMenusNeedRemoving means that we will remove all the submenus after we are done. This flag is used to clean up the submenus when the user has opened a submenu by clicking and wants to close it again by clicking on the hihglighted item. </li> <li> When the user released the mouse this method will cleanup all the transient menus. Not only its own, but also its attached menu and all its transient super menus. </li> <li> The clean up is done BEFORE the action is executed. This is needed otherwise `hiding' the application leaves a dangling menu. If this is not acceptable, there should be another mechanism of handling the hiding. BTW besides the `hiding' the application, model panels are also a problem when the menu is not cleared before executing the action. </li> </ul><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui (Application Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSActionCell.html#NSActionCell">NSActionCell</a></li><li><a href="NSBezierPath.html#NSBezierPath">NSBezierPath</a></li><li><a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a></li><li><a href="NSBox.html#NSBox">NSBox</a></li><li><a href="NSBrowser.html#NSBrowser">NSBrowser</a></li><li><a href="NSBrowserCell.html#NSBrowserCell">NSBrowserCell</a></li><li><a href="NSButton.html#NSButton">NSButton</a></li><li><a href="NSButtonCell.html#NSButtonCell">NSButtonCell</a></li><li><a href="NSCachedImageRep.html#NSCachedImageRep">NSCachedImageRep</a></li><li><a href="NSCell.html#NSCell">NSCell</a></li><li><a href="NSClipView.html#NSClipView">NSClipView</a></li><li><a href="NSColor.html#NSColor">NSColor</a></li><li><a href="NSColorList.html#NSColorList">NSColorList</a></li><li><a href="NSColorPanel.html#NSColorPanel">NSColorPanel</a></li><li><a href="NSColorPicker.html#NSColorPicker">NSColorPicker</a></li><li><a href="NSColorWell.html#NSColorWell">NSColorWell</a></li><li><a href="NSComboBox.html#NSComboBox">NSComboBox</a></li><li><a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a></li><li><a href="NSControl.html#NSControl">NSControl</a></li><li><a href="NSCursor.html#NSCursor">NSCursor</a></li><li><a href="NSCustomImageRep.html#NSCustomImageRep">NSCustomImageRep</a></li><li><a href="NSDataLink.html#NSDataLink">NSDataLink</a></li><li><a href="NSDataLinkManager.html#NSDataLinkManager">NSDataLinkManager</a></li><li><a href="NSDataLinkPanel.html#NSDataLinkPanel">NSDataLinkPanel</a></li><li><a href="NSDocument.html#NSDocument">NSDocument</a></li><li><a href="NSDocumentController.html#NSDocumentController">NSDocumentController</a></li><li><a href="NSDrawer.html#NSDrawer">NSDrawer</a></li><li><a href="NSDrawerDelegate.html#NSDrawerDelegate">NSDrawerDelegate</a></li><li><a href="NSEPSImageRep.html#NSEPSImageRep">NSEPSImageRep</a></li><li><a href="NSEvent.html#NSEvent">NSEvent</a></li><li><a href="NSFont.html#NSFont">NSFont</a></li><li><a href="NSFontManager.html#NSFontManager">NSFontManager</a></li><li><a href="NSFontPanel.html#NSFontPanel">NSFontPanel</a></li><li><a href="NSForm.html#NSForm">NSForm</a></li><li><a href="NSFormCell.html#NSFormCell">NSFormCell</a></li><li><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a></li><li><a href="NSHelpManager.html#NSHelpManager">NSHelpManager</a></li><li><a href="NSHelpPanel.html#NSHelpPanel">NSHelpPanel</a></li><li><a href="NSImage.html#NSImage">NSImage</a></li><li><a href="NSImageCell.html#NSImageCell">NSImageCell</a></li><li><a href="NSImageRep.html#NSImageRep">NSImageRep</a></li><li><a href="NSImageView.html#NSImageView">NSImageView</a></li><li><a href="NSInputManager.html#NSInputManager">NSInputManager</a></li><li><a href="NSInputServer.html#NSInputServer">NSInputServer</a></li><li><a href="NSLayoutManager.html#NSLayoutManager">NSLayoutManager</a></li><li><a href="NSMatrix.html#NSMatrix">NSMatrix</a></li><li><a href="NSMenu.html#NSMenu">NSMenu</a></li><li><a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a></li><li><a href="NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="NSMutableParagraphStyle.html#NSMutableParagraphStyle">NSMutableParagraphStyle</a></li><li><a href="NSNib.html#NSNib">NSNib</a></li><li><a href="NSOpenGLContext.html#NSOpenGLContext">NSOpenGLContext</a></li><li><a href="NSOpenGLPixelFormat.html#NSOpenGLPixelFormat">NSOpenGLPixelFormat</a></li><li><a href="NSOpenGLView.html#NSOpenGLView">NSOpenGLView</a></li><li><a href="NSOpenPanel.html#NSOpenPanel">NSOpenPanel</a></li><li><a href="NSOutlineView.html#NSOutlineView">NSOutlineView</a></li><li><a href="NSPageLayout.html#NSPageLayout">NSPageLayout</a></li><li><a href="NSPanel.html#NSPanel">NSPanel</a></li><li><a href="NSParagraphStyle.html#NSParagraphStyle">NSParagraphStyle</a></li><li><a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a></li><li><a href="NSPopUpButtonCell.html#NSPopUpButtonCell">NSPopUpButtonCell</a></li><li><a href="NSPrinter.html#NSPrinter">NSPrinter</a></li><li><a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a></li><li><a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a></li><li><a href="NSPrintPanel.html#NSPrintPanel">NSPrintPanel</a></li><li><a href="NSProgressIndicator.html#NSProgressIndicator">NSProgressIndicator</a></li><li><a href="NSResponder.html#NSResponder">NSResponder</a></li><li><a href="NSRulerMarker.html#NSRulerMarker">NSRulerMarker</a></li><li><a href="NSRulerView.html#NSRulerView">NSRulerView</a></li><li><a href="NSSavePanel.html#NSSavePanel">NSSavePanel</a></li><li><a href="NSScreen.html#NSScreen">NSScreen</a></li><li><a href="NSScroller.html#NSScroller">NSScroller</a></li><li><a href="NSScrollView.html#NSScrollView">NSScrollView</a></li><li><a href="NSSecureTextField.html#NSSecureTextField">NSSecureTextField</a></li><li><a href="NSSecureTextFieldCell.html#NSSecureTextFieldCell">NSSecureTextFieldCell</a></li><li><a href="NSSelection.html#NSSelection">NSSelection</a></li><li><a href="NSSlider.html#NSSlider">NSSlider</a></li><li><a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a></li><li><a href="NSSound.html#NSSound">NSSound</a></li><li><a href="NSSpellChecker.html#NSSpellChecker">NSSpellChecker</a></li><li><a href="NSSplitView.html#NSSplitView">NSSplitView</a></li><li><a href="NSStepper.html#NSStepper">NSStepper</a></li><li><a href="NSStepperCell.html#NSStepperCell">NSStepperCell</a></li><li><a href="NSTableColumn.html#NSTableColumn">NSTableColumn</a></li><li><a href="NSTableHeaderCell.html#NSTableHeaderCell">NSTableHeaderCell</a></li><li><a href="NSTableHeaderView.html#NSTableHeaderView">NSTableHeaderView</a></li><li><a href="NSTableView.html#NSTableView">NSTableView</a></li><li><a href="NSTabView.html#NSTabView">NSTabView</a></li><li><a href="NSTabViewItem.html#NSTabViewItem">NSTabViewItem</a></li><li><a href="NSText.html#NSText">NSText</a></li><li><a href="NSTextAttachment.html#NSTextAttachment">NSTextAttachment</a></li><li><a href="NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="NSTextContainer.html#NSTextContainer">NSTextContainer</a></li><li><a href="NSTextField.html#NSTextField">NSTextField</a></li><li><a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a></li><li><a href="NSTextStorage.html#NSTextStorage">NSTextStorage</a></li><li><a href="NSTextTab.html#NSTextTab">NSTextTab</a></li><li><a href="NSTextView.html#NSTextView">NSTextView</a></li><li><a href="NSToolbar.html#NSToolbar">NSToolbar</a></li><li><a href="NSToolbarItem.html#NSToolbarItem">NSToolbarItem</a></li><li><a href="NSView.html#NSView">NSView</a></li><li><a href="NSWindow.html#NSWindow">NSWindow</a></li><li><a href="NSWindowController.html#NSWindowController">NSWindowController</a></li><li><a href="NSWorkspace.html#NSWorkspace">NSWorkspace</a></li></ul></div>
+
+<ul>
+    <li><a href="NSPasteboard.html">NSPasteboard (buggy documentation)</a></li>
+    <li><a href="NSApplication.html">NSApplication (buggy documentation)</a></li>
+</ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSImageDelegateProtocol.html#GSImageDelegateProtocol">GSImageDelegateProtocol</a></li><li><a href="_NSComboBoxCellDataSource.html#NSComboBoxCellDataSource">NSComboBoxCellDataSource</a></li><li><a href="_NSControlTextEditingDelegate.html#NSControlTextEditingDelegate">NSControlTextEditingDelegate</a></li><li><a href="_NSInputServerMouseTracker.html#NSInputServerMouseTracker">NSInputServerMouseTracker</a></li><li><a href="_NSInputServiceProvider.html#NSInputServiceProvider">NSInputServiceProvider</a></li><li><a href="_NSMatrixDelegate.html#NSMatrixDelegate">NSMatrixDelegate</a></li><li><a href="_NSMenuDelegate.html#NSMenuDelegate">NSMenuDelegate</a></li><li><a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="_NSMenuValidation.html#NSMenuValidation">NSMenuValidation</a></li><li><a href="_NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="_NSOpenSavePanelDelegate.html#NSOpenSavePanelDelegate">NSOpenSavePanelDelegate</a></li><li><a href="_NSOutlineViewDataSource.html#NSOutlineViewDataSource">NSOutlineViewDataSource</a></li><li><a href="_NSOutlineViewDelegate.html#NSOutlineViewDelegate">NSOutlineViewDelegate</a></li><li><a href="_NSPrintPanelAccessorizing.html#NSPrintPanelAccessorizing">NSPrintPanelAccessorizing</a></li><li><a href="_NSTableViewDataSource.html#NSTableViewDataSource">NSTableViewDataSource</a></li><li><a href="_NSTableViewDelegate.html#NSTableViewDelegate">NSTableViewDelegate</a></li><li><a href="_NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="_NSTextFieldDelegate.html#NSTextFieldDelegate">NSTextFieldDelegate</a></li><li><a href="_NSTextInput.html#NSTextInput">NSTextInput</a></li><li><a href="_NSTextViewDelegate.html#NSTextViewDelegate">NSTextViewDelegate</a></li><li><a href="_NSWindowDelegate.html#NSWindowDelegate">NSWindowDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSAffineTransformCategories.html#NSAffineTransform(GNUstep)">NSAffineTransform</a></li><li><a href="NSApplicationCategories.html#NSApplication(NSColorPanel)">NSApplication</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(AppKit)">NSAttributedString</a></li><li><a href="NSBitmapImageRepCategories.html#NSBitmapImageRep(GNUstepExtension)">NSBitmapImageRep</a></li><li><a href="NSBundleCategories.html#NSBundle(NSHelpManager)">NSBundle</a></li><li><a href="NSCellCategories.html#NSCell(PrivateMethods)">NSCell</a></li><li><a href="NSCoderCategories.html#NSCoder(NSCoderAdditions)">NSCoder</a></li><li><a href="NSColorCategories.html#NSColor(GSQuartz)">NSColor</a></li><li><a href="NSFontCategories.html#NSFont(GNUstep)">NSFont</a></li><li><a href="NSGraphicsContextCategories.html#NSGraphicsContext(GNUstep)">NSGraphicsContext</a></li><li><a href="NSImageCategories.html#NSImage(GSQuartz)">NSImage</a></li><li><a href="NSImageRepCategories.html#NSImageRep(GSQuartz)">NSImageRep</a></li><li><a href="NSImageViewCategories.html#NSImageView(GNUstep)">NSImageView</a></li><li><a href="NSLayoutManagerCategories.html#NSLayoutManager(drawing)">NSLayoutManager</a></li><li><a href="NSMenuCategories.html#NSMenu(GNUstepExtra)">NSMenu</a></li><li><a href="NSMenuItemCategories.html#NSMenuItem(GNUstepExtra)">NSMenuItem</a></li><li><a href="NSMutableAttributedStringCategories.html#NSMutableAttributedString(AppKit)">NSMutableAttributedString</a></li><li><a href="NSObjectCategories.html#NSObject(NSComboBoxCellDataSource)">NSObject</a></li><li><a href="NSPrinterCategories.html#NSPrinter(PPDParsing)">NSPrinter</a></li><li><a href="NSPrintOperationCategories.html#NSPrintOperation(Private)">NSPrintOperation</a></li><li><a href="NSPrintPanelCategories.html#NSPrintPanel(Private)">NSPrintPanel</a></li><li><a href="NSProgressIndicatorCategories.html#NSProgressIndicator(GNUstepExtensions)">NSProgressIndicator</a></li><li><a href="NSResponderCategories.html#NSResponder(OptionalActionMethods)">NSResponder</a></li><li><a href="NSSplitViewCategories.html#NSSplitView(GNUstepExtra)">NSSplitView</a></li><li><a href="NSStringCategories.html#NSString(NSStringDrawing)">NSString</a></li><li><a href="NSTableViewCategories.html#NSTableView(GNUPrivate)">NSTableView</a></li><li><a href="NSTabViewItemCategories.html#NSTabViewItem(GNUstep)">NSTabViewItem</a></li><li><a href="NSTextCategories.html#NSText(GNUstepExtensions)">NSText</a></li><li><a href="NSTextFieldCellCategories.html#NSTextFieldCell(PrivateMethods)">NSTextFieldCell</a></li><li><a href="NSTextStorageCategories.html#NSTextStorage(Scripting)">NSTextStorage</a></li><li><a href="NSTextViewCategories.html#NSTextView(GSTextViewSync)">NSTextView</a></li><li><a href="NSViewCategories.html#NSView(PrivateMethods)">NSView</a></li><li><a href="NSWindowCategories.html#NSWindow(GNUstepBackend)">NSWindow</a></li><li><a href="NSWorkspaceCategories.html#NSWorkspace(GNUstep)">NSWorkspace</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

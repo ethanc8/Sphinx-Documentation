@@ -1,0 +1,2369 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="EcProcess">
+  <head>
+    <title>EcProcess class documentation</title>
+    <author name="Richard Frith-Macdonald">
+      <email address="rfm@gnu.org">
+        rfm@gnu.org
+      </email>
+    </author>
+    <copy>2012 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the EcProcess class
+      </heading>
+      <class name="EcProcess" super="NSObject">
+        <declared>EcProcess.h</declared>
+        <conform>CmdClient</conform>
+        <conform>EcAlarmDestination</conform>
+        <conform>EcConfigForwarding</conform>
+        <desc>
+          Command line arguments -
+          <p>
+            On startup, these are taken from the command line, or
+            from the local user defaults database of the person
+            running the program. <br /> If the EcEffectiveUser
+            specifies an alternative user, or the program is
+            able to read the database for the 'ecuser' user, then
+            the other values are read from the defaults database of
+            that user.
+          </p>
+          <p>
+            After startup, the command line arguments still take
+            precedence, but values retrieved from the
+            network configuration system will then override any
+            read from the local user defaults database.
+          </p>
+          <p>
+            Settings in the network configuration system will
+            have no effect on the following defaults which are
+            used BEFORE the network configuration can be read.
+          </p>
+          <deflist>
+            <term>EcCoreSize</term>
+            <desc>
+              Specifies the maximum size (in MB) for any
+              core-dump of the process. <br /> If this is not
+              set, the default size of 2GB is used. <br /> If this
+              is negative, the size is unlimited. <br /> If this is
+              zero then no core dumping is performed.
+            </desc>
+            <term>EcDaemon</term>
+            <desc>
+              To specify whether the program should run in the
+              background (boolean, <code>YES</code> if the
+              program is to run as a daemon, <code>NO</code>
+              otherwise). <br /> The value in the network
+              configuration has no effect.
+            </desc>
+            <term>EcEffectiveUser</term>
+            <desc>
+              To tell the server to change to being this user on
+              startup. defaults to 'ecuser', but the default
+              can be overridden by specifying
+              '-DEC_EFFECTIVE_USER+@"username"'
+              in the local.make make file. <br /> Set a value of '*'
+              to remain whoever runs the program rather than
+              changing.
+            </desc>
+            <term>EcInstance</term>
+            <desc>
+              To set the program instance ID (a non-negative integer
+              value). <br /> If this is specified, the program
+              name has a hyphen and the <strong>id</strong>
+              appended to it by the '-initWithDefaults:'
+              method.
+            </desc>
+            <term>EcKeepStandardError</term>
+            <desc>
+              This boolean value determines whether the standard
+              error output should be kept as it is on process
+              startup, or should be merged with the local
+              debug log to file. <br /> The default
+              (EcKeepStandardError set to
+              <code>NO</code>) is to merge the standard error
+              logging with the debug logging.
+            </desc>
+            <term>EcKillDebugOutput</term>
+            <desc>
+              This boolean value determines whether debug output
+              (including anything written to the standard
+              error output if that is merged with debug) should
+              be discarded (sent to the null device). <br /> This
+              setting cannot e controlled from the Console
+              command line. <br /> The default
+              (EcKillDebugOutput set to
+              <code>NO</code>) is to write debug output to file.
+            </desc>
+            <term>EcTransient</term>
+            <desc>
+              This boolean option is used to specify that the
+              program should not be restarted automatically by
+              the Command server if/when it disconnects from that
+              server.
+            </desc>
+          </deflist>
+          <p>
+            The following settings will be revised after startup to
+            include the values from the network configuration
+            system.
+          </p>
+          <deflist>
+            <term>EcAuditFlush</term>
+            <desc>
+              A flush interval in seconds (optionally followed by a
+              colon and a buffer size in KiloBytes) to control
+              flushing of audit logs. <br /> Setting an
+              interval of zero or less disables flushing by
+              timer. <br /> Setting a size of zero or less,
+              disables buffering (so logs are flushed
+              immediately).
+            </desc>
+            <term>EcDebug-</term>
+            <desc>
+              Any key of the form EcDebug-xxx turns on the xxx
+              debug level on program startup. <br /> The value of
+              'XXX' must match the name of a debug mode used by
+              the program!
+            </desc>
+            <term>EcDescriptorsMaximum</term>
+            <desc>
+              To protect against file descriptor leaks, a process
+              will check for the ability to create a pipe once a
+              minute. <br /> If it can't do so, it will shut
+              down with an error message. <br /> To increase the
+              chances of a successful shutdown, two descriptors
+              are reserved on the first check, and closed when a
+              shutdown is attempted. <br /> If
+              EcDescriptorsMaximum is defined to a
+              positive integer value, it is used to trigger
+              earlier shutdown once the specified number of
+              open file descriptors has been reached, rather than
+              waiting for the operating system imposed limit.
+            </desc>
+            <term>EcMemory</term>
+            <desc>
+              This boolean value determines whether statistics on
+              creation and destruction of objects are
+              maintained. <br /> This may be set in the
+              NSUserDefaults system or in Control.plist,
+              but may be overridden by using the 'memory' command
+              in the Console program.
+            </desc>
+            <term>EcMemoryAlarm</term>
+            <desc>
+              This may be used to control the alarm severity level
+              at which the system starts raising alarms about memory
+              usage. Setting it to Warning means that alarms are
+              raised as soon as the base/allowed memory limit is
+              passed, while setting it to Critical only causes
+              an alarm to be raised when the MemoryMaximum limit is
+              close. <br /> The default value is Major (the
+              possible values are Warning, Minor, Major, and
+              Critical). <br /> This may be set in the
+              NSUserDefaults system or in Control.plist,
+              but may be overridden by using the 'memory' command
+              in the Console program.
+            </desc>
+            <term>EcMemoryAllowed</term>
+            <desc>
+              This may be used to specify the process memory usage
+              (in megabytes by default) before memory usage alarms
+              may begin. <br /> If this setting is not specified
+              (or a negative or excessive value is specified) then
+              memory is monitored for ten minutes and the
+              base/allowed threshold is set at either the
+              peak during that period (plus a twenty percent
+              margin to allow further memory growth) or at half
+              the MemoryMaximum value, whichever is the greater.
+              <br /> This may be set in the NSUserDefaults
+              system or in Control.plist, but may be overridden
+              by using the 'memory' command in the Console program.
+            </desc>
+            <term>EcMemoryIdle</term>
+            <desc>
+              This optional integer value (0 to 23) may be used to
+              specify the hour of the day in which restarts are
+              preferred to take place (some time when the
+              process is likely to be idle). If a process is
+              near a maximum permitted memory usage at this time
+              of day, the
+              <ref type="method" id="-ecRestart:">
+                -ecRestart:
+              </ref>
+              method will be called. <br /> Near means over
+              three quarters of the way between the base/allowed
+              memory usage (as determined by MemoryAllowed) and
+              MemoryMaximum. <br /> This may be set in
+              the NSUserDefaults system or in Control.plist, but
+              may be overridden by using the 'memory' command in
+              the Console program.
+            </desc>
+            <term>EcMemoryMaximum</term>
+            <desc>
+              This may be used to specify the maximum process
+              memory allowed (in megabytes by default) before
+              the process is forced to restart due to excessive
+              memory usage. <br /> If the total memory usage of
+              the process reaches this threshold, the
+              <ref type="method" id="-ecRestart:">
+                -ecRestart:
+              </ref>
+              method will be called <br /> The process will also
+              generate alarms depending on the memory usage
+              once the bas/allowed memory usge has been passed.
+              The severity of the alarms depends on how far from
+              the base/allowed memory to the maximum memory the
+              current ten minute average of the usage is.
+              <br /> This may be set in the NSUserDefaults
+              system or in Control.plist, but may be overridden
+              by using the 'memory' command in the Console program.
+            </desc>
+            <term>EcMemoryType</term>
+            <desc>
+              This controls the type of memory considered by the
+              EcMemoryAllowed, EcMemoryIdle and
+              EcMemoryMaximum options. <br /> Total
+              (the default), considers the total process memory
+              usage. <br /> Resident, considers current resident
+              memory used. <br /> Data, considers only
+              dynamically allocated and stack memory.
+              <br /> While using Total and Resident are easy to
+              relate to the output of system tools such as
+              <code>ps</code> and <code>top</code>, the Data
+              memory type is probably of most use for tracking
+              memory leaks on a system with many processes
+              running, since it excludes memory shared between
+              multiple processes (used for the program code
+              and for shared libraries).
+            </desc>
+            <term>EcMemoryUnit</term>
+            <desc>
+              This controls the units in which memory information
+              is displayed, the default being K/KB/KiB (1024 bytes).
+              Other possible settings are M/MB/MiB (1048576
+              bytes) and P/Pg/Page (system memory pages,
+              typically 4096 bytes).
+            </desc>
+            <term>EcRelease</term>
+            <desc>
+              This boolean value determines whether checks for
+              memory problems caused by release an object too
+              many times are done. Turning this on has a big
+              impact on program performance and is not
+              recommended except for debugging crashes and
+              other memory issues. <br /> This may be set in the
+              NSUserDefaults system or in Control.plist,
+              but may be overridden by using the 'release' command
+              in the Console program.
+            </desc>
+            <term>EcTesting</term>
+            <desc>
+              This boolean value determines whether the server is
+              running in test mode (which may enable extra
+              logging or prevent the server from communicating
+              with live systems etc... the actual behavior is
+              server dependent). <br /> This may be set on the
+              command line or in Control.plist, but may be
+              overridden by using the 'testing' command in
+              the Console program.
+            </desc>
+            <term>EcWellKnownHostNames</term>
+            <desc>
+              A dictionary mapping host names/address values to well
+              known names (the canonical values used by Command
+              and Control).
+            </desc>
+          </deflist>
+          Alarm mechanism
+          <p>
+            The EcProcess class conforms to the EcAlarmDestination
+            protocol to allow sending alarm information to a
+            centralised alarm system via the Command server
+            (the Control server acts as a sink for those alarms
+            and provides SNMP integration).
+          </p>
+          <p>
+            In addition to the standard alarm destination behavior,
+            the process automates some things: <br /> On successful
+            startup and registration with the Command server, a
+            <ref type="method" id="-domanage:">
+              -domanage:
+            </ref>
+            message is automatically sent for the default
+            managed object, clearing any outstanding alarms.
+            <br /> On successful shutdown (ie when
+            <ref type="method" id="-cmdQuit:">
+              -cmdQuit:
+            </ref>
+            is called with zero as its argument), an
+            <ref type="method" id="-unmanage:">
+              -unmanage:
+            </ref>
+            message is automatically sent to clear any
+            outstanding alarms for the default managed
+            object. <br /> If you want to raise alarms which
+            will persist after a successful shutdown you should
+            therefore do so by creating a different managed
+            object for which to raise those alarms.
+          </p>
+          <p>
+            As a convenience, the class provides various methods to
+            raise different kinds of alarms for specific common
+            purposes:
+          </p>
+          <deflist>
+            <term>Configuration problems</term>
+            <desc>
+              <ref type="method" id="-alarmConfigurationFor:specificProblem:additionalText:critical:">-alarmConfigurationFor:specificProblem:additionalText:critical:</ref>
+            </desc>
+            <term>Exceptions and unexpected errors</term>
+            <desc>
+              <ref type="method" id="-ecException:specificProblem:perceivedSeverity:message:,...">-ecException:specificProblem:perceivedSeverity:message:,...</ref>
+            </desc>
+          </deflist>
+          <p>
+            To further aid with logging/alarming about unexpected
+            code and data problems, there are macros to provide
+            detailed logs as well as specific alarms of
+            different severity.
+          </p>
+        </desc>
+        <ivariable type="NSUInteger" name="ecDeferQuit" validity="protected">
+          <desc>
+            Any method which is executing in the main thread (and
+            needs to return before a quit can be handled in the
+            main thread) must increment this counter on entry and
+            decrement it again before exit. This allows the
+            process to ensure that it calls
+            <ref type="method" id="-ecHandleQuit">
+              -ecHandleQuit
+            </ref>
+            when no such method is in progress.
+          </desc>
+        </ivariable>
+        <method type="NSString*" factory="yes">
+          <sel>ecGetKey:</sel>
+          <arg type="const char*">name</arg>
+          <sel>size:</sel>
+          <arg type="unsigned">size</arg>
+          <sel>md5:</sel>
+          <arg type="NSData*">digest</arg>
+          <desc>
+            This method is provided to prompt for an encryption
+            key using the specified key <var>name</var> and read in
+            a value from the terminal. <br /> The entered value must
+            be an even numbered sequence of hexadecimal digits, each
+            pair representing one byte of the key. <br /> The key
+            length (number of bytes) must be the specified
+            <var>size</var>, a value between 16 and 128, which is
+            exactly half the number of hexadecimal digits that
+            must be entered. <br /> If the <var>digest</var> is
+            not supplied, the user will be required to enter the
+            value twice (and the two values must match) for
+            confirmation. <br /> If the <var>digest</var>
+            is supplied, the md5 <var>digest</var> of the entered
+            key must match it (but the user does not need to enter
+            the value twice).
+          </desc>
+        </method>
+        <method type="NSMutableDictionary*" factory="yes">
+          <sel>ecInitialDefaults</sel>
+          <desc>
+            Provides initial configuration. This method is
+            used by <ref type="method" id="-init">-init</ref> and
+            its return value is passed to
+            <ref type="method" id="-initWithDefaults:">
+              -initWithDefaults:
+            </ref>
+            method. <br /> The default implementation simply
+            sets the ProgramName and HomeDirectory defaults to the
+            current program name and the current directory
+            ('.'). <br /> Subclasses may override this method to
+            provide additional default configuration for
+            processes using them. The returned dictionary is
+            mutable so that a subclass may simply modify the
+            configuration provided by the superclass
+            implementation.
+          </desc>
+        </method>
+        <method type="NSRecursiveLock*" factory="yes">
+          <sel>ecLock</sel>
+          <desc>
+            Returns the lock used by the
+            <ref type="method" id="-ecDoLock">
+              -ecDoLock
+            </ref>
+            and <ref type="method" id="-ecUnLock">-ecUnLock</ref>
+            methods.
+          </desc>
+        </method>
+        <method type="void" factory="yes">
+          <sel>ecRegisterDefault:</sel>
+          <arg type="NSString*">name</arg>
+          <sel>withTypeText:</sel>
+          <arg type="NSString*">type</arg>
+          <sel>andHelpText:</sel>
+          <arg type="NSString*">help</arg>
+          <sel>action:</sel>
+          <arg type="SEL">cmd</arg>
+          <sel>value:</sel>
+          <arg type="id">value</arg>
+          <desc>
+            Registers an NSUserDefaults key that the receiver
+            understands. <br /> This is primarily intended
+            for user defaults which can reasonably be supplied at
+            the command line when a process is started (and for
+            which the process should therefore supply
+            <var>help</var> information). <br /> The
+            <var>type</var> text must be a a
+            <strong>short</strong> string saying what kind of
+            <var>value</var> must be provided (eg 'YES/NO') for
+            the default, or <code>nil</code> if no <var>help</var>
+            is to be provided for the default. <br /> The
+            <var>help</var> text should be a description of what
+            the default does, or <code>nil</code> if no
+            <var>help</var> is to be provided for the default.
+            <br /> The action may either be NULL or a selector
+            for a message to be sent to the EcProc instance with a
+            single argument (the new default <var>value</var>)
+            when the <var>value</var> of the user default changes.
+            <br /> The <var>value</var> may either be NULL, or
+            be an object to be set in the registration domain of the
+            defaults system (as <strong>long</strong> as this
+            method is called before the EcProcess instance is
+            initialized). <br /> If the same default
+            <var>name</var> is registered more than once, the
+            values from the last registration are used, except
+            for the case where the <var>cmd</var> argument is NULL,
+            in that case the previous selector is kept in the new
+            registration. <br /> This method should be
+            called in your
+            <ref type="method" id="+initialize">
+              +initialize
+            </ref>
+            method, so that all supported defaults are already
+            registered by the time your process tries to
+            respond to being started with a --help command line
+            argument. <br /> NB. defaults keys do not have to
+            be registered (and can still be updated using the
+            'defaults' command), but registration provides a
+            more user friendly interface. <br /> If this method is
+            called later (once the EcProcess instance has been
+            initialized) it will not update the current
+            user defaults until you also call the
+            <ref type="method" id="-ecUpdateRegisteredDefaults">
+              -ecUpdateRegisteredDefaults
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="void" factory="yes">
+          <sel>ecSetup</sel>
+          <desc>
+            Convenience method to create the singleton
+            EcProcess instance using the initial
+            configuration provided by the
+            <ref type="method" id="+ecInitialDefaults">
+              +ecInitialDefaults
+            </ref>
+            method. <br /> Raises NSGenericException if the
+            singleton instance has already been created.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>addServerToList:</sel>
+          <arg type="NSString*">serverName</arg>
+          <desc>
+            This is a convenience method equivalent to calling
+            <ref type="method" id="-addServerToList:for:">
+              -addServerToList:for:
+            </ref>
+            passing <code>nil</code> as the second argument.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>addServerToList:</sel>
+          <arg type="NSString*">serverName</arg>
+          <sel>for:</sel>
+          <arg type="id">anObject</arg>
+          <desc>
+            Adds the specified <var>serverName</var> to the list
+            of named servers to which we make automatic distributed
+            object connections. <br /> By default the supplied
+            <var>serverName</var> is taken as the name of the
+            server to which the distributed objects connection
+            is made, and the connection is to any host on the local
+            network. However configuration in the user
+            defaults system (using keys derived from the
+            <var>serverName</var>) may be used to modify this
+            behavior:
+            <deflist>
+              <term>serverNameName</term>
+              <desc>
+                Specifies the actual distributed objects port
+                name to which the connection is made, instead of
+                using <var>serverName</var>.
+              </desc>
+              <term>serverNameHost</term>
+              <desc>
+                Specifies the actual distributed objects host
+                name to which the connection is made, instead of
+                using an asterisk (any host).
+              </desc>
+              <term>serverNameBroadcast</term>
+              <desc>
+                Specifies that the server should actually be
+                configured to be a broadcast proxy (see
+                <ref type="class" id="EcBroadcastProxy">EcBroadcastProxy</ref>). <br /> The value of this field must be an array containing the configuration information for the <ref type="class" id="EcBroadcastProxy">EcBroadcastProxy</ref>instance. <br /> If this is defined then the serverNameName and serverNameHost values (if present) are ignored, and the connections are made to the individual servers listed in the elements of this array.</desc></deflist> The argument <var>anObject</var> is an object which will be messaged when the connection to the server is established (or lost). The messages sent are those in the <em>RemoteServerDelegate</em> informal protocol. <br /> If no object is specified, the receiver is used. <br /> Once a server has been added to the list, it can be accessed using the <ref type="method" id="-server:">-server:</ref> or <ref type="method" id="-server:forNumber:">-server:forNumber:</ref> method.
+          </desc>
+        </method>
+        <method type="EcAlarm*">
+          <sel>alarmConfigurationFor:</sel>
+          <arg type="NSString*">managedObject</arg>
+          <sel>specificProblem:</sel>
+          <arg type="NSString*">specificProblem</arg>
+          <sel>additionalText:</sel>
+          <arg type="NSString*">additionalText</arg>
+          <sel>critical:</sel>
+          <arg type="BOOL">isCritical</arg>
+          <desc>
+            Convenience method to produce a generic
+            configuration alarm and send it via the
+            <ref type="method" id="-alarm:">
+              -alarm:
+            </ref>
+            method. <br /> The managed object may be
+            <code>nil</code> (in which case it's the default
+            managed object for the current process). <br /> The
+            implied event type is
+            EcAlarmEventTypeProcessingError.
+            <br /> The implied probable cause is
+            EcAlarmConfigurationOrCustomizationError.
+            <br /> The implied severity is EcAlarmSeverityMajor
+            unless <var>isCritical</var> is <code>YES</code>.
+            <br /> The implied trend is EcAlarmTrendNone. <br />
+            The implied proposed repair action is to check/correct
+            the config. <br /> The specific problem and additional
+            text should be used to suggest what is wrong with the
+            config and where the config error should be
+            found/corrected.
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>alarms</sel>
+          <desc>
+            Returns the array of current alarms.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearConfigurationFor:</sel>
+          <arg type="NSString*">managedObject</arg>
+          <sel>specificProblem:</sel>
+          <arg type="NSString*">specificProblem</arg>
+          <sel>additionalText:</sel>
+          <arg type="NSString*">additionalText</arg>
+          <desc>
+            Convenience method to clear an alarm as
+            produced by the
+            <ref type="method" id="-alarmConfigurationFor:specificProblem:additionalText:critical:">-alarmConfigurationFor:specificProblem:additionalText:critical:</ref> method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdAlert:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            Deprecated; do not use.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdAlert:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Deprecated; do not use.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdAudit:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            Send a log message to the server by calling the
+            <ref type="method" id="-cmdAudit:arguments:">
+              -cmdAudit:arguments:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdAudit:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Send a log message to the server.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>cmdBase</sel>
+          <desc>
+            Returns the base name for this process (before any
+            instance ID was added). If the process has no
+            instance ID, this returns the same as the
+            <ref type="method" id="-cmdName">
+              -cmdName
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>cmdConfig:</sel>
+          <arg type="NSString*">key</arg>
+          <desc>
+            Deprecated... use
+            <ref type="method" id="-cmdDefaults">
+              -cmdDefaults
+            </ref>
+            instead.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>cmdConnectionBecameInvalid:</sel>
+          <arg type="NSNotification*">notification</arg>
+          <desc>
+            Handles loss of connection to the server.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>cmdDataDirectory</sel>
+          <desc>
+            Returns the path to the data storage directory used
+            by this process to store files containing persistent
+            information.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdDbg:</sel>
+          <arg type="NSString*">type</arg>
+          <sel>msg:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            Send a debug message - as <strong>long</strong> as the
+            debug mode specified as 'type' is currently set.
+            Operates by calling the
+            <ref type="method" id="-cmdDbg:msg:arguments:">
+              -cmdDbg:msg:arguments:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdDbg:</sel>
+          <arg type="NSString*">type</arg>
+          <sel>msg:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Send a debug message - as <strong>long</strong> as the
+            debug mode specified as 'type' is currently set.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdDebug:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            Send a debug message with debug mode 'basicMode'.
+            <br /> Operates by calling the
+            <ref type="method" id="-cmdDebug:arguments:">
+              -cmdDebug:arguments:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdDebug:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Send a debug message with debug mode 'basicMode'.
+            <br /> Calls the
+            <ref type="method" id="-cmdDbg:msg:arguments:">
+              -cmdDbg:msg:arguments:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>cmdDebugMode:</sel>
+          <arg type="NSString*">mode</arg>
+          <desc>
+            Check to see if a debug <var>mode</var> is active.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdDebugMode:</sel>
+          <arg type="NSString*">mode</arg>
+          <sel>active:</sel>
+          <arg type="BOOL">flag</arg>
+          <desc>
+            Set a particular (named) debug <var>mode</var> to be
+            active or inactive.
+          </desc>
+        </method>
+        <method type="NSUserDefaults*">
+          <sel>cmdDefaults</sel>
+          <desc>
+            Returns the NSUserDefaults instance containing the
+            configuration information for this process.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdDefaultsChanged:</sel>
+          <arg type="NSNotification*">n</arg>
+          <desc>
+            Called automatically in response to a local
+            NSUserDefaults database change or in
+            response to a configuration update from the
+            Control server. <br /> This is automatically called
+            after
+            <ref type="method" id="-cmdUpdate:">
+              -cmdUpdate:
+            </ref>
+            (even if the user defaults database has not actually
+            changed), in which case the notification argument
+            is <code>nil</code>. <br /> An automatic call to this
+            method is (if it does not raise an exception)
+            immediately followed by a call to the
+            <ref type="method" id="-cmdUpdated">
+              -cmdUpdated
+            </ref>
+            method. <br /> This method deals with the updates
+            for any defaults registered using the
+            <ref type="method" id="+ecRegisterDefault:withTypeText:andHelpText:action:value:">+ecRegisterDefault:withTypeText:andHelpText:action:value:</ref> method, so if you override this to handle configuration changes, don't forget to call the superclass implementation. <br /> If you wish to manage updates from the central database in a specific order, you may wish to override the <ref type="method" id="-cmdUpdate:">-cmdUpdate:</ref> and/or <ref type="method" id="-cmdUpdated">-cmdUpdated</ref> method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdError:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            Deprecated; do not use.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdError:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Deprecated; do not use.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdFlushLogs</sel>
+          <desc>
+            Flush logging information.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>cmdInstance</sel>
+          <desc>
+            Returns the instance ID used for this process, or
+            <code>nil</code> if there is none.
+          </desc>
+        </method>
+        <method type="NSTimeInterval">
+          <sel>cmdInterval</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>cmdIsClient</sel>
+          <desc>
+            This message returns <code>YES</code> if the receiver
+            is intended to be a client of a Command server, and
+            <code>NO</code> if it is a standalone process which
+            does not need to contact the Command server. <br />
+            The default implementation returns <code>YES</code>,
+            but subclasses may override this method to return
+            <code>NO</code> if they do not wish to contact the
+            Command server.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>cmdIsConnected</sel>
+          <desc>
+            Returns a flag indicating whether this process is
+            currently connected it its Command server.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>cmdIsTesting</sel>
+          <desc>
+            Returns <code>YES</code> is the process is running
+            in test mode, <code>NO</code> otherwise. <br /> Test
+            mode is defined by the EcTesting user default.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>cmdLogEnd:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            Closes a file previously obtained using the
+            <ref type="method" id="-cmdLogFile:">
+              -cmdLogFile:
+            </ref>
+            method. <br /> Returns a description of any file
+            archiving done, or <code>nil</code> if the file
+            dis not exist. <br /> You should not close a logging
+            handle directly, use this method.
+          </desc>
+        </method>
+        <method type="NSFileHandle*">
+          <sel>cmdLogFile:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            Obtain a file handle for logging purposes. The file
+            will have the specified <var>name</var> and will be
+            created (if necessary) in the processes logging
+            directory. <br /> If there is already a handle
+            for the specified file, this method returns the
+            existing handle rather than creating a new one.
+            <br /> Do not close this file handle other than by
+            calling the
+            <ref type="method" id="-cmdLogEnd:">
+              -cmdLogEnd:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>cmdMatch:</sel>
+          <arg type="NSString*">val</arg>
+          <sel>toKey:</sel>
+          <arg type="NSString*">key</arg>
+          <desc>
+            Utility method to perform partial (case
+            insensitive) matching of an abbreviated
+            command word (<var>val</var>) to a keyword (
+            <var>key</var>)
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>cmdMesg:</sel>
+          <arg type="NSArray*">msg</arg>
+          <desc>
+            Handle with care - this method invokes the
+            cmdMesg... methods.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMesgCache</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMesgData:</sel>
+          <arg type="NSData*">dat</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            Used by the Command server to send messages to your
+            application.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMesgarchive:</sel>
+          <arg type="NSArray*">msg</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMesgdebug:</sel>
+          <arg type="NSArray*">msg</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMesghelp:</sel>
+          <arg type="NSArray*">msg</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMesgmemory:</sel>
+          <arg type="NSArray*">msg</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMesgnodebug:</sel>
+          <arg type="NSArray*">msg</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMesgstatus:</sel>
+          <arg type="NSArray*">msg</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>cmdName</sel>
+          <desc>
+            Returns the name by which this process is known to
+            the Command server.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>cmdNewServer</sel>
+          <desc>
+            Attempt to establish connection to Command server
+            etc. Return a proxy to that server if it is available.
+          </desc>
+        </method>
+        <method type="NSMutableDictionary*">
+          <sel>cmdOperator:</sel>
+          <arg type="NSString*">name</arg>
+          <sel>password:</sel>
+          <arg type="NSString*">pass</arg>
+          <desc>
+            Return dictionary giving info about specified
+            operator. If the password string matches the
+            password of the operator (or the operator has no
+            password) then the dictionary field @"Password"
+            will be set to @"yes", otherwise it will be @"no". If
+            the named operator does not exist, the method will
+            return <code>nil</code>.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdPrintf:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            May be used withing cmdMesg... methods to return
+            formatted text to the Console.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdPrintf:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            May be used withing cmdMesg... methods to return
+            formatted text to the Console.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>cmdQuit:</sel>
+          <arg type="NSInteger">status</arg>
+          <desc>
+            Should be over-ridden to perform extra tidy up on
+            shutdown of the process - should call [super
+            cmdQuit:...] at the end of the method.
+          </desc>
+        </method>
+        <method type="int">
+          <sel>cmdSignalled</sel>
+          <desc>
+            Returns non-zero (a signal) if the process has
+            received a unix signal.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdUpdate:</sel>
+          <arg type="NSMutableDictionary*">info</arg>
+          <desc>
+            Used to tell your application about configuration
+            changes (the default implementation merges the
+            configuration change into the NSUserDefaults
+            system and sends the defaults change notification).
+            <br /> If you want to deal with configuration
+            changes actively - override this and call [super
+            cmdUpdate:...] to install the changed
+            configuration before anything else. NB. This
+            method WILL be called before your application is
+            initialised. Make sure it is safe.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>cmdUpdated</sel>
+          <desc>
+            Used to tell your application about configuration
+            changes (including changes to the NSUserDefaults
+            system). <br /> NB. This method will be called
+            even if your implementation of
+            <ref type="method" id="-cmdUpdate:">
+              -cmdUpdate:
+            </ref>
+            suppresses the actual update. In this situation
+            this method will find the configuration unchanged
+            since the previous time that it was called. <br />
+            This method is called in a run loop iteration of the
+            main thread after any NSUserDefaults notifications so
+            that it can check the state of things after any code
+            dealing with the notifications has run. <br /> The
+            return value of this method is used to control
+            automatic generation of alarms for fatal
+            configuration errors by passing it to the
+            <ref type="method" id="-ecConfigurationError:,...">
+              -ecConfigurationError:,...
+            </ref>
+            method. <br /> When you implement this method, you
+            must ensure that your implementation calls the
+            superclass implementation, and if that returns a
+            non-nil result, you should pass that on as the
+            return value from your own implementation.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdWarn:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            Send a warning message to the server.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdWarn:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Send a warning message to the server.
+          </desc>
+        </method>
+        <method type="EcAlarmDestination*">
+          <sel>ecAlarmDestination</sel>
+          <desc>
+            Returns the alarm destination for this process.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>ecArchive:</sel>
+          <arg type="NSDate*">when</arg>
+          <desc>
+            Archives debug log files into the appropriate
+            subdirectory for the supplied date (or the
+            files last modification date if <var>when</var> is
+            <code>nil</code>). <br /> Returns a text description
+            of any archiving actually done. <br /> The subdirectory
+            is created if necessary.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecAwaken</sel>
+          <desc>
+            This method is called at the start of
+            <ref type="method" id="-ecRun">
+              -ecRun
+            </ref>
+            in order to allow a subclass to perform initialisation
+            after configuration information has been received
+            from the Command server, but before the process has
+            become a registered DO server and has entered the
+            run loop with a regular timer set up. <br /> This is
+            the recommended location to perform any initialisation
+            of your subclass which needs configuration information
+            from the Command server; override this method to
+            perform your initialisation. <br /> If you are not
+            using <ref type="method" id="-ecRun">-ecRun</ref> you
+            should call this method explicitly in your own code.
+            <br /> The default implementation does nothing but
+            record the fact that it has been called (for
+            -ecDidAwaken). <br />
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecConfigurationError:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            Called to handle fatal configuration problems (or
+            with a <code>nil</code> argument, to clear any
+            outstanding alarm about a configuration
+            problem). <br /> If err is not <code>nil</code>,
+            a configuration error alarm will be raised (using the err
+            string as the 'additional text' of the alarm), and
+            the process will be terminated by a call to
+            <ref type="method" id="-cmdQuit:">
+              -cmdQuit:
+            </ref>
+            with an argument of 1. <br /> If you override this
+            method, you should ensure that your implementation
+            calls the superclass implementation. <br /> This
+            method is called automatically with the result of
+            <ref type="method" id="-cmdUpdated">
+              -cmdUpdated
+            </ref>
+            when process configuration changes.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>ecCopyright</sel>
+          <desc>
+            Return a <strong>short</strong> copyright notice...
+            subclasses should override.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>ecDidAwaken</sel>
+          <desc>
+            Returns <code>YES</code> if the base implementation
+            of <ref type="method" id="-ecAwaken">-ecAwaken</ref> has
+            been called, <code>NO</code> otherwise. You may use
+            this in conjunction with
+            <ref type="method" id="-ecDoLock">
+              -ecDoLock
+            </ref>
+            and <ref type="method" id="-ecUnLock">-ecUnLock</ref>
+            to ensure that you have thread-safe initialisation of
+            your program (though the locking is normally
+            unnecessary if
+            <ref type="method" id="-ecAwaken">
+              -ecAwaken
+            </ref>
+            is only called from -ecRun).
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>ecDidQuit</sel>
+          <desc>
+            Called once other stages of a graceful shutdown has
+            completed in order to perform final cleanup and
+            have the process exit with the expected status. <br />
+            Called automatically in the main thread by the
+            <ref type="method" id="-ecHandleQuit">
+              -ecHandleQuit
+            </ref>
+            method. Subclasses overriding
+            <ref type="method" id="-ecHandleQuit">
+              -ecHandleQuit
+            </ref>
+            must call the superclass implementation at the end of
+            their handling code.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecDoLock</sel>
+          <desc>
+            Obtain a lock on the shared EcProcess for
+            thread-safe updates to process-wide variables.
+          </desc>
+        </method>
+        <method type="EcAlarm*">
+          <sel>ecException:</sel>
+          <arg type="NSException*">cause</arg>
+          <sel>specificProblem:</sel>
+          <arg type="NSString*">specificProblem</arg>
+          <sel>perceivedSeverity:</sel>
+          <arg type="EcAlarmSeverity">perceivedSeverity</arg>
+          <sel>message:</sel>
+          <arg type="NSString*">format</arg>
+          <vararg />
+          <desc>
+            Method to log an exception (or other unexpected
+            error) and raise an alarm about it, providing a
+            unique <var>specificProblem</var> value to identify
+            the location in the code, and a
+            <var>perceivedSeverity</var> to let people know how
+            serious the problem is likely to be. Use
+            EcAlarmSeverityMajor if you really do
+            not know. <br /> This method serves a dual purpose, as
+            it generates an alarm to alert people about an
+            unexpected problem, but it also logs detailed
+            information about that problem (including a
+            stack trace) as an aid to debugging and analysis.
+            <br /> You may use EcAlarmSeverityClear to suppress
+            the use of an alarm and just generate debug logging
+            including a stack trace in the case where you
+            want to know what's going on at some point.
+          </desc>
+        </method>
+        <method type="EcAlarm*">
+          <sel>ecException:</sel>
+          <arg type="NSException*">cause</arg>
+          <sel>specificProblem:</sel>
+          <arg type="NSString*">specificProblem</arg>
+          <sel>perceivedSeverity:</sel>
+          <arg type="EcAlarmSeverity">perceivedSeverity</arg>
+          <sel>message:</sel>
+          <arg type="NSString*">format</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Supporting code called by the
+            <ref type="method" id="-ecException:specificProblem:perceivedSeverity:message:,...">-ecException:specificProblem:perceivedSeverity:message:,...</ref> method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecHadIP:</sel>
+          <arg type="NSDate*">when</arg>
+          <desc>
+            Records the timestamp of the latest significant
+            input for this process. If <var>when</var> is
+            <code>nil</code> the current timestmp is used.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecHadOP:</sel>
+          <arg type="NSDate*">when</arg>
+          <desc>
+            Records the timestamp of the latest significant
+            output for this process. If <var>when</var> is
+            <code>nil</code> the current timestmp is used.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecHandleQuit</sel>
+          <desc>
+            Called by
+            <ref type="method" id="-ecQuitFor:with:">
+              -ecQuitFor:with:
+            </ref>
+            or <ref type="method" id="-cmdQuit:">-cmdQuit:</ref>
+            (after the
+            <ref type="method" id="-ecWillQuit">
+              -ecWillQuit
+            </ref>
+            and before the
+            <ref type="method" id="-ecDidQuit">
+              -ecDidQuit
+            </ref>
+            methods) as a method for subclasses to use to
+            implement their own behaviors. <br /> Subclass
+            implementations should call the superclass
+            implementation as the last thing they do.
+            <br /> This method is always called in the main
+            thread of the process and when the ecDeferQuit
+            instance variable is zero.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>ecIsQuitting</sel>
+          <desc>
+            Returns <code>YES</code> if the process is
+            attempting a graceful shutdown, <code>NO</code>
+            otherwise. This also checks to see if the
+            process has been attempting to shut down for too
+            <strong>long</strong>, and if it has been going on
+            for over three minutes (or the value set by
+            -ecQuitLimit:), aborts the process. <br />
+            Subclasses must not override this method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecNewDay:</sel>
+          <arg type="NSCalendarDate*">when</arg>
+          <desc>
+            Called on the first timeout of a new day. <br /> The
+            argument 'when' is the timestamp of the timeout.
+            <br /> If you override this, don't forget to call
+            the superclass implementation in order to perform
+            regular housekeeping.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecNewHour:</sel>
+          <arg type="NSCalendarDate*">when</arg>
+          <desc>
+            Called on the first timeout of a new hour. <br />
+            The argument 'when' is the timestamp of the timeout.
+            <br /> If you override this, don't forget to call
+            the superclass implementation in order to perform
+            regular housekeeping.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecNewMinute:</sel>
+          <arg type="NSCalendarDate*">when</arg>
+          <desc>
+            Called on the first timeout of a new minute. <br />
+            The argument 'when' is the timestamp of the timeout.
+            <br /> If you override this, don't forget to call
+            the superclass implementation in order to perform
+            regular housekeeping.
+          </desc>
+        </method>
+        <method type="NSUInteger">
+          <sel>ecNotLeaked</sel>
+          <desc>
+            Return heap memory known not to be leaked... for use
+            in internal monitoring of memory usage. You should
+            override this to add in any heap store you have
+            used and know is not leaked. <br /> When generating
+            warning messages about possible memory leaks, this
+            value is taken into consideration.
+          </desc>
+        </method>
+        <method type="NSTimeInterval">
+          <sel>ecQuitDuration</sel>
+          <desc>
+            Returns the interval since the process started
+            quitting, or zero if it is not quitting (as
+            determined by calling -ecIsQuitting).
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>ecQuitFor:</sel>
+          <arg type="NSString*">reason</arg>
+          <sel>with:</sel>
+          <arg type="NSInteger">status</arg>
+          <desc>
+            This method is designed for handling an orderly
+            shutdown by noting the supplied <var>reason</var>
+            and <var>status</var>, and then calling
+            <ref type="method" id="-ecWillQuit">
+              -ecWillQuit
+            </ref>
+            ,
+            <ref type="method" id="-ecHandleQuit">
+              -ecHandleQuit
+            </ref>
+            , and finally calling
+            <ref type="method" id="-ecDidQuit">
+              -ecDidQuit
+            </ref>
+            . <br /> Subclasses should not normally override this
+            method. Instead override the
+            <ref type="method" id="-ecHandleQuit">
+              -ecHandleQuit
+            </ref>
+            method. <br /> For backward compatibility, this
+            will call the
+            <ref type="method" id="-cmdQuit:">
+              -cmdQuit:
+            </ref>
+            method if a subclass has overridden it. <br /> NB.
+            On unix the possible range of <var>status</var> values
+            is actually from -128 to 127 and we have certain
+            conventions:
+            <deflist>
+              <term>0</term>
+              <desc>
+                A clean/normal shutdown, no restart required
+              </desc>
+              <term>-1</term>
+              <desc>
+                An intentional shutdown where restart is required
+              </desc>
+              <term>-2</term>
+              <desc>
+                Process unable to register with name server
+              </desc>
+              <term>-3</term>
+              <desc>
+                Fatal error in process configuration information
+              </desc>
+              <term>-4</term>
+              <desc>
+                Process registration was rejected by the
+                Command server
+              </desc>
+              <term>-5 to -9</term>
+              <desc>Reserved for possible expansion</desc>
+              <term>-10 to -128</term> <desc>Unused/free</desc>
+              <term>positive integer</term>
+              <desc>
+                Process caught a unix signal and shut down; the
+                exist <var>status</var> is the number of that
+                signal
+              </desc>
+            </deflist>
+          </desc>
+        </method>
+        <method type="NSTimeInterval">
+          <sel>ecQuitLimit:</sel>
+          <arg type="NSTimeInterval">seconds</arg>
+          <desc>
+            Sets the number of <var>seconds</var> the graceful
+            shutdown process is permitted to take before the
+            process will attempt to abort on the next check to
+            see if it quitting (-ecIsQuitting). The default is
+            180.0 <var>seconds</var>. <br /> This method returns
+            the previous value of the setting.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>ecQuitReason</sel>
+          <desc>
+            Returns the quit reason supplied to the
+            <ref type="method" id="-ecQuitFor:with:">
+              -ecQuitFor:with:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="NSInteger">
+          <sel>ecQuitStatus</sel>
+          <desc>
+            Returns the quit status supplied to the
+            <ref type="method" id="-ecQuitFor:with:">
+              -ecQuitFor:with:
+            </ref>
+            or <ref type="method" id="-cmdQuit:">-cmdQuit:</ref>
+            method.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>ecReconnect</sel>
+          <desc>
+            This method may be called to prompt the process to
+            connect to the Command server if it is not already
+            connected.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>ecRestart:</sel>
+          <arg type="NSString*">reason</arg>
+          <desc>
+            This method is designed for handling an orderly
+            restart. <br /> The default implementation calls
+            <ref type="method" id="-ecQuitFor:with:">
+              -ecQuitFor:with:
+            </ref>
+            with minus one as the status code so that the Command
+            server will start the process again. <br /> The
+            method is called automatically when the
+            MemoryMaximum limit is exceeded (to
+            gracefully handle memory leaks by restarting).
+            <br /> Subclasses may override this method to allow
+            the shutdown process to be handled differently.
+          </desc>
+        </method>
+        <method type="int">
+          <sel>ecRun</sel>
+          <desc>
+            This method calls
+            <ref type="method" id="-ecAwaken">
+              -ecAwaken
+            </ref>
+            , establishes the receiver as a DO server, calls
+            <ref type="method" id="-triggerCmdTimeout">
+              -triggerCmdTimeout
+            </ref>
+            , and then repeatedly runs the runloop. <br /> Returns
+            zero when the run loop completes. <br /> Returns one
+            (immediately) if the receiver is transient.
+            <br /> Returns two if unable to register as a DO
+            server. <br />
+          </desc>
+        </method>
+        <method type="NSDate*">
+          <sel>ecStarted</sel>
+          <desc>
+            Return the timestamp at which this process started
+            up (when the receiver was initialised).
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecTestLog:</sel>
+          <arg type="NSString*">fmt</arg>
+          <vararg />
+          <desc>
+            Logs a message iff the process is running in test
+            mode. <br /> Operates by calling the
+            <ref type="method" id="-ecTestLog:arguments:">
+              -ecTestLog:arguments:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecTestLog:</sel>
+          <arg type="NSString*">fmt</arg>
+          <sel>arguments:</sel>
+          <arg type="va_list">args</arg>
+          <desc>
+            Logs a message iff the process is running in test mode
+            (that is, when EcTesting is set).
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecUnLock</sel>
+          <desc>
+            Release a lock on the shared EcProcess after
+            thread-safe updates to process-wide variables.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecUpdateRegisteredDefaults</sel>
+          <desc>
+            This method must be called to make the user defaults
+            system aware of any changeds to registered defaults
+            made after the EcProcess instance has been created.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>ecUserDirectory</sel>
+          <desc>
+            Returns the directory set as the root for files
+            owned by the ECCL user
+          </desc>
+        </method>
+        <method type="void">
+          <sel>ecWillQuit</sel>
+          <desc>
+            This is ignored if the process is already quitting,
+            otherwise it returns after setting the start time
+            used by the
+            <ref type="method" id="-ecIsQuitting">
+              -ecIsQuitting
+            </ref>
+            method and (if
+            <ref type="method" id="-ecQuitReason">
+              -ecQuitReason
+            </ref>
+            is not nil/empty) generating a log of why quitting was
+            started. <br /> Called automatically when the
+            process starts shutting down.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>init</sel>
+          <desc>
+            This calls the designated initialiser
+            (-initWithDefaults:) passing the
+            results of a call to
+            <ref type="method" id="+ecInitialDefaults">
+              +ecInitialDefaults
+            </ref>
+            as its argument.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>initWithDefaults:</sel>
+          <arg type="NSDictionary*">defs</arg>
+          <desc>
+            <ref type="method" id="-initWithDefaults:">
+              [-initWithDefaults:]
+            </ref>
+            is the Designated initialiser <br /> It adds the
+            defaults specified to the defaults system. <br />
+            It sets the process name to be that specified in the
+            'ProgramName' default with an '-id' affix if
+            Instance is used to provide an instance
+            <strong>id</strong>. <br /> Moves to the directory
+            (relative to the current user's home directory)
+            given in 'HomeDirectory'. <br /> If 'HomeDirectory'
+            is not present in the defaults system (or is an empty
+            string) then no directory change is done. <br />
+            Please note, that the base implementation of this
+            method may cause other methods (eg
+            <ref type="method" id="-cmdUpdated">
+              -cmdUpdated
+            </ref>
+            and -cmdDefaultsChanged:) to be called, so you must
+            take care that when you override those methods, your
+            own implementations do not depend on initialisation
+            having completed. It's therefore recommended that
+            you use 'lazy' initialisation of subclass instance
+            variables as/when they are needed, rather than
+            initialising them in the
+            <ref type="method" id="-initWithDefaults:">
+              -initWithDefaults:
+            </ref>
+            method. <br /> For a normal process, the
+            recommended place to perform initialisation is
+            immediately after initialisation (when
+            configuration information has been retrieved
+            from the Command server), typically by overriding the
+            <ref type="method" id="-ecAwaken">
+              -ecAwaken
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>isServerMultiple:</sel>
+          <arg type="NSString*">serverName</arg>
+          <desc>
+            Standard servers return <code>NO</code> to the
+            following. But if we are using a
+            multiple/broadcast server, this returns
+            <code>YES</code>.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>log:</sel>
+          <arg type="NSString*">message</arg>
+          <sel>type:</sel>
+          <arg type="EcLogType">t</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="int">
+          <sel>processIdentifier</sel>
+          <desc>
+            Returns the system process identifier for the
+            client process.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>removeServerFromList:</sel>
+          <arg type="NSString*">serverName</arg>
+          <desc>
+            Removes the <var>serverName</var> from the list of
+            server processes for which we automatically maintain
+            distributed object connections. <br /> See the
+            addServerToList:for: metho for more
+            details.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>server:</sel>
+          <arg type="NSString*">serverName</arg>
+          <desc>
+            Returns a proxy object to a[n automatically
+            managed] server process. <br /> The
+            <var>serverName</var> must previously have been
+            registered using the
+            <ref type="method" id="-addServerToList:for:">
+              -addServerToList:for:
+            </ref>
+            <ref type="method" id="-addServerToList:">
+              -addServerToList:
+            </ref>
+            method.
+          </desc>
+        </method>
+        <method type="id">
+          <sel>server:</sel>
+          <arg type="NSString*">serverName</arg>
+          <sel>forNumber:</sel>
+          <arg type="NSString*">num</arg>
+          <desc>
+            Like <ref type="method" id="-server:">-server:</ref>,
+            but if the configuration contains a multiple servers,
+            this tries to locate the specific server that is set
+            up to deal with cases where the last two digits of an
+            identifer as as specified. <br /> This mechanism
+            permits work to be balanced/shared over up to 100
+            separate server processes.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setCmdDebug:</sel>
+          <arg type="NSString*">mode</arg>
+          <sel>withDescription:</sel>
+          <arg type="NSString*">desc</arg>
+          <desc>
+            Register a debug <var>mode</var> 'mode'
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setCmdInterval:</sel>
+          <arg type="NSTimeInterval">interval</arg>
+          <desc>
+            Sets the <var>interval</var> between timeouts while
+            the runloop is running. <br /> Any value below 0.001 is
+            ignored and 10 is used. <br /> Any value above 300
+            is ignored and 60 is used. <br /> The default value is
+            60 seconds.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setCmdTimeout:</sel>
+          <arg type="SEL">sel</arg>
+          <desc>
+            Specify a handler method to be invoked after each
+            timeout to let you perform additional tasks.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>triggerCmdTimeout</sel>
+          <desc>
+            Schedule a timeout to go off as soon as possible
+            ... subsequent timeouts go off at the normal interval
+            after that one. <br /> This method is called
+            automatically near the start of
+            <ref type="method" id="-ecRun">
+              -ecRun
+            </ref>
+            .
+          </desc>
+        </method>
+      </class>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the
+        NSObject(RemoteServerDelegate)
+        informal protocol
+      </heading>
+      <category name="RemoteServerDelegate" class="NSObject">
+        <declared>EcProcess.h</declared>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+        <method type="void">
+          <sel>cmdLostConnectionToServer:</sel>
+          <arg type="NSString*">serverName</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>cmdMadeConnectionToServer:</sel>
+          <arg type="NSString*">serverName</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </category>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the CmdClient protocol
+      </heading>
+      <protocol name="CmdClient">
+        <declared>EcProcess.h</declared>
+        <conform>CmdPing</conform>
+        <conform>CmdConfig</conform>
+        <desc>
+          Messages that the Command server may send to
+          clients.
+        </desc>
+        <method type="oneway void">
+          <sel>cmdMesgData:</sel>
+          <arg type="in bycopy NSData*">dat</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            Passes a property list message to the client (eg
+            from the Console).
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>cmdQuit:</sel>
+          <arg type="NSInteger">status</arg>
+          <desc>
+            Tells the client to shut down.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>ecDidAwaken</sel>
+          <desc>
+            Asks the client whether it is awake (-ecAwaken has
+            been called)
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>ecReconnect</sel>
+          <desc>
+            Instructs the client process to connect and
+            re-register with the Command server.
+          </desc>
+        </method>
+        <method type="int">
+          <sel>processIdentifier</sel>
+          <desc>
+            Asks the client for its process identifier.
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the CmdConfig protocol
+      </heading>
+      <protocol name="CmdConfig">
+        <declared>EcProcess.h</declared>
+        <desc>
+          The CmdConfig protocol is needed by objects that send and
+          receive configuration information.
+        </desc>
+        <method type="oneway void">
+          <sel>requestConfigFor:</sel>
+          <arg type="id&lt;CmdConfig&gt;">c</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>updateConfig:</sel>
+          <arg type="in bycopy NSData*">info</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the CmdLogger protocol
+      </heading>
+      <protocol name="CmdLogger">
+        <declared>EcProcess.h</declared>
+        <conform>CmdClient</conform>
+        <desc>
+          Messages a Command logging process can be expected
+          to handle.
+        </desc>
+        <method type="void">
+          <sel>flush</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>logMessage:</sel>
+          <arg type="NSString*">msg</arg>
+          <sel>type:</sel>
+          <arg type="EcLogType">t</arg>
+          <sel>for:</sel>
+          <arg type="id">o</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>logMessage:</sel>
+          <arg type="NSString*">msg</arg>
+          <sel>type:</sel>
+          <arg type="EcLogType">t</arg>
+          <sel>name:</sel>
+          <arg type="NSString*">c</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="bycopy NSData*">
+          <sel>registerClient:</sel>
+          <arg type="id">c</arg>
+          <sel>identifier:</sel>
+          <arg type="int">p</arg>
+          <sel>name:</sel>
+          <arg type="NSString*">n</arg>
+          <sel>transient:</sel>
+          <arg type="BOOL">t</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>unregisterByObject:</sel>
+          <arg type="byref id">obj</arg>
+          <sel>status:</sel>
+          <arg type="int">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>woken:</sel>
+          <arg type="id">obj</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the CmdPing protocol
+      </heading>
+      <protocol name="CmdPing">
+        <declared>EcProcess.h</declared>
+        <desc>
+          A 'ping' can be sent from or to any process to check that
+          it is alive. A 'gnip' should be sent in response to each
+          'ping' Each 'ping' carries a sequence number which
+          should be echoed in its 'gnip'. Optionally, the 'ping'
+          can also transport a serialized property-list to provide
+          additional data or instructions - the value of
+          which is dependent on the program being pinged -
+          normally this value is <code>nil</code>.
+        </desc>
+        <method type="oneway void">
+          <sel>cmdGnip:</sel>
+          <arg type="id&lt;CmdPing&gt;">from</arg>
+          <sel>sequence:</sel>
+          <arg type="unsigned">num</arg>
+          <sel>extra:</sel>
+          <arg type="in bycopy NSData*">data</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>cmdPing:</sel>
+          <arg type="id&lt;CmdPing&gt;">from</arg>
+          <sel>sequence:</sel>
+          <arg type="unsigned">num</arg>
+          <sel>extra:</sel>
+          <arg type="in bycopy NSData*">data</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the Command protocol
+      </heading>
+      <protocol name="Command">
+        <declared>EcProcess.h</declared>
+        <conform>CmdLogger</conform>
+        <conform>CmdConfig</conform>
+        <conform>EcAlarmDestination</conform>
+        <desc>
+          Messages that clients may send to the server. NB.
+          The
+          <ref type="method" id="-registerClient:identifier:name:transient:">-registerClient:identifier:name:transient:</ref> method must be sent before the <ref type="method" id="-command:to:from:">-command:to:from:</ref> or <ref type="method" id="-reply:to:from:">-reply:to:from:</ref> methods.
+        </desc>
+        <method type="unsigned">
+          <sel>activeCount</sel>
+          <desc>
+            Request a count of the active clients of the
+            Command server
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>alarm:</sel>
+          <arg type="in bycopy EcAlarm*">alarm</arg>
+          <desc>
+            Pass an <var>alarm</var> to the Command server for
+            forwarding to the Control server for central
+            handling to send alerts or SNMP integration.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>clear:</sel>
+          <arg type="in bycopy EcAlarm*">alarm</arg>
+          <desc>
+            Pass an <var>alarm</var> clear to the Command server
+            for forwarding to its clients for clearing.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>command:</sel>
+          <arg type="in bycopy NSData*">dat</arg>
+          <sel>to:</sel>
+          <arg type="NSString*">t</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">f</arg>
+          <desc>
+            Send a text command to a process owned by the Command
+            server.
+          </desc>
+        </method>
+        <method type="bycopy NSData*">
+          <sel>configurationFor:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            This is meant to be used remotely by all sorts of
+            software running on the machine and which is *not*
+            a full Command client (ie, not a subclass of EcProcess)
+            but which still wants to retrieve configuration from a
+            central location (the Control/Command servers).
+            <br /> The returned value is a a serialized property
+            list... you need to deserialize using the standard
+            GNUstep property list APIs. <br /> NB: The
+            configuration might change later on, so you
+            must not cache the configuration after asking for it,
+            but rather ask for it each time your software needs it.
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>launch:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            Request immediate launch of the named process.
+            <br /> Returns <code>NO</code> if the process cannot
+            be launched. <br /> Returns <code>YES</code> if the
+            process is already running or launching has
+            started.
+          </desc>
+        </method>
+        <method type="bycopy NSData*">
+          <sel>registerClient:</sel>
+          <arg type="id">c</arg>
+          <sel>identifier:</sel>
+          <arg type="int">p</arg>
+          <sel>name:</sel>
+          <arg type="NSString*">n</arg>
+          <sel>transient:</sel>
+          <arg type="BOOL">t</arg>
+          <desc>
+            Registers as a client process of the Command
+            server.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>reply:</sel>
+          <arg type="NSString*">msg</arg>
+          <sel>to:</sel>
+          <arg type="NSString*">n</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">c</arg>
+          <desc>
+            Replies to a text command sent by another process.
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>terminate:</sel>
+          <arg type="NSDate*">byDate</arg>
+          <desc>
+            Shut down the Command server and all its clients.
+            <br /> Clients which fail to shut down gracefully
+            before the specified timestamp will be forcibly
+            killed. The timestamp is constrained to be at least
+            half a second in the future and not more than 15
+            minutes in the future.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>woken:</sel>
+          <arg type="id">obj</arg>
+          <desc>
+            Informs the Command server that a previously
+            registered client considers itself to have
+            started up and to now be stable.
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the Console protocol
+      </heading>
+      <protocol name="Console">
+        <declared>EcProcess.h</declared>
+        <conform>NSObject</conform>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+        <method type="oneway void">
+          <sel>information:</sel>
+          <arg type="NSString*">txt</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the Control protocol
+      </heading>
+      <protocol name="Control">
+        <declared>EcProcess.h</declared>
+        <conform>CmdPing</conform>
+        <conform>CmdConfig</conform>
+        <conform>EcAlarmDestination</conform>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+        <method type="oneway void">
+          <sel>alarm:</sel>
+          <arg type="in bycopy EcAlarm*">alarm</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>command:</sel>
+          <arg type="in bycopy NSData*">cmd</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">f</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>domanage:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>information:</sel>
+          <arg type="NSString*">msg</arg>
+          <sel>type:</sel>
+          <arg type="EcLogType">t</arg>
+          <sel>to:</sel>
+          <arg type="NSString*">to</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">from</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="bycopy NSData*">
+          <sel>registerCommand:</sel>
+          <arg type="id&lt;Command&gt;">c</arg>
+          <sel>name:</sel>
+          <arg type="NSString*">n</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="bycopy NSString*">
+          <sel>registerConsole:</sel>
+          <arg type="id&lt;Console&gt;">c</arg>
+          <sel>name:</sel>
+          <arg type="NSString*">n</arg>
+          <sel>pass:</sel>
+          <arg type="NSString*">p</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>reply:</sel>
+          <arg type="NSString*">msg</arg>
+          <sel>to:</sel>
+          <arg type="NSString*">n</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">c</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>servers:</sel>
+          <arg type="in bycopy NSData*">a</arg>
+          <sel>on:</sel>
+          <arg type="id&lt;Command&gt;">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>unmanage:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>unregister:</sel>
+          <arg type="id">o</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the EcConfigForwarded
+        protocol
+      </heading>
+      <protocol name="EcConfigForwarded">
+        <declared>EcProcess.h</declared>
+        <conform>NSObject</conform>
+        <desc>
+          This is the protocol to which a client of configuration
+          forwarding must confirm. It contains a single
+          method that the server calls to pass config to the
+          client.
+        </desc>
+        <method type="oneway void">
+          <sel>ecForwardedConfig:</sel>
+          <arg type="in bycopy NSDictionary*">info</arg>
+          <sel>from:</sel>
+          <arg type="id&lt;EcConfigForwarding&gt;">server</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the EcConfigForwarding
+        protocol
+      </heading>
+      <protocol name="EcConfigForwarding">
+        <declared>EcProcess.h</declared>
+        <conform>NSObject</conform>
+        <desc>
+          The EcConfigForwarding protocol is provided by a process
+          to allow cooperating client processes to know how it is
+          configured and to get automatic updates when its
+          configuration changes.
+        </desc>
+        <method type="oneway void">
+          <sel>ecCancelConfigFwdTo:</sel>
+          <arg type="id&lt;EcConfigForwarded&gt;">client</arg>
+          <desc>
+            This method may be called by a <var>client</var> when
+            it wishes to stop receiving configuraton updates from
+            the server.
+          </desc>
+        </method>
+        <method type="bycopy NSDictionary*">
+          <sel>ecSetupConfigFwdTo:</sel>
+          <arg type="id&lt;EcConfigForwarded&gt;">client</arg>
+          <desc>
+            This method is called by the <var>client</var> when it
+            wants to start receiving configuration updates from
+            the server. The method returns the current
+            configuration of the server (at the point
+            when the method was called). NB. With multithreaded
+            applications it is possible that setting up
+            configuration forwarding could cause a
+            <var>client</var> to be informed of a configuration
+            change before the setup method returns the
+            configuration.
+          </desc>
+        </method>
+      </protocol>
+    </chapter>
+    <chapter>
+      <heading>EcProcess types</heading>
+      <p></p>
+      <type type="enum ..." name="EcLogType">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </type>
+    </chapter>
+    <chapter>
+      <heading>EcProcess constants</heading>
+      <p></p>
+      <constant type="NSString* const" name="EcDidQuitNotification">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </constant>
+      <constant type="NSString* const" name="EcWillQuitNotification">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </constant>
+    </chapter>
+    <chapter>
+      <heading>EcProcess macros</heading>
+      <p></p>
+      <macro name="EcExceptionCritical">
+        <arg>cause</arg>
+        <arg>format</arg>
+        <arg>args</arg>
+        <vararg />
+        <desc>
+          Convenience macros to raise unique alarms (which
+          do not clear automatically) for exceptions or unexpected
+          code/data errors. The unique specificProblem for
+          each alarm is derived from the file and line at which it
+          is raised. These macros should only be used when it's
+          impossible/impractical to have the
+          code automatically detect that a problem has gone away,
+          and clear the alarm.
+        </desc>
+      </macro>
+    </chapter>
+    <chapter>
+      <heading>EcProcess variables</heading>
+      <p></p>
+      <variable type="EcProcess*" name="EcProc">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSString*" name="cmdBasicDbg">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSString*" name="cmdConnectDbg">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSString*" name="cmdDefaultDbg">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSString*" name="cmdDetailDbg">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+    </chapter>
+    <chapter>
+      <heading>EcProcess functions</heading>
+      <p></p>
+      <function type="NSString*" name="cmdDataDir">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSString*" name="cmdLogFormat">
+        <arg type="EcLogType">t</arg>
+        <arg type="NSString*">fmt</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSString*" name="cmdLogKey">
+        <arg type="EcLogType">t</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSString*" name="cmdLogName">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSString*" name="cmdLogsDir">
+        <arg type="NSString*">date</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="void" name="cmdSetHome">
+        <arg type="NSString*">home</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSString*" name="cmdVersion">
+        <arg type="NSString*">ver</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSUInteger" name="ecNativeThreadID">
+        <desc>
+          Return the native thread ID of the current thread, or
+          NSNotFound if that is not available.
+        </desc>
+      </function>
+      <function type="void" name="ecSetLogsSubdirectory">
+        <arg type="NSString*">pathComponent</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+    </chapter>
+  </body>
+</gsdoc>

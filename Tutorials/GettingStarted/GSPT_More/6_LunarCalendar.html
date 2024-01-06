@@ -1,0 +1,872 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>LunarCalendar - GNUstep 2021 December documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">GNUstep 2021 December documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">GNUstep 2021 December documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index.html">Getting Started Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Getting Started Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../1_FirstSteps/index.html">1 - First Steps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1 - First Steps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../1_FirstSteps/1.1.html">1.1 - What is GNUstep?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1_FirstSteps/1.2.html">1.2 - Installing GNUstep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../1_FirstSteps/1.3.html">1.3 - Configuring your System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../2_Convertor/index.html">2 - Convertor</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2 - Convertor</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../2_Convertor/2.1.html">2.1 - Designing the UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2_Convertor/2.2.html">2.2 - Outlets and Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2_Convertor/2.3.html">2.3 - Adding the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../3_TimeMachine/index.html">3 - TimeMachine - a single window application</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 3 - TimeMachine - a single window application</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../3_TimeMachine/3.1.html">3.1 - A Basic Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../3_TimeMachine/3.2.html">3.2 - Analog Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../3_TimeMachine/3.3.html">3.3 - New Time Zone Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../3_TimeMachine/3.4.html">3.4 - Multiple Clocks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../HelpfulWebsites.html">Helpful Websites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../WhatsNext.html">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Other/Roard/index.html">Roard Vallon Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Roard Vallon Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Other/Roard/Tutorial%201/Tutorial%201.html">1 - Programming under GNUstep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Other/Roard/Tutorial%202/Tutorial%202.html">2 - NSWindowController and Design Pattern MVC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Reference/index.html">Reference Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Reference Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index.html">Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index_Core.html">Basic Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Basic Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/index.html">Application Kit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Application Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/GNUstepReleaseNotes_HTML.html"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/NSImageName.html"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/Foundation/index.html">Foundation Kit</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Foundation Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/Foundation/CocoaCompatibility.html">Cocoa Compatibility</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/Foundation/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/Foundation/GNUstepReleaseNotes.html">GNUstep Base Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/CoreData/index.html">Core Data</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/index.html">Core Foundation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Core Foundation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/ObjectModel.html">Core Foundation Object Model</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/index.html">Apple Release Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Apple Release Notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/SwiftReleaseNotes.html">10.11 and later</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.9.html">CF-855.11 - 10.9 Mavericks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.8.html">CF-744 - 10.8 “Mountain Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/iOS5.html">CF-675 - iOS 5</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.7.html">CF-635 - 10.7 “Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.6.html">CF-550 - 10.6 Snow Leopard</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.5.html">CF-476 - 10.5 “Leopard”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/Historical-GeneralNotes.html">General Notes</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.2.html">CF-263 - 10.2 “Jaguar”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.1.html">CF-226 - 10.1 “Puma”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.0.html">CF-196 - 10.0 “Cheetah”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10_PB.html">Mac OS X Public Beta “Kodiak”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10_DP4.html">Mac OS X Developer Preview 4</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10_DP3.html">Mac OS X Developer Preview 3</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10_DP2.html">Mac OS X Developer Preview 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index_Miscellaneous.html">Miscellaneous Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Miscellaneous Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/AddressBook/index.html">AddressBook</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of AddressBook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AddressBook/GNUstep%20Readme.html">GNUstep Readme</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/CFNetwork/index.html">CFNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/DBusKit/index.html">DBusKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/ECCL/index.html">Enterprise Control Configuration and Logging (ECCL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/PDFKit/index.html">PDFKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/WebKit/index.html">WebKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/Xcode/index.html">GNUstep Xcode Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/Pantomime/index.html">Pantomime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/GWorkspace/index.html">GWorkspace frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/Renaissance/index.html">Renaissance</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index_Quartz.html">Quartz Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Quartz Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/CoreAnimation/index.html">Core Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/CoreGraphics/index.html">Core Graphics / Quartz 2D</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index_WebObjects.html">WebObjects 4 Stack</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of WebObjects 4 Stack</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/EnterpriseObjects/index.html">Enterprise Objects Framework</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Enterprise Objects Framework</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/EnterpriseObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/WebObjects/index.html">WebObjects</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of WebObjects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/WebObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Reference/Tools/index.html">Developer Tools</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Developer Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/index.html">GNUstep Make</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of GNUstep Make</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Tools/Make/GNUstepReleaseNotes.html">Release Notes</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/index.html">New Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of New Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/Introduction.html">Introduction</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/Topics/index.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/Topics/ParallelBuilding.html">Parallel Building</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/index.html">Project Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Project Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/Project/Reference.html">Project Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/ResourceSet/Reference.html">Resource Set Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/Tool/Reference.html">Tool Reference</a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/Library/index.html">Library</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/Library/Introduction.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/Gorm%20ProjectCenter.html">Gorm + ProjectCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/Buildtool.html">Buildtool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/BaseTools.html">Base Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/HeaderDoc.html">HeaderDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Reference/Languages/index.html">Languages</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Languages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Languages/ObjC/index.html">Objective-C</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Objective-C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/index.html">Objective-C Language Reference</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Objective-C Language Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Attributes.html">Attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/BasicTypes.html">Basic Types</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/NS_ENUM/index.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> macros</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of NS_ENUM macros</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/NS_ENUM/NS_CLOSED_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_CLOSED_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_CLOSED_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/NS_ENUM/NS_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/NS_ENUM/NS_ERROR_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ERROR_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ERROR_ENUM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Classes.html">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/LightweightGenerics.html">Lightweight Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Exceptions.html">Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/FastEnumeration.html">Fast enumeration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/StringLiterals.html">String literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/DynamicLiterals.html">Dynamic literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/TraditionalMessageForwarding.html">Traditional Message Forwarding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Modules.html">Modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/EnvInformation.html">Getting Environment Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Versions.html">Language Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Reference/HIG.html">Human Interface Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Contributing/Documentation/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Domains/index.html">Sphinx Domains</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Sphinx Domains</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Domains/SCDT-API.html">Sphinxcontrib-DomainTools API refeerence</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/index.html">Tests</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/index.html">API Reference Tests</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of API Reference Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/WrongNesting.html">Wrong nesting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/MakeDomain.html">Make domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Todo/index.html">Todo</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Todo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/ReleaseNotes.html">Release Notes and API Diffs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/Dependencies.html">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/DocC.html">DocC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/PandocNotes.html">Pandoc Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/StyleGuide.html">Style Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="lunarcalendar">
+<h1><span id="AEN1279">LunarCalendar</span><a class="headerlink" href="#lunarcalendar" title="Permalink to this heading">#</a></h1>
+<p>Solar calendar is commonly used worldwide, but lunar calendar is still
+used in many places since sun and moon play equivalent roles in the
+weather and ocean system. Here, I’ll make a graphic interface for
+convert solar calendar into moon calendar.</p>
+<p>The graphic interface for solar calendar looks like this:</p>
+<p><span id="AEN1283"></span></p>
+<p><strong>Figure 4-54. CalendarView</strong></p>
+<p><img alt="" src="Tutorials/GettingStarted/GSPT_More/GSPT_files/LunarCalendar-04.jpg" />&gt;</p>
+<p>The conversion from solar calendar to lunar calendar is not the point in
+this chapter. If you are interested, you can check the source code. The
+interface of LunarCalendarDate is:</p>
+<p><code class="docutils literal notranslate"><span class="pre">LunarCalendarDate.h</span></code></p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>#ifndef _LunarCalendarDate_
+#define _LunarCalendarDate_
+<p>#include &lt;Foundation/NSObject.h&gt;</p>
+<p>&#64;interface LunarCalendarDate: NSObject
+{
+int lunarDay, lunarMonth;
+}</p>
+<ul class="simple">
+<li><p>(void) setDate: (NSCalendarDate *) date;</p></li>
+<li><p>(int) dayOfMonth;</p></li>
+<li><p>(int) monthOfYear;
+&#64;end</p></li>
+</ul>
+<p>#endif /* <em>LunarCalendarDate</em> */</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p>Basically, you put the date into LunarCalendarDate, and get the month
+and day out of it. This conversion may not be bug-free, and only work
+between 1998-2031. But it is good enough as an example.</p>
+<p>Now, use Gorm to build a interface like this:</p>
+<p><span id="AEN1294"></span></p>
+<p><strong>Figure 4-55. Interface of LunarCalendar</strong></p>
+<p><img alt="" src="Tutorials/GettingStarted/GSPT_More/GSPT_files/LunarCalendar-01.jpg" />&gt;</p>
+<p>Create a subclass of NSView, called CalendarView. Use this class for the
+custom class. The size of custom class must be width 240 and height 270.
+Add a NSTextField on top of it to display the lunar date.</p>
+<p>Create a outlet called “label”in CalendarView.</p>
+<p><span id="AEN1301"></span></p>
+<p><strong>Figure 4-56. Add outlet</strong></p>
+<p><img alt="" src="Tutorials/GettingStarted/GSPT_More/GSPT_files/LunarCalendar-02.jpg" />&gt;</p>
+<p>Connect the outlet “label” to the NSTextField</p>
+<p><span id="AEN1307"></span></p>
+<p><strong>Figure 4-57. Connect outlet</strong></p>
+<p><img alt="" src="Tutorials/GettingStarted/GSPT_More/GSPT_files/LunarCalendar-03.jpg" />&gt;</p>
+<p>Save the interface as LunarCalendar.gorm. Now, let’s work on the
+CalendarView.</p>
+<p><code class="docutils literal notranslate"><span class="pre">CalendarView.h</span></code></p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>#ifndef _CalendarView_
+#define _CalendarView_
+<p>#include &lt;AppKit/AppKit.h&gt;</p>
+<p>&#64;interface CalendarView : NSView
+{
+NSBox *calendarBox;
+NSTextField *yearLabel;
+NSButton *lastYearButton, *nextYearButton;
+NSMatrix *monthMatrix, *dayMatrix;
+NSCalendarDate *date;
+NSArray *monthArray;</p>
+<p>/* Outlet */
+id label;
+}</p>
+<ul class="simple">
+<li><p>(NSCalendarDate *) date;</p></li>
+<li><p>(void) setDate: (NSCalendarDate *)date;</p></li>
+</ul>
+<p>/* Used by interface */</p>
+<ul class="simple">
+<li><p>(void) updateDate: (id) sender;</p></li>
+</ul>
+<p>&#64;end</p>
+<p>#endif /* <em>CalendarView</em> */</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">CalendarDate.m</span></code></p>
+<p>Setup basic header and functions</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>#include &quot;CalendarView.h&quot;
+#include &quot;LunarCalendarDate.h&quot;
+<p>&#64;implementation CalendarView</p>
+<p>#define isLeapYear(year) (((year % 4) == 0 &amp;&amp; ((year % 100) != 0)) || (year % 400)
+== 0)</p>
+<p>static short numberOfDaysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 3
+1};</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p>Here, I use several matrix to build the interface</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>- (id) initWithFrame: (NSRect) rect
+{
+   int i, j, count=0;
+   NSImage *rightArrow, *leftArrow;
+   NSButtonCell *monthCell, *dayCell, *tempCell;
+   NSArray *weekArray;
+<p>[super initWithFrame: rect];</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p>Everything is add into the NSBox</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   calendarBox = [[NSBox alloc] initWithFrame: NSMakeRect(0, 0, 240, 270)];
+   [calendarBox setBorderType: NSGrooveBorder];
+   [calendarBox setTitlePosition: NSAtTop];
+   [calendarBox setTitle: @&quot;Calendar&quot;];</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>Year is composed by two button and on text field. Press buttons to
+change the year. The arrow images come with GNUstep. Buttons will call
+-updateDate: when pressed.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   yearLabel = [[NSTextField alloc] initWithFrame: NSMakeRect(85, 220, 60, 20)];
+   [yearLabel setStringValue: @&quot;This Year&quot;];
+   [yearLabel setBezeled: NO];
+   [yearLabel setBackgroundColor: [NSColor windowBackgroundColor]];
+   [yearLabel setEditable: NO];
+   [yearLabel setSelectable: NO];
+   [yearLabel setAlignment: NSCenterTextAlignment];
+<p>leftArrow = [NSImage imageNamed: &#64;”common_ArrowLeft.tiff”];
+rightArrow = [NSImage imageNamed: &#64;”common_ArrowRight.tiff”];</p>
+<p>lastYearButton = [[NSButton alloc] initWithFrame: NSMakeRect(10, 220, 22, 22)];
+[lastYearButton setImage: leftArrow];
+[lastYearButton setImagePosition: NSImageOnly];
+[lastYearButton setBordered: NO];</p>
+<p>nextYearButton = [[NSButton alloc] initWithFrame: NSMakeRect(198, 220, 22, 22)];
+[nextYearButton setImage: rightArrow];
+[nextYearButton setImagePosition: NSImageOnly];
+[nextYearButton setBordered: NO];</p>
+<p>[lastYearButton setTarget: self];
+[lastYearButton setAction: &#64;selector(updateDate:)];</p>
+<p>[nextYearButton setTarget: self];
+[nextYearButton setAction: &#64;selector(updateDate:)];</p>
+<p>[calendarBox addSubview: yearLabel];
+[calendarBox addSubview: lastYearButton];
+[calendarBox addSubview: nextYearButton];
+RELEASE(yearLabel);
+RELEASE(lastYearButton);
+RELEASE(nextYearButton);</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="http://developer.apple.com/documentation/Cocoa/Conceptual/Matrix/index.html">Matrix</a>
+is used to put cells together. Cell is a light-weight of NSView. Read
+<a class="reference external" href="http://developer.apple.com/documentation/Cocoa/Conceptual/ControlCell/index.html"><em>Introduction to Controls and
+Cells</em></a>.
+Firstly, I define the cell prototype for the matrix. Matrix will use
+this prototype to display every cell. Each cell has a tag to identify
+itself.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   monthArray = [[NSArray alloc] initWithObjects: 
+                   @&quot;Jan&quot;, @&quot;Feb&quot;, @&quot;Mar&quot;, @&quot;Apr&quot;, @&quot;May&quot;, @&quot;Jun&quot;, 
+                   @&quot;Jul&quot;, @&quot;Aug&quot;, @&quot;Sep&quot;, @&quot;Oct&quot;, @&quot;Nov&quot;, @&quot;Dec&quot;, nil];
+<p>monthCell = [[NSButtonCell alloc] initTextCell: &#64;””];
+[monthCell setBordered: NO];
+[monthCell setShowsStateBy: NSOnOffButton];
+[monthCell setAlignment: NSCenterTextAlignment];</p>
+<p>monthMatrix = [[NSMatrix alloc] initWithFrame: NSMakeRect(10, 165, 210, 50)
+mode: NSRadioModeMatrix
+prototype: monthCell
+numberOfRows: 2
+numberOfColumns: 6];</p>
+<p>for (i = 0; i &lt; 2; i++)
+for (j = 0; j &lt; 6; j++)
+{
+tempCell = [monthMatrix cellAtRow: i column: j];
+[tempCell setTag: count];
+[tempCell setTitle: [monthArray objectAtIndex: count]];
+count++;
+}
+RELEASE(monthCell);</p>
+<p>weekArray = [NSArray arrayWithObjects: &#64;”Sun”, &#64;”Mon” &#64;”Tue”, &#64;”Wed”,
+&#64;”Thr”, &#64;”Fri”, &#64;”Sat”, nil];</p>
+<p>dayCell = [[NSButtonCell alloc] initTextCell: &#64;””];
+[dayCell setBordered: NO];
+[dayCell setShowsStateBy: NSOnOffButton];
+[dayCell setAlignment: NSCenterTextAlignment];</p>
+<p>dayMatrix = [[NSMatrix alloc] initWithFrame: NSMakeRect(10, 20, 210, 120)
+mode: NSRadioModeMatrix
+prototype: dayCell
+numberOfRows: 7
+numberOfColumns: 7];</p>
+<p>for (j = 0; j &lt; 7; j++)
+{
+tempCell = [dayMatrix cellAtRow: 0 column: j];
+[tempCell setTitle: [weekArray objectAtIndex: j]];
+[tempCell setAlignment: NSCenterTextAlignment];
+[tempCell setEnabled: NO];
+}</p>
+<p>RELEASE(dayCell);</p>
+<p>count = 0;</p>
+<p>for (i = 1; i &lt; 7; i++)
+for (j = 0; j &lt; 7; j++)
+{
+[[dayMatrix cellAtRow: i column: j] setTag: count++];
+}</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p>When each cell in the matrix is pressed, it will call the action of
+matrix. It is -updateDate: here.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   [monthMatrix setTarget: self];
+   [monthMatrix setAction: @selector(updateDate:)];
+<p>[dayMatrix setTarget: self];
+[dayMatrix setAction: &#64;selector(updateDate:)];</p>
+<p>[calendarBox addSubview: monthMatrix];
+[calendarBox addSubview: dayMatrix];
+RELEASE(monthMatrix);
+RELEASE(dayMatrix);</p>
+<p>[self addSubview: calendarBox];
+RELEASE(calendarBox);</p>
+<p>return self;
+}</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p>The title of cell in dayMatrix depending on the month. Therefore, when
+set date in CalendarView, it has to display days in correct cells.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>- (void) setDate: (NSCalendarDate *) newDate
+{
+   int i, currentDay, currentMonth, currentYear;
+   int daysInMonth, startDayOfWeek, day;
+   NSCalendarDate *firstDayOfMonth;
+   NSButtonCell *tempCell;
+   LunarCalendarDate *lunarDate;</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>Retain the date. It will be released in -dealloc.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   ASSIGN(date, newDate);</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>Update year.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   [yearLabel setStringValue: [date descriptionWithCalendarFormat: @&quot;%Y&quot;]];</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>Update month.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   currentMonth = [date monthOfYear];
+   [monthMatrix selectCellWithTag: currentMonth-1];</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>Update day.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   currentYear = [date yearOfCommonEra];
+   firstDayOfMonth = [NSCalendarDate dateWithYear: currentYear
+                                            month: currentMonth
+                                              day: 1
+                                             hour: 0
+                                           minute: 0
+                                           second: 0
+                                         timeZone: [NSTimeZone localTimeZone]];
+<p>daysInMonth = numberOfDaysInMonth[currentMonth - 1];</p>
+<p>if ((currentMonth == 2) &amp;&amp; (isLeapYear(currentYear)))
+daysInMonth++;</p>
+<p>startDayOfWeek = [firstDayOfMonth dayOfWeek];</p>
+<p>day = 1;</p>
+<p>for (i = 0; i &lt; 42; i++)
+{
+tempCell = [dayMatrix cellWithTag: i];
+if (i &lt; startDayOfWeek || i &gt;= (daysInMonth + startDayOfWeek))
+{
+[tempCell setEnabled: NO];
+[tempCell setTitle: &#64;””];
+}
+else
+{
+[tempCell setEnabled: YES];
+[tempCell setTitle: [NSString stringWithFormat: &#64;”%d”, day++]];
+}
+}</p>
+<p>currentDay = [date dayOfMonth];
+[dayMatrix selectCellWithTag: startDayOfWeek + currentDay - 1];</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p>Use LunarCalendarDate to get the lunar date and update in the
+NSTextField.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   /* Update label */
+   lunarDate = [LunarCalendarDate new];
+   [lunarDate setDate: date];
+   [label setStringValue: [NSString stringWithFormat: @&quot;%@ %d&quot;, [monthArray objectA
+tIndex: [lunarDate monthOfYear]-1], [lunarDate dayOfMonth]]];
+   RELEASE(lunarDate);
+}</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>When this application starts, I want it to show the date of today. Since
+CalendarView is not the delegate of NSApp, how do I know this
+application start ? In the graphic application with Gorm interface,
+-awakeFromNib will be called when the interface shows up. Therefore,
+-awakeFromNib is a good place to initialize this instance.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>- (void) awakeFromNib
+{
+  [self setDate: [NSCalendarDate calendarDate]];
+}</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>Finally, I have to handle the user event, which all go into
+-updateDate:. Depending on the sender, it calculate the new date.</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>- (void) updateDate: (id) sender
+{
+   int i=0, j=0, k=0;
+   NSCalendarDate *newDate;
+<p>if (sender == lastYearButton)
+{
+i = -1;
+}
+else if (sender == nextYearButton)
+{
+i = 1;
+}
+else if (sender == monthMatrix)
+{
+j = [[[sender selectedCells] lastObject] tag] + 1 - [date monthOfYear];
+}
+else if (sender == dayMatrix)
+{
+k = [[[[sender selectedCells] lastObject] stringValue] intValue] - [date dayO
+fMonth];
+}</p>
+<p>newDate = [date addYear: i
+month: j
+day: k
+hour: 0
+minute: 0
+second: 0];</code></pre></td></p>
+</tr>
+</tbody>
+</table>
+<p>Since LunarCalendarDate only work between 1998-2031, do nothing if it is
+out of range</p>
+<table>
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><pre class="PROGRAMLISTING"><code>   if (([newDate yearOfCommonEra] &gt; 1998) &amp;&amp; ([newDate yearOfCommonEra] &lt; 2031))
+     [self setDate: newDate];
+}</code></pre></td>
+</tr>
+</tbody>
+</table>
+<p>Now, you can check the status of moon. Here is the source code:
+<a class="reference external" href="http://gnustep.made-it.com/GSPT/LunarCalendar/LunarCalendar-src.tar.gz">LunarCalendar-src.tar.gz</a></p>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Ethan C
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=37d1907c"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

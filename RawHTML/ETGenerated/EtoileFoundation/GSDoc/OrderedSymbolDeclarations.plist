@@ -1,0 +1,603 @@
+{
+    "(ETClassMirror)" = (
+	"-superclassMirror",
+	"-subclassMirrors",
+	"-allSubclassMirrors",
+	"-adoptedProtocolMirrors",
+	"-allAdoptedProtocolMirrors",
+	"-methodMirrors",
+	"-allMethodMirrors",
+	"-instanceVariableMirrors",
+	"-allInstanceVariableMirrors",
+	"-isMetaClass",
+	"-instanceVariableMirrorsWithOwnerMirror:",
+	"-allInstanceVariableMirrorsWithOwnerMirror:"
+    );
+    "(ETCollection)" = (
+	"-isKeyed",
+	"-isEmpty",
+	"-content",
+	"-contentArray",
+	"-count",
+	"-objectEnumerator",
+	"-countByEnumeratingWithState:objects:count:",
+	"-containsObject:",
+	"-containsCollection:",
+	"-viewpointArray"
+    );
+    "(ETCollectionHOM)" = (
+	"-mappedCollection",
+	"-leftFold",
+	"-rightFold",
+	"-zippedCollectionWithCollection:",
+	"-mappedCollectionWithBlock:",
+	"-leftFoldWithInitialValue:intoBlock:",
+	"-rightFoldWithInitialValue:intoBlock:",
+	"-zippedCollectionWithCollection:andBlock:",
+	"-filteredCollectionWithBlock:",
+	"-filteredOutCollectionWithBlock:"
+    );
+    "(ETCollectionHOMFilterIntegration)" = (
+	"-placeObject:atIndex:inCollection:basedOnFilter:info:"
+    );
+    "(ETCollectionHOMMapIntegration)" = (
+	"-placeObject:inCollection:insteadOfObject:atIndex:havingAlreadyMapped:info:"
+    );
+    "(ETCollectionMutation)" = (
+	"-insertObject:atIndex:",
+	"-removeObject:",
+	"-removeObjectAtIndex:",
+	"-insertObject:atIndex:hint:",
+	"-removeObject:atIndex:hint:",
+	"-insertObjects:atIndexes:hints:",
+	"-removeObjects:atIndexes:hints:",
+	"-validateMutationForObjects:atIndexes:hints:isRemoval:"
+    );
+    "(ETCollectionMutationHOM)" = (
+	"-map",
+	"-filter",
+	"-filterOut",
+	"-zipWithCollection:",
+	"-mapWithBlock:",
+	"-zipWithCollection:andBlock:",
+	"-filterWithBlock:",
+	"-filterOutWithBlock:"
+    );
+    "(ETKeyedCollection)" = (
+	"-arrayRepresentation"
+    );
+    "(ETMethodMirror)" = (
+	"-isClassMethod"
+    );
+    "(ETMirror)" = (
+	"-name",
+	"-type"
+    );
+    "(ETObjectMirror)" = (
+	"-representedObject",
+	"-classMirror",
+	"-superclassMirror",
+	"-prototypeMirror",
+	"-instanceVariableMirrors",
+	"-allInstanceVariableMirrors",
+	"-methodMirrors",
+	"-allMethodMirrors",
+	"-slotMirrors",
+	"-allSlotMirrors",
+	"-isPrototype"
+    );
+    "(ETPropertyViewpoint)" = (
+	"+viewpointWithName:representedObject:",
+	"-name"
+    );
+    "(ETProtocolMirror)" = (
+	"-ancestorProtocolMirrors",
+	"-allAncestorProtocolMirrors",
+	"-methodMirrors",
+	"-allMethodMirrors"
+    );
+    "(ETSocketFilter)" = (
+	"-filterData:"
+    );
+    "(ETTranscriptDelegate)" = (
+	"-appendTranscriptString:"
+    );
+    "(ETViewpoint)" = (
+	"-representedObject",
+	"-setRepresentedObject:",
+	"-value",
+	"-setValue:",
+	"-propertyNames",
+	"-valueForProperty:",
+	"-setValue:forProperty:",
+	"-isMutableValue",
+	"-applyMutableViewpointTraitForValue:",
+	"-unapplyMutableViewpointTraitForValue:"
+    );
+    "(ETViewpointMutation)" = (
+	"+mutableViewpointClass"
+    );
+    ETAdaptiveModelObject = (
+	"-valueForProperty:",
+	"-setValue:forProperty:"
+    );
+    ETByteSizeFormatter = (
+	"-stringForObjectValue:"
+    );
+    ETClassMirror = (
+	"+mirrorWithClass:",
+	"-initWithClass:",
+	"-representedClass"
+    );
+    ETCollectionViewpoint = (
+	"-isIndexValuePairCollection",
+	"-content",
+	"-setContent:",
+	"-didUpdate"
+    );
+    ETEntityDescription = (
+	"+newEntityDescription",
+	"+rootEntityDescriptionName",
+	"-isKindOfEntity:",
+	"-addPropertyDescription:",
+	"-removePropertyDescription:",
+	"-propertyDescriptionForName:",
+	"-propertyDescriptionsForNames:",
+	"-validateValue:forKey:",
+	"-isValidValue:type:"
+    );
+    ETHistory = (
+	"+history",
+	"-init",
+	"-addObject:",
+	"-currentObject",
+	"-back",
+	"-previousObject",
+	"-hasPrevious",
+	"-forward",
+	"-nextObject",
+	"-hasNext",
+	"-peek:",
+	"-clear",
+	"-setFuture:",
+	"-setMaxHistorySize:",
+	"-maxHistorySize",
+	"-displayName",
+	"-isOrdered"
+    );
+    ETIndexValuePair = (
+	"-initWithIndex:value:representedObject:",
+	"-isIndexValuePair",
+	"-observableKeyPaths",
+	"-value",
+	"-setValue:"
+    );
+    ETInstanceVariableMirror = (
+	"-initWithIvar:ownerMirror:",
+	"+mirrorWithIvar:ownerMirror:",
+	"-name",
+	"-ownerMirror",
+	"-ownerObjectMirror",
+	"-type",
+	"-typeName",
+	"-typeEncoding",
+	"-isObjectType",
+	"-value",
+	"-setValue:",
+	"-valueMirror"
+    );
+    ETKeyValuePair = (
+	"+pairWithKey:value:",
+	"-initWithKey:value:",
+	"-isKeyValuePair",
+	"-observableKeyPaths",
+	"-key",
+	"-setKey:",
+	"-representedObject",
+	"-setRepresentedObject:",
+	"-value",
+	"-setValue:",
+	"-propertyNames",
+	"-displayName"
+    );
+    ETListenSocket = (
+	"+listenSocketOnPort:",
+	"+listenSocketForAddress:onPort:",
+	"-initOnPort:",
+	"-initForAddress:onPort:",
+	"-initWithSocketAddress:"
+    );
+    ETMethodDescriptionMirror = (
+	"+mirrorWithMethodName:isClassMethod:",
+	"-initWithMethodName:isClassMethod:"
+    );
+    ETMethodMirror = (
+	"+mirrorWithMethod:isClassMethod:",
+	"-initWithMethod:isClassMethod:"
+    );
+    ETModelDescriptionRepository = (
+	"+newEntityDescription",
+	"+mainRepository",
+	"-init",
+	"-collectEntityDescriptionsFromClass:excludedClasses:resolveNow:",
+	"-registerEntityDescriptionsForClasses:resolveNow:",
+	"-addUnresolvedDescription:",
+	"-addDescription:",
+	"-removeDescription:",
+	"-descriptionForName:",
+	"-classForEntityDescription:",
+	"-entityDescriptionForClass:",
+	"-setEntityDescription:forClass:",
+	"-resolveNamedObjectReferences",
+	"-checkConstraints:"
+    );
+    ETModelElementDescription = (
+	"+newEntityDescription",
+	"+descriptionWithName:",
+	"-initWithName:",
+	"-init",
+	"-checkConstraints:",
+	"-warningWithMessage:",
+	"-checkNotFrozen",
+	"-makeFrozen"
+    );
+    ETMutableObjectViewpoint = (
+	"+viewpointWithName:representedObject:",
+	"-initWithName:representedObject:",
+	"-valueForProperty:",
+	"-setValue:forProperty:",
+	"-setRepresentedObject:oldObservedKeyPath:newObservedKeyPath:",
+	"-startObserveRepresentedObject:forKeyPath:",
+	"-stopObserveRepresentedObject:forKeyPath:"
+    );
+    ETObjectMirror = (
+	"+mirrorWithObject:",
+	"-initWithObject:",
+	"-representedObject"
+    );
+    ETPackageDescription = (
+	"+newEntityDescription",
+	"-addEntityDescription:",
+	"-removeEntityDescription:",
+	"-addPropertyDescription:",
+	"-removePropertyDescription:",
+	"-checkConstraints:"
+    );
+    ETPlugInRegistry = (
+	"+sharedRegistry",
+	"-loadPlugInsOfType:",
+	"-loadPlugInsFromPath:ofType:",
+	"-loadPlugInAtPath:",
+	"-loadedPlugIns",
+	"-shouldInstantiatePlugInClass",
+	"-setShouldInstantiatePlugInClass:",
+	"-searchPaths",
+	"-plugInNameForBundle:",
+	"-plugInIdentifierForBundle:",
+	"-plugInIconPathForBundle:"
+    );
+    ETPropertyDescription = (
+	"+newEntityDescription",
+	"+descriptionWithName:type:",
+	"+descriptionWithName:typeName:",
+	"-validateValue:forKey:",
+	"-makeFrozen"
+    );
+    ETProtocolMirror = (
+	"-initWithProtocol:",
+	"+mirrorWithProtocol:"
+    );
+    ETReflection = (
+	"+reflectObject:",
+	"+reflectClass:",
+	"+reflectClassWithName:",
+	"+reflectProtocolWithName:",
+	"+reflectProtocol:",
+	"+reflectAllRootClasses"
+    );
+    ETRoleDescription = (
+	"-validateValue:forKey:"
+    );
+    ETSocket = (
+	"+socketConnectedToRemoteHost:forService:",
+	"-negotiateSSL",
+	"-setDelegate:",
+	"-sendData:"
+    );
+    ETStackTrace = (
+	"-init",
+	"-numberOfFrames"
+    );
+    ETStackTraceRecorder = (
+	"+sharedInstance",
+	"-init",
+	"-enableAllocationRecordingForClass:",
+	"-disableAllocationRecordingForClass:",
+	"-recordForObject:",
+	"-recordedStackTracesForObject:"
+    );
+    ETTranscript = (
+	"+show:",
+	"+appendString:",
+	"+cr"
+    );
+    ETUTI = (
+	"+typeWithString:",
+	"+typeWithPath:",
+	"+typeWithFileExtension:",
+	"+typeWithMIMEType:",
+	"+typeWithClass:",
+	"+registerTypeWithString:description:supertypeStrings:typeTags:",
+	"+registerTypesFromBundle:",
+	"+transientTypeWithSupertypeStrings:",
+	"+transientTypeWithSupertypes:",
+	"-stringValue",
+	"-classValue",
+	"-fileExtensions",
+	"-MIMETypes",
+	"-typeDescription",
+	"-supertypes",
+	"-allSupertypes",
+	"-subtypes",
+	"-allSubtypes",
+	"-conformsToType:"
+    );
+    ETUUID = (
+	"+UUID",
+	"+UUIDWithString:",
+	"+UUIDWithData:",
+	"-initWithUUID:",
+	"-initWithString:",
+	"-init",
+	"-stringValue",
+	"-UUIDValue",
+	"-dataValue"
+    );
+    ETUnionViewpoint = (
+	"+mixedValueMarker"
+    );
+    ETValidationResult = (
+	"+validResult:",
+	"+invalidResultWithError:",
+	"+validationResultWithValue:isValid:error:",
+	"-initWithValue:isValid:error:"
+    );
+    ETViewpointTrait = (
+	"-isViewpoint",
+	"-isMutableValue",
+	"-applyMutableViewpointTraitForValue:",
+	"-unapplyMutableViewpointTraitForValue:"
+    );
+    "NSArray(ETCollection)" = (
+	"+mutableClass",
+	"-isOrdered",
+	"-content",
+	"-contentArray",
+	"-viewpointArray"
+    );
+    "NSArray(ETKeyValuePairRepresentation)" = (
+	"-dictionaryRepresentation"
+    );
+    "NSArray(Etoile)" = (
+	"-firstObject",
+	"-subarrayFromIndex:",
+	"-arrayByRemovingObject:",
+	"-arrayByRemovingObjectsInArray:",
+	"-filteredArrayUsingPredicate:ignoringObjects:",
+	"-objectsMatchingValue:forKey:",
+	"-firstObjectMatchingValue:forKey:"
+    );
+    "NSCountedSet(ETCollection)" = (
+	"+mutableClass"
+    );
+    "NSData(ETHash)" = (
+	"-base64String",
+	"-sha1",
+	"-ripemd160",
+	"-md5"
+    );
+    "NSDate(ETModel)" = (
+	"-isCommonObjectValue"
+    );
+    "NSDictionary(ETCollection)" = (
+	"+mutableClass",
+	"-isKeyed",
+	"-content",
+	"-contentArray",
+	"-arrayRepresentation",
+	"-viewpointArray"
+    );
+    "NSDictionary(ETCollectionHOM)" = (
+	"-collectionArrayAndInfo:"
+    );
+    "NSDictionary(ETPropertyValueCoding)" = (
+	"-propertyNames",
+	"-valueForProperty:",
+	"-setValue:forProperty:"
+    );
+    "NSDictionary(Etoile)" = (
+	"-containsKey:",
+	"-dictionaryByAddingEntriesFromDictionary:",
+	"-subdictionaryForKeys:"
+    );
+    "NSException(ETException)" = (
+	"+enableEtoileExceptions",
+	"+pushHandler:forException:",
+	"+popHandlerForException:"
+    );
+    "NSFileHandle(ETSocketAdditions)" = (
+	"+fileHandleConnectedToRemoteHost:forService:"
+    );
+    "NSFileManager(ETTempFile)" = (
+	"-tempFile",
+	"-tempDirectory"
+    );
+    "NSIndexPath(Etoile)" = (
+	"+indexPath",
+	"+indexPathWithString:",
+	"-firstIndex",
+	"-lastIndex",
+	"-indexPathByRemovingFirstIndex",
+	"-stringByJoiningIndexPathWithSeparator:",
+	"-stringValue"
+    );
+    "NSIndexSet(ETCollection)" = (
+	"+mutableClass",
+	"-content",
+	"-contentArray",
+	"-objectEnumerator"
+    );
+    "NSIndexSet(Etoile)" = (
+	"-indexPaths"
+    );
+    "NSInvocation(Etoile)" = (
+	"+invocationWithTarget:selector:arguments:"
+    );
+    "NSMapTable(Etoile)" = (
+	"-allKeys",
+	"-allValues"
+    );
+    "NSMutableArray(Etoile)" = (
+	"-removeObjectsFromIndex:"
+    );
+    "NSMutableDictionary(ETMutablePropertyValueCoding)" = (
+	"-setValue:forProperty:"
+    );
+    "NSMutableDictionary(Etoile)" = (
+	"-addObject:forKey:"
+    );
+    "NSMutableIndexSet(Etoile)" = (
+	"-invertIndex:"
+    );
+    "NSNumber(ETModel)" = (
+	"-isCommonObjectValue"
+    );
+    "NSObject(ETBatchCollectionMutation)" = (
+	"-insertCollection:atIndexes:",
+	"-removesCollection:",
+	"-removeObjectAtIndexes:"
+    );
+    "NSObject(ETCollectionHOMIntegrationInformalProtocol)" = (
+	"-collectionArrayAndInfo:"
+    );
+    "NSObject(ETCollectionMutationKVOSupport)" = (
+	"-willChangeValueForKey:atIndexes:withObjects:mutationKind:",
+	"-didChangeValueForKey:atIndexes:withObjects:mutationKind:"
+    );
+    "NSObject(ETDoubleDispatch)" = (
+	"-doubleDispatchPrefix",
+	"-visit:",
+	"-visit:result:",
+	"-supportsDoubleDispatchWithObject:",
+	"-doubleDispatchSelectorWithObject:ofType:",
+	"-tryToPerformSelector:withObject:result:"
+    );
+    "NSObject(ETEachHOM)" = (
+	"-each"
+    );
+    "NSObject(ETHOM)" = (
+	"-ifResponds"
+    );
+    "NSObject(ETIndexValuePair)" = (
+	"-isIndexValuePair"
+    );
+    "NSObject(ETKeyValuePair)" = (
+	"-isKeyValuePair"
+    );
+    "NSObject(ETListenSocketDelegate)" = (
+	"-newConnection:fromSocket:"
+    );
+    "NSObject(ETModel)" = (
+	"+newEntityDescription",
+	"+newBasicEntityDescription",
+	"-objectValue",
+	"-isCommonObjectValue",
+	"-isString",
+	"-isNumber",
+	"-displayName",
+	"-primitiveDescription",
+	"-descriptionWithOptions:",
+	"-observableKeyPaths",
+	"+mutableClass",
+	"-isMutable",
+	"-isCollection",
+	"-isMutableCollection",
+	"-isPrimitiveCollection",
+	"-isGroup",
+	"-insertionKeyForCollection:"
+    );
+    "NSObject(ETPropertyValueCoding)" = (
+	"-requiresKeyValueCodingForAccessingProperties",
+	"-propertyNames",
+	"-valueForProperty:",
+	"-setValue:forProperty:",
+	"-valueForPropertyPath:",
+	"-setValue:forPropertyPath:"
+    );
+    "NSObject(ETPrototypes)" = (
+	"+addInstanceMethod:fromBlock:",
+	"+addClassMethod:fromBlock:",
+	"-addMethod:fromBlock:",
+	"-setMethod:forSelector:",
+	"-clone",
+	"-isPrototype",
+	"-prototype",
+	"-slotValueForKey:"
+    );
+    "NSObject(ETSocketDelegate)" = (
+	"-receivedData:fromSocket:"
+    );
+    "NSObject(ETStackTraceRecorderConveniency)" = (
+	"-recordStackTrace",
+	"-recordedStackTraces"
+    );
+    "NSObject(ETTrait)" = (
+	"+applyTraitFromClass:",
+	"+applyTraitFromClass:excludedMethodNames:aliasedMethodNames:",
+	"+applyTraitFromClass:excludedMethodNames:aliasedMethodNames:allowsOverride:"
+    );
+    "NSObject(ETViewpointAdditions)" = (
+	"-isViewpoint",
+	"-valueForContentKey:",
+	"-setValue:forContentKey:",
+	"-valueForContentKeyPath:",
+	"-setValue:forContentKeyPath:"
+    );
+    "NSObject(Etoile)" = (
+	"+allSubclasses",
+	"+directSubclasses",
+	"-UTI",
+	"-typeName",
+	"+typePrefix",
+	"-className"
+    );
+    "NSSet(ETCollection)" = (
+	"+mutableClass",
+	"-content",
+	"-contentArray",
+	"-viewpointArray"
+    );
+    "NSString(ETBase64)" = (
+	"-base64DecodedData"
+    );
+    "NSString(ETModel)" = (
+	"-isCommonObjectValue"
+    );
+    "NSString(ETUUID)" = (
+	"+UUIDString"
+    );
+    "NSString(Etoile)" = (
+	"-substringFromIndex:toIndex:",
+	"-firstPathComponent",
+	"-stringByDeletingFirstPathComponent",
+	"-stringByStandardizingIntoAbsolutePath",
+	"-stringBySpacingCapitalizedWords",
+	"-stringByCapitalizingFirstLetter",
+	"-stringByLowercasingFirstLetter",
+	"-indexPathBySplittingPathWithSeparator:"
+    );
+    "NSUserDefaults(ETUUID)" = (
+	"-UUIDForKey:",
+	"-setUUID:forKey:"
+    );
+}

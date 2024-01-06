@@ -1,0 +1,1501 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base (Foundation Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSNumberFormatter class reference</h2>NSNumberFormatter : <a href="NSFormatter.html#NSFormatter">NSFormatter</a><div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Fred Kiefer Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>Foundation/NSNumberFormatter.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> <em> <strong> This class is currently not fully implemented! All set methods will work, but stringForObject: will ignore the format completely. The documentation below describes what the behavior SHOULD be... </strong> </em> </p> <p> A specialization of the <a href="NSFormatter.html#NSFormatter">NSFormatter</a> class for generating string representations of numbers ([NSNumber] and NSDecimalNumberinstances) and for parsing numeric values in strings.</p> <p> See the <a href="NSFormatter.html#NSFormatter">NSFormatter</a> documentation for description of the basic methods for formatting and parsing that are available. </p> <p> There are no convenience initializers or constructors for this class. Instead, to obtain an instance, call alloc init and then  <a href="NSNumberFormatter.html#-[NSNumberFormatter_setFormat:]">-setFormat:</a>  . </p> <p> The basic format of a format string uses "#" signs to represent digits, and other characters to represent themselves, in a context-dependent way. Thus, for example, <var>@"#,###.00"</var> means to print the number ending in.00 if it has no decimal part, otherwise print two decimal places, and to print one comma if it is greater than 1000. Thus, 1000 prints as "1,000.00", and 1444555.979 prints as "1444,555.98" (see -setRoundingBehavior:). </p> <p> After setting the format, you may change the thousands separator and decimal point using set methods, or by calling  <a href="NSNumberFormatter.html#-[NSNumberFormatter_setLocalizesFormat:]">-setLocalizesFormat:</a>  . </p> <p> You may set separate formats to be used for positive numbers, negative numbers, and zero independently. </p> <p> In addition, this class supports attributed strings (see <a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a>), so that you can specify font and color attributes, among others, to display aspects of a number. You can assign specific sets of attributes for positive and negative numbers, and for specific cases including 0, NaN, and <var>nil</var>...</p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[NSNumberFormatter_format]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> format </span></span></dt>
+<dd><div class="methodDescription">
+Returns the format string this instance was initialized with.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setFormat:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFormat: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">aFormat</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets format string. See class description for more information.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_localizesFormat]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> localizesFormat </span></span></dt>
+<dd><div class="methodDescription">
+Returns whether this format should defer to the locale in determining thousands separator and decimal point. The default is to NOT localize.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setLocalizesFormat:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLocalizesFormat: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Set whether this format should defer to the locale in determining thousands separator and decimal point. The default is to NOT localize.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_negativeFormat]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> negativeFormat </span></span></dt>
+<dd><div class="methodDescription">
+Returns format used for negative numbers.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setNegativeFormat:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNegativeFormat: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">aFormat</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets format used for negative numbers. See class description for more information.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_positiveFormat]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> positiveFormat </span></span></dt>
+<dd><div class="methodDescription">
+Returns format used for positive numbers.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPositiveFormat:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPositiveFormat: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">aFormat</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets format used for positive numbers. See class description for more information.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_attributedStringForNil]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a> *)</span><span class="selector"> attributedStringForNil </span></span></dt>
+<dd><div class="methodDescription">
+Returns the exact attributed string used for <var>nil</var> values. By default this is an empty string.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setAttributedStringForNil:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAttributedStringForNil: </span><span class="parameter"><span class="type">(<a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a> *)</span><span class="arg">newAttributedString</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the exact attributed string used for <var>nil</var> values. By default this is an empty string.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_attributedStringForNotANumber]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a> *)</span><span class="selector"> attributedStringForNotANumber </span></span></dt>
+<dd><div class="methodDescription">
+Returns the exact attributed string used for NaN values. By default this is the string "NaN" with no attributes.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setAttributedStringForNotANumber:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAttributedStringForNotANumber: </span><span class="parameter"><span class="type">(<a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a> *)</span><span class="arg">newAttributedString</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the exact attributed string used for NaN values. By default this is the string "NaN" with no attributes.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_attributedStringForZero]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a> *)</span><span class="selector"> attributedStringForZero </span></span></dt>
+<dd><div class="methodDescription">
+Returns the exact attributed string used for zero values. By default this is based on the format for zero values, if set, or the format for positive values otherwise.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setAttributedStringForZero:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAttributedStringForZero: </span><span class="parameter"><span class="type">(<a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a> *)</span><span class="arg">newAttributedString</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the exact attributed string used for zero values. By default this is based on the format for zero values, if set, or the format for positive values otherwise.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_textAttributesForNegativeValues]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="selector"> textAttributesForNegativeValues </span></span></dt>
+<dd><div class="methodDescription">
+Returns the attributes to apply to negative values (whole string), when -attributedStringForObjectValue:withDefaultAttributes: is called. Default is none.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setTextAttributesForNegativeValues:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTextAttributesForNegativeValues: </span><span class="parameter"><span class="type">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="arg">newAttributes</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the attributes to apply to negative values (whole string), when -attributedStringForObjectValue:withDefaultAttributes: is called. Default is none.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_textAttributesForPositiveValues]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="selector"> textAttributesForPositiveValues </span></span></dt>
+<dd><div class="methodDescription">
+Returns the attributes to apply to positive values (whole string), when -attributedStringForObjectValue:withDefaultAttributes: is called. Default is none.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setTextAttributesForPositiveValues:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTextAttributesForPositiveValues: </span><span class="parameter"><span class="type">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="arg">newAttributes</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the attributes to apply to positive values (whole string), when -attributedStringForObjectValue:withDefaultAttributes: is called. Default is none.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_roundingBehavior]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a> *)</span><span class="selector"> roundingBehavior </span></span></dt>
+<dd><div class="methodDescription">
+Returns object specifying the rounding behavior used when truncating decimal digits in formats. Default is [<a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a> +defaultDecimalNumberHandler].<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setRoundingBehavior:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setRoundingBehavior: </span><span class="parameter"><span class="type">(<a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a> *)</span><span class="arg">newRoundingBehavior</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets object specifying the rounding behavior used when truncating decimal digits in formats. Default is [<a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a> +defaultDecimalNumberHandler].<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_hasThousandSeparators]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> hasThousandSeparators </span></span></dt>
+<dd><div class="methodDescription">
+Returns whether thousands separator should be used, regardless of whether it is set in format. (Default is <var>YES</var> if explicitly set in format.)<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setHasThousandSeparators:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setHasThousandSeparators: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets whether thousands separator should be used, regardless of whether it is set in format. (Default is <var>YES</var> if explicitly set in format.)<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_thousandSeparator]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> thousandSeparator </span></span></dt>
+<dd><div class="methodDescription">
+Returns thousands separator used; default is ','.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setThousandSeparator:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setThousandSeparator: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">newSeparator</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets thousands separator used; default is ','.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_allowsFloats]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> allowsFloats </span></span></dt>
+<dd><div class="methodDescription">
+Returns whether number parsing will accept floating point values or generate an exception (only <strong>int</strong> values are valid). Default is <var>YES</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setAllowsFloats:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAllowsFloats: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets whether number parsing will accept floating point values or generate an exception (only <strong>int</strong> values are valid). Default is <var>YES</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_decimalSeparator]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> decimalSeparator </span></span></dt>
+<dd><div class="methodDescription">
+Returns thousands separator used; default is '.'.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setDecimalSeparator:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDecimalSeparator: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">newSeparator</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets thousands separator used; default is '.'.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_maximum]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a> *)</span><span class="selector"> maximum </span></span></dt>
+<dd><div class="methodDescription">
+Returns maximum value that will be accepted as valid in number parsing. Default is none.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMaximum:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMaximum: </span><span class="parameter"><span class="type">(<a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a> *)</span><span class="arg">aMaximum</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets maximum value that will be accepted as valid in number parsing. Default is none.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_minimum]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a> *)</span><span class="selector"> minimum </span></span></dt>
+<dd><div class="methodDescription">
+Returns minimum value that will be accepted as valid in number parsing. Default is none.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMinimum:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMinimum: </span><span class="parameter"><span class="type">(<a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a> *)</span><span class="arg">aMinimum</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets minimum value that will be accepted as valid in number parsing. Default is none.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setFormatterBehavior:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFormatterBehavior: </span><span class="parameter"><span class="type">(NSNumberFormatterBehavior)</span><span class="arg">behavior</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the <var>behavior</var> of the formatter. <br></br> NB. If GNUstep has been built without the ICU library, NSNumberFormatterBehavior10_0 is currently used irrespective of this setting.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_formatterBehavior]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSNumberFormatterBehavior)</span><span class="selector"> formatterBehavior </span></span></dt>
+<dd><div class="methodDescription">
+Returns the behavior of the receiver, either the default behavior set for number formatters, or the behavior specified by an earlier call to the  <a href="NSNumberFormatter.html#-[NSNumberFormatter_setFormatterBehavior:]">-setFormatterBehavior:</a>  method.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSNumberFormatter_setDefaultFormatterBehavior:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> setDefaultFormatterBehavior: </span><span class="parameter"><span class="type">(NSNumberFormatterBehavior)</span><span class="arg">behavior</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the default <var>behavior</var> of number formatters. <br></br> NB. If GNUstep has been built without the ICU library, NSNumberFormatterBehavior10_0 is currently used irrespective of this setting.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSNumberFormatter_defaultFormatterBehavior]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSNumberFormatterBehavior)</span><span class="selector"> defaultFormatterBehavior </span></span></dt>
+<dd><div class="methodDescription">
+Returns the formatter behavior previously set as the default using the  <a href="NSNumberFormatter.html#+[NSNumberFormatter_setDefaultFormatterBehavior:]">+setDefaultFormatterBehavior:</a>  method.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setNumberStyle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNumberStyle: </span><span class="parameter"><span class="type">(NSNumberFormatterStyle)</span><span class="arg">style</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_numberStyle]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSNumberFormatterStyle)</span><span class="selector"> numberStyle </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setGeneratesDecimalNumbers:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setGeneratesDecimalNumbers: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_generatesDecimalNumbers]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> generatesDecimalNumbers </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setLocale:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLocale: </span><span class="parameter"><span class="type">(NSLocale *)</span><span class="arg">locale</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_locale]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSLocale *)</span><span class="selector"> locale </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setRoundingIncrement:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setRoundingIncrement: </span><span class="parameter"><span class="type">(<a href="NSNumber.html#NSNumber">NSNumber</a> *)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_roundingIncrement]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSNumber.html#NSNumber">NSNumber</a> *)</span><span class="selector"> roundingIncrement </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setRoundingMode:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setRoundingMode: </span><span class="parameter"><span class="type">(NSNumberFormatterRoundingMode)</span><span class="arg">mode</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_roundingMode]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSNumberFormatterRoundingMode)</span><span class="selector"> roundingMode </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setFormatWidth:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFormatWidth: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_formatWidth]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> formatWidth </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMultiplier:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMultiplier: </span><span class="parameter"><span class="type">(<a href="NSNumber.html#NSNumber">NSNumber</a> *)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_multiplier]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSNumber.html#NSNumber">NSNumber</a> *)</span><span class="selector"> multiplier </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPercentSymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPercentSymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_percentSymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> percentSymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPerMillSymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPerMillSymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_perMillSymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> perMillSymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMinusSign:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMinusSign: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_minusSign]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> minusSign </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPlusSign:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPlusSign: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_plusSign]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> plusSign </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setExponentSymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setExponentSymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_exponentSymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> exponentSymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setZeroSymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setZeroSymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_zeroSymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> zeroSymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setNilSymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNilSymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_nilSymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> nilSymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setNotANumberSymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNotANumberSymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_notANumberSymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> notANumberSymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setNegativeInfinitySymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNegativeInfinitySymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_negativeInfinitySymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> negativeInfinitySymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPositiveInfinitySymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPositiveInfinitySymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_positiveInfinitySymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> positiveInfinitySymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setCurrencySymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCurrencySymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_currencySymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> currencySymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setCurrencyCode:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCurrencyCode: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_currencyCode]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> currencyCode </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setInternationalCurrencySymbol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setInternationalCurrencySymbol: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_internationalCurrencySymbol]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> internationalCurrencySymbol </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPositivePrefix:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPositivePrefix: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_positivePrefix]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> positivePrefix </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPositiveSuffix:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPositiveSuffix: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_positiveSuffix]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> positiveSuffix </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setNegativePrefix:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNegativePrefix: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_negativePrefix]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> negativePrefix </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setNegativeSuffix:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNegativeSuffix: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_negativeSuffix]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> negativeSuffix </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setTextAttributesForZero:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTextAttributesForZero: </span><span class="parameter"><span class="type">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="arg">newAttributes</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_textAttributesForZero]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="selector"> textAttributesForZero </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setTextAttributesForNil:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTextAttributesForNil: </span><span class="parameter"><span class="type">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="arg">newAttributes</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_textAttributesForNil]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="selector"> textAttributesForNil </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setTextAttributesForNotANumber:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTextAttributesForNotANumber: </span><span class="parameter"><span class="type">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="arg">newAttributes</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_textAttributesForNotANumber]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="selector"> textAttributesForNotANumber </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setTextAttributesForPositiveInfinity:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTextAttributesForPositiveInfinity: </span><span class="parameter"><span class="type">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="arg">newAttributes</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_textAttributesForPositiveInfinity]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="selector"> textAttributesForPositiveInfinity </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setTextAttributesForNegativeInfinity:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTextAttributesForNegativeInfinity: </span><span class="parameter"><span class="type">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="arg">newAttributes</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_textAttributesForNegativeInfinity]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSDictionary.html#NSDictionary">NSDictionary</a> *)</span><span class="selector"> textAttributesForNegativeInfinity </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setGroupingSeparator:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setGroupingSeparator: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_groupingSeparator]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> groupingSeparator </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setUsesGroupingSeparator:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setUsesGroupingSeparator: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_usesGroupingSeparator]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> usesGroupingSeparator </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setAlwaysShowsDecimalSeparator:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAlwaysShowsDecimalSeparator: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_alwaysShowsDecimalSeparator]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> alwaysShowsDecimalSeparator </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setCurrencyDecimalSeparator:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCurrencyDecimalSeparator: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_currencyDecimalSeparator]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> currencyDecimalSeparator </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setGroupingSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setGroupingSize: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_groupingSize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> groupingSize </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setSecondaryGroupingSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setSecondaryGroupingSize: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_secondaryGroupingSize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> secondaryGroupingSize </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPaddingCharacter:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPaddingCharacter: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_paddingCharacter]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> paddingCharacter </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPaddingPosition:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPaddingPosition: </span><span class="parameter"><span class="type">(NSNumberFormatterPadPosition)</span><span class="arg">position</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_paddingPosition]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSNumberFormatterPadPosition)</span><span class="selector"> paddingPosition </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMinimumIntegerDigits:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMinimumIntegerDigits: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_minimumIntegerDigits]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> minimumIntegerDigits </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMinimumFractionDigits:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMinimumFractionDigits: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_minimumFractionDigits]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> minimumFractionDigits </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMaximumIntegerDigits:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMaximumIntegerDigits: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_maximumIntegerDigits]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> maximumIntegerDigits </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMaximumFractionDigits:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMaximumFractionDigits: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_maximumFractionDigits]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> maximumFractionDigits </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_numberFromString:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSNumber.html#NSNumber">NSNumber</a> *)</span><span class="selector"> numberFromString: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the number for this <var>string</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_stringFromNumber:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> stringFromNumber: </span><span class="parameter"><span class="type">(<a href="NSNumber.html#NSNumber">NSNumber</a> *)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the string version of this <var>number</var> based on the format specified.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_getObjectValue:forString:range:error:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> getObjectValue: </span><span class="parameter"><span class="type">(out id*)</span><span class="arg">anObject</span></span><span class="selector"> forString: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">aString</span></span><span class="selector"> range: </span><span class="parameter"><span class="type">(NSRange *)</span><span class="arg">rangep</span></span><span class="selector"> error: </span><span class="parameter"><span class="type">(out  <a href="NSError.html#NSError">NSError</a> **)</span><span class="arg">error</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setUsesSignificantDigits:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setUsesSignificantDigits: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_usesSignificantDigits]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> usesSignificantDigits </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMinimumSignificantDigits:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMinimumSignificantDigits: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_minimumSignificantDigits]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> minimumSignificantDigits </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setMaximumSignificantDigits:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMaximumSignificantDigits: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_maximumSignificantDigits]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> maximumSignificantDigits </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setCurrencyGroupingSeparator:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCurrencyGroupingSeparator: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="arg">string</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_currencyGroupingSeparator]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> currencyGroupingSeparator </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setLenient:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLenient: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_isLenient]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isLenient </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_setPartialStringValidationEnabled:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPartialStringValidationEnabled: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">enabled</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSNumberFormatter_isPartialStringValidationEnabled]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isPartialStringValidationEnabled </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSNumberFormatter_localizedStringFromNumber:numberStyle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> localizedStringFromNumber: </span><span class="parameter"><span class="type">(<a href="NSNumber.html#NSNumber">NSNumber</a> *)</span><span class="arg">num</span></span><span class="selector"> numberStyle: </span><span class="parameter"><span class="type">(NSNumberFormatterStyle)</span><span class="arg">localizationStyle</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base (Foundation Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSAffineTransform.html#NSAffineTransform">NSAffineTransform</a></li><li><a href="NSArchiver.html#NSArchiver">NSArchiver</a></li><li><a href="NSArray.html#NSArray">NSArray</a></li><li><a href="NSAssertionHandler.html#NSAssertionHandler">NSAssertionHandler</a></li><li><a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a></li><li><a href="NSAutoreleasePool.html#NSAutoreleasePool">NSAutoreleasePool</a></li><li><a href="NSBundle.html#NSBundle">NSBundle</a></li><li><a href="NSCachedURLResponse.html#NSCachedURLResponse">NSCachedURLResponse</a></li><li><a href="NSCalendarDate.html#NSCalendarDate">NSCalendarDate</a></li><li><a href="NSCharacterSet.html#NSCharacterSet">NSCharacterSet</a></li><li><a href="NSClassDescription.html#NSClassDescription">NSClassDescription</a></li><li><a href="NSCoder.html#NSCoder">NSCoder</a></li><li><a href="NSCondition.html#NSCondition">NSCondition</a></li><li><a href="NSConditionLock.html#NSConditionLock">NSConditionLock</a></li><li><a href="NSConnection.html#NSConnection">NSConnection</a></li><li><a href="NSCountedSet.html#NSCountedSet">NSCountedSet</a></li><li><a href="NSData.html#NSData">NSData</a></li><li><a href="NSDate.html#NSDate">NSDate</a></li><li><a href="NSDateFormatter.html#NSDateFormatter">NSDateFormatter</a></li><li><a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a></li><li><a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a></li><li><a href="NSDeserializer.html#NSDeserializer">NSDeserializer</a></li><li><a href="NSDictionary.html#NSDictionary">NSDictionary</a></li><li><a href="NSDirectoryEnumerator.html#NSDirectoryEnumerator">NSDirectoryEnumerator</a></li><li><a href="NSDistantObject.html#NSDistantObject">NSDistantObject</a></li><li><a href="NSDistributedLock.html#NSDistributedLock">NSDistributedLock</a></li><li><a href="NSDistributedNotificationCenter.html#NSDistributedNotificationCenter">NSDistributedNotificationCenter</a></li><li><a href="NSEnumerator.html#NSEnumerator">NSEnumerator</a></li><li><a href="NSError.html#NSError">NSError</a></li><li><a href="NSException.html#NSException">NSException</a></li><li><a href="NSFileHandle.html#NSFileHandle">NSFileHandle</a></li><li><a href="NSFileManager.html#NSFileManager">NSFileManager</a></li><li><a href="NSFormatter.html#NSFormatter">NSFormatter</a></li><li><a href="NSHashTable.html#NSHashTable">NSHashTable</a></li><li><a href="NSHost.html#NSHost">NSHost</a></li><li><a href="NSHTTPCookie.html#NSHTTPCookie">NSHTTPCookie</a></li><li><a href="NSHTTPCookieStorage.html#NSHTTPCookieStorage">NSHTTPCookieStorage</a></li><li><a href="NSHTTPURLResponse.html#NSHTTPURLResponse">NSHTTPURLResponse</a></li><li><a href="NSIndexPath.html#NSIndexPath">NSIndexPath</a></li><li><a href="NSIndexSet.html#NSIndexSet">NSIndexSet</a></li><li><a href="NSInputStream.html#NSInputStream">NSInputStream</a></li><li><a href="NSInvocation.html#NSInvocation">NSInvocation</a></li><li><a href="NSKeyedArchiver.html#NSKeyedArchiver">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiver.html#NSKeyedUnarchiver">NSKeyedUnarchiver</a></li><li><a href="NSLock.html#NSLock">NSLock</a></li><li><a href="NSMapTable.html#NSMapTable">NSMapTable</a></li><li><a href="NSMessagePort.html#NSMessagePort">NSMessagePort</a></li><li><a href="NSMessagePortNameServer.html#NSMessagePortNameServer">NSMessagePortNameServer</a></li><li><a href="NSMethodSignature.html#NSMethodSignature">NSMethodSignature</a></li><li><a href="NSMutableArray.html#NSMutableArray">NSMutableArray</a></li><li><a href="NSMutableAttributedString.html#NSMutableAttributedString">NSMutableAttributedString</a></li><li><a href="NSMutableCharacterSet.html#NSMutableCharacterSet">NSMutableCharacterSet</a></li><li><a href="NSMutableData.html#NSMutableData">NSMutableData</a></li><li><a href="NSMutableDictionary.html#NSMutableDictionary">NSMutableDictionary</a></li><li><a href="NSMutableIndexSet.html#NSMutableIndexSet">NSMutableIndexSet</a></li><li><a href="NSMutableSet.html#NSMutableSet">NSMutableSet</a></li><li><a href="NSMutableString.html#NSMutableString">NSMutableString</a></li><li><a href="NSMutableURLRequest.html#NSMutableURLRequest">NSMutableURLRequest</a></li><li><a href="NSNetService.html#NSNetService">NSNetService</a></li><li><a href="NSNetServiceBrowser.html#NSNetServiceBrowser">NSNetServiceBrowser</a></li><li><a href="NSNotification.html#NSNotification">NSNotification</a></li><li><a href="NSNotificationCenter.html#NSNotificationCenter">NSNotificationCenter</a></li><li><a href="NSNotificationQueue.html#NSNotificationQueue">NSNotificationQueue</a></li><li><a href="NSNull.html#NSNull">NSNull</a></li><li><a href="NSNumber.html#NSNumber">NSNumber</a></li><li><a href="NSNumberFormatter.html#NSNumberFormatter">NSNumberFormatter</a></li><li><a href="NSObject.html#NSObject">NSObject</a></li><li><a href="NSOutputStream.html#NSOutputStream">NSOutputStream</a></li><li><a href="NSPipe.html#NSPipe">NSPipe</a></li><li><a href="NSPointerArray.html#NSPointerArray">NSPointerArray</a></li><li><a href="NSPointerFunctions.html#NSPointerFunctions">NSPointerFunctions</a></li><li><a href="NSPort.html#NSPort">NSPort</a></li><li><a href="NSPortCoder.html#NSPortCoder">NSPortCoder</a></li><li><a href="NSPortMessage.html#NSPortMessage">NSPortMessage</a></li><li><a href="NSPortNameServer.html#NSPortNameServer">NSPortNameServer</a></li><li><a href="NSProcessInfo.html#NSProcessInfo">NSProcessInfo</a></li><li><a href="NSPropertyListSerialization.html#NSPropertyListSerialization">NSPropertyListSerialization</a></li><li><a href="NSProtocolChecker.html#NSProtocolChecker">NSProtocolChecker</a></li><li><a href="NSProxy.html#NSProxy">NSProxy</a></li><li><a href="NSRecursiveLock.html#NSRecursiveLock">NSRecursiveLock</a></li><li><a href="NSRunLoop.html#NSRunLoop">NSRunLoop</a></li><li><a href="NSScanner.html#NSScanner">NSScanner</a></li><li><a href="NSSerializer.html#NSSerializer">NSSerializer</a></li><li><a href="NSSet.html#NSSet">NSSet</a></li><li><a href="NSSocketPort.html#NSSocketPort">NSSocketPort</a></li><li><a href="NSSocketPortNameServer.html#NSSocketPortNameServer">NSSocketPortNameServer</a></li><li><a href="NSStream.html#NSStream">NSStream</a></li><li><a href="NSString.html#NSString">NSString</a></li><li><a href="NSTask.html#NSTask">NSTask</a></li><li><a href="NSThread.html#NSThread">NSThread</a></li><li><a href="NSTimer.html#NSTimer">NSTimer</a></li><li><a href="NSTimeZone.html#NSTimeZone">NSTimeZone</a></li><li><a href="NSTimeZoneDetail.html#NSTimeZoneDetail">NSTimeZoneDetail</a></li><li><a href="NSUnarchiver.html#NSUnarchiver">NSUnarchiver</a></li><li><a href="NSUndoManager.html#NSUndoManager">NSUndoManager</a></li><li><a href="NSURL.html#NSURL">NSURL</a></li><li><a href="NSURLAuthenticationChallenge.html#NSURLAuthenticationChallenge">NSURLAuthenticationChallenge</a></li><li><a href="NSURLCache.html#NSURLCache">NSURLCache</a></li><li><a href="NSURLComponents.html#NSURLComponents">NSURLComponents</a></li><li><a href="NSURLConnection.html#NSURLConnection">NSURLConnection</a></li><li><a href="NSURLCredential.html#NSURLCredential">NSURLCredential</a></li><li><a href="NSURLCredentialStorage.html#NSURLCredentialStorage">NSURLCredentialStorage</a></li><li><a href="NSURLDownload.html#NSURLDownload">NSURLDownload</a></li><li><a href="NSURLHandle.html#NSURLHandle">NSURLHandle</a></li><li><a href="NSURLProtectionSpace.html#NSURLProtectionSpace">NSURLProtectionSpace</a></li><li><a href="NSURLProtocol.html#NSURLProtocol">NSURLProtocol</a></li><li><a href="NSURLQueryItem.html#NSURLQueryItem">NSURLQueryItem</a></li><li><a href="NSURLRequest.html#NSURLRequest">NSURLRequest</a></li><li><a href="NSURLResponse.html#NSURLResponse">NSURLResponse</a></li><li><a href="NSUserDefaults.html#NSUserDefaults">NSUserDefaults</a></li><li><a href="NSValue.html#NSValue">NSValue</a></li><li><a href="NSValueTransformer.html#NSValueTransformer">NSValueTransformer</a></li><li><a href="NSXMLDocument.html#NSXMLDocument">NSXMLDocument</a></li><li><a href="NSXMLDTD.html#NSXMLDTD">NSXMLDTD</a></li><li><a href="NSXMLDTDNode.html#NSXMLDTDNode">NSXMLDTDNode</a></li><li><a href="NSXMLElement.html#NSXMLElement">NSXMLElement</a></li><li><a href="NSXMLNode.html#NSXMLNode">NSXMLNode</a></li><li><a href="NSXMLParser.html#NSXMLParser">NSXMLParser</a></li><li><a href="NXConstantString.html#NXConstantString">NXConstantString</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSLogDelegate.html#GSLogDelegate">GSLogDelegate</a></li><li><a href="_NSCoding.html#NSCoding">NSCoding</a></li><li><a href="_NSCopying.html#NSCopying">NSCopying</a></li><li><a href="_NSDecimalNumberBehaviors.html#NSDecimalNumberBehaviors">NSDecimalNumberBehaviors</a></li><li><a href="_NSDiscardableContent.html#NSDiscardableContent">NSDiscardableContent</a></li><li><a href="_NSFastEnumeration.html#NSFastEnumeration">NSFastEnumeration</a></li><li><a href="_NSFileManagerDelegate.html#NSFileManagerDelegate">NSFileManagerDelegate</a></li><li><a href="_NSLocking.html#NSLocking">NSLocking</a></li><li><a href="_NSMutableCopying.html#NSMutableCopying">NSMutableCopying</a></li><li><a href="_NSNetServiceBrowserDelegate.html#NSNetServiceBrowserDelegate">NSNetServiceBrowserDelegate</a></li><li><a href="_NSNetServiceDelegate.html#NSNetServiceDelegate">NSNetServiceDelegate</a></li><li><a href="_NSObjCTypeSerializationCallBack.html#NSObjCTypeSerializationCallBack">NSObjCTypeSerializationCallBack</a></li><li><a href="_NSObject.html#NSObject">NSObject</a></li><li><a href="_NSSecureCoding.html#NSSecureCoding">NSSecureCoding</a></li><li><a href="_NSStreamDelegate.html#NSStreamDelegate">NSStreamDelegate</a></li><li><a href="_NSURLAuthenticationChallengeSender.html#NSURLAuthenticationChallengeSender">NSURLAuthenticationChallengeSender</a></li><li><a href="_NSURLConnectionDelegate.html#NSURLConnectionDelegate">NSURLConnectionDelegate</a></li><li><a href="_NSURLDownloadDelegate.html#NSURLDownloadDelegate">NSURLDownloadDelegate</a></li><li><a href="_NSURLHandleClient.html#NSURLHandleClient">NSURLHandleClient</a></li><li><a href="_NSURLProtocolClient.html#NSURLProtocolClient">NSURLProtocolClient</a></li><li><a href="_NSXMLParserDelegate.html#NSXMLParserDelegate">NSXMLParserDelegate</a></li><li><a href="_RunLoopEvents.html#RunLoopEvents">RunLoopEvents</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSArchiverCategories.html#NSArchiver(GNUstep)">NSArchiver</a></li><li><a href="NSArrayCategories.html#NSArray(NSKeyValueObserverRegistration)">NSArray</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstep)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GregorianDate)">NSCalendarDate</a></li><li><a href="NSCoderCategories.html#NSCoder(NSGeometryKeyedCoding)">NSCoder</a></li><li><a href="NSCountedSetCategories.html#NSCountedSet(GNU_Uniquing)">NSCountedSet</a></li><li><a href="NSDataCategories.html#NSData(GNUstepExtensions)">NSData</a></li><li><a href="NSDeserializerCategories.html#NSDeserializer(GNUstep)">NSDeserializer</a></li><li><a href="NSDictionaryCategories.html#NSDictionary(NSFileAttributes)">NSDictionary</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepExtensions)">NSFileHandle</a></li><li><a href="NSHostCategories.html#NSHost(GNUstep)">NSHost</a></li><li><a href="NSInvocationCategories.html#NSInvocation(GNUstep)">NSInvocation</a></li><li><a href="NSKeyedArchiverCategories.html#NSKeyedArchiver(Internal)">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiverCategories.html#NSKeyedUnarchiver(Internal)">NSKeyedUnarchiver</a></li><li><a href="NSMutableDataCategories.html#NSMutableData(GNUstepExtensions)">NSMutableData</a></li><li><a href="NSMutableURLRequestCategories.html#NSMutableURLRequest(GNUstep)">NSMutableURLRequest</a></li><li><a href="NSNumberCategories.html#NSNumber(NSDecimalNumber)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstep)">NSObject</a></li><li><a href="NSPointerArrayCategories.html#NSPointerArray(NSArrayConveniences)">NSPointerArray</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstep)">NSProcessInfo</a></li><li><a href="NSRunLoopCategories.html#NSRunLoop(GNUstepExtensions)">NSRunLoop</a></li><li><a href="NSSerializerCategories.html#NSSerializer(GNUstep)">NSSerializer</a></li><li><a href="NSThreadCategories.html#NSThread(CallStackSymbols)">NSThread</a></li><li><a href="NSUnarchiverCategories.html#NSUnarchiver(GNUstep)">NSUnarchiver</a></li><li><a href="NSURLCacheCategories.html#NSURLCache(NSURLSessionTaskAdditions)">NSURLCache</a></li><li><a href="NSURLConnectionCategories.html#NSURLConnection(NSURLConnectionSynchronousLoading)">NSURLConnection</a></li><li><a href="NSURLProtocolCategories.html#NSURLProtocol(Subclassing)">NSURLProtocol</a></li><li><a href="NSURLRequestCategories.html#NSURLRequest(NSHTTPURLRequest)">NSURLRequest</a></li><li><a href="NSValueCategories.html#NSValue(Subclassing)">NSValue</a></li><li><a href="NSXMLParserCategories.html#NSXMLParser(NSXMLParserLocatorAdditions)">NSXMLParser</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

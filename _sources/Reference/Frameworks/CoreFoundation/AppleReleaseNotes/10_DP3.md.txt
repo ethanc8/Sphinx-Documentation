@@ -1,0 +1,93 @@
+# Mac OS X Developer Preview 3
+
+> The following came from the [ADC release notes page](https://web.archive.org/web/20030604123839if_/http://developer.apple.com/techpubs/macosx/ReleaseNotes/CoreFoundation.html).
+
+## CFPreferences
+
+We have added new API to CFPreferences to support framework and suite developers. First, we have added the constant kCFPreferencesCurrentApplication; frameworks can pass this constant in place of the application's name to retrieve preferences for the currently running application.  
+  
+Secondly, we have made it possible for suites and frameworks to add their preferences to an application's preferences. To add your suite preferences, call CFPreferencesAddSuitePreferencesToApp(), passing the application's name (or kCFPreferencesCurrentApplication for the currently running application) and the name of your suite preferences. You can later remove your preferences by calling CFPreferencesRemoveSuitePreferencesFromApp() if you wish. Finally, set preferences for your suite by calling CFPreferencesSetValue(), passing your suite's name in place of the application name. The user name and host name arguments are as for applications; typically, you will pass a user name of kCFPreferencesCurrentUser and a host name of kCFPreferencesAnyHost.  
+  
+
+## RunLoop
+
+There are some future changes to the operating system coming which may necessitate some changes in the CFRunLoop API. Specifically, the set of activities for observers in the CFRunLoopActivity enum type, and when observers are "fired" relative to the run loop's activities, may change.  
+  
+Also, the behavior of of the CFRunLoopRunInMode() function may change, along with its return type. CFRunLoopRunInMode() currently returns after one source is processed. In the future, it may not return unless the run loop is specifically aborted. For highest performance, it is advantageous to remain in the run loop and handle callouts from it as events occur rather than exiting from the run loop and then handling an event outside of the run loop context.  
+  
+Finally, there are some planned API changes which will probably happen after DP3:  
+  
+- The global variable kCFDefaultRunLoopMode is obsolete and will be removed. Use the constant kCFRunLoopDefaultMode, available in DP3.  
+- The fireDate parameter of the CFRunLoopTimerCreate() function will change to be a CFAbsoluteTime rather than a CFDateRef. Binaries using this function will be binary and source incompatible with previous versions of the system.  
+- The other CFRunLoopTimer-related functions taking and returning a CFDateRef will probably change to take and return CFAbsoluteTime values instead. This change also represents a binary incompatibility.  
+- The function CFRunLoopAbort() will probably be renamed CFRunLoopStop().  
+- Sources cannot yet use version 1 of the CFRunLoopSource context structure, CFRunLoopSourceContext1; the operating system support is not yet there. When enabled in a future release, sources using version 1 contexts will perform somewhat more efficiently than sources with version 0 contexts. However, it does not make sense in all cases to use the source-style implied by the version 1 context; some sources are more naturally version 0-style sources.  
+  
+
+## CFByteOrder API changes
+
+There have been some significant changes to the CFByteOrder.h API. See the documentation for an overview of the new API. The following tops script will allow you to use the tops command-line tool to autoconvert your code if you have heavy usage of CFByteOrder API. You can also read the list below to determine the mapping from old to new names for hand-conversion.  
+  
+Note particularly that the usage of float and double swapping has changed. You no longer explicitly swap floats and doubles, but rather convert them to and from an opaque CFSwappedFloat32 or CFSwappedFloat64 type using the new API. A CFSwappedFloat has the specified bit-length and is in some canonical, but unspecified, format maintained by the CFByteOrder API.  
+
+    replace "CFUnknownByteOrder" with "CFByteOrderUnknown"
+    replace "CFLittleEndian" with "CFByteOrderLittleEndian"
+    replace "CFBigEndian" with "CFByteOrderBigEndian"
+    replace "CFHostByteOrder" with "CFByteOrderGetCurrent"
+
+    replace "CFSwapBigInt16ToHost" with "CFSwapInt16BigToHost"
+    replace "CFSwapBigInt32ToHost" with "CFSwapInt32BigToHost"
+    replace "CFSwapBigInt64ToHost" with "CFSwapInt64BigToHost"
+    replace "CFSwapHostInt16ToBig" with "CFSwapInt16HostToBig"
+    replace "CFSwapHostInt32ToBig" with "CFSwapInt32HostToBig"
+    replace "CFSwapHostInt64ToBig" with "CFSwapInt64HostToBig"
+    replace "CFSwapLittleInt16ToHost" with "CFSwapInt16LittleToHost"
+    replace "CFSwapLittleInt32ToHost" with "CFSwapInt32LittleToHost"
+    replace "CFSwapLittleInt64ToHost" with "CFSwapInt64LittleToHost"
+    replace "CFSwapHostInt16ToLittle" with "CFSwapInt16HostToLittle"
+    replace "CFSwapHostInt32ToLittle" with "CFSwapInt32HostToLittle"
+    replace "CFSwapHostInt64ToLittle" with "CFSwapInt64HostToLittle"
+
+    replace "CFSwappableFloat32" with "CFSwappedFloat32"
+    warning "CONVERSION: check usage of this CFSwappedFloat32-typed variable"
+    replace "CFSwappableFloat64" with "CFSwappedFloat64"
+    warning "CONVERSION: check usage of this CFSwappedFloat64-typed variable"
+    replace "CFConvertHostFloat32ToSwappable" with "CFConvertFloat32HostToSwapped"
+    warning "CONVERSION: check usage of the CFConvertFloat32HostToSwapped function"
+    replace "CFConvertSwappableFloat32ToHost" with "CFConvertFloat32SwappedToHost"
+    warning "CONVERSION: check usage of the CFConvertFloat32SwappedToHost function"
+    replace "CFConvertHostFloat64ToSwappable" with "CFConvertFloat64HostToSwapped"
+    warning "CONVERSION: check usage of the CFConvertFloat64HostToSwapped function"
+    replace "CFConvertSwappableFloat64ToHost" with "CFConvertFloat64SwappedToHost"
+    warning "CONVERSION: check usage of the CFConvertFloat64SwappedToHost function"
+
+    replace "CFSwapBigFloat32ToHost" with "CFSwapBigFloat32ToHost"
+    error "CONVERSION: the CFSwapBigFloat32ToHost function has been removed from the API"
+    replace "CFSwapBigFloat64ToHost" with "CFSwapBigFloat64ToHost"
+    error "CONVERSION: the CFSwapBigFloat64ToHost function has been removed from the API"
+    replace "CFSwapHostFloat32ToBig" with "CFSwapHostFloat32ToBig"
+    error "CONVERSION: the CFSwapHostFloat32ToBig function has been removed from the API"
+    replace "CFSwapHostFloat64ToBig" with "CFSwapHostFloat64ToBig"
+    error "CONVERSION: the CFSwapHostFloat64ToBig function has been removed from the API"
+    replace "CFSwapLittleFloat32ToHost" with "CFSwapLittleFloat32ToHost"
+    error "CONVERSION: the CFSwapLittleFloat32ToHost function has been removed from the API"
+    replace "CFSwapLittleFloat64ToHost" with "CFSwapLittleFloat64ToHost"
+    error "CONVERSION: the CFSwapLittleFloat64ToHost function has been removed from the API"
+    replace "CFSwapHostFloat32ToLittle" with "CFSwapHostFloat32ToLittle"
+    error "CONVERSION: the CFSwapHostFloat32ToLittle function has been removed from the API"
+    replace "CFSwapHostFloat64ToLittle" with "CFSwapHostFloat64ToLittle"
+    error "CONVERSION: the CFSwapHostFloat64ToLittle function has been removed from the API"
+    replace "CFSwapFloat32" with "CFSwapFloat32"
+    error "CONVERSION: the CFSwapFloat32 function has been removed from the API"
+    replace "CFSwapFloat64" with "CFSwapFloat64"
+    error "CONVERSION: the CFSwapFloat64 function has been removed from the API"
+
+## CFUUID
+
+The missing function CFUUIDGetTypeID() has been added to the header.  
+  
+
+## CarbonCore Linkage
+
+CoreFoundation no longer links with CarbonCore framework directly, but rather loads it dynamically when functionality in CoreFoundation which needs it is first used. If you were linking with CoreFoundation only previously, but using CarbonCore symbols, you will need to link with CarbonCore explicitly now as well. Also, although no longer explicitly linking with CarbonCore, CarbonCore symbols will still be part of the runnning process's address space if it's dynamically loaded, so symbol collisions can still result, as noted in a note below.  
+  

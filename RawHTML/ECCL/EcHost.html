@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcHost documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcHost">EcHost documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the NSHost(EcHost) category
+      </a></h1>
+    <h2><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSHost.html#class$NSHost">NSHost</a>(<a name="category$NSHost(EcHost)">EcHost</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcHost.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            This category provides additional methods to
+            standardise host names so that software can
+            consistently refer to a host by a single well
+            known name. <br /> This mechanism, as well as
+            ensuring naming consistency, can be used to work
+            with logical names for hosts when the actual naming of
+            the hosts (ie in the domain name system) is not under
+            your control.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            This operates by managing a map from the various names
+            and addresses a host may be known by, to a single well
+            known name. This host name may, but need not, be a
+            public domain name.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            The well known name methods are thread-safe, and on
+            initial use the NSUserDefaults system is queried to
+            set up two well known names automatically: <br /> The
+            value of EcCurrentHost specifies the well known name
+            for the current host (the machine on which the software
+            is running). <br /> The value of EcControlHost specifies
+            the well known name for the control host (the machine
+            on which control functions for your software are
+            centralised). If this is specified without
+            EcControlDomain, it is used as both the
+            well known name and the domain name. <br /> The value
+            of EcControlDomain specifies the fully qualified domain
+            name (ie the name provided by the operating system) of
+            the control host. If it is specified without
+            EcControlHost, then it is used as the well
+            known name for the control host. <br /> NB. the
+            defaults system is accessed via EcUserDefaults, so
+            if a defaults prefix other than Ec has been set, these
+            keys will use that alternative prefix.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcHost.html#method$NSHost(EcHost)+controlWellKnownName">+controlWellKnownName</a></li>
+      <li><a rel="gsdoc" href="EcHost.html#method$NSHost(EcHost)+hostWithWellKnownName$">+hostWithWellKnownName:</a></li>
+      <li><a rel="gsdoc" href="EcHost.html#method$NSHost(EcHost)+setWellKnownNames$">+setWellKnownNames:</a></li>
+      <li><a rel="gsdoc" href="EcHost.html#method$NSHost(EcHost)-setWellKnownName$">-setWellKnownName:</a></li>
+      <li><a rel="gsdoc" href="EcHost.html#method$NSHost(EcHost)-wellKnownName">-wellKnownName</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$NSHost(EcHost)+controlWellKnownName">controlWellKnownName&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>controlWellKnownName</b>;<br />
+    <div class="desc">
+      
+            Returns the well known name of the &apos;control&apos; host
+            as obtained from the NSUserDefaults system. <br /> If
+            EcControlHost is defined, the well known name
+            is the string specified by EcControlHost. <br /> If
+            EcControlHost is undefined but
+            EcHostControlDomain is defined, the
+            well known name is the value of EcHostControlDomain.
+            <br /> If neither is defined, this method returns
+            <code>nil</code>.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSHost(EcHost)+hostWithWellKnownName$">hostWithWellKnownName:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSHost.html#class$NSHost">NSHost</a>*) <b>hostWithWellKnownName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName;<br />
+    <div class="desc">
+      
+            Returns a host previously established as having the
+            well known name, or <code>nil</code> if no such
+            association exists.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSHost(EcHost)+setWellKnownNames$">setWellKnownNames:&nbsp;</a></h3>
+    + (void) <b>setWellKnownNames:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)map;<br />
+    <div class="desc">
+      
+            Establishes mappings from a variety of host
+            names (the dictionary keys) to well known names (the
+            dictionary values). <br /> The keys and values
+            may be (and often are) identical in the case where the
+            well known name for a host is the same as one of its
+            normal names (eg its fully qualified domain name).
+            <br /> It is possible to set a well known name for a
+            host which does not yet exist... in which case the
+            mapping will be established and will take effect
+            later, when the host is set up.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSHost(EcHost)-setWellKnownName$">setWellKnownName:&nbsp;</a></h3>
+    - (void) <b>setWellKnownName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName;<br />
+    <div class="desc">
+      
+            Sets the well known name for the receiver. <br /> This
+            replaces any previous well known name for the
+            receiver and, if the name is already in use,
+            removes any associations of that well known name
+            with other hosts.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSHost(EcHost)-wellKnownName">wellKnownName&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>wellKnownName</b>;<br />
+    <div class="desc">
+      
+            Returns the well known name for the receiver (or
+            any name of the receiver if no well known name has been
+            set for it).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

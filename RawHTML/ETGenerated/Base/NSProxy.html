@@ -1,0 +1,481 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base (Foundation Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSProxy class reference</h2>NSProxy :  &lt;<a href="_NSObject.html#NSObject">NSObject</a>&gt;<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>Foundation/NSProxy.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> The <a href="NSProxy.html#NSProxy">NSProxy</a> class provides a basic implementation of a class whose instances are used to <em>stand in</em> for other objects. <br></br> The class provides the most basic methods of <a href="NSObject.html#NSObject">NSObject</a>, and expects messages for other methods to be forwarded to the <em>real</em> object represented by the proxy. You must subclass <a href="NSProxy.html#NSProxy">NSProxy</a> to implement  <a href="NSProxy.html#-[NSProxy_forwardInvocation:]">-forwardInvocation:</a>  to these <em>real</em> objects. </p> <p> Note that <var>NSProxy</var> is a different sort of class than others in the GNUstep Base library in that it is the only example of a root class besides <a href="NSObject.html#NSObject">NSObject</a> . Thus, it implements the <var>NSObject</var> protocol but is not a subclass of <a href="NSObject.html#NSObject">NSObject</a>. </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="+[NSProxy_alloc]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> alloc </span></span></dt>
+<dd><div class="methodDescription">
+Allocates and returns an <a href="NSProxy.html#NSProxy">NSProxy</a> instance in the default zone.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_allocWithZone:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> allocWithZone: </span><span class="parameter"><span class="type">(NSZone *)</span><span class="arg">z</span></span></span></dt>
+<dd><div class="methodDescription">
+Allocates and returns an <a href="NSProxy.html#NSProxy">NSProxy</a> instance in the specified zone <var>z</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_autorelease]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> autorelease </span></span></dt>
+<dd><div class="methodDescription">
+Returns the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_class]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(Class)</span><span class="selector"> class </span></span></dt>
+<dd><div class="methodDescription">
+Returns the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_description]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> description </span></span></dt>
+<dd><div class="methodDescription">
+Returns a string describing the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_isKindOfClass:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> isKindOfClass: </span><span class="parameter"><span class="type">(Class)</span><span class="arg">aClass</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>NO</var>... the <a href="NSProxy.html#NSProxy">NSProxy</a> class cannot be an instance of any class.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_isMemberOfClass:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> isMemberOfClass: </span><span class="parameter"><span class="type">(Class)</span><span class="arg">aClass</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> if <var>aClass</var> is identical to the receiver, <var>NO</var> otherwise.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_load]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> load </span></span></dt>
+<dd><div class="methodDescription">
+<br></br> A dummy method...<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_release]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(oneway void)</span><span class="selector"> release </span></span></dt>
+<dd><div class="methodDescription">
+<br></br> A dummy method to ensure that the class can safely be held in containers.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_respondsToSelector:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> respondsToSelector: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> if the receiver responds to <var>aSelector</var>, <var>NO</var> otherwise.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_retain]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> retain </span></span></dt>
+<dd><div class="methodDescription">
+Returns the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSProxy_retainCount]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSUInteger)</span><span class="selector"> retainCount </span></span></dt>
+<dd><div class="methodDescription">
+Returns the maximum <strong>unsigned</strong> integer value.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_autorelease]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> autorelease </span></span></dt>
+<dd><div class="methodDescription">
+Adds the receiver to the current autorelease pool and returns self.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_class]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(Class)</span><span class="selector"> class </span></span></dt>
+<dd><div class="methodDescription">
+Returns the class of the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_conformsToProtocol:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> conformsToProtocol: </span><span class="parameter"><span class="type">(Protocol *)</span><span class="arg">aProtocol</span></span></span></dt>
+<dd><div class="methodDescription">
+Calls the  <a href="NSProxy.html#-[NSProxy_forwardInvocation:]">-forwardInvocation:</a>  method to determine if the 'real' object referred to by the proxy conforms to <var>aProtocol</var>. Returns the result. <br></br> NB. The default operation of  <a href="NSProxy.html#-[NSProxy_forwardInvocation:]">-forwardInvocation:</a>  is to raise an exception.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_dealloc]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> dealloc </span></span></dt>
+<dd><div class="methodDescription">
+Frees the memory used by the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_description]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSString.html#NSString">NSString</a> *)</span><span class="selector"> description </span></span></dt>
+<dd><div class="methodDescription">
+Returns a text description of the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_forwardInvocation:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> forwardInvocation: </span><span class="parameter"><span class="type">(<a href="NSInvocation.html#NSInvocation">NSInvocation</a> *)</span><span class="arg">anInvocation</span></span></span></dt>
+<dd><div class="methodDescription">
+Raises an <var>NSInvalidArgumentException</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_hash]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> hash </span></span></dt>
+<dd><div class="methodDescription">
+Returns the address of the receiver... so it can be stored in a dictionary.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_init]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> init </span></span></dt>
+<dd><div class="methodDescription">
+Initialises the receiver and returns the resulting instance.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_isEqual:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isEqual: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+Tests for pointer equality with <var>anObject</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_isKindOfClass:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isKindOfClass: </span><span class="parameter"><span class="type">(Class)</span><span class="arg">aClass</span></span></span></dt>
+<dd><div class="methodDescription">
+Calls the  <a href="NSProxy.html#-[NSProxy_forwardInvocation:]">-forwardInvocation:</a>  method to determine if the 'real' object referred to by the proxy is an instance of the specified class. Returns the result. <br></br> NB. The default operation of  <a href="NSProxy.html#-[NSProxy_forwardInvocation:]">-forwardInvocation:</a>  is to raise an exception.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_isMemberOfClass:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isMemberOfClass: </span><span class="parameter"><span class="type">(Class)</span><span class="arg">aClass</span></span></span></dt>
+<dd><div class="methodDescription">
+Calls the  <a href="NSProxy.html#-[NSProxy_forwardInvocation:]">-forwardInvocation:</a>  method to determine if the 'real' object referred to by the proxy is an instance of the specified class. Returns the result. <br></br> NB. The default operation of  <a href="NSProxy.html#-[NSProxy_forwardInvocation:]">-forwardInvocation:</a>  is to raise an exception.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_isProxy]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isProxy </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_methodSignatureForSelector:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMethodSignature.html#NSMethodSignature">NSMethodSignature</a> *)</span><span class="selector"> methodSignatureForSelector: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+If we respond to the method directly, create and return a method signature. Otherwise raise an exception.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_release]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(oneway void)</span><span class="selector"> release </span></span></dt>
+<dd><div class="methodDescription">
+Decrement the retain count for the receiver... deallocate if it would become negative.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_respondsToSelector:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> respondsToSelector: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+If we respond to the method directly, return <var>YES</var>, otherwise forward this request to the object we are acting as a proxy for.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_retain]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> retain </span></span></dt>
+<dd><div class="methodDescription">
+Increment the retain count for the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_retainCount]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> retainCount </span></span></dt>
+<dd><div class="methodDescription">
+Return the retain count for the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_self]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> self </span></span></dt>
+<dd><div class="methodDescription">
+Returns the receiver.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_superclass]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(Class)</span><span class="selector"> superclass </span></span></dt>
+<dd><div class="methodDescription">
+Returns the superclass of the receiver's class.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSProxy_zone]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSZone *)</span><span class="selector"> zone </span></span></dt>
+<dd><div class="methodDescription">
+Returns the zone in which the receiver was allocated.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base (Foundation Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSAffineTransform.html#NSAffineTransform">NSAffineTransform</a></li><li><a href="NSArchiver.html#NSArchiver">NSArchiver</a></li><li><a href="NSArray.html#NSArray">NSArray</a></li><li><a href="NSAssertionHandler.html#NSAssertionHandler">NSAssertionHandler</a></li><li><a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a></li><li><a href="NSAutoreleasePool.html#NSAutoreleasePool">NSAutoreleasePool</a></li><li><a href="NSBundle.html#NSBundle">NSBundle</a></li><li><a href="NSCachedURLResponse.html#NSCachedURLResponse">NSCachedURLResponse</a></li><li><a href="NSCalendarDate.html#NSCalendarDate">NSCalendarDate</a></li><li><a href="NSCharacterSet.html#NSCharacterSet">NSCharacterSet</a></li><li><a href="NSClassDescription.html#NSClassDescription">NSClassDescription</a></li><li><a href="NSCoder.html#NSCoder">NSCoder</a></li><li><a href="NSCondition.html#NSCondition">NSCondition</a></li><li><a href="NSConditionLock.html#NSConditionLock">NSConditionLock</a></li><li><a href="NSConnection.html#NSConnection">NSConnection</a></li><li><a href="NSCountedSet.html#NSCountedSet">NSCountedSet</a></li><li><a href="NSData.html#NSData">NSData</a></li><li><a href="NSDate.html#NSDate">NSDate</a></li><li><a href="NSDateFormatter.html#NSDateFormatter">NSDateFormatter</a></li><li><a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a></li><li><a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a></li><li><a href="NSDeserializer.html#NSDeserializer">NSDeserializer</a></li><li><a href="NSDictionary.html#NSDictionary">NSDictionary</a></li><li><a href="NSDirectoryEnumerator.html#NSDirectoryEnumerator">NSDirectoryEnumerator</a></li><li><a href="NSDistantObject.html#NSDistantObject">NSDistantObject</a></li><li><a href="NSDistributedLock.html#NSDistributedLock">NSDistributedLock</a></li><li><a href="NSDistributedNotificationCenter.html#NSDistributedNotificationCenter">NSDistributedNotificationCenter</a></li><li><a href="NSEnumerator.html#NSEnumerator">NSEnumerator</a></li><li><a href="NSError.html#NSError">NSError</a></li><li><a href="NSException.html#NSException">NSException</a></li><li><a href="NSFileHandle.html#NSFileHandle">NSFileHandle</a></li><li><a href="NSFileManager.html#NSFileManager">NSFileManager</a></li><li><a href="NSFormatter.html#NSFormatter">NSFormatter</a></li><li><a href="NSHashTable.html#NSHashTable">NSHashTable</a></li><li><a href="NSHost.html#NSHost">NSHost</a></li><li><a href="NSHTTPCookie.html#NSHTTPCookie">NSHTTPCookie</a></li><li><a href="NSHTTPCookieStorage.html#NSHTTPCookieStorage">NSHTTPCookieStorage</a></li><li><a href="NSHTTPURLResponse.html#NSHTTPURLResponse">NSHTTPURLResponse</a></li><li><a href="NSIndexPath.html#NSIndexPath">NSIndexPath</a></li><li><a href="NSIndexSet.html#NSIndexSet">NSIndexSet</a></li><li><a href="NSInputStream.html#NSInputStream">NSInputStream</a></li><li><a href="NSInvocation.html#NSInvocation">NSInvocation</a></li><li><a href="NSKeyedArchiver.html#NSKeyedArchiver">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiver.html#NSKeyedUnarchiver">NSKeyedUnarchiver</a></li><li><a href="NSLock.html#NSLock">NSLock</a></li><li><a href="NSMapTable.html#NSMapTable">NSMapTable</a></li><li><a href="NSMessagePort.html#NSMessagePort">NSMessagePort</a></li><li><a href="NSMessagePortNameServer.html#NSMessagePortNameServer">NSMessagePortNameServer</a></li><li><a href="NSMethodSignature.html#NSMethodSignature">NSMethodSignature</a></li><li><a href="NSMutableArray.html#NSMutableArray">NSMutableArray</a></li><li><a href="NSMutableAttributedString.html#NSMutableAttributedString">NSMutableAttributedString</a></li><li><a href="NSMutableCharacterSet.html#NSMutableCharacterSet">NSMutableCharacterSet</a></li><li><a href="NSMutableData.html#NSMutableData">NSMutableData</a></li><li><a href="NSMutableDictionary.html#NSMutableDictionary">NSMutableDictionary</a></li><li><a href="NSMutableIndexSet.html#NSMutableIndexSet">NSMutableIndexSet</a></li><li><a href="NSMutableSet.html#NSMutableSet">NSMutableSet</a></li><li><a href="NSMutableString.html#NSMutableString">NSMutableString</a></li><li><a href="NSMutableURLRequest.html#NSMutableURLRequest">NSMutableURLRequest</a></li><li><a href="NSNetService.html#NSNetService">NSNetService</a></li><li><a href="NSNetServiceBrowser.html#NSNetServiceBrowser">NSNetServiceBrowser</a></li><li><a href="NSNotification.html#NSNotification">NSNotification</a></li><li><a href="NSNotificationCenter.html#NSNotificationCenter">NSNotificationCenter</a></li><li><a href="NSNotificationQueue.html#NSNotificationQueue">NSNotificationQueue</a></li><li><a href="NSNull.html#NSNull">NSNull</a></li><li><a href="NSNumber.html#NSNumber">NSNumber</a></li><li><a href="NSNumberFormatter.html#NSNumberFormatter">NSNumberFormatter</a></li><li><a href="NSObject.html#NSObject">NSObject</a></li><li><a href="NSOutputStream.html#NSOutputStream">NSOutputStream</a></li><li><a href="NSPipe.html#NSPipe">NSPipe</a></li><li><a href="NSPointerArray.html#NSPointerArray">NSPointerArray</a></li><li><a href="NSPointerFunctions.html#NSPointerFunctions">NSPointerFunctions</a></li><li><a href="NSPort.html#NSPort">NSPort</a></li><li><a href="NSPortCoder.html#NSPortCoder">NSPortCoder</a></li><li><a href="NSPortMessage.html#NSPortMessage">NSPortMessage</a></li><li><a href="NSPortNameServer.html#NSPortNameServer">NSPortNameServer</a></li><li><a href="NSProcessInfo.html#NSProcessInfo">NSProcessInfo</a></li><li><a href="NSPropertyListSerialization.html#NSPropertyListSerialization">NSPropertyListSerialization</a></li><li><a href="NSProtocolChecker.html#NSProtocolChecker">NSProtocolChecker</a></li><li><a href="NSProxy.html#NSProxy">NSProxy</a></li><li><a href="NSRecursiveLock.html#NSRecursiveLock">NSRecursiveLock</a></li><li><a href="NSRunLoop.html#NSRunLoop">NSRunLoop</a></li><li><a href="NSScanner.html#NSScanner">NSScanner</a></li><li><a href="NSSerializer.html#NSSerializer">NSSerializer</a></li><li><a href="NSSet.html#NSSet">NSSet</a></li><li><a href="NSSocketPort.html#NSSocketPort">NSSocketPort</a></li><li><a href="NSSocketPortNameServer.html#NSSocketPortNameServer">NSSocketPortNameServer</a></li><li><a href="NSStream.html#NSStream">NSStream</a></li><li><a href="NSString.html#NSString">NSString</a></li><li><a href="NSTask.html#NSTask">NSTask</a></li><li><a href="NSThread.html#NSThread">NSThread</a></li><li><a href="NSTimer.html#NSTimer">NSTimer</a></li><li><a href="NSTimeZone.html#NSTimeZone">NSTimeZone</a></li><li><a href="NSTimeZoneDetail.html#NSTimeZoneDetail">NSTimeZoneDetail</a></li><li><a href="NSUnarchiver.html#NSUnarchiver">NSUnarchiver</a></li><li><a href="NSUndoManager.html#NSUndoManager">NSUndoManager</a></li><li><a href="NSURL.html#NSURL">NSURL</a></li><li><a href="NSURLAuthenticationChallenge.html#NSURLAuthenticationChallenge">NSURLAuthenticationChallenge</a></li><li><a href="NSURLCache.html#NSURLCache">NSURLCache</a></li><li><a href="NSURLComponents.html#NSURLComponents">NSURLComponents</a></li><li><a href="NSURLConnection.html#NSURLConnection">NSURLConnection</a></li><li><a href="NSURLCredential.html#NSURLCredential">NSURLCredential</a></li><li><a href="NSURLCredentialStorage.html#NSURLCredentialStorage">NSURLCredentialStorage</a></li><li><a href="NSURLDownload.html#NSURLDownload">NSURLDownload</a></li><li><a href="NSURLHandle.html#NSURLHandle">NSURLHandle</a></li><li><a href="NSURLProtectionSpace.html#NSURLProtectionSpace">NSURLProtectionSpace</a></li><li><a href="NSURLProtocol.html#NSURLProtocol">NSURLProtocol</a></li><li><a href="NSURLQueryItem.html#NSURLQueryItem">NSURLQueryItem</a></li><li><a href="NSURLRequest.html#NSURLRequest">NSURLRequest</a></li><li><a href="NSURLResponse.html#NSURLResponse">NSURLResponse</a></li><li><a href="NSUserDefaults.html#NSUserDefaults">NSUserDefaults</a></li><li><a href="NSValue.html#NSValue">NSValue</a></li><li><a href="NSValueTransformer.html#NSValueTransformer">NSValueTransformer</a></li><li><a href="NSXMLDocument.html#NSXMLDocument">NSXMLDocument</a></li><li><a href="NSXMLDTD.html#NSXMLDTD">NSXMLDTD</a></li><li><a href="NSXMLDTDNode.html#NSXMLDTDNode">NSXMLDTDNode</a></li><li><a href="NSXMLElement.html#NSXMLElement">NSXMLElement</a></li><li><a href="NSXMLNode.html#NSXMLNode">NSXMLNode</a></li><li><a href="NSXMLParser.html#NSXMLParser">NSXMLParser</a></li><li><a href="NXConstantString.html#NXConstantString">NXConstantString</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSLogDelegate.html#GSLogDelegate">GSLogDelegate</a></li><li><a href="_NSCoding.html#NSCoding">NSCoding</a></li><li><a href="_NSCopying.html#NSCopying">NSCopying</a></li><li><a href="_NSDecimalNumberBehaviors.html#NSDecimalNumberBehaviors">NSDecimalNumberBehaviors</a></li><li><a href="_NSDiscardableContent.html#NSDiscardableContent">NSDiscardableContent</a></li><li><a href="_NSFastEnumeration.html#NSFastEnumeration">NSFastEnumeration</a></li><li><a href="_NSFileManagerDelegate.html#NSFileManagerDelegate">NSFileManagerDelegate</a></li><li><a href="_NSLocking.html#NSLocking">NSLocking</a></li><li><a href="_NSMutableCopying.html#NSMutableCopying">NSMutableCopying</a></li><li><a href="_NSNetServiceBrowserDelegate.html#NSNetServiceBrowserDelegate">NSNetServiceBrowserDelegate</a></li><li><a href="_NSNetServiceDelegate.html#NSNetServiceDelegate">NSNetServiceDelegate</a></li><li><a href="_NSObjCTypeSerializationCallBack.html#NSObjCTypeSerializationCallBack">NSObjCTypeSerializationCallBack</a></li><li><a href="_NSObject.html#NSObject">NSObject</a></li><li><a href="_NSSecureCoding.html#NSSecureCoding">NSSecureCoding</a></li><li><a href="_NSStreamDelegate.html#NSStreamDelegate">NSStreamDelegate</a></li><li><a href="_NSURLAuthenticationChallengeSender.html#NSURLAuthenticationChallengeSender">NSURLAuthenticationChallengeSender</a></li><li><a href="_NSURLConnectionDelegate.html#NSURLConnectionDelegate">NSURLConnectionDelegate</a></li><li><a href="_NSURLDownloadDelegate.html#NSURLDownloadDelegate">NSURLDownloadDelegate</a></li><li><a href="_NSURLHandleClient.html#NSURLHandleClient">NSURLHandleClient</a></li><li><a href="_NSURLProtocolClient.html#NSURLProtocolClient">NSURLProtocolClient</a></li><li><a href="_NSXMLParserDelegate.html#NSXMLParserDelegate">NSXMLParserDelegate</a></li><li><a href="_RunLoopEvents.html#RunLoopEvents">RunLoopEvents</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSArchiverCategories.html#NSArchiver(GNUstep)">NSArchiver</a></li><li><a href="NSArrayCategories.html#NSArray(NSKeyValueObserverRegistration)">NSArray</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstep)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GregorianDate)">NSCalendarDate</a></li><li><a href="NSCoderCategories.html#NSCoder(NSGeometryKeyedCoding)">NSCoder</a></li><li><a href="NSCountedSetCategories.html#NSCountedSet(GNU_Uniquing)">NSCountedSet</a></li><li><a href="NSDataCategories.html#NSData(GNUstepExtensions)">NSData</a></li><li><a href="NSDeserializerCategories.html#NSDeserializer(GNUstep)">NSDeserializer</a></li><li><a href="NSDictionaryCategories.html#NSDictionary(NSFileAttributes)">NSDictionary</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepExtensions)">NSFileHandle</a></li><li><a href="NSHostCategories.html#NSHost(GNUstep)">NSHost</a></li><li><a href="NSInvocationCategories.html#NSInvocation(GNUstep)">NSInvocation</a></li><li><a href="NSKeyedArchiverCategories.html#NSKeyedArchiver(Internal)">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiverCategories.html#NSKeyedUnarchiver(Internal)">NSKeyedUnarchiver</a></li><li><a href="NSMutableDataCategories.html#NSMutableData(GNUstepExtensions)">NSMutableData</a></li><li><a href="NSMutableURLRequestCategories.html#NSMutableURLRequest(GNUstep)">NSMutableURLRequest</a></li><li><a href="NSNumberCategories.html#NSNumber(NSDecimalNumber)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstep)">NSObject</a></li><li><a href="NSPointerArrayCategories.html#NSPointerArray(NSArrayConveniences)">NSPointerArray</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstep)">NSProcessInfo</a></li><li><a href="NSRunLoopCategories.html#NSRunLoop(GNUstepExtensions)">NSRunLoop</a></li><li><a href="NSSerializerCategories.html#NSSerializer(GNUstep)">NSSerializer</a></li><li><a href="NSThreadCategories.html#NSThread(CallStackSymbols)">NSThread</a></li><li><a href="NSUnarchiverCategories.html#NSUnarchiver(GNUstep)">NSUnarchiver</a></li><li><a href="NSURLCacheCategories.html#NSURLCache(NSURLSessionTaskAdditions)">NSURLCache</a></li><li><a href="NSURLConnectionCategories.html#NSURLConnection(NSURLConnectionSynchronousLoading)">NSURLConnection</a></li><li><a href="NSURLProtocolCategories.html#NSURLProtocol(Subclassing)">NSURLProtocol</a></li><li><a href="NSURLRequestCategories.html#NSURLRequest(NSHTTPURLRequest)">NSURLRequest</a></li><li><a href="NSValueCategories.html#NSValue(Subclassing)">NSValue</a></li><li><a href="NSXMLParserCategories.html#NSXMLParser(NSXMLParserLocatorAdditions)">NSXMLParser</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

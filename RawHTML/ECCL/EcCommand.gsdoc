@@ -1,0 +1,1299 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsdoc PUBLIC "-//GNUstep//DTD gsdoc 1.0.4//EN" "http://www.gnustep.org/gsdoc-1_0_4.dtd">
+<gsdoc base="EcCommand">
+  <head>
+    <title>EcCommand documentation</title>
+    <author name="Richard Frith-Macdonald">
+      <email address="rfm@gnu.org">
+        rfm@gnu.org
+      </email>
+    </author>
+    <copy>2012 Free Software Foundation, Inc.</copy>
+  </head>
+  <body>
+    <front><contents /></front>
+    <chapter>
+      <heading>
+        Software documentation for the EcCommand class
+      </heading>
+      <class name="EcCommand" super="EcProcess">
+        <declared>EcCommand.m</declared>
+        <conform>Command</conform>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+        <ivariable type="NSMutableArray*" name="clients" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSInteger" name="compressAfter" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSMutableDictionary*" name="config" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="id&lt;Control&gt;" name="control" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="debUncompressed" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="debUndeleted" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSInteger" name="deleteAfter" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSDictionary*" name="environment" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="unsigned int" name="fwdSequence" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="host" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="logUncompressed" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="logUndeleted" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="logname" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="float" name="nodesFree" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSDate*" name="outstanding" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="unsigned int" name="revSequence" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="float" name="spaceFree" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="sweeping" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimer*" name="terminating" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimer*" name="timer" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <method type="void">
+          <sel>_housekeeping:</sel>
+          <arg type="NSTimer*">t</arg>
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this method indicates that it is private, for
+            internal use only, and you should not use the
+            method in your code.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>_terminate:</sel>
+          <arg type="NSTimer*">t</arg>
+          <desc>
+            <em>Warning</em> the underscore at the start of the
+            name of this method indicates that it is private, for
+            internal use only, and you should not use the
+            method in your code.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>alarmCode:</sel>
+          <arg type="AlarmCode">ac</arg>
+          <sel>procName:</sel>
+          <arg type="NSString*">name</arg>
+          <sel>addText:</sel>
+          <arg type="NSString*">additional</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>auditState:</sel>
+          <arg type="LaunchInfo*">l</arg>
+          <sel>reason:</sel>
+          <arg type="NSString*">additional</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clear:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearAll:</sel>
+          <arg type="NSString*">name</arg>
+          <sel>addText:</sel>
+          <arg type="NSString*">additional</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearCode:</sel>
+          <arg type="AlarmCode">ac</arg>
+          <sel>procName:</sel>
+          <arg type="NSString*">name</arg>
+          <sel>addText:</sel>
+          <arg type="NSString*">additional</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>cmdGnip:</sel>
+          <arg type="id&lt;CmdPing&gt;">from</arg>
+          <sel>sequence:</sel>
+          <arg type="unsigned">num</arg>
+          <sel>extra:</sel>
+          <arg type="NSData*">data</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>cmdPing:</sel>
+          <arg type="id&lt;CmdPing&gt;">from</arg>
+          <sel>sequence:</sel>
+          <arg type="unsigned">num</arg>
+          <sel>extra:</sel>
+          <arg type="NSData*">data</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="oneway void">
+          <sel>cmdQuit:</sel>
+          <arg type="NSInteger">sig</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>command:</sel>
+          <arg type="NSData*">dat</arg>
+          <sel>to:</sel>
+          <arg type="NSString*">t</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">f</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSData*">
+          <sel>configurationFor:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>connection:</sel>
+          <arg type="NSConnection*">ancestor</arg>
+          <sel>shouldMakeNewConnection:</sel>
+          <arg type="NSConnection*">newConn</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="id">
+          <sel>connectionBecameInvalid:</sel>
+          <arg type="NSNotification*">notification</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSDictionary*">
+          <sel>environment</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>findAll:</sel>
+          <arg type="NSArray*">a</arg>
+          <sel>byAbbreviation:</sel>
+          <arg type="NSString*">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="EcClientI*">
+          <sel>findIn:</sel>
+          <arg type="NSArray*">a</arg>
+          <sel>byAbbreviation:</sel>
+          <arg type="NSString*">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="EcClientI*">
+          <sel>findIn:</sel>
+          <arg type="NSArray*">a</arg>
+          <sel>byName:</sel>
+          <arg type="NSString*">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="EcClientI*">
+          <sel>findIn:</sel>
+          <arg type="NSArray*">a</arg>
+          <sel>byObject:</sel>
+          <arg type="id">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>host</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>housekeeping:</sel>
+          <arg type="NSTimer*">t</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>hungRestart:</sel>
+          <arg type="LaunchInfo*">l</arg>
+          <desc>
+            Initiate a restart of a hung process
+          </desc>
+        </method>
+        <method type="void">
+          <sel>information:</sel>
+          <arg type="NSString*">inf</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">s</arg>
+          <sel>to:</sel>
+          <arg type="NSString*">d</arg>
+          <sel>type:</sel>
+          <arg type="EcLogType">t</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>information:</sel>
+          <arg type="NSString*">inf</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">s</arg>
+          <sel>type:</sel>
+          <arg type="EcLogType">t</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>killAll</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>logChange:</sel>
+          <arg type="NSString*">change</arg>
+          <sel>for:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSFileHandle*">
+          <sel>logFile</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>logMessage:</sel>
+          <arg type="NSString*">msg</arg>
+          <sel>type:</sel>
+          <arg type="EcLogType">t</arg>
+          <sel>for:</sel>
+          <arg type="id&lt;CmdClient&gt;">o</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>logMessage:</sel>
+          <arg type="NSString*">msg</arg>
+          <sel>type:</sel>
+          <arg type="EcLogType">t</arg>
+          <sel>name:</sel>
+          <arg type="NSString*">c</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>makeSpace</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>newConfig:</sel>
+          <arg type="NSMutableDictionary*">newConfig</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSFileHandle*">
+          <sel>openLog:</sel>
+          <arg type="NSString*">lname</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>pingControl</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>quitAll</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSData*">
+          <sel>registerClient:</sel>
+          <arg type="id">c</arg>
+          <sel>identifier:</sel>
+          <arg type="int">p</arg>
+          <sel>name:</sel>
+          <arg type="NSString*">n</arg>
+          <sel>transient:</sel>
+          <arg type="BOOL">t</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>removeClient:</sel>
+          <arg type="EcClientI*">o</arg>
+          <sel>cleanly:</sel>
+          <arg type="BOOL">ok</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>reply:</sel>
+          <arg type="NSString*">msg</arg>
+          <sel>to:</sel>
+          <arg type="NSString*">n</arg>
+          <sel>from:</sel>
+          <arg type="NSString*">c</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>requestConfigFor:</sel>
+          <arg type="id&lt;CmdConfig&gt;">c</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>terminate:</sel>
+          <arg type="NSDate*">by</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSMutableArray*">
+          <sel>unconfiguredClients</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>unregisterByObject:</sel>
+          <arg type="byref id">obj</arg>
+          <sel>status:</sel>
+          <arg type="int">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>update</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>updateConfig:</sel>
+          <arg type="NSData*">data</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>woken:</sel>
+          <arg type="id">obj</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </class>
+    </chapter>
+    <chapter>
+      <heading>
+        Software documentation for the LaunchInfo class
+      </heading>
+      <class name="LaunchInfo" super="NSObject">
+        <declared>EcCommand.m</declared>
+        <desc>
+          starting means that the server has attempted to
+          start the process (or is waiting for some precondition
+          of launching) but the process has not yet established a
+          connection to the server and registered itself.
+          stopping means that the server has attempted to shut
+          down the process (or the process has told the server it
+          is shutting down), so the connection between the process
+          and the server may not exist (and should not be used).
+          desired defines whether the steady state of this
+          process should be running/live or shut down. When the
+          process reaches a steady state (ie is not starting or
+          stopping) that does not match the desired state,
+          the server shold initiate a change of state. identifier
+          If the process is shut down, this should be zero.
+          Otherwise it is the process ID used by the
+          operating system and indicates that the process is
+          starting, stopping, or in a steady live state (in
+          which case it should also be connected as a client of
+          the server). If while starting, the process dies, we
+          should schedule relaunches at increasing intervals
+          until a process survives and connects. If starting
+          takes too <strong>long</strong> (because launch
+          attempts fail, the processes die, or they stay alive
+          but fail to connect to the server), we should raise an
+          alarm. If stopping takes too <strong>long</strong>, we
+          should forcibly terminate the process if we can, and
+          raise an alarm if we fail to kill it.
+        </desc>
+        <ivariable type="NSTimeInterval" name="abortDate" validity="protected">
+          <desc>
+            The timestamp at which we will aborting a process (if
+            it fails to shut down as quickly as we need it to).
+          </desc>
+        </ivariable>
+        <ivariable type="NSMutableArray*" name="alarms" validity="protected">
+          <desc>
+            Records the alarms currently raised for this
+            process.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="awakenedDate" validity="protected">
+          <desc>
+            The timestamp at which the process told the Command
+            server it had completely awakend (was ready to
+            handle requests) or zero if it has not woken.
+          </desc>
+        </ivariable>
+        <ivariable type="EcClientI*" name="client" validity="protected">
+          <desc>
+            The client instance representing a registered
+            distributed objects connection from the process
+            into the Command server.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="clientLostDate" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="clientQuitDate" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSDictionary*" name="conf" validity="protected">
+          <desc>
+            The configuration from Control.plist
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="deferredDate" validity="protected">
+          <desc>
+            If there is a problem causing processes to fail
+            repeatedly and autostart to retry, we impose a
+            slightly longer delay between each successive
+            relaunch. In that case the deferredDate tells us
+            when the queued starting process can next be launched.
+          </desc>
+        </ivariable>
+        <ivariable type="NSArray*" name="dependencies" validity="protected">
+          <desc>
+            Records the names of other processes which must be
+            active in order for this process to work. Any
+            attempt to start this process will result in it
+            remaining in a queue of starting processes until
+            all the dependencies have been met.
+          </desc>
+        </ivariable>
+        <ivariable type="Desired" name="desired" validity="protected">
+          <desc>
+            Records the desired state for this process (usually
+            when a command is issued at the Console). This is
+            needed for situations where the system can no
+            respond immediately to an instruction. For instance
+            the process is shutting down and a start command is
+            given: we must continue to complete the clean
+            shutdown, and then start up again.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="fib0" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="fib1" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="hungDate" validity="protected">
+          <desc>
+            A timestamp set if an alarm has been raised because the
+            process is not responding to pings. This is cleared
+            if/when the process re-registers.
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="identifier" validity="protected">
+          <desc>
+            The current process ID (or zero if there isn't one).
+            This is set when we launch the process or when the
+            process is launched externally and connects and
+            registers itself with the Command server.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="inStarting" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="launchDate" validity="protected">
+          <desc>
+            The timestamp at which we last launched this process.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="manual" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="name" validity="protected">
+          <desc>
+            The name of this process
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="nextStableDate" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="pingDate" validity="protected">
+          <desc>
+            A timestamp set when a ping response is received.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="queuedDate" validity="protected">
+          <desc>
+            If a starting process cannt be launched immediately,
+            this records the timestamp at which it was added to
+            the queue of processes awaiting launch.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="registrationDate" validity="protected">
+          <desc>
+            The timestamp at which the process registered with the
+            Command server. or zero if it has not registered.
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="restartReason" validity="protected">
+          <desc>
+            If we want the process to restart, this reason is why,
+            and is passed to the process so that it can log why it
+            was restarted.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="stableDate" validity="protected">
+          <desc>
+            Once a process has been active for a while it is
+            considered stable. A stable process will, if it
+            terminates without shutting down cleanly, be
+            elegible for immediate autolaunch.
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="startedReason" validity="protected">
+          <desc>
+            Records the reason we desire the process to be
+            started.
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="startingAlarm" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="startingDate" validity="protected">
+          <desc>
+            The timestamp at which the current startup operation
+            began, or zero if the process is not currently
+            starting.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimer*" name="startingTimer" validity="protected">
+          <desc>
+            A timer to progress the startup process. When it fires
+            the <ref type="method" id="-starting:">-starting:</ref>
+            method is called to check on progress and raise an
+            alarm if startup is taking too <strong>long</strong>.
+          </desc>
+        </ivariable>
+        <ivariable type="NSString*" name="stoppedReason" validity="protected">
+          <desc>
+            Records the reason we desire the process to be
+            stopped.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="stoppingDate" validity="protected">
+          <desc>
+            The timestamp at which the process began shutting down,
+            or zero if the process is not currently stopping.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimer*" name="stoppingTimer" validity="protected">
+          <desc>
+            A timer to progress the stopping process. When it fires
+            the <ref type="method" id="-stopping:">-stopping:</ref>
+            method is called to check on progress and, if
+            stopping has taken too <strong>long</strong>,
+            attempt to forcibly terminate the process.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTask*" name="task" validity="protected">
+          <desc>
+            The current task (if launched by us).
+          </desc>
+        </ivariable>
+        <ivariable type="unsigned int" name="terminationCount" validity="protected">
+          <desc>
+            If, during startup, the process terminates and has to
+            be relaunched, we record the count of attempts here.
+          </desc>
+        </ivariable>
+        <ivariable type="NSTimeInterval" name="terminationDate" validity="protected">
+          <desc>
+            When a process termination is detected, this variable
+            records it.
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="terminationSignal" validity="protected">
+          <desc>
+            Where the Command server launched the process and is
+            able to get the process termination status, these
+            variables are used to record it.
+          </desc>
+        </ivariable>
+        <ivariable type="int" name="terminationStatus" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <ivariable type="BOOL" name="terminationStatusKnown" validity="protected">
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </ivariable>
+        <method type="NSString*" factory="yes">
+          <sel>description</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="LaunchInfo*" factory="yes">
+          <sel>existing:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="LaunchInfo*" factory="yes">
+          <sel>find:</sel>
+          <arg type="NSString*">abbreviation</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="LaunchInfo*" factory="yes">
+          <sel>launchInfo:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSUInteger" factory="yes">
+          <sel>launching</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSArray*" factory="yes">
+          <sel>names</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void" factory="yes">
+          <sel>processQueue</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void" factory="yes">
+          <sel>remove:</sel>
+          <arg type="NSString*">name</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>alarm:</sel>
+          <arg type="EcAlarm*">alarm</arg>
+          <desc>
+            Adds an <var>alarm</var> to the list raised (removes
+            if a clear is passed in) creating the array if it does
+            not exist (even if a clear is passed in). This behavior
+            ensures that the
+            <ref type="method" id="-alarms">
+              -alarms
+            </ref>
+            method returns <code>nil</code> if neither raises
+            nor clears have taken place, but an array otherwise.
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>alarms</sel>
+          <desc>
+            Returns the alarms raised for this process, an
+            empty array if none are currently raised, and
+            <code>nil</code> if this is not known (eg if the
+            process raised and alarm and then failed to clear
+            the alarm when restarting).
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>autolaunch</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>awakened</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>checkActive</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>checkProcess</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearClient:</sel>
+          <arg type="EcClientI*">c</arg>
+          <sel>cleanly:</sel>
+          <arg type="BOOL">unregisteredOrTransient</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>clearHung</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="EcClientI*">
+          <sel>client</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSDictionary*">
+          <sel>configuration</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSTimeInterval">
+          <sel>delay</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="Desired">
+          <sel>desired</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>disabled</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSTimeInterval">
+          <sel>hungDate</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>isActive</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>isStarting</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>isStopping</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>launch</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>manual</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>mayBecomeStable</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>mayCoreDump</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>name</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="int">
+          <sel>processIdentifier</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>progress</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>reasonToPreventLaunch</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>resetDelay</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setClient:</sel>
+          <arg type="EcClientI*">c</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setConfiguration:</sel>
+          <arg type="NSDictionary*">c</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setDesired:</sel>
+          <arg type="Desired">state</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setHung</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setManual:</sel>
+          <arg type="BOOL">f</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setPing</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setProcessIdentifier:</sel>
+          <arg type="int">p</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setStable:</sel>
+          <arg type="BOOL">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>setTerminationStatus:</sel>
+          <arg type="int">s</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="BOOL">
+          <sel>stable</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="void">
+          <sel>start</sel>
+          <desc>
+            Initiates the startup of a process. This will
+            either add the receiver to the queue of processes to
+            be started (if it can't be started immediately) or
+            launch the process using the configuration set for
+            it. The startup will then continue until the launched
+            process registers itself with the Command server,
+            at which point the
+            <ref type="method" id="-started">
+              -started
+            </ref>
+            method will be called.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>start:</sel>
+          <arg type="NSString*">reason</arg>
+          <desc>
+            Initiates the startup of a process for the
+            supplied <var>reason</var>, but only if it makes
+            sense. This method performs the checks to see if the
+            startup should take place, then calls
+            <ref type="method" id="-start">
+              -start
+            </ref>
+            if it should.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>started</sel>
+          <desc>
+            Called automatically when startup of a process
+            completes, either as a result of an internal
+            <ref type="method" id="-start">
+              -start
+            </ref>
+            or as a result of an externally launched process
+            connectin to and registering with the Command
+            server.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>starting:</sel>
+          <arg type="NSTimer*">t</arg>
+          <desc>
+            internal timer mathos for handling the progression
+            of a startup. If the startup takes too
+            <strong>long</strong>, this method will raise an
+            alarm.
+          </desc>
+        </method>
+        <method type="NSString*">
+          <sel>status</sel>
+          <desc>
+            Returns a human readble description of the current
+            process status.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>stop</sel>
+          <desc>
+            Initiates the shut down of a process. This will
+            use the DO connection to a registered process to tell
+            it to shut itself down. The shutdown will continue until
+            the process no longer exists, but if it goes on longer
+            than the time limit, the process will be killed.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>stop:</sel>
+          <arg type="NSString*">reason</arg>
+          <desc>
+            Initiates stopping of a process only if it makes
+            sense. This method performs checks and, if the
+            process can be stopped, calls the
+            <ref type="method" id="-stop">
+              -stop
+            </ref>
+            method to do it. This sets the desired state of the
+            process to Dead.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>stopped</sel>
+          <desc>
+            Called at the point when a stopping process finally
+            ceases to exist.
+          </desc>
+        </method>
+        <method type="void">
+          <sel>stopping:</sel>
+          <arg type="NSTimer*">t</arg>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSTask*">
+          <sel>task</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+        <method type="NSArray*">
+          <sel>unfulfilled</sel>
+          <desc>
+            <em>Description forthcoming.</em>
+          </desc>
+        </method>
+      </class>
+    </chapter>
+    <chapter>
+      <heading>EcCommand types</heading>
+      <p></p>
+      <type type="enum ..." name="AlarmCode">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </type>
+      <type type="enum ..." name="Desired">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </type>
+    </chapter>
+    <chapter>
+      <heading>EcCommand constants</heading>
+      <p></p>
+      <constant type="const NSTimeInterval" name="day">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </constant>
+    </chapter>
+    <chapter>
+      <heading>EcCommand variables</heading>
+      <p></p>
+      <variable type="int" name="comp_len">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="BOOL" name="debug">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="BOOL" name="launchEnabled">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSMutableDictionary*" name="launchInfo">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSUInteger" name="launchLimit">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSArray*" name="launchOrder">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSMutableArray*" name="launchQueue">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSTimeInterval" name="pingTime">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSTimeInterval" name="quitTime">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="int" name="tStatus">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+      <variable type="NSDate*" name="terminateBy">
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </variable>
+    </chapter>
+    <chapter>
+      <heading>EcCommand functions</heading>
+      <p></p>
+      <function type="void" name="ACStrings">
+        <arg type="AlarmCode">ac</arg>
+        <arg type="NSString**">problem</arg>
+        <arg type="NSString**">repair</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSString*" name="cmdWord">
+        <arg type="NSArray*">a</arg>
+        <arg type="unsigned int">pos</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="int" name="comp">
+        <arg type="NSString*">s0</arg>
+        <arg type="NSString*">s1</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSCalendarDate*" name="date">
+        <arg type="NSTimeInterval">t</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="NSString*" name="desiredName">
+        <arg type="Desired">state</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+      <function type="BOOL" name="restartStatus">
+        <arg type="int">terminationStatus</arg>
+        <desc>
+          <em>Description forthcoming.</em>
+        </desc>
+      </function>
+    </chapter>
+  </body>
+</gsdoc>

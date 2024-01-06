@@ -1,0 +1,941 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base (Foundation Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>Other Data Types</h2><div class="meta">
+<p class="metadesc"><em>All the public Structures and Function Pointers in GNUstep Base (Foundation Kit)</em></p><table></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div class="other-data-types">
+<h3>Other Data Types</h3><h4>Default</h4><div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSBinarySearchingOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSString*</span></span><span class="selector"> NSAttributedStringKey</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct autorelease_array_list</span></span><span class="selector"> struct autorelease_array_list</span></dt>
+<dd><div class="methodDescription">
+<p></p>   Each pool holds its objects-to-be-released in a linked-list of these structures. 
+<pre>
+{
+  struct autorelease_array_list *next;
+  unsigned size;
+  unsigned count;
+  id objects[0];
+}
+    </pre>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct autorelease_thread_vars</span></span><span class="selector"> struct autorelease_thread_vars</span></dt>
+<dd><div class="methodDescription">
+Each thread has its own copy of these variables. 
+<pre>
+{
+  NSAutoreleasePool *current_pool; // current pool for thread
+  unsigned total_objects_count;    // total #/autoreleased objects over thread's lifetime
+  id *pool_cache;                  // cache of previously-allocated pools,
+  int pool_cache_size;             //  used internally for recycling
+  int pool_cache_count;
+}
+ </pre>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSDataBase64DecodingOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSDataBase64EncodingOptions</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSDataSearchOptions</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSDateFormatterBehavior</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSDateFormatterStyle</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">double</span></span><span class="selector"> NSTimeInterval</span></dt>
+<dd><div class="methodDescription">
+<p></p>   Time interval difference between two dates, in seconds.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSCalculationError</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSRoundingMode</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSNotificationSuspensionBehavior</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSString*</span></span><span class="selector"> NSErrorDomain</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSHandler</span></span><span class="selector"> struct _NSHandler</span></dt>
+<dd><div class="methodDescription">
+<p></p>   The actual structure for an NSHandler. You shouldn't need to worry about it.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSDirectoryEnumerationOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">uint32_t</span></span><span class="selector"> OSType</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSInteger</span></span><span class="selector"> NSFormattingContext</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSInteger</span></span><span class="selector"> NSFormattingUnitStyle</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSPoint</span></span><span class="selector"> NSPoint</span></dt>
+<dd><div class="methodDescription">
+<p></p>   
+<pre>{
+  CGFloat x;
+  CGFloat y;
+}</pre>
+          <p>
+            Represents a 2-d cartesian position.
+          </p>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSPoint*</span></span><span class="selector"> NSPointArray</span></dt>
+<dd><div class="methodDescription">
+Array of NSPoint structs.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSPoint*</span></span><span class="selector"> NSPointPointer</span></dt>
+<dd><div class="methodDescription">
+Pointer to NSPoint struct.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSRect</span></span><span class="selector"> NSRect</span></dt>
+<dd><div class="methodDescription">
+
+<pre>{
+  NSPoint origin;
+  NSSize size;
+}</pre>
+          <p>
+            Rectangle.
+          </p>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSRect*</span></span><span class="selector"> NSRectArray</span></dt>
+<dd><div class="methodDescription">
+Array of NSRect structs.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSRectEdge</span></dt>
+<dd><div class="methodDescription">
+Sides of a rectangle. 
+<pre>
+{
+  NSMinXEdge,
+  NSMinYEdge,
+  NSMaxXEdge,
+  NSMaxYEdge
+}
+</pre>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSRect*</span></span><span class="selector"> NSRectPointer</span></dt>
+<dd><div class="methodDescription">
+Pointer to NSRect struct.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSSize</span></span><span class="selector"> NSSize</span></dt>
+<dd><div class="methodDescription">
+
+<pre>{
+  CGFloat width;
+  CGFloat height;
+}</pre>
+          <p>
+            Floating point rectangle size.
+          </p>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSSize*</span></span><span class="selector"> NSSizeArray</span></dt>
+<dd><div class="methodDescription">
+Array of NSSize structs.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSSize*</span></span><span class="selector"> NSSizePointer</span></dt>
+<dd><div class="methodDescription">
+Pointer to NSSize struct.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct NSEdgeInsets</span></span><span class="selector"> struct NSEdgeInsets</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSHashTableOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSHashTableCallBacks</span></span><span class="selector"> struct _NSHashTableCallBacks</span></dt>
+<dd><div class="methodDescription">
+Callback functions for an <a href="NSHashTable.html#NSHashTable">NSHashTable</a>. See  NSCreateHashTable()  . <br></br> <var> NSUInteger (*hash)(NSHashTable *, const <strong>void</strong> *) </var> ... Hashing function. NOTE: Elements with equal values must have equal hash function values. The default if NULL uses the pointer addresses directly. <br></br> <var> BOOL (*isEqual)(NSHashTable *, const <strong>void</strong> *, const <strong>void</strong> *) </var> ... Comparison function. The default if NULL uses ' <var>==</var> '. <br></br> <var> <strong>void</strong> (*retain)(NSHashTable *, const <strong>void</strong> *) </var> ... Retaining function called when adding elements to the table. The default if NULL is a no-op (no reference counting). <br></br> <var> <strong>void</strong> (*release)(NSHashTable *, <strong>void</strong> *) </var> ... Releasing function called when a data element is removed from the table. The default if NULL is a no-op (no reference counting). <br></br> <var> <a href="NSString.html#NSString">NSString</a> *(*describe)(NSHashTable *, const <strong>void</strong> *) </var> ... Description function. The default if NULL prints boilerplate. <br></br></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSHTTPCookieAcceptPolicy</span></dt>
+<dd><div class="methodDescription">
+<p></p>   NSHTTPCookieAcceptPolicyAlways Accept all cookies NSHTTPCookieAcceptPolicyNever Reject all cookies NSHTTPCookieAcceptPolicyOnlyFromMainDocumentDomain Accept cookies only from the main document domain</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSKeyValueChange</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSKeyValueObservingOptions</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSKeyValueSetMutationKind</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSMapTableOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSMapTableValueCallBacks</span></span><span class="selector"> NSMapTableValueCallBacks</span></dt>
+<dd><div class="methodDescription">
+Callback functions for a value.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSMapTableKeyCallBacks</span></span><span class="selector"> struct _NSMapTableKeyCallBacks</span></dt>
+<dd><div class="methodDescription">
+Callback functions for a key. <br></br> Comparison function. Must not modify either key. <br></br> Retaining function called when adding elements to table. <br></br> Notionally this must not modify the key (the key may not actually have a retain count, or the retain count may be stored externally to the key, but in practice this often actually changes a counter within the key). <br></br> Releasing function called when a data element is removed from the table. This may decrease a retain count or may actually destroy the key. <br></br> Description function. Generates a string describing the key and does not modify the key itself. <br></br> Quantity that is not a key to the map table.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSNetServiceOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSNetServicesError</span></dt>
+<dd><div class="methodDescription">
+<ul> <li> <strong>NSNetServicesUnknownError</strong> <br></br> An unknown error occurred. <br></br> <br></br> </li> <li> <strong>NSNetServicesCollisionError</strong> <br></br> The given registration has had a name collision. Registration should be cancelled and tried again with a different name. <br></br> <br></br> </li> <li> <strong>NSNetServicesNotFoundError</strong> <br></br> The service could not be found. <br></br> <br></br> </li> <li> <strong>NSNetServicesActivityInProgress</strong> <br></br> A request is already in progress. <br></br> <br></br> </li> <li> <strong>NSNetServicesBadArgumentError</strong> <br></br> An invalid argument was used to create the object. <br></br> <br></br> </li> <li> <strong>NSNetServicesCancelledError</strong> <br></br> The request has been cancelled. <br></br> <br></br> </li> <li> <strong>NSNetServicesInvalidError</strong> <br></br> The service was improperly configured. <br></br> <br></br> </li> <li> <strong>NSNetServicesTimeoutError</strong> <br></br> The request has timed out before a successful resolution. <br></br> <br></br> </li> </ul></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSString*</span></span><span class="selector"> NSNotificationName</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSNotificationCoalescing</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSPostingStyle</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSNumberFormatterBehavior</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSNumberFormatterPadPosition</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSNumberFormatterRoundingMode</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSNumberFormatterStyle</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">float</span></span><span class="selector"> CGFloat</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NS_ENUM(NSInteger)</span></span><span class="selector"> NSComparisonResult</span></dt>
+<dd><div class="methodDescription">
+Contains values <var>NSOrderedSame</var>, <var>NSOrderedAscending</var> <var>NSOrderedDescending</var>, for left hand side equals, less than, or greater than right hand side. <dl> <dt><em>NSOrderedAscending</em></dt> <dd></dd> <dt><em>NSOrderedSame</em></dt> <dd></dd> <dt><em>NSOrderedDescending</em></dt> <dd></dd> </dl></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NS_OPTIONS(NSUInteger)</span></span><span class="selector"> NSEnumerationOptions</span></dt>
+<dd><div class="methodDescription">
+Bitfield used to specify options to control enumeration over collections. <dl> <dt><em>NSEnumerationConcurrent</em></dt> <dd></dd> <dt><em>NSEnumerationReverse</em></dt> <dd> Specifies that the enumeration is concurrency-safe. Note that this does not mean that it will be carried out in a concurrent manner, only that it can be. </dd> </dl></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSString*</span></span><span class="selector"> NSExceptionName</span></dt>
+<dd><div class="methodDescription">
+Declare NSExceptionName</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">intptr_t</span></span><span class="selector"> NSInteger</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NS_OPTIONS(NSUInteger)</span></span><span class="selector"> NSSortOptions</span></dt>
+<dd><div class="methodDescription">
+Bitfield used to specify options to control the sorting of collections. <dl> <dt><em>NSSortConcurrent</em></dt> <dd></dd> <dt><em>NSSortStable</em></dt> <dd> Specifies that the sort is concurrency-safe. Note that this does not mean that it will be carried out in a concurrent manner, only that it can be. </dd> </dl></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">uintptr_t</span></span><span class="selector"> NSUInteger</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSSearchPathDirectory</span></dt>
+<dd><div class="methodDescription">
+<p></p>   Enumeration of possible requested directory type specifiers for NSSearchPathForDirectoriesInDomains() function. On a traditional GNUstep filesystem layout these correspond to the subdirectories that may be found in the various domains, such as "Library" and "Applications". In a different filesystem layout these directories might be located anywhere on disk. 
+<pre>
+{
+  NSApplicationDirectory,
+  NSDemoApplicationDirectory,
+  NSDeveloperApplicationDirectory,
+  NSAdminApplicationDirectory,
+  NSLibraryDirectory,
+  NSDeveloperDirectory,
+  NSUserDirectory,
+  NSDocumentationDirectory,
+  NSDocumentDirectory,
+  NSCoreServiceDirectory,
+  NSDesktopDirectory,
+  NSCachesDirectory,
+  NSApplicationSupportDirectory
+  NSAllApplicationsDirectory,
+  NSAllLibrariesDirectory,
+  NSItemReplacementDirectory,
+  GSLibrariesDirectory,
+  GSToolsDirectory,
+  GSAdminToolsDirectory,
+  GSFontsDirectory,
+  GSFrameworksDirectory,
+  GSWebApplicationsDirectory
+}
+ </pre>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSSearchPathDomainMask</span></dt>
+<dd><div class="methodDescription">
+Mask type for NSSearchPathForDirectoriesInDomains() function. A bitwise OR of one or more of <var>NSUserDomainMask, NSLocalDomainMask, NSNetworkDomainMask, NSSystemDomainMask, NSAllDomainsMask</var>.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSPointerFunctionsOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   An integer value containing memory option, personality option, and copying option.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">SOCKET</span></span><span class="selector"> NSSocketNativeHandle</span></dt>
+<dd><div class="methodDescription">
+<p></p>   Native socket type.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">uint64_t</span></span><span class="selector"> NSActivityOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSPropertyListFormat</span></dt>
+<dd><div class="methodDescription">
+<p></p>   Specifies the serialisation format for a serialised property list. <ul> <li> <strong>NSPropertyListOpenStepFormat</strong> the most human-readable format </li> <li> <strong>NSPropertyListXMLFormat_v1_0</strong> portable and readable </li> <li> <strong>NSPropertyListBinaryFormat_v1_0</strong> the standard format on macos-x </li> <li> <strong>NSPropertyListGNUstepFormat</strong> extension of OpenStep format </li> <li> <strong> NSPropertyListGNUstepBinaryFormat </strong> efficient, hardware independent </li> </ul></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSPropertyListMutabilityOptions</span></dt>
+<dd><div class="methodDescription">
+Describes the mutability to use when generating objects during deserialisation of a property list. <ul> <li> <strong>NSPropertyListImmutable</strong> all objects in created list are immutable </li> <li> <strong>NSPropertyListMutableContainers</strong> dictionaries, arrays, strings and data objects are mutable </li> </ul></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSPropertyListReadOptions</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSPropertyListWriteOptions</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSRange</span></span><span class="selector"> NSRange</span></dt>
+<dd><div class="methodDescription">
+<p></p>   
+<pre>
+{
+  NSUInteger location;
+  NSUInteger length;
+}</pre>
+          <p>
+            The NSRange type is used to specify ranges of
+            locations, typically items in an array,
+            characters in a string, and bytes in a data
+            object.
+          </p>
+          <p>
+            As 'boundary' or 'fencepost' errors are a particularly
+            common problem in programming, it is important that
+            you understand how an NSRange works.
+          </p>
+          <p>
+            An NSRange consists of a <em>location</em> and a
+            <em>length</em>. The points that are considered to lie
+            in a range are the integers from the location to the
+            location plus the length, so the number of points
+            in a range is the length of the range plus one. <br></br>
+            However, if you consider these points like the
+            marks on a ruler, you can only store information
+            <strong>between</strong> points. So the number of
+            items that can be stored in a range is the length of
+            the range.
+          </p>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSRange*</span></span><span class="selector"> NSRangePointer</span></dt>
+<dd><div class="methodDescription">
+Pointer to an NSRange structure.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSString*</span></span><span class="selector"> NSRunLoopMode</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSStreamEvent</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSStreamStatus</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSStringCompareOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSStringEncodingConversionOptions</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">uint16_t</span></span><span class="selector"> unichar</span></dt>
+<dd><div class="methodDescription">
+Type for representing unicode characters. (16-bit)</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSInteger</span></span><span class="selector"> NSTaskTerminationReason</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSInteger</span></span><span class="selector"> NSTimeZoneNameStyle</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSURLBookmarkResolutionOptions</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSURLHandleStatus</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSURLRequestCachePolicy</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <dl> <dt>NSURLRequestUseProtocolCachePolicy</dt> <dd> Says that any protocol specific cache policy should be used... this is the default. </dd> <dt>NSURLRequestReloadIgnoringCacheData</dt> <dd> Says the data should be re-loaded from source rather than any cached data being used, irrespective of any protocol standard. </dd> <dt>NSURLRequestReturnCacheDataElseLoad</dt> <dd> Says to use cached data if any is available, but to load from source if the cache is empty. Ignores any protocol specific logic (like cache aging). </dd> <dt>NSURLRequestReturnCacheDataDontLoad</dt> <dd> Says to use cached data if any is available, but to return <var>nil</var> without loading if the cache is empty. </dd> </dl></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSXMLDocumentContentKind</span></dt>
+<dd><div class="methodDescription">
+<p></p>   Define what type of document this is.</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSXMLDTDNodeKind</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSXMLNodeKind</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">NSUInteger</span></span><span class="selector"> NSXMLParserError</span></dt>
+<dd><div class="methodDescription">
+<p></p>   <em>Description forthcoming.</em></div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="returnType"><span class="type">struct _NSZone</span></span><span class="selector"> NSZone</span></dt>
+<dd><div class="methodDescription">
+<p></p>   Primary structure representing an <var>NSZone</var> . Technically it consists of a set of function pointers for zone upkeep functions plus some other things- 
+<pre>
+{
+  // Functions for zone.
+  void *(*malloc)(struct _NSZone *zone, size_t size);
+  void *(*realloc)(struct _NSZone *zone, void *ptr, size_t size);
+  void (*free)(struct _NSZone *zone, void *ptr);
+  void (*recycle)(struct _NSZone *zone);
+  BOOL (*check)(struct _NSZone *zone);
+  BOOL (*lookup)(struct _NSZone *zone, void *ptr);
+
+  // Zone statistics (not always maintained).
+  struct NSZoneStats (*stats)(struct _NSZone *zone);
+  
+  size_t gran;    // Zone granularity (passed in on initialization)
+  NSString *name; // Name of zone (default is 'nil')
+  NSZone *next;   // Pointer used for internal management of multiple zones.
+}</pre>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base (Foundation Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSAffineTransform.html#NSAffineTransform">NSAffineTransform</a></li><li><a href="NSArchiver.html#NSArchiver">NSArchiver</a></li><li><a href="NSArray.html#NSArray">NSArray</a></li><li><a href="NSAssertionHandler.html#NSAssertionHandler">NSAssertionHandler</a></li><li><a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a></li><li><a href="NSAutoreleasePool.html#NSAutoreleasePool">NSAutoreleasePool</a></li><li><a href="NSBundle.html#NSBundle">NSBundle</a></li><li><a href="NSCachedURLResponse.html#NSCachedURLResponse">NSCachedURLResponse</a></li><li><a href="NSCalendarDate.html#NSCalendarDate">NSCalendarDate</a></li><li><a href="NSCharacterSet.html#NSCharacterSet">NSCharacterSet</a></li><li><a href="NSClassDescription.html#NSClassDescription">NSClassDescription</a></li><li><a href="NSCoder.html#NSCoder">NSCoder</a></li><li><a href="NSCondition.html#NSCondition">NSCondition</a></li><li><a href="NSConditionLock.html#NSConditionLock">NSConditionLock</a></li><li><a href="NSConnection.html#NSConnection">NSConnection</a></li><li><a href="NSCountedSet.html#NSCountedSet">NSCountedSet</a></li><li><a href="NSData.html#NSData">NSData</a></li><li><a href="NSDate.html#NSDate">NSDate</a></li><li><a href="NSDateFormatter.html#NSDateFormatter">NSDateFormatter</a></li><li><a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a></li><li><a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a></li><li><a href="NSDeserializer.html#NSDeserializer">NSDeserializer</a></li><li><a href="NSDictionary.html#NSDictionary">NSDictionary</a></li><li><a href="NSDirectoryEnumerator.html#NSDirectoryEnumerator">NSDirectoryEnumerator</a></li><li><a href="NSDistantObject.html#NSDistantObject">NSDistantObject</a></li><li><a href="NSDistributedLock.html#NSDistributedLock">NSDistributedLock</a></li><li><a href="NSDistributedNotificationCenter.html#NSDistributedNotificationCenter">NSDistributedNotificationCenter</a></li><li><a href="NSEnumerator.html#NSEnumerator">NSEnumerator</a></li><li><a href="NSError.html#NSError">NSError</a></li><li><a href="NSException.html#NSException">NSException</a></li><li><a href="NSFileHandle.html#NSFileHandle">NSFileHandle</a></li><li><a href="NSFileManager.html#NSFileManager">NSFileManager</a></li><li><a href="NSFormatter.html#NSFormatter">NSFormatter</a></li><li><a href="NSHashTable.html#NSHashTable">NSHashTable</a></li><li><a href="NSHost.html#NSHost">NSHost</a></li><li><a href="NSHTTPCookie.html#NSHTTPCookie">NSHTTPCookie</a></li><li><a href="NSHTTPCookieStorage.html#NSHTTPCookieStorage">NSHTTPCookieStorage</a></li><li><a href="NSHTTPURLResponse.html#NSHTTPURLResponse">NSHTTPURLResponse</a></li><li><a href="NSIndexPath.html#NSIndexPath">NSIndexPath</a></li><li><a href="NSIndexSet.html#NSIndexSet">NSIndexSet</a></li><li><a href="NSInputStream.html#NSInputStream">NSInputStream</a></li><li><a href="NSInvocation.html#NSInvocation">NSInvocation</a></li><li><a href="NSKeyedArchiver.html#NSKeyedArchiver">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiver.html#NSKeyedUnarchiver">NSKeyedUnarchiver</a></li><li><a href="NSLock.html#NSLock">NSLock</a></li><li><a href="NSMapTable.html#NSMapTable">NSMapTable</a></li><li><a href="NSMessagePort.html#NSMessagePort">NSMessagePort</a></li><li><a href="NSMessagePortNameServer.html#NSMessagePortNameServer">NSMessagePortNameServer</a></li><li><a href="NSMethodSignature.html#NSMethodSignature">NSMethodSignature</a></li><li><a href="NSMutableArray.html#NSMutableArray">NSMutableArray</a></li><li><a href="NSMutableAttributedString.html#NSMutableAttributedString">NSMutableAttributedString</a></li><li><a href="NSMutableCharacterSet.html#NSMutableCharacterSet">NSMutableCharacterSet</a></li><li><a href="NSMutableData.html#NSMutableData">NSMutableData</a></li><li><a href="NSMutableDictionary.html#NSMutableDictionary">NSMutableDictionary</a></li><li><a href="NSMutableIndexSet.html#NSMutableIndexSet">NSMutableIndexSet</a></li><li><a href="NSMutableSet.html#NSMutableSet">NSMutableSet</a></li><li><a href="NSMutableString.html#NSMutableString">NSMutableString</a></li><li><a href="NSMutableURLRequest.html#NSMutableURLRequest">NSMutableURLRequest</a></li><li><a href="NSNetService.html#NSNetService">NSNetService</a></li><li><a href="NSNetServiceBrowser.html#NSNetServiceBrowser">NSNetServiceBrowser</a></li><li><a href="NSNotification.html#NSNotification">NSNotification</a></li><li><a href="NSNotificationCenter.html#NSNotificationCenter">NSNotificationCenter</a></li><li><a href="NSNotificationQueue.html#NSNotificationQueue">NSNotificationQueue</a></li><li><a href="NSNull.html#NSNull">NSNull</a></li><li><a href="NSNumber.html#NSNumber">NSNumber</a></li><li><a href="NSNumberFormatter.html#NSNumberFormatter">NSNumberFormatter</a></li><li><a href="NSObject.html#NSObject">NSObject</a></li><li><a href="NSOutputStream.html#NSOutputStream">NSOutputStream</a></li><li><a href="NSPipe.html#NSPipe">NSPipe</a></li><li><a href="NSPointerArray.html#NSPointerArray">NSPointerArray</a></li><li><a href="NSPointerFunctions.html#NSPointerFunctions">NSPointerFunctions</a></li><li><a href="NSPort.html#NSPort">NSPort</a></li><li><a href="NSPortCoder.html#NSPortCoder">NSPortCoder</a></li><li><a href="NSPortMessage.html#NSPortMessage">NSPortMessage</a></li><li><a href="NSPortNameServer.html#NSPortNameServer">NSPortNameServer</a></li><li><a href="NSProcessInfo.html#NSProcessInfo">NSProcessInfo</a></li><li><a href="NSPropertyListSerialization.html#NSPropertyListSerialization">NSPropertyListSerialization</a></li><li><a href="NSProtocolChecker.html#NSProtocolChecker">NSProtocolChecker</a></li><li><a href="NSProxy.html#NSProxy">NSProxy</a></li><li><a href="NSRecursiveLock.html#NSRecursiveLock">NSRecursiveLock</a></li><li><a href="NSRunLoop.html#NSRunLoop">NSRunLoop</a></li><li><a href="NSScanner.html#NSScanner">NSScanner</a></li><li><a href="NSSerializer.html#NSSerializer">NSSerializer</a></li><li><a href="NSSet.html#NSSet">NSSet</a></li><li><a href="NSSocketPort.html#NSSocketPort">NSSocketPort</a></li><li><a href="NSSocketPortNameServer.html#NSSocketPortNameServer">NSSocketPortNameServer</a></li><li><a href="NSStream.html#NSStream">NSStream</a></li><li><a href="NSString.html#NSString">NSString</a></li><li><a href="NSTask.html#NSTask">NSTask</a></li><li><a href="NSThread.html#NSThread">NSThread</a></li><li><a href="NSTimer.html#NSTimer">NSTimer</a></li><li><a href="NSTimeZone.html#NSTimeZone">NSTimeZone</a></li><li><a href="NSTimeZoneDetail.html#NSTimeZoneDetail">NSTimeZoneDetail</a></li><li><a href="NSUnarchiver.html#NSUnarchiver">NSUnarchiver</a></li><li><a href="NSUndoManager.html#NSUndoManager">NSUndoManager</a></li><li><a href="NSURL.html#NSURL">NSURL</a></li><li><a href="NSURLAuthenticationChallenge.html#NSURLAuthenticationChallenge">NSURLAuthenticationChallenge</a></li><li><a href="NSURLCache.html#NSURLCache">NSURLCache</a></li><li><a href="NSURLComponents.html#NSURLComponents">NSURLComponents</a></li><li><a href="NSURLConnection.html#NSURLConnection">NSURLConnection</a></li><li><a href="NSURLCredential.html#NSURLCredential">NSURLCredential</a></li><li><a href="NSURLCredentialStorage.html#NSURLCredentialStorage">NSURLCredentialStorage</a></li><li><a href="NSURLDownload.html#NSURLDownload">NSURLDownload</a></li><li><a href="NSURLHandle.html#NSURLHandle">NSURLHandle</a></li><li><a href="NSURLProtectionSpace.html#NSURLProtectionSpace">NSURLProtectionSpace</a></li><li><a href="NSURLProtocol.html#NSURLProtocol">NSURLProtocol</a></li><li><a href="NSURLQueryItem.html#NSURLQueryItem">NSURLQueryItem</a></li><li><a href="NSURLRequest.html#NSURLRequest">NSURLRequest</a></li><li><a href="NSURLResponse.html#NSURLResponse">NSURLResponse</a></li><li><a href="NSUserDefaults.html#NSUserDefaults">NSUserDefaults</a></li><li><a href="NSValue.html#NSValue">NSValue</a></li><li><a href="NSValueTransformer.html#NSValueTransformer">NSValueTransformer</a></li><li><a href="NSXMLDocument.html#NSXMLDocument">NSXMLDocument</a></li><li><a href="NSXMLDTD.html#NSXMLDTD">NSXMLDTD</a></li><li><a href="NSXMLDTDNode.html#NSXMLDTDNode">NSXMLDTDNode</a></li><li><a href="NSXMLElement.html#NSXMLElement">NSXMLElement</a></li><li><a href="NSXMLNode.html#NSXMLNode">NSXMLNode</a></li><li><a href="NSXMLParser.html#NSXMLParser">NSXMLParser</a></li><li><a href="NXConstantString.html#NXConstantString">NXConstantString</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSLogDelegate.html#GSLogDelegate">GSLogDelegate</a></li><li><a href="_NSCoding.html#NSCoding">NSCoding</a></li><li><a href="_NSCopying.html#NSCopying">NSCopying</a></li><li><a href="_NSDecimalNumberBehaviors.html#NSDecimalNumberBehaviors">NSDecimalNumberBehaviors</a></li><li><a href="_NSDiscardableContent.html#NSDiscardableContent">NSDiscardableContent</a></li><li><a href="_NSFastEnumeration.html#NSFastEnumeration">NSFastEnumeration</a></li><li><a href="_NSFileManagerDelegate.html#NSFileManagerDelegate">NSFileManagerDelegate</a></li><li><a href="_NSLocking.html#NSLocking">NSLocking</a></li><li><a href="_NSMutableCopying.html#NSMutableCopying">NSMutableCopying</a></li><li><a href="_NSNetServiceBrowserDelegate.html#NSNetServiceBrowserDelegate">NSNetServiceBrowserDelegate</a></li><li><a href="_NSNetServiceDelegate.html#NSNetServiceDelegate">NSNetServiceDelegate</a></li><li><a href="_NSObjCTypeSerializationCallBack.html#NSObjCTypeSerializationCallBack">NSObjCTypeSerializationCallBack</a></li><li><a href="_NSObject.html#NSObject">NSObject</a></li><li><a href="_NSSecureCoding.html#NSSecureCoding">NSSecureCoding</a></li><li><a href="_NSStreamDelegate.html#NSStreamDelegate">NSStreamDelegate</a></li><li><a href="_NSURLAuthenticationChallengeSender.html#NSURLAuthenticationChallengeSender">NSURLAuthenticationChallengeSender</a></li><li><a href="_NSURLConnectionDelegate.html#NSURLConnectionDelegate">NSURLConnectionDelegate</a></li><li><a href="_NSURLDownloadDelegate.html#NSURLDownloadDelegate">NSURLDownloadDelegate</a></li><li><a href="_NSURLHandleClient.html#NSURLHandleClient">NSURLHandleClient</a></li><li><a href="_NSURLProtocolClient.html#NSURLProtocolClient">NSURLProtocolClient</a></li><li><a href="_NSXMLParserDelegate.html#NSXMLParserDelegate">NSXMLParserDelegate</a></li><li><a href="_RunLoopEvents.html#RunLoopEvents">RunLoopEvents</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSArchiverCategories.html#NSArchiver(GNUstep)">NSArchiver</a></li><li><a href="NSArrayCategories.html#NSArray(NSKeyValueObserverRegistration)">NSArray</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstep)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GregorianDate)">NSCalendarDate</a></li><li><a href="NSCoderCategories.html#NSCoder(NSGeometryKeyedCoding)">NSCoder</a></li><li><a href="NSCountedSetCategories.html#NSCountedSet(GNU_Uniquing)">NSCountedSet</a></li><li><a href="NSDataCategories.html#NSData(GNUstepExtensions)">NSData</a></li><li><a href="NSDeserializerCategories.html#NSDeserializer(GNUstep)">NSDeserializer</a></li><li><a href="NSDictionaryCategories.html#NSDictionary(NSFileAttributes)">NSDictionary</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepExtensions)">NSFileHandle</a></li><li><a href="NSHostCategories.html#NSHost(GNUstep)">NSHost</a></li><li><a href="NSInvocationCategories.html#NSInvocation(GNUstep)">NSInvocation</a></li><li><a href="NSKeyedArchiverCategories.html#NSKeyedArchiver(Internal)">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiverCategories.html#NSKeyedUnarchiver(Internal)">NSKeyedUnarchiver</a></li><li><a href="NSMutableDataCategories.html#NSMutableData(GNUstepExtensions)">NSMutableData</a></li><li><a href="NSMutableURLRequestCategories.html#NSMutableURLRequest(GNUstep)">NSMutableURLRequest</a></li><li><a href="NSNumberCategories.html#NSNumber(NSDecimalNumber)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstep)">NSObject</a></li><li><a href="NSPointerArrayCategories.html#NSPointerArray(NSArrayConveniences)">NSPointerArray</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstep)">NSProcessInfo</a></li><li><a href="NSRunLoopCategories.html#NSRunLoop(GNUstepExtensions)">NSRunLoop</a></li><li><a href="NSSerializerCategories.html#NSSerializer(GNUstep)">NSSerializer</a></li><li><a href="NSThreadCategories.html#NSThread(CallStackSymbols)">NSThread</a></li><li><a href="NSUnarchiverCategories.html#NSUnarchiver(GNUstep)">NSUnarchiver</a></li><li><a href="NSURLCacheCategories.html#NSURLCache(NSURLSessionTaskAdditions)">NSURLCache</a></li><li><a href="NSURLConnectionCategories.html#NSURLConnection(NSURLConnectionSynchronousLoading)">NSURLConnection</a></li><li><a href="NSURLProtocolCategories.html#NSURLProtocol(Subclassing)">NSURLProtocol</a></li><li><a href="NSURLRequestCategories.html#NSURLRequest(NSHTTPURLRequest)">NSURLRequest</a></li><li><a href="NSValueCategories.html#NSValue(Subclassing)">NSValue</a></li><li><a href="NSXMLParserCategories.html#NSXMLParser(NSXMLParserLocatorAdditions)">NSXMLParser</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

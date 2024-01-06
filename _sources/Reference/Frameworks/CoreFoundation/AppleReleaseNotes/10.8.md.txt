@@ -1,0 +1,58 @@
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-SW2"></span>
+
+# CF-744 - 10.8 "Mountain Lion"
+
+> The following came from [Core Foundation Release Notes for OS X (10.8 and earlier)](https://developer.apple.com/library/archive/releasenotes/DataManagement/RN-CoreFoundationOlderNotes/index.html)
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-SW3"></span>
+
+## CoreFoundation Framework
+
+CoreFoundation (aka CF) is a framework which provides C APIs for strings, collections, user preferences, property lists, plug-ins, bundles, notifications, runloop, etc. These APIs are designed with portability, performance, and consistency in mind, and are available to Cocoa and Carbon applications.
+
+CoreFoundation is accessible directly as a public framework. But it is also within the CoreServices umbrella framework and is very often pulled into your application simply by linking against CoreServices or one of the higher level umbrellas such as Cocoa or Carbon which bring in CoreServices.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-SW4"></span>
+
+## CFPreferences Synchronization
+
+CFPreferencesSynchronize() (and therefore CFPreferencesAppSynchronize() and -\[NSUserDefaults synchronize\]) is now automatic in virtually all cases. The only remaining reason to call it is if you need a separate process to be able to synchronously access the values you just set; for example if you set a preference, then post a notification which another process receives and reads the same preference. Most regular applications will never need to do this, and applications that do are encouraged to use an inter-process communication API (for example XPC) to communicate with the other process rather than using the preferences system for IPC.
+
+CFPreferencesSynchronize() is also much faster in 10.8, and will avoid doing any work if there are no outstanding changes to read or write.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-SW5"></span>
+
+## CFPreferences Plist Files
+
+The on-disk property list files used by CFPreferences have always been a private implementation detail, but in previous releases, directly modifying them has mostly worked (though there are some potential data-loss issues for applications that do so, even on previous systems). In 10.8 and later, the CFPreferences agent process (cfprefsd) will cache information from these files and asynchronously write to them. This means that directly modifying plist files is unlikely to have the expected results (new settings will not necessarily be read, and may even be overwritten). You should use the NSUserDefaults or CFPreferences APIs, or the defaults(1) command, to interact with the preferences system.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-SW6"></span>
+
+## CF/NSString Localized Formatting
+
+In 10.8, in apps linked against the 10.8 SDK, existing APIs such as CFStringCreateWithFormat(), CFStringAppendFormat(), as well as NSString APIs +\[NSString localizedStringWithFormat:\], -\[NSString initWithFormat:locale:\], will now do localized formatting of numbers when a locale is provided (for +localizedStringWithFormat: this is implied, using the user's default locale.)
+
+Currently these calls already do decimal point handling; so in some locales you currently do get comma instead of period for floating point numbers. This new behavior builds upon this; with this change, you will get additional behaviors, such as:
+- use of alternate digits, such as in some Arabic locales
+- placement of the negative symbol after the number, in some locales ("-42" -&gt; "42-")
+- thousands separators, in many locales including English ("12345" -&gt; "12,345")
+- alternate thousands separators ("12,345.6" -&gt; "12.345,6")
+
+The localization applies in the following cases:
+- Only e, E, f, F, g, G, d, D, i, u, U are localized; the upper case variants are ignored (and treated as if they were lower case). a, A, o, O, x, X are not localized, and neither are all other non-numeric format characters.
+- %@ used with NSNumber/CFNumber is localized.
+- The flags +, -, 0, width, and precision are honored, but note that extra characters (beyond the specified width) may be inserted to accommodate thousands separators.
+
+Potential pitfalls include getting localized output where unlocalized was intended, and use of unintended thousands separators (for instance if someone was showing a year with %d, now they may get "2,012").
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-SW7"></span>
+
+## Greek letter case mapping
+
+With Greek locale, the uppercase and titlecase mappings strip all Greek tonos characters.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-SW8"></span>
+
+## CoreFoundation Unicode Database
+
+The CoreFoundation Unicode Database is updated to version 6.1.

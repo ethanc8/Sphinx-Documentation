@@ -1,0 +1,706 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui (Application Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSMenu</h2>NSMenu : NSObject &lt;NSCoding, NSCopying&gt;<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Fred Kiefer David Lazaro Saz Michael Hanni Felipe A. Rodriguez Ovidiu Predescu </td></tr><tr><th>Declared in</th><td>AppKit/NSMenu.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> Menus provide the user with a list of actions and/or submenus. Submenus themselves are full fledged menus and so a heirarchical structure of appears. </p> <p> Every application has one special menu, the so called Application menu. This menu is always visible on the screen when the application is active. This menu normally contains items like, <em>info</em>, <em>services</em>, <em>print</em>, <em>hide</em> and <em>quit</em>. </p> <p> After the <em>info</em> item normally some submenus follow containing the application specific actions. </p> <p> On GNUstep the content of the menu is stacked vertically as oppossed to the Windows and Mac world, where they are stacked horizontally. Also because the menus are not part of any normal window they can be dragged around opened and closed independend of the application windows. </p> <p> This can lead to a few menus being open simultanuously. The collection of open menus is remembered, when the program is started again, all the torn off menus aka detached menus, are displayed at their last known position. </p> <p> The menu behaviour is richer than in most other environments and bear some explanation. This explanation is aimed at users of Menus but more so at the developer of custom menus. </p> <dl> <dt>Application menu</dt> <dd> There alwasy at least one menu present and visible while the application is active. This is the application menu. This window can never be closed. </dd> <dt>Attached menu</dt> <dd> Normally when you click in a menu on a submenu item, the submenu is shown directly next to the menu you click in. The submenu is now called an <em>attached</em> menu. It is attached to the menu that was clicked in. </dd> <dt>Detached menu</dt> <dd> A menu is detached when it is not attached to its parent menu. A menu can become detached when the user drags a submenu away from its parents. A detached window contains in its title a close button. </dd> <dt>Transient menu</dt> <dd> A transient menu is a menu that dissappears as soon as the user stops interacting with the menus. Typically a transient menu is created when a right mouse click appears in an application window. The right mouse click will bring up the Application menu at the place the user clicks. While keeping the mouse button down the user can select items by moving around. When releasing the button, all transient menus will be removed from the screen and the action will be executed. <p> It is important to note that it is impossible to click in transient menus. </p> </dd> <dt>Attached transient menu</dt> <dd> This is a menu that is attached and transient at the same time. </dd> </dl> A single <a href="NSMenu.html#NSMenu">NSMenu</a> instance can be displayed zero or one times when the user is not interaction with the menus. When the user is interaction with the menus it can occur that the same <a href="NSMenu.html#NSMenu">NSMenu</a> is displayed in two locations at the same time. This is only possible when one of the displayed instances is a transient menu. <br></br> To understand how the diffent kind of menus are created lets look at some user actions: <ul> <li> The user clicks on an item which is not a submenu. <br></br> The item is highlighted until the action corresponding with the item is completed. More precisely, the application highlights the menu item, performs the action, and unhighlights the item. </li> <li> The user clicks on a submenu item which is not highlighted already <br></br> If the submenu is not a detached menu, the submenu will become an attached menu to the menu that is clicked in. The item that is clicked in will become highlighted and stays highlighted. <p> If the submenu is a detached menu, the transient version of the submenu will be shown </p> </li> <li> The user clicks on a submenu item which is highlighted <br></br> This means that the submenu is an attached submenu for this menu. After clicking the submenu item will no be no longer highlighted and the submenu will be removed from the screen. </li> <li> The user drags over a menu item <br></br> The item will be highlighted, if the item is a submenu item, the submenu will be shown as an attached submenu. This can be transient, or non transient. </li> </ul> <br></br> <strong>Customizing the look of Menus</strong> <br></br> There are basically three ways of customizing the look of <a href="NSMenu.html#NSMenu">NSMenu</a> <ol> <li> Using custom NSMenuItemCell's. This you should do when you want to influence the look of the items displayed in the menu. </li> <li> Using custom <a href="NSMenuView.html#NSMenuView">NSMenuView</a>. This is the class to modify if you want to change the way the menu is layout on the screen. So if you want to stack the menu items horizontally, you should change this class. This should be rarely needed. </li> <li> Reimplement <a href="NSMenu.html#NSMenu">NSMenu</a>. This you should not do. But, if you implement everything yourself you can achieve anything. </li> </ol> <br></br> <strong> Information for implementing custom <a href="NSMenuView.html#NSMenuView">NSMenuView</a> class </strong> <br></br> When implementing a custom <a href="NSMenuView.html#NSMenuView">NSMenuView</a> class it is important to keep the following information in mind. <ul> <li> The menus (or the menu items) form a tree. Navigating through this tree is done with the methods  [<a href="NSMenu.html#NSMenu">NSMenu</a> <a href="NSMenu.html#-[NSMenu_supermenu]">-supermenu</a>]  , which returns the parent menu of the receiver, and with  [<a href="NSMenu.html#NSMenu">NSMenu</a> <a href="NSMenu.html#-[NSMenu_itemAtIndex:]">-itemAtIndex:</a>]  which returns a <a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a> on which we can call  [&lt;NSMenuItem&gt;-submenu]  for a child menu. </li> <li> The menus as displayed on the screen do NOT form a tree. This because detached and transient menus lead to duplicate menus on the screen. </li> </ul> The displayed menus on the screen have the following structure: <ol> <li> The ordered graph of displayed menus (note, NOT the set of NSMenus) form a collection of line graphs. </li> <li> The attached menus are precisely the non root vertices in this graph. </li> <li> An attached menu of a transient menu is itself a transient menu. </li> <li> The collection of transient menus form connect subgraph of the menu graph. </li> </ol></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="+[NSMenu_menuZone]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSZone *)</span><span class="selector"> menuZone </span></span></dt>
+<dd><div class="methodDescription">
+Returns the memory allocation zone used to create instances of this class.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSMenu_setMenuZone:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> setMenuZone: </span><span class="parameter"><span class="type">(NSZone *)</span><span class="arg">zone</span></span></span></dt>
+<dd><div class="methodDescription">
+Specifies the memory allocation <var>zone</var> used to create instances of this class.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSMenu_popUpContextMenu:withEvent:forView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> popUpContextMenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">menu</span></span><span class="selector"> withEvent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">event</span></span><span class="selector"> forView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">view</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSMenu_popUpContextMenu:withEvent:forView:withFont:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> popUpContextMenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">menu</span></span><span class="selector"> withEvent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">event</span></span><span class="selector"> forView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">view</span></span><span class="selector"> withFont: </span><span class="parameter"><span class="type">(<a href="NSFont.html#NSFont">NSFont</a> *)</span><span class="arg">font</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_popUpMenuPositionItem:atLocation:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> popUpMenuPositionItem: </span><span class="parameter"><span class="type">(<a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a> *)</span><span class="arg">item</span></span><span class="selector"> atLocation: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">point</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">view</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSMenu_menuBarVisible]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> menuBarVisible </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSMenu_setMenuBarVisible:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> setMenuBarVisible: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_addItem:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addItem: </span><span class="parameter"><span class="type">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="arg">newItem</span></span></span></dt>
+<dd><div class="methodDescription">
+Add <var>newItem</var> to the menu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_addItemWithTitle:action:keyEquivalent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="selector"> addItemWithTitle: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span><span class="selector"> action: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span><span class="selector"> keyEquivalent: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">keyEquiv</span></span></span></dt>
+<dd><div class="methodDescription">
+Prefered method for inserting a menu item. This method calls [NSMenu-insertItemWithTitle:-action:-keyEquivalent:-atIndex:] <dl><dt><var>aString</var></dt> <dd>The title of the specific menu item.</dd> <dt><var>aSelector</var></dt> <dd>The action taken by selecting this menu item, or NULL.</dd> <dt><var>keyEquiv</var></dt> <dd>The shortcut key for this menu item. If none is needed, specify and empty NSString, ie: @"".</dd></dl> <p> See Also: -insertItemWithTitle:-action:-keyEquivalent:-atIndex </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_attachedMenu]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> attachedMenu </span></span></dt>
+<dd><div class="methodDescription">
+Returns the menu that is attached to this menu. <p> If two instances of this menu are visible, return the attached window of the transient version of this menu. </p> <p> If no menu is attached return <var>nil</var>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_autoenablesItems]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> autoenablesItems </span></span></dt>
+<dd><div class="methodDescription">
+Returns <var>YES</var> if item does autoenable (default value) and <var>NO</var> otherwise. <p> See Also: </p> <ul> <li>  <a href="NSMenu.html#-[NSMenu_setAutoenablesItems:]">-setAutoenablesItems:</a>  </li> </ul><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_contextMenuRepresentation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> contextMenuRepresentation </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_delegate]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> delegate </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_helpRequested:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> helpRequested: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">event</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_indexOfItem:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfItem: </span><span class="parameter"><span class="type">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of item <var>anObject</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_indexOfItemWithTag:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfItemWithTag: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">aTag</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of an item with the tag <var>aTag</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_indexOfItemWithTarget:andAction:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfItemWithTarget: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span><span class="selector"> andAction: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">actionSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of an item with the target <var>anObject</var> and the <var>actionSelector</var> .<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_indexOfItemWithRepresentedObject:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfItemWithRepresentedObject: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of an item with the represented object <var>anObject</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_indexOfItemWithSubmenu:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfItemWithSubmenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of an item with the submenu <var>anObject</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_indexOfItemWithTitle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> indexOfItemWithTitle: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aTitle</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the index of an item with the title <var>aTitle</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_initWithTitle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithTitle: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aTitle</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_insertItem:atIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> insertItem: </span><span class="parameter"><span class="type">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="arg">newItem</span></span><span class="selector"> atIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Insert <var>newItem</var> at position <var>index</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_insertItemWithTitle:action:keyEquivalent:atIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="selector"> insertItemWithTitle: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span><span class="selector"> action: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span><span class="selector"> keyEquivalent: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">charCode</span></span><span class="selector"> atIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Inserts a new menu item at position <var>index</var>. <p> See Also: </p> <ul> <li> -addItemWithTitle:-action:-keyEquivalent-atIndex: </li> </ul><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_isAttached]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isAttached </span></span></dt>
+<dd><div class="methodDescription">
+Returns if this menu is attached to its supermenu, return <var>nil</var> if it does not have a parent menu. <p> If two instances of this menu are visible, return the outcome of the check for the transient version of the menu. </p> Look for the semantics in the header. Note that this implementation works because there are... cases: <ol> <li> This menu is transient, its supermenu is also transient. In this case we just do the check between the transient windows and everything is fine </li> <li> The menu is transient, its supermenu is not transient. This can go WRONG </li> </ol><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_isTornOff]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isTornOff </span></span></dt>
+<dd><div class="methodDescription">
+If there are two instances of this menu visible, return <var>NO</var>. Otherwise, return <var>YES</var> if we are a detached menu and visible.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_itemArray]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> itemArray </span></span></dt>
+<dd><div class="methodDescription">
+Returns an array containing all menu items in this menu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_itemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a> *)</span><span class="selector"> itemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns an item located at <var>index</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_itemChanged:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> itemChanged: </span><span class="parameter"><span class="type">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+Informs the menu that the specified item has changed.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_itemWithTag:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="selector"> itemWithTag: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">aTag</span></span></span></dt>
+<dd><div class="methodDescription">
+Retuns an item referenced by <var>aTag</var>. <p> See Also: </p> <ul> <li>  <a href="NSMenu.html#-[NSMenu_indexOfItemWithTag:]">-indexOfItemWithTag:</a>  </li> <li>  [&lt;NSMenuItem&gt;-tag]  </li> </ul><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_itemWithTitle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="selector"> itemWithTitle: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns an item with <var>aString</var> as its title.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_locationForSubmenu:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSPoint)</span><span class="selector"> locationForSubmenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">aSubmenu</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns the position where submenu will be displayed when it will be displayed as an attached menu of this menu. The result is undefined when <var>aSubmenu</var> is not actually a submenu of this menu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_menuBarHeight]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> menuBarHeight </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_menuChangedMessagesEnabled]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> menuChangedMessagesEnabled </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_menuRepresentation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> menuRepresentation </span></span></dt>
+<dd><div class="methodDescription">
+Return the <a href="NSView.html#NSView">NSView</a> that is used for drawing the menu. It is the view set with [<a href="NSMenu.html#NSMenu">NSMenu</a> <a href="NSMenu.html#-[NSMenu_setMenuRepresentation:]">-setMenuRepresentation:</a>] and therefore it should be safe to assume it is an <a href="NSView.html#NSView">NSView</a> implementing the <a href="NSMenuView.html#NSMenuView">NSMenuView</a> protocol.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_numberOfItems]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> numberOfItems </span></span></dt>
+<dd><div class="methodDescription">
+Returns the numbers of items on the menu<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_performActionForItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> performActionForItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Simulates a mouse click on item located at <var>index</var>. <p> See Also: </p> <ul> <li>  <a href="NSMenu.html#-[NSMenu_indexOfItem:]">-indexOfItem:</a>  </li> <li>  <a href="NSMenu.html#-[NSMenu_indexOfItemWithTitle:]">-indexOfItemWithTitle:</a>  </li> </ul><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_performKeyEquivalent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> performKeyEquivalent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+Looks for a menu item that responds to <var>theEvent</var> on the receiver. If the receiver is a submenu, the method is performed on it.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_removeItem:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeItem: </span><span class="parameter"><span class="type">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="arg">anItem</span></span></span></dt>
+<dd><div class="methodDescription">
+Calls  <a href="NSMenu.html#-[NSMenu_removeItemAtIndex:]">-removeItemAtIndex:</a>  for <var>anItem</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_removeItemAtIndex:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeItemAtIndex: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">index</span></span></span></dt>
+<dd><div class="methodDescription">
+Removes item at position <var>index</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setAutoenablesItems:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAutoenablesItems: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets if a menu does autoenable.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setContextMenuRepresentation:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setContextMenuRepresentation: </span><span class="parameter"><span class="type">(id)</span><span class="arg">representation</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setDelegate:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDelegate: </span><span class="parameter"><span class="type">(id)</span><span class="arg">delegate</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setMenuChangedMessagesEnabled:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMenuChangedMessagesEnabled: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setMenuRepresentation:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMenuRepresentation: </span><span class="parameter"><span class="type">(id)</span><span class="arg">menuRep</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the View that should be used to display the menu. <p> The default is <a href="NSMenuView.html#NSMenuView">NSMenuView</a>, but a user can supply its own <a href="NSView.html#NSView">NSView</a> object as <strong>long</strong> as it </p> <ul> <li>Inherits from NSView</li> <li>Implements <a href="NSMenuView.html#NSMenuView">NSMenuView</a> protocol</li> </ul><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setSubmenu:forItem:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setSubmenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">aMenu</span></span><span class="selector"> forItem: </span><span class="parameter"><span class="type">(id <<a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a>>)</span><span class="arg">anItem</span></span></span></dt>
+<dd><div class="methodDescription">
+Set a submenu of a menu. <dl> <dt><var>aMenu</var></dt> <dd>The submenu to be inserted.</dd> <dt><var>anItem</var></dt> <dd>Item to be turned into a submenu.</dd> </dl> <p> See Also: </p> <ul> <li> [&lt;NSMenuItem&gt;-setSubmenu:] </li> </ul><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setSupermenu:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setSupermenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">supermenu</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the <var>supermenu</var> of this menu. TODO: add explanation if this will change remove this menu from the old <var>supermenu</var> or if it does not.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setTearOffMenuRepresentation:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTearOffMenuRepresentation: </span><span class="parameter"><span class="type">(id)</span><span class="arg">representation</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_setTitle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTitle: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aTitle</span></span></span></dt>
+<dd><div class="methodDescription">
+Change the title of the menu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_sizeToFit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sizeToFit </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_submenuAction:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> submenuAction: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_supermenu]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> supermenu </span></span></dt>
+<dd><div class="methodDescription">
+Returns the supermenu of this menu. Return <var>nil</var> if this is the application menu.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_tearOffMenuRepresentation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> tearOffMenuRepresentation </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_title]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> title </span></span></dt>
+<dd><div class="methodDescription">
+Returns the current title.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMenu_update]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> update </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui (Application Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSActionCell.html#NSActionCell">NSActionCell</a></li><li><a href="NSBezierPath.html#NSBezierPath">NSBezierPath</a></li><li><a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a></li><li><a href="NSBox.html#NSBox">NSBox</a></li><li><a href="NSBrowser.html#NSBrowser">NSBrowser</a></li><li><a href="NSBrowserCell.html#NSBrowserCell">NSBrowserCell</a></li><li><a href="NSButton.html#NSButton">NSButton</a></li><li><a href="NSButtonCell.html#NSButtonCell">NSButtonCell</a></li><li><a href="NSCachedImageRep.html#NSCachedImageRep">NSCachedImageRep</a></li><li><a href="NSCell.html#NSCell">NSCell</a></li><li><a href="NSClipView.html#NSClipView">NSClipView</a></li><li><a href="NSColor.html#NSColor">NSColor</a></li><li><a href="NSColorList.html#NSColorList">NSColorList</a></li><li><a href="NSColorPanel.html#NSColorPanel">NSColorPanel</a></li><li><a href="NSColorPicker.html#NSColorPicker">NSColorPicker</a></li><li><a href="NSColorWell.html#NSColorWell">NSColorWell</a></li><li><a href="NSComboBox.html#NSComboBox">NSComboBox</a></li><li><a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a></li><li><a href="NSControl.html#NSControl">NSControl</a></li><li><a href="NSCursor.html#NSCursor">NSCursor</a></li><li><a href="NSCustomImageRep.html#NSCustomImageRep">NSCustomImageRep</a></li><li><a href="NSDataLink.html#NSDataLink">NSDataLink</a></li><li><a href="NSDataLinkManager.html#NSDataLinkManager">NSDataLinkManager</a></li><li><a href="NSDataLinkPanel.html#NSDataLinkPanel">NSDataLinkPanel</a></li><li><a href="NSDocument.html#NSDocument">NSDocument</a></li><li><a href="NSDocumentController.html#NSDocumentController">NSDocumentController</a></li><li><a href="NSDrawer.html#NSDrawer">NSDrawer</a></li><li><a href="NSDrawerDelegate.html#NSDrawerDelegate">NSDrawerDelegate</a></li><li><a href="NSEPSImageRep.html#NSEPSImageRep">NSEPSImageRep</a></li><li><a href="NSEvent.html#NSEvent">NSEvent</a></li><li><a href="NSFont.html#NSFont">NSFont</a></li><li><a href="NSFontManager.html#NSFontManager">NSFontManager</a></li><li><a href="NSFontPanel.html#NSFontPanel">NSFontPanel</a></li><li><a href="NSForm.html#NSForm">NSForm</a></li><li><a href="NSFormCell.html#NSFormCell">NSFormCell</a></li><li><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a></li><li><a href="NSHelpManager.html#NSHelpManager">NSHelpManager</a></li><li><a href="NSHelpPanel.html#NSHelpPanel">NSHelpPanel</a></li><li><a href="NSImage.html#NSImage">NSImage</a></li><li><a href="NSImageCell.html#NSImageCell">NSImageCell</a></li><li><a href="NSImageRep.html#NSImageRep">NSImageRep</a></li><li><a href="NSImageView.html#NSImageView">NSImageView</a></li><li><a href="NSInputManager.html#NSInputManager">NSInputManager</a></li><li><a href="NSInputServer.html#NSInputServer">NSInputServer</a></li><li><a href="NSLayoutManager.html#NSLayoutManager">NSLayoutManager</a></li><li><a href="NSMatrix.html#NSMatrix">NSMatrix</a></li><li><a href="NSMenu.html#NSMenu">NSMenu</a></li><li><a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a></li><li><a href="NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="NSMutableParagraphStyle.html#NSMutableParagraphStyle">NSMutableParagraphStyle</a></li><li><a href="NSNib.html#NSNib">NSNib</a></li><li><a href="NSOpenGLContext.html#NSOpenGLContext">NSOpenGLContext</a></li><li><a href="NSOpenGLPixelFormat.html#NSOpenGLPixelFormat">NSOpenGLPixelFormat</a></li><li><a href="NSOpenGLView.html#NSOpenGLView">NSOpenGLView</a></li><li><a href="NSOpenPanel.html#NSOpenPanel">NSOpenPanel</a></li><li><a href="NSOutlineView.html#NSOutlineView">NSOutlineView</a></li><li><a href="NSPageLayout.html#NSPageLayout">NSPageLayout</a></li><li><a href="NSPanel.html#NSPanel">NSPanel</a></li><li><a href="NSParagraphStyle.html#NSParagraphStyle">NSParagraphStyle</a></li><li><a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a></li><li><a href="NSPopUpButtonCell.html#NSPopUpButtonCell">NSPopUpButtonCell</a></li><li><a href="NSPrinter.html#NSPrinter">NSPrinter</a></li><li><a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a></li><li><a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a></li><li><a href="NSPrintPanel.html#NSPrintPanel">NSPrintPanel</a></li><li><a href="NSProgressIndicator.html#NSProgressIndicator">NSProgressIndicator</a></li><li><a href="NSResponder.html#NSResponder">NSResponder</a></li><li><a href="NSRulerMarker.html#NSRulerMarker">NSRulerMarker</a></li><li><a href="NSRulerView.html#NSRulerView">NSRulerView</a></li><li><a href="NSSavePanel.html#NSSavePanel">NSSavePanel</a></li><li><a href="NSScreen.html#NSScreen">NSScreen</a></li><li><a href="NSScroller.html#NSScroller">NSScroller</a></li><li><a href="NSScrollView.html#NSScrollView">NSScrollView</a></li><li><a href="NSSecureTextField.html#NSSecureTextField">NSSecureTextField</a></li><li><a href="NSSecureTextFieldCell.html#NSSecureTextFieldCell">NSSecureTextFieldCell</a></li><li><a href="NSSelection.html#NSSelection">NSSelection</a></li><li><a href="NSSlider.html#NSSlider">NSSlider</a></li><li><a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a></li><li><a href="NSSound.html#NSSound">NSSound</a></li><li><a href="NSSpellChecker.html#NSSpellChecker">NSSpellChecker</a></li><li><a href="NSSplitView.html#NSSplitView">NSSplitView</a></li><li><a href="NSStepper.html#NSStepper">NSStepper</a></li><li><a href="NSStepperCell.html#NSStepperCell">NSStepperCell</a></li><li><a href="NSTableColumn.html#NSTableColumn">NSTableColumn</a></li><li><a href="NSTableHeaderCell.html#NSTableHeaderCell">NSTableHeaderCell</a></li><li><a href="NSTableHeaderView.html#NSTableHeaderView">NSTableHeaderView</a></li><li><a href="NSTableView.html#NSTableView">NSTableView</a></li><li><a href="NSTabView.html#NSTabView">NSTabView</a></li><li><a href="NSTabViewItem.html#NSTabViewItem">NSTabViewItem</a></li><li><a href="NSText.html#NSText">NSText</a></li><li><a href="NSTextAttachment.html#NSTextAttachment">NSTextAttachment</a></li><li><a href="NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="NSTextContainer.html#NSTextContainer">NSTextContainer</a></li><li><a href="NSTextField.html#NSTextField">NSTextField</a></li><li><a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a></li><li><a href="NSTextStorage.html#NSTextStorage">NSTextStorage</a></li><li><a href="NSTextTab.html#NSTextTab">NSTextTab</a></li><li><a href="NSTextView.html#NSTextView">NSTextView</a></li><li><a href="NSToolbar.html#NSToolbar">NSToolbar</a></li><li><a href="NSToolbarItem.html#NSToolbarItem">NSToolbarItem</a></li><li><a href="NSView.html#NSView">NSView</a></li><li><a href="NSWindow.html#NSWindow">NSWindow</a></li><li><a href="NSWindowController.html#NSWindowController">NSWindowController</a></li><li><a href="NSWorkspace.html#NSWorkspace">NSWorkspace</a></li></ul></div>
+
+<ul>
+    <li><a href="NSPasteboard.html">NSPasteboard (buggy documentation)</a></li>
+    <li><a href="NSApplication.html">NSApplication (buggy documentation)</a></li>
+</ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSImageDelegateProtocol.html#GSImageDelegateProtocol">GSImageDelegateProtocol</a></li><li><a href="_NSComboBoxCellDataSource.html#NSComboBoxCellDataSource">NSComboBoxCellDataSource</a></li><li><a href="_NSControlTextEditingDelegate.html#NSControlTextEditingDelegate">NSControlTextEditingDelegate</a></li><li><a href="_NSInputServerMouseTracker.html#NSInputServerMouseTracker">NSInputServerMouseTracker</a></li><li><a href="_NSInputServiceProvider.html#NSInputServiceProvider">NSInputServiceProvider</a></li><li><a href="_NSMatrixDelegate.html#NSMatrixDelegate">NSMatrixDelegate</a></li><li><a href="_NSMenuDelegate.html#NSMenuDelegate">NSMenuDelegate</a></li><li><a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="_NSMenuValidation.html#NSMenuValidation">NSMenuValidation</a></li><li><a href="_NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="_NSOpenSavePanelDelegate.html#NSOpenSavePanelDelegate">NSOpenSavePanelDelegate</a></li><li><a href="_NSOutlineViewDataSource.html#NSOutlineViewDataSource">NSOutlineViewDataSource</a></li><li><a href="_NSOutlineViewDelegate.html#NSOutlineViewDelegate">NSOutlineViewDelegate</a></li><li><a href="_NSPrintPanelAccessorizing.html#NSPrintPanelAccessorizing">NSPrintPanelAccessorizing</a></li><li><a href="_NSTableViewDataSource.html#NSTableViewDataSource">NSTableViewDataSource</a></li><li><a href="_NSTableViewDelegate.html#NSTableViewDelegate">NSTableViewDelegate</a></li><li><a href="_NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="_NSTextFieldDelegate.html#NSTextFieldDelegate">NSTextFieldDelegate</a></li><li><a href="_NSTextInput.html#NSTextInput">NSTextInput</a></li><li><a href="_NSTextViewDelegate.html#NSTextViewDelegate">NSTextViewDelegate</a></li><li><a href="_NSWindowDelegate.html#NSWindowDelegate">NSWindowDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSAffineTransformCategories.html#NSAffineTransform(GNUstep)">NSAffineTransform</a></li><li><a href="NSApplicationCategories.html#NSApplication(NSColorPanel)">NSApplication</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(AppKit)">NSAttributedString</a></li><li><a href="NSBitmapImageRepCategories.html#NSBitmapImageRep(GNUstepExtension)">NSBitmapImageRep</a></li><li><a href="NSBundleCategories.html#NSBundle(NSHelpManager)">NSBundle</a></li><li><a href="NSCellCategories.html#NSCell(PrivateMethods)">NSCell</a></li><li><a href="NSCoderCategories.html#NSCoder(NSCoderAdditions)">NSCoder</a></li><li><a href="NSColorCategories.html#NSColor(GSQuartz)">NSColor</a></li><li><a href="NSFontCategories.html#NSFont(GNUstep)">NSFont</a></li><li><a href="NSGraphicsContextCategories.html#NSGraphicsContext(GNUstep)">NSGraphicsContext</a></li><li><a href="NSImageCategories.html#NSImage(GSQuartz)">NSImage</a></li><li><a href="NSImageRepCategories.html#NSImageRep(GSQuartz)">NSImageRep</a></li><li><a href="NSImageViewCategories.html#NSImageView(GNUstep)">NSImageView</a></li><li><a href="NSLayoutManagerCategories.html#NSLayoutManager(drawing)">NSLayoutManager</a></li><li><a href="NSMenuCategories.html#NSMenu(GNUstepExtra)">NSMenu</a></li><li><a href="NSMenuItemCategories.html#NSMenuItem(GNUstepExtra)">NSMenuItem</a></li><li><a href="NSMutableAttributedStringCategories.html#NSMutableAttributedString(AppKit)">NSMutableAttributedString</a></li><li><a href="NSObjectCategories.html#NSObject(NSComboBoxCellDataSource)">NSObject</a></li><li><a href="NSPrinterCategories.html#NSPrinter(PPDParsing)">NSPrinter</a></li><li><a href="NSPrintOperationCategories.html#NSPrintOperation(Private)">NSPrintOperation</a></li><li><a href="NSPrintPanelCategories.html#NSPrintPanel(Private)">NSPrintPanel</a></li><li><a href="NSProgressIndicatorCategories.html#NSProgressIndicator(GNUstepExtensions)">NSProgressIndicator</a></li><li><a href="NSResponderCategories.html#NSResponder(OptionalActionMethods)">NSResponder</a></li><li><a href="NSSplitViewCategories.html#NSSplitView(GNUstepExtra)">NSSplitView</a></li><li><a href="NSStringCategories.html#NSString(NSStringDrawing)">NSString</a></li><li><a href="NSTableViewCategories.html#NSTableView(GNUPrivate)">NSTableView</a></li><li><a href="NSTabViewItemCategories.html#NSTabViewItem(GNUstep)">NSTabViewItem</a></li><li><a href="NSTextCategories.html#NSText(GNUstepExtensions)">NSText</a></li><li><a href="NSTextFieldCellCategories.html#NSTextFieldCell(PrivateMethods)">NSTextFieldCell</a></li><li><a href="NSTextStorageCategories.html#NSTextStorage(Scripting)">NSTextStorage</a></li><li><a href="NSTextViewCategories.html#NSTextView(GSTextViewSync)">NSTextView</a></li><li><a href="NSViewCategories.html#NSView(PrivateMethods)">NSView</a></li><li><a href="NSWindowCategories.html#NSWindow(GNUstepBackend)">NSWindow</a></li><li><a href="NSWorkspaceCategories.html#NSWorkspace(GNUstep)">NSWorkspace</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

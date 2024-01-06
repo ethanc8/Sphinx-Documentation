@@ -1,0 +1,1216 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui (Application Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSMatrix</h2>NSMatrix : <a href="NSControl.html#NSControl">NSControl</a> &lt;NSCoding&gt;<div class="meta">
+<p class="metadesc"><em>Matrix class for grouping controls</em></p><table><tr><th>Authors</th><td>Ovidiu Predescu </td></tr><tr><th>Declared in</th><td>AppKit/NSMatrix.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> TODO documentation </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="+[NSMatrix_cellClass]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(Class)</span><span class="selector"> cellClass </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell class used to create cells. By default it is a <a href="NSActionCell.html#NSActionCell">NSActionCell</a> class </p> <p> See Also:  <a href="NSMatrix.html#+[NSMatrix_setCellClass:]">+setCellClass:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSMatrix_setCellClass:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> setCellClass: </span><span class="parameter"><span class="type">(Class)</span><span class="arg">classId</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the cell class used to create cells to <var>classId</var>. By default it is a <a href="NSActionCell.html#NSActionCell">NSActionCell</a> class </p> <p> See Also:  <a href="NSMatrix.html#+[NSMatrix_setCellClass:]">+setCellClass:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_initWithFrame:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">frameRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Initializes and returns a <a href="NSMatrix.html#NSMatrix">NSMatrix</a> in frame <var>frameRect</var>. By default the matrix has no row and no column, the NSMatrix's mode is NSRadioModeMatrix and the cell class is a <a href="NSActionCell.html#NSActionCell">NSActionCell</a> class. </p> <p> See Also: <a href="NSMatrix.html#-[NSMatrix_initWithFrame:mode:cellClass:numberOfRows:numberOfColumns:]">-initWithFrame:mode:cellClass:numberOfRows:numberOfColumns:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_initWithFrame:mode:cellClass:numberOfRows:numberOfColumns:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">frameRect</span></span><span class="selector"> mode: </span><span class="parameter"><span class="type">(NSMatrixMode)</span><span class="arg">aMode</span></span><span class="selector"> cellClass: </span><span class="parameter"><span class="type">(Class)</span><span class="arg">classId</span></span><span class="selector"> numberOfRows: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">rowsHigh</span></span><span class="selector"> numberOfColumns: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">colsWide</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Initializes and returns a new <a href="NSMatrix.html#NSMatrix">NSMatrix</a> in the specified frame <var>frameRect</var>. The  NSMatrixMode  is specified by mode, the cell class used specified by <var>classId</var> and the number of rows and columns specified by <var>rowsHigh</var> and <var>colsWide</var> respectively </p> <p> See Also: <a href="NSMatrix.html#-[NSMatrix_initWithFrame:mode:prototype:numberOfRows:numberOfColumns:]">-initWithFrame:mode:prototype:numberOfRows:numberOfColumns:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_initWithFrame:mode:prototype:numberOfRows:numberOfColumns:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">frameRect</span></span><span class="selector"> mode: </span><span class="parameter"><span class="type">(NSMatrixMode)</span><span class="arg">aMode</span></span><span class="selector"> prototype: </span><span class="parameter"><span class="type">(<a href="NSCell.html#NSCell">NSCell</a> *)</span><span class="arg">aCell</span></span><span class="selector"> numberOfRows: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">rowsHigh</span></span><span class="selector"> numberOfColumns: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">colsWide</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Initializes and returns a new <a href="NSMatrix.html#NSMatrix">NSMatrix</a> in the specified frame <var>frameRect</var>. The  NSMatrixMode  is specified by mode, the cell used specified by <var>aCell</var> and the number of rows and columns specified by <var>rowsHigh</var> and <var>colsWide</var> respectively </p> <p> See Also: <a href="NSMatrix.html#-[NSMatrix_initWithFrame:mode:prototype:numberOfRows:numberOfColumns:]">-initWithFrame:mode:prototype:numberOfRows:numberOfColumns:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_mode]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSMatrixMode)</span><span class="selector"> mode </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the NSMatrix's mode. See  NSMatrixMode  for more informations. By default the mode is  NSRadioModeMatrix  . </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setMode:]">-setMode:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setMode:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMode: </span><span class="parameter"><span class="type">(NSMatrixMode)</span><span class="arg">aMode</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSMatrix's mode to <var>aMode</var>. See  NSMatrixMode  for more informations. By default the mode is  NSRadioModeMatrix  . </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setMode:]">-setMode:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_allowsEmptySelection]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> allowsEmptySelection </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the matrix should permit empty selections or should force one or mor cells to be selected at all times. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setAllowsEmptySelection:]">-setAllowsEmptySelection:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_isSelectionByRect]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isSelectionByRect </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setAllowsEmptySelection:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAllowsEmptySelection: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets a <var>flag</var> to indicate whether the matrix should permit empty selections or should force one or mor cells to be selected at all times. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_allowsEmptySelection]">-allowsEmptySelection</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setSelectionByRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setSelectionByRect: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_cellClass]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(Class)</span><span class="selector"> cellClass </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell class used by the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> when it creates new cells. The default cell class is a <a href="NSActionCell.html#NSActionCell">NSActionCell</a> class </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setCellClass:]">-setCellClass:</a>   <a href="NSMatrix.html#-[NSMatrix_setPrototype:]">-setPrototype:</a>   <a href="NSMatrix.html#-[NSMatrix_prototype]">-prototype</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_prototype]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> prototype </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the prototype cell used by the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> when it creates new cells. The default cell is <a href="NSActionCell.html#NSActionCell">NSActionCell</a> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_cellClass]">-cellClass</a>   <a href="NSMatrix.html#-[NSMatrix_setPrototype:]">-setPrototype:</a>   <a href="NSMatrix.html#-[NSMatrix_prototype]">-prototype</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setCellClass:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCellClass: </span><span class="parameter"><span class="type">(Class)</span><span class="arg">classId</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the cell class used by the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> when it creates new cells to <var>classId</var>. The default cell class is a <a href="NSActionCell.html#NSActionCell">NSActionCell</a> class </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_cellClass]">-cellClass</a>   <a href="NSMatrix.html#-[NSMatrix_setPrototype:]">-setPrototype:</a>   <a href="NSMatrix.html#-[NSMatrix_prototype]">-prototype</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setPrototype:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPrototype: </span><span class="parameter"><span class="type">(<a href="NSCell.html#NSCell">NSCell</a> *)</span><span class="arg">aCell</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the prototype cell used by the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> when it creates new cells to <var>aCell</var>. The default cell is <a href="NSActionCell.html#NSActionCell">NSActionCell</a> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_cellClass]">-cellClass</a>   <a href="NSMatrix.html#-[NSMatrix_setPrototype:]">-setPrototype:</a>   <a href="NSMatrix.html#-[NSMatrix_prototype]">-prototype</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_addColumn]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addColumn </span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts a new column after the current last column. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_insertColumn:withCells:]">-insertColumn:withCells:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_addColumnWithCells:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addColumnWithCells: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">cellArray</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts a new column of cells specified by <var>cellArray</var> after the current last column. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_insertColumn:withCells:]">-insertColumn:withCells:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_addRow]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addRow </span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts a new row after the current last row. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_insertRow:withCells:]">-insertRow:withCells:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_addRowWithCells:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addRowWithCells: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">cellArray</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts a new row of cells specified by <var>cellArray</var> after the current last row. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_insertRow:withCells:]">-insertRow:withCells:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_cellFrameAtRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> cellFrameAtRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the rectangle of the cell at <var>row</var> <var>row</var> and <var>column</var> <var>column</var> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_cellSize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> cellSize </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the size of the NSMatrix's cells </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setCellSize:]">-setCellSize:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_getNumberOfRows:columns:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getNumberOfRows: </span><span class="parameter"><span class="type">(NSInteger *)</span><span class="arg">rowCount</span></span><span class="selector"> columns: </span><span class="parameter"><span class="type">(NSInteger *)</span><span class="arg">columnCount</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Gets the number of rows and columns of the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_numberOfColumns]">-numberOfColumns</a>   <a href="NSMatrix.html#-[NSMatrix_numberOfRows]">-numberOfRows</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_insertColumn:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> insertColumn: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts a new <var>column</var> at the specified <var>column</var> <var>column</var>. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_insertColumn:withCells:]">-insertColumn:withCells:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_insertColumn:withCells:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> insertColumn: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span><span class="selector"> withCells: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">cellArray</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts a new <var>column</var> of cells ( specified by <var>cellArray</var>) at the specified <var>column</var> <var>column</var>. This method can grows the matrix as necessay if needed </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_insertColumn:]">-insertColumn:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_insertRow:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> insertRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts a new <var>row</var> at index <var>row</var>. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_insertRow:withCells:]">-insertRow:withCells:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_insertRow:withCells:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> insertRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> withCells: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">cellArray</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts a new <var>row</var> of cells (specified by <var>cellArray</var>) at the specified <var>row</var> <var>row</var>. This method can grows the matrix as necessay if needed </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_insertColumn:]">-insertColumn:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_intercellSpacing]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> intercellSpacing </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the space size between cells. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setIntercellSpacing:]">-setIntercellSpacing:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_makeCellAtRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSCell.html#NSCell">NSCell</a> *)</span><span class="selector"> makeCellAtRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Makes and returns new cell at <var>row</var> <var>row</var> and <var>column</var> <var>column</var>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_putCell:atRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> putCell: </span><span class="parameter"><span class="type">(<a href="NSCell.html#NSCell">NSCell</a> *)</span><span class="arg">newCell</span></span><span class="selector"> atRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Replaces the NSMatrix's cell at <var>row</var> <var>row</var> and <var>column</var> <var>column</var> by <var>newCell</var> and mark for display the new cell. Raises a NSRangeException if the <var>row</var> or <var>column</var> are out of range. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_removeColumn:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeColumn: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Removes the NSMatrix's <var>column</var> at index <var>column</var> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_removeRow:]">-removeRow:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_removeRow:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> removeRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Removes the NSMatrix's <var>row</var> at index <var>row</var> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_removeColumn:]">-removeColumn:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_renewRows:columns:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> renewRows: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">newRows</span></span><span class="selector"> columns: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">newColumns</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setCellSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCellSize: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">aSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setIntercellSpacing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setIntercellSpacing: </span><span class="parameter"><span class="type">(NSSize)</span><span class="arg">aSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the space size between cells to <var>aSize</var> and resizes the matrix to fits the new cells spacing. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_intercellSpacing]">-intercellSpacing</a>   <a href="NSMatrix.html#-[NSMatrix_sizeToCells]">-sizeToCells</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_sortUsingFunction:context:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sortUsingFunction: </span><span class="parameter"><span class="type">(NSComparisonResult( *)(id element1,id element2,void*userData))</span><span class="arg">comparator</span></span><span class="selector"> context: </span><span class="parameter"><span class="type">(void*)</span><span class="arg">context</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_sortUsingSelector:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sortUsingSelector: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">comparator</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_numberOfColumns]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> numberOfColumns </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the number of columns of the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_numberOfRows]">-numberOfRows</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_numberOfRows]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> numberOfRows </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the number of rows of the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_numberOfColumns]">-numberOfColumns</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_getRow:column:forPoint:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> getRow: </span><span class="parameter"><span class="type">(NSInteger *)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger *)</span><span class="arg">column</span></span><span class="selector"> forPoint: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">aPoint</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Gets the <var>row</var> and the <var>column</var> of the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> correponding to the specified NSPoint <var>aPoint</var>. Returns <var>YES</var> if <var>aPoint</var> is within the <a href="NSMatrix.html#NSMatrix">NSMatrix</a>, <var>NO</var> otherwise </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_getRow:column:ofCell:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> getRow: </span><span class="parameter"><span class="type">(NSInteger *)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger *)</span><span class="arg">column</span></span><span class="selector"> ofCell: </span><span class="parameter"><span class="type">(<a href="NSCell.html#NSCell">NSCell</a> *)</span><span class="arg">aCell</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Gets the <var>row</var> and the <var>column</var> of the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> correponding to the specified <a href="NSCell.html#NSCell">NSCell</a> <var>aCell</var>. Returns <var>YES</var> if <var>aCell</var> is in the <a href="NSMatrix.html#NSMatrix">NSMatrix</a>, <var>NO</var> otherwise </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setState:atRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setState: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">value</span></span><span class="selector"> atRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the state of the cell at <var>row</var> <var>row</var> and <var>column</var> to <var>value</var>. If the NSMatrix's mode is NSRadioModeMatrix it deselects the cell currently selected if needed. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_deselectAllCells]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> deselectAllCells </span></span></dt>
+<dd><div class="methodDescription">
+<p> Deselects all NSMatrix's cells. Does nothing if the NSMatrix's mode is NSRadioModeMatrix and if it does not allows empty selection. Except for the case, when there are no cells left at all. Then the selection is always cleared. </p> <p> See Also: <a href="NSMatrix.html#-[NSMatrix_mode]">-mode</a>  <a href="NSMatrix.html#-[NSMatrix_allowsEmptySelection]">-allowsEmptySelection</a>   -setNeedsDisplayInRect:  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_deselectSelectedCell]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> deselectSelectedCell </span></span></dt>
+<dd><div class="methodDescription">
+<p> Deselects the selected cell.Does nothing if the NSMatrix's mode is NSRadioModeMatrix and if it does not allows empty selection </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectAll:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> selectAll: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Selects all the cells and marks self for display. Does nothing if the NSMatrix's mode is NSRadioModeMatrix </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_selectCellAtRow:column:]">-selectCellAtRow:column:</a>   -selectCell:  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectCellAtRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> selectCellAtRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Selects the cell and the text inside at <var>row</var> <var>row</var> and <var>column</var> <var>column</var>. If <var>row</var> or <var>column</var> is -1 it deselects all the cells. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_deselectSelectedCell]">-deselectSelectedCell</a>   <a href="NSMatrix.html#-[NSMatrix_selectTextAtRow:column:]">-selectTextAtRow:column:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectCellWithTag:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> selectCellWithTag: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">anInt</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Selects the cell (and the text inside) with tag <var>anInt</var>. Return <var>YES</var> if the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> contains a cell with tag <var>anInt</var>, <var>NO</var> otherwise. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_deselectSelectedCell]">-deselectSelectedCell</a>   <a href="NSMatrix.html#-[NSMatrix_selectTextAtRow:column:]">-selectTextAtRow:column:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectedCell]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> selectedCell </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectedCells]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> selectedCells </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns an array of the selected cells </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectedColumn]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> selectedColumn </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the column number of the selected cell or -1 if no cell is selected </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_selectedRow]">-selectedRow</a>   <a href="NSMatrix.html#-[NSMatrix_selectedCell]">-selectedCell</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectedRow]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> selectedRow </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the row number of the selected cell or -1 if no cell is selected </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_selectedColumn]">-selectedColumn</a>   <a href="NSMatrix.html#-[NSMatrix_selectedCell]">-selectedCell</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setSelectionFrom:to:anchor:highlight:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setSelectionFrom: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">startPos</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">endPos</span></span><span class="selector"> anchor: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">anchorPos</span></span><span class="selector"> highlight: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_cellAtRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> cellAtRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell at <var>row</var> <var>row</var> and <var>column</var> <var>column</var> Returns <var>nil</var> if the <var>row</var> or <var>column</var> are out of range </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_cellWithTag:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> cellWithTag: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">anInt</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell with tag <var>anInt</var> Returns <var>nil</var> if no cell has a tag <var>anInt</var> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_cells]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> cells </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns an array of the NSMatrix's cells </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_backgroundColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> backgroundColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the background color The background color is used to display the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> color (the space between the cells), not the cells (uses  <a href="NSMatrix.html#-[NSMatrix_setCellBackgroundColor:]">-setCellBackgroundColor:</a>  for that) </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setBackgroundColor:]">-setBackgroundColor:</a>   <a href="NSMatrix.html#-[NSMatrix_setCellBackgroundColor:]">-setCellBackgroundColor:</a>   <a href="NSMatrix.html#-[NSMatrix_cellBackgroundColor]">-cellBackgroundColor</a>   <a href="NSMatrix.html#-[NSMatrix_drawsBackground]">-drawsBackground</a>   <a href="NSMatrix.html#-[NSMatrix_setDrawsBackground:]">-setDrawsBackground:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_cellBackgroundColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> cellBackgroundColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the background color of the NSMatrix's cells. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setCellBackgroundColor:]">-setCellBackgroundColor:</a>   <a href="NSMatrix.html#-[NSMatrix_backgroundColor]">-backgroundColor</a>   <a href="NSMatrix.html#-[NSMatrix_setBackgroundColor:]">-setBackgroundColor:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_drawsBackground]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> drawsBackground </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> draws its background </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setDrawsBackground:]">-setDrawsBackground:</a>   <a href="NSMatrix.html#-[NSMatrix_drawsCellBackground]">-drawsCellBackground</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_drawsCellBackground]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> drawsCellBackground </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> draws cells backgrounds </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setDrawsCellBackground:]">-setDrawsCellBackground:</a>   <a href="NSMatrix.html#-[NSMatrix_drawsBackground]">-drawsBackground</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setBackgroundColor:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBackgroundColor: </span><span class="parameter"><span class="type">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="arg">aColor</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the background color to <var>aColor</var> and marks self for display. The background color is used to display the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> color (the space between the cells), not the cells (uses  <a href="NSMatrix.html#-[NSMatrix_setCellBackgroundColor:]">-setCellBackgroundColor:</a>  for that) </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_backgroundColor]">-backgroundColor</a>   <a href="NSMatrix.html#-[NSMatrix_setCellBackgroundColor:]">-setCellBackgroundColor:</a>   <a href="NSMatrix.html#-[NSMatrix_cellBackgroundColor]">-cellBackgroundColor</a>   <a href="NSMatrix.html#-[NSMatrix_drawsBackground]">-drawsBackground</a>   <a href="NSMatrix.html#-[NSMatrix_setDrawsBackground:]">-setDrawsBackground:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setCellBackgroundColor:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCellBackgroundColor: </span><span class="parameter"><span class="type">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="arg">aColor</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the background color of the NSMatrix's cells to <var>aColor</var> and marks self for display. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_cellBackgroundColor]">-cellBackgroundColor</a>   <a href="NSMatrix.html#-[NSMatrix_backgroundColor]">-backgroundColor</a>   <a href="NSMatrix.html#-[NSMatrix_setBackgroundColor:]">-setBackgroundColor:</a>   <a href="NSMatrix.html#-[NSMatrix_setDrawsCellBackground:]">-setDrawsCellBackground:</a>   <a href="NSMatrix.html#-[NSMatrix_drawsCellBackground]">-drawsCellBackground</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setDrawsBackground:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDrawsBackground: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> draws its background and marks self for display. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_drawsBackground]">-drawsBackground</a>   <a href="NSMatrix.html#-[NSMatrix_setDrawsCellBackground:]">-setDrawsCellBackground:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setDrawsCellBackground:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDrawsCellBackground: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> draws cells backgrounds and marks self for display </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_drawsCellBackground]">-drawsCellBackground</a>   <a href="NSMatrix.html#-[NSMatrix_setDrawsBackground:]">-setDrawsBackground:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectText:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> selectText: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_selectTextAtRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> selectTextAtRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Select the text of the cell at <var>row</var> <var>row</var> and <var>column</var> <var>column</var>. The cell is selected if and only if the cell is selectable (MacOSX select it if the cell is editable). This methods returns the selected cell if exists and selectable, <var>nil</var> otherwise </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_textDidBeginEditing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> textDidBeginEditing: </span><span class="parameter"><span class="type">(NSNotification *)</span><span class="arg">aNotification</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Invokes when the text cell starts to be editing.This methods posts a NSControlTextDidBeginEditingNotification with a dictionary containing the NSFieldEditor as user info </p> <p> See Also: [NSNotificationCenter -postNotificationName:object:userInfo:] </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_textDidChange:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> textDidChange: </span><span class="parameter"><span class="type">(NSNotification *)</span><span class="arg">aNotification</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Invokes when the text cell is changed. This methods posts a NSControlTextDidChangeNotification with a dictionary containing the NSFieldEditor as user info </p> <p> See Also: [NSNotificationCenter -postNotificationName:object:userInfo:] </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_textDidEndEditing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> textDidEndEditing: </span><span class="parameter"><span class="type">(NSNotification *)</span><span class="arg">aNotification</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Invokes when the text cell is changed. This methods posts a NSControlTextDidEndEditingNotification a dictionary containing the NSFieldEditor as user info </p> <p> See Also: [NSNotificationCenter -postNotificationName:object:userInfo:] </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_textShouldBeginEditing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> textShouldBeginEditing: </span><span class="parameter"><span class="type">(<a href="NSText.html#NSText">NSText</a> *)</span><span class="arg">aTextObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Asks to the delegate (if it implements -control:textShouldBeginEditing:) if the text should be edit. Returns <var>YES</var> if the delegate does not implement this method </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_textShouldEndEditing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> textShouldEndEditing: </span><span class="parameter"><span class="type">(<a href="NSText.html#NSText">NSText</a> *)</span><span class="arg">aTextObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_keyCell]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> keyCell </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setKeyCell:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setKeyCell: </span><span class="parameter"><span class="type">(<a href="NSCell.html#NSCell">NSCell</a> *)</span><span class="arg">aCell</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_nextText]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> nextText </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the next key view </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setNextText:]">-setNextText:</a>   [<a href="NSView.html#NSView">NSView</a> -nextKeyView]  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_previousText]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> previousText </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the previous key view </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setPreviousText:]">-setPreviousText:</a>   [<a href="NSView.html#NSView">NSView</a> -previousKeyView]  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setNextText:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNextText: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the next key view to <var>anObject</var> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_nextText]">-nextText</a>  [NSView-setNextKeyView: </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setPreviousText:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setPreviousText: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the previous key view to <var>anObject</var> </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_previousText]">-previousText</a>  [NSView-setPreviousKeyView: </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_tabKeyTraversesCells]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> tabKeyTraversesCells </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setTabKeyTraversesCells:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTabKeyTraversesCells: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setDelegate:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDelegate: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the delegate to <var>anObject</var>. The delegate is used when editing a cell </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_delegate]">-delegate</a>   <a href="NSMatrix.html#-[NSMatrix_textDidEndEditing:]">-textDidEndEditing:</a>   <a href="NSMatrix.html#-[NSMatrix_textDidBeginEditing:]">-textDidBeginEditing:</a>   <a href="NSMatrix.html#-[NSMatrix_textDidChange:]">-textDidChange:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_delegate]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> delegate </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the NSMatrix's delegate. delegate is used when editing a cell </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setDelegate:]">-setDelegate:</a>   <a href="NSMatrix.html#-[NSMatrix_textDidEndEditing:]">-textDidEndEditing:</a>   <a href="NSMatrix.html#-[NSMatrix_textDidBeginEditing:]">-textDidBeginEditing:</a>   <a href="NSMatrix.html#-[NSMatrix_textDidChange:]">-textDidChange:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_autosizesCells]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> autosizesCells </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> resizes its cells automatically </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_autosizesCells]">-autosizesCells</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setAutosizesCells:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAutosizesCells: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> resizes its cells automatically </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_autosizesCells]">-autosizesCells</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setValidateSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setValidateSize: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_sizeToCells]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sizeToCells </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_isAutoscroll]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isAutoscroll </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_scrollCellToVisibleAtRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> scrollCellToVisibleAtRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Scrolls the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> to make the cell at <var>row</var> <var>row</var> and <var>column</var> <var>column</var> visible </p> <p> See Also:  -scrollRectToVisible:   <a href="NSMatrix.html#-[NSMatrix_cellFrameAtRow:column:]">-cellFrameAtRow:column:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setAutoscroll:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAutoscroll: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setScrollable:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setScrollable: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_drawCellAtRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> drawCellAtRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Draws the cell at <var>row</var> <var>row</var> and <var>column</var> <var>column</var> </p> <p> See Also: [<a href="NSCell.html#NSCell">NSCell</a> -drawWithFrame:inView:] <a href="NSMatrix.html#-[NSMatrix_setDrawsCellBackground:]">-setDrawsCellBackground:</a> <a href="NSMatrix.html#-[NSMatrix_drawsCellBackground]">-drawsCellBackground</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_highlightCell:atRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> highlightCell: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span><span class="selector"> atRow: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> (Un)Highlights the cell (if exists) at <var>row</var> at <var>row</var> <var>row</var> and <var>column</var> <var>column</var>. and maks the cell rect for display. </p> <p> See Also:  -setNeedsDisplayInRect:   [<a href="NSCell.html#NSCell">NSCell</a> -setHighlighted:]  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setAction:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAction: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+Sets the message to send when a single click occurs. <br></br><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_action]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(SEL)</span><span class="selector"> action </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setDoubleAction:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDoubleAction: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the message to send when a <strong>double</strong> click occurs. NB: In GNUstep the following method does *not* set ignoresMultiClick to <var>NO</var> as in the MacOS-X spec. It simply sets the doubleAction, as in OpenStep spec. </p> <p>  <a href="NSMatrix.html#-[NSMatrix_doubleAction]">-doubleAction</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_doubleAction]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(SEL)</span><span class="selector"> doubleAction </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the action method, used when the user <strong>double</strong> clicks </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setDoubleAction:]">-setDoubleAction:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setErrorAction:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setErrorAction: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the error action method to <var>aSelector</var> . This error method is used when in  <a href="NSMatrix.html#-[NSMatrix_textShouldEndEditing:]">-textShouldEndEditing:</a>  if the selected cell doe not have a valid text object </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_errorAction]">-errorAction</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_errorAction]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(SEL)</span><span class="selector"> errorAction </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the error action method to <var>aSelector</var> This error method is used when in  <a href="NSMatrix.html#-[NSMatrix_textShouldEndEditing:]">-textShouldEndEditing:</a>  if the selected cell doe not have a valid text object </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setErrorAction:]">-setErrorAction:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_sendAction]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> sendAction </span></span></dt>
+<dd><div class="methodDescription">
+<p> Sends the cell action, if a NSMatrix's cell is selected and enabled, sends the <a href="NSMatrix.html#NSMatrix">NSMatrix</a> action otherwise. Returns <var>YES</var> if the action is succesfully sent. <var>NO</var> if a cell is selected but not enabled or if an action can not be sent. </p> <p> See Also:  -sendAction:to:   <a href="NSMatrix.html#-[NSMatrix_selectedCell]">-selectedCell</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_sendAction:to:forAllCells:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sendAction: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span><span class="selector"> forAllCells: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_sendDoubleAction]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sendDoubleAction </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_acceptsFirstMouse:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> acceptsFirstMouse: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns <var>NO</var> if the NSMatrix's mode is  NSListModeMatrix  , <var>YES</var> otherwise. </p> <p> See Also:  <a href="NSMatrix.html#-[NSMatrix_setMode:]">-setMode:</a>   <a href="NSMatrix.html#-[NSMatrix_mode]">-mode</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_mouseDown:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> mouseDown: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_mouseDownFlags]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> mouseDownFlags </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_performKeyEquivalent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> performKeyEquivalent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Simulates a mouse click for the first cell with the corresponding key Equivalent. </p> <p> See Also:  [<a href="NSCell.html#NSCell">NSCell</a> -keyEquivalent]  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_resetCursorRects]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> resetCursorRects </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_toolTipForCell:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> toolTipForCell: </span><span class="parameter"><span class="type">(<a href="NSCell.html#NSCell">NSCell</a> *)</span><span class="arg">cell</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSMatrix_setToolTip:forCell:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setToolTip: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">toolTipString</span></span><span class="selector"> forCell: </span><span class="parameter"><span class="type">(<a href="NSCell.html#NSCell">NSCell</a> *)</span><span class="arg">cell</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui (Application Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSActionCell.html#NSActionCell">NSActionCell</a></li><li><a href="NSBezierPath.html#NSBezierPath">NSBezierPath</a></li><li><a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a></li><li><a href="NSBox.html#NSBox">NSBox</a></li><li><a href="NSBrowser.html#NSBrowser">NSBrowser</a></li><li><a href="NSBrowserCell.html#NSBrowserCell">NSBrowserCell</a></li><li><a href="NSButton.html#NSButton">NSButton</a></li><li><a href="NSButtonCell.html#NSButtonCell">NSButtonCell</a></li><li><a href="NSCachedImageRep.html#NSCachedImageRep">NSCachedImageRep</a></li><li><a href="NSCell.html#NSCell">NSCell</a></li><li><a href="NSClipView.html#NSClipView">NSClipView</a></li><li><a href="NSColor.html#NSColor">NSColor</a></li><li><a href="NSColorList.html#NSColorList">NSColorList</a></li><li><a href="NSColorPanel.html#NSColorPanel">NSColorPanel</a></li><li><a href="NSColorPicker.html#NSColorPicker">NSColorPicker</a></li><li><a href="NSColorWell.html#NSColorWell">NSColorWell</a></li><li><a href="NSComboBox.html#NSComboBox">NSComboBox</a></li><li><a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a></li><li><a href="NSControl.html#NSControl">NSControl</a></li><li><a href="NSCursor.html#NSCursor">NSCursor</a></li><li><a href="NSCustomImageRep.html#NSCustomImageRep">NSCustomImageRep</a></li><li><a href="NSDataLink.html#NSDataLink">NSDataLink</a></li><li><a href="NSDataLinkManager.html#NSDataLinkManager">NSDataLinkManager</a></li><li><a href="NSDataLinkPanel.html#NSDataLinkPanel">NSDataLinkPanel</a></li><li><a href="NSDocument.html#NSDocument">NSDocument</a></li><li><a href="NSDocumentController.html#NSDocumentController">NSDocumentController</a></li><li><a href="NSDrawer.html#NSDrawer">NSDrawer</a></li><li><a href="NSDrawerDelegate.html#NSDrawerDelegate">NSDrawerDelegate</a></li><li><a href="NSEPSImageRep.html#NSEPSImageRep">NSEPSImageRep</a></li><li><a href="NSEvent.html#NSEvent">NSEvent</a></li><li><a href="NSFont.html#NSFont">NSFont</a></li><li><a href="NSFontManager.html#NSFontManager">NSFontManager</a></li><li><a href="NSFontPanel.html#NSFontPanel">NSFontPanel</a></li><li><a href="NSForm.html#NSForm">NSForm</a></li><li><a href="NSFormCell.html#NSFormCell">NSFormCell</a></li><li><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a></li><li><a href="NSHelpManager.html#NSHelpManager">NSHelpManager</a></li><li><a href="NSHelpPanel.html#NSHelpPanel">NSHelpPanel</a></li><li><a href="NSImage.html#NSImage">NSImage</a></li><li><a href="NSImageCell.html#NSImageCell">NSImageCell</a></li><li><a href="NSImageRep.html#NSImageRep">NSImageRep</a></li><li><a href="NSImageView.html#NSImageView">NSImageView</a></li><li><a href="NSInputManager.html#NSInputManager">NSInputManager</a></li><li><a href="NSInputServer.html#NSInputServer">NSInputServer</a></li><li><a href="NSLayoutManager.html#NSLayoutManager">NSLayoutManager</a></li><li><a href="NSMatrix.html#NSMatrix">NSMatrix</a></li><li><a href="NSMenu.html#NSMenu">NSMenu</a></li><li><a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a></li><li><a href="NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="NSMutableParagraphStyle.html#NSMutableParagraphStyle">NSMutableParagraphStyle</a></li><li><a href="NSNib.html#NSNib">NSNib</a></li><li><a href="NSOpenGLContext.html#NSOpenGLContext">NSOpenGLContext</a></li><li><a href="NSOpenGLPixelFormat.html#NSOpenGLPixelFormat">NSOpenGLPixelFormat</a></li><li><a href="NSOpenGLView.html#NSOpenGLView">NSOpenGLView</a></li><li><a href="NSOpenPanel.html#NSOpenPanel">NSOpenPanel</a></li><li><a href="NSOutlineView.html#NSOutlineView">NSOutlineView</a></li><li><a href="NSPageLayout.html#NSPageLayout">NSPageLayout</a></li><li><a href="NSPanel.html#NSPanel">NSPanel</a></li><li><a href="NSParagraphStyle.html#NSParagraphStyle">NSParagraphStyle</a></li><li><a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a></li><li><a href="NSPopUpButtonCell.html#NSPopUpButtonCell">NSPopUpButtonCell</a></li><li><a href="NSPrinter.html#NSPrinter">NSPrinter</a></li><li><a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a></li><li><a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a></li><li><a href="NSPrintPanel.html#NSPrintPanel">NSPrintPanel</a></li><li><a href="NSProgressIndicator.html#NSProgressIndicator">NSProgressIndicator</a></li><li><a href="NSResponder.html#NSResponder">NSResponder</a></li><li><a href="NSRulerMarker.html#NSRulerMarker">NSRulerMarker</a></li><li><a href="NSRulerView.html#NSRulerView">NSRulerView</a></li><li><a href="NSSavePanel.html#NSSavePanel">NSSavePanel</a></li><li><a href="NSScreen.html#NSScreen">NSScreen</a></li><li><a href="NSScroller.html#NSScroller">NSScroller</a></li><li><a href="NSScrollView.html#NSScrollView">NSScrollView</a></li><li><a href="NSSecureTextField.html#NSSecureTextField">NSSecureTextField</a></li><li><a href="NSSecureTextFieldCell.html#NSSecureTextFieldCell">NSSecureTextFieldCell</a></li><li><a href="NSSelection.html#NSSelection">NSSelection</a></li><li><a href="NSSlider.html#NSSlider">NSSlider</a></li><li><a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a></li><li><a href="NSSound.html#NSSound">NSSound</a></li><li><a href="NSSpellChecker.html#NSSpellChecker">NSSpellChecker</a></li><li><a href="NSSplitView.html#NSSplitView">NSSplitView</a></li><li><a href="NSStepper.html#NSStepper">NSStepper</a></li><li><a href="NSStepperCell.html#NSStepperCell">NSStepperCell</a></li><li><a href="NSTableColumn.html#NSTableColumn">NSTableColumn</a></li><li><a href="NSTableHeaderCell.html#NSTableHeaderCell">NSTableHeaderCell</a></li><li><a href="NSTableHeaderView.html#NSTableHeaderView">NSTableHeaderView</a></li><li><a href="NSTableView.html#NSTableView">NSTableView</a></li><li><a href="NSTabView.html#NSTabView">NSTabView</a></li><li><a href="NSTabViewItem.html#NSTabViewItem">NSTabViewItem</a></li><li><a href="NSText.html#NSText">NSText</a></li><li><a href="NSTextAttachment.html#NSTextAttachment">NSTextAttachment</a></li><li><a href="NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="NSTextContainer.html#NSTextContainer">NSTextContainer</a></li><li><a href="NSTextField.html#NSTextField">NSTextField</a></li><li><a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a></li><li><a href="NSTextStorage.html#NSTextStorage">NSTextStorage</a></li><li><a href="NSTextTab.html#NSTextTab">NSTextTab</a></li><li><a href="NSTextView.html#NSTextView">NSTextView</a></li><li><a href="NSToolbar.html#NSToolbar">NSToolbar</a></li><li><a href="NSToolbarItem.html#NSToolbarItem">NSToolbarItem</a></li><li><a href="NSView.html#NSView">NSView</a></li><li><a href="NSWindow.html#NSWindow">NSWindow</a></li><li><a href="NSWindowController.html#NSWindowController">NSWindowController</a></li><li><a href="NSWorkspace.html#NSWorkspace">NSWorkspace</a></li></ul></div>
+
+<ul>
+    <li><a href="NSPasteboard.html">NSPasteboard (buggy documentation)</a></li>
+    <li><a href="NSApplication.html">NSApplication (buggy documentation)</a></li>
+</ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSImageDelegateProtocol.html#GSImageDelegateProtocol">GSImageDelegateProtocol</a></li><li><a href="_NSComboBoxCellDataSource.html#NSComboBoxCellDataSource">NSComboBoxCellDataSource</a></li><li><a href="_NSControlTextEditingDelegate.html#NSControlTextEditingDelegate">NSControlTextEditingDelegate</a></li><li><a href="_NSInputServerMouseTracker.html#NSInputServerMouseTracker">NSInputServerMouseTracker</a></li><li><a href="_NSInputServiceProvider.html#NSInputServiceProvider">NSInputServiceProvider</a></li><li><a href="_NSMatrixDelegate.html#NSMatrixDelegate">NSMatrixDelegate</a></li><li><a href="_NSMenuDelegate.html#NSMenuDelegate">NSMenuDelegate</a></li><li><a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="_NSMenuValidation.html#NSMenuValidation">NSMenuValidation</a></li><li><a href="_NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="_NSOpenSavePanelDelegate.html#NSOpenSavePanelDelegate">NSOpenSavePanelDelegate</a></li><li><a href="_NSOutlineViewDataSource.html#NSOutlineViewDataSource">NSOutlineViewDataSource</a></li><li><a href="_NSOutlineViewDelegate.html#NSOutlineViewDelegate">NSOutlineViewDelegate</a></li><li><a href="_NSPrintPanelAccessorizing.html#NSPrintPanelAccessorizing">NSPrintPanelAccessorizing</a></li><li><a href="_NSTableViewDataSource.html#NSTableViewDataSource">NSTableViewDataSource</a></li><li><a href="_NSTableViewDelegate.html#NSTableViewDelegate">NSTableViewDelegate</a></li><li><a href="_NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="_NSTextFieldDelegate.html#NSTextFieldDelegate">NSTextFieldDelegate</a></li><li><a href="_NSTextInput.html#NSTextInput">NSTextInput</a></li><li><a href="_NSTextViewDelegate.html#NSTextViewDelegate">NSTextViewDelegate</a></li><li><a href="_NSWindowDelegate.html#NSWindowDelegate">NSWindowDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSAffineTransformCategories.html#NSAffineTransform(GNUstep)">NSAffineTransform</a></li><li><a href="NSApplicationCategories.html#NSApplication(NSColorPanel)">NSApplication</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(AppKit)">NSAttributedString</a></li><li><a href="NSBitmapImageRepCategories.html#NSBitmapImageRep(GNUstepExtension)">NSBitmapImageRep</a></li><li><a href="NSBundleCategories.html#NSBundle(NSHelpManager)">NSBundle</a></li><li><a href="NSCellCategories.html#NSCell(PrivateMethods)">NSCell</a></li><li><a href="NSCoderCategories.html#NSCoder(NSCoderAdditions)">NSCoder</a></li><li><a href="NSColorCategories.html#NSColor(GSQuartz)">NSColor</a></li><li><a href="NSFontCategories.html#NSFont(GNUstep)">NSFont</a></li><li><a href="NSGraphicsContextCategories.html#NSGraphicsContext(GNUstep)">NSGraphicsContext</a></li><li><a href="NSImageCategories.html#NSImage(GSQuartz)">NSImage</a></li><li><a href="NSImageRepCategories.html#NSImageRep(GSQuartz)">NSImageRep</a></li><li><a href="NSImageViewCategories.html#NSImageView(GNUstep)">NSImageView</a></li><li><a href="NSLayoutManagerCategories.html#NSLayoutManager(drawing)">NSLayoutManager</a></li><li><a href="NSMenuCategories.html#NSMenu(GNUstepExtra)">NSMenu</a></li><li><a href="NSMenuItemCategories.html#NSMenuItem(GNUstepExtra)">NSMenuItem</a></li><li><a href="NSMutableAttributedStringCategories.html#NSMutableAttributedString(AppKit)">NSMutableAttributedString</a></li><li><a href="NSObjectCategories.html#NSObject(NSComboBoxCellDataSource)">NSObject</a></li><li><a href="NSPrinterCategories.html#NSPrinter(PPDParsing)">NSPrinter</a></li><li><a href="NSPrintOperationCategories.html#NSPrintOperation(Private)">NSPrintOperation</a></li><li><a href="NSPrintPanelCategories.html#NSPrintPanel(Private)">NSPrintPanel</a></li><li><a href="NSProgressIndicatorCategories.html#NSProgressIndicator(GNUstepExtensions)">NSProgressIndicator</a></li><li><a href="NSResponderCategories.html#NSResponder(OptionalActionMethods)">NSResponder</a></li><li><a href="NSSplitViewCategories.html#NSSplitView(GNUstepExtra)">NSSplitView</a></li><li><a href="NSStringCategories.html#NSString(NSStringDrawing)">NSString</a></li><li><a href="NSTableViewCategories.html#NSTableView(GNUPrivate)">NSTableView</a></li><li><a href="NSTabViewItemCategories.html#NSTabViewItem(GNUstep)">NSTabViewItem</a></li><li><a href="NSTextCategories.html#NSText(GNUstepExtensions)">NSText</a></li><li><a href="NSTextFieldCellCategories.html#NSTextFieldCell(PrivateMethods)">NSTextFieldCell</a></li><li><a href="NSTextStorageCategories.html#NSTextStorage(Scripting)">NSTextStorage</a></li><li><a href="NSTextViewCategories.html#NSTextView(GSTextViewSync)">NSTextView</a></li><li><a href="NSViewCategories.html#NSView(PrivateMethods)">NSView</a></li><li><a href="NSWindowCategories.html#NSWindow(GNUstepBackend)">NSWindow</a></li><li><a href="NSWorkspaceCategories.html#NSWorkspace(GNUstep)">NSWorkspace</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

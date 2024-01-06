@@ -1,0 +1,13 @@
+libobjc2/dependencies: \
+	../Headers/blocks_runtime.h \
+	../Headers/objc-auto.h \
+	../Headers/encoding.h \
+	../Headers/slot.h \
+	../Headers/toydispatch.h \
+	../Headers/objc-class.h \
+	../Headers/message.h \
+	../Headers/runtime.h \
+	../Headers/developer.h \
+	../Headers/capabilities.h \
+	../Headers/objc-arc.h \
+	../Headers/hooks.h

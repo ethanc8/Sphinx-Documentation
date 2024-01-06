@@ -1,0 +1,1966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcCommand documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcCommand">EcCommand documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the EcCommand class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the LaunchInfo class</a>
+        </li>
+        <li>
+          <a href="#003000000000">EcCommand types</a>
+        </li>
+        <li>
+          <a href="#004000000000">EcCommand constants</a>
+        </li>
+        <li>
+          <a href="#005000000000">EcCommand variables</a>
+        </li>
+        <li>
+          <a href="#006000000000">EcCommand functions</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the EcCommand class
+      </a></h1>
+    <h2><a name="class$EcCommand">EcCommand</a> : <a rel="gsdoc" href="EcProcess.html#class$EcProcess">EcProcess</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcCommand.m</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="EcProcess.html#protocol$(Command)">Command</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_EcCommand_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-_housekeeping$">-_housekeeping:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-_terminate$">-_terminate:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-alarmCode$procName$addText$">-alarmCode:procName:addText:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-auditState$reason$">-auditState:reason:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-clear$">-clear:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-clearAll$addText$">-clearAll:addText:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-clearCode$procName$addText$">-clearCode:procName:addText:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-cmdGnip$sequence$extra$">-cmdGnip:sequence:extra:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-cmdPing$sequence$extra$">-cmdPing:sequence:extra:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-cmdQuit$">-cmdQuit:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-command$to$from$">-command:to:from:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-configurationFor$">-configurationFor:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-connection$shouldMakeNewConnection$">-connection:shouldMakeNewConnection:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-connectionBecameInvalid$">-connectionBecameInvalid:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-environment">-environment</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-findAll$byAbbreviation$">-findAll:byAbbreviation:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-findIn$byAbbreviation$">-findIn:byAbbreviation:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-findIn$byName$">-findIn:byName:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-findIn$byObject$">-findIn:byObject:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-host">-host</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-housekeeping$">-housekeeping:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-hungRestart$">-hungRestart:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-information$from$to$type$">-information:from:to:type:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-information$from$type$">-information:from:type:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-killAll">-killAll</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-logChange$for$">-logChange:for:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-logFile">-logFile</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-logMessage$type$for$">-logMessage:type:for:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-logMessage$type$name$">-logMessage:type:name:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-makeSpace">-makeSpace</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-newConfig$">-newConfig:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-openLog$">-openLog:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-pingControl">-pingControl</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-quitAll">-quitAll</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-registerClient$identifier$name$transient$">-registerClient:identifier:name:transient:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-removeClient$cleanly$">-removeClient:cleanly:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-reply$to$from$">-reply:to:from:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-requestConfigFor$">-requestConfigFor:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-terminate$">-terminate:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-unconfiguredClients">-unconfiguredClients</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-unregisterByObject$status$">-unregisterByObject:status:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-update">-update</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-updateConfig$">-updateConfig:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$EcCommand-woken$">-woken:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcCommand-_housekeeping$">_housekeeping:&nbsp;</a></h3>
+    - (void) <b>_housekeeping:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSTimer.html#class$NSTimer">NSTimer</a>*)t;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this method indicates that it is private, for
+            internal use only, and you should not use the
+            method in your code.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-_terminate$">_terminate:&nbsp;</a></h3>
+    - (void) <b>_terminate:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSTimer.html#class$NSTimer">NSTimer</a>*)t;<br />
+    <div class="desc">
+      
+            <em>Warning</em> the underscore at the start of the
+            name of this method indicates that it is private, for
+            internal use only, and you should not use the
+            method in your code.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-alarmCode$procName$addText$">alarmCode:&nbsp;procName:&nbsp;addText:&nbsp;</a></h3>
+    - (void) <b>alarmCode:</b> (<a rel="gsdoc" href="#type$AlarmCode">AlarmCode</a>)ac<b> procName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name<b> addText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)additional;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-auditState$reason$">auditState:&nbsp;reason:&nbsp;</a></h3>
+    - (void) <b>auditState:</b> (<a rel="gsdoc" href="#class$LaunchInfo">LaunchInfo</a>*)l<b> reason:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)additional;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-clear$">clear:&nbsp;</a></h3>
+    - (void) <b>clear:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-clearAll$addText$">clearAll:&nbsp;addText:&nbsp;</a></h3>
+    - (void) <b>clearAll:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name<b> addText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)additional;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-clearCode$procName$addText$">clearCode:&nbsp;procName:&nbsp;addText:&nbsp;</a></h3>
+    - (void) <b>clearCode:</b> (<a rel="gsdoc" href="#type$AlarmCode">AlarmCode</a>)ac<b> procName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name<b> addText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)additional;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-cmdGnip$sequence$extra$">cmdGnip:&nbsp;sequence:&nbsp;extra:&nbsp;</a></h3>
+    - (oneway void) <b>cmdGnip:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdPing)">CmdPing</a>>)from<b> sequence:</b> (unsigned)num<b> extra:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-cmdPing$sequence$extra$">cmdPing:&nbsp;sequence:&nbsp;extra:&nbsp;</a></h3>
+    - (oneway void) <b>cmdPing:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdPing)">CmdPing</a>>)from<b> sequence:</b> (unsigned)num<b> extra:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-cmdQuit$">cmdQuit:&nbsp;</a></h3>
+    - (oneway void) <b>cmdQuit:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSInteger">NSInteger</a>)sig;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-command$to$from$">command:&nbsp;to:&nbsp;from:&nbsp;</a></h3>
+    - (void) <b>command:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)dat<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)t<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)f;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-configurationFor$">configurationFor:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*) <b>configurationFor:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-connection$shouldMakeNewConnection$">connection:&nbsp;shouldMakeNewConnection:&nbsp;</a></h3>
+    - (BOOL) <b>connection:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSConnection.html#class$NSConnection">NSConnection</a>*)ancestor<b> shouldMakeNewConnection:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSConnection.html#class$NSConnection">NSConnection</a>*)newConn;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-connectionBecameInvalid$">connectionBecameInvalid:&nbsp;</a></h3>
+    - (id) <b>connectionBecameInvalid:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSNotification.html#class$NSNotification">NSNotification</a>*)notification;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-environment">environment&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*) <b>environment</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-findAll$byAbbreviation$">findAll:&nbsp;byAbbreviation:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>findAll:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)a<b> byAbbreviation:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-findIn$byAbbreviation$">findIn:&nbsp;byAbbreviation:&nbsp;</a></h3>
+    - (EcClientI*) <b>findIn:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)a<b> byAbbreviation:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-findIn$byName$">findIn:&nbsp;byName:&nbsp;</a></h3>
+    - (EcClientI*) <b>findIn:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)a<b> byName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-findIn$byObject$">findIn:&nbsp;byObject:&nbsp;</a></h3>
+    - (EcClientI*) <b>findIn:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)a<b> byObject:</b> (id)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-host">host&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>host</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-housekeeping$">housekeeping:&nbsp;</a></h3>
+    - (void) <b>housekeeping:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSTimer.html#class$NSTimer">NSTimer</a>*)t;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-hungRestart$">hungRestart:&nbsp;</a></h3>
+    - (void) <b>hungRestart:</b> (<a rel="gsdoc" href="#class$LaunchInfo">LaunchInfo</a>*)l;<br />
+    <div class="desc">
+      
+            Initiate a restart of a hung process
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-information$from$to$type$">information:&nbsp;from:&nbsp;to:&nbsp;type:&nbsp;</a></h3>
+    - (void) <b>information:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)inf<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)s<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)d<b> type:</b> (<a rel="gsdoc" href="EcProcess.html#type$EcLogType">EcLogType</a>)t;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-information$from$type$">information:&nbsp;from:&nbsp;type:&nbsp;</a></h3>
+    - (void) <b>information:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)inf<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)s<b> type:</b> (<a rel="gsdoc" href="EcProcess.html#type$EcLogType">EcLogType</a>)t;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-killAll">killAll&nbsp;</a></h3>
+    - (void) <b>killAll</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-logChange$for$">logChange:&nbsp;for:&nbsp;</a></h3>
+    - (void) <b>logChange:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)change<b> for:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-logFile">logFile&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSFileHandle.html#class$NSFileHandle">NSFileHandle</a>*) <b>logFile</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-logMessage$type$for$">logMessage:&nbsp;type:&nbsp;for:&nbsp;</a></h3>
+    - (void) <b>logMessage:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> type:</b> (<a rel="gsdoc" href="EcProcess.html#type$EcLogType">EcLogType</a>)t<b> for:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdClient)">CmdClient</a>>)o;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-logMessage$type$name$">logMessage:&nbsp;type:&nbsp;name:&nbsp;</a></h3>
+    - (void) <b>logMessage:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> type:</b> (<a rel="gsdoc" href="EcProcess.html#type$EcLogType">EcLogType</a>)t<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-makeSpace">makeSpace&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>makeSpace</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-newConfig$">newConfig:&nbsp;</a></h3>
+    - (void) <b>newConfig:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSMutableDictionary">NSMutableDictionary</a>*)newConfig;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-openLog$">openLog:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSFileHandle.html#class$NSFileHandle">NSFileHandle</a>*) <b>openLog:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)lname;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-pingControl">pingControl&nbsp;</a></h3>
+    - (void) <b>pingControl</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-quitAll">quitAll&nbsp;</a></h3>
+    - (void) <b>quitAll</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-registerClient$identifier$name$transient$">registerClient:&nbsp;identifier:&nbsp;name:&nbsp;transient:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*) <b>registerClient:</b> (id)c<b> identifier:</b> (int)p<b> name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> transient:</b> (BOOL)t;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-removeClient$cleanly$">removeClient:&nbsp;cleanly:&nbsp;</a></h3>
+    - (void) <b>removeClient:</b> (EcClientI*)o<b> cleanly:</b> (BOOL)ok;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-reply$to$from$">reply:&nbsp;to:&nbsp;from:&nbsp;</a></h3>
+    - (void) <b>reply:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)msg<b> to:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)n<b> from:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-requestConfigFor$">requestConfigFor:&nbsp;</a></h3>
+    - (void) <b>requestConfigFor:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdConfig)">CmdConfig</a>>)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-terminate$">terminate:&nbsp;</a></h3>
+    - (void) <b>terminate:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>*)by;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-unconfiguredClients">unconfiguredClients&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSMutableArray">NSMutableArray</a>*) <b>unconfiguredClients</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-unregisterByObject$status$">unregisterByObject:&nbsp;status:&nbsp;</a></h3>
+    - (void) <b>unregisterByObject:</b> (byref id)obj<b> status:</b> (int)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-update">update&nbsp;</a></h3>
+    - (void) <b>update</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-updateConfig$">updateConfig:&nbsp;</a></h3>
+    - (void) <b>updateConfig:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcCommand-woken$">woken:&nbsp;</a></h3>
+    - (void) <b>woken:</b> (id)obj;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_EcCommand_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for EcCommand Class</h2>
+    <h3><a name="ivariable$EcCommand*clients">clients</a></h3>
+    @protected NSMutableArray* <b>clients</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*compressAfter">compressAfter</a></h3>
+    @protected NSInteger <b>compressAfter</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*config">config</a></h3>
+    @protected NSMutableDictionary* <b>config</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*control">control</a></h3>
+    @protected id<Control> <b>control</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*debUncompressed">debUncompressed</a></h3>
+    @protected NSTimeInterval <b>debUncompressed</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*debUndeleted">debUndeleted</a></h3>
+    @protected NSTimeInterval <b>debUndeleted</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*deleteAfter">deleteAfter</a></h3>
+    @protected NSInteger <b>deleteAfter</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*environment">environment</a></h3>
+    @protected NSDictionary* <b>environment</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*fwdSequence">fwdSequence</a></h3>
+    @protected unsigned int <b>fwdSequence</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*host">host</a></h3>
+    @protected NSString* <b>host</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*logUncompressed">logUncompressed</a></h3>
+    @protected NSTimeInterval <b>logUncompressed</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*logUndeleted">logUndeleted</a></h3>
+    @protected NSTimeInterval <b>logUndeleted</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*logname">logname</a></h3>
+    @protected NSString* <b>logname</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*nodesFree">nodesFree</a></h3>
+    @protected float <b>nodesFree</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*outstanding">outstanding</a></h3>
+    @protected NSDate* <b>outstanding</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*revSequence">revSequence</a></h3>
+    @protected unsigned int <b>revSequence</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*spaceFree">spaceFree</a></h3>
+    @protected float <b>spaceFree</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*sweeping">sweeping</a></h3>
+    @protected BOOL <b>sweeping</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*terminating">terminating</a></h3>
+    @protected NSTimer* <b>terminating</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcCommand*timer">timer</a></h3>
+    @protected NSTimer* <b>timer</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the LaunchInfo class
+      </a></h1>
+    <h2><a name="class$LaunchInfo">LaunchInfo</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcCommand.m</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          starting means that the server has attempted to
+          start the process (or is waiting for some precondition
+          of launching) but the process has not yet established a
+          connection to the server and registered itself.
+          stopping means that the server has attempted to shut
+          down the process (or the process has told the server it
+          is shutting down), so the connection between the process
+          and the server may not exist (and should not be used).
+          desired defines whether the steady state of this
+          process should be running/live or shut down. When the
+          process reaches a steady state (ie is not starting or
+          stopping) that does not match the desired state,
+          the server shold initiate a change of state. identifier
+          If the process is shut down, this should be zero.
+          Otherwise it is the process ID used by the
+          operating system and indicates that the process is
+          starting, stopping, or in a steady live state (in
+          which case it should also be connected as a client of
+          the server). If while starting, the process dies, we
+          should schedule relaunches at increasing intervals
+          until a process survives and connects. If starting
+          takes too <strong>long</strong> (because launch
+          attempts fail, the processes die, or they stay alive
+          but fail to connect to the server), we should raise an
+          alarm. If stopping takes too <strong>long</strong>, we
+          should forcibly terminate the process if we can, and
+          raise an alarm if we fail to kill it.
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_LaunchInfo_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo+description">+description</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo+existing$">+existing:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo+find$">+find:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo+launchInfo$">+launchInfo:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo+launching">+launching</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo+names">+names</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo+processQueue">+processQueue</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo+remove$">+remove:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-alarm$">-alarm:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-alarms">-alarms</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-autolaunch">-autolaunch</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-awakened">-awakened</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-checkActive">-checkActive</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-checkProcess">-checkProcess</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-clearClient$cleanly$">-clearClient:cleanly:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-clearHung">-clearHung</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-client">-client</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-configuration">-configuration</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-delay">-delay</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-desired">-desired</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-disabled">-disabled</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-hungDate">-hungDate</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-isActive">-isActive</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-isStarting">-isStarting</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-isStopping">-isStopping</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-launch">-launch</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-manual">-manual</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-mayBecomeStable">-mayBecomeStable</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-mayCoreDump">-mayCoreDump</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-name">-name</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-processIdentifier">-processIdentifier</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-progress">-progress</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-reasonToPreventLaunch">-reasonToPreventLaunch</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-resetDelay">-resetDelay</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setClient$">-setClient:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setConfiguration$">-setConfiguration:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setDesired$">-setDesired:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setHung">-setHung</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setManual$">-setManual:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setPing">-setPing</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setProcessIdentifier$">-setProcessIdentifier:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setStable$">-setStable:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-setTerminationStatus$">-setTerminationStatus:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-stable">-stable</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-start">-start</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-start$">-start:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-started">-started</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-starting$">-starting:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-status">-status</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-stop">-stop</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-stop$">-stop:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-stopped">-stopped</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-stopping$">-stopping:</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-task">-task</a></li>
+      <li><a rel="gsdoc" href="EcCommand.html#method$LaunchInfo-unfulfilled">-unfulfilled</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$LaunchInfo+description">description&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>description</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo+existing$">existing:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$LaunchInfo">LaunchInfo</a>*) <b>existing:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo+find$">find:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$LaunchInfo">LaunchInfo</a>*) <b>find:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)abbreviation;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo+launchInfo$">launchInfo:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$LaunchInfo">LaunchInfo</a>*) <b>launchInfo:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo+launching">launching&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSUInteger">NSUInteger</a>) <b>launching</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo+names">names&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>names</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo+processQueue">processQueue&nbsp;</a></h3>
+    + (void) <b>processQueue</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo+remove$">remove:&nbsp;</a></h3>
+    + (void) <b>remove:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-alarm$">alarm:&nbsp;</a></h3>
+    - (void) <b>alarm:</b> (<a rel="gsdoc" href="EcAlarm.html#class$EcAlarm">EcAlarm</a>*)alarm;<br />
+    <div class="desc">
+      
+            Adds an <var>alarm</var> to the list raised (removes
+            if a clear is passed in) creating the array if it does
+            not exist (even if a clear is passed in). This behavior
+            ensures that the
+            <a rel="gsdoc" href="#method$LaunchInfo-alarms">
+              -alarms
+            </a>
+
+            method returns <code>nil</code> if neither raises
+            nor clears have taken place, but an array otherwise.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-alarms">alarms&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>alarms</b>;<br />
+    <div class="desc">
+      
+            Returns the alarms raised for this process, an
+            empty array if none are currently raised, and
+            <code>nil</code> if this is not known (eg if the
+            process raised and alarm and then failed to clear
+            the alarm when restarting).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-autolaunch">autolaunch&nbsp;</a></h3>
+    - (BOOL) <b>autolaunch</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-awakened">awakened&nbsp;</a></h3>
+    - (void) <b>awakened</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-checkActive">checkActive&nbsp;</a></h3>
+    - (BOOL) <b>checkActive</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-checkProcess">checkProcess&nbsp;</a></h3>
+    - (BOOL) <b>checkProcess</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-clearClient$cleanly$">clearClient:&nbsp;cleanly:&nbsp;</a></h3>
+    - (void) <b>clearClient:</b> (EcClientI*)c<b> cleanly:</b> (BOOL)unregisteredOrTransient;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-clearHung">clearHung&nbsp;</a></h3>
+    - (void) <b>clearHung</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-client">client&nbsp;</a></h3>
+    - (EcClientI*) <b>client</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-configuration">configuration&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*) <b>configuration</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-delay">delay&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>) <b>delay</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-desired">desired&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#type$Desired">Desired</a>) <b>desired</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-disabled">disabled&nbsp;</a></h3>
+    - (BOOL) <b>disabled</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-hungDate">hungDate&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>) <b>hungDate</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-isActive">isActive&nbsp;</a></h3>
+    - (BOOL) <b>isActive</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-isStarting">isStarting&nbsp;</a></h3>
+    - (BOOL) <b>isStarting</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-isStopping">isStopping&nbsp;</a></h3>
+    - (BOOL) <b>isStopping</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-launch">launch&nbsp;</a></h3>
+    - (BOOL) <b>launch</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-manual">manual&nbsp;</a></h3>
+    - (BOOL) <b>manual</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-mayBecomeStable">mayBecomeStable&nbsp;</a></h3>
+    - (BOOL) <b>mayBecomeStable</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-mayCoreDump">mayCoreDump&nbsp;</a></h3>
+    - (BOOL) <b>mayCoreDump</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-name">name&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>name</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-processIdentifier">processIdentifier&nbsp;</a></h3>
+    - (int) <b>processIdentifier</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-progress">progress&nbsp;</a></h3>
+    - (void) <b>progress</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-reasonToPreventLaunch">reasonToPreventLaunch&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>reasonToPreventLaunch</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-resetDelay">resetDelay&nbsp;</a></h3>
+    - (void) <b>resetDelay</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setClient$">setClient:&nbsp;</a></h3>
+    - (void) <b>setClient:</b> (EcClientI*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setConfiguration$">setConfiguration:&nbsp;</a></h3>
+    - (void) <b>setConfiguration:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)c;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setDesired$">setDesired:&nbsp;</a></h3>
+    - (void) <b>setDesired:</b> (<a rel="gsdoc" href="#type$Desired">Desired</a>)state;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setHung">setHung&nbsp;</a></h3>
+    - (void) <b>setHung</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setManual$">setManual:&nbsp;</a></h3>
+    - (void) <b>setManual:</b> (BOOL)f;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setPing">setPing&nbsp;</a></h3>
+    - (void) <b>setPing</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setProcessIdentifier$">setProcessIdentifier:&nbsp;</a></h3>
+    - (void) <b>setProcessIdentifier:</b> (int)p;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setStable$">setStable:&nbsp;</a></h3>
+    - (void) <b>setStable:</b> (BOOL)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-setTerminationStatus$">setTerminationStatus:&nbsp;</a></h3>
+    - (void) <b>setTerminationStatus:</b> (int)s;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-stable">stable&nbsp;</a></h3>
+    - (BOOL) <b>stable</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-start">start&nbsp;</a></h3>
+    - (void) <b>start</b>;<br />
+    <div class="desc">
+      
+            Initiates the startup of a process. This will
+            either add the receiver to the queue of processes to
+            be started (if it can&apos;t be started immediately) or
+            launch the process using the configuration set for
+            it. The startup will then continue until the launched
+            process registers itself with the Command server,
+            at which point the
+            <a rel="gsdoc" href="#method$LaunchInfo-started">
+              -started
+            </a>
+
+            method will be called.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-start$">start:&nbsp;</a></h3>
+    - (void) <b>start:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)reason;<br />
+    <div class="desc">
+      
+            Initiates the startup of a process for the
+            supplied <var>reason</var>, but only if it makes
+            sense. This method performs the checks to see if the
+            startup should take place, then calls
+            <a rel="gsdoc" href="#method$LaunchInfo-start">
+              -start
+            </a>
+
+            if it should.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-started">started&nbsp;</a></h3>
+    - (void) <b>started</b>;<br />
+    <div class="desc">
+      
+            Called automatically when startup of a process
+            completes, either as a result of an internal
+            <a rel="gsdoc" href="#method$LaunchInfo-start">
+              -start
+            </a>
+
+            or as a result of an externally launched process
+            connectin to and registering with the Command
+            server.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-starting$">starting:&nbsp;</a></h3>
+    - (void) <b>starting:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSTimer.html#class$NSTimer">NSTimer</a>*)t;<br />
+    <div class="desc">
+      
+            internal timer mathos for handling the progression
+            of a startup. If the startup takes too
+            <strong>long</strong>, this method will raise an
+            alarm.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-status">status&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>status</b>;<br />
+    <div class="desc">
+      
+            Returns a human readble description of the current
+            process status.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-stop">stop&nbsp;</a></h3>
+    - (void) <b>stop</b>;<br />
+    <div class="desc">
+      
+            Initiates the shut down of a process. This will
+            use the DO connection to a registered process to tell
+            it to shut itself down. The shutdown will continue until
+            the process no longer exists, but if it goes on longer
+            than the time limit, the process will be killed.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-stop$">stop:&nbsp;</a></h3>
+    - (void) <b>stop:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)reason;<br />
+    <div class="desc">
+      
+            Initiates stopping of a process only if it makes
+            sense. This method performs checks and, if the
+            process can be stopped, calls the
+            <a rel="gsdoc" href="#method$LaunchInfo-stop">
+              -stop
+            </a>
+
+            method to do it. This sets the desired state of the
+            process to Dead.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-stopped">stopped&nbsp;</a></h3>
+    - (void) <b>stopped</b>;<br />
+    <div class="desc">
+      
+            Called at the point when a stopping process finally
+            ceases to exist.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-stopping$">stopping:&nbsp;</a></h3>
+    - (void) <b>stopping:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSTimer.html#class$NSTimer">NSTimer</a>*)t;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-task">task&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSTask.html#class$NSTask">NSTask</a>*) <b>task</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$LaunchInfo-unfulfilled">unfulfilled&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>unfulfilled</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_LaunchInfo_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for LaunchInfo Class</h2>
+    <h3><a name="ivariable$LaunchInfo*abortDate">abortDate</a></h3>
+    @protected NSTimeInterval <b>abortDate</b>;<br />
+    <div class="desc">
+      
+            The timestamp at which we will aborting a process (if
+            it fails to shut down as quickly as we need it to).
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*alarms">alarms</a></h3>
+    @protected NSMutableArray* <b>alarms</b>;<br />
+    <div class="desc">
+      
+            Records the alarms currently raised for this
+            process.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*awakenedDate">awakenedDate</a></h3>
+    @protected NSTimeInterval <b>awakenedDate</b>;<br />
+    <div class="desc">
+      
+            The timestamp at which the process told the Command
+            server it had completely awakend (was ready to
+            handle requests) or zero if it has not woken.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*client">client</a></h3>
+    @protected EcClientI* <b>client</b>;<br />
+    <div class="desc">
+      
+            The client instance representing a registered
+            distributed objects connection from the process
+            into the Command server.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*clientLostDate">clientLostDate</a></h3>
+    @protected NSTimeInterval <b>clientLostDate</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*clientQuitDate">clientQuitDate</a></h3>
+    @protected NSTimeInterval <b>clientQuitDate</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*conf">conf</a></h3>
+    @protected NSDictionary* <b>conf</b>;<br />
+    <div class="desc">
+      
+            The configuration from Control.plist
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*deferredDate">deferredDate</a></h3>
+    @protected NSTimeInterval <b>deferredDate</b>;<br />
+    <div class="desc">
+      
+            If there is a problem causing processes to fail
+            repeatedly and autostart to retry, we impose a
+            slightly longer delay between each successive
+            relaunch. In that case the deferredDate tells us
+            when the queued starting process can next be launched.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*dependencies">dependencies</a></h3>
+    @protected NSArray* <b>dependencies</b>;<br />
+    <div class="desc">
+      
+            Records the names of other processes which must be
+            active in order for this process to work. Any
+            attempt to start this process will result in it
+            remaining in a queue of starting processes until
+            all the dependencies have been met.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*desired">desired</a></h3>
+    @protected Desired <b>desired</b>;<br />
+    <div class="desc">
+      
+            Records the desired state for this process (usually
+            when a command is issued at the Console). This is
+            needed for situations where the system can no
+            respond immediately to an instruction. For instance
+            the process is shutting down and a start command is
+            given: we must continue to complete the clean
+            shutdown, and then start up again.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*fib0">fib0</a></h3>
+    @protected NSTimeInterval <b>fib0</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*fib1">fib1</a></h3>
+    @protected NSTimeInterval <b>fib1</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*hungDate">hungDate</a></h3>
+    @protected NSTimeInterval <b>hungDate</b>;<br />
+    <div class="desc">
+      
+            A timestamp set if an alarm has been raised because the
+            process is not responding to pings. This is cleared
+            if/when the process re-registers.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*identifier">identifier</a></h3>
+    @protected int <b>identifier</b>;<br />
+    <div class="desc">
+      
+            The current process ID (or zero if there isn&apos;t one).
+            This is set when we launch the process or when the
+            process is launched externally and connects and
+            registers itself with the Command server.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*inStarting">inStarting</a></h3>
+    @protected BOOL <b>inStarting</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*launchDate">launchDate</a></h3>
+    @protected NSTimeInterval <b>launchDate</b>;<br />
+    <div class="desc">
+      
+            The timestamp at which we last launched this process.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*manual">manual</a></h3>
+    @protected BOOL <b>manual</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*name">name</a></h3>
+    @protected NSString* <b>name</b>;<br />
+    <div class="desc">
+      
+            The name of this process
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*nextStableDate">nextStableDate</a></h3>
+    @protected NSTimeInterval <b>nextStableDate</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*pingDate">pingDate</a></h3>
+    @protected NSTimeInterval <b>pingDate</b>;<br />
+    <div class="desc">
+      
+            A timestamp set when a ping response is received.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*queuedDate">queuedDate</a></h3>
+    @protected NSTimeInterval <b>queuedDate</b>;<br />
+    <div class="desc">
+      
+            If a starting process cannt be launched immediately,
+            this records the timestamp at which it was added to
+            the queue of processes awaiting launch.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*registrationDate">registrationDate</a></h3>
+    @protected NSTimeInterval <b>registrationDate</b>;<br />
+    <div class="desc">
+      
+            The timestamp at which the process registered with the
+            Command server. or zero if it has not registered.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*restartReason">restartReason</a></h3>
+    @protected NSString* <b>restartReason</b>;<br />
+    <div class="desc">
+      
+            If we want the process to restart, this reason is why,
+            and is passed to the process so that it can log why it
+            was restarted.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*stableDate">stableDate</a></h3>
+    @protected NSTimeInterval <b>stableDate</b>;<br />
+    <div class="desc">
+      
+            Once a process has been active for a while it is
+            considered stable. A stable process will, if it
+            terminates without shutting down cleanly, be
+            elegible for immediate autolaunch.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*startedReason">startedReason</a></h3>
+    @protected NSString* <b>startedReason</b>;<br />
+    <div class="desc">
+      
+            Records the reason we desire the process to be
+            started.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*startingAlarm">startingAlarm</a></h3>
+    @protected BOOL <b>startingAlarm</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*startingDate">startingDate</a></h3>
+    @protected NSTimeInterval <b>startingDate</b>;<br />
+    <div class="desc">
+      
+            The timestamp at which the current startup operation
+            began, or zero if the process is not currently
+            starting.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*startingTimer">startingTimer</a></h3>
+    @protected NSTimer* <b>startingTimer</b>;<br />
+    <div class="desc">
+      
+            A timer to progress the startup process. When it fires
+            the <a rel="gsdoc" href="#method$LaunchInfo-starting$">-starting:</a>
+
+            method is called to check on progress and raise an
+            alarm if startup is taking too <strong>long</strong>.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*stoppedReason">stoppedReason</a></h3>
+    @protected NSString* <b>stoppedReason</b>;<br />
+    <div class="desc">
+      
+            Records the reason we desire the process to be
+            stopped.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*stoppingDate">stoppingDate</a></h3>
+    @protected NSTimeInterval <b>stoppingDate</b>;<br />
+    <div class="desc">
+      
+            The timestamp at which the process began shutting down,
+            or zero if the process is not currently stopping.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*stoppingTimer">stoppingTimer</a></h3>
+    @protected NSTimer* <b>stoppingTimer</b>;<br />
+    <div class="desc">
+      
+            A timer to progress the stopping process. When it fires
+            the <a rel="gsdoc" href="#method$LaunchInfo-stopping$">-stopping:</a>
+
+            method is called to check on progress and, if
+            stopping has taken too <strong>long</strong>,
+            attempt to forcibly terminate the process.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*task">task</a></h3>
+    @protected NSTask* <b>task</b>;<br />
+    <div class="desc">
+      
+            The current task (if launched by us).
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*terminationCount">terminationCount</a></h3>
+    @protected unsigned int <b>terminationCount</b>;<br />
+    <div class="desc">
+      
+            If, during startup, the process terminates and has to
+            be relaunched, we record the count of attempts here.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*terminationDate">terminationDate</a></h3>
+    @protected NSTimeInterval <b>terminationDate</b>;<br />
+    <div class="desc">
+      
+            When a process termination is detected, this variable
+            records it.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*terminationSignal">terminationSignal</a></h3>
+    @protected int <b>terminationSignal</b>;<br />
+    <div class="desc">
+      
+            Where the Command server launched the process and is
+            able to get the process termination status, these
+            variables are used to record it.
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*terminationStatus">terminationStatus</a></h3>
+    @protected int <b>terminationStatus</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$LaunchInfo*terminationStatusKnown">terminationStatusKnown</a></h3>
+    @protected BOOL <b>terminationStatusKnown</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="003000000000">EcCommand types</a></h1>
+    <p>
+    </p>
+    <h3><a name="type$AlarmCode">AlarmCode</a></h3>
+    typedef enum ... AlarmCode;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="type$Desired">Desired</a></h3>
+    typedef enum ... Desired;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="004000000000">EcCommand constants</a></h1>
+    <p>
+    </p>
+    <h3><a name="constant$day">day</a></h3>
+    const <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a> day;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="005000000000">EcCommand variables</a></h1>
+    <p>
+    </p>
+    <h3><a name="variable$comp_len">comp_len</a></h3>
+    int comp_len;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$debug">debug</a></h3>
+    BOOL debug;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$launchEnabled">launchEnabled</a></h3>
+    BOOL launchEnabled;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$launchInfo">launchInfo</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSMutableDictionary">NSMutableDictionary</a>* launchInfo;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$launchLimit">launchLimit</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/BaseAdditions/Reference/TypesAndConstants.html#type$NSUInteger">NSUInteger</a> launchLimit;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$launchOrder">launchOrder</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>* launchOrder;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$launchQueue">launchQueue</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSMutableArray">NSMutableArray</a>* launchQueue;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$pingTime">pingTime</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a> pingTime;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$quitTime">quitTime</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a> quitTime;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$tStatus">tStatus</a></h3>
+    int tStatus;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="variable$terminateBy">terminateBy</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDate.html#class$NSDate">NSDate</a>* terminateBy;<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+
+          <h1><a name="006000000000">EcCommand functions</a></h1>
+    <p>
+    </p>
+    <h3><a name="function$ACStrings">ACStrings</a></h3>
+    void ACStrings(<a rel="gsdoc" href="#type$AlarmCode">AlarmCode</a> <b>ac</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>** <b>problem</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>** <b>repair</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$cmdWord">cmdWord</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* cmdWord(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>* <b>a</b>, unsigned int <b>pos</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$comp">comp</a></h3>
+    int comp(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>s0</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>s1</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$date">date</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSCalendarDate.html#class$NSCalendarDate">NSCalendarDate</a>* date(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a> <b>t</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$desiredName">desiredName</a></h3>
+    <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* desiredName(<a rel="gsdoc" href="#type$Desired">Desired</a> <b>state</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$restartStatus">restartStatus</a></h3>
+    BOOL restartStatus(int <b>terminationStatus</b>);<br />
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <hr width="25%" align="left" />
+    <br />
+    </font>
+</body>
+</html>

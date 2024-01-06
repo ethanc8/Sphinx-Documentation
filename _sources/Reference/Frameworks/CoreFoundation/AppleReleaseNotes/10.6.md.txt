@@ -1,0 +1,147 @@
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_17"></span>
+
+# CF-550 - 10.6 Snow Leopard
+
+> The following came from [Core Foundation Release Notes for OS X (10.8 and earlier)](https://developer.apple.com/library/archive/releasenotes/DataManagement/RN-CoreFoundationOlderNotes/index.html)
+
+CoreFoundation (aka CF) is a framework which provides C APIs for strings, collections, user preferences, property lists, plug-ins, bundles, notifications, runloop, etc. These APIs are designed with portability, performance, and consistency in mind, and are available to Cocoa and Carbon applications.
+
+CoreFoundation is accessible directly as a public framework. But it is also within the CoreServices umbrella framework and is very often pulled into your application simply by linking against CoreServices or one of the higher level umbrellas such as Cocoa or Carbon which bring in CoreServices.
+
+This document describes the changes in CF since OS X release 10.5. Updates to the document since WWDC 2008 are indicated in the section titles.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_18"></span>
+
+## CFURL
+
+There are additions to CFURL API to enable more efficient file property manipulation, as well additional behaviors. More description forthcoming.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_19"></span>
+
+## CFPropertyList
+
+The following functions are now obsolete and will be deprecated in a future release:
+
+```objc
+CFPropertyListRef CFPropertyListCreateFromXMLData(
+    CFAllocatorRef allocator, CFDataRef xmlData, 
+    CFOptionFlags mutabilityOption, CFStringRef *errorString);
+
+CFPropertyListRef CFPropertyListCreateFromStream(
+    CFAllocatorRef allocator, CFReadStreamRef stream, CFIndex streamLength,
+    CFOptionFlags mutabilityOption, CFPropertyListFormat *format, 
+    CFStringRef *errorString);
+
+CFIndex CFPropertyListWriteToStream(
+    CFPropertyListRef propertyList, CFWriteStreamRef stream, CFPropertyListFormat format,
+    CFStringRef *errorString);
+
+CFDataRef CFPropertyListCreateXMLData(
+    CFAllocatorRef allocator, CFPropertyListRef propertyList);
+```
+
+The replacement API is:
+
+```objc
+CFPropertyListRef CFPropertyListCreateWithData(
+    CFAllocatorRef allocator, CFDataRef data, CFOptionFlags options,
+    CFPropertyListFormat *format, CFErrorRef *error);
+
+CFPropertyListRef CFPropertyListCreateWithStream(
+    CFAllocatorRef allocator, CFReadStreamRef stream, CFIndex streamLength,
+    CFOptionFlags options, CFPropertyListFormat *format, CFErrorRef *error);
+
+CFIndex CFPropertyListWrite(
+    CFPropertyListRef propertyList, CFWriteStreamRef stream, 
+    CFPropertyListFormat format, CFOptionFlags options, CFErrorRef *error);
+
+CFDataRef CFPropertyListCreateData(
+    CFAllocatorRef allocator, CFPropertyListRef propertyList, CFPropertyListFormat format,
+    CFOptionFlags options, CFErrorRef *error);
+```
+
+The new API provides better error handling, better support for localization, and easier creation of binary property lists. Any error parameter may be set to NULL if no error information is desired. If a CFErrorRef pointer is passed in and an error occurs, it will be filled out with information about the error and it is the responsibility of the caller to release the new error. The format parameter in the CFPropertyListCreateWIthData and CFPropertyListCreateWithStream functions may also be set to NULL, but if a CFPropertyListFormat pointer is passed in, it will be filled out with the format of the property list.
+
+The option flags on the CFPropertyListCreateWithData and CFPropertyListCreateWithStream functions may be set to any of the CFPropertyListMutabilityOptions values. The options flags on CFPropertyListWrite and CFPropertyListCreateData are currently unused and should be set to 0.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_20"></span>
+
+## CFXMLParser (New since WWDC 2008)
+
+CFXMLParser and CFXMLNode will be officially deprecated in a future major release of OS X. CFXMLParser has some deficiencies in terms of standards compliance and performance, and clients should migrate their uses of the CFXMLParser classes over to NSXMLParser, NSXMLDocument, or other XML parsing technologies on OS X.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_21"></span>
+
+## CoreFoundation API not available in iOS 2.0
+
+The OS X APIs in CFUserNotification.h, CFXMLParser.h, CFXMLNode.h, and CFStringTokenizer.h are not available in iOS 2.0. Distributed notifications (CFNotificationCenterGetDistributedCenter()) are also not available. Otherwise, iOS 2.0 contains an API matching that in OS X 10.5.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_22"></span>
+
+## CoreFoundation API not available in iOS 3.0
+
+The OS X APIs in CFUserNotification.h, CFXMLParser.h, and CFXMLNode.h are not available in iOS 3.0. Distributed notifications (CFNotificationCenterGetDistributedCenter()) are also not available. Otherwise, iOS 3.0 contains an API matching that in OS X 10.5.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_23"></span>
+
+## New CFCalendarUnit
+
+A new "quarter" calendar unit (kCFCalendarUnitQuarter) has been added to the set of CFCalendarUnits (CFCalendar.h).
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_24"></span>
+
+## New calendars
+
+Four new calendar constants (kCFRepublicOfChinaCalendar, kCFPersianCalendar, kCFIndianCalendar, kCFISO8601Calendar) have been added (CFLocale.h). The ISO8601 calendar is not yet implemented. A Chinese calendar can be created, and one can do calendrical calculations with it, but it should not be used for formatting as the necessary underlying functionality is not functioning correctly yet.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_25"></span>
+
+## CFDataFind (New since November seed)
+
+CFData now has a function that will efficiently search its contents:
+
+<span class="caption"></span>
+
+```objc
+CFRange CFDataFind(
+    CFDataRef theData, CFDataRef dataToFind, CFRange searchRange, 
+    CFDataSearchFlags compareOptions);
+```
+
+The semantics are nearly identical to CFStringFind. The only significant difference is the lack of 'case insensitive' and 'literal' search options, which are only applicable to strings.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_26"></span>
+
+## CFString (Updated since WWDC 2008)
+
+The functions CFStringGetMaximumSizeForEncoding() and CFStringGetMaximumSizeOfFileSystemRepresentation() will now return kCFNotFound if the amount of memory required for storing the results of the encoding conversion would exceed LONG\_MAX.
+
+Usage note: When using CFStringCreateWithFormat(), and any other CFString or NSString formatting APIs, it's illegal to pass fewer ordered (n$) arguments than there are arguments. For instance:
+
+<span class="caption"></span>
+
+```objc
+CFStringCreateWithFormat(NULL, NULL, CFSTR(&quot;%2$d&quot;, arg1, arg2);
+```
+
+This is because there's no way for CFString to know how to skip the first argument to get to the second. There is no behavior change here, just a clarification.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_27"></span>
+
+## CFString
+
+There are now 4 new inline functions for working with UTF-16 surrogate characters declared in CFString.h. CFStringIsSurrogateHighCharacter() and CFStringIsSurrogateLowCharacter() identify surrogate characters. CFStringGetLongCharacterForSurrogatePair() maps a pair of high and low surrogate characters to the Unicode Scalar Value. CFStringGetSurrogatePairForLongCharacter() maps a Unicode Scaler Value back to the surrogate pair.
+
+There are two new CFStringEncoding constants: KCFStringEncodingUTF7 and kCFStringEncodingUTF7\_IMAP.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_28"></span>
+
+## Unicode (New since WWDC 2008)
+
+The CoreFoundation Unicode Database is updated to version 5.1.
+
+<span id="//apple_ref/doc/uid/TP40012903-TRANSLATED_CHAPTER_965-TRANSLATED_DEST_29"></span>
+
+## CFCharacterSet (New since WWDC 2008)
+
+CFCharacterSetCreateWithCharactersInString, CFCharacterSetAddCharactersInString, and CFCharacterSetRemoveCharactersInString now correctly recognizes surrogate paris in the string.

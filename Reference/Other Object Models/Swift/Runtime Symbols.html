@@ -1,0 +1,1103 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>Swift Runtime Symbols - GNUstep 2021 December documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">GNUstep 2021 December documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">GNUstep 2021 December documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/index.html">Getting Started Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Getting Started Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/index.html">1 - First Steps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1 - First Steps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.1.html">1.1 - What is GNUstep?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.2.html">1.2 - Installing GNUstep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.3.html">1.3 - Configuring your System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/index.html">2 - Convertor</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2 - Convertor</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.1.html">2.1 - Designing the UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.2.html">2.2 - Outlets and Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.3.html">2.3 - Adding the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/index.html">3 - TimeMachine - a single window application</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 3 - TimeMachine - a single window application</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.1.html">3.1 - A Basic Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.2.html">3.2 - Analog Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.3.html">3.3 - New Time Zone Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.4.html">3.4 - Multiple Clocks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/HelpfulWebsites.html">Helpful Websites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/WhatsNext.html">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/Other/Roard/index.html">Roard Vallon Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Roard Vallon Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%201/Tutorial%201.html">1 - Programming under GNUstep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%202/Tutorial%202.html">2 - NSWindowController and Design Pattern MVC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../index.html">Reference Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Reference Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Frameworks/index.html">Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Frameworks/index_Core.html">Basic Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Basic Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Frameworks/AppKit/index.html">Application Kit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Application Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/AppKit/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/AppKit/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/AppKit/GNUstepReleaseNotes_HTML.html"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/AppKit/NSImageName.html"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Frameworks/Foundation/index.html">Foundation Kit</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Foundation Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/Foundation/CocoaCompatibility.html">Cocoa Compatibility</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/Foundation/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/Foundation/GNUstepReleaseNotes.html">GNUstep Base Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/CoreData/index.html">Core Data</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Frameworks/CoreFoundation/index.html">Core Foundation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Core Foundation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/CoreFoundation/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/CoreFoundation/ObjectModel.html">Core Foundation Object Model</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/index.html">Apple Release Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Apple Release Notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/SwiftReleaseNotes.html">10.11 and later</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10.9.html">CF-855.11 - 10.9 Mavericks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10.8.html">CF-744 - 10.8 “Mountain Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/iOS5.html">CF-675 - iOS 5</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10.7.html">CF-635 - 10.7 “Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10.6.html">CF-550 - 10.6 Snow Leopard</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10.5.html">CF-476 - 10.5 “Leopard”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/Historical-GeneralNotes.html">General Notes</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10.2.html">CF-263 - 10.2 “Jaguar”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10.1.html">CF-226 - 10.1 “Puma”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10.0.html">CF-196 - 10.0 “Cheetah”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10_PB.html">Mac OS X Public Beta “Kodiak”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10_DP4.html">Mac OS X Developer Preview 4</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10_DP3.html">Mac OS X Developer Preview 3</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Frameworks/CoreFoundation/AppleReleaseNotes/10_DP2.html">Mac OS X Developer Preview 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Frameworks/index_Miscellaneous.html">Miscellaneous Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Miscellaneous Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Frameworks/AddressBook/index.html">AddressBook</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of AddressBook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/AddressBook/GNUstep%20Readme.html">GNUstep Readme</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/CFNetwork/index.html">CFNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/DBusKit/index.html">DBusKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/ECCL/index.html">Enterprise Control Configuration and Logging (ECCL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/PDFKit/index.html">PDFKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/WebKit/index.html">WebKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/Xcode/index.html">GNUstep Xcode Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/Pantomime/index.html">Pantomime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/GWorkspace/index.html">GWorkspace frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/Renaissance/index.html">Renaissance</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Frameworks/index_Quartz.html">Quartz Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Quartz Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/CoreAnimation/index.html">Core Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Frameworks/CoreGraphics/index.html">Core Graphics / Quartz 2D</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Frameworks/index_WebObjects.html">WebObjects 4 Stack</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of WebObjects 4 Stack</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Frameworks/EnterpriseObjects/index.html">Enterprise Objects Framework</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Enterprise Objects Framework</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/EnterpriseObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Frameworks/WebObjects/index.html">WebObjects</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of WebObjects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Frameworks/WebObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Tools/index.html">Developer Tools</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Developer Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Tools/Make/index.html">GNUstep Make</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of GNUstep Make</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tools/Make/GNUstepReleaseNotes.html">Release Notes</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/index.html">New Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of New Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Introduction.html">Introduction</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Topics/index.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Topics/ParallelBuilding.html">Parallel Building</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/index.html">Project Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Project Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Project/Reference.html">Project Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/ResourceSet/Reference.html">Resource Set Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Tool/Reference.html">Tool Reference</a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Library/index.html">Library</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Library/Introduction.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Gorm%20ProjectCenter.html">Gorm + ProjectCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Buildtool.html">Buildtool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/BaseTools.html">Base Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/HeaderDoc.html">HeaderDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Languages/index.html">Languages</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Languages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Languages/ObjC/index.html">Objective-C</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Objective-C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Languages/ObjC/Reference/index.html">Objective-C Language Reference</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Objective-C Language Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Attributes.html">Attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/BasicTypes.html">Basic Types</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/index.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> macros</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of NS_ENUM macros</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_CLOSED_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_CLOSED_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_CLOSED_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_ERROR_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ERROR_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ERROR_ENUM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Classes.html">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/LightweightGenerics.html">Lightweight Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Exceptions.html">Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/FastEnumeration.html">Fast enumeration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/StringLiterals.html">String literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/DynamicLiterals.html">Dynamic literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/TraditionalMessageForwarding.html">Traditional Message Forwarding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Modules.html">Modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/EnvInformation.html">Getting Environment Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Versions.html">Language Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../HIG.html">Human Interface Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Contributing/Documentation/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Domains/index.html">Sphinx Domains</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Sphinx Domains</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Domains/SCDT-API.html">Sphinxcontrib-DomainTools API refeerence</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/index.html">Tests</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/index.html">API Reference Tests</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of API Reference Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/WrongNesting.html">Wrong nesting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/MakeDomain.html">Make domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Todo/index.html">Todo</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Todo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/ReleaseNotes.html">Release Notes and API Diffs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/Dependencies.html">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/DocC.html">DocC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/PandocNotes.html">Pandoc Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/StyleGuide.html">Style Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="swift-runtime-symbols">
+<h1><big> Swift Runtime Symbols </big><a class="headerlink" href="#swift-runtime-symbols" title="Permalink to this heading">#</a></h1>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="runtime-functions">
+<h1>Runtime functions<a class="headerlink" href="#runtime-functions" title="Permalink to this heading">#</a></h1>
+<section id="c-functions">
+<h2>C functions<a class="headerlink" href="#c-functions" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0052e43</span><span class="n">c</span> <span class="n">T</span> <span class="n">swift_addNewDSOImage</span>
+<span class="mi">00431810</span> <span class="n">t</span> <span class="n">__swift_allocate_boxed_opaque_existential_0</span>
+<span class="mi">004</span><span class="n">c7314</span> <span class="n">T</span> <span class="n">swift_allocateGenericClassMetadata</span>
+<span class="mi">004</span><span class="n">c7740</span> <span class="n">T</span> <span class="n">swift_allocateGenericValueMetadata</span>
+<span class="mi">004</span><span class="n">b67b0</span> <span class="n">T</span> <span class="n">swift_allocBox</span>
+<span class="mi">004</span><span class="n">b6a78</span> <span class="n">T</span> <span class="n">swift_allocEmptyBox</span>
+<span class="mi">004</span><span class="n">b5594</span> <span class="n">T</span> <span class="n">swift_allocError</span>
+<span class="mi">005</span><span class="n">a0a98</span> <span class="n">D</span> <span class="n">_swift_allocObject</span>
+<span class="mi">004</span><span class="n">b657c</span> <span class="n">T</span> <span class="n">swift_allocObject</span>
+<span class="mi">001</span><span class="n">f4a44</span> <span class="n">t</span> <span class="n">_swift_anyHashableDownCastConditionalIndirect</span>
+<span class="mi">004</span><span class="n">ad034</span> <span class="n">T</span> <span class="n">swift_arrayAssignWithCopyBackToFront</span>
+<span class="mi">004</span><span class="n">acfb8</span> <span class="n">T</span> <span class="n">swift_arrayAssignWithCopyFrontToBack</span>
+<span class="mi">004</span><span class="n">acf3c</span> <span class="n">T</span> <span class="n">swift_arrayAssignWithCopyNoAlias</span>
+<span class="mi">004</span><span class="n">ad0b4</span> <span class="n">T</span> <span class="n">swift_arrayAssignWithTake</span>
+<span class="mi">004</span><span class="n">ad130</span> <span class="n">T</span> <span class="n">swift_arrayDestroy</span>
+<span class="mi">00103614</span> <span class="n">t</span> <span class="n">_swift_arrayDownCastConditionalIndirect</span>
+<span class="mi">001028</span><span class="n">c8</span> <span class="n">t</span> <span class="n">_swift_arrayDownCastIndirect</span>
+<span class="mi">004</span><span class="n">acd48</span> <span class="n">T</span> <span class="n">swift_arrayInitWithCopy</span>
+<span class="mi">004</span><span class="n">acebc</span> <span class="n">T</span> <span class="n">swift_arrayInitWithTakeBackToFront</span>
+<span class="mi">004</span><span class="n">ace40</span> <span class="n">T</span> <span class="n">swift_arrayInitWithTakeFrontToBack</span>
+<span class="mi">004</span><span class="n">acdc4</span> <span class="n">T</span> <span class="n">swift_arrayInitWithTakeNoAlias</span>
+<span class="mi">004883</span><span class="n">cc</span> <span class="n">t</span> <span class="n">__swift_assign_boxed_opaque_existential_0</span>
+<span class="mi">0048</span><span class="n">d958</span> <span class="n">t</span> <span class="n">__swift_assign_boxed_opaque_existential_1</span>
+<span class="mi">004</span><span class="n">cc02c</span> <span class="n">T</span> <span class="n">swift_assignExistentialWithCopy</span>
+<span class="mi">00486818</span> <span class="n">t</span> <span class="n">__swift_assignWithCopy_strong</span>
+<span class="mi">0048684</span><span class="n">c</span> <span class="n">t</span> <span class="n">__swift_assignWithTake_strong</span>
+<span class="mi">004</span><span class="n">b5da8</span> <span class="n">T</span> <span class="n">swift_beginAccess</span>
+<span class="mi">005169</span><span class="n">f8</span> <span class="n">T</span> <span class="n">swift_bridgeObjectRelease</span>
+<span class="mi">00516</span><span class="n">a24</span> <span class="n">T</span> <span class="n">swift_bridgeObjectRelease_n</span>
+<span class="mi">005169</span><span class="n">c0</span> <span class="n">T</span> <span class="n">swift_bridgeObjectRetain</span>
+<span class="mi">00516</span><span class="n">a08</span> <span class="n">T</span> <span class="n">swift_bridgeObjectRetain_n</span>
+<span class="mi">004</span><span class="n">addbc</span> <span class="n">t</span> <span class="n">_swift_bridgeToObjectiveCUsingProtocolIfPossible</span>
+<span class="mi">004</span><span class="n">b6710</span> <span class="n">T</span> <span class="n">swift_bufferAllocate</span>
+<span class="mi">004</span><span class="n">cee4c</span> <span class="n">T</span> <span class="n">swift_checkMetadataState</span>
+<span class="mi">004</span><span class="n">adc10</span> <span class="n">t</span> <span class="n">_swift_class_getSuperclass</span>
+<span class="mf">004e9210</span> <span class="n">T</span> <span class="n">swift_conformsToProtocol</span>
+<span class="mi">001</span><span class="n">f49c0</span> <span class="n">t</span> <span class="n">_swift_convertToAnyHashableIndirect</span>
+<span class="mi">004</span><span class="n">ba4e0</span> <span class="n">T</span> <span class="n">swift_copyKeyPathTrivialIndices</span>
+<span class="mi">004</span><span class="n">ba60c</span> <span class="n">T</span> <span class="n">swift_copyPOD</span>
+<span class="mi">004</span><span class="n">b6968</span> <span class="n">T</span> <span class="n">swift_deallocBox</span>
+<span class="mi">004</span><span class="n">b82cc</span> <span class="n">T</span> <span class="n">swift_deallocClassInstance</span>
+<span class="mi">004</span><span class="n">b562c</span> <span class="n">T</span> <span class="n">swift_deallocError</span>
+<span class="mi">004</span><span class="n">b6a58</span> <span class="n">T</span> <span class="n">swift_deallocObject</span>
+<span class="mi">004</span><span class="n">b82d4</span> <span class="n">T</span> <span class="n">swift_deallocPartialClassInstance</span>
+<span class="mi">004</span><span class="n">b8744</span> <span class="n">T</span> <span class="n">swift_deallocUninitializedObject</span>
+<span class="mi">004</span><span class="n">cc720</span> <span class="n">T</span> <span class="n">_swift_debug_verifyTypeLayoutAttribute</span>
+<span class="mi">004</span><span class="n">d9aa8</span> <span class="n">t</span> <span class="n">_swift_debug_verifyTypeLayoutAttribute</span><span class="o">.</span><span class="n">cold</span><span class="mf">.1</span>
+<span class="mi">004</span><span class="n">eded4</span> <span class="n">t</span> <span class="n">swift_decompose_double</span>
+<span class="mi">004</span><span class="n">eee54</span> <span class="n">t</span> <span class="n">swift_decompose_float</span>
+<span class="mi">004</span><span class="n">b5be8</span> <span class="n">T</span> <span class="n">swift_deletedMethodError</span>
+<span class="mi">004</span><span class="n">b439c</span> <span class="n">T</span> <span class="n">swift_demangle</span>
+<span class="mi">00435</span><span class="n">a40</span> <span class="n">t</span> <span class="n">__swift_destroy_boxed_opaque_existential_0</span>
+<span class="mi">00486810</span> <span class="n">t</span> <span class="n">__swift_destroy_strong</span>
+<span class="mi">001</span><span class="n">a75f0</span> <span class="n">t</span> <span class="n">_swift_dictionaryDownCastConditionalIndirect</span>
+<span class="mi">001</span><span class="n">a663c</span> <span class="n">t</span> <span class="n">_swift_dictionaryDownCastIndirect</span>
+<span class="mi">004</span><span class="n">de17c</span> <span class="n">T</span> <span class="n">swift_disableDynamicReplacementScope</span>
+<span class="mi">005</span><span class="n">b6460</span> <span class="n">B</span> <span class="n">_swift_disableExclusivityChecking</span>
+<span class="mi">004</span><span class="n">ed4b4</span> <span class="n">T</span> <span class="n">_swift_dumpObjectsRuntimeFunctionPointers</span>
+<span class="mi">004</span><span class="n">b61dc</span> <span class="n">T</span> <span class="n">swift_dumpTrackedAccesses</span>
+<span class="mi">004</span><span class="n">ade94</span> <span class="n">T</span> <span class="n">swift_dynamicCast</span>
+<span class="mi">004</span><span class="n">af340</span> <span class="n">T</span> <span class="n">swift_dynamicCastClass</span>
+<span class="mi">004</span><span class="n">af3f4</span> <span class="n">T</span> <span class="n">swift_dynamicCastClassUnconditional</span>
+<span class="mi">00516</span><span class="n">df4</span> <span class="n">T</span> <span class="n">swift_dynamicCastForeignClassMetatype</span>
+<span class="mf">00516e60</span> <span class="n">T</span> <span class="n">swift_dynamicCastForeignClassMetatypeUnconditional</span>
+<span class="mi">004</span><span class="n">af8ac</span> <span class="n">T</span> <span class="n">swift_dynamicCastMetatype</span>
+<span class="mi">004</span><span class="n">afa38</span> <span class="n">T</span> <span class="n">swift_dynamicCastMetatypeUnconditional</span>
+<span class="mi">004</span><span class="n">af5b0</span> <span class="n">T</span> <span class="n">swift_dynamicCastUnknownClass</span>
+<span class="mi">004</span><span class="n">af780</span> <span class="n">T</span> <span class="n">swift_dynamicCastUnknownClassUnconditional</span>
+<span class="mi">005</span><span class="n">a0b88</span> <span class="n">D</span> <span class="n">_swiftEmptyArrayStorage</span>
+<span class="mi">005</span><span class="n">a0b98</span> <span class="n">D</span> <span class="n">_swiftEmptyDictionarySingleton</span>
+<span class="mi">005</span><span class="n">a0bc0</span> <span class="n">D</span> <span class="n">_swiftEmptySetSingleton</span>
+<span class="mi">004</span><span class="n">de008</span> <span class="n">T</span> <span class="n">swift_enableDynamicReplacementScope</span>
+<span class="mi">004</span><span class="n">b608c</span> <span class="n">T</span> <span class="n">swift_endAccess</span>
+<span class="mi">005179</span><span class="n">b0</span> <span class="n">T</span> <span class="n">swift_EnumCaseName</span>
+<span class="mi">001</span><span class="n">b661c</span> <span class="n">T</span> <span class="n">swift_errorInMain</span>
+<span class="mi">004</span><span class="n">add18</span> <span class="n">T</span> <span class="n">_swift_extractDynamicValue</span>
+<span class="mi">0052</span><span class="n">d74c</span> <span class="n">T</span> <span class="n">swift_float32ToString</span>
+<span class="mi">0052</span><span class="n">d760</span> <span class="n">T</span> <span class="n">swift_float64ToString</span>
+<span class="mi">0052</span><span class="n">d774</span> <span class="n">T</span> <span class="n">swift_float80ToString</span>
+<span class="mi">004</span><span class="n">ef5f4</span> <span class="n">t</span> <span class="n">swift_format_decimal</span>
+<span class="mi">004</span><span class="n">ef7d8</span> <span class="n">t</span> <span class="n">swift_format_double</span>
+<span class="mi">004</span><span class="n">ef434</span> <span class="n">t</span> <span class="n">swift_format_exponential</span>
+<span class="mi">004</span><span class="n">ef210</span> <span class="n">t</span> <span class="n">swift_format_float</span>
+<span class="mi">004</span><span class="n">cdd80</span> <span class="n">T</span> <span class="n">swift_getAssociatedConformanceWitness</span>
+<span class="mi">004</span><span class="n">cde34</span> <span class="n">t</span> <span class="n">swift_getAssociatedConformanceWitnessSlow</span>
+<span class="mi">004</span><span class="n">cdc28</span> <span class="n">T</span> <span class="n">swift_getAssociatedTypeWitness</span>
+<span class="mi">004</span><span class="n">cdce4</span> <span class="n">t</span> <span class="n">swift_getAssociatedTypeWitnessSlow</span>
+<span class="mi">0025</span><span class="n">fcd8</span> <span class="n">T</span> <span class="n">swift_getAtAnyKeyPath</span>
+<span class="mi">0025</span><span class="n">fcc4</span> <span class="n">T</span> <span class="n">swift_getAtKeyPath</span>
+<span class="mi">0025</span><span class="n">fb88</span> <span class="n">T</span> <span class="n">swift_getAtPartialKeyPath</span>
+<span class="mi">004</span><span class="n">ad834</span> <span class="n">T</span> <span class="n">swift_getDynamicType</span>
+<span class="mi">004</span><span class="n">b5258</span> <span class="n">T</span> <span class="n">swift_getEnumCaseMultiPayload</span>
+<span class="mi">004</span><span class="n">b46d8</span> <span class="n">T</span> <span class="n">swift_getEnumTagSinglePayloadGeneric</span>
+<span class="mi">004</span><span class="n">b564c</span> <span class="n">T</span> <span class="n">swift_getErrorValue</span>
+<span class="mi">004</span><span class="n">cac78</span> <span class="n">T</span> <span class="n">swift_getExistentialMetatypeMetadata</span>
+<span class="mi">004</span><span class="n">cb4e8</span> <span class="n">T</span> <span class="n">swift_getExistentialTypeMetadata</span>
+<span class="mi">0049</span><span class="n">ac00</span> <span class="n">t</span> <span class="n">__swift_get_extra_inhabitant_index</span><span class="mf">.664</span><span class="n">Tm</span>
+<span class="mi">0049</span><span class="n">aca4</span> <span class="n">t</span> <span class="n">__swift_get_extra_inhabitant_index</span><span class="mf">.665</span><span class="n">Tm</span>
+<span class="mi">004</span><span class="n">cc07c</span> <span class="n">T</span> <span class="n">swift_getForeignTypeMetadata</span>
+<span class="mi">004</span><span class="n">b6150</span> <span class="n">T</span> <span class="n">swift_getFunctionReplacement</span>
+<span class="mi">004</span><span class="n">c83c4</span> <span class="n">T</span> <span class="n">swift_getFunctionTypeMetadata</span>
+<span class="mi">004</span><span class="n">c836c</span> <span class="n">T</span> <span class="n">swift_getFunctionTypeMetadata0</span>
+<span class="mi">004</span><span class="n">c87f8</span> <span class="n">T</span> <span class="n">swift_getFunctionTypeMetadata1</span>
+<span class="mi">004</span><span class="n">c8858</span> <span class="n">T</span> <span class="n">swift_getFunctionTypeMetadata2</span>
+<span class="mi">004</span><span class="n">c88b8</span> <span class="n">T</span> <span class="n">swift_getFunctionTypeMetadata3</span>
+<span class="mi">004</span><span class="n">c7994</span> <span class="n">T</span> <span class="n">swift_getGenericMetadata</span>
+<span class="mi">004</span><span class="n">ed408</span> <span class="n">T</span> <span class="n">_swift_getGlobalRuntimeFunctionCounters</span>
+<span class="mi">004</span><span class="n">d02dc</span> <span class="n">T</span> <span class="n">swift_getKeyPath</span>
+<span class="mi">00261400</span> <span class="n">T</span> <span class="n">swift_getKeyPathImpl</span>
+<span class="mi">004</span><span class="n">caa0c</span> <span class="n">T</span> <span class="n">swift_getMetatypeMetadata</span>
+<span class="mi">004</span><span class="n">ed4a8</span> <span class="n">T</span> <span class="n">_swift_getNumRuntimeFunctionCounters</span>
+<span class="mi">004</span><span class="n">ed23c</span> <span class="n">T</span> <span class="n">_swift_getObjectRuntimeFunctionCounters</span>
+<span class="mi">00516958</span> <span class="n">T</span> <span class="n">swift_getObjectType</span>
+<span class="mi">004</span><span class="n">dc900</span> <span class="n">T</span> <span class="n">swift_getOpaqueTypeConformance</span>
+<span class="mi">004</span><span class="n">dc720</span> <span class="n">T</span> <span class="n">swift_getOpaqueTypeMetadata</span>
+<span class="mi">004</span><span class="n">b61ac</span> <span class="n">T</span> <span class="n">swift_getOrigOfReplaceable</span>
+<span class="mi">004</span><span class="n">ed498</span> <span class="n">T</span> <span class="n">_swift_getRuntimeFunctionCountersOffsets</span>
+<span class="mi">004</span><span class="n">ed488</span> <span class="n">T</span> <span class="n">_swift_getRuntimeFunctionNames</span>
+<span class="mi">004</span><span class="n">c8044</span> <span class="n">T</span> <span class="n">swift_getSingletonMetadata</span>
+<span class="mi">00516</span><span class="n">d4c</span> <span class="n">T</span> <span class="n">_swift_getSwiftClassInstanceExtents</span>
+<span class="mi">004</span><span class="n">c8988</span> <span class="n">T</span> <span class="n">swift_getTupleTypeLayout</span>
+<span class="mi">004</span><span class="n">c8920</span> <span class="n">T</span> <span class="n">swift_getTupleTypeLayout2</span>
+<span class="mi">004</span><span class="n">c8ae4</span> <span class="n">T</span> <span class="n">swift_getTupleTypeLayout3</span>
+<span class="mi">004</span><span class="n">c8b48</span> <span class="n">T</span> <span class="n">swift_getTupleTypeMetadata</span>
+<span class="mi">004</span><span class="n">c94bc</span> <span class="n">T</span> <span class="n">swift_getTupleTypeMetadata2</span>
+<span class="mi">004</span><span class="n">c94ec</span> <span class="n">T</span> <span class="n">swift_getTupleTypeMetadata3</span>
+<span class="mi">004</span><span class="n">dc560</span> <span class="n">T</span> <span class="n">swift_getTypeByMangledNameInContext</span>
+<span class="mi">004</span><span class="n">dc24c</span> <span class="n">T</span> <span class="n">swift_getTypeByMangledNameInEnvironment</span>
+<span class="mi">004</span><span class="n">d0288</span> <span class="n">T</span> <span class="n">swift_getTypeContextDescriptor</span>
+<span class="mi">004</span><span class="n">ad404</span> <span class="n">T</span> <span class="n">swift_getTypeName</span>
+<span class="mi">004</span><span class="n">cce20</span> <span class="n">T</span> <span class="n">swift_getWitnessTable</span>
+<span class="mi">004</span><span class="n">c9bd4</span> <span class="n">T</span> <span class="n">swift_initClassMetadata</span>
+<span class="mi">004</span><span class="n">ca65c</span> <span class="n">T</span> <span class="n">swift_initClassMetadata2</span>
+<span class="mi">004</span><span class="n">b4a80</span> <span class="n">T</span> <span class="n">swift_initEnumMetadataMultiPayload</span>
+<span class="mi">004</span><span class="n">b450c</span> <span class="n">T</span> <span class="n">swift_initEnumMetadataSingleCase</span>
+<span class="mi">004</span><span class="n">b456c</span> <span class="n">T</span> <span class="n">swift_initEnumMetadataSinglePayload</span>
+<span class="mi">004</span><span class="n">b65fc</span> <span class="n">T</span> <span class="n">swift_initStackObject</span>
+<span class="mi">004</span><span class="n">b6624</span> <span class="n">T</span> <span class="n">swift_initStaticObject</span>
+<span class="mi">004</span><span class="n">c993c</span> <span class="n">T</span> <span class="n">swift_initStructMetadata</span>
+<span class="mi">004867</span><span class="n">f4</span> <span class="n">t</span> <span class="n">__swift_initWithCopy_strong</span>
+<span class="mi">0052</span><span class="n">d19c</span> <span class="n">T</span> <span class="n">_swift_instantiateInertHeapObject</span>
+<span class="mi">0052</span><span class="n">d46c</span> <span class="n">T</span> <span class="n">swift_int64ToString</span>
+<span class="mf">004e7</span><span class="n">ac8</span> <span class="n">T</span> <span class="n">swift_intToFloat32</span>
+<span class="mf">004e7</span><span class="n">bd0</span> <span class="n">T</span> <span class="n">swift_intToFloat64</span>
+<span class="mi">004</span><span class="n">adbd0</span> <span class="n">T</span> <span class="n">_swift_isClassOrObjCExistentialType</span>
+<span class="mi">004</span><span class="n">adca0</span> <span class="n">T</span> <span class="n">swift_isClassType</span>
+<span class="mi">004</span><span class="n">b79fc</span> <span class="n">T</span> <span class="n">swift_isDeallocating</span>
+<span class="mi">00516</span><span class="n">bc4</span> <span class="n">T</span> <span class="n">swift_isEscapingClosureAtFileLocation</span>
+<span class="mi">004</span><span class="n">adcfc</span> <span class="n">t</span> <span class="n">_swift_isOptional</span>
+<span class="mi">004</span><span class="n">adce0</span> <span class="n">T</span> <span class="n">swift_isOptionalType</span>
+<span class="mi">00516</span><span class="n">b58</span> <span class="n">T</span> <span class="n">swift_isUniquelyReferenced_native</span>
+<span class="mi">00516</span><span class="n">a50</span> <span class="n">T</span> <span class="n">swift_isUniquelyReferenced_nonNull_native</span>
+<span class="mi">00516</span><span class="n">bac</span> <span class="n">T</span> <span class="n">swift_isUniquelyReferencedNonObjC</span>
+<span class="mi">00516</span><span class="n">b68</span> <span class="n">T</span> <span class="n">swift_isUniquelyReferencedNonObjC_nonNull</span>
+<span class="mi">00516</span><span class="n">bbc</span> <span class="n">T</span> <span class="n">swift_isUniquelyReferencedNonObjC_nonNull_bridgeObject</span>
+<span class="mi">005</span><span class="n">a0ac4</span> <span class="n">D</span> <span class="n">swift_keyPathGenericWitnessTable</span>
+<span class="mi">00586954</span> <span class="n">R</span> <span class="n">_swift_lldb_offsetof_SwiftError_typeMetadata</span>
+<span class="mi">00586958</span> <span class="n">R</span> <span class="n">_swift_lldb_sizeof_SwiftError</span>
+<span class="mi">004</span><span class="n">ca680</span> <span class="n">T</span> <span class="n">swift_lookUpClassMethod</span>
+<span class="mi">004</span><span class="n">acb74</span> <span class="n">T</span> <span class="n">_swift_makeAnyHashableUpcastingToHashableBaseType</span>
+<span class="mi">001</span><span class="n">f4898</span> <span class="n">t</span> <span class="n">_swift_makeAnyHashableUsingDefaultRepresentation</span>
+<span class="mi">004</span><span class="n">b6720</span> <span class="n">T</span> <span class="n">swift_makeBoxUnique</span>
+<span class="mi">0048</span><span class="n">a4b4</span> <span class="n">t</span> <span class="n">__swift_memcpy0_1</span>
+<span class="mi">00486</span><span class="n">b74</span> <span class="n">t</span> <span class="n">__swift_memcpy1_1</span>
+<span class="mi">00486</span><span class="n">f10</span> <span class="n">t</span> <span class="n">__swift_memcpy12_4</span>
+<span class="mi">0049</span><span class="n">b35c</span> <span class="n">t</span> <span class="n">__swift_memcpy128_16</span>
+<span class="mi">004868</span><span class="n">fc</span> <span class="n">t</span> <span class="n">__swift_memcpy16_4</span>
+<span class="mi">00494</span><span class="n">b4c</span> <span class="n">t</span> <span class="n">__swift_memcpy16_8</span>
+<span class="mi">00496</span><span class="n">b00</span> <span class="n">t</span> <span class="n">__swift_memcpy17_4</span>
+<span class="mi">0048867</span><span class="n">c</span> <span class="n">t</span> <span class="n">__swift_memcpy20_4</span>
+<span class="mi">0049</span><span class="n">a050</span> <span class="n">t</span> <span class="n">__swift_memcpy21_4</span>
+<span class="mi">00497168</span> <span class="n">t</span> <span class="n">__swift_memcpy23_4</span>
+<span class="mi">0049</span><span class="n">b484</span> <span class="n">t</span> <span class="n">__swift_memcpy256_16</span>
+<span class="mf">00492e6</span><span class="n">c</span> <span class="n">t</span> <span class="n">__swift_memcpy256_4</span>
+<span class="mf">004972e0</span> <span class="n">t</span> <span class="n">__swift_memcpy28_8</span>
+<span class="mi">0049</span><span class="n">d20c</span> <span class="n">t</span> <span class="n">__swift_memcpy32_1</span>
+<span class="mi">0049</span><span class="n">b0c0</span> <span class="n">t</span> <span class="n">__swift_memcpy32_16</span>
+<span class="mi">004987</span><span class="n">d8</span> <span class="n">t</span> <span class="n">__swift_memcpy33_8</span>
+<span class="mi">004884</span><span class="n">fc</span> <span class="n">t</span> <span class="n">__swift_memcpy36_4</span>
+<span class="mi">00488</span><span class="n">b0c</span> <span class="n">t</span> <span class="n">__swift_memcpy41_4</span>
+<span class="mi">00486840</span> <span class="n">t</span> <span class="n">__swift_memcpy4_4</span>
+<span class="mi">0049</span><span class="n">b5ac</span> <span class="n">t</span> <span class="n">__swift_memcpy512_16</span>
+<span class="mi">00496828</span> <span class="n">t</span> <span class="n">__swift_memcpy5_4</span>
+<span class="mi">0049</span><span class="n">b0f4</span> <span class="n">t</span> <span class="n">__swift_memcpy64_16</span>
+<span class="mi">00492</span><span class="n">ea4</span> <span class="n">t</span> <span class="n">__swift_memcpy64_8</span>
+<span class="mi">0048</span><span class="n">dba0</span> <span class="n">t</span> <span class="n">__swift_memcpy72_8</span>
+<span class="mi">004866</span><span class="n">d4</span> <span class="n">t</span> <span class="n">__swift_memcpy8_4</span>
+<span class="mi">00494</span><span class="n">bf8</span> <span class="n">t</span> <span class="n">__swift_memcpy9_4</span>
+<span class="mi">004</span><span class="n">ba5d8</span> <span class="n">T</span> <span class="n">swift_modifyAtReferenceWritableKeyPath</span>
+<span class="mi">00260024</span> <span class="n">T</span> <span class="n">_swift_modifyAtReferenceWritableKeyPath_impl</span>
+<span class="mi">004</span><span class="n">ba59c</span> <span class="n">T</span> <span class="n">swift_modifyAtWritableKeyPath</span>
+<span class="mi">00260008</span> <span class="n">T</span> <span class="n">_swift_modifyAtWritableKeyPath_impl</span>
+<span class="mi">00436518</span> <span class="n">t</span> <span class="n">__swift_mutable_project_boxed_opaque_existential_1</span>
+<span class="mi">00516</span><span class="n">a00</span> <span class="n">T</span> <span class="n">swift_nonatomic_bridgeObjectRelease</span>
+<span class="mi">00516</span><span class="n">a48</span> <span class="n">T</span> <span class="n">swift_nonatomic_bridgeObjectRelease_n</span>
+<span class="mi">005169</span><span class="n">dc</span> <span class="n">T</span> <span class="n">swift_nonatomic_bridgeObjectRetain</span>
+<span class="mi">00516</span><span class="n">a2c</span> <span class="n">T</span> <span class="n">swift_nonatomic_bridgeObjectRetain_n</span>
+<span class="mi">004</span><span class="n">b6c90</span> <span class="n">T</span> <span class="n">swift_nonatomic_release</span>
+<span class="mi">004</span><span class="n">b6d7c</span> <span class="n">T</span> <span class="n">swift_nonatomic_release_n</span>
+<span class="mi">004</span><span class="n">b6b30</span> <span class="n">T</span> <span class="n">swift_nonatomic_retain</span>
+<span class="mi">004</span><span class="n">b6c10</span> <span class="n">T</span> <span class="n">swift_nonatomic_retain_n</span>
+<span class="mi">004</span><span class="n">b7424</span> <span class="n">T</span> <span class="n">swift_nonatomic_unownedRelease</span>
+<span class="mi">004</span><span class="n">b77c4</span> <span class="n">T</span> <span class="n">swift_nonatomic_unownedRelease_n</span>
+<span class="mi">004</span><span class="n">b7354</span> <span class="n">T</span> <span class="n">swift_nonatomic_unownedRetain</span>
+<span class="mi">004</span><span class="n">b76f0</span> <span class="n">T</span> <span class="n">swift_nonatomic_unownedRetain_n</span>
+<span class="mi">004</span><span class="n">b7cc4</span> <span class="n">T</span> <span class="n">swift_nonatomic_unownedRetainStrong</span>
+<span class="mi">004</span><span class="n">b7f84</span> <span class="n">T</span> <span class="n">swift_nonatomic_unownedRetainStrongAndRelease</span>
+<span class="mf">004866e8</span> <span class="n">t</span> <span class="n">__swift_noop_void_return</span>
+<span class="mi">005169</span><span class="n">b8</span> <span class="n">T</span> <span class="n">_swift_objcClassUsesNativeSwiftReferenceCounting</span>
+<span class="mf">004e7</span><span class="n">ce0</span> <span class="n">T</span> <span class="n">swift_once</span>
+<span class="mi">00517</span><span class="n">c4c</span> <span class="n">T</span> <span class="n">swift_OpaqueSummary</span>
+<span class="mi">004</span><span class="n">b6a60</span> <span class="n">T</span> <span class="n">swift_projectBox</span>
+<span class="mi">00435</span><span class="n">a64</span> <span class="n">t</span> <span class="n">__swift_project_boxed_opaque_existential_0</span>
+<span class="mi">004</span><span class="n">ba500</span> <span class="n">T</span> <span class="n">swift_readAtKeyPath</span>
+<span class="mf">005170e0</span> <span class="n">T</span> <span class="n">swift_reflectionMirror_count</span>
+<span class="mi">005177</span><span class="n">ac</span> <span class="n">T</span> <span class="n">swift_reflectionMirror_displayStyle</span>
+<span class="mi">00516</span><span class="n">f30</span> <span class="n">T</span> <span class="n">swift_reflectionMirror_normalizedType</span>
+<span class="mi">005174</span><span class="n">b8</span> <span class="n">T</span> <span class="n">swift_reflectionMirror_subscript</span>
+<span class="mi">00586854</span> <span class="n">r</span> <span class="n">__swift_reflection_version</span>
+<span class="mf">004e8</span><span class="n">c48</span> <span class="n">T</span> <span class="n">swift_registerProtocolConformances</span>
+<span class="mi">004</span><span class="n">dbe48</span> <span class="n">T</span> <span class="n">swift_registerProtocols</span>
+<span class="mi">004</span><span class="n">da17c</span> <span class="n">T</span> <span class="n">swift_registerTypeMetadataRecords</span>
+<span class="mi">005</span><span class="n">a0aac</span> <span class="n">D</span> <span class="n">_swift_release</span>
+<span class="mi">004</span><span class="n">b6958</span> <span class="n">T</span> <span class="n">swift_release</span>
+<span class="mi">004</span><span class="n">b82b0</span> <span class="n">t</span> <span class="n">_swift_release_dealloc</span>
+<span class="mi">005</span><span class="n">a0ab0</span> <span class="n">D</span> <span class="n">_swift_release_n</span>
+<span class="mi">004</span><span class="n">b6d3c</span> <span class="n">T</span> <span class="n">swift_release_n</span>
+<span class="mi">004</span><span class="n">c6f1c</span> <span class="n">T</span> <span class="n">swift_relocateClassMetadata</span>
+<span class="mi">004</span><span class="n">b5af0</span> <span class="n">T</span> <span class="n">swift_reportError</span>
+<span class="mi">004</span><span class="n">b5ccc</span> <span class="n">t</span> <span class="n">swift_reportError</span><span class="o">.</span><span class="n">cold</span><span class="mf">.1</span>
+<span class="mi">005</span><span class="n">a0a94</span> <span class="n">D</span> <span class="n">_swift_reportFatalErrorsToDebugger</span>
+<span class="mi">004</span><span class="n">b5ad8</span> <span class="n">T</span> <span class="n">_swift_reportToDebugger</span>
+<span class="mi">005</span><span class="n">a0aa4</span> <span class="n">D</span> <span class="n">_swift_retain</span>
+<span class="mi">004</span><span class="n">b6aa8</span> <span class="n">T</span> <span class="n">swift_retain</span>
+<span class="mi">004</span><span class="n">b6e70</span> <span class="n">T</span> <span class="n">swift_retainCount</span>
+<span class="mi">005</span><span class="n">a0aa8</span> <span class="n">D</span> <span class="n">_swift_retain_n</span>
+<span class="mi">004</span><span class="n">b6b80</span> <span class="n">T</span> <span class="n">swift_retain_n</span>
+<span class="mi">004</span><span class="n">b5ad4</span> <span class="n">T</span> <span class="n">_swift_runtime_on_report</span>
+<span class="mi">00260078</span> <span class="n">T</span> <span class="n">swift_setAtReferenceWritableKeyPath</span>
+<span class="mi">00260038</span> <span class="n">T</span> <span class="n">swift_setAtWritableKeyPath</span>
+<span class="mi">004</span><span class="n">b7aa4</span> <span class="n">T</span> <span class="n">swift_setDeallocating</span>
+<span class="mi">002</span><span class="n">d1818</span> <span class="n">t</span> <span class="n">_swift_setDownCastConditionalIndirect</span>
+<span class="mi">002</span><span class="n">d17c4</span> <span class="n">t</span> <span class="n">_swift_setDownCastIndirect</span>
+<span class="mi">004</span><span class="n">ed448</span> <span class="n">T</span> <span class="n">_swift_setGlobalRuntimeFunctionCounters</span>
+<span class="mi">004</span><span class="n">ea700</span> <span class="n">T</span> <span class="n">_swift_setGlobalRuntimeFunctionCountersMode</span>
+<span class="mi">004</span><span class="n">ed980</span> <span class="n">T</span> <span class="n">_swift_setGlobalRuntimeFunctionCountersUpdateHandler</span>
+<span class="mi">004</span><span class="n">ed324</span> <span class="n">T</span> <span class="n">_swift_setObjectRuntimeFunctionCounters</span>
+<span class="mi">004</span><span class="n">ea724</span> <span class="n">T</span> <span class="n">_swift_setPerObjectRuntimeFunctionCountersMode</span>
+<span class="mi">004</span><span class="n">b5adc</span> <span class="n">T</span> <span class="n">_swift_shouldReportFatalErrorsToDebugger</span>
+<span class="mi">004</span><span class="n">b64ec</span> <span class="n">T</span> <span class="n">swift_slowAlloc</span>
+<span class="mi">004</span><span class="n">b6578</span> <span class="n">T</span> <span class="n">swift_slowDealloc</span>
+<span class="mi">004</span><span class="n">b5074</span> <span class="n">T</span> <span class="n">swift_storeEnumTagMultiPayload</span>
+<span class="mi">004</span><span class="n">b4854</span> <span class="n">T</span> <span class="n">swift_storeEnumTagSinglePayloadGeneric</span>
+<span class="mi">0013</span><span class="n">af08</span> <span class="n">t</span> <span class="n">swift_swiftValueConformsTo</span>
+<span class="mi">005</span><span class="n">a0ab4</span> <span class="n">D</span> <span class="n">_swift_tryRetain</span>
+<span class="mi">004</span><span class="n">b7958</span> <span class="n">T</span> <span class="n">swift_tryRetain</span>
+<span class="mi">0052</span><span class="n">d5e8</span> <span class="n">T</span> <span class="n">swift_uint64ToString</span>
+<span class="mi">0013</span><span class="n">a984</span> <span class="n">t</span> <span class="n">swift_unboxFromSwiftValueWithType</span>
+<span class="mi">00182330</span> <span class="n">T</span> <span class="n">swift_unexpectedError</span>
+<span class="mi">004</span><span class="n">b817c</span> <span class="n">T</span> <span class="n">swift_unownedCheck</span>
+<span class="mi">004</span><span class="n">b7138</span> <span class="n">T</span> <span class="n">swift_unownedRelease</span>
+<span class="mi">004</span><span class="n">b75e4</span> <span class="n">T</span> <span class="n">swift_unownedRelease_n</span>
+<span class="mi">004</span><span class="n">b7000</span> <span class="n">T</span> <span class="n">swift_unownedRetain</span>
+<span class="mi">004</span><span class="n">b6f24</span> <span class="n">T</span> <span class="n">swift_unownedRetainCount</span>
+<span class="mi">004</span><span class="n">b75b4</span> <span class="n">T</span> <span class="n">swift_unownedRetain_n</span>
+<span class="mi">004</span><span class="n">b7b70</span> <span class="n">T</span> <span class="n">swift_unownedRetainStrong</span>
+<span class="mi">004</span><span class="n">b7dec</span> <span class="n">T</span> <span class="n">swift_unownedRetainStrongAndRelease</span>
+<span class="mi">004</span><span class="n">b6684</span> <span class="n">T</span> <span class="n">swift_verifyEndOfLifetime</span>
+<span class="mi">004</span><span class="n">b877c</span> <span class="n">T</span> <span class="n">swift_weakAssign</span>
+<span class="mi">004</span><span class="n">b8948</span> <span class="n">T</span> <span class="n">swift_weakCopyAssign</span>
+<span class="mi">004</span><span class="n">b8888</span> <span class="n">T</span> <span class="n">swift_weakCopyInit</span>
+<span class="mi">004</span><span class="n">b886c</span> <span class="n">T</span> <span class="n">swift_weakDestroy</span>
+<span class="mi">004</span><span class="n">b874c</span> <span class="n">T</span> <span class="n">swift_weakInit</span>
+<span class="mi">004</span><span class="n">b8800</span> <span class="n">T</span> <span class="n">swift_weakLoadStrong</span>
+<span class="mi">004</span><span class="n">b6fb4</span> <span class="n">T</span> <span class="n">swift_weakRetainCount</span>
+<span class="mi">004</span><span class="n">b8a10</span> <span class="n">T</span> <span class="n">swift_weakTakeAssign</span>
+<span class="mi">004</span><span class="n">b8934</span> <span class="n">T</span> <span class="n">swift_weakTakeInit</span>
+<span class="mi">004</span><span class="n">b8830</span> <span class="n">T</span> <span class="n">swift_weakTakeStrong</span>
+<span class="mi">004</span><span class="n">b5678</span> <span class="n">T</span> <span class="n">swift_willThrow</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>C++ functions<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>004e7da4 t _Z14_swift_strlcpyPcPKcj
+004ea55c t _Z41swift_trackRuntimeInvocation_swift_retainPN5swift10HeapObjectE
+004ea864 t _Z42swift_trackRuntimeInvocation_swift_releasePN5swift10HeapObjectE
+004eaa00 t _Z43swift_trackRuntimeInvocation_swift_retain_nPN5swift10HeapObjectE
+004eab9c t _Z44swift_trackRuntimeInvocation_swift_release_nPN5swift10HeapObjectE
+004ec894 t _Z44swift_trackRuntimeInvocation_swift_tryRetainPN5swift10HeapObjectE
+004eca30 t _Z45swift_trackRuntimeInvocation_swift_tryReleasePN5swift10HeapObjectE
+004ec224 t _Z46swift_trackRuntimeInvocation_swift_allocObjectPN5swift10HeapObjectE
+004ec3c0 t _Z48swift_trackRuntimeInvocation_swift_deallocObjectPN5swift10HeapObjectE
+004eb544 t _Z48swift_trackRuntimeInvocation_swift_unownedRetainPN5swift10HeapObjectE
+004eb6e0 t _Z49swift_trackRuntimeInvocation_swift_unownedReleasePN5swift10HeapObjectE
+004ec55c t _Z50swift_trackRuntimeInvocation_swift_initStackObjectPN5swift10HeapObjectE
+004eb3a8 t _Z50swift_trackRuntimeInvocation_swift_setDeallocatingPN5swift10HeapObjectE
+004ebbb4 t _Z50swift_trackRuntimeInvocation_swift_unownedRetain_nPN5swift10HeapObjectE
+004ec6f8 t _Z51swift_trackRuntimeInvocation_swift_initStaticObjectPN5swift10HeapObjectE
+004ead38 t _Z51swift_trackRuntimeInvocation_swift_nonatomic_retainPN5swift10HeapObjectE
+004ebd50 t _Z51swift_trackRuntimeInvocation_swift_unownedRelease_nPN5swift10HeapObjectE
+004eaed4 t _Z52swift_trackRuntimeInvocation_swift_nonatomic_releasePN5swift10HeapObjectE
+004eb070 t _Z53swift_trackRuntimeInvocation_swift_nonatomic_retain_nPN5swift10HeapObjectE
+004eb20c t _Z54swift_trackRuntimeInvocation_swift_nonatomic_release_nPN5swift10HeapObjectE
+004ecbcc t _Z54swift_trackRuntimeInvocation_swift_unownedRetainStrongPN5swift10HeapObjectE
+004eb87c t _Z58swift_trackRuntimeInvocation_swift_nonatomic_unownedRetainPN5swift10HeapObjectE
+004eba18 t _Z59swift_trackRuntimeInvocation_swift_nonatomic_unownedReleasePN5swift10HeapObjectE
+004ebeec t _Z60swift_trackRuntimeInvocation_swift_nonatomic_unownedRetain_nPN5swift10HeapObjectE
+004ec088 t _Z61swift_trackRuntimeInvocation_swift_nonatomic_unownedRelease_nPN5swift10HeapObjectE
+004ecd68 t _Z64swift_trackRuntimeInvocation_swift_nonatomic_unownedRetainStrongPN5swift10HeapObjectE
+004ecf04 t _Z64swift_trackRuntimeInvocation_swift_unownedRetainStrongAndReleasePN5swift10HeapObjectE
+004ed0a0 t _Z74swift_trackRuntimeInvocation_swift_nonatomic_unownedRetainStrongAndReleasePN5swift10HeapObjectE
+004b6ab8 t _ZL14_swift_retain_PN5swift10HeapObjectE
+005b64d0 b _ZL15ForeignMetadata
+00520654 t _ZL15isInSwiftModulePN5swift8Demangle4NodeE
+004b6c64 t _ZL15_swift_release_PN5swift10HeapObjectE
+004b5b64 t _ZL15swift_vasprintfPPcPKcSt9__va_list
+0051e99c t _ZL16applyParamLabelsPN5swift8Demangle4NodeES2_RNS0_11NodeFactoryE
+005b6510 b _ZL16ExistentialTypes
+005869f0 r _ZL16powersOf10_Float
+004b6b90 t _ZL16_swift_retain_n_PN5swift10HeapObjectEj
+0052dd54 t _ZL16swift_snprintf_lPcjP15__locale_structPKcz
+00586b30 r _ZL17powersOf10_Double
+005b6470 b _ZL17SingletonMetadata
+004b6d4c t _ZL17_swift_release_n_PN5swift10HeapObjectEj
+004b7968 t _ZL17_swift_tryRetain_PN5swift10HeapObjectE
+004b658c t _ZL19_swift_allocObject_PKN5swift18TargetHeapMetadataINS_9InProcessEEEjj
+04adf30 t _ZL21swift_dynamicCastImplPN5swift11OpaqueValueES1_PKNS_14TargetMetadataINS_9InProcessEEES6_NS_16DynamicCastFlagsE
+004b0e08 t _ZL22_dynamicCastToMetatypePN5swift11OpaqueValueES1_PKNS_14TargetMetadataINS_9InProcessEEEPKNS_22TargetMetatypeMetadataIS3_EENS_16DynamicCastFlagsE
+004ba4f0 t _ZL22equateGenericArgumentsPKvS0_j
+004d1f0c t _ZL22findAssociatedTypeNamePKN5swift24TargetProtocolDescriptorINS_9InProcessEEEPKNS_25TargetProtocolRequirementIS1_EE
+004daf2c t _ZL22_findContextDescriptorPN5swift8Demangle4NodeERNS0_9DemanglerE
+004ad86c t _ZL23findDynamicValueAndTypePN5swift11OpaqueValueEPKNS_14TargetMetadataINS_9InProcessEEERS1_RS6_Rbbb
+005c6738 b _ZL23RuntimeObjectStateCache
+004b8454 t _ZL23swift_deallocObjectImplPN5swift10HeapObjectEjjb
+0052e1e8 t _ZL23swift_image_constructorv
+004b1644 t _ZL25swift_runtime_unreachablePKc
+004b6288 t _ZL25swift_runtime_unreachablePKc
+004cb2d8 t _ZL25swift_runtime_unreachablePKc
+004de9e4 t _ZL25swift_runtime_unreachablePKc
+004e8074 t _ZL25swift_runtime_unreachablePKc
+00518684 t _ZL25swift_runtime_unreachablePKc
+004d0170 t _ZL26referencesAnonymousContextPN5swift8Demangle4NodeE
+004af3cc t _ZL26swift_dynamicCastClassImplPKvPKN5swift19TargetClassMetadataINS1_9InProcessEEE
+00599768 d _ZL26tuple_witnesses_pod_inline
+004d32bc t _ZL27checkTransitiveCompletenessPKN5swift14TargetMetadataINS_9InProcessEEE
+004b007c t _ZL27_dynamicCastFromExistentialPN5swift11OpaqueValueES1_PKNS_29TargetExistentialTypeMetadataINS_9InProcessEEEPKNS_14TargetMetadataIS3_EENS_16DynamicCastFlagsE
+004b6668 t _ZL27initStaticObjectWithContextPv
+004ba5d0 t _ZL27_release_owner_continuationPN5swift15YieldOnceBufferEb
+004d9f3c t _ZL28_registerTypeMetadataRecordsR24TypeMetadataPrivateStatePKN5swift24TargetTypeMetadataRecordINS1_9InProcessEEES6_
+004e9320 t _ZL28swift_conformsToProtocolImplPKN5swift14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EE
+004c9bf8 t _ZL28_swift_initClassMetadataImplPN5swift19TargetClassMetadataINS_9InProcessEEENS_16ClassLayoutFlagsEjPKPKNS_10TypeLayoutEPjb
+004e8a08 t _ZL29_registerProtocolConformancesR16ConformanceStatePKN5swift21RelativeDirectPointerINS1_35TargetProtocolConformanceDescriptorINS1_9InProcessEEELb0EiEES8_
+004af91c t _ZL29swift_dynamicCastMetatypeImplPKN5swift14TargetMetadataINS_9InProcessEEES4_
+004d6b38 t _ZL29tuple_getEnumTagSinglePayloadILb0ELb0EEjPKN5swift11OpaqueValueEjPKNS0_14TargetMetadataINS0_9InProcessEEE
+004d5e5c t _ZL29tuple_getEnumTagSinglePayloadILb0ELb1EEjPKN5swift11OpaqueValueEjPKNS0_14TargetMetadataINS0_9InProcessEEE
+004d64cc t _ZL29tuple_getEnumTagSinglePayloadILb1ELb0EEjPKN5swift11OpaqueValueEjPKNS0_14TargetMetadataINS0_9InProcessEEE
+004d5768 t _ZL29tuple_getEnumTagSinglePayloadILb1ELb1EEjPKN5swift11OpaqueValueEjPKNS0_14TargetMetadataINS0_9InProcessEEE
+004d5970 t _ZL29tuple_storeExtraInhabitantTagPN5swift11OpaqueValueEjjPKNS_14TargetMetadataINS_9InProcessEEE
+00599798 d _ZL29tuple_witnesses_nonpod_inline
+005997c8 d _ZL29tuple_witnesses_pod_noninline
+005a0b50 d _ZL30RuntimeFunctionCountersOffsets
+004de700 t _ZL30swift_getTypeByMangledNameImplN5swift15MetadataRequestEN4llvm9StringRefEPKPKvSt8functionIFPKNS_14TargetMetadataINS_9InProcessEEEjjEES7_IFPKNS_18TargetWitnessTableIS9_EESC_jEE
+004de4dc t _ZL30swift_getTypeByMangledNodeImplN5swift15MetadataRequestERNS_8Demangle9DemanglerEPNS1_4NodeEPKPKvSt8functionIFPKNS_14TargetMetadataINS_9InProcessEEEjjEESA_IFPKNS_18TargetWitnessTableISC_EESF_jEE
+004e9474 t _ZL33swift_conformsToSwiftProtocolImplPKN5swift14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEN4llvm9StringRefE
+004af6bc t _ZL33swift_dynamicCastUnknownClassImplPKvPKN5swift14TargetMetadataINS1_9InProcessEEE
+004d034c t _ZL38swift_getAssociatedTypeWitnessSlowImplN5swift15MetadataRequestEPNS_18TargetWitnessTableINS_9InProcessEEEPKNS_14TargetMetadataIS2_EEPKNS_25TargetProtocolRequirementIS2_EESC_
+004d66d4 t _ZL38tuple_initializeBufferWithCopyOfBufferILb0ELb0EEPN5swift11OpaqueValueEPNS0_17TargetValueBufferINS0_9InProcessEEES6_PKNS0_14TargetMetadataIS4_EE
+004d5a4c t _ZL38tuple_initializeBufferWithCopyOfBufferILb0ELb1EEPN5swift11OpaqueValueEPNS0_17TargetValueBufferINS0_9InProcessEEES6_PKNS0_14TargetMetadataIS4_EE
+004d6064 t _ZL38tuple_initializeBufferWithCopyOfBufferILb1ELb0EEPN5swift11OpaqueValueEPNS0_17TargetValueBufferINS0_9InProcessEEES6_PKNS0_14TargetMetadataIS4_EE
+004d5344 t _ZL38tuple_initializeBufferWithCopyOfBufferILb1ELb1EEPN5swift11OpaqueValueEPNS0_17TargetValueBufferINS0_9InProcessEEES6_PKNS0_14TargetMetadataIS4_EE
+005c6730 b _ZL38UpdatePerObjectRuntimeFunctionCounters
+004af50c t _ZL39swift_dynamicCastClassUnconditionalImplPKvPKN5swift19TargetClassMetadataINS1_9InProcessEEEPKcjj
+005c6794 b _ZL39_swift_stdlib_ProcessOverrideUnsafeArgc
+005c6790 b _ZL39_swift_stdlib_ProcessOverrideUnsafeArgv
+004afccc t _ZL41_dynamicCastClassToValueViaObjCBridgeablePN5swift11OpaqueValueES1_PKNS_14TargetMetadataINS_9InProcessEEES6_PKN12_GLOBAL__N_133_ObjectiveCBridgeableWitnessTableENS_16DynamicCastFlagsE
+004b17c4 t _ZL41_dynamicCastMetatypeToExistentialMetatypePN5swift11OpaqueValueEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_33TargetExistentialMetatypeMetadataIS3_EENS_16DynamicCastFlagsEb
+00516e5c t _ZL41swift_dynamicCastForeignClassMetatypeImplPKN5swift19TargetClassMetadataINS_9InProcessEEES4_
+005c672c b _ZL42GlobalRuntimeFunctionCountersUpdateHandler
+004afad4 t _ZL42swift_dynamicCastMetatypeUnconditionalImplPKN5swift14TargetMetadataINS_9InProcessEEES4_PKcjj
+004c98c0 t _ZL43pod_direct_initializeBufferWithCopyOfBufferPN5swift17TargetValueBufferINS_9InProcessEEES3_PKNS_14TargetMetadataIS1_EE
+004c98e4 t _ZL45pod_indirect_initializeBufferWithCopyOfBufferPN5swift17TargetValueBufferINS_9InProcessEEES3_PKNS_14TargetMetadataIS1_EE
+004d074c t _ZL45swift_getAssociatedConformanceWitnessSlowImplPN5swift18TargetWitnessTableINS_9InProcessEEEPKNS_14TargetMetadataIS1_EES7_PKNS_25TargetProtocolRequirementIS1_EESB_
+004af81c t _ZL46swift_dynamicCastUnknownClassUnconditionalImplPKvPKN5swift14TargetMetadataINS1_9InProcessEEEPKcjj
+00516eec t _ZL54swift_dynamicCastForeignClassMetatypeUnconditionalImplPKN5swift19TargetClassMetadataINS_9InProcessEEES4_PKcjj
+004b8a54 t _ZNK5swift10HeapObject4dumpEv
+004cc6b0 t _ZNK5swift14TargetMetadataINS_9InProcessEE16allocateBufferInEPNS_17TargetValueBufferIS1_EE
+004cc6e8 t _ZNK5swift14TargetMetadataINS_9InProcessEE17projectBufferFromEPNS_17TargetValueBufferIS1_EE
+004cc700 t _ZNK5swift14TargetMetadataINS_9InProcessEE18deallocateBufferInEPNS_17TargetValueBufferIS1_EE
+004cfe20 t _ZNK5swift14TargetMetadataINS_9InProcessEE24satisfiesClassConstraintEv
+004cc680 t _ZNK5swift14TargetMetadataINS_9InProcessEE27allocateBoxForExistentialInEPNS_17TargetValueBufferIS1_EE
+004cc980 t _ZNK5swift14TargetMetadataINS_9InProcessEE4dumpEv
+004d0a5c t _ZNK5swift19TargetClassMetadataINS_9InProcessEE14getDescriptionEv
+004ccd2c t _ZNK5swift20TargetEnumDescriptorINS_9InProcessEE4dumpEv
+004c7560 t _ZNK5swift21TargetClassDescriptorINS_9InProcessEE17getMetadataBoundsEv
+004ca8dc t _ZNK5swift21TargetClassDescriptorINS_9InProcessEE20getMethodDescriptorsEv
+004d0cc8 t _ZNK5swift21TargetClassDescriptorINS_9InProcessEE9getMethodEj
+004e7e2c t _ZNK5swift23ProtocolDescriptorFlags4dumpEv
+004b136c t _ZNK5swift23TargetContextDescriptorINS_9InProcessEE17getGenericContextEv
+004ccc5c t _ZNK5swift23TargetContextDescriptorINS_9InProcessEE4dumpEv
+004e7e10 t _ZNK5swift24TargetProtocolDescriptorINS_9InProcessEE4dumpEv
+004d2900 t _ZNK5swift27TargetTypeContextDescriptorINS_9InProcessEE16getGenericParamsEv
+004b1548 t _ZNK5swift27TargetTypeContextDescriptorINS_9InProcessEE24getGenericArgumentOffsetEv
+004c7824 t _ZNK5swift27TargetTypeContextDescriptorINS_9InProcessEE27getFullGenericContextHeaderEv
+004d2aac t _ZNK5swift27TargetTypeContextDescriptorINS_9InProcessEE32getForeignMetadataInitializationEv
+004d1940 t _ZNK5swift27TargetTypeContextDescriptorINS_9InProcessEE34getSingletonMetadataInitializationEv
+004ddae8 t _ZNK5swift28DynamicReplacementDescriptor17enableReplacementEv
+004ddb64 t _ZNK5swift28DynamicReplacementDescriptor18disableReplacementEv
+004cb288 t _ZNK5swift29TargetExistentialTypeMetadataINS_9InProcessEE12mayTakeValueEPKNS_11OpaqueValueE
+004cb330 t _ZNK5swift29TargetExistentialTypeMetadataINS_9InProcessEE12projectValueEPKNS_11OpaqueValueE
+004cb398 t _ZNK5swift29TargetExistentialTypeMetadataINS_9InProcessEE14getDynamicTypeEPKNS_11OpaqueValueE
+004cb3e8 t _ZNK5swift29TargetExistentialTypeMetadataINS_9InProcessEE15getWitnessTableEPKNS_11OpaqueValueEj
+004cb26c t _ZNK5swift29TargetExistentialTypeMetadataINS_9InProcessEE17getRepresentationEv
+004cb30c t _ZNK5swift29TargetExistentialTypeMetadataINS_9InProcessEE26deinitExistentialContainerEPNS_11OpaqueValueE
+004b6358 t _ZNK5swift32TargetOpaqueExistentialContainerINS_9InProcessEE12projectValueEv
+004b633c t _ZNK5swift32TargetOpaqueExistentialContainerINS_9InProcessEE13isValueInlineEv
+004b63f0 t _ZNK5swift32TargetOpaqueExistentialContainerINS_9InProcessEE4dumpEv
+004b63ac t _ZNK5swift32TargetOpaqueExistentialContainerINS_9InProcessEE6verifyEv
+004dd134 t _ZNK5swift34SubstGenericParametersFromMetadata11getMetadataEjj
+004dd1fc t _ZNK5swift34SubstGenericParametersFromMetadata15getWitnessTableEPKNS_14TargetMetadataINS_9InProcessEEEj
+004dc914 t _ZNK5swift34SubstGenericParametersFromMetadata19buildDescriptorPathEPKNS_23TargetContextDescriptorINS_9InProcessEEERNS_8Demangle9DemanglerE
+004dcd48 t _ZNK5swift34SubstGenericParametersFromMetadata20buildEnvironmentPathEPKNS_24TargetGenericEnvironmentINS_9InProcessEEE
+004dcfcc t _ZNK5swift34SubstGenericParametersFromMetadata5setupEv
+004e80a8 t _ZNK5swift35TargetProtocolConformanceDescriptorINS_9InProcessEE15getWitnessTableEPKNS_14TargetMetadataIS1_EE
+004e7fb8 t _ZNK5swift35TargetProtocolConformanceDescriptorINS_9InProcessEE24getCanonicalTypeMetadataEv
+004e7f78 t _ZNK5swift35TargetProtocolConformanceDescriptorINS_9InProcessEE6verifyEv
+004dd224 t _ZNK5swift37SubstGenericParametersFromWrittenArgs11getMetadataEjj
+004dd2bc t _ZNK5swift37SubstGenericParametersFromWrittenArgs15getWitnessTableEPKNS_14TargetMetadataINS_9InProcessEEEj
+004c6dc8 t _ZNK5swift37TargetSingletonMetadataInitializationINS_9InProcessEE8allocateEPKNS_27TargetTypeContextDescriptorIS1_EE
+00521384 t _ZNK5swift8Demangle17SubstitutionEntry10deepEqualsEPNS0_4NodeES3_
+004f8798 t _ZNK5swift8Demangle4Node14getNumChildrenEv
+004f87e8 t _ZNK5swift8Demangle4Node3endEv
+004f87c4 t _ZNK5swift8Demangle4Node5beginEv
+004b9328 t _ZNK5swift9RefCountsINS_13RefCountBitsTILNS_19RefCountInlinednessE1EEEE20isUniquelyReferencedEv
+         U _ZNKSt8__detail20_Prime_rehash_policy14_M_need_rehashEjjj
+005b64e0 b _ZZ16swift_getKeyPathE8Override
+005b64e4 b _ZZ16swift_getKeyPathE9Predicate
+004d1ecc t _ZZ16swift_getKeyPathEN4$_118__invokeEPv
+005b6420 b _ZZ17swift_dynamicCastE8Override
+005b6424 b _ZZ17swift_dynamicCastE9Predicate
+004afcac t _ZZ17swift_dynamicCastEN3$_08__invokeEPv
+005b6400 b _ZZ17swift_getTypeNameE13TypeNameCache
+005b63dc b _ZZ17swift_getTypeNameE17TypeNameCacheLock
+005c67b8 b _ZZ19swift_stdlib_randomE19getrandom_available
+005c67c0 b _ZZ19swift_stdlib_randomE2fd
+005c67c8 b _ZZ19swift_stdlib_randomE5mutex
+004cd7d4 t _ZZ21swift_getWitnessTableENK3$_5clEPKN5swift18TargetWitnessTableINS0_9InProcessEEE
+005b6428 b _ZZ22swift_dynamicCastClassE8Override
+005b642c b _ZZ22swift_dynamicCastClassE9Predicate
+004b1924 t _ZZ22swift_dynamicCastClassEN3$_18__invokeEPv
+004d9784 t _ZZ24swift_checkMetadataStateEN19CheckStateCallbacks18forForeignMetadataEPKN5swift14TargetMetadataINS0_9InProcessEEEPKNS0_27TargetTypeContextDescriptorIS2_EE
+005c668c b _ZZ24swift_conformsToProtocolE8Override
+005c6690 b _ZZ24swift_conformsToProtocolE9Predicate
+004e9854 t _ZZ24swift_conformsToProtocolEN3$_28__invokeEPv
+005b6448 b _ZZ25swift_dynamicCastMetatypeE8Override
+005b644c b _ZZ25swift_dynamicCastMetatypeE9Predicate
+004b19a4 t _ZZ25swift_dynamicCastMetatypeEN3$_58__invokeEPv
+005b6438 b _ZZ29swift_dynamicCastUnknownClassE8Override
+005b643c b _ZZ29swift_dynamicCastUnknownClassE9Predicate
+004b1964 t _ZZ29swift_dynamicCastUnknownClassEN3$_38__invokeEPv
+005b64e8 b _ZZ34swift_getAssociatedTypeWitnessSlowE8Override
+005b64ec b _ZZ34swift_getAssociatedTypeWitnessSlowE9Predicate
+004d1eec t _ZZ34swift_getAssociatedTypeWitnessSlowEN4$_128__invokeEPv
+005b6430 b _ZZ35swift_dynamicCastClassUnconditionalE8Override
+005b6434 b _ZZ35swift_dynamicCastClassUnconditionalE9Predicate
+004b1944 t _ZZ35swift_dynamicCastClassUnconditionalEN3$_28__invokeEPv
+005c67ec b _ZZ35_swift_stdlib_threadLocalStorageGetE3key
+005c67e8 b _ZZ35_swift_stdlib_threadLocalStorageGetE5token
+005c6778 b _ZZ37swift_dynamicCastForeignClassMetatypeE8Override
+005c677c b _ZZ37swift_dynamicCastForeignClassMetatypeE9Predicate
+00516ef0 t _ZZ37swift_dynamicCastForeignClassMetatypeEN3$_08__invokeEPv
+005b6450 b _ZZ38swift_dynamicCastMetatypeUnconditionalE8Override
+005b6454 b _ZZ38swift_dynamicCastMetatypeUnconditionalE9Predicate
+004b19c4 t _ZZ38swift_dynamicCastMetatypeUnconditionalEN3$_68__invokeEPv
+005b64f0 b _ZZ41swift_getAssociatedConformanceWitnessSlowE8Override
+005b64f4 b _ZZ41swift_getAssociatedConformanceWitnessSlowE9Predicate
+004d2230 t _ZZ41swift_getAssociatedConformanceWitnessSlowEN4$_138__invokeEPv
+005b6440 b _ZZ42swift_dynamicCastUnknownClassUnconditionalE8Override
+005b6444 b _ZZ42swift_dynamicCastUnknownClassUnconditionalE9Predicate
+004b1984 t _ZZ42swift_dynamicCastUnknownClassUnconditionalEN3$_48__invokeEPv
+005c6780 b _ZZ50swift_dynamicCastForeignClassMetatypeUnconditionalE8Override
+005c6784 b _ZZ50swift_dynamicCastForeignClassMetatypeUnconditionalE9Predicate
+00516f10 t _ZZ50swift_dynamicCastForeignClassMetatypeUnconditionalEN3$_18__invokeEPv
+005b6458 b _ZZL21getOverrideSectionPtrvE18OverrideSectionPtr
+005b645c b _ZZL21getOverrideSectionPtrvE9Predicate
+004b24e4 t _ZZL21getOverrideSectionPtrvEN3$_08__invokeEPv
+004d15c8 t _ZZL23checkMetadataDependencyN5swift18MetadataDependencyEEN21IsIncompleteCallbacks18forForeignMetadataEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_27TargetTypeContextDescriptorIS3_EE
+004d3640 t _ZZL27checkTransitiveCompletenessPKN5swift14TargetMetadataINS_9InProcessEEEENK4$_22clES4_
+004d26ac t _ZZL38areAllTransitiveMetadataComplete_cheapPKN5swift14TargetMetadataINS_9InProcessEEEENK3$_6clES4_
+005126ec t _ZZN12_GLOBAL__N_111NodePrinter23printFunctionParametersEPN5swift8Demangle4NodeES4_bENKUlS4_E_clES4_
+0056e502 r _ZZN12_GLOBAL__N_112OldDemangler18demangleIdentifierEN4llvm8OptionalIN5swift8Demangle4Node4KindEEEE13op_char_table
+00517ee8 t _ZZN12_GLOBAL__N_19TupleImpl9subscriptEiPPKcPPFvS2_EENUlS2_E_8__invokeES2_
+00586de8 r _ZZN12_GLOBAL__N_1lsERN5swift8Demangle16DemanglerPrinterERKNS_12QuotedStringEE8Hexdigit
+005c6620 b _ZZN4llvm7hashing6detail18get_execution_seedEvE4seed
+004d9314 t _ZZN5swift18addToMetadataQueueEPNS_28MetadataCompletionQueueEntryENS_18MetadataDependencyEEN16EnqueueCallbacks18forForeignMetadataEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_27TargetTypeContextDescriptorIS5_EE
+004d9308 t _ZZN5swift18addToMetadataQueueEPNS_28MetadataCompletionQueueEntryENS_18MetadataDependencyEENO16EnqueueCallbacks16forOtherMetadataEPKNS_14TargetMetadataINS_9InProcessEEE
+004d967c t _ZZN5swift24resumeMetadataCompletionEPNS_28MetadataCompletionQueueEntryEENO15ResumeCallbacks16forOtherMetadataEPKNS_14TargetMetadataINS_9InProcessEEE
+005c6618 b _ZZN5swift26swift_getTypeByMangledNameENS_15MetadataRequestEN4llvm9StringRefEPKPKvSt8functionIFPKNS_14TargetMetadataINS_9InProcessEEEjjEES7_IFPKNS_18TargetWitnessTableIS9_EESC_jEEE8Override
+005c661c b _ZZN5swift26swift_getTypeByMangledNameENS_15MetadataRequestEN4llvm9StringRefEPKPKvSt8functionIFPKNS_14TargetMetadataINS_9InProcessEEEjjEES7_IFPKNS_18TargetWitnessTableIS9_EESC_jEEE9Predicate
+004e67ac t _ZZN5swift26swift_getTypeByMangledNameENS_15MetadataRequestEN4llvm9StringRefEPKPKvSt8functionIFPKNS_14TargetMetadataINS_9InProcessEEEjjEES7_IFPKNS_18TargetWitnessTableIS9_EESC_jEEEN4$_138__invokeEPv
+005c6610 b _ZZN5swift26swift_getTypeByMangledNodeENS_15MetadataRequestERNS_8Demangle9DemanglerEPNS1_4NodeEPKPKvSt8functionIFPKNS_14TargetMetadataINS_9InProcessEEEjjEESA_IFPKNS_18TargetWitnessTableISC_EESF_jEEE8Override
+005c6614 b _ZZN5swift26swift_getTypeByMangledNodeENS_15MetadataRequestERNS_8Demangle9DemanglerEPNS1_4NodeEPKPKvSt8functionIFPKNS_14TargetMetadataINS_9InProcessEEEjjEESA_IFPKNS_18TargetWitnessTableISC_EESF_jEEE9Predicate
+004e18a4 t _ZZN5swift26swift_getTypeByMangledNodeENS_15MetadataRequestERNS_8Demangle9DemanglerEPNS1_4NodeEPKPKvSt8functionIFPKNS_14TargetMetadataINS_9InProcessEEEjjEESA_IFPKNS_18TargetWitnessTableISC_EESF_jEEEN4$_128__invokeEPv
+004cfc1c t _ZZN5swift28checkMetadataDependencyCycleEPKNS_14TargetMetadataINS_9InProcessEEENS_18MetadataDependencyES5_ENK3$_7clES5_
+005c6694 b _ZZN5swift29swift_conformsToSwiftProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEN4llvm9StringRefEE8Override
+005c6698 b _ZZN5swift29swift_conformsToSwiftProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEN4llvm9StringRefEE9Predicate
+004e9874 t _ZZN5swift29swift_conformsToSwiftProtocolEPKNS_14TargetMetadataINS_9InProcessEEEPKNS_24TargetProtocolDescriptorIS1_EEN4llvm9StringRefEEN3$_38__invokeEPv
+004d0928 t _ZZN5swift4LazyIN12_GLOBAL__N_120GenericMetadataCacheEE11getWithInitIRKNS_20TargetGenericContextINS_9InProcessEEEEERS2_OT_EN4Data4initEPv
+0052cc4c t _ZZN5swift8Demangle10mangleNodeB5cxx11EPNS0_4NodeEENK3$_0clENS0_21SymbolicReferenceKindEPKv
+004e6220 t _ZZN5swift8Demangle11TypeDecoderIN12_GLOBAL__N_122DecodedMetadataBuilderEE30decodeMangledFunctionInputTypeEPNS0_4NodeERN4llvm15SmallVectorImplINS0_13FunctionParamIPKNS_14TargetMetadataINS_9InProcessEEEEEEERbENKUlS6_RSF_E_clES6_SJ_
+0056e502 r _ZZN5swift8Demangle9Demangler26demangleOperatorIdentifierEvE13op_char_table
+004d0a28 t _ZZSt9call_onceIPFvPvEJPZN5swift4LazyIN12_GLOBAL__N_120GenericMetadataCacheEE11getWithInitIRKNS3_20TargetGenericContextINS3_9InProcessEEEEERS6_OT_E4DataEEvRSt9once_flagSG_DpOT0_ENUlvE0_8__invokeEv
+004e67cc t _ZZSt9call_onceIRPFvPvEJPA112_cEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+004d1258 t _ZZSt9call_onceIRPFvPvEJPA12_cEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+004d1e6c t _ZZSt9call_onceIRPFvPvEJPA1_cEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+004b19e4 t _ZZSt9call_onceIRPFvPvEJPA24_cEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+0052de54 t _ZZSt9call_onceIRPFvPvEJPA4_cEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+004e68cc t _ZZSt9call_onceIRPFvPvEJPA56_cEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+004d3c78 t _ZZSt9call_onceIRPFvPvEJPA72_cEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+004e7d74 t _ZZSt9call_onceIZ10swift_onceE3$_0JEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+0052dfc4 t _ZZSt9call_onceIZ35_swift_stdlib_threadLocalStorageGetE3$_0JDnEEvRSt9once_flagOT_DpOT0_ENUlvE0_8__invokeEv
+0052e00c t _ZZZ35_swift_stdlib_threadLocalStorageGetENK3$_0clEPvENUlS0_E_8__invokeES0_
+</pre></div>
+</div>
+</section>
+</section>
+<section id="stdlib-functions">
+<h1>Stdlib functions<a class="headerlink" href="#stdlib-functions" title="Permalink to this heading">#</a></h1>
+<section id="swift-functions">
+<h2>Swift functions<a class="headerlink" href="#swift-functions" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>00261404 T $ss17_swift_getKeyPath7pattern9argumentsSVSv_SVtF
+0012d6cc T $ss27_swift_stdlib_atomicLoadInt6objectSiSpySiG_tF
+0012d6a8 T $ss28_swift_stdlib_atomicStoreInt6object7desiredySpySiG_SitF
+0012d834 T $ss30_swift_stdlib_atomicFetchOrInt6object7operandSiSpySiG_SitF
+0012d70c T $ss31_swift_stdlib_atomicFetchAddInt6object7operandSiSpySiG_SitF
+0012d7a0 T $ss31_swift_stdlib_atomicFetchAndInt6object7operandSiSpySiG_SitF
+0012d8c8 T $ss31_swift_stdlib_atomicFetchXorInt6object7operandSiSpySiG_SitF
+004a593c T $ss32_swift_stdlib_atomicFetchOrInt326object7operands0F0VSpyAEG_AEtF
+0012da30 T $ss32_swift_stdlib_atomicFetchOrInt646object7operands0F0VSpyAEG_AEtF
+004a5934 T $ss33_swift_stdlib_atomicFetchAddInt326object7operands0F0VSpyAEG_AEtF
+0012d9bc T $ss33_swift_stdlib_atomicFetchAddInt646object7operands0F0VSpyAEG_AEtF
+004a5938 T $ss33_swift_stdlib_atomicFetchAndInt326object7operands0F0VSpyAEG_AEtF
+0012d9f8 T $ss33_swift_stdlib_atomicFetchAndInt646object7operands0F0VSpyAEG_AEtF
+004a5940 T $ss33_swift_stdlib_atomicFetchXorInt326object7operands0F0VSpyAEG_AEtF
+0012da68 T $ss33_swift_stdlib_atomicFetchXorInt646object7operands0F0VSpyAEG_AEtF
+0049f528 t $sSo27__swift_stdlib_UNumericTypeVMa
+005a573c d $sSo27__swift_stdlib_UNumericTypeVMB
+00598574 d $sSo27__swift_stdlib_UNumericTypeVMf
+005a4fbc d $sSo27__swift_stdlib_UNumericTypeVMF
+005aee84 b $sSo27__swift_stdlib_UNumericTypeVML
+00582d7c r $sSo27__swift_stdlib_UNumericTypeVMn
+005867cc r $sSo27__swift_stdlib_UNumericTypeVSQSCMc
+004a7170 t $sSo27__swift_stdlib_UNumericTypeVSQSCSQ2eeoiySbx_xtFZTW
+005aa664 d $sSo27__swift_stdlib_UNumericTypeVSYSCMA
+00586794 r $sSo27__swift_stdlib_UNumericTypeVSYSCMc
+004a55e4 t $sSo27__swift_stdlib_UNumericTypeVSYSCSY8rawValue03RawF0QzvgTW
+003fc978 t $sSo27__swift_stdlib_UNumericTypeVSYSCSY8rawValuexSg03RawF0Qz_tcfCTW
+0049f548 t $sSo28__swift_stdlib_UCharCategoryVMa
+005a5750 d $sSo28__swift_stdlib_UCharCategoryVMB
+00598564 d $sSo28__swift_stdlib_UCharCategoryVMf
+005a4fd8 d $sSo28__swift_stdlib_UCharCategoryVMF
+005aee80 b $sSo28__swift_stdlib_UCharCategoryVML
+00582d40 r $sSo28__swift_stdlib_UCharCategoryVMn
+0058682c r $sSo28__swift_stdlib_UCharCategoryVSQSCMc
+004a716c t $sSo28__swift_stdlib_UCharCategoryVSQSCSQ2eeoiySbx_xtFZTW
+005aa67c d $sSo28__swift_stdlib_UCharCategoryVSYSCMA
+005867f4 r $sSo28__swift_stdlib_UCharCategoryVSYSCMc
+004a55d4 t $sSo28__swift_stdlib_UCharCategoryVSYSCSY8rawValue03RawF0QzvgTW
+004ac288 t $sSo28__swift_stdlib_UCharCategoryVSYSCSY8rawValuexSg03RawF0Qz_tcfCTW
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>C functions<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0052</span><span class="n">d200</span> <span class="n">T</span> <span class="n">_swift_stdlib_close</span>
+<span class="mi">0052</span><span class="n">dd14</span> <span class="n">T</span> <span class="n">_swift_stdlib_flockfile_stdout</span>
+<span class="mi">0052</span><span class="n">dd28</span> <span class="n">T</span> <span class="n">_swift_stdlib_funlockfile_stdout</span>
+<span class="mi">0052</span><span class="n">d1e4</span> <span class="n">t</span> <span class="n">_swift_stdlib_fwrite_stdout</span>
+<span class="mi">004</span><span class="n">b5d44</span> <span class="n">T</span> <span class="n">_swift_stdlib_getDefaultErrorCode</span>
+<span class="mi">0052</span><span class="n">dd50</span> <span class="n">T</span> <span class="n">_swift_stdlib_getHardwareConcurrency</span>
+<span class="mi">004</span><span class="n">dc668</span> <span class="n">t</span> <span class="n">swift_stdlib_getTypeByMangledNameUntrusted</span>
+<span class="mi">0052</span><span class="n">cf58</span> <span class="n">T</span> <span class="n">_swift_stdlib_getUnsafeArgvArgc</span>
+<span class="mi">001</span><span class="n">f373c</span> <span class="n">t</span> <span class="n">_swift_stdlib_Hashable_hashValue_indirect</span>
+<span class="mi">001</span><span class="n">f36b8</span> <span class="n">t</span> <span class="n">_swift_stdlib_Hashable_isEqual_indirect</span>
+<span class="mi">005</span><span class="n">c6798</span> <span class="n">B</span> <span class="n">_swift_stdlib_Hashing_parameters</span>
+<span class="mi">004</span><span class="n">ea354</span> <span class="n">T</span> <span class="n">_swift_stdlib_immortalize</span>
+<span class="mi">0052</span><span class="n">cf34</span> <span class="n">T</span> <span class="n">_swift_stdlib_overrideUnsafeArgvArgc</span>
+<span class="mi">0052</span><span class="n">d1a8</span> <span class="n">t</span> <span class="n">_swift_stdlib_putchar_unlocked</span>
+<span class="mi">0052</span><span class="n">dd3c</span> <span class="n">T</span> <span class="n">_swift_stdlib_putc_stderr</span>
+<span class="mi">0052</span><span class="n">d204</span> <span class="n">T</span> <span class="n">swift_stdlib_random</span>
+<span class="mi">0052</span><span class="n">d1f8</span> <span class="n">T</span> <span class="n">_swift_stdlib_read</span>
+<span class="mi">0052</span><span class="n">d824</span> <span class="n">T</span> <span class="n">swift_stdlib_readLine_stdin</span>
+<span class="mi">0052</span><span class="n">cdb8</span> <span class="n">T</span> <span class="n">_swift_stdlib_reportFatalError</span>
+<span class="mi">0052</span><span class="n">cc94</span> <span class="n">T</span> <span class="n">_swift_stdlib_reportFatalErrorInFile</span>
+<span class="mi">0052</span><span class="n">cee0</span> <span class="n">T</span> <span class="n">_swift_stdlib_reportUnimplementedInitializer</span>
+<span class="mi">0052</span><span class="n">ce74</span> <span class="n">T</span> <span class="n">_swift_stdlib_reportUnimplementedInitializerInFile</span>
+<span class="mi">0043</span><span class="n">c278</span> <span class="n">t</span> <span class="n">_swift_stdlib_strlen_unsigned</span>
+<span class="mi">0052</span><span class="n">d9f8</span> <span class="n">T</span> <span class="n">_swift_stdlib_strtod_clocale</span>
+<span class="mi">0052</span><span class="n">db8c</span> <span class="n">T</span> <span class="n">_swift_stdlib_strtof_clocale</span>
+<span class="mi">0052</span><span class="n">d860</span> <span class="n">T</span> <span class="n">_swift_stdlib_strtold_clocale</span>
+<span class="mi">0052</span><span class="n">dec0</span> <span class="n">t</span> <span class="n">_swift_stdlib_threadLocalStorageGet</span>
+<span class="mf">0052e198</span> <span class="n">T</span> <span class="n">__swift_stdlib_ubrk_close</span>
+<span class="mf">0052e1</span><span class="n">a4</span> <span class="n">T</span> <span class="n">__swift_stdlib_ubrk_following</span>
+<span class="mf">0052e19</span><span class="n">c</span> <span class="n">T</span> <span class="n">__swift_stdlib_ubrk_open</span>
+<span class="mf">0052e1</span><span class="n">a0</span> <span class="n">T</span> <span class="n">__swift_stdlib_ubrk_preceding</span>
+<span class="mf">0052e1</span><span class="n">a8</span> <span class="n">T</span> <span class="n">__swift_stdlib_ubrk_setText</span>
+<span class="mf">0052e1</span><span class="n">ac</span> <span class="n">T</span> <span class="n">__swift_stdlib_ubrk_setUText</span>
+<span class="mf">0052e1</span><span class="n">cc</span> <span class="n">T</span> <span class="n">__swift_stdlib_u_charAge</span>
+<span class="mf">0052e1</span><span class="n">d4</span> <span class="n">T</span> <span class="n">__swift_stdlib_u_charName</span>
+<span class="mf">0052e1</span><span class="n">d0</span> <span class="n">T</span> <span class="n">__swift_stdlib_u_getIntPropertyValue</span>
+<span class="mf">0052e1</span><span class="n">e4</span> <span class="n">T</span> <span class="n">__swift_stdlib_u_getNumericValue</span>
+<span class="mf">0052e1</span><span class="n">c8</span> <span class="n">T</span> <span class="n">__swift_stdlib_u_hasBinaryProperty</span>
+<span class="mf">0052e14</span><span class="n">c</span> <span class="n">T</span> <span class="n">_swift_stdlib_unicode_strToLower</span>
+<span class="mf">0052e100</span> <span class="n">T</span> <span class="n">_swift_stdlib_unicode_strToUpper</span>
+<span class="mf">0052e1</span><span class="n">bc</span> <span class="n">T</span> <span class="n">__swift_stdlib_unorm2_getNFCInstance</span>
+<span class="mf">0052e1</span><span class="n">b8</span> <span class="n">T</span> <span class="n">__swift_stdlib_unorm2_hasBoundaryBefore</span>
+<span class="mf">0052e1</span><span class="n">c0</span> <span class="n">T</span> <span class="n">__swift_stdlib_unorm2_normalize</span>
+<span class="mf">0052e1</span><span class="n">c4</span> <span class="n">T</span> <span class="n">__swift_stdlib_unorm2_spanQuickCheckYes</span>
+<span class="mf">0052e1</span><span class="n">d8</span> <span class="n">T</span> <span class="n">__swift_stdlib_u_strToLower</span>
+<span class="mf">0052e1</span><span class="n">dc</span> <span class="n">T</span> <span class="n">__swift_stdlib_u_strToTitle</span>
+<span class="mf">0052e1</span><span class="n">e0</span> <span class="n">T</span> <span class="n">__swift_stdlib_u_strToUpper</span>
+<span class="mf">0052e1</span><span class="n">b4</span> <span class="n">T</span> <span class="n">__swift_stdlib_utext_openUChars</span>
+<span class="mf">0052e1</span><span class="n">b0</span> <span class="n">T</span> <span class="n">__swift_stdlib_utext_openUTF8</span>
+<span class="mi">0052</span><span class="n">d1fc</span> <span class="n">T</span> <span class="n">_swift_stdlib_write</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>C++ functions<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0058</span><span class="n">d908</span> <span class="n">r</span> <span class="n">symbolic</span> <span class="n">So27__swift_stdlib_UNumericTypeV</span>
+<span class="mi">0058</span><span class="n">d92a</span> <span class="n">r</span> <span class="n">symbolic</span> <span class="n">So28__swift_stdlib_UCharCategoryV</span>
+<span class="mi">005</span><span class="n">c67bc</span> <span class="n">b</span> <span class="n">_ZGVZ19swift_stdlib_randomE19getrandom_available</span>
+<span class="mi">005</span><span class="n">c67c4</span> <span class="n">b</span> <span class="n">_ZGVZ19swift_stdlib_randomE2fd</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Ethan C
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><big> Swift Runtime Symbols </big></a><ul>
+<li><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#runtime-functions">Runtime functions</a><ul>
+<li><a class="reference internal" href="#c-functions">C functions</a></li>
+<li><a class="reference internal" href="#id1">C++ functions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stdlib-functions">Stdlib functions</a><ul>
+<li><a class="reference internal" href="#swift-functions">Swift functions</a></li>
+<li><a class="reference internal" href="#id2">C functions</a></li>
+<li><a class="reference internal" href="#id3">C++ functions</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=37d1907c"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Directory Paths (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Directory Paths (GNUstep Makefile Package)">
+<meta name="keywords" content="Directory Paths (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Common-Variables.html" rel="up" title="Common Variables">
+<link href="Scripts.html" rel="next" title="Scripts">
+<link href="Common-Variables.html" rel="prev" title="Common Variables">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Directory-Paths"></span><div class="header">
+<p>
+Next: <a href="Scripts.html" accesskey="n" rel="next">Scripts</a>, Previous: <a href="Common-Variables.html" accesskey="p" rel="prev">Common Variables</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Directory-Paths-1"></span><h4 class="subsection">1.7.1 Directory Paths</h4>
+
+<dl>
+<dt id="index-GNUSTEP_005fMAKEFILES">Variable: <strong>GNUSTEP_MAKEFILES</strong></dt>
+<dd><p><code>GNUSTEP_MAKEFILES</code> is the absolute path to the directory where the
+Makefile Package files are located.  Use <code>GNUSTEP_MAKEFILES</code> to
+refer to a makefile fragment or script file from the Makefile Package
+within a makefile; the <code>GNUSTEP_MAKEFILES</code> variable should be
+only be used within makefiles and not referenced within C or Objective-C
+programs.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fAPPS">Variable: <strong>GNUSTEP_APPS</strong></dt>
+<dd><p><code>GNUSTEP_APPS</code> is the absolute path to the directory where GUI
+applications are installed.  This variable is dependent upon the
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will change
+accordingly if the user specifies a different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fADMIN_005fAPPS">Variable: <strong>GNUSTEP_ADMIN_APPS</strong></dt>
+<dd><p><code>GNUSTEP_ADMIN_APPS</code> is the absolute path to the directory where
+GUI applications for the system Administrator are installed.  This
+variable is dependent upon the <code>GNUSTEP_INSTALLATION_DOMAIN</code>
+variable, so the path will change accordingly if the user specifies a
+different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fWEB_005fAPPS">Variable: <strong>GNUSTEP_WEB_APPS</strong></dt>
+<dd><p><code>GNUSTEP_WEB_APPS</code> is the absolute path to the directory where
+web applications (for web development frameworks such as GSWeb or
+SOPE) are installed.  This variable is dependent upon the
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will change
+accordingly if the user specifies a different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fTOOLS">Variable: <strong>GNUSTEP_TOOLS</strong></dt>
+<dd><p><code>GNUSTEP_TOOLS</code> is the absolute path for the root directory where
+command line tools are installed.  Only command line tools which are
+target platform independent should be installed in <code>GNUSTEP_TOOLS</code>;
+target platform dependent command line tools should be placed in the
+appropriate subdirectory of <code>GNUSTEP_TOOLS</code>, see <a href="#Directory-Paths">GNUSTEP_TARGET_DIR</a>, and <a href="#Directory-Paths">TOOL_INSTALLATION_DIR</a>.  This variable is dependent upon the
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will change
+accordingly if the user specifies a different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fADMIN_005fTOOLS">Variable: <strong>GNUSTEP_ADMIN_TOOLS</strong></dt>
+<dd><p><code>GNUSTEP_ADMIN_TOOLS</code> is the absolute path for the root directory
+where command line tools for the system administrator are installed.
+Only command line tools which are target platform independent should
+be installed in <code>GNUSTEP_ADMIN_TOOLS</code>; target platform dependent
+command line tools should be placed in the appropriate subdirectory of
+<code>GNUSTEP_ADMIN)TOOLS</code>, see <a href="#Directory-Paths">GNUSTEP_TARGET_DIR</a>, and <a href="#Directory-Paths">TOOL_INSTALLATION_DIR</a>.  This variable is dependent upon the
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will change
+accordingly if the user specifies a different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fHEADERS">Variable: <strong>GNUSTEP_HEADERS</strong></dt>
+<dd><p><code>GNUSTEP_HEADERS</code> is the absolute path for the root directory where
+header files are installed.  Normally header files are not installed in
+the <code>GNUSTEP_HEADERS</code> directory, but in a subdirectory as specified
+by the project which owns the files, see <a href="library_002emake.html">library.make</a> for more
+information.  <code>GNUSTEP_HEADERS</code> should contain platform independent
+header files because the files are shared by all platforms.  Any target
+platform dependent header files should be placed in the appropriate
+subdirectory as specified by <code>GNUSTEP_TARGET_DIR</code>.  This variable
+is dependent upon the <code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the
+path will change accordingly if the user specifies a different
+installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fLIBRARY">Variable: <strong>GNUSTEP_LIBRARY</strong></dt>
+<dd><p><code>GNUSTEP_LIBRARY</code> is the absolute path for the &rsquo;Library&rsquo;
+directory where all sorts of resources are installed.  This directory
+can be expected to have (at least) some standard subdirectories with
+fixed names, which are <code>ApplicationSupport</code>, <code>Bundles</code>,
+<code>Frameworks</code>, <code>ApplicationSupport/Palettes</code>,
+<code>Services</code>, <code>Libraries/Resources</code> and <code>Libraries/Java</code>.
+You can access them in your GNUmakefile as
+<code>GNUSTEP_LIBRARY/ApplicationSupport</code>,
+<code>GNUSTEP_LIBRARY/Bundles</code>, etc.  This variable is dependent upon
+the <code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will
+change accordingly if the user specifies a different installation
+domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fLIBRARIES">Variable: <strong>GNUSTEP_LIBRARIES</strong></dt>
+<dd><p><code>GNUSTEP_LIBRARIES</code> is the absolute path for the directory where
+libraries are installed taking the target platform and library
+combination into account.  This directory is generally where library
+project types, see <a href="library_002emake.html">library.make</a>, will install the library file.
+This variable is dependent upon the <code>GNUSTEP_INSTALLATION_DOMAIN</code>
+variable, so the path will change accordingly if the user specifies a
+different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fRESOURCES">Variable: <strong>GNUSTEP_RESOURCES</strong></dt>
+<dd><p><code>GNUSTEP_RESOURCES</code> is the absolute path for the directory where
+resource files for libraries are installed; example resources are
+fonts, printer type information, model files for system panels, and
+system images.  The resource files are generally associated with
+libraries, because resources for applications or bundles are included
+within the application or bundle directory wrapper.
+<code>GNUSTEP_RESOURCES</code> is the <code>Libraries/Resources</code>
+subdirectory of <code>GNUSTEP_LIBRARY</code>; it is dependent upon the
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will change
+accordingly if the user specifies a different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fDOC">Variable: <strong>GNUSTEP_DOC</strong></dt>
+<dd><p><code>GNUSTEP_DOC</code> is the absolute path for the directory where
+documentation is installed (with the exception of man pages and info
+documentation, which need to be installed into <code>GNUSTEP_DOC_MAN</code>
+and <code>GNUSTEP_DOC_INFO</code>).  This variable is dependent upon the
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will change
+accordingly if the user specifies a different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fDOC_005fMAN">Variable: <strong>GNUSTEP_DOC_MAN</strong></dt>
+<dd><p><code>GNUSTEP_DOC_MAN</code> is the absolute path for the directory where
+man pages are to be installed.  This variable is dependent upon the
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will change
+accordingly if the user specifies a different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fDOC_005fINFO">Variable: <strong>GNUSTEP_DOC_INFO</strong></dt>
+<dd><p><code>GNUSTEP_DOC_INFO</code> is the absolute path for the directory where
+info documentation is installed.  This variable is dependent upon the
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> variable, so the path will change
+accordingly if the user specifies a different installation domain.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fHOST_005fDIR">Variable: <strong>GNUSTEP_HOST_DIR</strong></dt>
+<dd><p><code>GNUSTEP_HOST_DIR</code> is the subdirectory path for the host platform
+CPU and operating system.  It is a composed from the
+<code>GNUSTEP_HOST_CPU</code> and <code>GNUSTEP_HOST_OS</code> variables.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fTARGET_005fDIR">Variable: <strong>GNUSTEP_TARGET_DIR</strong></dt>
+<dd><p><code>GNUSTEP_TARGET_DIR</code> is the subdirectory path for the target
+platform CPU and operating system.  It is composed from the
+<code>GNUSTEP_TARGET_CPU</code> and <code>GNUSTEP_TARGET_OS</code> variables.
+<code>GNUSTEP_TARGET_DIR</code> is generally used as part of the
+installation path when platform specific files are installed.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fOBJ_005fDIR">Variable: <strong>GNUSTEP_OBJ_DIR</strong></dt>
+<dd><p><code>GNUSTEP_OBJ_DIR</code> is the subdirectory path where the Makefile
+Package places binary files: object files, libraries, executables,
+produced by the compiler.  The Makefile Package separates binary files
+for different target platforms, different library combinations, and
+different compile options into different directories; these different
+directories are subdirectories from the current directory where the
+makefile resides.  This structure allows a package to be compiled for
+different target platforms, different library combinations, and
+different compile options <em>in place</em>; i.e. the binary files are
+separated from each other so a compile pass from one set of options do
+not overwrite or erase binary files from a previous compile pass with
+different options.  Generally the user does not use this variable;
+however, if the package needs to manually install some binary files
+than the makefile fragment uses this variable to reference the path
+where the binary file is located.
+</p></dd></dl>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Scripts.html" accesskey="n" rel="next">Scripts</a>, Previous: <a href="Common-Variables.html" accesskey="p" rel="prev">Common Variables</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcLogger class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcLogger">EcLogger class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the EcLogger class</a>
+        </li>
+        <li>
+          <a href="#002000000000">EcLogger constants</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the EcLogger class
+      </a></h1>
+    <h2><a name="class$EcLogger">EcLogger</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcLogger.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="EcProcess.html#protocol$(CmdPing)">CmdPing</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          Instances of the EcLogger class are used to handle
+          various types of logging. <br /> The default
+          implementation supports writing to local files
+          and sending logs to a remote process (by default, the
+          Command server). <br /> Configuration options control
+          the amount of data buffered in memory before logs are
+          flushed, and the amount of time for which data may
+          be buffered in memory before being flushed. <br />
+          Configuration options are ???Server (to specify
+          the name of the server to log to if not Command) and
+          ???Flush (to specify when to flush the in-memory
+          buffer), where ??? is the type of logging being done
+          by a logger object. <br /> When there is no type-specific
+          flush configuration, the DefaultFlush configuration key
+          will be used. <br /> The flush configuration value must
+          be a floating point number of seconds after which to
+          flush, optionally folowed by a colon and an integer
+          number of kilobytes of data allowed before the buffer
+          is flushed.
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_EcLogger_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger+loggerForType$">+loggerForType:</a></li>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger+setFactory$">+setFactory:</a></li>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger-cmdGnip$sequence$extra$">-cmdGnip:sequence:extra:</a></li>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger-cmdMadeConnectionToServer$">-cmdMadeConnectionToServer:</a></li>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger-cmdPing$sequence$extra$">-cmdPing:sequence:extra:</a></li>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger-flush">-flush</a></li>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger-log$,...">-log:,...</a></li>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger-log$arguments$">-log:arguments:</a></li>
+      <li><a rel="gsdoc" href="EcLogger.html#method$EcLogger-update">-update</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcLogger+loggerForType$">loggerForType:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$EcLogger">EcLogger</a>*) <b>loggerForType:</b> (<a rel="gsdoc" href="EcProcess.html#type$EcLogType">EcLogType</a>)t;<br />
+    <div class="desc">
+      
+            Returns a (cached) logger object for the specified
+            type of logging. <br /> Creates a new object (adding
+            it to the cache) if none exists.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcLogger+setFactory$">setFactory:&nbsp;</a></h3>
+    + (void) <b>setFactory:</b> (Class)c;<br />
+    <div class="desc">
+      
+            Sets the factory class used by the
+            <a rel="gsdoc" href="#method$EcLogger+loggerForType$">
+              +loggerForType:
+            </a>
+
+            method to create new EcLogger objects. <br /> This
+            is provided as a convenience so that you can get all
+            code to use a subclass of EcLogger without having to
+            use a category to override that method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcLogger-cmdGnip$sequence$extra$">cmdGnip:&nbsp;sequence:&nbsp;extra:&nbsp;</a></h3>
+    - (oneway void) <b>cmdGnip:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdPing)">CmdPing</a>>)from<b> sequence:</b> (unsigned)num<b> extra:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            Supports the CmdPing protocol.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcLogger-cmdMadeConnectionToServer$">cmdMadeConnectionToServer:&nbsp;</a></h3>
+    - (void) <b>cmdMadeConnectionToServer:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcLogger-cmdPing$sequence$extra$">cmdPing:&nbsp;sequence:&nbsp;extra:&nbsp;</a></h3>
+    - (oneway void) <b>cmdPing:</b> (id<<a rel="gsdoc" href="EcProcess.html#protocol$(CmdPing)">CmdPing</a>>)from<b> sequence:</b> (unsigned)num<b> extra:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data;<br />
+    <div class="desc">
+      
+            Supports the CmdPing protocol.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcLogger-flush">flush&nbsp;</a></h3>
+    - (void) <b>flush</b>;<br />
+    <div class="desc">
+      
+            Called to flush accumulated data from the message
+            instance variable. <br /> On return from this
+            method the variable should be empty. <br /> External
+            flush operation... writes out data and asks any
+            server we write to to flush its data out too.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcLogger-log$,...">log:&nbsp;,...</a></h3>
+    - (void) <b>log:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b>,...</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcLogger-log$arguments$">log:&nbsp;arguments:&nbsp;</a></h3>
+    - (void) <b>log:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)fmt<b> arguments:</b> (va_list)args;<br />
+    <div class="desc">
+      
+            Called to log a message by appending to the message
+            instance variable. This method may also schedule
+            an asynchronous flush if the message buffer is too large
+            or if the last flush was too <strong>long</strong> ago.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcLogger-update">update&nbsp;</a></h3>
+    - (void) <b>update</b>;<br />
+    <div class="desc">
+      
+            Called when the user defaults system has changed and
+            a configuration update may have occurred.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_EcLogger_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for EcLogger Class</h2>
+    <h3><a name="ivariable$EcLogger*externalFlush">externalFlush</a></h3>
+    @protected BOOL <b>externalFlush</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*flushKey">flushKey</a></h3>
+    @protected NSString* <b>flushKey</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*inFlush">inFlush</a></h3>
+    @protected BOOL <b>inFlush</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*interval">interval</a></h3>
+    @protected NSTimeInterval <b>interval</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*key">key</a></h3>
+    @protected NSString* <b>key</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*last">last</a></h3>
+    @protected NSDate* <b>last</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*lock">lock</a></h3>
+    @protected NSRecursiveLock* <b>lock</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*message">message</a></h3>
+    @protected NSMutableString* <b>message</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*pendingFlush">pendingFlush</a></h3>
+    @protected BOOL <b>pendingFlush</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*serverKey">serverKey</a></h3>
+    @protected NSString* <b>serverKey</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*serverName">serverName</a></h3>
+    @protected NSString* <b>serverName</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*shouldForward">shouldForward</a></h3>
+    @protected BOOL <b>shouldForward</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*size">size</a></h3>
+    @protected unsigned int <b>size</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*timer">timer</a></h3>
+    @protected NSTimer* <b>timer</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcLogger*type">type</a></h3>
+    @protected EcLogType <b>type</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">EcLogger constants</a></h1>
+    <p>
+    </p>
+    <h3><a name="constant$EcLoggersDidChangeNotification">EcLoggersDidChangeNotification</a></h3>
+    NSString* const EcLoggersDidChangeNotification;<br />
+    <div class="desc">
+      
+          Notification sent when the logging set of cached
+          loggers is emptied.
+        
+    </div>
+    <hr width="25%" align="left" />
+    <br />
+    </font>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcTest documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcTest">EcTest documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2014 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the EcTest protocol</a>
+        </li>
+        <li>
+          <a href="#002000000000">EcTest functions</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the EcTest protocol
+      </a></h1>
+    <h2><a name="protocol$(EcTest)">EcTest</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcTest.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#protocol$(NSObject)">NSObject</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          <em>Description forthcoming.</em>
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcTest.html#method$(EcTest)-ecTestCommand$">-ecTestCommand:</a></li>
+      <li><a rel="gsdoc" href="EcTest.html#method$(EcTest)-ecTestConfigForKey$">-ecTestConfigForKey:</a></li>
+      <li><a rel="gsdoc" href="EcTest.html#method$(EcTest)-ecTestSetConfig$forKey$">-ecTestSetConfig:forKey:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(EcTest)-ecTestCommand$">ecTestCommand:&nbsp;</a></h3>
+    - (bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>ecTestCommand:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)command;<br />
+    <div class="desc">
+      
+            Sends a <var>command</var> to the remote process and
+            returns the string output. <br /> Similar to
+            issueing the <var>command</var> string at the
+            console.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcTest)-ecTestConfigForKey$">ecTestConfigForKey:&nbsp;</a></h3>
+    - (bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*) <b>ecTestConfigForKey:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)key;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(EcTest)-ecTestSetConfig$forKey$">ecTestSetConfig:&nbsp;forKey:&nbsp;</a></h3>
+    - (void) <b>ecTestSetConfig:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSData.html#class$NSData">NSData</a>*)data<b> forKey:</b> (in bycopy <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)key;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="002000000000">EcTest functions</a></h1>
+    <p>
+    </p>
+    <h3><a name="function$EcTestConnect">EcTestConnect</a></h3>
+    id<<a rel="gsdoc" href="#protocol$(EcTest)">EcTest</a>> EcTestConnect(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>name</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>host</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a> <b>timeout</b>);<br />
+    <div class="desc">
+      
+          This function obtains a Distributed Objects proxy to the
+          EcProcess instance controlling the server with the
+          specified <var>name</var> and <var>host</var>.
+          <br /> A <code>nil</code> or empty string for the
+          <var>host</var> is taken to mean the local
+          <var>host</var>, while an asterisk denotes any
+          <var>host</var> on the local network. <br /> The
+          <var>timeout</var> is a time limit on how
+          <strong>long</strong> it may take to get the
+          connection (a value less than or equal to zero
+          will cause the function to keep on trying indefinitely).
+          <br /> If an immediate connection is not possible, the
+          function will attempt to contact the Command server
+          on the specified <var>host</var> and ask it to launch the
+          process before trying to connect again.
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$EcTestGetConfig">EcTestGetConfig</a></h3>
+    id EcTestGetConfig(id<<a rel="gsdoc" href="#protocol$(EcTest)">EcTest</a>> <b>process</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>key</b>);<br />
+    <div class="desc">
+      
+          This function gets <var>process</var> configuration for
+          the specified <var>key</var> and deserialises it to a
+          property list object (returned) or <code>nil</code>
+          if no value is configured for the specified <var>key</var>
+          .
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$EcTestSetConfig">EcTestSetConfig</a></h3>
+    void EcTestSetConfig(id<<a rel="gsdoc" href="#protocol$(EcTest)">EcTest</a>> <b>process</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>key</b>, id <b>value</b>);<br />
+    <div class="desc">
+      
+          This function sets <var>process</var> configuration by
+          serialising the property list <var>value</var>
+          and passing the resulting data to the remote
+          <var>process</var>. <br /> If the <var>value</var> is
+          <code>nil</code> then the configuration for the remote
+          <var>process</var> reverts to its default setting.
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$EcTestShutdown">EcTestShutdown</a></h3>
+    BOOL EcTestShutdown(id<<a rel="gsdoc" href="#protocol$(EcTest)">EcTest</a>> <b>process</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a> <b>timeout</b>);<br />
+    <div class="desc">
+      
+          This function shuts down the remote <var>process</var>,
+          gracefully if possible, but then with a kill if
+          graceful shutdown fails. <br /> Returns
+          <code>YES</code> on graceful shutdown, <code>NO</code>
+          on <var>timeout</var> (or if the connection had already
+          been invalidated).
+        
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="function$EcTestShutdownByName">EcTestShutdownByName</a></h3>
+    BOOL EcTestShutdownByName(<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>name</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>* <b>host</b>, <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a> <b>timeout</b>);<br />
+    <div class="desc">
+      
+          This function shuts down the remote process, gracefully
+          if possible, but then with a kill if graceful shutdown
+          fails. <br /> Returns <code>YES</code> on graceful
+          shutdown (or if the process was not running),
+          <code>NO</code> on <var>timeout</var>.
+        
+    </div>
+    <hr width="25%" align="left" />
+    <br />
+    </font>
+</body>
+</html>

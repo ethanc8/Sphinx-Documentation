@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcBroadcastProxy class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcBroadcastProxy">EcBroadcastProxy class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Nicola Pero (<a href="mailto:nicola.pero@meta-innovation.com"><code>nicola.pero@meta-innovation.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the EcBroadcastProxy class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the NSObject(BCPdelegate)
+        informal protocol</a>
+        </li>
+        <li>
+          <a href="#003000000000">EcBroadcastProxy variables</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the EcBroadcastProxy class
+      </a></h1>
+    <h2><a name="class$EcBroadcastProxy">EcBroadcastProxy</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcBroadcastProxy.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          An EcBroadcastProxy instance forwards messages to multiple
+          servers via distributed objects. This is great if you
+          want to send a task to be repeated by multiple servers
+          in order to make a system more scalable. <br /> You may
+          also design your servers so that you pass some sort of
+          identifier to let them know that one of them
+          (which recognises the identifier) should do one thing
+          while the others ignore it. <br /> Finally, remote
+          servers are always listed in the same order, so you
+          can access them by their index; to get the host/name, you
+          can get it by asking the receiverNames and receiverHosts
+          and then looking up the one at the index you want. This
+          allows you to send specific messages to specific
+          servers.
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_EcBroadcastProxy_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPdelegate">-BCPdelegate</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPproxy$">-BCPproxy:</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPraiseConnection$">-BCPraiseConnection:</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPraiseConnections">-BCPraiseConnections</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPreceiverCount">-BCPreceiverCount</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPreceiverHosts">-BCPreceiverHosts</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPreceiverNames">-BCPreceiverNames</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPsetDelegate$">-BCPsetDelegate:</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-BCPstatus">-BCPstatus</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-initWithReceiverNames$receiverHosts$">-initWithReceiverNames:receiverHosts:</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$EcBroadcastProxy-initWithReceivers$">-initWithReceivers:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPdelegate">BCPdelegate&nbsp;</a></h3>
+    - (id) <b>BCPdelegate</b>;<br />
+    <div class="desc">
+      
+            Returns the delegate set using the
+            <a rel="gsdoc" href="#method$EcBroadcastProxy-BCPsetDelegate$">
+              -BCPsetDelegate:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPproxy$">BCPproxy:&nbsp;</a></h3>
+    - (id) <b>BCPproxy:</b> (int)index;<br />
+    <div class="desc">
+      
+            The following one gives you back the proxy to talk to.
+            It automatically calls
+            <a rel="gsdoc" href="#method$EcBroadcastProxy-BCPraiseConnection$">
+              -BCPraiseConnection:
+            </a>
+
+            to that server before sending you back a proxy. It
+            returns <code>nil</code> upon failure.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPraiseConnection$">BCPraiseConnection:&nbsp;</a></h3>
+    - (void) <b>BCPraiseConnection:</b> (int)index;<br />
+    <div class="desc">
+      
+            Raise connection to server at <var>index</var>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPraiseConnections">BCPraiseConnections&nbsp;</a></h3>
+    - (void) <b>BCPraiseConnections</b>;<br />
+    <div class="desc">
+      
+            Create connections to the receivers if needed. It is
+            called internally when a message to broadcast comes
+            in; but you may want to call this method in advance to
+            raise the connections so that when a message to
+            broadcast comes in, the connections are already
+            up and ready.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPreceiverCount">BCPreceiverCount&nbsp;</a></h3>
+    - (int) <b>BCPreceiverCount</b>;<br />
+    <div class="desc">
+      
+            Get the number of receivers
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPreceiverHosts">BCPreceiverHosts&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>BCPreceiverHosts</b>;<br />
+    <div class="desc">
+      
+            Get the list of server hosts
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPreceiverNames">BCPreceiverNames&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>BCPreceiverNames</b>;<br />
+    <div class="desc">
+      
+            Get the list of server names
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPsetDelegate$">BCPsetDelegate:&nbsp;</a></h3>
+    - (void) <b>BCPsetDelegate:</b> (id)object;<br />
+    <div class="desc">
+      
+            Set a delegate. <br /> The delegate <var>object</var>
+            gets the messages from the BCPdelegate informal
+            protocol upon connection loss and when a
+            connection is made.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-BCPstatus">BCPstatus&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>BCPstatus</b>;<br />
+    <div class="desc">
+      
+            Get a string describing the status of the broadcast
+            object
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-initWithReceiverNames$receiverHosts$">initWithReceiverNames:&nbsp;receiverHosts:&nbsp;</a></h3>
+    - (id) <b>initWithReceiverNames:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)names<b> receiverHosts:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)hosts;<br />
+This is a designated initialiser for the class.<br />
+    <div class="desc">
+      
+            Initializes the receiver creating connections
+            to the specified distributed objects servers. The
+            <var>names</var> are the DO ports (server-names) and
+            <var>hosts</var> are the <var>names</var> of the
+            machines those servers are running on (may be &apos;*&apos;
+            to find the server on any machine on the LAN, or an
+            empty string to find the server on the local host).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$EcBroadcastProxy-initWithReceivers$">initWithReceivers:&nbsp;</a></h3>
+    - (id) <b>initWithReceivers:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)receivers;<br />
+    <div class="desc">
+      
+            Configuration array contains a list of
+            dictionaries (one for each receiver) - each
+            dictionary has two keys: `Name&apos; and `Host&apos;, with
+            the corresponding values set.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_EcBroadcastProxy_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for EcBroadcastProxy Class</h2>
+    <h3><a name="ivariable$EcBroadcastProxy*delegate">delegate</a></h3>
+    @protected id <b>delegate</b>;<br />
+    <div class="desc">
+      
+            The delegate (if any)
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*idFailed">idFailed</a></h3>
+    @protected int <b>idFailed</b>;<br />
+    <div class="desc">
+      
+            Count of failed messages returning
+            <strong>id</strong>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*idFullySent">idFullySent</a></h3>
+    @protected int <b>idFullySent</b>;<br />
+    <div class="desc">
+      
+            Count of completed messages returning
+            <strong>id</strong>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*idPartiallySent">idPartiallySent</a></h3>
+    @protected int <b>idPartiallySent</b>;<br />
+    <div class="desc">
+      
+            Count of partial messages returning
+            <strong>id</strong>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*onewayFailed">onewayFailed</a></h3>
+    @protected int <b>onewayFailed</b>;<br />
+    <div class="desc">
+      
+            Count of failed messages returning
+            <strong>void</strong>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*onewayFullySent">onewayFullySent</a></h3>
+    @protected int <b>onewayFullySent</b>;<br />
+    <div class="desc">
+      
+            Count of completed messages returning
+            <strong>void</strong>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*onewayPartiallySent">onewayPartiallySent</a></h3>
+    @protected int <b>onewayPartiallySent</b>;<br />
+    <div class="desc">
+      
+            Count of partial messages returning
+            <strong>void</strong>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*receiverHosts">receiverHosts</a></h3>
+    @protected NSArray* <b>receiverHosts</b>;<br />
+    <div class="desc">
+      
+            The hosts the receiver objects are on
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*receiverNames">receiverNames</a></h3>
+    @protected NSArray* <b>receiverNames</b>;<br />
+    <div class="desc">
+      
+            The names of the receiver object
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$EcBroadcastProxy*receiverObjects">receiverObjects</a></h3>
+    @protected NSMutableArray* <b>receiverObjects</b>;<br />
+    <div class="desc">
+      
+            The [proxies to the] individual remote objects
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the NSObject(BCPdelegate)
+        informal protocol
+      </a></h1>
+    <h2><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a>(<a name="category$NSObject(BCPdelegate)">BCPdelegate</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcBroadcastProxy.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          The informal protocol listing messages which will be sent
+          to the EcBroadcastProxy&apos;s delegate if it responds to them.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$NSObject(BCPdelegate)-BCP$lostConnectionToServer$host$">-BCP:lostConnectionToServer:host:</a></li>
+      <li><a rel="gsdoc" href="EcBroadcastProxy.html#method$NSObject(BCPdelegate)-BCP$madeConnectionToServer$host$">-BCP:madeConnectionToServer:host:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$NSObject(BCPdelegate)-BCP$lostConnectionToServer$host$">BCP:&nbsp;lostConnectionToServer:&nbsp;host:&nbsp;</a></h3>
+    - (void) <b>BCP:</b> (<a rel="gsdoc" href="#class$EcBroadcastProxy">EcBroadcastProxy</a>*)proxy<b> lostConnectionToServer:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name<b> host:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)host;<br />
+    <div class="desc">
+      
+            The method to notify the delegate that a connection to
+            an individual server process has been lost.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSObject(BCPdelegate)-BCP$madeConnectionToServer$host$">BCP:&nbsp;madeConnectionToServer:&nbsp;host:&nbsp;</a></h3>
+    - (void) <b>BCP:</b> (<a rel="gsdoc" href="#class$EcBroadcastProxy">EcBroadcastProxy</a>*)proxy<b> madeConnectionToServer:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)name<b> host:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)host;<br />
+    <div class="desc">
+      
+            The method to notify the delegate that a connection to
+            an individual server process has been made.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="003000000000">EcBroadcastProxy variables</a></h1>
+    <p>
+    </p>
+    <h3><a name="variable$enum EcBroadcastProxyError">enum EcBroadcastProxyError</a></h3>
+    enum EcBroadcastProxyError enum EcBroadcastProxyError;<br />
+    <div class="desc">
+      
+          This type enumerates the possible error conditions
+          occurring when sending a message to the proxy.
+          
+      <dl>
+        <dt>BCP_NO_ERROR</dt>
+        <dd>
+          A success
+        </dd>
+        <dt>BCP_COULD_NOT_CONNECT</dt>
+        <dd>
+          Unable to connect to the server
+        </dd>
+        <dt>BCP_CONNECTION_WENT_DOWN</dt>
+        <dd>
+          Lost connection while sending
+        </dd>
+        <dt>BCP_MESSAGING_TIMEOUT</dt>
+        <dd>
+          Timeout while waiting for response
+        </dd>
+      </dl>
+      
+          
+      <dl>
+        <dt><em>BCP_NO_ERROR</em></dt>
+        <dd>
+        </dd>
+        <dt><em>BCP_COULD_NOT_CONNECT</em></dt>
+        <dd>
+        </dd>
+        <dt><em>BCP_CONNECTION_WENT_DOWN</em></dt>
+        <dd>
+        </dd>
+        <dt><em>BCP_MESSAGING_TIMEOUT</em></dt>
+        <dd>
+        </dd>
+      </dl>
+      
+        
+    </div>
+    <hr width="25%" align="left" />
+    <br />
+    </font>
+</body>
+</html>

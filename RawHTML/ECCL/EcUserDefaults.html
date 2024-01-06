@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>EcUserDefaults documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$EcUserDefaults">EcUserDefaults documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Richard Frith-Macdonald (<a href="mailto:rfm@gnu.org"><code>rfm@gnu.org</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2012 Free Software Foundation, Inc.</p>
+
+        <div>
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the
+        NSUserDefaults(EcUserDefaults)
+        category
+      </a></h1>
+    <h2><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSUserDefaults.html#class$NSUserDefaults">NSUserDefaults</a>(<a name="category$NSUserDefaults(EcUserDefaults)">EcUserDefaults</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>EcUserDefaults.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          This category simply provides an easy way to work with
+          user defaults where you want all keys to share a common
+          prefix.
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)+prefixedDefaults">+prefixedDefaults</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)+setDefaultLifetime$">+setDefaultLifetime:</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)+userDefaultsWithPrefix$">+userDefaultsWithPrefix:</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-commandExpiries">-commandExpiries</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-commandObjectForKey$">-commandObjectForKey:</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-configuration">-configuration</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-defaultsPrefix">-defaultsPrefix</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-key$">-key:</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-purgeSettings">-purgeSettings</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-revertSettings">-revertSettings</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$">-setCommand:forKey:</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$lifetime$">-setCommand:forKey:lifetime:</a></li>
+      <li><a rel="gsdoc" href="EcUserDefaults.html#method$NSUserDefaults(EcUserDefaults)-setConfiguration$">-setConfiguration:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)+prefixedDefaults">prefixedDefaults&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSUserDefaults.html#class$NSUserDefaults">NSUserDefaults</a>*) <b>prefixedDefaults</b>;<br />
+    <div class="desc">
+      
+            Returns the latest prefixed version of the shared
+            user defaults, or <code>nil</code> if none has been
+            set up.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)+setDefaultLifetime$">setDefaultLifetime:&nbsp;</a></h3>
+    + (void) <b>setDefaultLifetime:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>)t;<br />
+    <div class="desc">
+      
+            Sets the default lifetime for command values set using
+            the
+            <a rel="gsdoc" href="#method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$">
+              -setCommand:forKey:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)+userDefaultsWithPrefix$">userDefaultsWithPrefix:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSUserDefaults.html#class$NSUserDefaults">NSUserDefaults</a>*) <b>userDefaultsWithPrefix:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aPrefix;<br />
+    <div class="desc">
+      
+            Returns a proxy to the shared user defaults
+            instance, which will allow <var>aPrefix</var> at
+            the start of every key. <br /> If <var>aPrefix</var> is
+            <code>nil</code>, the string given by the
+            EcUserDefaultsPrefix user default is
+            used. <br /> The proxy will read defaults using the
+            unprefixed key if no value is found for the
+            prefixed key.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-commandExpiries">commandExpiries&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*) <b>commandExpiries</b>;<br />
+    <div class="desc">
+      
+            Returns a dictionary listing all the command
+            override keys for which values are currently set.
+            The values in the dictionary are the timestamps after
+            which those values may be purged.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-commandObjectForKey$">commandObjectForKey:&nbsp;</a></h3>
+    - (id) <b>commandObjectForKey:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKey;<br />
+    <div class="desc">
+      
+            Returns the last value set for the specified key
+            using the
+            <a rel="gsdoc" href="#method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$">
+              -setCommand:forKey:
+            </a>
+
+            method. This returns <code>nil</code> if no value
+            is currently set.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-configuration">configuration&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*) <b>configuration</b>;<br />
+    <div class="desc">
+      
+            Returns the current configuration settings
+            dictionary (as set using the
+            <a rel="gsdoc" href="#method$NSUserDefaults(EcUserDefaults)-setConfiguration$">
+              -setConfiguration:
+            </a>
+
+            method).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-defaultsPrefix">defaultsPrefix&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>defaultsPrefix</b>;<br />
+    <div class="desc">
+      
+            Returns the prefix used by the receiver, or
+            <code>nil</code> if no prefix is in use.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-key$">key:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>key:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKey;<br />
+    <div class="desc">
+      
+            Convenience method to prepend the prefix to the
+            supplied <var>aKey</var> value if it is not
+            already present.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-purgeSettings">purgeSettings&nbsp;</a></h3>
+    - (void) <b>purgeSettings</b>;<br />
+    <div class="desc">
+      
+            Removes all settings whose lifetime has passed.
+            Those settings must previously have been set up using
+            the
+            <a rel="gsdoc" href="#method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$lifetime$">
+              -setCommand:forKey:lifetime:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-revertSettings">revertSettings&nbsp;</a></h3>
+    - (void) <b>revertSettings</b>;<br />
+    <div class="desc">
+      
+            Removes all settings previously set up using the
+            <a rel="gsdoc" href="#method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$">
+              -setCommand:forKey:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$">setCommand:&nbsp;forKey:&nbsp;</a></h3>
+    - (BOOL) <b>setCommand:</b> (id)val<b> forKey:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)key;<br />
+    <div class="desc">
+      
+            Sets a value to take precedence over others (in the
+            volatile domain reserved for commands issued to
+            the current process by an operator). <br /> Values set
+            using this method will use the default lifetime.
+            <br /> This operates by using the
+            <a rel="gsdoc" href="#method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$lifetime$">
+              -setCommand:forKey:lifetime:
+            </a>
+
+            method.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$lifetime$">setCommand:&nbsp;forKey:&nbsp;lifetime:&nbsp;</a></h3>
+    - (BOOL) <b>setCommand:</b> (id)val<b> forKey:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)key<b> lifetime:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/TypesAndConstants.html#type$NSTimeInterval">NSTimeInterval</a>)t;<br />
+    <div class="desc">
+      
+            Sets a value to take precedence over others (in the
+            volatile domain reserved for commands issued to
+            the current process by an operator). <br /> Specifying
+            a non-zero lifetime will adjust the lifetime of an
+            existing setting irresepective of whether the
+            value is changed or not. <br /> Specifying a zero or
+            negative lifetime will remove the value for the
+            setting (as will setting a <code>nil</code> value).
+            <br /> Returns <code>YES</code> if the configuration
+            (actual value set) was changed, <code>NO</code>
+            otherwise (may have changed lifetime of setting).
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSUserDefaults(EcUserDefaults)-setConfiguration$">setConfiguration:&nbsp;</a></h3>
+    - (BOOL) <b>setConfiguration:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)config;<br />
+    <div class="desc">
+      
+            Replaces the system central configuration
+            information for this process with the contents
+            of the dictionary. Values in this dictionary take
+            precedence over other configured values except
+            for those set using the
+            <a rel="gsdoc" href="#method$NSUserDefaults(EcUserDefaults)-setCommand$forKey$">
+              -setCommand:forKey:
+            </a>
+
+            method. <br /> Returns <code>YES</code> if the
+            configuration changed, <code>NO</code>
+            otherwise.
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

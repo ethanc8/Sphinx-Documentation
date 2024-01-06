@@ -1,0 +1,17 @@
+# 1.1 - What is GNUstep?
+
+**GNUstep** is a free, no-cost, open-source implementation of the Cocoa and OpenStep APIs. The APIs are very **powerful and intuitive**. All native Mac applications are made with the same APIs that GNUstep implements -- in a way, it's kind of like Winelib, but implementing an intuitive API (Cocoa) instead of one with a lot of historical cruft (Win32).
+
+## Why GNUstep instead of another toolkit?
+
+GNUstep is:
+* powerful
+    * Uses the Objective-C programming language, so you can call any C library the same way you would if it was a C program
+* intuitive
+    * Its APIs were designed from scratch, and were the first cross-platform development toolkit
+* flexible
+* portable
+    * GNUstep supports almost all computers running GNU/Linux, no matter whether they use Intel, AMD, SPARC, POWER, IBM Z, or something even more obscure!
+    * GNUstep also supports both 32-bit and 64-bit Windows computers, running Windows 2000 or later.
+        * The support is not very good right now.
+    * You can compile GNUstep apps to run on Mac using only the Mac system libraries -- you don't need to bundle GNUstep with your apps or have your users install GNUstep.

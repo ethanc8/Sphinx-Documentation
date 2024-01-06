@@ -1,0 +1,1233 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Core Data" href="../CoreData/index.html" /><link rel="prev" title="Apple Release Notes" href="AppleReleaseNotes.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>GNUstep Base Release Notes - GNUstep 2021 December documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">GNUstep 2021 December documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">GNUstep 2021 December documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/index.html">Getting Started Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Getting Started Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/index.html">1 - First Steps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1 - First Steps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.1.html">1.1 - What is GNUstep?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.2.html">1.2 - Installing GNUstep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.3.html">1.3 - Configuring your System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/index.html">2 - Convertor</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2 - Convertor</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.1.html">2.1 - Designing the UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.2.html">2.2 - Outlets and Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.3.html">2.3 - Adding the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/index.html">3 - TimeMachine - a single window application</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 3 - TimeMachine - a single window application</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.1.html">3.1 - A Basic Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.2.html">3.2 - Analog Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.3.html">3.3 - New Time Zone Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.4.html">3.4 - Multiple Clocks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/HelpfulWebsites.html">Helpful Websites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/WhatsNext.html">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/Other/Roard/index.html">Roard Vallon Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Roard Vallon Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%201/Tutorial%201.html">1 - Programming under GNUstep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%202/Tutorial%202.html">2 - NSWindowController and Design Pattern MVC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Reference Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Frameworks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../index_Core.html">Basic Frameworks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Basic Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 has-children"><a class="reference internal" href="../AppKit/index.html">Application Kit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Application Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../AppKit/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../AppKit/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../AppKit/GNUstepReleaseNotes_HTML.html"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../AppKit/NSImageName.html"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 current has-children"><a class="reference internal" href="index.html">Foundation Kit</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Foundation Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="CocoaCompatibility.html">Cocoa Compatibility</a></li>
+<li class="toctree-l5"><a class="reference internal" href="AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5 current current-page"><a class="current reference internal" href="#">GNUstep Base Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../CoreData/index.html">Core Data</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../CoreFoundation/index.html">Core Foundation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Core Foundation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../CoreFoundation/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../CoreFoundation/ObjectModel.html">Core Foundation Object Model</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/index.html">Apple Release Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Apple Release Notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/SwiftReleaseNotes.html">10.11 and later</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.9.html">CF-855.11 - 10.9 Mavericks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.8.html">CF-744 - 10.8 “Mountain Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/iOS5.html">CF-675 - iOS 5</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.7.html">CF-635 - 10.7 “Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.6.html">CF-550 - 10.6 Snow Leopard</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.5.html">CF-476 - 10.5 “Leopard”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/Historical-GeneralNotes.html">General Notes</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.2.html">CF-263 - 10.2 “Jaguar”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.1.html">CF-226 - 10.1 “Puma”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.0.html">CF-196 - 10.0 “Cheetah”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_PB.html">Mac OS X Public Beta “Kodiak”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP4.html">Mac OS X Developer Preview 4</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP3.html">Mac OS X Developer Preview 3</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP2.html">Mac OS X Developer Preview 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Miscellaneous.html">Miscellaneous Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Miscellaneous Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../AddressBook/index.html">AddressBook</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of AddressBook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../AddressBook/GNUstep%20Readme.html">GNUstep Readme</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../CFNetwork/index.html">CFNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DBusKit/index.html">DBusKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ECCL/index.html">Enterprise Control Configuration and Logging (ECCL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PDFKit/index.html">PDFKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../WebKit/index.html">WebKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Xcode/index.html">GNUstep Xcode Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pantomime/index.html">Pantomime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GWorkspace/index.html">GWorkspace frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Renaissance/index.html">Renaissance</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Quartz.html">Quartz Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Quartz Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CoreAnimation/index.html">Core Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CoreGraphics/index.html">Core Graphics / Quartz 2D</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_WebObjects.html">WebObjects 4 Stack</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of WebObjects 4 Stack</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../EnterpriseObjects/index.html">Enterprise Objects Framework</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Enterprise Objects Framework</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../EnterpriseObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../WebObjects/index.html">WebObjects</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of WebObjects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../WebObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Tools/index.html">Developer Tools</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Developer Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Tools/Make/index.html">GNUstep Make</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of GNUstep Make</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tools/Make/GNUstepReleaseNotes.html">Release Notes</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/index.html">New Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of New Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Introduction.html">Introduction</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Topics/index.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Topics/ParallelBuilding.html">Parallel Building</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/index.html">Project Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Project Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Project/Reference.html">Project Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/ResourceSet/Reference.html">Resource Set Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Tool/Reference.html">Tool Reference</a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Library/index.html">Library</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Library/Introduction.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Gorm%20ProjectCenter.html">Gorm + ProjectCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Buildtool.html">Buildtool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/BaseTools.html">Base Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/HeaderDoc.html">HeaderDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Languages/index.html">Languages</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Languages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Languages/ObjC/index.html">Objective-C</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Objective-C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Languages/ObjC/Reference/index.html">Objective-C Language Reference</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Objective-C Language Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Attributes.html">Attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/BasicTypes.html">Basic Types</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/index.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> macros</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of NS_ENUM macros</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_CLOSED_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_CLOSED_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_CLOSED_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_ERROR_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ERROR_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ERROR_ENUM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Classes.html">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/LightweightGenerics.html">Lightweight Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Exceptions.html">Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/FastEnumeration.html">Fast enumeration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/StringLiterals.html">String literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/DynamicLiterals.html">Dynamic literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/TraditionalMessageForwarding.html">Traditional Message Forwarding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Modules.html">Modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/EnvInformation.html">Getting Environment Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Versions.html">Language Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../HIG.html">Human Interface Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Contributing/Documentation/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Domains/index.html">Sphinx Domains</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Sphinx Domains</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Domains/SCDT-API.html">Sphinxcontrib-DomainTools API refeerence</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/index.html">Tests</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/index.html">API Reference Tests</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of API Reference Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/WrongNesting.html">Wrong nesting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/MakeDomain.html">Make domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Todo/index.html">Todo</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Todo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/ReleaseNotes.html">Release Notes and API Diffs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/Dependencies.html">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/DocC.html">DocC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/PandocNotes.html">Pandoc Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/StyleGuide.html">Style Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="gnustep-base-release-notes">
+<h1>GNUstep Base Release Notes<a class="headerlink" href="#gnustep-base-release-notes" title="Permalink to this heading">#</a></h1>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="http://www.gnustep.org/developers/whoiswho.html">Adam Fedor</a> (<a class="reference external" href="mailto:fedor&#37;&#52;&#48;gnu&#46;org"><code class="docutils literal notranslate"><span class="pre">fedor&#64;gnu.org</span></code></a>)</p>
+<p><a class="reference external" href="http://www.gnustep.org/developers/whoiswho.html">Richard Frith-Macdonald</a> (<a class="reference external" href="mailto:rfm&#37;&#52;&#48;gnu&#46;org"><code class="docutils literal notranslate"><span class="pre">rfm&#64;gnu.org</span></code></a>)</p>
+<!-- **Version:** $Revision$
+
+**Date:** $Date$ -->
+<p><strong>Copyright:</strong> (C) 2005-2020 Free Software Foundation, Inc.</p>
+<!-- <span id="001000000000">Base Release Notes</span>
+
+================================================= -->
+<p>The release notes include descriptions of API changes, behaviour changes and other information that might help developers and users migrate to using a newer version of the library.</p>
+</section>
+<section id="version-1-28-0">
+<h2><span id="001001000000">Version 1.28.0</span><a class="headerlink" href="#version-1-28-0" title="Permalink to this heading">#</a></h2>
+<p>Aside from an assortment of bugfixes, this release includes a lot of improvements for Windows support as well as numerous new classes and methods.</p>
+<p>Not every bugfix, improvement or a new feature will be listed here.</p>
+<p>Added new <code class="docutils literal notranslate"><span class="pre">ASSIGNMUTABLECOPY()</span></code> macro for consistency with <code class="docutils literal notranslate"><span class="pre">ASSIGNCOPY()</span></code>.</p>
+<p>Replaced character set data headers for URLs with loading these from a standard data source, and updated bitmap representation to use much less space for character sets residing wholly in the base plane, such as the URL charsets (given they are purely ASCII).</p>
+<p>Updated character set data with newer Unicode data set.</p>
+<p><code class="docutils literal notranslate"><span class="pre">[NSURLProtocol</span> <span class="pre">-initWithRequest:cachedResponse:client:]</span></code> will now retain the client up until the last message is sent to it, which improves compatibility with OS X.</p>
+<p>Percent-escaping code in <code class="docutils literal notranslate"><span class="pre">NSURL</span></code> simplified.</p>
+<p>Removed mixed ABI support.</p>
+<p>Use of Apple runtime now assumes non-fragile ABI (which is true on modern systems).</p>
+<p>Improve typing on method implementation pointers in some classes.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">NSHTTPCookie</span></code>, rewritten code for extracting individual cookies from the HTTP header.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">NSKeyedArchiver</span></code>, implement secure coding methods.</p>
+<p>New methods in <code class="docutils literal notranslate"><span class="pre">NSDateComponents</span></code>.</p>
+<p>Improvements in <code class="docutils literal notranslate"><span class="pre">NSCalendar</span></code> and <code class="docutils literal notranslate"><span class="pre">NSLocale</span></code> for calendar locale and <code class="docutils literal notranslate"><span class="pre">NSDateComponents</span></code>.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">NSFileManager</span></code>, use <code class="docutils literal notranslate"><span class="pre">utimensat()</span></code> to set file modification date, if available.</p>
+<p>Correctly stop parsing number being decoded in <code class="docutils literal notranslate"><span class="pre">NSJSONSerialization</span></code> when encountering a number with an invalid exponent.</p>
+<p>Improve OS X compatibility for <code class="docutils literal notranslate"><span class="pre">NSURLQueryItem</span></code> initializers.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">NSFileManager</span></code>, in <code class="docutils literal notranslate"><span class="pre">changeFileAttributes</span></code>, implement setting creation date for Unix-like systems. Implement reading the creation date if a supported method was detected.</p>
+<p>Support reading Android assets from the main bundle in <code class="docutils literal notranslate"><span class="pre">NSInputStream</span></code>.</p>
+<p>Support Android assets directories in <code class="docutils literal notranslate"><span class="pre">NSBundle</span></code> and <code class="docutils literal notranslate"><span class="pre">NSFileManager</span></code>.</p>
+<p>Implement <code class="docutils literal notranslate"><span class="pre">-[NSXMLParser</span> <span class="pre">initWithStream:]</span></code>.</p>
+<p>Allow clearer choice between ‘sloppy’ <code class="docutils literal notranslate"><span class="pre">GSSloppyXMLParser</span></code> used in <code class="docutils literal notranslate"><span class="pre">NSXMLParser</span></code> and the libxml2-based <code class="docutils literal notranslate"><span class="pre">GSStrictXMLParser</span></code>.</p>
+<p>Fix building Win32 implementations for <code class="docutils literal notranslate"><span class="pre">GSFileHandle</span></code> and <code class="docutils literal notranslate"><span class="pre">NSMessagePort</span></code> with nonfragile ABI.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">NSNumber</span></code> and not <code class="docutils literal notranslate"><span class="pre">NSString</span></code> in <code class="docutils literal notranslate"><span class="pre">-[NSUserDefaults</span> <span class="pre">setBool:forKey:]</span></code>.</p>
+<p>Posting notification before <code class="docutils literal notranslate"><span class="pre">NSThread</span></code> exit.</p>
+<p>Actually declare optional <code class="docutils literal notranslate"><span class="pre">NSFilePresenter</span></code> methods as optional.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">NSConcreteMapTable</span></code>, fix replacing existing values in a weak objects map table.</p>
+<p>Fix leaks in <code class="docutils literal notranslate"><span class="pre">NSOperation</span></code>.</p>
+<p>Various compat fixes for various MSYS systems, particularly around sockets code.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">NSData</span></code>, <code class="docutils literal notranslate"><span class="pre">NSFileManager</span></code> and more, various improvements when overwriting and creating files with respect to file attributes (owners, creation timestamp, etc).</p>
+<p>Improve <code class="docutils literal notranslate"><span class="pre">NSLog</span></code> output on Android.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">instancetype</span></code> in <code class="docutils literal notranslate"><span class="pre">NSURLRequest</span></code> header.</p>
+<p>Define <code class="docutils literal notranslate"><span class="pre">NSAttributedStringKey</span></code> and <code class="docutils literal notranslate"><span class="pre">NSNotificationName</span></code>.</p>
+<p>Add new <code class="docutils literal notranslate"><span class="pre">NSURL</span></code> methods.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">GSMime</span></code>, have <code class="docutils literal notranslate"><span class="pre">-contentFile</span></code> check the <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> header before checking <code class="docutils literal notranslate"><span class="pre">Content-Disposition</span></code>.</p>
+<p>Fix a bug linking with WEAK symbols where binutils 2.3.5 would fail to link due to not all expected symbols being exported.</p>
+<p>New <code class="docutils literal notranslate"><span class="pre">plutil</span></code> utility.</p>
+<p>Implementation of <code class="docutils literal notranslate"><span class="pre">[NSData</span> <span class="pre">rangeOfData:options:range:]</span></code> which finds the <code class="docutils literal notranslate"><span class="pre">NSRange</span></code> in which the passed data occurs.</p>
+<p>Change <code class="docutils literal notranslate"><span class="pre">ENTER_POOL</span></code>/<code class="docutils literal notranslate"><span class="pre">LEAVE_POOL</span></code> so they no longer wrap the enclosed code in a loop, enabling use in some loops.</p>
+<p>New 10.5 methods in <code class="docutils literal notranslate"><span class="pre">NSRunLoop</span></code>/<code class="docutils literal notranslate"><span class="pre">NSURLConnection</span></code>.</p>
+<p>Improve compatibility when building with ICU 68.</p>
+<p>Fix compiling libdispatch integration of <code class="docutils literal notranslate"><span class="pre">NSRunLoop</span></code> on Windows.</p>
+<p>Add support for building on Windows with MSVC’s Clang by passing the <code class="docutils literal notranslate"><span class="pre">configure</span></code> flag <code class="docutils literal notranslate"><span class="pre">--host=x86_64-pc-windows</span></code>. Use of an MSYS2 shell without <code class="docutils literal notranslate"><span class="pre">-devel</span></code> packages is recommended.</p>
+<p>Implementation of <code class="docutils literal notranslate"><span class="pre">NSURLSession</span></code> and related classes. This adds some dependencies on more recent versions of <code class="docutils literal notranslate"><span class="pre">libcurl</span></code>, <code class="docutils literal notranslate"><span class="pre">libdispatch</span></code> etc.</p>
+<p>Fix initializing <code class="docutils literal notranslate"><span class="pre">NSUUID</span></code> from a string.</p>
+<p>Disable use of <code class="docutils literal notranslate"><span class="pre">libcurl</span></code> if its headers are not found.</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">NSURLProtocol</span></code>, continue writing data if not all of it was written.</p>
+<p>Fix use of GnuTLS under MinGW by using <code class="docutils literal notranslate"><span class="pre">send/recv</span></code> rather than <code class="docutils literal notranslate"><span class="pre">read/write</span></code>.</p>
+<p>Add support for libobjc2 runtime on Windows.</p>
+<p>Fix BOM insertion when generating data from a string using one of the Unicode encodings.</p>
+</section>
+<section id="version-1-27-0">
+<h2><span id="001002000000">Version 1.27.0</span><a class="headerlink" href="#version-1-27-0" title="Permalink to this heading">#</a></h2>
+<p>Aside from an assortment of bugfixes, this release includes a lot of improvements for Android support as well as numerous new classes and methods.</p>
+<p>Expose GNU TLS wrappers and add methods to get certificate expiry.</p>
+<p>Improve thread safety when using zombies, particularly on statup/shutdown.</p>
+<p>Improvements for Ukrainian localization.</p>
+<p>Decreased ICU requirements to 49 to support Windows 2000.</p>
+<p>Simplifications and fixes in GSPrivateSymbolPath().</p>
+<p>GSMime improvements (word encoding specifier, utf-8 improvements encoding quoted words with multibyte characters)</p>
+<p>NSJSONSerialization fixes for codepoints over 0x7f.</p>
+<p>NSCharacterSet support for URL*AllowedCharacterSet and declarations for new character sets.</p>
+<p>NSString implementations for new methods stringByRemovingPercentEncoding/ stringByAddingPercentEncodingWithAllowedCharacterSet:.</p>
+<p>Fixed a crash in gdomap when an invalid hostname is given for the -M option.</p>
+<p>In NSString.m, removed functions urldecode() and ishex() which were mistakenly neither namespaced nor declared static and thus could have conflicted with non-library code.</p>
+<p>Fixed libdispatch configuration switch so –enable-libdispatch works correctly; correctly checking for HAVE_LIBDISPATCH_RUNLOOP.</p>
+<p>Updated libdispatch runloop integration so it is compatible with Swift’s corelibs libdispatch release (from github.com/apple/swift-corelibs-libdispatch). The libdispatch must be compiled with INSTALL_PRIVATE_HEADERS=YES.</p>
+<p>In NSThread, spinlocks implemented using builtins to be able to target platforms without pthread_spin_lock(), such as Android targeting API level &lt; 24.</p>
+<p>In NSLog on Android, send logs to syslog.</p>
+<p>Implementation of NSOrderedSet.</p>
+<p>When ./configuring, link against libandroid on Android.</p>
+<p>In NSBundle, allow integrating with Android asset manager using +[NSBundle setJavaAssetManager:withJNIEnv:], enabling use of mainBundle’s pathForResource:ofType:, -URLForResource:ofType: and similar; referencing Info.plist if it exists in Android assets; use of NSFileManager’s fileExistsAtPath: et al and isReadableFileAtPath:; reading files using NSFileHandle APIs; use of NSDirectoryEnumerator to enumerate Android assets from the main bundle.</p>
+<p>In NSBundle, localization support on Android.</p>
+<p>In NSProcessInfo, automatic initialization on Android using a fake executable path (/data/data/&lt;app identifier&gt;/Resources).</p>
+<p>In NSData, improvements in reading Android assets.</p>
+<p>Various improvements in the mechanism to report memory usage of individual objects.</p>
+<p>Skeletal implementation of NSUbiquitousKeyValueStore.</p>
+<p>Implementation of NSByteCountFormatter.</p>
+<p>Fixes to writing large HTTPS requests (GSSocketStream, NSURLProtocol).</p>
+<p>In gdomap.c, fix detection of local networks.</p>
+<p>In NSArray’s -removeObjectsInArray:, prevent some crashes.</p>
+<p>In GSTLS, avoid setting session priority twice.</p>
+<p>In NSFileHandle, fix so that setting certificate information does not discard any other options already set.</p>
+<p>In GSXML’s -fatalErrorFunction, use the correct function to get the line number.</p>
+<p>In NSOperation’s _execute, ensure lock gets released on an error by surrounding with NS_DURING.</p>
+<p>Generics support in NSHashTable.</p>
+<p>Implementation of NSProgress.</p>
+<p>Skeleton implementation of NSURLComponents.</p>
+<p>In NSSortDescriptor, added -sortDescriptorWithKey:ascending:descending:.</p>
+<p>In NSOperationQueue, added -addOperationWithBlock.</p>
+<p>In NSFileManager, added -URLForDirectory:inDomain:appropriateForURL:create:error: and -enumeratorAtURL:includingPropertiesForKeys:options:errorHandler:. Also added NSItemReplacementDirectory constant, and updated stub implementation for -URLForDirectory:shouldCreate:error:. Added -initWithDirectoryPath:… with additional parameters skipHidden and errorHandler.</p>
+<p>In NSDictionary, fixed keysSortedByValueUsingComparator:.</p>
+<p>Moved NSFileWrapper from -gui to -base.</p>
+<p>Added NSFilePresenter, NSFileVersion and NSFileCoordinator.</p>
+<p>Added NSPersonComponents and NSPersonNameComponentsFormatter.</p>
+<p>Added units of measurement classes such as NSUnit, NSMeasurement, NSMeasurementFormatter, NSEnergyFormatter, NSLengthFormatter, NSMassFormatter.</p>
+<p>In NSUnit, support for NSUnitArea, NSUnitConcentrationMass, NSUnitDispersion, NSUnitElectricCharge, NSUnitIlluminance, NSUnitElectricCurrent, NSUnitElectricPotentionDifference, NSElectricResistance, NSUnitMass, NSUnitEnergy, NSUnitFrequency, NSUnitPower, NSUnitSpeed, NSUnitFuelEfficiency, NSUnitPressure, NSUnitVolume, NSUnitLength.</p>
+<p>Support for data directory on Android introduces GSInitializeProcessAndroid and makes use of the path returned by Context.getFilesDir() as the basis for storing data (e.g. NSUserDefaults) and when querying for directory paths (NSLibraryDirectory, NSApplicationSupportDirectory, etc.).</p>
+<p>Placeholder NSScript* classes. Added NSUserActivity, NSObjectScripting, NSHFSFileTypes, NSAppleEventManager and NSAppleEventDescriptor.</p>
+<p>Added NSDateInterval intersectionWithDateInterval:.</p>
+<p>Added NSBackgroundActivityScheduler.</p>
+<p>Added NSISO8601DateFormatter and NSMetadataAttributes.</p>
+<p>Added NSOrtogrpahy and NSLinguisticTagger.</p>
+<p>Added NSExtensionItem, NSExtensionContext, NSExtensionRequestHandling, and NSItemProvider and NSItemProviderReadingWriting.</p>
+<p>Updated timezone info for NSTimeZones.</p>
+<p>On Android, support for NSTemporaryDirectory to use Context.getCacheDir(), and cleaning it up in GSInitializeProcessAndroid() given there is no support for temp directory before Android API 26. Also used with NSCachesDirectory + NSUserDomainMask.</p>
+<p>NSXPCConnection fixes.</p>
+<p>NSException symbolication support using libunwind (used when backtrace() is unavailable).</p>
+<p>Travis build improvements to use new runloop integration and gnustep-2.0 runtime.</p>
+<p>In NSKeyValueObserving, implement two missing methods for NSArray: -addObserver:options:context: and -removeObserver:fromObjectsAtIndexes:forKeyPath:.</p>
+<p>Updated NSUUID to use instancetype.</p>
+<p>Added support for NSDate constants in NSPredicate.</p>
+<p>Fixed a NSTimer bug with blocks.</p>
+<p>In GSTLS, do not put password in the hash key of the credentials, and to avoid logging it when debugging is on.</p>
+<p>Improvements in NSConcreteHashTable and NSConcreteMapTable.</p>
+<p>In various places, switch away from deprecated CREATE_AUTORELEASE_POOL() to use the ARC-compatible ENTER_POOL and LEAVE_POOL macros.</p>
+<p>When building the list of hosts to be probed to see if they have gdomap servers, fix code to include those explicitly defined in the config file. Add -S option to list the addresses of the known gdomap servers.</p>
+<p>Backward compatibility fix for ICU 65.</p>
+<p>Update GSPrivateSymbolPath() so that, on the path where LINKER_GETSYMBOL is not available, we attempt to lookup classes using the prefix ._OBJC_CLASS_ for the 2.0 ABI (earlier ABIs use a prefix of __objc_class_name_ for the class definition.</p>
+<p>Fix parsing of NSURLResponse content type header.</p>
+<p>Fix for class lookup when using the 2.0 ABI.</p>
+<p>Fixed NSURLComponents setURL: throwing exceptions when URL didn’t have all expected parts caused by rangeOfString: throwing for nil values.</p>
+<p>Added NSURLQueryItem implementation.</p>
+</section>
+<section id="version-1-26-0">
+<h2><span id="001003000000">Version 1.26.0</span><a class="headerlink" href="#version-1-26-0" title="Permalink to this heading">#</a></h2>
+<p>A new stable release.</p>
+<p>Improve utf8 validity checks.</p>
+<p>Make point and size subclasses for NSValue interchangable.</p>
+<p>Add support for TLS SNI. Always request certificate from client and update certificates after 5 minutes.</p>
+<p>Don’t write deprecated fields to desktop link file.</p>
+<p>Use NSLock instead of GSLazyLock and other improvements for multithreaded processes.</p>
+<p>Clean up of NSString cluster.</p>
+<p>Update NSAssert() and NSCAssert() to handle variable arguments (as OSX has done) and mark the numbered macros as obsolete.</p>
+<p>Various improvements in tests.</p>
+<p>Require ICU &gt;= 50.</p>
+<p>ICU is now detected using pkg-config.</p>
+<p>Improve XML parsing.</p>
+<p>Make NSXMLNode ivar a union representing different types, instead of assuming it will contain different underlying class types in different contexts. This is important for the new libobjc2 ABI.</p>
+<p>OSX compatibility changes to NSURL.</p>
+<p>NSFileManager call error handle on missing file.</p>
+<p>Dummy spinlock implementation for platforms that don’t support it.</p>
+<p>Internationalization improvements: Japanese translation, Turkish translation, Polish translation.</p>
+<p>Various improvements for new libobjc2 “v2 ABI”, including things like a new NSConstantString implementation, making GS_REPLACE_CONSTANT_STRING a noop with the new ABI, etc.</p>
+<p>Improvements for stack traces, exception handling and dead lock detection.</p>
+<p>Other more minor bugfixes and cleanups. Many found by Coverity scan results.</p>
+<p>As usual, this release also contains an update to include the most recent international timezone data.</p>
+</section>
+<section id="version-1-25-1">
+<h2><span id="001004000000">Version 1.25.1</span><a class="headerlink" href="#version-1-25-1" title="Permalink to this heading">#</a></h2>
+<p>A new stable release.</p>
+<p>Unicode fixes for characters outside the base plane</p>
+<p>Stubs for some new OSX methods</p>
+<p>Various new OSX compatibility macro and type definitions</p>
+<p>NSFileManager fixes and tweaks to match OSX implementation</p>
+<p>NSDistributedLock bugfix for pre-existing lock directories</p>
+<p>Alternative sort algorithms selectable at runtime</p>
+<p>Compatibility-related changes for environments not supporting weak symbols</p>
+<p>Other more minor bugfixes and cleanups.</p>
+<p>As usual, this release also contains an update to include the most recent international timezone data.</p>
+</section>
+<section id="version-1-25-0">
+<h2><span id="001005000000">Version 1.25.0</span><a class="headerlink" href="#version-1-25-0" title="Permalink to this heading">#</a></h2>
+<p>A new stable release.</p>
+<p>Removes garbage collection support (though for now the NSGarbageCollector class remains as a stub).</p>
+<p>Changes multi-architecture support to match the scheme used by Debian.</p>
+<p>OpenSSL bundle removed since it didn’t match GNUTLS support.</p>
+<p>Improved support for 64bit little-endian systems.</p>
+<p>Ported to Debian/Hurd.</p>
+<p>ICU string (regexp in particular) fixes.</p>
+<p>OSX compatibity changes in NSRunLoop behavior and NSTask.</p>
+<p>Alternative sort algorithms selectable at runtime.</p>
+<p>Many bugfixes and cleanups.</p>
+<p>As usual, this release also contains an update to include the most recent international timezone data.</p>
+</section>
+<section id="version-1-24-9">
+<h2><span id="001006000000">Version 1.24.9</span><a class="headerlink" href="#version-1-24-9" title="Permalink to this heading">#</a></h2>
+<p>A new stable (bugfix) release.</p>
+<p>Niels added support for generics.</p>
+<p>Support for ‘ng’ runtime library (latest language features enabled)</p>
+<p>Performance optimisations and improved diagnostic messages.</p>
+<p>Garbage Collection deprecated (support to be removed).</p>
+<p>As usual, this release also contains an update to include the most recent international timezone data.</p>
+</section>
+<section id="version-1-24-8">
+<h2><span id="001007000000">Version 1.24.8</span><a class="headerlink" href="#version-1-24-8" title="Permalink to this heading">#</a></h2>
+<p>A new stable (bugfix) release.</p>
+<p>The release contains a variety of bugfixes as well as some performance optimisations (particularly in the use of tiny string objects by the new objc runtime on 64bit systems).</p>
+<p>Thread naming and logging of threads by NSLog() has been made consistent with the latest OSX releases, making debugging of multithreaded code a little easier.</p>
+<p>Sergei Golovin has added NSURLConnection regression tests (while fixing a few bugs there).</p>
+<p>As usual, this release also contains an update to include the most recent international timezone data.</p>
+</section>
+<section id="version-1-24-7">
+<h2><span id="001008000000">Version 1.24.7</span><a class="headerlink" href="#version-1-24-7" title="Permalink to this heading">#</a></h2>
+<p>A new stable (bugfix) release.</p>
+<p>The release has various platform/portability tweaks, as well as a variety of bugfixes.</p>
+<p>The default HTTPS connection configuration is modified to disable SSLv3.0 support (to prevent the ‘POODLE’ security attack).</p>
+<p>This release also contains an update to include the most recent international timezone data.</p>
+</section>
+<section id="version-1-24-6">
+<h2><span id="001009000000">Version 1.24.6</span><a class="headerlink" href="#version-1-24-6" title="Permalink to this heading">#</a></h2>
+<p>A new stable (bugfix) release.</p>
+<p>This release contains a new class (NSUUID) and several new methods.</p>
+<p>The OSX version compatibility macros have been updated to add the latest version of OSX.</p>
+<p>The release has various platform/portability tweaks, as well as a variety of bugfixes.</p>
+</section>
+<section id="version-1-24-5">
+<h2><span id="001010000000">Version 1.24.5</span><a class="headerlink" href="#version-1-24-5" title="Permalink to this heading">#</a></h2>
+<p>A new stable (bugfix) release.</p>
+<p>The main reason for this version is to release a collection of minor bugfixes before making more extensive changes which will break ABI compatibility and appear in a 1.25 branch.</p>
+<p>This release contains a new class (NSInvocationOperation) and a few new methods.</p>
+<p>The OSX version compatibility macros have been updated to permit use of the same numeric values as on OSX.</p>
+<p>The release has been through the clang static analyzer (with minor issues resolved) and has had clang’s printf format checking used to correct issues (mostly with NSInteger/NSUInteger on 64bit systems) with printf formats in various debug/logging messages.</p>
+<p>Timezone data was updated for this release.</p>
+</section>
+<section id="version-1-24-4">
+<h2><span id="001011000000">Version 1.24.4</span><a class="headerlink" href="#version-1-24-4" title="Permalink to this heading">#</a></h2>
+<p>A new stable (bugfix) release.</p>
+<p>The main reason for this version is the inclusion of the latest available time zone data (something accidentally omitted from the previous release).</p>
+<p>Most of the other changes in this version are fairly minor portability and bugfixes (and the addition of a number of new testcases).</p>
+<p>API changes are limited to the addition of a few OSX-10.7 methods for NSCalendar and a few new NSFileManager methods for working with URLs.</p>
+<p>Finally, there is experimental code to change the hashing algorithm used in the library … enabling it will cause slower hash generation but a better distribution of hash values … which might improve the performance of large collections.</p>
+</section>
+<section id="version-1-24-3">
+<h2><span id="001012000000">Version 1.24.3</span><a class="headerlink" href="#version-1-24-3" title="Permalink to this heading">#</a></h2>
+<p>A new stable release.</p>
+<p>Many changes in this version are behavior updates/improvements but there are also new APIs, none of which should effect binary compatibility with earlier 1.24.x releases.</p>
+<p>An important change at the configure stage is that configure policy now requires you to explicitly disable features in order to build if external packages that those features depend on are missing. This should ensure that builds of base contain consistent feature sets unless you really want to change that.</p>
+<p>The main changes are:</p>
+<p>Implementation of the NSXML DOM classes (previously stubs). This is by far the biggest chunk of new code in this release. The DOM support has a dependency on the libxml2 library.</p>
+<p>Implementation of cookies in the NSURLConnection related classes.</p>
+<p>Implementation of common HTTPS support in the NSURLConnection related classes and the older NSURLHandle. The HTTPS support has a dependency on the gnutls library.</p>
+<p>Implementation of new sorting code for faster sorting and to allow sorting algorithms to be changed.</p>
+<p>Many changes to add support for ObjectiveC-2.0 additions.</p>
+<p>Implementation of Encoding/Decoding of NSAffineTransform.</p>
+<p>Many, many minor bugfixes and tweaks.</p>
+</section>
+<section id="version-1-24-0">
+<h2><span id="001013000000">Version 1.24.0</span><a class="headerlink" href="#version-1-24-0" title="Permalink to this heading">#</a></h2>
+<p>A new stable release.</p>
+<p>Most changes in this version are behavior updates/improvements rather than new API, but you should be aware that there is a binary incompatibility on 64bit systems in that the value of the NSNotFound constant there is now 64bits rather than 32bits.</p>
+<p>With this release the official supported compiler for GNUstep is gcc-4.0 and later, and the base library has been tested using recent gcc development snapshots.</p>
+<p>The main changes are:</p>
+<p>Support for the GNU LANGUAGES environment variable and other locale improvements.</p>
+<p>Caching of file and directory path information within bundles.</p>
+<p>IPV6 support for NSHost and networking operations.</p>
+<p>Support for UTF-8 string literals in source (compiler permitting).</p>
+<p>Improved support for building standalone application bundles.</p>
+<p>And of course, lots of bugfixes and OSX compatibility tweaks.</p>
+<p>One this that didn’t make it into this release was functioning NSXML DOM classes. For DOM style work you still need to use the GSXML classes, however there is active work on implementing NSXMLNode and friends as wrappers round the corresponding libxml2 classes, and we hope/expect these to be ready soon.</p>
+</section>
+<section id="version-1-23-0">
+<h2><span id="001014000000">Version 1.23.0</span><a class="headerlink" href="#version-1-23-0" title="Permalink to this heading">#</a></h2>
+<p>A new stable release with many minor bugfixes and tweaks.</p>
+<p>The main changes however are David Chisnall’s work adding support of the clang compiler and Objective-C 2.0 language/runtime (the compiler/runtime combination now provides full support for the Objective-C 2.0 language).</p>
+<p>Garbage collection using clang and libobjc2 is now available in addition to the existing gcc runtime garbage collection support.</p>
+<p>Going beyond that, for people who don’t like garbage collection, there is now support for automated reference counting, where the clang compiler adds reference count calls to manage object lifetimes, relieving the application developer from the need to manage reference counts.</p>
+<p>An important point to note is that this is the last release to support the gcc-2.9.5 compiler. In future, while releases may work with older systems, the formal requirement will be a gcc-4.x series compiler or later and base may also depend on support for the C99 standard being available.</p>
+<p>This change is being made in order avoid developers needing to spend a great deal of time keeping code working for obsolete systems which are no longer used in practice.</p>
+</section>
+<section id="version-1-22-0">
+<h2><span id="001015000000">Version 1.22.0</span><a class="headerlink" href="#version-1-22-0" title="Permalink to this heading">#</a></h2>
+<p>A new stable release with many updates and changes. In addition to many new classes and methods, there is now a regression test framework included in the base release.</p>
+<p>In addition, base now supports and uses the Objective-C 2.0 runtime API from Apple and we encourage anyone programming with GNUstep to move to using this new runtime and the new functionality it supports. Note however, there is currently no compiler/runtime combination that completely supports the Objective-C 2.0 specification, but we would recommend the following:</p>
+<ul class="simple">
+<li><p>gcc (pre 4.6) and GNUstep libobjc is the preferred compiler/runtime for stability (best tested)</p></li>
+<li><p>gcc 4.6 and GNU libobjc for experimental ObjC2 with garbage collection but without blocks</p></li>
+<li><p>clang and GNUstep libobjc2 for experimental ObjC2 without garbage collection but with blocks.</p></li>
+</ul>
+<p>New Test Framework</p>
+<p>Please look at the README file in the TestFramework directory of the make package for more information on how to use and write test cases.</p>
+<p>NSTimeZones</p>
+<p>Updated with the latest zone info.</p>
+<p>NSNumberFormatter and NSDateFormatter</p>
+<p>Implemented a number of methods.</p>
+<p>NSLocale and NSCalendar</p>
+<p>Initial implementation of these classes. The libicu 4.0 library is now required for full operation of these classes.</p>
+<p>NSNumber</p>
+<p>Fix the +numberWith… methods to work for subclasses of NSNumber rather than creating instances of the default class.</p>
+<p>NSFileManager</p>
+<p>Implemented a few new methods</p>
+<p>NSSet</p>
+<p>Add block enumeration</p>
+<p>NSOperation</p>
+<p>Implement support for concurrent operations</p>
+<p>NSRegularExpression</p>
+<p>Also requires libicu for full functionality.</p>
+<p>NSTimeZone</p>
+<p>Implement some more methods</p>
+<p>NSNetServices</p>
+<p>Implement avahi-based services</p>
+</section>
+<section id="version-1-21-1">
+<h2><span id="001016000000">Version 1.21.1</span><a class="headerlink" href="#version-1-21-1" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable snapshot release but is functionally identical to the 1.20-1 stable bugfix release, made to ensure that the latest available snapshot version of the unstable branch is at least as up to date as the latest stable release.</p>
+<p>The changes in this release are a timezone handling update to the latest zone information, various minor bug fixes and portability updates, some small cleanups and optimizations, a few tweaks to help packagers, and finally an alteration to the additions library on OSX to add a category to re-enable serialization of property lists in the more readable and compact OpenStep format (something the most recent versions of OSX lost).</p>
+<p>NSAttributedString</p>
+<p>Fixes for keyed archiving/unarchiving.</p>
+<p>NSData</p>
+<p>Improve reading of non-standard files (eg /proc filesystem).</p>
+<p>NSHashTable</p>
+<p>Fix minor buffer overrun.</p>
+<p>NSInvocation</p>
+<p>Fix for problem with FFI when caching the method implementation of a proxy.</p>
+<p>NSNumber</p>
+<p>Fix the +numberWith… methods to work for subclasses of NSNumber rather than creating instances of the default class.</p>
+<p>NSKeyValueCoding</p>
+<p>Fix -isKey for KVC compliance.</p>
+<p>NSPropertyList</p>
+<p>Fix whitespace handling in XML property lists.</p>
+<p>Allow OpenStep style property lists to be written on OSX.</p>
+<p>NSTimeZone</p>
+<p>Update to latest zone information.</p>
+<p>Update list of timezone abbreviations.</p>
+<p>Improve diagnostics when no timezone is set.</p>
+<p>GSObjCMethodNames</p>
+<p>Fix broken implementation.</p>
+<p>ObjectiveC2 compatibility</p>
+<p>Bugfix for selector lookup issue.</p>
+<p>Working implementation of checks for conformance to protocols.</p>
+<p>Installation of gdomap</p>
+<p>The installation process used to install gdomap setuid to root by default (for developers/hackers) and packagers were supposed to change that to not be setid, and start gdomap as root at system boot time. But packagers weren’t doing that. The installation is now changed to install non-setuid by default giving packagers more of an incentive to start gdomap properly.</p>
+<p>Update of fake-main mechanism</p>
+<p>The fake-main mechanism for obtaining program arguments and environment requires the library to link to the gnustep_user_main function in any program which uses it. This caused problems where a distribution packaging system refuses to allow unresolved link symbols in a library. The code was reworked to use a weak reference to a local function, avoiding this problem.</p>
+</section>
+<section id="version-1-21-0">
+<h2><span id="001017000000">Version 1.21.0</span><a class="headerlink" href="#version-1-21-0" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release synchronized with the 1.20.0 stable release. There have been major changes and reorganizations to support, among other things, the new non-fragile ABI from clang. These changes, although they break binary compatibility with previous releases, should allow all future releases to maintain compatibility.</p>
+<p>Objective-C 2</p>
+<p>Add compatibility code for Objective-C 2.0 when it is not provided by the compiler or objc library. Some runtime wrappers for Objective-C have been deprecated in favour of new 2.0 API.</p>
+<p>Additions library</p>
+<p>Reorganized so all GNUstep extensions are in the Additions library files.</p>
+<p>Mac OS X Compatibility</p>
+<p>Various improvements for compatibility including use of NSInteger/NSUInteger/CGFloat</p>
+<p>non-fragile ABI</p>
+<p>Support added for this ABI from clang includes additions of an extra ivar for future expansion and hiding of ivars in some classes.</p>
+<p>NSOperation</p>
+<p>Complete NSOperation and NSOperationQueue (compatible with 10.6 apart from blocks).</p>
+<p>Fast Enumeration</p>
+<p>Support was added.</p>
+<p>NSLock</p>
+<p>Complete rewrite of NSLock so they are faster, more complete and OS X-compatible. NSLock now depends on POSIX threads.</p>
+</section>
+<section id="version-1-19-3">
+<h2><span id="001018000000">Version 1.19.3</span><a class="headerlink" href="#version-1-19-3" title="Permalink to this heading">#</a></h2>
+<p>This is a new unstable snapshot release of the base library almost identical to 1.19.2 but containing a bugfix for the introduction of a change in the behavior of NSURL’s -path method to match OSX. We add a new -fullPath method which returns the actual path of the URL the way the old -path implementation did. This is necessary because the OSX behavior is to strip any trailing ‘/’ from a path so that it’s no longer possible to reliably build a URL string from its component parts.</p>
+</section>
+<section id="version-1-19-2">
+<h2><span id="001019000000">Version 1.19.2</span><a class="headerlink" href="#version-1-19-2" title="Permalink to this heading">#</a></h2>
+<p>This is a new unstable snapshot release of the base library. It may contain minor binary incompatibilities with the previous unstable release, but should generally work with software compiled for that release.</p>
+<p>This is primarily intended as a bugfix release prior to major rewrite of NSLock code by David Chisnall. As such, most changes are bugfixes and performance tweaks. Some of the main ones are listed below.</p>
+<p>NSCalendarDate</p>
+<p>Add OSX compatible field widths in date formats.</p>
+<p>NSCharacterSet</p>
+<p>Uses a much more compact internal representation to decrease the memory footprint of applications which make extensive use of character sets.</p>
+<p>NSFileHandle</p>
+<p>Fixes for socket connections on mswindows.</p>
+<p>NSRunLoop</p>
+<p>Adds OSX compatibility changes with timers acting like input sources for determining blocking.</p>
+<p>NSString</p>
+<p>Performance improvements converting between 8bit and 16bit character representations.</p>
+<p>NSURL</p>
+<p>Support file URLs on mswindows. Include ‘Host’ header in requests to conform to W3C standards.</p>
+<p>NSUserDefaults</p>
+<p>Fixes for improved thread safety. Now stores to file in XML format.</p>
+<p>Key Value Coding/Observing</p>
+<p>Various improvements for OSX compatibility.</p>
+</section>
+<section id="version-1-19-1">
+<h2><span id="001020000000">Version 1.19.1</span><a class="headerlink" href="#version-1-19-1" title="Permalink to this heading">#</a></h2>
+<p>A great deal of improvements have occurred recently. This includes many improvements in garbage collection (first to get it working again). Also many Mac OS X 10.5 methods and classes have been added, as well as compatibility improvements.</p>
+<p>NSData</p>
+<p>Implemented new Mac OS X methods for writing data.</p>
+<p>NSFileManager</p>
+<p>Fix -fileOwnerAccountID and -fileGroupOwnerAccountID to return the correct type.</p>
+<p>NSHashTable, NSMapTable</p>
+<p>New Mac OS X 10.5 API classes.</p>
+<p>Garbage Collection</p>
+<p>Get GC working again. Fixes in various classes to work better with GC.</p>
+<p>Mac OS X 10.5 Return Types</p>
+<p>Methods have been converted to use return types and arguments of NSInteger, NSUInteger and CGFloat. For now, these types are equivalent to the old types. This can be changed in NSObjCRuntime.h so that integer types are the same size as a pointer, and the float type is actually a double on 64bit processors.</p>
+<p>NSArray</p>
+<p>New methods for inserting objects with NSIndexSet</p>
+</section>
+<section id="version-1-19-0">
+<h2><span id="001021000000">Version 1.19.0</span><a class="headerlink" href="#version-1-19-0" title="Permalink to this heading">#</a></h2>
+<p>This is a new unstable release of the base library. Note that gnustep-core is now installed in the LOCAL domain by default instead of the SYSTEM domain. You may want to remove old installations in the SYSTEM domain to avoid any incompatibility problems. Or you can force installation in SYSTEM using make GNUSTEP_INSTALLATION_DOMAIN=SYSTEM install.</p>
+<p>NSBundle</p>
+<p>Improve lookup of versioned library resources and improve location of resources based on the location of the executable under ms-windows.</p>
+<p>NSConnection</p>
+<p>Adds a new keepalive mechanism to check connections at periodic intervals to see if the other end is still there. This is enabled for message ports on ms-windows, where the operating system does not inform us when the other end goes away, and is not needed on the socket based connections on Unix.</p>
+<p>NSException</p>
+<p>Implement full support for native objective-c exceptions, though this requires a fix for the objc runtime which is not yet available in gcc. The patch for the runtime can be found at http://gcc.gnu.org/bugzilla/show_bug.cgi?id=27466</p>
+<p>NSTask</p>
+<p>Adds a new method in a category in the Additions library … The +launchPathForTool: method will locate a named tool by looking in all the standard locations in the USER, LOCAL, NETWORK and SYSTEM domains, and also by looking in PATH.</p>
+<p>Portability and compatibility work</p>
+<p>There are various minor changes to improve portability (both improved configuration/detection of system software and runtime improvements) to different operating systems such as 64bit ms-windows. There are also various improvements to MacOS-X compatibility.</p>
+<p>&#64;synchronize</p>
+<p>Implementation of runtime support for &#64;synchronize.</p>
+</section>
+<section id="version-1-15-4">
+<h2><span id="001022000000">Version 1.15.4</span><a class="headerlink" href="#version-1-15-4" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release.</p>
+<p>NSArray</p>
+<p>New OSX method stubs.</p>
+<p>NSAutoreleasePool</p>
+<p>Dummy OSX method (-drain).</p>
+<p>NSBundle</p>
+<p>New OSX method stubs.</p>
+<p>NSCoder</p>
+<p>New OSX10.5 methods for NSInteger implemented.</p>
+<p>NSConnection</p>
+<p>New OSX10.5 methods for server connections implemented.</p>
+<p>A keepalive facility so that daemons can tell (on mswindows) that all client processes have gone away, and shut themselves down.</p>
+<p>NSData</p>
+<p>New OSX method stubs.</p>
+<p>NSException</p>
+<p>Implement stack address reporting.</p>
+<p>NSIndexSet</p>
+<p>Add OSX10.5 stub for countOfIndexesInRange</p>
+<p>NSKeyvalueObserving</p>
+<p>OSX10.5 additions implemented</p>
+<p>NSSet</p>
+<p>Implemented new OSX methods.</p>
+<p>NSStream</p>
+<p>Implemented basic SSL/TLS support using gnu-TLS.</p>
+<p>NSThread</p>
+<p>Implemented new OSX methods.</p>
+<p>NSLock, NSRecursiveLock, NSConditionLock</p>
+<p>Implemented names.</p>
+<p>GSXML, NSXMLParser</p>
+<p>Fully support namespace handling and fix bugs.</p>
+<p>NSKeyValueCoding, NSKeyValueObserving</p>
+<p>Made fully functional and MacOS-X compatible.</p>
+<p>Windows 64bit</p>
+<p>Changes so that the library can be built/used for 64bit windows.</p>
+<p>&#64;synchronize</p>
+<p>Support for new ObjC language feature.</p>
+<p>The current emphasis of the base library is MacOS-X compatibility, and the headers in this release mark many non-MacOS-X methods as being scheduled for removal by the next unstable release (from 1.17.0).</p>
+<p>These methods will mostly be moved to the ‘additions’ library, (which can be built stand-alone in conjunction with the Cocoa Foundation framework as libgnustep-baseadd on OSX) and their declarations will be in the headers of that library (&lt;GNUstepBase/…&gt;) rather than in the <em>Foundation</em> directory.</p>
+<p>NB. The markup in the headers and documentation should not be assumed to be exhaustive … it is planned that the next stable release of the base library will enforce MacOS-X compatibility by default, and you will have to explicitly include headers from &lt;GNUstepBase/…&gt; in order to use GNUstep specific additions.</p>
+<p>You should track the unstable branch of the base library (subversion trunk) to find out what changes your software actually needs to make.</p>
+<p>The TODO list for MacOS-X 10.5 compatibility follows, this is all stuff which would ideally be done by the next stable release of this library.</p>
+<ul class="simple">
+<li><p>Remove all non OSX10.5 declarations from standard headers</p></li>
+<li><p>Implement most new method stubs.</p></li>
+<li><p>Implement new OSX10.5 NSCalendar class.</p></li>
+<li><p>Implement new OSX10.5 NSLocale class.</p></li>
+<li><p>Implement new OSX10.5 NSOperation class.</p></li>
+<li><p>Implement new OSX10.5 XML classes.</p></li>
+<li><p>Implement NSInteger coding for NSCoder subclasses.</p></li>
+<li><p>Implement support for now enumerated values in NSComparisonPredicate.</p></li>
+<li><p>Implement new OSX10.5 features of NSDateFormatter.</p></li>
+<li><p>Implement new OSX10.5 features of NSExpression.</p></li>
+<li><p>Implement new OSX10.5 features of NSPredicate.</p></li>
+<li><p>Implement new OSX10.5 features of NSFileManager.</p></li>
+<li><p>Implement new OSX10.5 features of NSProcessInfo.</p></li>
+<li><p>Implement new OSX10.5 NSHashTable class.</p></li>
+<li><p>Implement new OSX10.5 NSMapTable class.</p></li>
+<li><p>Implement new OSX10.5 NSPointerArray class.</p></li>
+<li><p>Implement new OSX10.5 NSLocale additions.</p></li>
+<li><p>Implement new OSX10.5 features of NSNumberFormatter.</p></li>
+<li><p>Implement new OSX10.5 features of NSNumber/NSValue.</p></li>
+<li><p>Update NSDistributedNotificationCenter with new OSX methods.</p></li>
+</ul>
+</section>
+<section id="version-1-15-3">
+<h2><span id="001023000000">Version 1.15.3</span><a class="headerlink" href="#version-1-15-3" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release.</p>
+<p>Configuration/NSUserDefaults</p>
+<p>Syntax within the configuration file extended so that a leading ‘../’ in a path name denotes a relative path in a relocatable installation.</p>
+<p>New ‘GlobalDefaults.plist’ file in the same directory as the main GNUstep config file allows packagers/sysadmins to set up global defaults easily.</p>
+<p>NSStream</p>
+<p>Addition of TLS/SSL support using GNU TLS on both unix-like and mswindows systems. First draft.</p>
+<p>Additions of SOCKS proxying support for socket streams. First draft.</p>
+<p>NSURLConnection</p>
+<p>Added support for https using new stream code.</p>
+<p>Added support for basic and digest authentication.</p>
+</section>
+<section id="version-1-15-2">
+<h2><span id="001024000000">Version 1.15.2</span><a class="headerlink" href="#version-1-15-2" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release. Bug fixes include improved thread safety and Key-Value observing.</p>
+<p>NSException</p>
+<p>New MacOS X methods and improved stack trace.</p>
+<p>NSThread</p>
+<p>New methods from Mac OS 10.5 and new ivars</p>
+<p>NSDecimal and NSDecimalNumber</p>
+<p>Many improvements</p>
+</section>
+<section id="version-1-15-1">
+<h2><span id="001025000000">Version 1.15.1</span><a class="headerlink" href="#version-1-15-1" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release. There have been many bug fixes, but also a few method additions and changes to some headers. Also the license for this release is now GPLv3 and LGPLv3.</p>
+<p>NSUserDefaults</p>
+<p>Stores YES or NO as a string for MacOS X compatibility.</p>
+<p>NSErrorRecoveryAttempting</p>
+<p>Added header (and some support in the GUI library).</p>
+<p>NSArray</p>
+<p>Added some new methods to handle multiple objects.</p>
+<p>Key-Value Coding</p>
+<p>More support for key-value coding.</p>
+<p>NSPredicate</p>
+<p>Much improved parsing. Ivars have changed in some of the predicate classes.</p>
+</section>
+<section id="version-1-15-0">
+<h2><span id="001026000000">Version 1.15.0</span><a class="headerlink" href="#version-1-15-0" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release from 1.14.0. It is otherwise identical to the 1.14.0 release. Releases in the 1.15 series may not be forward compatible with previous 1.15 releases.</p>
+</section>
+<section id="version-1-14-0">
+<h2><span id="001027000000">Version 1.14.0</span><a class="headerlink" href="#version-1-14-0" title="Permalink to this heading">#</a></h2>
+<p>This is a stable release … all programs linked with earlier versions of the library and wishing to use this latest stable release need to be rebuilt from source.</p>
+<p>This release should be used in conjunction with the latest stable release of the other gnustep core components.</p>
+<p>This release continues the process of cleanup and restructuring to further improve MacOS-X compatibility, fix bugs, optimize performance, and improve portability between different hardware/operating system platforms.</p>
+<p>NSAffineTransform</p>
+<p>Imported from GUI library for MacOS-X compatibility.</p>
+<p>NSBundle</p>
+<p>Implemented library resource versioning.</p>
+<p>NSException</p>
+<p>Support provision of stack trace information in exceptions.</p>
+<p>NSObject</p>
+<p>Fixes for lock contention with retain/release, so the performance of massively multi-threaded applications is much better.</p>
+<p>NSNetServices</p>
+<p>New MacOS-X class implemented.</p>
+<p>NSPathUtilities</p>
+<p>Uses new gnustep-make features to provide native filesystem integration.</p>
+<p>NSPropertyList</p>
+<p>XML property list parsing supported even if libxml2 not available.</p>
+<p>NSSpellServer</p>
+<p>Imported from GUI library for MacOS-X compatibility.</p>
+<p>NSValueTransformer</p>
+<p>New MacOS-X class implemented.</p>
+</section>
+<section id="version-1-13-1">
+<h2><span id="001028000000">Version 1.13.1</span><a class="headerlink" href="#version-1-13-1" title="Permalink to this heading">#</a></h2>
+<p>This is a bugfix release improving the stability and security of applications using the base library. Programs dynamically linked with the existing stable release will automatically benefit from these changes once this version is installed.</p>
+<p>NSBundle</p>
+<p>Fix for crash when initializing the bundle system in an application linked with many frameworks.</p>
+<p>NSCalendarDate</p>
+<p>Fix for buffer overrun problem when initializing date from string. Also fixed to return nil when initializing from some illegal strings.</p>
+<p>NSConnection</p>
+<p>Some locking fixes to avoid rare deadlocks in heavily multi-threaded applications.</p>
+<p>NSDecimalNumber</p>
+<p>Fix to handle current locale properly when initializing.</p>
+<p>NSIndexSet</p>
+<p>Fix bug adding indexes in a range which lies within a range already in the set.</p>
+<p>NSPropertyList</p>
+<p>Fix problem writing negative numbers into old-style property list.</p>
+<p>NSString</p>
+<p>Fix for problem with keyed archiving of simple strings.</p>
+<p>NSURL</p>
+<p>Fix a potential repeated load of the same resource. Also fix to return nil when initialised with a string which does not contain a URL scheme.</p>
+<p>NSURLHandle</p>
+<p>Improve handling of persistent connections when the remote host drops the connection unexpectedly.</p>
+<p>GSXML</p>
+<p>Fix bug causing removal of newline characters from escaped strings. Fix error setting start end end element for SAX.</p>
+</section>
+<section id="version-1-13-0">
+<h2><span id="001029000000">Version 1.13.0</span><a class="headerlink" href="#version-1-13-0" title="Permalink to this heading">#</a></h2>
+<p>Several sets of classes have been added for dealing with URLs and predicates. A few minor api changes have occurred as well.</p>
+<p>Character sets</p>
+<p>Character sets were improved with regard to ranges (Chinese characters, etc).</p>
+<p>Keyed Archiving</p>
+<p>Better compatibility with MacOSX. In particular, some guesses are made as to how some objects should be encoded.</p>
+<p>GNUstep configuration file</p>
+<p>Extra keys are allowed in the configuration file with the definition of the GNUSTEP_EXTRA key.</p>
+<p>URL Loading</p>
+<p>Headers and a basic framework for Apple’s new URL loading scheme were added, although this is not fully implemented yet.</p>
+<p>Objective-C++</p>
+<p>Most of the code was updated to compile nicely with the new gcc objective-c++ compiler.</p>
+<p>NSString designated initialiser</p>
+<p>The GNUstep designated initialiser for the NSString class cluster has changed to <code class="docutils literal notranslate"><span class="pre">-initWithBytesNoCopy:length:encoding:freeWhenDone:</span></code> from <code class="docutils literal notranslate"><span class="pre">-initWithCharactersNoCopy:length:freeWhenDone:</span></code> and older code sub classing NSString will need to be updated.</p>
+<p>NSBundle bundleWithIndentifier:</p>
+<p>The NSBundle method <code class="docutils literal notranslate"><span class="pre">+bundleWithIdentifier:</span></code> was added.</p>
+<p>NSPredicate</p>
+<p>A basic implementation of the NSPredicate classes (NSPredicate, NSComparisonPredicate, NSCompoundPredicate, NSExpression) was added.</p>
+<p>Stack traces</p>
+<p>Support for getting stack traces via bfd was added experimentally. You have to define STACKTRACE when compiling base to get this.</p>
+<p>Languages</p>
+<p>Added new language files Esperanto, Korean, and Ukrainian.</p>
+<p>Run loops</p>
+<p>Removed the timeout facility for run loop watchers - you should use standard timers instead. The watcher interface is deprecated anyway.</p>
+</section>
+<section id="version-1-12-0">
+<h2><span id="001030000000">Version 1.12.0</span><a class="headerlink" href="#version-1-12-0" title="Permalink to this heading">#</a></h2>
+<p>There have been a number of API changes and several methods have been depreciated in this release. Although current GNUstep programs that use these methods will still work in this version, there are enough changes that a new library version was considered useful.</p>
+<p>NSCoder deprecated methods</p>
+<p>Several methods using the old libObjects style scheme <code class="docutils literal notranslate"><span class="pre">withName:</span></code> are now deprecated. You can use the new NSKeyedArchiver and NSKeyedUnarchiver functionality to perform the same function in a much more portable way.</p>
+<p>NSPortCoder, NSPortMessage private methods</p>
+<p>The private method <code class="docutils literal notranslate"><span class="pre">_components</span></code> was removed from the public interface.</p>
+<p>NSString -getCString:maxLength:encoding:</p>
+<p>The return type of this function was changed to BOOL.</p>
+<p>NSBundle deprecated and private methods</p>
+<p>Several deprecated and private methods were removed from the public interface including <code class="docutils literal notranslate"><span class="pre">+gnustepBundle</span></code>, and <code class="docutils literal notranslate"><span class="pre">+pathForGNUstepResource:ofType:inDirectory:</span></code>.</p>
+<p>NSNotificationCenter deprecated method</p>
+<p>The GNUstep method <code class="docutils literal notranslate"><span class="pre">setLockingDisabled:</span></code> method was deprecated.</p>
+<p>NSNotificationQueue private functions</p>
+<p>Private functions <code class="docutils literal notranslate"><span class="pre">GSNotifyASAP</span></code>, <code class="docutils literal notranslate"><span class="pre">GSNotifyIdle</span></code>, and <code class="docutils literal notranslate"><span class="pre">GSNotifyMore</span></code> were removed from public interface.</p>
+<p>NSRunLoop watcher API updates and other changes</p>
+<p>We are starting to integrate the Cocoa NSStream classes into GNUstep, which allow you to do much the same things as the GNUstep-specific run loop watcher API was intended. At some point the watcher API will be deprecated as it will be redundant with NSStream functionality. Also the deprecated win32 specific methods for NSRunLoop were removed.</p>
+<p>NSAttributedString deprecated method</p>
+<p>The non-standard <code class="docutils literal notranslate"><span class="pre">attributedSubstringWithRange:</span></code> method (just a synonym for the real method) was deprecated.</p>
+<p>NSConnection, NSDistantObject method removal</p>
+<p>Several legacy methods from the original GNU Connection class were removed or moved to the additions category of the library.</p>
+<p>NSAutoreleasePool private methods</p>
+<p>The private method <code class="docutils literal notranslate"><span class="pre">_endThread:</span></code> was removed from the public interface.</p>
+<p>NSPortNameServer private methods</p>
+<p>Several private methods were removed from the public interface.</p>
+<p>NSStream, NSIndexPath</p>
+<p>New classes added to the library.</p>
+<p>NSUserDefaults improvements</p>
+<p>User defaults were restructured to create the defaults lazily and can be set to not write to an external file at all, for developers who wish to use the library as a stand-alone library or in other situations where using external resources is not desired.</p>
+</section>
+<section id="version-1-11-2">
+<h2><span id="001031000000">Version 1.11.2</span><a class="headerlink" href="#version-1-11-2" title="Permalink to this heading">#</a></h2>
+<p>GNUstep.conf and relocation</p>
+<p>Support for GNUstep.conf and relocation of the filesystem is much improved in this release.</p>
+<p>Windows platform</p>
+<p>The WM_QUIT message is now intercepted to allow an application to terminate cleanly.</p>
+<p>NSMessagePort - Windows platform</p>
+<p>NSMessagePort was implemented on Windows platforms.</p>
+<p>NSOpenStepRootDirectory</p>
+<p>This function has been un-deprecated, and the documentation clarified so it is easier to understand what it does and does not do.</p>
+<p>GNUsteprc</p>
+<p>Deprecated support for system-wide GNUsteprc files has been removed.</p>
+</section>
+<section id="version-1-11-1">
+<h2><span id="001032000000">Version 1.11.1</span><a class="headerlink" href="#version-1-11-1" title="Permalink to this heading">#</a></h2>
+<p>NSSortDescriptor</p>
+<p>New class.</p>
+<p>NSStringFromPoint, NSStringFromRect, NSStringFromSize</p>
+<p>Functions now output strings that can be read by old OpenStep implementations (but can also still be read by GNUstep and MacOSX).</p>
+<p>Debugging support</p>
+<p>More support for debugging on mingw, including writing logs to debugger and event viewer.</p>
+</section>
+<section id="version-1-11-0">
+<h2><span id="001033000000">Version 1.11.0</span><a class="headerlink" href="#version-1-11-0" title="Permalink to this heading">#</a></h2>
+<p>The interface version of the base library has changed in this release. Applications, libraries and tools that wish to use this new version must be recompiled (otherwise, they’ll use the older version of the library).</p>
+<p>Window’s changes</p>
+<p>A lot of the behavior of path handling in the base library has changed with respect to Window’s machines. Windows native paths are used throughout. The fileSystemRepresentation methods now use utf-16 as the external c-string representation on windows. The local to openstep and openstep to local methods are now deprecated and do nothing. Other changes to classes and class variables have also occurred (detailed below).</p>
+<p>Path/Startup configuration</p>
+<p>At the startup of any application or tool, GNUstep used to look at various environment variables in order to find the location of various data directories and other things. GNUstep still does this, but the environment variables are no longer required to find these files. In addition the configuration files used to override certain path behavior has been changed and expanded. See the base library documentation on GNUstep Configuration Files for more information.</p>
+<p>NSCharacterSets</p>
+<p>Character sets are included in the library itself instead of being loaded from a data file. Also, the NSBitmapCharSet API has been removed.</p>
+<p>NSPathUtilities</p>
+<p>Depreciated functions GSSystemRootDirectory and GSStandardPathPrefixes. In addition, beware of using the function NSOpenStepRoot, which may not necessarily return the information you need (see the documentation for this function for more info). Enumeration values for NSSearchPathDirectory have changed.</p>
+<p>NSRunLoop</p>
+<p>NSRunLoop and related classes now use native win32 event handling on Window’s machines. See also GSFileHandle, NSSocketPort and NSMessagePort.</p>
+<p>GSFileHandle</p>
+<p>This GNUstep specific class has a new ivar on Windows.</p>
+<p>NSSocketPort, NSMessagePort</p>
+<p>This class has a new ivar on Windows.</p>
+<p>NSPortNameServer</p>
+<p>A one-time warning is printed concerning a future change in which nsconnections will only work between processes owned by the same account on the same machine, for MacOSX compatibility and security. If inter-host/user communication is desired, the developer will need to set this explicitly.</p>
+<p>Keyed Encoding</p>
+<p>Work was done in many classes to support keyed encoding. It may not be fully implemented in every class, however.</p>
+</section>
+<section id="version-1-10-3">
+<h2><span id="001034000000">Version 1.10.3</span><a class="headerlink" href="#version-1-10-3" title="Permalink to this heading">#</a></h2>
+<p>This release includes a few minor bug fixes.</p>
+</section>
+<section id="version-1-10-2">
+<h2><span id="001035000000">Version 1.10.2</span><a class="headerlink" href="#version-1-10-2" title="Permalink to this heading">#</a></h2>
+<p>This release is most likely the last release in this series, aside from possible bug fixes. It was was branched from CVS on Feb 22, 2005.</p>
+<p>NSContainsRect behavior change</p>
+<p>The definition of NSContainsRect has changed to correspond with the current Mac OS X/Cocoa definition. The sides of the bRect can touch aRect.</p>
+<p>Unichar file paths</p>
+<p>Windows supports unichar file paths, but there isn’t really an API for handling this. GNUstep-specific methods for dealing with this have been added, <code class="docutils literal notranslate"><span class="pre">NSFileManager's</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-localFromOpenStepPath</span></code> and <code class="docutils literal notranslate"><span class="pre">openStepPathFromLocal</span></code> and equivalent methods for <code class="docutils literal notranslate"><span class="pre">NSString</span></code>. In most cases the Base library should handle this problem internally, but it’s possible that there are cases where the developer wants to handle the file name explicitly with system-specific functions.</p>
+<p>NSDictionaryErnumerator</p>
+<p>Some ivars in NSDictionaryEnumerator have changed types, but the total storage space has not changed. This may cause problems if you access ivars directly, perhaps through a subclass.</p>
+<p>NSNotification -setImmutablePost</p>
+<p>This GNUstep extension method was removed.</p>
+<p>NSPort extension methods</p>
+<p>Unimplemented GNUstep extension methods <code class="docutils literal notranslate"><span class="pre">-close</span></code>, <code class="docutils literal notranslate"><span class="pre">-outPackedClass</span></code>, and <code class="docutils literal notranslate"><span class="pre">+outPackedClass</span></code> were removed.</p>
+<p>NSTimeZone -abbreviationDictionary</p>
+<p><code class="docutils literal notranslate"><span class="pre">NSTimeZone</span></code>’s abbreviation dictionary is now a proper one-to-one dictionary.</p>
+</section>
+<section id="version-1-10-1">
+<h2><span id="001036000000">Version 1.10.1</span><a class="headerlink" href="#version-1-10-1" title="Permalink to this heading">#</a></h2>
+<p>Runtime version discovery of library</p>
+<p>A developer can discover the version of the base library that is loaded using the NSBundle methods <code class="docutils literal notranslate"><span class="pre">[[NSBundle</span> <span class="pre">bundleForLibrary:</span> <span class="pre">&#64;&quot;gnustep-base&quot;]</span> <span class="pre">infoDictionary]</span></code> and retrieving the <code class="docutils literal notranslate"><span class="pre">GSBundleVersion</span></code> key.</p>
+<p>NSXMLParser class added</p>
+<p>This is a Cocoa class that has been added for compatibility. The class is still alpha state.</p>
+<p>NSArray makeObjectsPerformSelector:</p>
+<p>The order of iteration through objects was changed to match Cocoa.</p>
+<p>Designated initializer changes</p>
+<p>The designated initializer for NSArray, NSDictionary, NSSet, and NSString for MacOS X compatibility. Like MacOS X, you can call <code class="docutils literal notranslate"><span class="pre">[super</span> <span class="pre">init]</span></code> to initialize the class from a subclass, although it is prefered that you use the <em>designated initializer</em>, with it’s richer set of initializers.</p>
+</section>
+<section id="version-1-10-0">
+<h2><span id="001037000000">Version 1.10.0</span><a class="headerlink" href="#version-1-10-0" title="Permalink to this heading">#</a></h2>
+<p>Interface version change</p>
+<p>The interface version of the base library has changed in this release, as it will in all future releases with a new minor number (that’s the second number in the release number). Applications, libraries and tools that wish to use this new version must be recompiled (otherwise, they’ll use the older version of the library). There is no single reason for this change. Arguably, it should have been done long ago.</p>
+<p>NSString clarification</p>
+<p>The NSString documentation contains some clarification on the lifetime of returned NSString objects.</p>
+<p>URL classes support persistent connections</p>
+<p>The NSURLHandle and other classes have support for persistent connections.</p>
+<p>NSMethodSignature clarification</p>
+<p>Recent compiler releases have exposed a flaw in the way GNUstep gathers signature information. The documentation explains how the information for offset and registers may not be reliable.</p>
+<p>Mac OS X compatibility</p>
+<p>There have been many fixes in various classes for Mac OS X compatibility, particularly relating to XML encoding.</p>
+<p><span id="001038000000">Version 1.9.2</span></p>
+<hr class="docutils" />
+<p>GSMime parsing ignores extraneous data</p>
+<p>When extraneous data is encountered in the input, it is ignored (and a warning logged) rather than adding it to the message body. Not sure this is right though, perhaps we should raise an exception or extend the api to return the extra data. Anyway, it’s better than the previous behavior of adding the bad data to the parsed body.</p>
+<p>New log functions GSOnceFlag and GSOnceMLog</p>
+<p>Log messages the first time the code is executed. Typical usage is to log warnings about deprecated features.</p>
+<p>NSError</p>
+<p>New MacOSX compatibility class</p>
+<p>GSObjCRuntime</p>
+<p>Multiple new runtime functions that work with both GNU and Apple runtimes. These functions allow you to look at method lists, add and remove methods (for instance, if you want to make sure your method in a category overrides another method in a category).</p>
+<p>NSProtocolChecker rewritten</p>
+<p>Was previously almost non-functional.</p>
+<p>autogsdoc</p>
+<p>Support added for building frames structured documentation. Add the flag <code class="docutils literal notranslate"><span class="pre">-MakeFrames</span> <span class="pre">YES</span></code> to the autogsdoc command line.</p>
+<p>Binary incompatibilities</p>
+<p>NSUnarchiver, GSIMapTable have new ivars added to them. Tools and applications that use these classes may need to be recompiled after the new library is installed.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../CoreData/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Core Data</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="AppleReleaseNotes.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Apple Release Notes</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Ethan C
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">GNUstep Base Release Notes</a><ul>
+<li><a class="reference internal" href="#authors">Authors</a></li>
+<li><a class="reference internal" href="#version-1-28-0"><span id="001001000000">Version 1.28.0</span></a></li>
+<li><a class="reference internal" href="#version-1-27-0"><span id="001002000000">Version 1.27.0</span></a></li>
+<li><a class="reference internal" href="#version-1-26-0"><span id="001003000000">Version 1.26.0</span></a></li>
+<li><a class="reference internal" href="#version-1-25-1"><span id="001004000000">Version 1.25.1</span></a></li>
+<li><a class="reference internal" href="#version-1-25-0"><span id="001005000000">Version 1.25.0</span></a></li>
+<li><a class="reference internal" href="#version-1-24-9"><span id="001006000000">Version 1.24.9</span></a></li>
+<li><a class="reference internal" href="#version-1-24-8"><span id="001007000000">Version 1.24.8</span></a></li>
+<li><a class="reference internal" href="#version-1-24-7"><span id="001008000000">Version 1.24.7</span></a></li>
+<li><a class="reference internal" href="#version-1-24-6"><span id="001009000000">Version 1.24.6</span></a></li>
+<li><a class="reference internal" href="#version-1-24-5"><span id="001010000000">Version 1.24.5</span></a></li>
+<li><a class="reference internal" href="#version-1-24-4"><span id="001011000000">Version 1.24.4</span></a></li>
+<li><a class="reference internal" href="#version-1-24-3"><span id="001012000000">Version 1.24.3</span></a></li>
+<li><a class="reference internal" href="#version-1-24-0"><span id="001013000000">Version 1.24.0</span></a></li>
+<li><a class="reference internal" href="#version-1-23-0"><span id="001014000000">Version 1.23.0</span></a></li>
+<li><a class="reference internal" href="#version-1-22-0"><span id="001015000000">Version 1.22.0</span></a></li>
+<li><a class="reference internal" href="#version-1-21-1"><span id="001016000000">Version 1.21.1</span></a></li>
+<li><a class="reference internal" href="#version-1-21-0"><span id="001017000000">Version 1.21.0</span></a></li>
+<li><a class="reference internal" href="#version-1-19-3"><span id="001018000000">Version 1.19.3</span></a></li>
+<li><a class="reference internal" href="#version-1-19-2"><span id="001019000000">Version 1.19.2</span></a></li>
+<li><a class="reference internal" href="#version-1-19-1"><span id="001020000000">Version 1.19.1</span></a></li>
+<li><a class="reference internal" href="#version-1-19-0"><span id="001021000000">Version 1.19.0</span></a></li>
+<li><a class="reference internal" href="#version-1-15-4"><span id="001022000000">Version 1.15.4</span></a></li>
+<li><a class="reference internal" href="#version-1-15-3"><span id="001023000000">Version 1.15.3</span></a></li>
+<li><a class="reference internal" href="#version-1-15-2"><span id="001024000000">Version 1.15.2</span></a></li>
+<li><a class="reference internal" href="#version-1-15-1"><span id="001025000000">Version 1.15.1</span></a></li>
+<li><a class="reference internal" href="#version-1-15-0"><span id="001026000000">Version 1.15.0</span></a></li>
+<li><a class="reference internal" href="#version-1-14-0"><span id="001027000000">Version 1.14.0</span></a></li>
+<li><a class="reference internal" href="#version-1-13-1"><span id="001028000000">Version 1.13.1</span></a></li>
+<li><a class="reference internal" href="#version-1-13-0"><span id="001029000000">Version 1.13.0</span></a></li>
+<li><a class="reference internal" href="#version-1-12-0"><span id="001030000000">Version 1.12.0</span></a></li>
+<li><a class="reference internal" href="#version-1-11-2"><span id="001031000000">Version 1.11.2</span></a></li>
+<li><a class="reference internal" href="#version-1-11-1"><span id="001032000000">Version 1.11.1</span></a></li>
+<li><a class="reference internal" href="#version-1-11-0"><span id="001033000000">Version 1.11.0</span></a></li>
+<li><a class="reference internal" href="#version-1-10-3"><span id="001034000000">Version 1.10.3</span></a></li>
+<li><a class="reference internal" href="#version-1-10-2"><span id="001035000000">Version 1.10.2</span></a></li>
+<li><a class="reference internal" href="#version-1-10-1"><span id="001036000000">Version 1.10.1</span></a></li>
+<li><a class="reference internal" href="#version-1-10-0"><span id="001037000000">Version 1.10.0</span></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=37d1907c"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

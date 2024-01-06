@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocDescriptionParser documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocDescriptionParser">DocDescriptionParser documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Nicolas Roard</dt>
+      <dd>
+      </dd>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      ETDoc markup parser.
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2008 Nicolas Roard</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the DocDescriptionParser
+        class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the
+        DocMethodGroupDescriptionParser
+        class</a>
+        </li>
+        <li>
+          <a href="#003000000000">Software documentation for the NSString(DocGenerator)
+        category</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocDescriptionParser
+        class
+      </a></h1>
+    <h2><a name="class$DocDescriptionParser">DocDescriptionParser</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocDescriptionParser.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group ETDoc Parsing
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Parser to extract ETDoc markup located in method,
+            function and macro descriptions.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocDescriptionParser-description">-description</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocDescriptionParser-descriptionForParameter$">-descriptionForParameter:</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocDescriptionParser-parse$">-parse:</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocDescriptionParser-returnDescription">-returnDescription</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocDescriptionParser-task">-task</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocDescriptionParser-taskUnit">-taskUnit</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocDescriptionParser-validTagsAfterMainDescription">-validTagsAfterMainDescription</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocDescriptionParser-validTagsBeforeMainDescription">-validTagsBeforeMainDescription</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocDescriptionParser-description">description&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>description</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Parsing Result
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the parsed main description.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocDescriptionParser-descriptionForParameter$">descriptionForParameter:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>descriptionForParameter:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the parsed content for the
+              <em>@param &lt;aName&gt;</em> tag sequence.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocDescriptionParser-parse$">parse:&nbsp;</a></h3>
+    - (void) <b>parse:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)corpus;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Resets the parser state and parses ETDoc markup in
+              the given API description.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Query the receiver to retrieve the parsing result.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocDescriptionParser-returnDescription">returnDescription&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>returnDescription</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the parsed content for <em>@return</em>
+              tag.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocDescriptionParser-task">task&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>task</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the parsed content for <em>@task</em>
+              tag.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocDescriptionParser-taskUnit">taskUnit&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>taskUnit</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the parsed content for <em>@taskunit</em>
+              tag.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocDescriptionParser-validTagsAfterMainDescription">validTagsAfterMainDescription&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>validTagsAfterMainDescription</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the tags allowed before the main
+              description.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The element order matters, see
+              <a rel="gsdoc" href="#method$DocDescriptionParser-validTagsBeforeMainDescription">
+                -validTagsBeforeMainDescription
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocDescriptionParser-validTagsBeforeMainDescription">validTagsBeforeMainDescription&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>validTagsBeforeMainDescription</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the tags allowed before the main
+              description.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The element order matters. e.g. @taskunit must
+              preceded @task, otherwise @taskunit is parsed as
+              @task.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="002000000000">
+        Software documentation for the
+        DocMethodGroupDescriptionParser
+        class
+      </a></h1>
+    <h2><a name="class$DocMethodGroupDescriptionParser">DocMethodGroupDescriptionParser</a> : <a rel="gsdoc" href="#class$DocDescriptionParser">DocDescriptionParser</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocDescriptionParser.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group ETDoc Parsing
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Parser to extract ETDoc markup located in class,
+            protocol or category descriptions.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocMethodGroupDescriptionParser-abstract">-abstract</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$DocMethodGroupDescriptionParser-group">-group</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocMethodGroupDescriptionParser-abstract">abstract&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>abstract</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the parsed content for <em>@abstract</em>
+              tag.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocMethodGroupDescriptionParser-group">group&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>group</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Parsing Result
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the parsed content for <em>@group</em>
+              tag.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="003000000000">
+        Software documentation for the NSString(DocGenerator)
+        category
+      </a></h1>
+    <h2><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>(<a name="category$NSString(DocGenerator)">DocGenerator</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocDescriptionParser.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @abstract None
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$NSString(DocGenerator)-stringByTrimmingWhitespacesAndNewlinesByLine">-stringByTrimmingWhitespacesAndNewlinesByLine</a></li>
+      <li><a rel="gsdoc" href="DocDescriptionParser.html#method$NSString(DocGenerator)-trimmedString">-trimmedString</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$NSString(DocGenerator)-stringByTrimmingWhitespacesAndNewlinesByLine">stringByTrimmingWhitespacesAndNewlinesByLine&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>stringByTrimmingWhitespacesAndNewlinesByLine</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$NSString(DocGenerator)-trimmedString">trimmedString&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>trimmedString</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

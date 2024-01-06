@@ -1,0 +1,612 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>Library Combo - GNUstep 2021 December documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">GNUstep 2021 December documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">GNUstep 2021 December documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Tutorials/GettingStarted/index.html">Getting Started Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Getting Started Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Tutorials/GettingStarted/1_FirstSteps/index.html">1 - First Steps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1 - First Steps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/1_FirstSteps/1.1.html">1.1 - What is GNUstep?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/1_FirstSteps/1.2.html">1.2 - Installing GNUstep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/1_FirstSteps/1.3.html">1.3 - Configuring your System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Tutorials/GettingStarted/2_Convertor/index.html">2 - Convertor</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2 - Convertor</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/2_Convertor/2.1.html">2.1 - Designing the UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/2_Convertor/2.2.html">2.2 - Outlets and Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/2_Convertor/2.3.html">2.3 - Adding the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Tutorials/GettingStarted/3_TimeMachine/index.html">3 - TimeMachine - a single window application</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 3 - TimeMachine - a single window application</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/3_TimeMachine/3.1.html">3.1 - A Basic Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/3_TimeMachine/3.2.html">3.2 - Analog Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/3_TimeMachine/3.3.html">3.3 - New Time Zone Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Tutorials/GettingStarted/3_TimeMachine/3.4.html">3.4 - Multiple Clocks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/GettingStarted/HelpfulWebsites.html">Helpful Websites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/GettingStarted/WhatsNext.html">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Tutorials/Other/Roard/index.html">Roard Vallon Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Roard Vallon Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Other/Roard/Tutorial%201/Tutorial%201.html">1 - Programming under GNUstep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tutorials/Other/Roard/Tutorial%202/Tutorial%202.html">2 - NSWindowController and Design Pattern MVC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../index.html">Reference Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Reference Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Frameworks/index.html">Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Frameworks/index_Core.html">Basic Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Basic Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Frameworks/AppKit/index.html">Application Kit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Application Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/AppKit/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/AppKit/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/AppKit/GNUstepReleaseNotes_HTML.html"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/AppKit/NSImageName.html"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Frameworks/Foundation/index.html">Foundation Kit</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Foundation Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/Foundation/CocoaCompatibility.html">Cocoa Compatibility</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/Foundation/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/Foundation/GNUstepReleaseNotes.html">GNUstep Base Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/CoreData/index.html">Core Data</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Frameworks/CoreFoundation/index.html">Core Foundation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Core Foundation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/CoreFoundation/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/CoreFoundation/ObjectModel.html">Core Foundation Object Model</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/index.html">Apple Release Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Apple Release Notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/SwiftReleaseNotes.html">10.11 and later</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10.9.html">CF-855.11 - 10.9 Mavericks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10.8.html">CF-744 - 10.8 “Mountain Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/iOS5.html">CF-675 - iOS 5</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10.7.html">CF-635 - 10.7 “Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10.6.html">CF-550 - 10.6 Snow Leopard</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10.5.html">CF-476 - 10.5 “Leopard”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/Historical-GeneralNotes.html">General Notes</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10.2.html">CF-263 - 10.2 “Jaguar”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10.1.html">CF-226 - 10.1 “Puma”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10.0.html">CF-196 - 10.0 “Cheetah”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10_PB.html">Mac OS X Public Beta “Kodiak”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10_DP4.html">Mac OS X Developer Preview 4</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10_DP3.html">Mac OS X Developer Preview 3</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Frameworks/CoreFoundation/AppleReleaseNotes/10_DP2.html">Mac OS X Developer Preview 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Frameworks/index_Miscellaneous.html">Miscellaneous Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Miscellaneous Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Frameworks/AddressBook/index.html">AddressBook</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of AddressBook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/AddressBook/GNUstep%20Readme.html">GNUstep Readme</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/CFNetwork/index.html">CFNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/DBusKit/index.html">DBusKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/ECCL/index.html">Enterprise Control Configuration and Logging (ECCL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/PDFKit/index.html">PDFKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/WebKit/index.html">WebKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/Xcode/index.html">GNUstep Xcode Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/Pantomime/index.html">Pantomime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/GWorkspace/index.html">GWorkspace frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/Renaissance/index.html">Renaissance</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Frameworks/index_Quartz.html">Quartz Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Quartz Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/CoreAnimation/index.html">Core Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Frameworks/CoreGraphics/index.html">Core Graphics / Quartz 2D</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Frameworks/index_WebObjects.html">WebObjects 4 Stack</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of WebObjects 4 Stack</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Frameworks/EnterpriseObjects/index.html">Enterprise Objects Framework</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Enterprise Objects Framework</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/EnterpriseObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Frameworks/WebObjects/index.html">WebObjects</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of WebObjects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Frameworks/WebObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Tools/index.html">Developer Tools</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Developer Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Tools/Make/index.html">GNUstep Make</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of GNUstep Make</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tools/Make/GNUstepReleaseNotes.html">Release Notes</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Tools/Make/NewDocumentation/index.html">New Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of New Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Tools/Make/NewDocumentation/Introduction.html">Introduction</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../Tools/Make/NewDocumentation/Topics/index.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../Tools/Make/NewDocumentation/Topics/ParallelBuilding.html">Parallel Building</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../Tools/Make/NewDocumentation/ProjectTypes/index.html">Project Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Project Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../Tools/Make/NewDocumentation/ProjectTypes/Project/Reference.html">Project Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Tools/Make/NewDocumentation/ProjectTypes/ResourceSet/Reference.html">Resource Set Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Tools/Make/NewDocumentation/ProjectTypes/Tool/Reference.html">Tool Reference</a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../Tools/Make/NewDocumentation/ProjectTypes/Library/index.html">Library</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../Tools/Make/NewDocumentation/ProjectTypes/Library/Introduction.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Tools/Gorm%20ProjectCenter.html">Gorm + ProjectCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tools/Buildtool.html">Buildtool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tools/BaseTools.html">Base Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tools/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tools/HeaderDoc.html">HeaderDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Languages/index.html">Languages</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Languages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Languages/ObjC/index.html">Objective-C</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Objective-C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Languages/ObjC/Reference/index.html">Objective-C Language Reference</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Objective-C Language Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/Attributes.html">Attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/BasicTypes.html">Basic Types</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../Languages/ObjC/Reference/NS_ENUM/index.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> macros</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of NS_ENUM macros</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../Languages/ObjC/Reference/NS_ENUM/NS_CLOSED_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_CLOSED_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_CLOSED_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Languages/ObjC/Reference/NS_ENUM/NS_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../Languages/ObjC/Reference/NS_ENUM/NS_ERROR_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ERROR_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ERROR_ENUM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/Classes.html">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/LightweightGenerics.html">Lightweight Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/Exceptions.html">Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/FastEnumeration.html">Fast enumeration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/StringLiterals.html">String literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/DynamicLiterals.html">Dynamic literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/TraditionalMessageForwarding.html">Traditional Message Forwarding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/Modules.html">Modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/EnvInformation.html">Getting Environment Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Languages/ObjC/Reference/Versions.html">Language Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../HIG.html">Human Interface Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Contributing/Documentation/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Contributing/Documentation/Domains/index.html">Sphinx Domains</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Sphinx Domains</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Contributing/Documentation/Domains/SCDT-API.html">Sphinxcontrib-DomainTools API refeerence</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Contributing/Documentation/Tests/index.html">Tests</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Contributing/Documentation/Tests/APIReference/index.html">API Reference Tests</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of API Reference Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Contributing/Documentation/Tests/APIReference/WrongNesting.html">Wrong nesting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Contributing/Documentation/Tests/APIReference/MakeDomain.html">Make domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Contributing/Documentation/Todo/index.html">Todo</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Todo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Contributing/Documentation/Todo/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Contributing/Documentation/Todo/Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Contributing/Documentation/Todo/ReleaseNotes.html">Release Notes and API Diffs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Contributing/Documentation/Dependencies.html">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Contributing/Documentation/DocC.html">DocC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Contributing/Documentation/PandocNotes.html">Pandoc Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Contributing/Documentation/StyleGuide.html">Style Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="library-combo">
+<h1>Library Combo<a class="headerlink" href="#library-combo" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>This section is based on the man page <code class="docutils literal notranslate"><span class="pre">library-combo</span> <span class="pre">(7)</span></code>.</p>
+</div></blockquote>
+<p>This manual page is about cross-compilation and fat binaries. Fat binaries are packages that you can supply which contain more the one binary of your program (e.g. your application). So you can support multiple platforms with a single package.</p>
+<p>To support this your system has to be built in a non-flattened way. Meaning that during the installation of <em>gnustep-make</em> you should have selected <strong>–disable-flattened</strong> and the types of library combinations you want to support, through the <strong>–with-library-combo</strong> option. With library combinations we mean the Objective-C runtime, the Foundation library and the Application library. For more details about this see the LIBRARY-COMBO section.</p>
+<p>If you installed your <strong>GNUstep</strong> system in a non-flattened way all system dependend binaries are installed in subdirectories with <em>cpu/os/library-combo</em> information. That means for instance that the <em>gnustep-base</em> library will be installed in <em>Library/Libraries/ix86/linux/gnu-gnu-gnu/</em> when you are on an Intel x86 system, running linux with the</p>
+<p>runtime for Objective-C and you installed <strong>GNUstep</strong>.</p>
+<p>For each and every library-combo that you want to support you should create the environment through <em>gnustep-make</em>, because it installs a different <em>config.make</em> to support its own <strong>CC</strong>, <strong>OPTFLAGS</strong>, etc. flags.</p>
+<section id="id1">
+<h2>LIBRARY-COMBO<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>An important issue is to let to a package the ability to deal with various libraries and configurations available now:</p>
+<p><strong>Objective-C runtimes</strong><br />
+In the Objective-C world there are three major runtimes: the GNUstep runtime, the Apple runtime and the GCC runtime. They are different in several respects and a program or library that works at the runtime level should be aware of them.</p>
+<p><strong>Foundation libraries</strong><br />
+There are different Foundation libraries an application or tool can be written on top of: gnustep-base, libFoundation and Apple Cocoa system.</p>
+<p><strong>Graphical interfaces</strong><br />
+Until now three libraries provide or try to provide OpenStep compliant systems: the AppKit from NeXT, gnustep-gui and Cocoa from Apple.</p>
+<p>If a program wants to work with all the possible combinations it will have to provide different binaries for each combination because it’s not possible to have a tool compiled for NeXT Foundation that runs with gnustep-base or vice-versa. To summarize, a program can be compiled for these combinations:</p>
+<p><strong>Objective-C runtime</strong><br />
+<code class="docutils literal notranslate"><span class="pre">ng</span></code> (for GNUstep Next Generation with nonfragile API and ARC support etc), <code class="docutils literal notranslate"><span class="pre">gnu</span></code> (for the GCC runtime, or for GNUstep without latest language features), <code class="docutils literal notranslate"><span class="pre">apple</span></code> (for Apple), <code class="docutils literal notranslate"><span class="pre">nx</span></code> (for NeXT)</p>
+<p><strong>Foundation library</strong><br />
+<code class="docutils literal notranslate"><span class="pre">gnu</span></code> (for gnustep-base), <code class="docutils literal notranslate"><span class="pre">fd</span></code> (for libFoundation), <code class="docutils literal notranslate"><span class="pre">apple</span></code> (for Apple Cocoa), <code class="docutils literal notranslate"><span class="pre">nx</span></code> (for NeXT Foundation), <code class="docutils literal notranslate"><span class="pre">pdo</span></code> (for NeXT Portable Distributed Objects (not supported by <code class="docutils literal notranslate"><span class="pre">make</span></code> anymore))</p>
+<p><strong>GUI library</strong><br />
+<code class="docutils literal notranslate"><span class="pre">gnu</span></code> (for gnustep-gui), <code class="docutils literal notranslate"><span class="pre">apple</span></code> (for Apple Cocoa), <code class="docutils literal notranslate"><span class="pre">nx</span></code> (for NeXT GUI)</p>
+<p>We’ll denote the fact that an application was compiled for a certain combination of the above values by using the abbreviations of the different subsystems and placing dashes between them. For example an application compiled for NeXT Foundation using NeXT AppKit will have the compile attribute nx-nx-nx. An application compiled for Apple Cocoa with the</p>
+<p>compiler for Objective-C gnu-apple-apple and another one compiled for <em>gnustep-base</em> using <em>gnustep-gui</em> under Unix will be denoted by gnu-gnu-gnu. Here is a list of some of the possible combinations:</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Runtime</p></th>
+<th class="head"><p>Foundation</p></th>
+<th class="head"><p>AppKit</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nx</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nx</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nx</span></code></p></td>
+<td><p>NeXT OPENSTEP, Solaris OpenStep, OpenStep Enterprise, Rhapsody / Mac OS X Server</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nx</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">fd</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p>Probably doesn’t exist</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ng</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p>About half of free Unix-like distributions use this</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p>The other half uses this</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">fd</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p>Pretty uncommon because libFoundation is deprecated</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">apple</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">apple</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">apple</span></code></p></td>
+<td><p>macOS / Cocoa</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">apple</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gnu</span></code></p></td>
+<td><p>Might not work</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Note that one can choose his/her own packages to build; it is not required to have all the packages installed on the system. Not having all of them installed limits only the ability to build and distribute binaries for those missing combinations.</p>
+</section>
+<section id="directory-structure">
+<h2>DIRECTORY STRUCTURE<a class="headerlink" href="#directory-structure" title="Permalink to this heading">#</a></h2>
+<p>For cross-compilation in a non-flattened directory structure is recommended, so that you can store on the same directory structure binaries for different machines. The standard <strong>GNUstep</strong> filesystem layout is normally used when a non-flattened directory structure is being used; this is obtained with the **–with-layout=**<em>gnustep</em> option when configuring <em>gnustep-make</em>. The entire <strong>GNUstep</strong> installation is then created inside <em>/usr/GNUstep</em> (or another directory if you use the <strong>–prefix=…</strong> option when configuring <em>gnustep-make</em>). Directories that contain binaries (such as the <em>Libraries</em> directory) inside <em>/usr/GNUstep</em> are then set up to support fat binaries as follows:</p>
+<ul class="simple">
+<li><p>Libraries/</p>
+<ul>
+<li><p>ix86/</p>
+<ul>
+<li><p>linux-gnu/</p>
+<ul>
+<li><p>gnu-gnu-gnu/</p>
+<ul>
+<li><p>libgnustep-base.so</p></li>
+<li><p>libgnustep-gui.so</p></li>
+</ul>
+</li>
+<li><p>gnu-fd-gnu/</p>
+<ul>
+<li><p>libFoundation.so</p></li>
+<li><p>libgnustep-gui.so</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>To allow the right libraries to be found, you need to source <em>GNUstep.sh</em> before using <strong>GNUstep</strong>, and you need to start up your application by using <strong>openapp</strong>, which will locate the right binary for your library combo.</p>
+</section>
+<section id="building-for-a-library-combo">
+<h2>BUILDING FOR A LIBRARY-COMBO<a class="headerlink" href="#building-for-a-library-combo" title="Permalink to this heading">#</a></h2>
+<p>The makefile package will allow the user to choose between different library combinations. To specify a combination you want to compile for just type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span><span class="nv">library_combo</span><span class="o">=</span>&lt;library-combo&gt;
+</pre></div>
+</div>
+<p>For instance if you want to choose to compile using the GNUstep’s Foundation implementation and use the GNUstep GUI library on a GNU/Linux machine you can do like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span><span class="nv">library_combo</span><span class="o">=</span>gnu-gnu-gnu
+</pre></div>
+</div>
+<p>If your project requires running configure before compiling there are two issues you have to keep in mind. ‘configure’ is used to determine the existence of particular header files and/or of some specific functionality in the system header files. This thing is usually done by creating a config.h file which contains a couple of defines like <code class="docutils literal notranslate"><span class="pre">HAVE_</span></code>… which say if the checked functionality is present or not.</p>
+<p>Another usage of configure is to determine some specific libraries to link against to and/or some specific tools. A typical <strong>GNUstep</strong> program is not required to check for additional libraries because this step is done by the time the makefile package is installed. If the project still needs to check for additional libraries and/or tools, the recommended way is to output a <code class="docutils literal notranslate"><span class="pre">config.make</span></code> file which is included by the main <code class="docutils literal notranslate"><span class="pre">GNUmakefile</span></code>, instead of using <code class="docutils literal notranslate"><span class="pre">Makefile.in</span></code> files which are modified by <code class="docutils literal notranslate"><span class="pre">configure</span></code>. The reason for not doing this is to avoid having the makefiles contain target dependencies like above, this way keeping only one makefile instead of several for each target machine.</p>
+<p>The makefile package is written for GNU make because it provides some very powerful features that save time both in writing the package but also at runtime, when you compile a project.</p>
+</section>
+<section id="building-for-an-architecture">
+<h2>BUILDING FOR AN ARCHITECTURE<a class="headerlink" href="#building-for-an-architecture" title="Permalink to this heading">#</a></h2>
+<p>In order to build a project for multiple architectures you’ll need the development environment for the target machine installed on your machine. This includes a cross-compiler together with all the additional tools like the assembler and linker, the target header files and all the libraries you need.</p>
+<p>The <strong>GNUstep</strong> makefile package should be able to compile and link an application for another machine just by typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span><span class="nv">target</span><span class="o">=</span>&lt;target-triplet&gt;
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;target-triplet&gt;</span></code> is the canonical system name as reported by <em>config.guess</em>.</p>
+</section>
+<section id="using-a-library-combo">
+<h2>USING A LIBRARY-COMBO<a class="headerlink" href="#using-a-library-combo" title="Permalink to this heading">#</a></h2>
+<p>When you use library-combos, you must always source <em>GNUstep.sh</em>. That allows you to switch library paths on the fly. If you want to switch to a different library-combo in your shell, and if you are using <strong>bash</strong>, it’s common to first source <em>GNUstep-reset.sh</em> to reset all shell variables, then to source <strong>GNUstep.sh</strong> again. Let’s assume we use gnu-gnu-gnu as our current <strong>LIBRARY_COMBO</strong> and we want to switch to ng-gnu-gnu, then we would use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="o">.</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">GNUstep</span><span class="o">/</span><span class="n">System</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Makefiles</span><span class="o">/</span><span class="n">GNUstep</span><span class="o">-</span><span class="n">reset</span><span class="o">.</span><span class="n">sh</span>
+<span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">export</span> <span class="n">LIBRARY</span>\<span class="n">_COMBO</span><span class="o">=</span><span class="n">ng</span><span class="o">-</span><span class="n">gnu</span><span class="o">-</span><span class="n">gnu</span>
+<span class="o">&gt;</span> <span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">&gt;</span> <span class="o">.</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">GNUstep</span><span class="o">/</span><span class="n">System</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Makefiles</span><span class="o">/</span><span class="n">GNUstep</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+</section>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this heading">#</a></h2>
+<p>This man-page was written by Dennis Leeuw &lt;dleeuw&#64;made-it.com&gt; based on the DESIGN document from the gnustep-make source tree.</p>
+<section id="credits">
+<h3>Credits<a class="headerlink" href="#credits" title="Permalink to this heading">#</a></h3>
+<p>The DESIGN document was written by Ovidiu Predescu.</p>
+<p>This work could only be as is due to the notes and corrects from Nicola Pero &lt;nicola.pero&#64;meta-innovation.com&gt;.</p>
+</section>
+<section id="copyright">
+<h3>Copyright<a class="headerlink" href="#copyright" title="Permalink to this heading">#</a></h3>
+<p>Copyright (C) 2007 Free Software Foundation, Inc.</p>
+<p>Copying and distribution of this file, with or without modification, are permitted in any medium without royalty provided the copyright notice and this notice are preserved.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Ethan C
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Library Combo</a><ul>
+<li><a class="reference internal" href="#id1">LIBRARY-COMBO</a></li>
+<li><a class="reference internal" href="#directory-structure">DIRECTORY STRUCTURE</a></li>
+<li><a class="reference internal" href="#building-for-a-library-combo">BUILDING FOR A LIBRARY-COMBO</a></li>
+<li><a class="reference internal" href="#building-for-an-architecture">BUILDING FOR AN ARCHITECTURE</a></li>
+<li><a class="reference internal" href="#using-a-library-combo">USING A LIBRARY-COMBO</a></li>
+<li><a class="reference internal" href="#authors">Authors</a><ul>
+<li><a class="reference internal" href="#credits">Credits</a></li>
+<li><a class="reference internal" href="#copyright">Copyright</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=37d1907c"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

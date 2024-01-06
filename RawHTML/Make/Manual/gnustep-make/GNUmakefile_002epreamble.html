@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GNUmakefile.preamble (GNUstep Makefile Package)</title>
+
+<meta name="description" content="GNUmakefile.preamble (GNUstep Makefile Package)">
+<meta name="keywords" content="GNUmakefile.preamble (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html" rel="up" title="Top">
+<link href="GNUmakefile_002epostamble.html" rel="next" title="GNUmakefile.postamble">
+<link href="tool_002emake.html" rel="prev" title="tool.make">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="GNUmakefile_002epreamble"></span><div class="header">
+<p>
+Next: <a href="GNUmakefile_002epostamble.html" accesskey="n" rel="next">GNUmakefile.postamble</a>, Previous: <a href="Project-Types.html" accesskey="p" rel="prev">Project Types</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Global-Variables-_0028GNUmakefile_002epreamble_0029"></span><h3 class="section">1.5 Global Variables (<samp>GNUmakefile.preamble</samp>)</h3>
+
+<p><samp>GNUmakefile.preamble</samp> is an optional file that may be put within the
+package for declaring global makefile variables for the package.  The
+filename, <samp>GNUmakefile.preamble</samp>, is just a convention; likewise, the
+variables defined within it can be put in the normal <samp>GNUmakefile</samp>
+versus in this special file.  However, the reason for this convention is
+that the <samp>GNUmakefile</samp> may be automatically maintained by a project
+management system, like Project Center, so any changes made to
+<samp>GNUmakefile</samp> may be discarded by that project management system.
+</p>
+<p>The file, <samp>GNUmakefile.preamble</samp>, in the Makefile Package is a
+template that can be used the project&rsquo;s <samp>GNUmakefile.preamble</samp>.  It is
+not necessary to have a <samp>GNUmakefile.preamble</samp> with the project unless
+it is actually needed, the Makefile Package will only include it if it
+is available, see <a href="Makefile-Structure.html">Makefile Structure</a> for information on how the
+Makefile Package includes a <samp>GNUmakefile.preamble</samp>.
+</p>
+<p>The rest of this section describes the individual global variables that
+the Makefile Package uses which are generally placed in the package&rsquo;s
+<samp>GNUmakefile.preamble</samp>.
+</p>
+<dl>
+<dt id="index-ADDITIONAL_005fCPPFLAGS">Variable: <strong>ADDITIONAL_CPPFLAGS</strong></dt>
+<dd><p><code>ADDITIONAL_CPPFLAGS</code> are additional flags that will be passed to
+the compiler preprocessor.  Generally any macros to be defined for all
+files are placed here; the are passed for both Objective-C and C files
+that are compiled.  <code>RUNTIME_DEFINE</code>, <code>FOUNDATION_DEFINE</code>,
+<code>GUI_DEFINE</code>, and <code>GUI_BACKEND_DEFINE</code> are some makefile
+variables which define macros that can be assigned to
+<code>ADDITIONAL_CPPFLAGS</code>.  The following example illustrates the use
+of <code>ADDITIONAL_CPPFLAGS</code> to define a macro for the Objective-C
+Runtime Library plus an additional macro that is specific to the
+package.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_CPPFLAGS = $(RUNTIME_DEFINE) -DVERBOSE=1
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fOBJCFLAGS">Variable: <strong>ADDITIONAL_OBJCFLAGS</strong></dt>
+<dd><p><code>ADDITIONAL_OBJCFLAGS</code> are additional flags that will be passed to
+the compiler when compiling Objective-C files.  Adding flags here does
+not override the default <code>OBJCFLAGS</code>, see <a href="Overridable-Flags.html">OBJCFLAGS</a>, they are in addition to <code>OBJCFLAGS</code>.  Generally
+<code>ADDITIONAL_OBJCFLAGS</code> are placed before <code>OBJCFLAGS</code> when the
+compiler is executed, but one should avoid having any placement
+sensitive flags because the order of the flags is not guaranteed.  The
+following example illustrates how you can pass additional Objective-C
+flags.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_OBJCFLAGS = -Wno-protocol
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fCFLAGS">Variable: <strong>ADDITIONAL_CFLAGS</strong></dt>
+<dd><p><code>ADDITIONAL_CFLAGS</code> are additional flags that will be passed to the
+compiler when compiling C files.  Adding flags here does not override
+the default <code>CFLAGS</code>, see <a href="Overridable-Flags.html">CFLAGS</a>, they are
+in addition to <code>CFLAGS</code>.  Generally <code>ADDITIONAL_CFLAGS</code> are
+placed before <code>CFLAGS</code> when the compiler is executed, but one
+should avoid having any placement sensitive flags because the order of
+the flags is not guaranteed.  The following example illustrates how you
+can pass additional C flags.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_CFLAGS = -finline-functions
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fLDFLAGS">Variable: <strong>ADDITIONAL_LDFLAGS</strong></dt>
+<dd><p><code>ADDITIONAL_LDFLAGS</code> are additional flags that will be passed to
+the linker when it creates an executable; these flags are passed when
+linking a command line tool, and application, or an Objective-C program.
+Adding flags here does not override the default <code>LDFLAGS</code>, see
+<a href="Overridable-Flags.html">LDFLAGS</a>, they are in addition to
+<code>LDFLAGS</code>.  Generally <code>ADDITIONAL_LDFLAGS</code> are placed before
+<code>LDFLAGS</code> when the linker is executed, but one should avoid having
+any placement sensitive flags because the order of the flags is not
+guaranteed.  The following example illustrates how you can pass addition
+linker flags.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_LDFLAGS = -v
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fINCLUDE_005fDIRS">Variable: <strong>ADDITIONAL_INCLUDE_DIRS</strong></dt>
+<dd><p><code>ADDITIONAL_INCLUDE_DIRS</code> is the list of additional directories that
+the compiler will search when it is looking for include files.  The
+directories should be specified as &lsquo;<samp>-I</samp>&rsquo; flags to the compiler.  The
+additional include directories will be placed before the normal GNUstep
+and system include directories, so they will always be searched first.
+The following example illustrates two additional include directories;
+<code>/usr/local/gnu/include</code> will be searched first, then
+<code>/usr/gnu/include</code>, and finally the GNUstep and system directories
+which are automatically defined by the Makefile Package.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_INCLUDE_DIRS = -I/usr/local/gnu/include -I/usr/gnu/include
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fLIB_005fDIRS">Variable: <strong>ADDITIONAL_LIB_DIRS</strong></dt>
+<dd><p><code>ADDITIONAL_LIB_DIRS</code> is the list of additional directories that
+the linker will search when it is looking for library files.  The
+directories should be specified as &lsquo;<samp>-L</samp>&rsquo; flags to the linker.  The
+additional library directories will be placed before the GNUstep and
+system library directories so that they will be searched first by the
+linker.  The following example illustrates two additional library
+directories; <code>/usr/local/gnu/lib</code> will be searched first, then
+<code>/usr/gnu/lib</code>, and finally the GNUstep and system directories
+which are automatically defined by the Makefile Package.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_LIB_DIRS = -L/usr/local/gnu/lib -L/usr/gnu/lib
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fOBJC_005fLIBS">Variable: <strong>ADDITIONAL_OBJC_LIBS</strong></dt>
+<dd><p><code>ADDITIONAL_OBJC_LIBS</code> is the list of additional libraries that the
+linker will use when linking command line tools, applications, and
+Objective-C programs, see <a href="tool_002emake.html">tool.make</a>, <a href="application_002emake.html">application.make</a>, and
+<a href="objc_002emake.html">objc.make</a>.  For Objective-C programs, <code>ADDITIONAL_OBJC_LIBS</code>
+is placed before all of the Objective-C Runtime and system libraries so
+that they will be searched first when linking.  For command line tools
+and applications, <code>ADDITIONAL_OBJC_LIBS</code> is placed <em>before</em>
+all of the Objective-C Runtime and system libraries but <em>after</em> the
+Foundation and GUI libraries.  Libraries specified with
+<code>ADDITIONAL_OBJC_LIBS</code> should only depend upon the Objective-C
+Runtime and/or system functions, not Foundation or GUI classes;
+Foundation dependent libraries should be specified with
+<code>ADDITIONAL_TOOL_LIBS</code> and GUI dependent libraries should be
+specified with <code>ADDITONAL_GUI_LIBS</code>.  The additional libraries
+should be specified as &lsquo;<samp>-l</samp>&rsquo; flags to the linker as the following
+example illustrates.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_OBJC_LIBS = -lSwarm
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fTOOL_005fLIBS">Variable: <strong>ADDITIONAL_TOOL_LIBS</strong></dt>
+<dd><p><code>ADDITIONAL_TOOL_LIBS</code> is the list of additional libraries that the
+linker will use when linking command line tools and applications, see
+<a href="tool_002emake.html">tool.make</a> and <a href="application_002emake.html">application.make</a>.  For command line tools,
+<code>ADDITIONAL_TOOL_LIBS</code> is placed before all of the GNUstep and
+system libraries so that they will be searched first when linking.  For
+applications, <code>ADDITIONAL_TOOL_LIBS</code> is placed before the
+Foundation and system libraries but after the GUI libraries.  Libraries
+specified with <code>ADDITIONAL_TOOL_LIBS</code> should only depend upon the
+Foundation classes and/or system functions, not GUI classes; GUI
+dependent libraries should be specified with <code>ADDITIONAL_GUI_LIBS</code>.
+The additional libraries should be specified as &lsquo;<samp>-l</samp>&rsquo; flags to the
+linker as the following example illustrates.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_TOOL_LIBS = -lone -lsimple
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fGUI_005fLIBS">Variable: <strong>ADDITIONAL_GUI_LIBS</strong></dt>
+<dd><p><code>ADDITIONAL_GUI_LIBS</code> is the list of additional libraries that the
+linker will use when linking applications, see <a href="application_002emake.html">application.make</a>.
+<code>ADDITIONAL_GUI_LIBS</code> is placed before all of the GUI, Foundation,
+and system libraries so that they will be searched first when linking.
+The additional libraries should be specified as &lsquo;<samp>-l</samp>&rsquo; flags to the
+linker as the following example illustrates.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_GUI_LIBS = -lMiscGui
+</pre></div>
+
+<dl>
+<dt id="index-ADDITIONAL_005fINSTALL_005fDIRS">Variable: <strong>ADDITIONAL_INSTALL_DIRS</strong></dt>
+<dd><p><code>ADDITIONAL_INSTALL_DIRS</code> is the list of additional directories
+that should be created when the Makefile Package installs the file for
+the project.  These directories are only one that the project needs to
+be created but that the Makefile Package does not automatically
+create.  The directories should be absolute paths but use the
+<code>GNUSTEP_LIBRARY</code> variable and other Makefile Package define
+variables, see <a href="Directory-Paths.html">Directory Paths</a>, so that the directories get
+created in the appropriate place relative to the other file installed
+for the project.  The following example illustrates how two additional
+directories can be created during installation.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">ADDITIONAL_INSTALL_DIRS = $(GNUSTEP_RESOURCES)/MyProject
+</pre></div>
+
+<dl>
+<dt id="index-LIBRARIES_005fDEPEND_005fUPON">Variable: <strong>LIBRARIES_DEPEND_UPON</strong></dt>
+<dd><p><code>LIBRARIES_DEPEND_UPON</code> is the set of libraries that the shared
+library depends upon, see <a href="library_002emake.html">library.make</a> for more information about
+building shared libraries; this variable is only relevant for library
+project types.  On some platforms when a shared library is built, any
+libraries which the object code in the shared library depends upon must
+be linked in the generation of the shared library.  This is similar to
+the process of linking an executable file like a command line tool or
+Objective-C program except that the result is a shared library.
+Libraries specified with <code>LIBRARIES_DEPEND_UPON</code> should be listed
+as &lsquo;<samp>-l</samp>&rsquo; flags to the linker; when possible use variables defined by
+the Makefile Package to specify GUI, Foundation, or system libraries;
+like <code>GUI_LIBS</code>, <code>FND_LIBS</code>, <code>OBJC_LIBS</code>, or
+<code>SYSTEM_LIBS</code>.  <code>LIBRARIES_DEPEND_UPON</code> is independent of
+<code>ADDITIONAL_OBJC_LIBS</code>, <code>ADDITIONAL_TOOL_LIBS</code>, and
+<code>ADDITIONAL_GUI_LIBS</code>, so any libraries specified there may need to
+be specified with <code>LIBRARIES_DEPEND_UPON</code>.  The following example
+illustrates the use of <code>LIBRARIES_DEPEND_UPON</code> for a shared library
+that is depend upon the Foundation, ObjC, system libraries and an
+additional user library.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">LIBRARIES_DEPEND_UPON = -lsimple $(FND_LIBS) $(OBJC_LIBS) $(SYSTEM_LIBS)
+</pre></div>
+
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="GNUmakefile_002epostamble.html" accesskey="n" rel="next">GNUmakefile.postamble</a>, Previous: <a href="Project-Types.html" accesskey="p" rel="prev">Project Types</a>, Up: <a href="index.html" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

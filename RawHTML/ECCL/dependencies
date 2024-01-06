@@ -1,0 +1,25 @@
+ECCL/dependencies: \
+	EcControl.m \
+	EcUserDefaults.m \
+	EcAlerter.m \
+	EcLogger.h \
+	EcCommand.m \
+	EcProcess.h \
+	EcAlarmDestination.h \
+	EcTest.h \
+	EcLogger.m \
+	EcProcess.m \
+	EcConsole.m \
+	EcAlarmSinkSNMP.h \
+	EcAlarmDestination.m \
+	EcTest.m \
+	EcAlarm.h \
+	ECCL.h \
+	EcHost.h \
+	EcAlarmSinkSNMP.m \
+	EcBroadcastProxy.h \
+	EcAlarm.m \
+	EcHost.m \
+	EcUserDefaults.h \
+	EcAlerter.h \
+	EcBroadcastProxy.m

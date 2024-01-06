@@ -1,0 +1,391 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui Additions</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>GSTable class documentation</h2>GSTable : NSView<div class="meta">
+<p class="metadesc"><em>The <a href="GSTable.html#GSTable">GSTable</a> class (a GNU extension)</em></p><table><tr><th>Authors</th><td>Nicola Pero </td></tr><tr><th>Declared in</th><td>GNUstepGUI/GSTable.h</td></tr></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[GSTable_initWithNumberOfRows:numberOfColumns:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithNumberOfRows: </span><span class="parameter"><span class="type">(int)</span><span class="arg">rows</span></span><span class="selector"> numberOfColumns: </span><span class="parameter"><span class="type">(int)</span><span class="arg">columns</span></span></span></dt>
+<dd><div class="methodDescription">
+Initialize a <a href="GSTable.html#GSTable">GSTable</a> with <var>columns</var> <var>columns</var> and <var>rows</var> <var>rows</var>. If <var>columns</var> or <var>rows</var> is negative or null, a warning is issued and a default of 2 is used instead.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_init]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> init </span></span></dt>
+<dd><div class="methodDescription">
+Initialize with a default of 2 columns and 2 rows.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setBorder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBorder: </span><span class="parameter"><span class="type">(float)</span><span class="arg">aBorder</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the <a href="GSTable.html#GSTable">GSTable</a> up, bottom, left and right borders to the same value <var>aBorder</var>. The <a href="GSTable.html#GSTable">GSTable</a> is immediately updated. If <var>aBorder</var> is negative, the border is reset to the default, which is zero (0). The border is simply unfilled space; it is measured in the <a href="GSTable.html#GSTable">GSTable</a> coordinate system.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setXBorder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setXBorder: </span><span class="parameter"><span class="type">(float)</span><span class="arg">aBorder</span></span></span></dt>
+<dd><div class="methodDescription">
+Set the <a href="GSTable.html#GSTable">GSTable</a> left and right borders to <var>aBorder</var>. If <var>aBorder</var> is negative, the border is reset to zero. The <a href="GSTable.html#GSTable">GSTable</a> is immediately updated.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setYBorder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setYBorder: </span><span class="parameter"><span class="type">(float)</span><span class="arg">aBorder</span></span></span></dt>
+<dd><div class="methodDescription">
+Same as setXBorder: but set the up and bottom borders.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setMinXBorder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMinXBorder: </span><span class="parameter"><span class="type">(float)</span><span class="arg">aBorder</span></span></span></dt>
+<dd><div class="methodDescription">
+Same as setXBorder: but set only the left border.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setMaxXBorder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMaxXBorder: </span><span class="parameter"><span class="type">(float)</span><span class="arg">aBorder</span></span></span></dt>
+<dd><div class="methodDescription">
+Same as setXBorder: but set only the right border.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setMinYBorder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMinYBorder: </span><span class="parameter"><span class="type">(float)</span><span class="arg">aBorder</span></span></span></dt>
+<dd><div class="methodDescription">
+Same as setXBorder: but set only the lower border (upper if the <a href="GSTable.html#GSTable">GSTable</a> is flipped).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setMaxYBorder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMaxYBorder: </span><span class="parameter"><span class="type">(float)</span><span class="arg">aBorder</span></span></span></dt>
+<dd><div class="methodDescription">
+Same as setXBorder: but set only the upper border (lower if the <a href="GSTable.html#GSTable">GSTable</a> is flipped).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_putView:atRow:column:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> putView: </span><span class="parameter"><span class="type">(NSView *)</span><span class="arg">aView</span></span><span class="selector"> atRow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(int)</span><span class="arg">column</span></span></span></dt>
+<dd><div class="methodDescription">
+Put <var>aView</var> in the <a href="GSTable.html#GSTable">GSTable</a>, in the specified <var>row</var> and <var>column</var>. Zero (0) margins are used. If the <var>column</var> <var>column</var> (or the <var>row</var> <var>row</var>}) is not enough big to fully display <var>aView</var> and its margins, the <var>column</var> (or the <var>row</var>) is resized (regardless of the fact that X or Y Resizing is Enabled or not). It is understood that this will affect each view (and its margins) in the <var>column</var> (or <var>row</var>) according to the autoresizing mask of each view.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_putView:atRow:column:withMargins:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> putView: </span><span class="parameter"><span class="type">(NSView *)</span><span class="arg">aView</span></span><span class="selector"> atRow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(int)</span><span class="arg">column</span></span><span class="selector"> withMargins: </span><span class="parameter"><span class="type">(float)</span><span class="arg">margins</span></span></span></dt>
+<dd><div class="methodDescription">
+Put <var>aView</var> in the <a href="GSTable.html#GSTable">GSTable</a>, using <var>margins</var> as margin in all directions: left, right, top, bottom.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_putView:atRow:column:withXMargins:yMargins:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> putView: </span><span class="parameter"><span class="type">(NSView *)</span><span class="arg">aView</span></span><span class="selector"> atRow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(int)</span><span class="arg">column</span></span><span class="selector"> withXMargins: </span><span class="parameter"><span class="type">(float)</span><span class="arg">xMargins</span></span><span class="selector"> yMargins: </span><span class="parameter"><span class="type">(float)</span><span class="arg">yMargins</span></span></span></dt>
+<dd><div class="methodDescription">
+Put <var>aView</var> in the <a href="GSTable.html#GSTable">GSTable</a>, using <var>xMargins</var> as the left and right margins, and <var>yMargins</var> as the top and bottom margins.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_putView:atRow:column:withMinXMargin:maxXMargin:minYMargin:maxYMargin:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> putView: </span><span class="parameter"><span class="type">(NSView *)</span><span class="arg">aView</span></span><span class="selector"> atRow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">row</span></span><span class="selector"> column: </span><span class="parameter"><span class="type">(int)</span><span class="arg">column</span></span><span class="selector"> withMinXMargin: </span><span class="parameter"><span class="type">(float)</span><span class="arg">minXMargin</span></span><span class="selector"> maxXMargin: </span><span class="parameter"><span class="type">(float)</span><span class="arg">maxXMargin</span></span><span class="selector"> minYMargin: </span><span class="parameter"><span class="type">(float)</span><span class="arg">minYMargin</span></span><span class="selector"> maxYMargin: </span><span class="parameter"><span class="type">(float)</span><span class="arg">maxYMargin</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Put <var>aView</var> in the <a href="GSTable.html#GSTable">GSTable</a>, using the specified margins. The names for the margins are chosen as to be as close as possible to the autoresizingMask convention. The margins are to be interpreted as follows: </p> <dl> <dt><var>minXMargin</var></dt> <dd>Left Margin</dd> <dt><var>maxXMargin</var></dt> <dd>Right Margin</dd> <dt><var>minYMargin</var></dt> <dd> Lower Margin (Upper if view is flipped) </dd> <dt><var>maxYMargin</var></dt> <dd> Upper Margin (Lower if view is flipped) </dd> </dl> <p> Each view which is added to the <a href="GSTable.html#GSTable">GSTable</a> can have some margins set. The <a href="GSTable.html#GSTable">GSTable</a> treats the view and its margins as a whole. They are given (as a whole) some space, which is reduced or increased (but only if X or Y Resizing is Enabled for the <var>column</var> or the <var>row</var> in which the view resides) when the <a href="GSTable.html#GSTable">GSTable</a> is resized. When this happens, the space is added (or subtracted) to the view or to the margins according to the autoResizeMask of the view. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_minimumSize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> minimumSize </span></span></dt>
+<dd><div class="methodDescription">
+This returns the minimum size the <a href="GSTable.html#GSTable">GSTable</a> should be resized to. Trying to resize the <a href="GSTable.html#GSTable">GSTable</a> below this size will only result in clipping (ie, making it disappear) part of the <a href="GSTable.html#GSTable">GSTable</a>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_sizeToFit]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> sizeToFit </span></span></dt>
+<dd><div class="methodDescription">
+If for any reason you need the <a href="GSTable.html#GSTable">GSTable</a> to be redrawn (with minimum size), invoke the following.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setXResizingEnabled:forColumn:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setXResizingEnabled: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">aFlag</span></span><span class="selector"> forColumn: </span><span class="parameter"><span class="type">(int)</span><span class="arg">aColumn</span></span></span></dt>
+<dd><div class="methodDescription">
+Enable/disable X Resizing for the column <var>aColumn</var>} according to <var>aFlag</var>. Note: at present, enabling/disabling X resizing after the table has been put in the view hierarchy is not supported.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_isXResizingEnabledForColumn:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isXResizingEnabledForColumn: </span><span class="parameter"><span class="type">(int)</span><span class="arg">aColumn</span></span></span></dt>
+<dd><div class="methodDescription">
+Return whether X resizing is enabled for the column <var>aColumn</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_setYResizingEnabled:forRow:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setYResizingEnabled: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">aFlag</span></span><span class="selector"> forRow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">aRow</span></span></span></dt>
+<dd><div class="methodDescription">
+Enable/disable Y Resizing for the row <var>aRow</var> according to <var>aFlag</var>. Note: at present, enabling/disabling Y resizing after the table has been put in the view hierarchy is not supported.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_isYResizingEnabledForRow:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isYResizingEnabledForRow: </span><span class="parameter"><span class="type">(int)</span><span class="arg">aRow</span></span></span></dt>
+<dd><div class="methodDescription">
+Return whether Y resizing is enabled for the row <var>aRow</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_addRow]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addRow </span></span></dt>
+<dd><div class="methodDescription">
+Add a row to the <a href="GSTable.html#GSTable">GSTable</a>. The row is added <strong>void</strong>, with zero height and Y Resizing enabled.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_addColumn]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addColumn </span></span></dt>
+<dd><div class="methodDescription">
+Add a column to the <a href="GSTable.html#GSTable">GSTable</a>. The column is added <strong>void</strong>, with zero width and X Resizing enabled.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_numberOfRows]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(int)</span><span class="selector"> numberOfRows </span></span></dt>
+<dd><div class="methodDescription">
+Return the number of rows in the <a href="GSTable.html#GSTable">GSTable</a>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[GSTable_numberOfColumns]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(int)</span><span class="selector"> numberOfColumns </span></span></dt>
+<dd><div class="methodDescription">
+Return the number of columns in the <a href="GSTable.html#GSTable">GSTable</a>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui Additions</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="GSDisplayServer.html#GSDisplayServer">GSDisplayServer</a></li><li><a href="GSHbox.html#GSHbox">GSHbox</a></li><li><a href="GSTable.html#GSTable">GSTable</a></li><li><a href="GSVbox.html#GSVbox">GSVbox</a></li></ul></div>
+
+<ul><li><a href="GSTheme.html">GSTheme (buggy documentation)</a></li></ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="GSDisplayServerCategories.html#GSDisplayServer(EventOps)">GSDisplayServer</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

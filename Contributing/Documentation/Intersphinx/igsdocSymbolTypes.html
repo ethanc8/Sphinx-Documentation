@@ -1,0 +1,1195 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>IGSDoc Symbol Types - GNUstep 2021 December documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">GNUstep 2021 December documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">GNUstep 2021 December documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/index.html">Getting Started Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Getting Started Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/index.html">1 - First Steps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1 - First Steps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.1.html">1.1 - What is GNUstep?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.2.html">1.2 - Installing GNUstep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.3.html">1.3 - Configuring your System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/index.html">2 - Convertor</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2 - Convertor</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.1.html">2.1 - Designing the UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.2.html">2.2 - Outlets and Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.3.html">2.3 - Adding the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/index.html">3 - TimeMachine - a single window application</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 3 - TimeMachine - a single window application</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.1.html">3.1 - A Basic Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.2.html">3.2 - Analog Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.3.html">3.3 - New Time Zone Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.4.html">3.4 - Multiple Clocks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/HelpfulWebsites.html">Helpful Websites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/WhatsNext.html">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/Other/Roard/index.html">Roard Vallon Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Roard Vallon Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%201/Tutorial%201.html">1 - Programming under GNUstep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%202/Tutorial%202.html">2 - NSWindowController and Design Pattern MVC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Reference/index.html">Reference Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Reference Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index.html">Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index_Core.html">Basic Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Basic Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/index.html">Application Kit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Application Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/GNUstepReleaseNotes_HTML.html"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AppKit/NSImageName.html"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/Foundation/index.html">Foundation Kit</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Foundation Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/Foundation/CocoaCompatibility.html">Cocoa Compatibility</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/Foundation/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/Foundation/GNUstepReleaseNotes.html">GNUstep Base Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/CoreData/index.html">Core Data</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/index.html">Core Foundation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Core Foundation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/ObjectModel.html">Core Foundation Object Model</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/index.html">Apple Release Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Apple Release Notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/SwiftReleaseNotes.html">10.11 and later</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.9.html">CF-855.11 - 10.9 Mavericks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.8.html">CF-744 - 10.8 “Mountain Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/iOS5.html">CF-675 - iOS 5</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.7.html">CF-635 - 10.7 “Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.6.html">CF-550 - 10.6 Snow Leopard</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.5.html">CF-476 - 10.5 “Leopard”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/Historical-GeneralNotes.html">General Notes</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.2.html">CF-263 - 10.2 “Jaguar”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.1.html">CF-226 - 10.1 “Puma”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10.0.html">CF-196 - 10.0 “Cheetah”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10_PB.html">Mac OS X Public Beta “Kodiak”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10_DP4.html">Mac OS X Developer Preview 4</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10_DP3.html">Mac OS X Developer Preview 3</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Frameworks/CoreFoundation/AppleReleaseNotes/10_DP2.html">Mac OS X Developer Preview 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index_Miscellaneous.html">Miscellaneous Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Miscellaneous Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/AddressBook/index.html">AddressBook</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of AddressBook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/AddressBook/GNUstep%20Readme.html">GNUstep Readme</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/CFNetwork/index.html">CFNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/DBusKit/index.html">DBusKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/ECCL/index.html">Enterprise Control Configuration and Logging (ECCL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/PDFKit/index.html">PDFKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/WebKit/index.html">WebKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/Xcode/index.html">GNUstep Xcode Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/Pantomime/index.html">Pantomime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/GWorkspace/index.html">GWorkspace frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/Renaissance/index.html">Renaissance</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index_Quartz.html">Quartz Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Quartz Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/CoreAnimation/index.html">Core Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Frameworks/CoreGraphics/index.html">Core Graphics / Quartz 2D</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Frameworks/index_WebObjects.html">WebObjects 4 Stack</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of WebObjects 4 Stack</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/EnterpriseObjects/index.html">Enterprise Objects Framework</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Enterprise Objects Framework</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/EnterpriseObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Frameworks/WebObjects/index.html">WebObjects</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of WebObjects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Frameworks/WebObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Reference/Tools/index.html">Developer Tools</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Developer Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/index.html">GNUstep Make</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of GNUstep Make</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Reference/Tools/Make/GNUstepReleaseNotes.html">Release Notes</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/index.html">New Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of New Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/Introduction.html">Introduction</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/Topics/index.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/Topics/ParallelBuilding.html">Parallel Building</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/index.html">Project Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Project Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/Project/Reference.html">Project Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/ResourceSet/Reference.html">Resource Set Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/Tool/Reference.html">Tool Reference</a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/Library/index.html">Library</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../Reference/Tools/Make/NewDocumentation/ProjectTypes/Library/Introduction.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/Gorm%20ProjectCenter.html">Gorm + ProjectCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/Buildtool.html">Buildtool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/BaseTools.html">Base Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Reference/Tools/HeaderDoc.html">HeaderDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Reference/Languages/index.html">Languages</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Languages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Reference/Languages/ObjC/index.html">Objective-C</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Objective-C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/index.html">Objective-C Language Reference</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Objective-C Language Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Attributes.html">Attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/BasicTypes.html">Basic Types</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/NS_ENUM/index.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> macros</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of NS_ENUM macros</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/NS_ENUM/NS_CLOSED_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_CLOSED_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_CLOSED_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/NS_ENUM/NS_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/NS_ENUM/NS_ERROR_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ERROR_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ERROR_ENUM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Classes.html">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/LightweightGenerics.html">Lightweight Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Exceptions.html">Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/FastEnumeration.html">Fast enumeration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/StringLiterals.html">String literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/DynamicLiterals.html">Dynamic literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/TraditionalMessageForwarding.html">Traditional Message Forwarding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Modules.html">Modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/EnvInformation.html">Getting Environment Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Reference/Languages/ObjC/Reference/Versions.html">Language Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Reference/HIG.html">Human Interface Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Domains/index.html">Sphinx Domains</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Sphinx Domains</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Domains/SCDT-API.html">Sphinxcontrib-DomainTools API refeerence</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Tests/index.html">Tests</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Tests/APIReference/index.html">API Reference Tests</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of API Reference Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Tests/APIReference/WrongNesting.html">Wrong nesting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Tests/APIReference/MakeDomain.html">Make domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../Todo/index.html">Todo</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Todo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Todo/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Todo/Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Todo/ReleaseNotes.html">Release Notes and API Diffs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Dependencies.html">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../DocC.html">DocC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../PandocNotes.html">Pandoc Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../StyleGuide.html">Style Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="igsdoc-symbol-types">
+<h1>IGSDoc Symbol Types<a class="headerlink" href="#igsdoc-symbol-types" title="Permalink to this heading">#</a></h1>
+<p>An <code class="docutils literal notranslate"><span class="pre">igsdoc</span></code> file is like the following:</p>
+<div class="highlight-plist notranslate"><div class="highlight"><pre><span></span>{
+</pre></div>
+</div>
+<section id="category">
+<h2>Category<a class="headerlink" href="#category" title="Permalink to this heading">#</a></h2>
+<section id="igsdoc-markup">
+<h3>IGSDoc markup<a class="headerlink" href="#igsdoc-markup" title="Permalink to this heading">#</a></h3>
+<section id="class-category-file">
+<h4>Class → Category → File<a class="headerlink" href="#class-category-file" title="Permalink to this heading">#</a></h4>
+<div class="highlight-plist notranslate"><div class="highlight"><pre><span></span>    categories = {
+        NSArchiver = {
+            GNUstep = NSArchiver;
+        };
+        NSArray = {
+            NSKeyValueObserverRegistration = NSKeyValueObserving;
+        };
+        NSBundle = {
+            GNUstep = NSBundle;
+        };
+        NSCalendarDate = {
+            GregorianDate = NSCalendarDate;
+            OPENSTEP = NSCalendarDate;
+        };
+        NSCoder = {
+            NSGeometryKeyedCoding = NSKeyedArchiver;
+        };
+        NSCountedSet = {
+            &quot;GNU_Uniquing&quot; = NSSet;
+        };
+    };
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h4>Class(Category) → File<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">category</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;NSArchiver(GNUstep)&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+        <span class="s2">&quot;NSArray(NSKeyValueObserverRegistration)&quot;</span> <span class="o">=</span> <span class="n">NSKeyValueObserving</span><span class="p">;</span>
+        <span class="s2">&quot;NSBundle(GNUstep)&quot;</span> <span class="o">=</span> <span class="n">NSBundle</span><span class="p">;</span>
+        <span class="s2">&quot;NSCalendarDate(GregorianDate)&quot;</span> <span class="o">=</span> <span class="n">NSCalendarDate</span><span class="p">;</span>
+        <span class="s2">&quot;NSCalendarDate(OPENSTEP)&quot;</span> <span class="o">=</span> <span class="n">NSCalendarDate</span><span class="p">;</span>
+        <span class="s2">&quot;NSCoder(NSGeometryKeyedCoding)&quot;</span> <span class="o">=</span> <span class="n">NSKeyedArchiver</span><span class="p">;</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sphinx-directive">
+<h3>Sphinx directive<a class="headerlink" href="#sphinx-directive" title="Permalink to this heading">#</a></h3>
+<p>No directive yet.</p>
+</section>
+<section id="objective-c-declaration">
+<h3>Objective-C Declaration<a class="headerlink" href="#objective-c-declaration" title="Permalink to this heading">#</a></h3>
+<div class="highlight-objc notranslate"><div class="highlight"><pre><span></span><span class="k">@interface</span> <span class="nc">NSArchiver</span><span class="nl">(GNUstep)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="class">
+<h2>Class<a class="headerlink" href="#class" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>IGSDoc markup<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="class-file">
+<h4>Class → File<a class="headerlink" href="#class-file" title="Permalink to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    class = {
+        NSAffineTransform = NSAffineTransform;
+        NSArchiver = NSArchiver;
+        NSArray = NSArray;
+        NSAssertionHandler = NSException;
+        NSAttributedString = NSAttributedString;
+        NSAutoreleasePool = NSAutoreleasePool;
+        NSBundle = NSBundle;
+        NSCachedURLResponse = NSURLCache;
+        NSCalendarDate = NSCalendarDate;
+        NSCharacterSet = NSCharacterSet;
+        NSClassDescription = NSClassDescription;
+        NSCoder = NSCoder;
+        NSCondition = NSLock;
+        NSConditionLock = NSLock;
+        NSConnection = NSConnection;
+        NSCountedSet = NSSet;
+        NSData = NSData;
+        NSDate = NSDate;
+        NSDateFormatter = NSDateFormatter;
+        NSDecimalNumber = NSDecimalNumber;
+        NSDecimalNumberHandler = NSDecimalNumber;
+        NSDeserializer = NSSerialization;
+        NSDictionary = NSDictionary;
+        NSDirectoryEnumerator = NSFileManager;
+        NSDistantObject = NSDistantObject;
+        NSDistributedLock = NSDistributedLock;
+        NSDistributedNotificationCenter = NSDistributedNotificationCenter;
+        NSEnumerator = NSEnumerator;
+        NSError = NSError;
+        NSException = NSException;
+        NSFileHandle = NSFileHandle;
+        NSFileManager = NSFileManager;
+        NSFormatter = NSFormatter;
+        NSHTTPCookie = NSHTTPCookie;
+        NSHTTPCookieStorage = NSHTTPCookieStorage;
+        NSHTTPURLResponse = NSURLResponse;
+        NSHashTable = NSHashTable;
+        NSHost = NSHost;
+        NSIndexPath = NSIndexPath;
+        NSIndexSet = NSIndexSet;
+        NSInputStream = NSStream;
+        NSInvocation = NSInvocation;
+        NSKeyedArchiver = NSKeyedArchiver;
+        NSKeyedUnarchiver = NSKeyedArchiver;
+        NSLock = NSLock;
+        NSMapTable = NSMapTable;
+        NSMessagePort = NSPort;
+        NSMessagePortNameServer = NSPortNameServer;
+        NSMethodSignature = NSMethodSignature;
+        NSMutableArray = NSArray;
+        NSMutableAttributedString = NSAttributedString;
+        NSMutableCharacterSet = NSCharacterSet;
+        NSMutableData = NSData;
+        NSMutableDictionary = NSDictionary;
+        NSMutableIndexSet = NSIndexSet;
+        NSMutableSet = NSSet;
+        NSMutableString = NSString;
+        NSMutableURLRequest = NSURLRequest;
+        NSNetService = NSNetServices;
+        NSNetServiceBrowser = NSNetServices;
+        NSNotification = NSNotification;
+        NSNotificationCenter = NSNotification;
+        NSNotificationQueue = NSNotificationQueue;
+        NSNull = NSNull;
+        NSNumber = NSValue;
+        NSNumberFormatter = NSNumberFormatter;
+        NSObject = NSObject;
+        NSOutputStream = NSStream;
+        NSPipe = NSFileHandle;
+        NSPointerArray = NSPointerArray;
+        NSPointerFunctions = NSPointerFunctions;
+        NSPort = NSPort;
+        NSPortCoder = NSPortCoder;
+        NSPortMessage = NSPortMessage;
+        NSPortNameServer = NSPortNameServer;
+        NSProcessInfo = NSProcessInfo;
+        NSPropertyListSerialization = NSPropertyList;
+        NSProtocolChecker = NSProtocolChecker;
+        NSProxy = NSProxy;
+        NSRecursiveLock = NSLock;
+        NSRunLoop = NSRunLoop;
+        NSScanner = NSScanner;
+        NSSerializer = NSSerialization;
+        NSSet = NSSet;
+        NSSocketPort = NSPort;
+        NSSocketPortNameServer = NSPortNameServer;
+        NSStream = NSStream;
+        NSString = NSString;
+        NSTask = NSTask;
+        NSThread = NSThread;
+        NSTimeZone = NSTimeZone;
+        NSTimeZoneDetail = NSTimeZone;
+        NSTimer = NSTimer;
+        NSURL = NSURL;
+        NSURLAuthenticationChallenge = NSURLAuthenticationChallenge;
+        NSURLCache = NSURLCache;
+        NSURLComponents = NSURL;
+        NSURLConnection = NSURLConnection;
+        NSURLCredential = NSURLCredential;
+        NSURLCredentialStorage = NSURLCredentialStorage;
+        NSURLDownload = NSURLDownload;
+        NSURLHandle = NSURLHandle;
+        NSURLProtectionSpace = NSURLProtectionSpace;
+        NSURLProtocol = NSURLProtocol;
+        NSURLQueryItem = NSURL;
+        NSURLRequest = NSURLRequest;
+        NSURLResponse = NSURLResponse;
+        NSUnarchiver = NSArchiver;
+        NSUndoManager = NSUndoManager;
+        NSUserDefaults = NSUserDefaults;
+        NSValue = NSValue;
+        NSValueTransformer = NSValueTransformer;
+        NSXMLDTD = NSXMLDTD;
+        NSXMLDTDNode = NSXMLDTDNode;
+        NSXMLDocument = NSXMLDocument;
+        NSXMLElement = NSXMLElement;
+        NSXMLNode = NSXMLNode;
+        NSXMLParser = NSXMLParser;
+        NXConstantString = NSString;
+    };
+</pre></div>
+</div>
+</section>
+<section id="class-superclass">
+<h4>Class → Superclass<a class="headerlink" href="#class-superclass" title="Permalink to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">super</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">NSAffineTransform</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSArchiver</span> <span class="o">=</span> <span class="n">NSCoder</span><span class="p">;</span>
+		<span class="n">NSArray</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSAssertionHandler</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSAttributedString</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSAutoreleasePool</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSBundle</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSCachedURLResponse</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSCalendarDate</span> <span class="o">=</span> <span class="n">NSDate</span><span class="p">;</span>
+		<span class="n">NSCharacterSet</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSClassDescription</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSCoder</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSCondition</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSConditionLock</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSConnection</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSCountedSet</span> <span class="o">=</span> <span class="n">NSMutableSet</span><span class="p">;</span>
+		<span class="n">NSData</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="n">NSDate</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h3>Sphinx directive<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>No directive yet.</p>
+</section>
+<section id="id4">
+<h3>Objective-C Declaration<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<div class="highlight-objc notranslate"><div class="highlight"><pre><span></span><span class="k">@interface</span> <span class="bp">NSArray</span>: <span class="bp">NSObject</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="instance-variable">
+<h2>Instance Variable<a class="headerlink" href="#instance-variable" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h3>IGSDoc Markup<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="class-variable-file">
+<h4>Class → Variable → File<a class="headerlink" href="#class-variable-file" title="Permalink to this heading">#</a></h4>
+<div class="highlight-plist notranslate"><div class="highlight"><pre><span></span>    classvars = {
+        NSAutoreleasePool = {
+            &quot;_addImp&quot; = NSAutoreleasePool;
+            &quot;_child&quot; = NSAutoreleasePool;
+            &quot;_parent&quot; = NSAutoreleasePool;
+            &quot;_released&quot; = NSAutoreleasePool;
+            &quot;_released_count&quot; = NSAutoreleasePool;
+            &quot;_released_head&quot; = NSAutoreleasePool;
+        };
+        NSBundle = {
+            &quot;_bundleClasses&quot; = NSBundle;
+            &quot;_bundleType&quot; = NSBundle;
+            &quot;_codeLoaded&quot; = NSBundle;
+            &quot;_frameworkVersion&quot; = NSBundle;
+            &quot;_infoDict&quot; = NSBundle;
+            &quot;_localizations&quot; = NSBundle;
+            &quot;_path&quot; = NSBundle;
+            &quot;_principalClass&quot; = NSBundle;
+            &quot;_version&quot; = NSBundle;
+        };
+        NSCachedURLResponse = {
+            &quot;_NSCachedURLResponseInternal&quot; = NSURLCache;
+        };
+        NSCalendarDate = {
+            &quot;_calendar_format&quot; = NSCalendarDate;
+            &quot;_seconds_since_ref&quot; = NSCalendarDate;
+            &quot;_time_zone&quot; = NSCalendarDate;
+        };
+        NSCondition = {
+            &quot;_condition&quot; = NSLock;
+            &quot;_mutex&quot; = NSLock;
+            &quot;_name&quot; = NSLock;
+        };
+    };
+</pre></div>
+</div>
+</section>
+<section id="variable-class-file">
+<h4>Variable → Class → File<a class="headerlink" href="#variable-class-file" title="Permalink to this heading">#</a></h4>
+<div class="highlight-plist notranslate"><div class="highlight"><pre><span></span>    ivariable = {
+        &quot;_NSCachedURLResponseInternal&quot; = {
+            NSCachedURLResponse = NSURLCache;
+        };
+        &quot;_NSURLAuthenticationChallengeInternal&quot; = {
+            NSURLAuthenticationChallenge = NSURLAuthenticationChallenge;
+        };
+        &quot;_NSURLCacheInternal&quot; = {
+            NSURLCache = NSURLCache;
+        };
+        &quot;_NSURLConnectionInternal&quot; = {
+            NSURLConnection = NSURLConnection;
+        };
+        &quot;_NSURLCredentialInternal&quot; = {
+            NSURLCredential = NSURLCredential;
+        };
+        &quot;_NSURLCredentialStorageInternal&quot; = {
+            NSURLCredentialStorage = NSURLCredentialStorage;
+        };
+        &quot;_NSURLDownloadInternal&quot; = {
+            NSURLDownload = NSURLDownload;
+        };
+        &quot;_NSURLProtectionSpaceInternal&quot; = {
+            NSURLProtectionSpace = NSURLProtectionSpace;
+        };
+    };
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h3>Sphinx directive<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>None yet.</p>
+</section>
+<section id="id7">
+<h3>Objective-C Declaration<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<div class="highlight-objc notranslate"><div class="highlight"><pre><span></span><span class="k">@interface</span> <span class="nc">NSAutoReleasePool</span> : <span class="bp">NSObject</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="bp">NSAutoreleasePool</span><span class="w"> </span><span class="o">*</span><span class="n">_parent</span><span class="p">;</span>
+<span class="w">	</span><span class="c1">// Other variables</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="function">
+<h2>Function<a class="headerlink" href="#function" title="Permalink to this heading">#</a></h2>
+<div class="highlight-plist notranslate"><div class="highlight"><pre><span></span>    function = {
+        GNUstepConfig = Functions;
+        GNUstepUserConfig = Functions;
+        GSAssignZeroingWeakPointer = Functions;
+        GSDebugAllocationActive = Functions;
+        GSDebugAllocationActiveRecordingObjects = Functions;
+        GSDebugAllocationAdd = Functions;
+        GSDebugAllocationBytes = Functions;
+        GSDebugAllocationClassList = Functions;
+        GSDebugAllocationCount = Functions;
+        GSDebugAllocationList = Functions;
+        GSDebugAllocationListAll = Functions;
+        GSDebugAllocationListRecordedObjects = Functions;
+        GSDebugAllocationPeak = Functions;
+        GSDebugAllocationRecordObjects = Functions;
+        GSDebugAllocationRemove = Functions;
+        GSDebugAllocationTagRecordedObject = Functions;
+    };
+</pre></div>
+</div>
+</section>
+<section id="macro">
+<h2>Macro<a class="headerlink" href="#macro" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">macro</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;FOUNDATION_EXPORT&quot;</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSAssert</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSAssert1</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSAssert2</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSAssert3</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSAssert4</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSAssert5</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSCAssert</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSCAssert1</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSCAssert2</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSCAssert3</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSCAssert4</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSCAssert5</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSCParameterAssert</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSDecimalMaxSize</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSLocalizedString</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSLocalizedStringFromTable</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSLocalizedStringFromTableInBundle</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="n">NSParameterAssert</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="s2">&quot;NS_CLASS_AVAILABLE&quot;</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="s2">&quot;NS_INVOCATION&quot;</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+        <span class="s2">&quot;NS_MESSAGE&quot;</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="method">
+<h2>Method<a class="headerlink" href="#method" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h3>IGSDoc Markup<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<section id="method-class-file">
+<h4>Method → Class → File<a class="headerlink" href="#method-class-file" title="Permalink to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">method</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;+DTDNodeWithXMLString:&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSXMLNode</span> <span class="o">=</span> <span class="n">NSXMLNode</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+URLByResolvingAliasFileAtURL:options:error:&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSURL</span> <span class="o">=</span> <span class="n">NSURL</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+URLForResource:withExtension:subdirectory:inBundleWithURL:&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSBundle</span> <span class="o">=</span> <span class="n">NSBundle</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+URLFragmentAllowedCharacterSet&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSCharacterSet</span> <span class="o">=</span> <span class="n">NSCharacterSet</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+URLHandleClassForURL:&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSURLHandle</span> <span class="o">=</span> <span class="n">NSURLHandle</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+_newProxyForInvocation:&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;NSInvocation(MacroSetup)&quot;</span> <span class="o">=</span> <span class="n">NSInvocation</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+_newProxyForMessage:&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;NSInvocation(MacroSetup)&quot;</span> <span class="o">=</span> <span class="n">NSInvocation</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+_returnInvocationAndDestroyProxy:&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;NSInvocation(MacroSetup)&quot;</span> <span class="o">=</span> <span class="n">NSInvocation</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+abbreviationDictionary&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSTimeZone</span> <span class="o">=</span> <span class="n">NSTimeZone</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+abbreviationMap&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSTimeZone</span> <span class="o">=</span> <span class="n">NSTimeZone</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+accessInstanceVariablesDirectly&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;NSObject(NSKeyValueCoding)&quot;</span> <span class="o">=</span> <span class="n">NSKeyValueCoding</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+alloc&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSObject</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+            <span class="n">NSProxy</span> <span class="o">=</span> <span class="n">NSProxy</span><span class="p">;</span>
+        <span class="p">};</span>
+        <span class="s2">&quot;+allocWithZone:&quot;</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">NSAutoreleasePool</span> <span class="o">=</span> <span class="n">NSAutoreleasePool</span><span class="p">;</span>
+            <span class="n">NSObject</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+            <span class="n">NSProxy</span> <span class="o">=</span> <span class="n">NSProxy</span><span class="p">;</span>
+        <span class="p">};</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="class-method-file">
+<h3>Class → Method → File<a class="headerlink" href="#class-method-file" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">unitmethods</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="s2">&quot;(GSLogDelegate)&quot;</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;-getBytes:ofLength:byHandle:&quot;</span> <span class="o">=</span> <span class="n">NSDebug</span><span class="p">;</span>
+			<span class="s2">&quot;-putBytes:ofLength:byHandle:&quot;</span> <span class="o">=</span> <span class="n">NSDebug</span><span class="p">;</span>
+		<span class="p">};</span>
+		<span class="s2">&quot;(NSCoding)&quot;</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;-encodeWithCoder:&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+			<span class="s2">&quot;-initWithCoder:&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="p">};</span>
+		<span class="s2">&quot;(NSCopying)&quot;</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;-copyWithZone:&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+		<span class="p">};</span>
+		<span class="s2">&quot;(NSDecimalNumberBehaviors)&quot;</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;-exceptionDuringOperation:error:leftOperand:rightOperand:&quot;</span> <span class="o">=</span> <span class="n">NSDecimalNumber</span><span class="p">;</span>
+			<span class="s2">&quot;-roundingMode&quot;</span> <span class="o">=</span> <span class="n">NSDecimalNumber</span><span class="p">;</span>
+			<span class="s2">&quot;-scale&quot;</span> <span class="o">=</span> <span class="n">NSDecimalNumber</span><span class="p">;</span>
+		<span class="p">};</span>
+		<span class="n">NSAffineTransform</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;+transform&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-appendTransform:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-initWithTransform:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-invert&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-prependTransform:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-rotateByDegrees:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-rotateByRadians:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-scaleBy:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-scaleXBy:yBy:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-setTransformStruct:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-transformPoint:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-transformSize:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-transformStruct&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+			<span class="s2">&quot;-translateXBy:yBy:&quot;</span> <span class="o">=</span> <span class="n">NSAffineTransform</span><span class="p">;</span>
+		<span class="p">};</span>
+		<span class="n">NSArchiver</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;+archiveRootObject:toFile:&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+			<span class="s2">&quot;+archivedDataWithRootObject:&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+			<span class="s2">&quot;-archiverData&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+			<span class="s2">&quot;-classNameEncodedForTrueClassName:&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+			<span class="s2">&quot;-encodeClassName:intoClassName:&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+			<span class="s2">&quot;-initForWritingWithMutableData:&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+			<span class="s2">&quot;-replaceObject:withObject:&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+		<span class="p">};</span>
+		<span class="s2">&quot;NSArchiver(GNUstep)&quot;</span> <span class="o">=</span> <span class="p">{</span>
+			<span class="s2">&quot;-directDataAccess&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+			<span class="s2">&quot;-resetArchiver&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+			<span class="s2">&quot;-serializeHeaderAt:version:classes:objects:pointers:&quot;</span> <span class="o">=</span> <span class="n">NSArchiver</span><span class="p">;</span>
+		<span class="p">};</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="protocol">
+<h2>Protocol<a class="headerlink" href="#protocol" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">protocol</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;(GSLogDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSDebug</span><span class="p">;</span>
+        <span class="s2">&quot;(NSCoding)&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+        <span class="s2">&quot;(NSCopying)&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+        <span class="s2">&quot;(NSDecimalNumberBehaviors)&quot;</span> <span class="o">=</span> <span class="n">NSDecimalNumber</span><span class="p">;</span>
+        <span class="s2">&quot;(NSDiscardableContent)&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+        <span class="s2">&quot;(NSFastEnumeration)&quot;</span> <span class="o">=</span> <span class="n">NSEnumerator</span><span class="p">;</span>
+        <span class="s2">&quot;(NSFileManagerDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSFileManager</span><span class="p">;</span>
+        <span class="s2">&quot;(NSLocking)&quot;</span> <span class="o">=</span> <span class="n">NSLock</span><span class="p">;</span>
+        <span class="s2">&quot;(NSMutableCopying)&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+        <span class="s2">&quot;(NSNetServiceBrowserDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSNetServices</span><span class="p">;</span>
+        <span class="s2">&quot;(NSNetServiceDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSNetServices</span><span class="p">;</span>
+        <span class="s2">&quot;(NSObjCTypeSerializationCallBack)&quot;</span> <span class="o">=</span> <span class="n">NSSerialization</span><span class="p">;</span>
+        <span class="s2">&quot;(NSObject)&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+        <span class="s2">&quot;(NSSecureCoding)&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+        <span class="s2">&quot;(NSStreamDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSStream</span><span class="p">;</span>
+        <span class="s2">&quot;(NSURLAuthenticationChallengeSender)&quot;</span> <span class="o">=</span> <span class="n">NSURLAuthenticationChallenge</span><span class="p">;</span>
+        <span class="s2">&quot;(NSURLConnectionDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSURLConnection</span><span class="p">;</span>
+        <span class="s2">&quot;(NSURLDownloadDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSURLDownload</span><span class="p">;</span>
+        <span class="s2">&quot;(NSURLHandleClient)&quot;</span> <span class="o">=</span> <span class="n">NSURLHandle</span><span class="p">;</span>
+        <span class="s2">&quot;(NSURLProtocolClient)&quot;</span> <span class="o">=</span> <span class="n">NSURLProtocol</span><span class="p">;</span>
+        <span class="s2">&quot;(NSXMLParserDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSXMLParser</span><span class="p">;</span>
+        <span class="s2">&quot;(RunLoopEvents)&quot;</span> <span class="o">=</span> <span class="n">NSRunLoop</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(GSTraceLocks)&quot;</span> <span class="o">=</span> <span class="n">NSLock</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(NSConnectionDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSConnection</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(NSFileManagerDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSFileManager</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(NSFileManagerHandler)&quot;</span> <span class="o">=</span> <span class="n">NSFileManager</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(NSKeyValueCoding)&quot;</span> <span class="o">=</span> <span class="n">NSKeyValueCoding</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(NSNetServiceBrowserDelegateMethods)&quot;</span> <span class="o">=</span> <span class="n">NSNetServices</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(NSNetServiceDelegateMethods)&quot;</span> <span class="o">=</span> <span class="n">NSNetServices</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(NSStreamDelegate)&quot;</span> <span class="o">=</span> <span class="n">NSStream</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(RunLoopEvents)&quot;</span> <span class="o">=</span> <span class="n">NSRunLoop</span><span class="p">;</span>
+        <span class="s2">&quot;NSObject(TimedPerformers)&quot;</span> <span class="o">=</span> <span class="n">NSObject</span><span class="p">;</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="constant">
+<h2>Constant<a class="headerlink" href="#constant" title="Permalink to this heading">#</a></h2>
+<div class="highlight-plist notranslate"><div class="highlight"><pre><span></span>    constant = {
+        GSConfigDomain = TypesAndConstants;
+        GSFileHandleConnectCompletionNotification = TypesAndConstants;
+        GSFileHandleNotificationError = TypesAndConstants;
+        GSFileHandleWriteCompletionNotification = TypesAndConstants;
+        GSHTTPPropertyCertificateFileKey = TypesAndConstants;
+        GSHTTPPropertyKeyFileKey = TypesAndConstants;
+        GSHTTPPropertyLocalHostKey = TypesAndConstants;
+    };
+</pre></div>
+</div>
+</section>
+<section id="type-struct-typedef">
+<h2>Type (<code class="docutils literal notranslate"><span class="pre">struct</span></code>, <code class="docutils literal notranslate"><span class="pre">typedef</span></code>)<a class="headerlink" href="#type-struct-typedef" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="nb">type</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">CGFloat</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSActivityOptions</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSAttributedStringKey</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSBinarySearchingOptions</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSCalculationError</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSComparisonResult</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSDataBase64DecodingOptions</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSDataBase64EncodingOptions</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSDataSearchOptions</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSDateFormatterBehavior</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSDateFormatterStyle</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSDirectoryEnumerationOptions</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSEnumerationOptions</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSErrorDomain</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSExceptionName</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSFormattingContext</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSFormattingUnitStyle</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">NSHTTPCookieAcceptPolicy</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="s2">&quot;struct NSEdgeInsets&quot;</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="s2">&quot;struct _NSHandler&quot;</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="s2">&quot;struct _NSHashTableCallBacks&quot;</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="s2">&quot;struct _NSMapTableKeyCallBacks&quot;</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="s2">&quot;struct autorelease_array_list&quot;</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="s2">&quot;struct autorelease_thread_vars&quot;</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+		<span class="n">unichar</span> <span class="o">=</span> <span class="n">TypesAndConstants</span><span class="p">;</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="variable">
+<h2>Variable<a class="headerlink" href="#variable" title="Permalink to this heading">#</a></h2>
+<div class="highlight-plist notranslate"><div class="highlight"><pre><span></span>
+    variable = {
+		NSCocoaErrorDomain = TypesAndConstants;
+		NSDeallocateZombies = TypesAndConstants;
+		NSDefaultRunLoopMode = TypesAndConstants;
+		NSMACHErrorDomain = TypesAndConstants;
+		NSOSStatusErrorDomain = TypesAndConstants;
+		NSPOSIXErrorDomain = TypesAndConstants;
+		NSRunLoopCommonModes = TypesAndConstants;
+		NSZombieEnabled = TypesAndConstants;
+		&quot;_NSConstantStringClassReference&quot; = TypesAndConstants;
+		&quot;_NSLock_error_handler&quot; = TypesAndConstants;
+		&quot;_NSLogDescriptor&quot; = TypesAndConstants;
+		&quot;_NSLog_printf_handler&quot; = TypesAndConstants;
+		&quot;enum _NSDirectoryEnumerationOptions&quot; = TypesAndConstants;
+		&quot;gnustep_global_lock&quot; = TypesAndConstants;
+		&quot;struct NSZoneStats&quot; = TypesAndConstants;
+		&quot;struct _NSMapTableValueCallBacks&quot; = TypesAndConstants;
+		&quot;struct _NSNotificationQueueList&quot; = TypesAndConstants;
+		&quot;struct _NSPoint&quot; = TypesAndConstants;
+		&quot;struct _NSRange&quot; = TypesAndConstants;
+		&quot;struct _NSRect&quot; = TypesAndConstants;
+		&quot;struct _NSSize&quot; = TypesAndConstants;
+		&quot;struct _NSZone&quot; = TypesAndConstants;
+    };
+</pre></div>
+</div>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h3>IGSDoc markup<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<section id="header-file-gsdoc-file">
+<h4>Header file → GSDoc file<a class="headerlink" href="#header-file-gsdoc-file" title="Permalink to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">output</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;../Headers/Foundation/NSAffineTransform.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSAffineTransform.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSArchiver.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSArchiver.gsdoc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;../Documentation/Base/TypesAndConstants.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSArray.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSArray.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSAttributedString.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSAttributedString.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSAutoreleasePool.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSAutoreleasePool.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSBundle.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSBundle.gsdoc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;../Documentation/Base/Functions.gsdoc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;../Documentation/Base/TypesAndConstants.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSCalendarDate.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSCalendarDate.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSCharacterSet.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSCharacterSet.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSClassDescription.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSClassDescription.gsdoc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;../Documentation/Base/TypesAndConstants.gsdoc&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSCoder.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;../Documentation/Base/NSCoder.gsdoc&quot;</span>
+        <span class="p">);</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="header-file-source-file">
+<h4>Header file → Source file<a class="headerlink" href="#header-file-source-file" title="Permalink to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">source</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;../Headers/Foundation/NSAffineTransform.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;NSAffineTransform.m&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSArchiver.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;NSUnarchiver.m&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;NSArchiver.m&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSArray.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;NSArray.m&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSAttributedString.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;NSAttributedString.m&quot;</span>
+        <span class="p">);</span>
+        <span class="s2">&quot;../Headers/Foundation/NSAutoreleasePool.h&quot;</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;NSAutoreleasePool.m&quot;</span>
+        <span class="p">);</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="gsdoc-file-title">
+<h4>GSDoc file → Title<a class="headerlink" href="#gsdoc-file-title" title="Permalink to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">Base</span> <span class="o">=</span> <span class="s2">&quot;GNUstep Base&quot;</span><span class="p">;</span>
+		<span class="n">Functions</span> <span class="o">=</span> <span class="n">Functions</span><span class="p">;</span>
+		<span class="n">NSAffineTransform</span> <span class="o">=</span> <span class="s2">&quot;NSAffineTransform.m&quot;</span><span class="p">;</span>
+		<span class="n">NSArchiver</span> <span class="o">=</span> <span class="s2">&quot;NSArchiver class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSArray</span> <span class="o">=</span> <span class="s2">&quot;NSArray class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSAttributedString</span> <span class="o">=</span> <span class="s2">&quot;NSAttributedString class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSAutoreleasePool</span> <span class="o">=</span> <span class="s2">&quot;NSAutoreleasePool class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSBundle</span> <span class="o">=</span> <span class="s2">&quot;NSBundle class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSCalendarDate</span> <span class="o">=</span> <span class="s2">&quot;NSCalendarDate class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSCharacterSet</span> <span class="o">=</span> <span class="s2">&quot;NSCharacterSet class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSClassDescription</span> <span class="o">=</span> <span class="s2">&quot;NSClassDescription class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSCoder</span> <span class="o">=</span> <span class="s2">&quot;NSCoder class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSConnection</span> <span class="o">=</span> <span class="s2">&quot;NSConnection class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSData</span> <span class="o">=</span> <span class="s2">&quot;NSData class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSDate</span> <span class="o">=</span> <span class="s2">&quot;NSDate class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSDateFormatter</span> <span class="o">=</span> <span class="s2">&quot;NSDateFormatter class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSDebug</span> <span class="o">=</span> <span class="s2">&quot;NSDebug utilities reference&quot;</span><span class="p">;</span>
+		<span class="n">NSDecimalNumber</span> <span class="o">=</span> <span class="s2">&quot;NSDecimalNumber class reference&quot;</span><span class="p">;</span>
+		<span class="n">NSDictionary</span> <span class="o">=</span> <span class="s2">&quot;NSDictionary class reference&quot;</span><span class="p">;</span>
+		<span class="n">TypesAndConstants</span> <span class="o">=</span> <span class="s2">&quot;Types and Constants&quot;</span><span class="p">;</span>
+    <span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="end-of-document">
+<h2>End of document<a class="headerlink" href="#end-of-document" title="Permalink to this heading">#</a></h2>
+<div class="highlight-plist notranslate"><div class="highlight"><pre><span></span>}
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Ethan C
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">IGSDoc Symbol Types</a><ul>
+<li><a class="reference internal" href="#category">Category</a><ul>
+<li><a class="reference internal" href="#igsdoc-markup">IGSDoc markup</a><ul>
+<li><a class="reference internal" href="#class-category-file">Class → Category → File</a></li>
+<li><a class="reference internal" href="#id1">Class(Category) → File</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sphinx-directive">Sphinx directive</a></li>
+<li><a class="reference internal" href="#objective-c-declaration">Objective-C Declaration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#class">Class</a><ul>
+<li><a class="reference internal" href="#id2">IGSDoc markup</a><ul>
+<li><a class="reference internal" href="#class-file">Class → File</a></li>
+<li><a class="reference internal" href="#class-superclass">Class → Superclass</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">Sphinx directive</a></li>
+<li><a class="reference internal" href="#id4">Objective-C Declaration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#instance-variable">Instance Variable</a><ul>
+<li><a class="reference internal" href="#id5">IGSDoc Markup</a><ul>
+<li><a class="reference internal" href="#class-variable-file">Class → Variable → File</a></li>
+<li><a class="reference internal" href="#variable-class-file">Variable → Class → File</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">Sphinx directive</a></li>
+<li><a class="reference internal" href="#id7">Objective-C Declaration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#function">Function</a></li>
+<li><a class="reference internal" href="#macro">Macro</a></li>
+<li><a class="reference internal" href="#method">Method</a><ul>
+<li><a class="reference internal" href="#id8">IGSDoc Markup</a><ul>
+<li><a class="reference internal" href="#method-class-file">Method → Class → File</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#class-method-file">Class → Method → File</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#protocol">Protocol</a></li>
+<li><a class="reference internal" href="#constant">Constant</a></li>
+<li><a class="reference internal" href="#type-struct-typedef">Type (<code class="docutils literal notranslate"><span class="pre">struct</span></code>, <code class="docutils literal notranslate"><span class="pre">typedef</span></code>)</a></li>
+<li><a class="reference internal" href="#variable">Variable</a></li>
+<li><a class="reference internal" href="#files">Files</a><ul>
+<li><a class="reference internal" href="#id9">IGSDoc markup</a><ul>
+<li><a class="reference internal" href="#header-file-gsdoc-file">Header file → GSDoc file</a></li>
+<li><a class="reference internal" href="#header-file-source-file">Header file → Source file</a></li>
+<li><a class="reference internal" href="#gsdoc-file-title">GSDoc file → Title</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#end-of-document">End of document</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=37d1907c"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

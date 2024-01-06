@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocIndex documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocIndex">DocIndex documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      
+      A documentation index that can be used to create links.
+    
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2010 Quentin Mathe</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the DocHTMLIndex class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the DocIndex class</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocHTMLIndex class
+      </a></h1>
+    <h2><a name="class$DocHTMLIndex">DocHTMLIndex</a> : <a rel="gsdoc" href="#class$DocIndex">DocIndex</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocIndex.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Link Generation
+              </p>
+    <p>
+      
+        
+    </div>
+
+          <h1><a name="002000000000">
+        Software documentation for the DocIndex class
+      </a></h1>
+    <h2><a name="class$DocIndex">DocIndex</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocIndex.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Link Generation
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocIndex represents an autgsdoc-compatible
+            documentation index.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            It must be initialized with the igsdoc file
+            corresponding to the gsdoc sources passed to
+            the DocPageWeaver instance in use.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Concrete subclasses such DocHTMLIndex can be used
+            to create links. For example, DocHTMLIndex can be used
+            in -[DocElement HTMLRepresentation] code to wrap every
+            symbol name in a HTML link.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex+currentIndex">+currentIndex</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex+setCurrentIndex$">+setCurrentIndex:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-elementForSymbolName$ofKind$">-elementForSymbolName:ofKind:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-init">-init</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-linkForClassName$">-linkForClassName:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-linkForGSDocRef$">-linkForGSDocRef:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-linkForLocalMethodRef$relativeTo$">-linkForLocalMethodRef:relativeTo:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-linkForProtocolName$">-linkForProtocolName:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-linkForSymbolName$ofKind$">-linkForSymbolName:ofKind:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-linkWithName$forSymbolName$ofKind$">-linkWithName:forSymbolName:ofKind:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-linkWithName$ref$anchor$">-linkWithName:ref:anchor:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-projectSymbolNamesOfKind$">-projectSymbolNamesOfKind:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-refFileExtension">-refFileExtension</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-regenerate">-regenerate</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-setElement$forSymbolName$ofKind$">-setElement:forSymbolName:ofKind:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-setProjectRef$forSymbolName$ofKind$">-setProjectRef:forSymbolName:ofKind:</a></li>
+      <li><a rel="gsdoc" href="DocIndex.html#method$DocIndex-symbolKinds">-symbolKinds</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocIndex+currentIndex">currentIndex&nbsp;</a></h3>
+    + (id) <b>currentIndex</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex+setCurrentIndex$">setCurrentIndex:&nbsp;</a></h3>
+    + (void) <b>setCurrentIndex:</b> (<a rel="gsdoc" href="#class$DocIndex">DocIndex</a>*)anIndex;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-elementForSymbolName$ofKind$">elementForSymbolName:&nbsp;ofKind:&nbsp;</a></h3>
+    - (id) <b>elementForSymbolName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSymbol<b> ofKind:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKind;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Documentation Element Tree Table
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-init">init&nbsp;</a></h3>
+    - (id) <b>init</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-linkForClassName$">linkForClassName:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>linkForClassName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClassName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-linkForGSDocRef$">linkForGSDocRef:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>linkForGSDocRef:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aRef;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-linkForLocalMethodRef$relativeTo$">linkForLocalMethodRef:&nbsp;relativeTo:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>linkForLocalMethodRef:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aRef<b> relativeTo:</b> (<a rel="gsdoc" href="DocElement.html#class$DocElement">DocElement</a>*)anElement;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-linkForProtocolName$">linkForProtocolName:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>linkForProtocolName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aProtocolName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-linkForSymbolName$ofKind$">linkForSymbolName:&nbsp;ofKind:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>linkForSymbolName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSymbol<b> ofKind:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKind;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-linkWithName$forSymbolName$ofKind$">linkWithName:&nbsp;forSymbolName:&nbsp;ofKind:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>linkWithName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName<b> forSymbolName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSymbol<b> ofKind:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKind;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-linkWithName$ref$anchor$">linkWithName:&nbsp;ref:&nbsp;anchor:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>linkWithName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName<b> ref:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aRef<b> anchor:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)anAnchor;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-projectSymbolNamesOfKind$">projectSymbolNamesOfKind:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>projectSymbolNamesOfKind:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKind;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns all the symbol names present in the
+              project that match the given kind.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Valid kinds are the ones returned by
+              <a rel="gsdoc" href="#method$DocIndex-symbolKinds">
+                -symbolKinds
+              </a>
+
+              .
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              For example, &apos;classes&apos; would return &apos;DocIndex&apos;,
+              &apos;DocElement&apos;, &apos;DocMethod&apos; etc.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-refFileExtension">refFileExtension&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>refFileExtension</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-regenerate">regenerate&nbsp;</a></h3>
+    - (void) <b>regenerate</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Regenerates the index refs by merging
+              external refs, project refs and custom refs.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              You must call this method before generating the
+              document output e.g. invoking
+              
+                -HTMLRepresentation
+              
+
+              on any doc element.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-setElement$forSymbolName$ofKind$">setElement:&nbsp;forSymbolName:&nbsp;ofKind:&nbsp;</a></h3>
+    - (void) <b>setElement:</b> (<a rel="gsdoc" href="DocElement.html#class$DocElement">DocElement</a>*)anElement<b> forSymbolName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSymbol<b> ofKind:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKind;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-setProjectRef$forSymbolName$ofKind$">setProjectRef:&nbsp;forSymbolName:&nbsp;ofKind:&nbsp;</a></h3>
+    - (void) <b>setProjectRef:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aRef<b> forSymbolName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSymbol<b> ofKind:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aKind;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocIndex-symbolKinds">symbolKinds&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>symbolKinds</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

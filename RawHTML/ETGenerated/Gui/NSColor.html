@@ -1,0 +1,1426 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui (Application Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSColor</h2>NSColor : NSObject &lt;NSCoding, NSCopying&gt;<div class="meta">
+<p class="metadesc"><em>The colorful color class</em></p><table><tr><th>Authors</th><td>Scott Christley Fred Kiefer </td></tr><tr><th>Declared in</th><td>AppKit/NSColor.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> TODO <a href="NSColor.html#NSColor">NSColor</a> description </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="+[NSColor_colorWithCalibratedHue:saturation:brightness:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithCalibratedHue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">hue</span></span><span class="selector"> saturation: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">saturation</span></span><span class="selector"> brightness: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">brightness</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Creates and returns a new <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name, with <var>hue</var>, <var>saturation</var>, <var>brightness</var> and <var>alpha</var> as specified. Valid values are the range 0.0 to 1.0. Out of range values will be clipped. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithCalibratedRed:green:blue:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithCalibratedRed: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">red</span></span><span class="selector"> green: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">green</span></span><span class="selector"> blue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">blue</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Creates and returns a new <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name, with <var>red</var>, <var>green</var>, <var>blue</var> and <var>alpha</var> as specified. Valid values are the range 0.0 to 1.0. Out of range values will be clipped. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithCalibratedWhite:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithCalibratedWhite: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">white</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Creates and returns a new <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedWhiteColorSpace space name, with red, green, blue and <var>alpha</var> as specified. Valid values are the range 0.0 to 1.0. Out of range values will be clipped. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithCatalogName:colorName:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithCatalogName: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">listName</span></span><span class="selector"> colorName: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">colorName</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithDeviceCyan:magenta:yellow:black:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithDeviceCyan: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">cyan</span></span><span class="selector"> magenta: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">magenta</span></span><span class="selector"> yellow: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">yellow</span></span><span class="selector"> black: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">black</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Creates and returns a new <a href="NSColor.html#NSColor">NSColor</a> in a NSDeviceCMYKColorSpace space name, with <var>cyan</var>, <var>magenta</var>, <var>yellow</var>, <var>black</var> and <var>alpha</var> as specified. Valid values are the range 0.0 to 1.0. Out of range values will be clipped. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithDeviceHue:saturation:brightness:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithDeviceHue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">hue</span></span><span class="selector"> saturation: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">saturation</span></span><span class="selector"> brightness: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">brightness</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Creates and returns a new <a href="NSColor.html#NSColor">NSColor</a> in a NSDeviceCMYKColorSpace space name, with <var>hue</var>, <var>saturation</var>, <var>brightness</var> and <var>alpha</var> as specified. Valid values are the range 0.0 to 1.0. Out of range values will be clipped. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithDeviceRed:green:blue:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithDeviceRed: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">red</span></span><span class="selector"> green: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">green</span></span><span class="selector"> blue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">blue</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Creates and returns a new <a href="NSColor.html#NSColor">NSColor</a> in a NSDeviceCMYKColorSpace space name, with <var>red</var>, <var>green</var>, <var>blue</var> and <var>alpha</var> as specified. Valid values are the range 0.0 to 1.0. Out of range values will be clipped. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithDeviceWhite:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithDeviceWhite: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">white</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Creates and returns a new <a href="NSColor.html#NSColor">NSColor</a> in a NSDeviceWhiteColorSpace space name, with red, green, blue and <var>alpha</var> as specified. Valid values are the range 0.0 to 1.0. Out of range values will be clipped. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_blackColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> blackColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedWhiteColorSpace space name. with white and alpha values set as NSBlack and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedWhite:alpha:]">+colorWithCalibratedWhite:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_blueColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> blueColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns an <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 0.0, 0.0, 1.0 and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_brownColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> brownColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 0.6, 0.4, 0.2 and 1.0 respectively. </p> <p> See Also: <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_clearColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> clearColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedWhiteColorSpace space name. with white and alpha values set as 0.0 and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedWhite:alpha:]">+colorWithCalibratedWhite:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_cyanColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> cyanColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 0.0, 1.0, 1.0 and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_darkGrayColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> darkGrayColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedWhiteColorSpace space name. with white and alpha values set as NSDarkGray and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedWhite:alpha:]">+colorWithCalibratedWhite:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_grayColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> grayColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedWhiteColorSpace space name. with white and alpha values set as NSGray and 1.0 respectively. </p> <p> See Also: <a href="NSColor.html#+[NSColor_colorWithCalibratedWhite:alpha:]">+colorWithCalibratedWhite:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_greenColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> greenColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 0.0, 1.0, 0.0 and 1.0 respectively </p> <p> See Also: <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_lightGrayColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> lightGrayColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedWhiteColorSpace space name. with white and alpha values set as NSLightGray and 1.0 respectively </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_magentaColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> magentaColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 1.0, 0.0, 1.0 and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_orangeColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> orangeColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 1.0, 0.5, 0.0 and 1.0 respectively. </p> <p> See Also: <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_purpleColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> purpleColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 0.5, 0.0, 0.5 and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_redColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> redColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 1.0, 0.0, 0.0 and 1.0 respectively </p> <p> See Also: <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_whiteColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> whiteColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedWhiteColorSpace space name. with white and alpha values set as NSWhite and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedWhite:alpha:]">+colorWithCalibratedWhite:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_yellowColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> yellowColor </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a <a href="NSColor.html#NSColor">NSColor</a> in a NSCalibratedRGBColorSpace space name. with red, green, blue and alpha values set as 1.0, 0.0, 0.0 and 1.0 respectively. </p> <p> See Also : <a href="NSColor.html#+[NSColor_colorWithCalibratedRed:green:blue:alpha:]">+colorWithCalibratedRed:green:blue:alpha:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_ignoresAlpha]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> ignoresAlpha </span></span></dt>
+<dd><div class="methodDescription">
+Returns whether TODO <p> See Also:  <a href="NSColor.html#+[NSColor_setIgnoresAlpha:]">+setIgnoresAlpha:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_setIgnoresAlpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(void)</span><span class="selector"> setIgnoresAlpha: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+TODO <p> See Also:  <a href="NSColor.html#+[NSColor_ignoresAlpha]">+ignoresAlpha</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_getCyan:magenta:yellow:black:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getCyan: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">cyan</span></span><span class="selector"> magenta: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">magenta</span></span><span class="selector"> yellow: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">yellow</span></span><span class="selector"> black: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">black</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Gets the <var>cyan</var>, <var>magenta</var>, <var>yellow</var>,black and <var>alpha</var> values from the <a href="NSColor.html#NSColor">NSColor</a>. Raises a NSInternalInconsistencyException if the <a href="NSColor.html#NSColor">NSColor</a> is not a CYMK color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_getHue:saturation:brightness:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getHue: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">hue</span></span><span class="selector"> saturation: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">saturation</span></span><span class="selector"> brightness: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">brightness</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Gets the <var>hue</var>, <var>saturation</var>, <var>brightness</var> and <var>alpha</var> values from the <a href="NSColor.html#NSColor">NSColor</a>. Raises a NSInternalInconsistencyException if the <a href="NSColor.html#NSColor">NSColor</a> is not a RGB color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_getRed:green:blue:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getRed: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">red</span></span><span class="selector"> green: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">green</span></span><span class="selector"> blue: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">blue</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Gets the <var>red</var>, <var>green</var>, <var>blue</var> and <var>alpha</var> values from the <a href="NSColor.html#NSColor">NSColor</a>. Raises a NSInternalInconsistencyException if the <a href="NSColor.html#NSColor">NSColor</a> is not a RGB color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_getWhite:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getWhite: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">white</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Gets the <var>white</var> <var>alpha</var> values from the <a href="NSColor.html#NSColor">NSColor</a>. Raises a NSInternalInconsistencyException if the <a href="NSColor.html#NSColor">NSColor</a> is not a greyscale color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_alphaComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> alphaComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the alpha component. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_blackComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> blackComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the black component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a CMYK color. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_blueComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> blueComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the blue component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a RGB color. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_brightnessComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> brightnessComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the brightness component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> space is not a RGB color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_catalogNameComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> catalogNameComponent </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorNameComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> colorNameComponent </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_cyanComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> cyanComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cyan component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a CYMK color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_greenComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> greenComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the green component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a RGB color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_hueComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> hueComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the hue component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a RGB color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_localizedCatalogNameComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> localizedCatalogNameComponent </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_localizedColorNameComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> localizedColorNameComponent </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_magentaComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> magentaComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the magenta component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a CMYK color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_redComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> redComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the red component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a RGB color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_saturationComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> saturationComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the saturation component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a RGB color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_whiteComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> whiteComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the white component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a grayscale color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_yellowComponent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(CGFloat)</span><span class="selector"> yellowComponent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the yellow component. Raises a NSInternalInconsistencyException if <a href="NSColor.html#NSColor">NSColor</a> is not a RGB color </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorSpaceName]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> colorSpaceName </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorUsingColorSpaceName:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorUsingColorSpaceName: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">colorSpace</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorUsingColorSpaceName:device:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorUsingColorSpaceName: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">colorSpace</span></span><span class="selector"> device: </span><span class="parameter"><span class="type">(NSDictionary *)</span><span class="arg">deviceDescription</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithColorSpace:components:count:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithColorSpace: </span><span class="parameter"><span class="type">(NSColorSpace *)</span><span class="arg">space</span></span><span class="selector"> components: </span><span class="parameter"><span class="type">(const  CGFloat *)</span><span class="arg">comp</span></span><span class="selector"> count: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">number</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorSpace]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSColorSpace *)</span><span class="selector"> colorSpace </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorUsingColorSpace:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorUsingColorSpace: </span><span class="parameter"><span class="type">(NSColorSpace *)</span><span class="arg">space</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_getComponents:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getComponents: </span><span class="parameter"><span class="type">(CGFloat *)</span><span class="arg">components</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_numberOfComponents]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> numberOfComponents </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_blendedColorWithFraction:ofColor:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> blendedColorWithFraction: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">fraction</span></span><span class="selector"> ofColor: </span><span class="parameter"><span class="type">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="arg">aColor</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorWithAlphaComponent:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithAlphaComponent: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorFromPasteboard:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorFromPasteboard: </span><span class="parameter"><span class="type">(NSPasteboard *)</span><span class="arg">pasteBoard</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the <a href="NSColor.html#NSColor">NSColor</a> on the NSPasteboard <var>pasteBoard</var> or <var>nil</var> if it does not exists. </p> <p> See Also:  <a href="NSColor.html#-[NSColor_writeToPasteboard:]">-writeToPasteboard:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_writeToPasteboard:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> writeToPasteboard: </span><span class="parameter"><span class="type">(NSPasteboard *)</span><span class="arg">pasteBoard</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Writes the <a href="NSColor.html#NSColor">NSColor</a> into the NSPasteboard specified by <var>pasteBoard</var> </p> <p> See Also:  <a href="NSColor.html#+[NSColor_colorFromPasteboard:]">+colorFromPasteboard:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_drawSwatchInRect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> drawSwatchInRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">rect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_set]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> set </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_setFill]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFill </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_setStroke]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setStroke </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_highlightWithLevel:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> highlightWithLevel: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">level</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_shadowWithLevel:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> shadowWithLevel: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">level</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithPatternImage:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithPatternImage: </span><span class="parameter"><span class="type">(<a href="NSImage.html#NSImage">NSImage</a> *)</span><span class="arg">image</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorForControlTint:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorForControlTint: </span><span class="parameter"><span class="type">(NSControlTint)</span><span class="arg">controlTint</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_currentControlTint]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSControlTint)</span><span class="selector"> currentControlTint </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_alternateSelectedControlColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> alternateSelectedControlColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_alternateSelectedControlTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> alternateSelectedControlTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_controlBackgroundColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> controlBackgroundColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_controlColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> controlColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_controlHighlightColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> controlHighlightColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_controlLightHighlightColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> controlLightHighlightColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_controlShadowColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> controlShadowColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_controlDarkShadowColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> controlDarkShadowColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_controlTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> controlTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_disabledControlTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> disabledControlTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_gridColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> gridColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_headerColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> headerColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_headerTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> headerTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_highlightColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> highlightColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_keyboardFocusIndicatorColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> keyboardFocusIndicatorColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_knobColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> knobColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_scrollBarColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> scrollBarColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_secondarySelectedControlColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> secondarySelectedControlColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_selectedControlColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> selectedControlColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_selectedControlTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> selectedControlTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_selectedKnobColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> selectedKnobColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_selectedMenuItemColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> selectedMenuItemColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_selectedMenuItemTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> selectedMenuItemTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_selectedTextBackgroundColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> selectedTextBackgroundColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_selectedTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> selectedTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_shadowColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> shadowColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_textBackgroundColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> textBackgroundColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_textColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> textColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_windowBackgroundColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> windowBackgroundColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_windowFrameColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> windowFrameColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_windowFrameTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> windowFrameTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_labelColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> labelColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_secondaryLabelColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> secondaryLabelColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_tertiaryLabelColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> tertiaryLabelColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_quaternaryLabelColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> quaternaryLabelColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_controlAlternatingRowBackgroundColors]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSArray *)</span><span class="selector"> controlAlternatingRowBackgroundColors </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_patternImage]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSImage.html#NSImage">NSImage</a> *)</span><span class="selector"> patternImage </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_toolTipColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> toolTipColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_toolTipTextColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> toolTipTextColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithSRGBRed:green:blue:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithSRGBRed: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">red</span></span><span class="selector"> green: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">green</span></span><span class="selector"> blue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">blue</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithGenericGamma22White:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithGenericGamma22White: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">white</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithRed:green:blue:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithRed: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">red</span></span><span class="selector"> green: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">green</span></span><span class="selector"> blue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">blue</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithHue:saturation:brightness:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithHue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">hue</span></span><span class="selector"> saturation: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">saturation</span></span><span class="selector"> brightness: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">brightness</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithWhite:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithWhite: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">white</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemBlueColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemBlueColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemBrownColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemBrownColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemGrayColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemGrayColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemGreenColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemGreenColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemOrangeColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemOrangeColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemPinkColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemPinkColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemPurpleColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemPurpleColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemRedColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemRedColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemYellowColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemYellowColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithDisplayP3Red:green:blue:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithDisplayP3Red: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">red</span></span><span class="selector"> green: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">green</span></span><span class="selector"> blue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">blue</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_colorWithColorSpace:hue:saturation:brightness:alpha:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithColorSpace: </span><span class="parameter"><span class="type">(NSColorSpace *)</span><span class="arg">space</span></span><span class="selector"> hue: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">hue</span></span><span class="selector"> saturation: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">saturation</span></span><span class="selector"> brightness: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">brightness</span></span><span class="selector"> alpha: </span><span class="parameter"><span class="type">(CGFloat)</span><span class="arg">alpha</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorUsingType:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorUsingType: </span><span class="parameter"><span class="type">(NSColorType)</span><span class="arg">type</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_type]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSColorType)</span><span class="selector"> type </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSColor_colorWithSystemEffect:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> colorWithSystemEffect: </span><span class="parameter"><span class="type">(NSColorSystemEffect)</span><span class="arg">systemEffect</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemIndigoColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemIndigoColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSColor_systemTealColor]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> systemTealColor </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui (Application Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSActionCell.html#NSActionCell">NSActionCell</a></li><li><a href="NSBezierPath.html#NSBezierPath">NSBezierPath</a></li><li><a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a></li><li><a href="NSBox.html#NSBox">NSBox</a></li><li><a href="NSBrowser.html#NSBrowser">NSBrowser</a></li><li><a href="NSBrowserCell.html#NSBrowserCell">NSBrowserCell</a></li><li><a href="NSButton.html#NSButton">NSButton</a></li><li><a href="NSButtonCell.html#NSButtonCell">NSButtonCell</a></li><li><a href="NSCachedImageRep.html#NSCachedImageRep">NSCachedImageRep</a></li><li><a href="NSCell.html#NSCell">NSCell</a></li><li><a href="NSClipView.html#NSClipView">NSClipView</a></li><li><a href="NSColor.html#NSColor">NSColor</a></li><li><a href="NSColorList.html#NSColorList">NSColorList</a></li><li><a href="NSColorPanel.html#NSColorPanel">NSColorPanel</a></li><li><a href="NSColorPicker.html#NSColorPicker">NSColorPicker</a></li><li><a href="NSColorWell.html#NSColorWell">NSColorWell</a></li><li><a href="NSComboBox.html#NSComboBox">NSComboBox</a></li><li><a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a></li><li><a href="NSControl.html#NSControl">NSControl</a></li><li><a href="NSCursor.html#NSCursor">NSCursor</a></li><li><a href="NSCustomImageRep.html#NSCustomImageRep">NSCustomImageRep</a></li><li><a href="NSDataLink.html#NSDataLink">NSDataLink</a></li><li><a href="NSDataLinkManager.html#NSDataLinkManager">NSDataLinkManager</a></li><li><a href="NSDataLinkPanel.html#NSDataLinkPanel">NSDataLinkPanel</a></li><li><a href="NSDocument.html#NSDocument">NSDocument</a></li><li><a href="NSDocumentController.html#NSDocumentController">NSDocumentController</a></li><li><a href="NSDrawer.html#NSDrawer">NSDrawer</a></li><li><a href="NSDrawerDelegate.html#NSDrawerDelegate">NSDrawerDelegate</a></li><li><a href="NSEPSImageRep.html#NSEPSImageRep">NSEPSImageRep</a></li><li><a href="NSEvent.html#NSEvent">NSEvent</a></li><li><a href="NSFont.html#NSFont">NSFont</a></li><li><a href="NSFontManager.html#NSFontManager">NSFontManager</a></li><li><a href="NSFontPanel.html#NSFontPanel">NSFontPanel</a></li><li><a href="NSForm.html#NSForm">NSForm</a></li><li><a href="NSFormCell.html#NSFormCell">NSFormCell</a></li><li><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a></li><li><a href="NSHelpManager.html#NSHelpManager">NSHelpManager</a></li><li><a href="NSHelpPanel.html#NSHelpPanel">NSHelpPanel</a></li><li><a href="NSImage.html#NSImage">NSImage</a></li><li><a href="NSImageCell.html#NSImageCell">NSImageCell</a></li><li><a href="NSImageRep.html#NSImageRep">NSImageRep</a></li><li><a href="NSImageView.html#NSImageView">NSImageView</a></li><li><a href="NSInputManager.html#NSInputManager">NSInputManager</a></li><li><a href="NSInputServer.html#NSInputServer">NSInputServer</a></li><li><a href="NSLayoutManager.html#NSLayoutManager">NSLayoutManager</a></li><li><a href="NSMatrix.html#NSMatrix">NSMatrix</a></li><li><a href="NSMenu.html#NSMenu">NSMenu</a></li><li><a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a></li><li><a href="NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="NSMutableParagraphStyle.html#NSMutableParagraphStyle">NSMutableParagraphStyle</a></li><li><a href="NSNib.html#NSNib">NSNib</a></li><li><a href="NSOpenGLContext.html#NSOpenGLContext">NSOpenGLContext</a></li><li><a href="NSOpenGLPixelFormat.html#NSOpenGLPixelFormat">NSOpenGLPixelFormat</a></li><li><a href="NSOpenGLView.html#NSOpenGLView">NSOpenGLView</a></li><li><a href="NSOpenPanel.html#NSOpenPanel">NSOpenPanel</a></li><li><a href="NSOutlineView.html#NSOutlineView">NSOutlineView</a></li><li><a href="NSPageLayout.html#NSPageLayout">NSPageLayout</a></li><li><a href="NSPanel.html#NSPanel">NSPanel</a></li><li><a href="NSParagraphStyle.html#NSParagraphStyle">NSParagraphStyle</a></li><li><a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a></li><li><a href="NSPopUpButtonCell.html#NSPopUpButtonCell">NSPopUpButtonCell</a></li><li><a href="NSPrinter.html#NSPrinter">NSPrinter</a></li><li><a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a></li><li><a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a></li><li><a href="NSPrintPanel.html#NSPrintPanel">NSPrintPanel</a></li><li><a href="NSProgressIndicator.html#NSProgressIndicator">NSProgressIndicator</a></li><li><a href="NSResponder.html#NSResponder">NSResponder</a></li><li><a href="NSRulerMarker.html#NSRulerMarker">NSRulerMarker</a></li><li><a href="NSRulerView.html#NSRulerView">NSRulerView</a></li><li><a href="NSSavePanel.html#NSSavePanel">NSSavePanel</a></li><li><a href="NSScreen.html#NSScreen">NSScreen</a></li><li><a href="NSScroller.html#NSScroller">NSScroller</a></li><li><a href="NSScrollView.html#NSScrollView">NSScrollView</a></li><li><a href="NSSecureTextField.html#NSSecureTextField">NSSecureTextField</a></li><li><a href="NSSecureTextFieldCell.html#NSSecureTextFieldCell">NSSecureTextFieldCell</a></li><li><a href="NSSelection.html#NSSelection">NSSelection</a></li><li><a href="NSSlider.html#NSSlider">NSSlider</a></li><li><a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a></li><li><a href="NSSound.html#NSSound">NSSound</a></li><li><a href="NSSpellChecker.html#NSSpellChecker">NSSpellChecker</a></li><li><a href="NSSplitView.html#NSSplitView">NSSplitView</a></li><li><a href="NSStepper.html#NSStepper">NSStepper</a></li><li><a href="NSStepperCell.html#NSStepperCell">NSStepperCell</a></li><li><a href="NSTableColumn.html#NSTableColumn">NSTableColumn</a></li><li><a href="NSTableHeaderCell.html#NSTableHeaderCell">NSTableHeaderCell</a></li><li><a href="NSTableHeaderView.html#NSTableHeaderView">NSTableHeaderView</a></li><li><a href="NSTableView.html#NSTableView">NSTableView</a></li><li><a href="NSTabView.html#NSTabView">NSTabView</a></li><li><a href="NSTabViewItem.html#NSTabViewItem">NSTabViewItem</a></li><li><a href="NSText.html#NSText">NSText</a></li><li><a href="NSTextAttachment.html#NSTextAttachment">NSTextAttachment</a></li><li><a href="NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="NSTextContainer.html#NSTextContainer">NSTextContainer</a></li><li><a href="NSTextField.html#NSTextField">NSTextField</a></li><li><a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a></li><li><a href="NSTextStorage.html#NSTextStorage">NSTextStorage</a></li><li><a href="NSTextTab.html#NSTextTab">NSTextTab</a></li><li><a href="NSTextView.html#NSTextView">NSTextView</a></li><li><a href="NSToolbar.html#NSToolbar">NSToolbar</a></li><li><a href="NSToolbarItem.html#NSToolbarItem">NSToolbarItem</a></li><li><a href="NSView.html#NSView">NSView</a></li><li><a href="NSWindow.html#NSWindow">NSWindow</a></li><li><a href="NSWindowController.html#NSWindowController">NSWindowController</a></li><li><a href="NSWorkspace.html#NSWorkspace">NSWorkspace</a></li></ul></div>
+
+<ul>
+    <li><a href="NSPasteboard.html">NSPasteboard (buggy documentation)</a></li>
+    <li><a href="NSApplication.html">NSApplication (buggy documentation)</a></li>
+</ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSImageDelegateProtocol.html#GSImageDelegateProtocol">GSImageDelegateProtocol</a></li><li><a href="_NSComboBoxCellDataSource.html#NSComboBoxCellDataSource">NSComboBoxCellDataSource</a></li><li><a href="_NSControlTextEditingDelegate.html#NSControlTextEditingDelegate">NSControlTextEditingDelegate</a></li><li><a href="_NSInputServerMouseTracker.html#NSInputServerMouseTracker">NSInputServerMouseTracker</a></li><li><a href="_NSInputServiceProvider.html#NSInputServiceProvider">NSInputServiceProvider</a></li><li><a href="_NSMatrixDelegate.html#NSMatrixDelegate">NSMatrixDelegate</a></li><li><a href="_NSMenuDelegate.html#NSMenuDelegate">NSMenuDelegate</a></li><li><a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="_NSMenuValidation.html#NSMenuValidation">NSMenuValidation</a></li><li><a href="_NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="_NSOpenSavePanelDelegate.html#NSOpenSavePanelDelegate">NSOpenSavePanelDelegate</a></li><li><a href="_NSOutlineViewDataSource.html#NSOutlineViewDataSource">NSOutlineViewDataSource</a></li><li><a href="_NSOutlineViewDelegate.html#NSOutlineViewDelegate">NSOutlineViewDelegate</a></li><li><a href="_NSPrintPanelAccessorizing.html#NSPrintPanelAccessorizing">NSPrintPanelAccessorizing</a></li><li><a href="_NSTableViewDataSource.html#NSTableViewDataSource">NSTableViewDataSource</a></li><li><a href="_NSTableViewDelegate.html#NSTableViewDelegate">NSTableViewDelegate</a></li><li><a href="_NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="_NSTextFieldDelegate.html#NSTextFieldDelegate">NSTextFieldDelegate</a></li><li><a href="_NSTextInput.html#NSTextInput">NSTextInput</a></li><li><a href="_NSTextViewDelegate.html#NSTextViewDelegate">NSTextViewDelegate</a></li><li><a href="_NSWindowDelegate.html#NSWindowDelegate">NSWindowDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSAffineTransformCategories.html#NSAffineTransform(GNUstep)">NSAffineTransform</a></li><li><a href="NSApplicationCategories.html#NSApplication(NSColorPanel)">NSApplication</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(AppKit)">NSAttributedString</a></li><li><a href="NSBitmapImageRepCategories.html#NSBitmapImageRep(GNUstepExtension)">NSBitmapImageRep</a></li><li><a href="NSBundleCategories.html#NSBundle(NSHelpManager)">NSBundle</a></li><li><a href="NSCellCategories.html#NSCell(PrivateMethods)">NSCell</a></li><li><a href="NSCoderCategories.html#NSCoder(NSCoderAdditions)">NSCoder</a></li><li><a href="NSColorCategories.html#NSColor(GSQuartz)">NSColor</a></li><li><a href="NSFontCategories.html#NSFont(GNUstep)">NSFont</a></li><li><a href="NSGraphicsContextCategories.html#NSGraphicsContext(GNUstep)">NSGraphicsContext</a></li><li><a href="NSImageCategories.html#NSImage(GSQuartz)">NSImage</a></li><li><a href="NSImageRepCategories.html#NSImageRep(GSQuartz)">NSImageRep</a></li><li><a href="NSImageViewCategories.html#NSImageView(GNUstep)">NSImageView</a></li><li><a href="NSLayoutManagerCategories.html#NSLayoutManager(drawing)">NSLayoutManager</a></li><li><a href="NSMenuCategories.html#NSMenu(GNUstepExtra)">NSMenu</a></li><li><a href="NSMenuItemCategories.html#NSMenuItem(GNUstepExtra)">NSMenuItem</a></li><li><a href="NSMutableAttributedStringCategories.html#NSMutableAttributedString(AppKit)">NSMutableAttributedString</a></li><li><a href="NSObjectCategories.html#NSObject(NSComboBoxCellDataSource)">NSObject</a></li><li><a href="NSPrinterCategories.html#NSPrinter(PPDParsing)">NSPrinter</a></li><li><a href="NSPrintOperationCategories.html#NSPrintOperation(Private)">NSPrintOperation</a></li><li><a href="NSPrintPanelCategories.html#NSPrintPanel(Private)">NSPrintPanel</a></li><li><a href="NSProgressIndicatorCategories.html#NSProgressIndicator(GNUstepExtensions)">NSProgressIndicator</a></li><li><a href="NSResponderCategories.html#NSResponder(OptionalActionMethods)">NSResponder</a></li><li><a href="NSSplitViewCategories.html#NSSplitView(GNUstepExtra)">NSSplitView</a></li><li><a href="NSStringCategories.html#NSString(NSStringDrawing)">NSString</a></li><li><a href="NSTableViewCategories.html#NSTableView(GNUPrivate)">NSTableView</a></li><li><a href="NSTabViewItemCategories.html#NSTabViewItem(GNUstep)">NSTabViewItem</a></li><li><a href="NSTextCategories.html#NSText(GNUstepExtensions)">NSText</a></li><li><a href="NSTextFieldCellCategories.html#NSTextFieldCell(PrivateMethods)">NSTextFieldCell</a></li><li><a href="NSTextStorageCategories.html#NSTextStorage(Scripting)">NSTextStorage</a></li><li><a href="NSTextViewCategories.html#NSTextView(GSTextViewSync)">NSTextView</a></li><li><a href="NSViewCategories.html#NSView(PrivateMethods)">NSView</a></li><li><a href="NSWindowCategories.html#NSWindow(GNUstepBackend)">NSWindow</a></li><li><a href="NSWorkspaceCategories.html#NSWorkspace(GNUstep)">NSWorkspace</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

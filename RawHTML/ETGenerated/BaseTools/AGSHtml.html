@@ -1,0 +1,377 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base Tools Internals</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>AGSHtml... a class to output html for a gsdoc file</h2>AGSHtml : NSObject<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>AGSHtml.h</td></tr></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[AGSHtml_decIndent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> decIndent </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_incIndent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> incIndent </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_makeAnchor:ofType:name:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> makeAnchor: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">r</span></span><span class="selector"> ofType: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">t</span></span><span class="selector"> name: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">n</span></span></span></dt>
+<dd><div class="methodDescription">
+Calls  <a href="AGSHtml.html#-[AGSHtml_makeLink:ofType:isRef:]">-makeLink:ofType:isRef:</a>  or  <a href="AGSHtml.html#-[AGSHtml_makeLink:ofType:inUnit:isRef:]">-makeLink:ofType:inUnit:isRef:</a>  to create the first part of an anchor, and fills in the text content of the anchor with <var>n</var> (the specified name). Returns an entire anchor string as a result. <br></br> This method is used to create all the anchors in the html output.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_makeLink:ofType:isRef:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> makeLink: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">r</span></span><span class="selector"> ofType: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">t</span></span><span class="selector"> isRef: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">f</span></span></span></dt>
+<dd><div class="methodDescription">
+Make a link for the element <var>r</var> with the specified type. Only the start of the html element is returned (&lt;a...&gt;). If the boolean <var>f</var> is <var>YES</var>, then the link is a reference to somewhere, and the method will return <var>nil</var> if the destination is not found in the index. If <var>f</var> is <var>NO</var>, then the link is an anchor for some element being output, and the method is guaranteed to succeed and return the link.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_makeLink:ofType:inUnit:isRef:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> makeLink: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">r</span></span><span class="selector"> ofType: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">t</span></span><span class="selector"> inUnit: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">u</span></span><span class="selector"> isRef: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">f</span></span></span></dt>
+<dd><div class="methodDescription">
+Make a link for the element <var>r</var>, with the specified type <var>t</var>, in a particular unit <var>u</var>. Only the start of the html element is returned (&lt;a...&gt;). <br></br> If the boolean <var>f</var> is <var>YES</var>, then the link is a reference to somewhere, otherwise the link is an anchor for some element being output. <br></br> If there is an error, the method returns <var>nil</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputIndex:scope:title:style:target:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputIndex: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">type</span></span><span class="selector"> scope: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">scope</span></span><span class="selector"> title: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">title</span></span><span class="selector"> style: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">style</span></span><span class="selector"> target: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">target</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputDocument:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> outputDocument: </span><span class="parameter"><span class="type">(GSXMLNode *)</span><span class="arg">node</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputNode:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputNode: </span><span class="parameter"><span class="type">(GSXMLNode *)</span><span class="arg">node</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+Css : TODO print.css <br></br> Robots <br></br> As a special case, if we have a reference to a function, and we can't find it, we check to see if there is actually a macro of that name and refer to that instead.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputNodeList:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputNodeList: </span><span class="parameter"><span class="type">(GSXMLNode *)</span><span class="arg">node</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+Output all the nodes from this one onwards... try to output as text first, if not possible, call the main method to output each <var>node</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputBlock:to:inPara:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(GSXMLNode *)</span><span class="selector"> outputBlock: </span><span class="parameter"><span class="type">(GSXMLNode *)</span><span class="arg">node</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span><span class="selector"> inPara: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+Outputs zero or more nodes at the same level as <strong>long</strong> as the nodes are valid %block elements. Returns <var>nil</var> or the first <var>node</var> not output. The value of <var>flag</var> is used to control paragraph nesting ... if <var>YES</var> we close a paragraph before opening a new one, and open again once the new paragraph closes.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputList:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(GSXMLNode *)</span><span class="selector"> outputList: </span><span class="parameter"><span class="type">(GSXMLNode *)</span><span class="arg">node</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+Outputs a <var>node</var> as <strong>long</strong> as it is a valid %list element. Returns next <var>node</var> at this level.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputText:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(GSXMLNode *)</span><span class="selector"> outputText: </span><span class="parameter"><span class="type">(GSXMLNode *)</span><span class="arg">node</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+Outputs zero or more nodes at the same level as <strong>long</strong> as the nodes are valid %text elements. Returns <var>nil</var> or the first <var>node</var> not output.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputUnit:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputUnit: </span><span class="parameter"><span class="type">(GSXMLNode *)</span><span class="arg">node</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_outputVersion:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputVersion: </span><span class="parameter"><span class="type">(NSDictionary *)</span><span class="arg">prop</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_protocolRef:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> protocolRef: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">t</span></span></span></dt>
+<dd><div class="methodDescription">
+Try to make a link to the documentation for the supplied protocol.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_setGlobalRefs:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setGlobalRefs: </span><span class="parameter"><span class="type">(<a href="AGSIndex.html#AGSIndex">AGSIndex</a> *)</span><span class="arg">r</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_setLocalRefs:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLocalRefs: </span><span class="parameter"><span class="type">(<a href="AGSIndex.html#AGSIndex">AGSIndex</a> *)</span><span class="arg">r</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_setProjectRefs:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setProjectRefs: </span><span class="parameter"><span class="type">(<a href="AGSIndex.html#AGSIndex">AGSIndex</a> *)</span><span class="arg">r</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_setInstanceVariablesAtEnd:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setInstanceVariablesAtEnd: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">val</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSHtml_typeRef:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> typeRef: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">t</span></span></span></dt>
+<dd><div class="methodDescription">
+Assuming that the supplied string contains type information (as used in a method declaration or type cast), we make an attempt at extracting the basic type, and seeing if we can find a documented declaration for it. If we can, we return a modified version of the string containing a link to the appropriate documentation. Otherwise, we just return the plain type string. In all cases, we strip leading and trailing white space.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base Tools Internals</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>Tools</h3>
+<ul>
+    <li><a href="autogsdoc.html">autogsdoc</a></li>
+    <li><a href="cvtenc.html">cvtenc</a></li>
+    <li><a href="defaults.html">defaults</a></li>
+    <li><a href="gdnc.html">gdnc</a></li>
+    <li><a href="gdomap.html">gdomap</a></li>
+    <li><a href="gsdoc.html">gsdoc</a></li>
+    <li><a href="gspath.html">gspath</a></li>
+    <li><a href="pldes.html">pldes</a></li>
+    <li><a href="plmerge.html">plmerge</a></li>
+    <li><a href="plparse.html">plparse</a></li>
+    <li><a href="plser.html">plser</a></li>
+    <li><a href="sfparse.html">sfparse</a></li>
+    <li><a href="xmlparse.html">xmlparse</a></li>
+</ul>
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="AGSHtml.html#AGSHtml">AGSHtml</a></li><li><a href="AGSIndex.html#AGSIndex">AGSIndex</a></li><li><a href="AGSOutput.html#AGSOutput">AGSOutput</a></li><li><a href="AGSParser.html#AGSParser">AGSParser</a></li><li><a href="GDNCClient.html#GDNCClient">GDNCClient</a></li><li><a href="GDNCNotification.html#GDNCNotification">GDNCNotification</a></li><li><a href="GDNCObserver.html#GDNCObserver">GDNCObserver</a></li><li><a href="GDNCServer.html#GDNCServer">GDNCServer</a></li><li><a href="GSXMLParse.html#GSXMLParse">GSXMLParse</a></li><li><a href="NSDistributedNotificationCenterGDNCDummy.html#NSDistributedNotificationCenterGDNCDummy">NSDistributedNotificationCenterGDNCDummy</a></li></ul></div>
+
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

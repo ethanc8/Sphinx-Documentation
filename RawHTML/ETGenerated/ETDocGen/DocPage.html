@@ -1,0 +1,341 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>DocGenerator</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>DocPage class documentation</h2>DocPage : NSObject<div class="meta">
+<p class="metadesc"><em><a href="DocPage.html#DocPage">DocPage</a> represents a documentation page.</em></p><table><tr><th>Authors</th><td>Nicolas Roard Quentin Mathe </td></tr><tr><th>Declared in</th><td>DocPage.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> A documentation page that weaves various HTML, GSDoc, Markdown, plist, and ObjC files (usually provided on the command-line), into a new HTML representation based on the template tags embedded in the HTML or Markdown content. </p> <p> You usually don't instantiate this class, but give the documentation input files to <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> which will create new <a href="DocPage.html#DocPage">DocPage</a> instances and return them. <br></br> The returned pages can then be written to disk with  <a href="DocPage.html#-[DocPage_writeToURL:]">-writeToURL:</a>  or their HTML representation retrieved with  <a href="DocPage.html#-[DocPage_HTMLString]">-HTMLString</a>  . </p> <p> Subclasses can be written to customize the presentation and how the various elements (methods, macros, menu etc.) are laid out. Subclassing support is experimental and untested. </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Initialization and Identity</h3><div class="method">
+<a name="-[DocPage_initWithDocumentFile:templateFile:menuFile:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithDocumentFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aDocumentPath</span></span><span class="selector"> templateFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aTemplatePath</span></span><span class="selector"> menuFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aMenuPath</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Initialises and returns a new documentation page that combines the given input files. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_name]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> name </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the page name. </p> <p> Can be used as a file name when saving the page, as <em>etdocgen</em> does. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Writing to File</h3><div class="method">
+<a name="-[DocPage_writeToURL:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> writeToURL: </span><span class="parameter"><span class="type">(NSURL *)</span><span class="arg">outputURL</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Writes the page to the given URL atomically. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Page Building</h3><div class="method">
+<a name="-[DocPage_setHeader:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setHeader: </span><span class="parameter"><span class="type">(<a href="DocHeader.html#DocHeader">DocHeader</a> *)</span><span class="arg">aHeader</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the page header. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_header]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="DocHeader.html#DocHeader">DocHeader</a> *)</span><span class="selector"> header </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the page header. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_addSubheader:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addSubheader: </span><span class="parameter"><span class="type">(<a href="DocHeader.html#DocHeader">DocHeader</a> *)</span><span class="arg">aHeader</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Adds a subheader to the page. </p> <p> Subheaders are expected to be positioned under the main header. <br></br> A subheader can be used to regroup related documentation tree elements. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_addMethod:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addMethod: </span><span class="parameter"><span class="type">(<a href="DocMethod.html#DocMethod">DocMethod</a> *)</span><span class="arg">aMethod</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Adds a method documentation to the page. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_addFunction:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addFunction: </span><span class="parameter"><span class="type">(<a href="DocFunction.html#DocFunction">DocFunction</a> *)</span><span class="arg">aFunction</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Adds a function documentation to the page. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_addConstant:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addConstant: </span><span class="parameter"><span class="type">(<a href="DocConstant.html#DocConstant">DocConstant</a> *)</span><span class="arg">aConstant</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Adds a constant documentation to the page. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_addMacro:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addMacro: </span><span class="parameter"><span class="type">(<a href="DocMacro.html#DocMacro">DocMacro</a> *)</span><span class="arg">aMacro</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Adds a macro documentation to the page. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_addOtherDataType:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addOtherDataType: </span><span class="parameter"><span class="type">(<a href="DocCDataType.html#DocCDataType">DocCDataType</a> *)</span><span class="arg">anotherDataType</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Adds another data type documentation to the page. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_addIVar:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addIVar: </span><span class="parameter"><span class="type">(<a href="DocIVar.html#DocIVar">DocIVar</a> *)</span><span class="arg">anIVar</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Adds an ivar documentation to the page. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_addProperty:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> addProperty: </span><span class="parameter"><span class="type">(<a href="DocProperty.html#DocProperty">DocProperty</a> *)</span><span class="arg">aProperty</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Adds a property documentation to the page. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>HTML Generation</h3><div class="method">
+<a name="-[DocPage_HTMLString]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> HTMLString </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns a string representation of the whole page by weaving the input files. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_mainContentHTMLRepresentations]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> mainContentHTMLRepresentations </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the main page content rendered as an <a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> array, including elements such as <em>Instance Methods</em>, <em>Macros</em> etc. </p> <p> Menu, navigation bar etc. are not present in the returned HTML representation unlike  <a href="DocPage.html#-[DocPage_HTMLString]">-HTMLString</a>  which does include them in its ouput. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_HTMLRepresentationForHeader:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> *)</span><span class="selector"> HTMLRepresentationForHeader: </span><span class="parameter"><span class="type">(<a href="DocHeader.html#DocHeader">DocHeader</a> *)</span><span class="arg">aHeader</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the HTML element tree into which the main header should be rendered. </p> <p> By default, returns the <a href="DocHeader.html#-[DocHeader_HTMLRepresentation]">-[DocHeader HTMLRepresentation]</a> . </p> <p> Can be overriden to return a custom representation. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_HTMLOverviewRepresentationForGroupNamed:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> *)</span><span class="selector"> HTMLOverviewRepresentationForGroupNamed: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aGroup</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPage_HTMLRepresentationWithTitle:elements:HTMLRepresentationSelector:groupSeparator:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> *)</span><span class="selector"> HTMLRepresentationWithTitle: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aTitle</span></span><span class="selector"> elements: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">elementsByGroup</span></span><span class="selector"> HTMLRepresentationSelector: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">repSelector</span></span><span class="selector"> groupSeparator: </span><span class="parameter"><span class="type">(<a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a> *)</span><span class="arg">aSeparator</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the given doc elements rendered as a HTML element tree. </p> <p> The array argument must contain ETKeyValuePair and not <a href="DocElement.html#DocElement">DocElement</a> objects. <br></br> For -[ETKeyValuePair value] , every pairs must return a mutable array that contains <a href="DocElement.html#DocElement">DocElement</a> objects only. </p> <p> Doc elements are sorted by their -[ETKeyValuePair key]  such as task or group name, before being rendered to HTML. </p> <p> Group or task names are output with a &lt;h4&gt; header (&lt;h3&gt; when the title is <var>nil</var>). <br></br> A title is also added, which uses a &lt;h3&gt; header. </p> <p> <var>repSelector</var> should usually be  -HTMLRepresentation  . Additional representations can be added to the <a href="DocElement.html#DocElement">DocElement</a> subclasses such as <a href="DocHeader.html#-[DocHeader_HTMLTOCRepresentation]">-[DocHeader HTMLTOCRepresentation]</a> . You can pass such a selector in argument to use a custom representation in the output. </p> <p> See also <a href="DocElement.html#DocElement">DocElement</a>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>DocGenerator</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="DocCategoryPage.html#DocCategoryPage">DocCategoryPage</a></li><li><a href="DocCDataType.html#DocCDataType">DocCDataType</a></li><li><a href="DocConstant.html#DocConstant">DocConstant</a></li><li><a href="DocDeclarationReorderer.html#DocDeclarationReorderer">DocDeclarationReorderer</a></li><li><a href="DocDescriptionParser.html#DocDescriptionParser">DocDescriptionParser</a></li><li><a href="DocElement.html#DocElement">DocElement</a></li><li><a href="DocElementGroup.html#DocElementGroup">DocElementGroup</a></li><li><a href="DocFunction.html#DocFunction">DocFunction</a></li><li><a href="DocGraphWriter.html#DocGraphWriter">DocGraphWriter</a></li><li><a href="DocHeader.html#DocHeader">DocHeader</a></li><li><a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a></li><li><a href="DocHTMLIndex.html#DocHTMLIndex">DocHTMLIndex</a></li><li><a href="DocIndex.html#DocIndex">DocIndex</a></li><li><a href="DocIVar.html#DocIVar">DocIVar</a></li><li><a href="DocMacro.html#DocMacro">DocMacro</a></li><li><a href="DocMethod.html#DocMethod">DocMethod</a></li><li><a href="DocMethodGroupDescriptionParser.html#DocMethodGroupDescriptionParser">DocMethodGroupDescriptionParser</a></li><li><a href="DocPage.html#DocPage">DocPage</a></li><li><a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a></li><li><a href="DocParameter.html#DocParameter">DocParameter</a></li><li><a href="DocProperty.html#DocProperty">DocProperty</a></li><li><a href="DocSourceCodeParser.html#DocSourceCodeParser">DocSourceCodeParser</a></li><li><a href="DocSubroutine.html#DocSubroutine">DocSubroutine</a></li><li><a href="DocTOCPage.html#DocTOCPage">DocTOCPage</a></li><li><a href="DocVariable.html#DocVariable">DocVariable</a></li><li><a href="GSDocParser.html#GSDocParser">GSDocParser</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_DocSourceParsing.html#DocSourceParsing">DocSourceParsing</a></li><li><a href="_DocWeaving.html#DocWeaving">DocWeaving</a></li><li><a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="DocHTMLElementCategories.html#DocHTMLElement(CommonUseCases)">DocHTMLElement</a></li><li><a href="NSStringCategories.html#NSString(DocGenerator)">NSString</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

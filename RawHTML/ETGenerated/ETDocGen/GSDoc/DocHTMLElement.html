@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocHTMLElement class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocHTMLElement">DocHTMLElement class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Nicolas Roard</dt>
+      <dd>
+      </dd>
+    </dl>
+    <p><b>Copyright:</b> (C) 2008 Nicolas Roard</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the DocHTMLElement class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the
+        DocHTMLElement(CommonUseCases)
+        category</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocHTMLElement class
+      </a></h1>
+    <h2><a name="class$DocHTMLElement">DocHTMLElement</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocHTMLElement.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group HTML Support @abstract HTML element class to
+            output HTML in a concise way.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocHTMLElement is a Seaside-inspired class
+            that provides a DSL to write compact HTML generation
+            code.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocHTMLElement comes with null-like element
+            that doesn&apos;t emit the element markup when evaluated.
+            See
+            <a rel="gsdoc" href="#method$DocHTMLElement+blankElement">
+              +blankElement
+            </a>
+
+            .
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            TODO: DocHTMLElement DSL should be more clean and
+            formalized. For example,
+            <a rel="gsdoc" href="#method$DocHTMLElement-and$">
+              -and:
+            </a>
+
+            , <a rel="gsdoc" href="#method$DocHTMLElement-with$">-with:</a>
+ and
+            <a rel="gsdoc" href="#method$DocHTMLElement-add$">
+              -add:
+            </a>
+
+            are the same, but it isn&apos;t entirely clear-cut when one
+            should be preferred to the others. <br /> For now, a
+            single <a rel="gsdoc" href="#method$DocHTMLElement-with$">-with:</a>
+
+            should be used per message chains. Any subsequent
+            concatenation messages should use
+            <a rel="gsdoc" href="#method$DocHTMLElement-and$">
+              -and:
+            </a>
+
+            . e.g.
+            <a rel="gsdoc" href="#method$DocHTMLElement(CommonUseCases)-with$and$and$">
+              -with:and:and:
+            </a>
+
+            is valid but
+            
+              -with:with:and:
+            
+
+            is not. <br /> The obscure point is what to do when we
+            send a single concatenation message. Should we
+            recommend
+            <a rel="gsdoc" href="#method$DocHTMLElement-with$">
+              -with:
+            </a>
+
+            , <a rel="gsdoc" href="#method$DocHTMLElement-and$">-and:</a>
+ or -add:?
+            Should we take in account the type of the concatened
+            content such DocHTMLElement or NSString, then make
+            a distinction between
+            <a rel="gsdoc" href="#method$DocHTMLElement-add$">
+              -add:
+            </a>
+
+            and <a rel="gsdoc" href="#method$DocHTMLElement-addText$">-addText:</a>
+.
+            <br /> Is DocHTMLElement DSL really needed or the
+            right answer to what we need?
+              </p>
+    <p>
+      
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_DocHTMLElement_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-class$with$">-class:with:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-class$with$and$">-class:with:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-class$with$and$and$">-class:with:and:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-id$with$">-id:with:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-id$with$and$">-id:with:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-id$with$and$and$">-id:with:and:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-with$and$">-with:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-with$and$and$">-with:and:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-with$and$and$and$">-with:and:and:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement+blankElement">+blankElement</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement+elementWithName$">+elementWithName:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-add$">-add:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-addText$">-addText:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-and$">-and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-class$">-class:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-content">-content</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-description">-description</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-id$">-id:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-initWithName$">-initWithName:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-name$">-name:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement-with$">-with:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocHTMLElement+blankElement">blankElement&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>blankElement</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Initialization and Factory Methods
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns a new HTML element whose content is not
+              wrapped into opening and closing tags
+              corresponding to the receiver, but limited
+              to the child content.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              When the content is evaluated, the element name and
+              attributes are ignored, but each child content
+              is evaluated normally.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              When the receiver has no children,
+              <a rel="gsdoc" href="#method$DocHTMLElement-content">
+                -content
+              </a>
+
+              returns an empty string.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement+elementWithName$">elementWithName:&nbsp;</a></h3>
+    + (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>elementWithName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-add$">add:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>add:</b> (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*)anElem;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-addText$">addText:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>addText:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aText;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Tree Building Primitives
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-and$">and:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>and:</b> (id)something;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-class$">class:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>class:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClass;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-content">content&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>content</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit HTML Generation
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the HTML string representation of the
+              element tree rooted in the receiver.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              This HTML generation is done in a recursive manner
+              by invoking
+              <a rel="gsdoc" href="#method$DocHTMLElement-content">
+                -content
+              </a>
+
+              on the child elements.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              TODO: Document a bit better and when line breaks
+              are inserted.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-description">description&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>description</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns
+              <a rel="gsdoc" href="#method$DocHTMLElement-content">
+                -content
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-id$">id:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>id:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)anID;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit HTML Attributes Support
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-initWithName$">initWithName:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>initWithName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-name$">name:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>name:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aName;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement-with$">with:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>with:</b> (id)something;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Tree Building Syntactic Sugar
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_DocHTMLElement_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for DocHTMLElement Class</h2>
+    <h3><a name="ivariable$DocHTMLElement*attributes">attributes</a></h3>
+    @protected NSMutableDictionary* <b>attributes</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocHTMLElement*blockElementNames">blockElementNames</a></h3>
+    @protected NSSet* <b>blockElementNames</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocHTMLElement*children">children</a></h3>
+    @protected NSMutableArray* <b>children</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocHTMLElement*elementName">elementName</a></h3>
+    @protected NSString* <b>elementName</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the
+        DocHTMLElement(CommonUseCases)
+        category
+      </a></h1>
+    <h2><a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>(<a name="category$DocHTMLElement(CommonUseCases)">CommonUseCases</a>)</h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocHTMLElement.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group HTML Support
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Category on DocHTMLElement to prevent compiler
+            warning since DocHTMLElement has no fixed API but
+            support a large number of message chaining
+            variations.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-class$with$">-class:with:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-class$with$and$">-class:with:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-class$with$and$and$">-class:with:and:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-id$with$">-id:with:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-id$with$and$">-id:with:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-id$with$and$and$">-id:with:and:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-with$and$">-with:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-with$and$and$">-with:and:and:</a></li>
+      <li><a rel="gsdoc" href="DocHTMLElement.html#method$DocHTMLElement(CommonUseCases)-with$and$and$and$">-with:and:and:and:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-class$with$">class:&nbsp;with:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>class:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClass<b> with:</b> (id)something;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-class$with$and$">class:&nbsp;with:&nbsp;and:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>class:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClass<b> with:</b> (id)something<b> and:</b> (id)someOtherThing;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-class$with$and$and$">class:&nbsp;with:&nbsp;and:&nbsp;and:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>class:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aClass<b> with:</b> (id)something<b> and:</b> (id)someOtherThing<b> and:</b> (id)someThirdThing;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-id$with$">id:&nbsp;with:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>id:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)anID<b> with:</b> (id)something;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-id$with$and$">id:&nbsp;with:&nbsp;and:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>id:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)anID<b> with:</b> (id)something<b> and:</b> (id)someOtherThing;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-id$with$and$and$">id:&nbsp;with:&nbsp;and:&nbsp;and:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>id:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)anID<b> with:</b> (id)something<b> and:</b> (id)someOtherThing<b> and:</b> (id)someThirdThing;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-with$and$">with:&nbsp;and:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>with:</b> (id)something<b> and:</b> (id)someOtherThing;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-with$and$and$">with:&nbsp;and:&nbsp;and:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>with:</b> (id)something<b> and:</b> (id)someOtherThing<b> and:</b> (id)someThirdThing;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocHTMLElement(CommonUseCases)-with$and$and$and$">with:&nbsp;and:&nbsp;and:&nbsp;and:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="#class$DocHTMLElement">DocHTMLElement</a>*) <b>with:</b> (id)something<b> and:</b> (id)someOtherthing<b> and:</b> (id)someThirdThing<b> and:</b> (id)someForthThing;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

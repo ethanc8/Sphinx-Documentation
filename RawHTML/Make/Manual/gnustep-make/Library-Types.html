@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Library Types (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Library Types (GNUstep Makefile Package)">
+<meta name="keywords" content="Library Types (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Running-Make.html" rel="up" title="Running Make">
+<link href="Project-Types.html" rel="next" title="Project Types">
+<link href="Profile-Information.html" rel="prev" title="Profile Information">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Library-Types"></span><div class="header">
+<p>
+Previous: <a href="Profile-Information.html" accesskey="p" rel="prev">Profile Information</a>, Up: <a href="Running-Make.html" accesskey="u" rel="up">Running Make</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Static_002c-Shared_002c-and-Dynamic-Link-Libraries"></span><h4 class="subsection">1.3.3 Static, Shared, and Dynamic Link Libraries</h4>
+
+<p>By default the Makefile Package will generate a shared library if it is
+building a library project type, and it will link with shared libraries
+if it is building an application or command line tool project type.  The
+following command illustrates how to tell the Makefile Package not to
+build using shared libraries but using static libraries instead.
+</p>
+<div class="example">
+<pre class="example">make shared=no
+</pre></div>
+
+<p>This default is only applicable on systems that support shared
+libraries; systems that do not support shared libraries will always
+build using static libraries.  Some systems support dynamic link
+libraries (DLL) which are a form of shared libraries; on these systems,
+DLLs will be built by default unless the Makefile Package is told to
+build using static libraries instead, as in the above command.
+</p>
+
+
+
+</body>
+</html>

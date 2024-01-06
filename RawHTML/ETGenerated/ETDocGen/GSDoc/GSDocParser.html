@@ -1,0 +1,662 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>GSDocParser class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$GSDocParser">GSDocParser class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Nicolas Roard</dt>
+      <dd>
+      </dd>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      
+      GSDoc parser that can drive a DocPageWeaver through
+      DocWeaving protocol.
+    
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2008 Nicolas Roard</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the GSDocParser class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the GSDocParserDelegate
+        protocol</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the GSDocParser class
+      </a></h1>
+    <h2><a name="class$GSDocParser">GSDocParser</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>GSDocParser.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="DocPageWeaver.html#protocol$(DocSourceParsing)">DocSourceParsing</a></dd>
+        <dd><a rel="gsdoc" href="#protocol$(GSDocParserDelegate)">GSDocParserDelegate</a></dd>
+        <dd><a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSXMLParser.html#protocol$(NSXMLParserDelegate)">NSXMLParserDelegate</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group GSDoc Parsing
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Main GSDoc parser which wraps a NSXMLParser
+            internally, handles the basic XML parsing and
+            preprocessing, but delegates the rest to
+            DocElement objects instantiated based on the
+            class returned by
+            <a rel="gsdoc" href="#method$GSDocParser-elementClassForName$">
+              -elementClassForName:
+            </a>
+
+            . <br /> For example &lt;method&gt; is delegated to
+            DocMethod through GSDocParserDelegate methods.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            The parsing state is managed as a delegate parser stack
+            that contains the receiver itself and zero or more
+            DocElement objects pushed on top.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            To parse a GDoc document, you have to initialize a new
+            GSDocParser, use
+            <a rel="gsdoc" href="#method$GSDocParser-setWeaver$">
+              -setWeaver:
+            </a>
+
+            to set the object which handles the parsing ouput such
+            DocDeclarationReorderer or
+            DocPageWeaver, and triggers the parsing with
+            <a rel="gsdoc" href="#method$GSDocParser-parseAndWeave">
+              -parseAndWeave
+            </a>
+
+            .
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            All XML parsing related methods are used internally,
+            you can ignore them.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-argTypeFromArgsAttributes$">-argTypeFromArgsAttributes:</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-currentAttributes">-currentAttributes</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-elementClassForName$">-elementClassForName:</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-indentSpaces">-indentSpaces</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-initWithSourceFile$additionalParserFiles$">-initWithSourceFile:additionalParserFiles:</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-isInformalProtocolSymbolName$">-isInformalProtocolSymbolName:</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-newContent">-newContent</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-parseAndWeave">-parseAndWeave</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-parserDelegate">-parserDelegate</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-popParserDelegate">-popParserDelegate</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-pushParserDelegate$">-pushParserDelegate:</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-setWeaver$">-setWeaver:</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$GSDocParser-weaver">-weaver</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$GSDocParser-argTypeFromArgsAttributes$">argTypeFromArgsAttributes:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>argTypeFromArgsAttributes:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)attributeDict;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Retrieves the value for the <em>type</em> key
+              in the given XML attributes, usually retrieved with
+              <a rel="gsdoc" href="#method$GSDocParser-currentAttributes">
+                -currentAttributes
+              </a>
+
+              when parsing the element <em>arg</em>, and returns
+              the type or a blank string if no type is declared.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-currentAttributes">currentAttributes&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*) <b>currentAttributes</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit XML Attribute Retrieval
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns the XML attributes in the last parsed
+              element.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-elementClassForName$">elementClassForName:&nbsp;</a></h3>
+    - (Class) <b>elementClassForName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)anElementName;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the class to be instantiated while
+              parsing the given XML element.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              When a valid class is returned, once instantiated,
+              the parsing gets delegated to it through
+              GSDocParserDelegate until the given
+              XML element end is reached.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-indentSpaces">indentSpaces&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>indentSpaces</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the current indenting in use.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The indentation varies each time a parser delegate is
+              popped or pushed.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-initWithSourceFile$additionalParserFiles$">initWithSourceFile:&nbsp;additionalParserFiles:&nbsp;</a></h3>
+    - (id) <b>initWithSourceFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSourceFile<b> additionalParserFiles:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)additionalFiles;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Initialization
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns a GSDoc parser initialized with the given
+              GSDoc document.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Call
+              <a rel="gsdoc" href="#method$GSDocParser-setWeaver$">
+                -setWeaver:
+              </a>
+
+              on the returned object to be ready to parse.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-isInformalProtocolSymbolName$">isInformalProtocolSymbolName:&nbsp;</a></h3>
+    - (BOOL) <b>isInformalProtocolSymbolName:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aSymbolName;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Utility
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns whether the given symbol name is declared
+              as an an informal protocol in the GSDoc index.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-newContent">newContent&nbsp;</a></h3>
+    - (void) <b>newContent</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit XML Parsing
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Reinitializes the current CDATA stored in
+              the content variable.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-parseAndWeave">parseAndWeave&nbsp;</a></h3>
+    - (void) <b>parseAndWeave</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Parses the GSDoc XML with which the receiver was
+              initialized, and at the same time weaves the
+              produced doc elements through DocWeaving
+              methods.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              DocElement subclass objects are created, when
+              parsing an XML element to which a valid class is
+              bound to with
+              <a rel="gsdoc" href="#method$GSDocParser-elementClassForName$">
+                -elementClassForName:
+              </a>
+
+              .
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              @task Parsing and Weaving
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-parserDelegate">parserDelegate&nbsp;</a></h3>
+    - (id<<a rel="gsdoc" href="#protocol$(GSDocParserDelegate)">GSDocParserDelegate</a>>) <b>parserDelegate</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the current parser delegate.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The parser delegate is usually a DocElement object or
+              the receiver iself.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Never returns <code>nil</code>.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-popParserDelegate">popParserDelegate&nbsp;</a></h3>
+    - (void) <b>popParserDelegate</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Pops the last pushed parser delegate to which the
+              XML parsing was delegated to until now.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              You usually don&apos;t have to call this method, it is
+              called each time we reach the end of an XML
+              element bound to a valid class in
+              <a rel="gsdoc" href="#method$GSDocParser-elementClassForName$">
+                -elementClassForName:
+              </a>
+
+              .
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See also
+              <a rel="gsdoc" href="#method$GSDocParser-pushParserDelegate$">
+                -pushParserDelegate:
+              </a>
+
+              and
+              <a rel="gsdoc" href="#method$GSDocParser-parserDelegate">
+                -parserDelegate
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-pushParserDelegate$">pushParserDelegate:&nbsp;</a></h3>
+    - (void) <b>pushParserDelegate:</b> (id<<a rel="gsdoc" href="#protocol$(GSDocParserDelegate)">GSDocParserDelegate</a>>)aDelegate;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Pushes a new parser delegate to which the XML
+              parsing should be delegated to.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Will be popped once we reach the end of the XML
+              element that triggered the delegate creation.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              You usually don&apos;t have to call this method, it is
+              called each time
+              <a rel="gsdoc" href="#method$GSDocParser-elementClassForName$">
+                -elementClassForName:
+              </a>
+
+              returns a valid class.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The given delegate must not be <code>nil</code>.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See also
+              <a rel="gsdoc" href="#method$GSDocParser-popParserDelegate">
+                -popParserDelegate
+              </a>
+
+              and
+              <a rel="gsdoc" href="#method$GSDocParser-parserDelegate">
+                -parserDelegate
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-setWeaver$">setWeaver:&nbsp;</a></h3>
+    - (void) <b>setWeaver:</b> (id<<a rel="gsdoc" href="DocPageWeaver.html#protocol$(DocWeaving)">DocWeaving</a>>)aDocWeaver;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Sets the weaver on which the receiver should call
+              back DocWeaving methods while parsing the GSDoc XML
+              provided at initialization time.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$GSDocParser-weaver">weaver&nbsp;</a></h3>
+    - (id<<a rel="gsdoc" href="DocPageWeaver.html#protocol$(DocWeaving)">DocWeaving</a>>) <b>weaver</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the weaver currently in use or
+              <code>nil</code>.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See also
+              <a rel="gsdoc" href="#method$GSDocParser-setWeaver$">
+                -setWeaver:
+              </a>
+
+              .
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="002000000000">
+        Software documentation for the GSDocParserDelegate
+        protocol
+      </a></h1>
+    <h2><a name="protocol$(GSDocParserDelegate)">GSDocParserDelegate</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>GSDocParser.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group GSDoc Parsing
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            @abstract None
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Parsing protocol usually implemented by DocElement
+            subclass, so the parsing can be delegated per
+            major XML elements (e.g. class, method etc.) to a
+            newly instantied doc element and initialize it in
+            this way.
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$(GSDocParserDelegate)-parser$endElement$withContent$">-parser:endElement:withContent:</a></li>
+      <li><a rel="gsdoc" href="GSDocParser.html#method$(GSDocParserDelegate)-parser$startElement$withAttributes$">-parser:startElement:withAttributes:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$(GSDocParserDelegate)-parser$endElement$withContent$">parser:&nbsp;endElement:&nbsp;withContent:&nbsp;</a></h3>
+    - (void) <b>parser:</b> (<a rel="gsdoc" href="#class$GSDocParser">GSDocParser</a>*)parser<b> endElement:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)anElement<b> withContent:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aContent;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$(GSDocParserDelegate)-parser$startElement$withAttributes$">parser:&nbsp;startElement:&nbsp;withAttributes:&nbsp;</a></h3>
+    - (void) <b>parser:</b> (<a rel="gsdoc" href="#class$GSDocParser">GSDocParser</a>*)parser<b> startElement:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)anElement<b> withAttributes:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSDictionary.html#class$NSDictionary">NSDictionary</a>*)theAttributes;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

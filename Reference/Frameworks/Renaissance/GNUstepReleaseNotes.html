@@ -1,0 +1,1208 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>Release Notes - GNUstep 2021 December documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">GNUstep 2021 December documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">GNUstep 2021 December documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/index.html">Getting Started Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Getting Started Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/index.html">1 - First Steps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1 - First Steps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.1.html">1.1 - What is GNUstep?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.2.html">1.2 - Installing GNUstep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.3.html">1.3 - Configuring your System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/index.html">2 - Convertor</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2 - Convertor</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.1.html">2.1 - Designing the UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.2.html">2.2 - Outlets and Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.3.html">2.3 - Adding the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/index.html">3 - TimeMachine - a single window application</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 3 - TimeMachine - a single window application</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.1.html">3.1 - A Basic Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.2.html">3.2 - Analog Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.3.html">3.3 - New Time Zone Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.4.html">3.4 - Multiple Clocks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/HelpfulWebsites.html">Helpful Websites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/WhatsNext.html">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/Other/Roard/index.html">Roard Vallon Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Roard Vallon Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%201/Tutorial%201.html">1 - Programming under GNUstep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%202/Tutorial%202.html">2 - NSWindowController and Design Pattern MVC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../index.html">Reference Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Reference Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../index.html">Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Core.html">Basic Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Basic Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../AppKit/index.html">Application Kit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Application Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../AppKit/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../AppKit/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../AppKit/GNUstepReleaseNotes_HTML.html"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../AppKit/NSImageName.html"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Foundation/index.html">Foundation Kit</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Foundation Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Foundation/CocoaCompatibility.html">Cocoa Compatibility</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Foundation/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Foundation/GNUstepReleaseNotes.html">GNUstep Base Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../CoreData/index.html">Core Data</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../CoreFoundation/index.html">Core Foundation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Core Foundation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../CoreFoundation/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../CoreFoundation/ObjectModel.html">Core Foundation Object Model</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/index.html">Apple Release Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Apple Release Notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/SwiftReleaseNotes.html">10.11 and later</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.9.html">CF-855.11 - 10.9 Mavericks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.8.html">CF-744 - 10.8 “Mountain Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/iOS5.html">CF-675 - iOS 5</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.7.html">CF-635 - 10.7 “Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.6.html">CF-550 - 10.6 Snow Leopard</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.5.html">CF-476 - 10.5 “Leopard”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/Historical-GeneralNotes.html">General Notes</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.2.html">CF-263 - 10.2 “Jaguar”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.1.html">CF-226 - 10.1 “Puma”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.0.html">CF-196 - 10.0 “Cheetah”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_PB.html">Mac OS X Public Beta “Kodiak”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP4.html">Mac OS X Developer Preview 4</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP3.html">Mac OS X Developer Preview 3</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP2.html">Mac OS X Developer Preview 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Miscellaneous.html">Miscellaneous Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Miscellaneous Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../AddressBook/index.html">AddressBook</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of AddressBook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../AddressBook/GNUstep%20Readme.html">GNUstep Readme</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../CFNetwork/index.html">CFNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DBusKit/index.html">DBusKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ECCL/index.html">Enterprise Control Configuration and Logging (ECCL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PDFKit/index.html">PDFKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../WebKit/index.html">WebKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Xcode/index.html">GNUstep Xcode Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pantomime/index.html">Pantomime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GWorkspace/index.html">GWorkspace frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html">Renaissance</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Quartz.html">Quartz Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Quartz Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CoreAnimation/index.html">Core Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CoreGraphics/index.html">Core Graphics / Quartz 2D</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_WebObjects.html">WebObjects 4 Stack</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of WebObjects 4 Stack</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../EnterpriseObjects/index.html">Enterprise Objects Framework</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Enterprise Objects Framework</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../EnterpriseObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../WebObjects/index.html">WebObjects</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of WebObjects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../WebObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Tools/index.html">Developer Tools</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Developer Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Tools/Make/index.html">GNUstep Make</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of GNUstep Make</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tools/Make/GNUstepReleaseNotes.html">Release Notes</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/index.html">New Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of New Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Introduction.html">Introduction</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Topics/index.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Topics/ParallelBuilding.html">Parallel Building</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/index.html">Project Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Project Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Project/Reference.html">Project Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/ResourceSet/Reference.html">Resource Set Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Tool/Reference.html">Tool Reference</a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Library/index.html">Library</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Library/Introduction.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Gorm%20ProjectCenter.html">Gorm + ProjectCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Buildtool.html">Buildtool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/BaseTools.html">Base Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/HeaderDoc.html">HeaderDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Languages/index.html">Languages</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Languages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Languages/ObjC/index.html">Objective-C</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Objective-C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Languages/ObjC/Reference/index.html">Objective-C Language Reference</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Objective-C Language Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Attributes.html">Attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/BasicTypes.html">Basic Types</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/index.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> macros</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of NS_ENUM macros</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_CLOSED_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_CLOSED_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_CLOSED_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_ERROR_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ERROR_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ERROR_ENUM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Classes.html">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/LightweightGenerics.html">Lightweight Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Exceptions.html">Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/FastEnumeration.html">Fast enumeration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/StringLiterals.html">String literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/DynamicLiterals.html">Dynamic literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/TraditionalMessageForwarding.html">Traditional Message Forwarding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Modules.html">Modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/EnvInformation.html">Getting Environment Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Versions.html">Language Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../HIG.html">Human Interface Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Contributing/Documentation/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Domains/index.html">Sphinx Domains</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Sphinx Domains</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Domains/SCDT-API.html">Sphinxcontrib-DomainTools API refeerence</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/index.html">Tests</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/index.html">API Reference Tests</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of API Reference Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/WrongNesting.html">Wrong nesting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/MakeDomain.html">Make domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Todo/index.html">Todo</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Todo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/ReleaseNotes.html">Release Notes and API Diffs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/Dependencies.html">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/DocC.html">DocC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/PandocNotes.html">Pandoc Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/StyleGuide.html">Style Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="release-notes">
+<h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">#</a></h1>
+<section id="id1">
+<h2>0.9<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/gnustep/libs-renaissance/commit/2b3e3c056846dc1eb5a17f17d20c2547c9e8e3c3">Commit <code class="docutils literal notranslate"><span class="pre">2b3e3c0</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  * Rewritten the autolayout managers and boxes; finalized the
+    autolayout attributes
+
+  * Improved display of lines showing autolayout boundaries (for
+    debugging) by making it exact and not approximate
+
+  * Renamed autolayout classes and protocols so that they are all
+    consistently in the GSAutoLayout namespace.
+
+  * New experimental &lt;grid&gt;, &lt;gridRow&gt; and &lt;space&gt; classes.  The grid
+    is fairly complete, but doesn&#39;t support span yet.
+
+  * New NSXML decoder backend that replaces &amp;lt; and similar entities
+    correctly on Apple.
+
+  * Improved or added documentation of the &lt;button&gt;, &lt;colorWell&gt;,
+    &lt;control&gt;, &lt;hbox&gt;, &lt;hspace&gt;, &lt;image&gt;, &lt;label&gt;, &lt;secureTextField&gt;,
+    &lt;vbox&gt;, &lt;view&gt; and &lt;vspace&gt; tags
+
+  * Extended and standardized available attributes of many tags,
+    including &lt;button&gt;, &lt;colorWell&gt;, &lt;control&gt;, &lt;image&gt;, &lt;label&gt;,
+    &lt;menuItem&gt;, &lt;popUpButtonItem&gt;, &lt;textField&gt;, &lt;view&gt;
+
+  * Fixed memory leaks and various bugs.
+
+  * Ported to Windows (via GNUstep).
+
+  * Ported to Apple Mac OS X 10.5.
+
+  * Updated for gnustep-make v2.
+
+  * Updated to use newer key-value-coding API.
+
+  * Added support for traditional subviews, autoresizing masks and
+    hardcoded sizes
+
+  * Fixed embedding boxes in splitviews.
+
+  * Made it possible to compile and use Markup as a standalone non-GUI
+    library.
+
+  * Added support for escaping &#39;#&#39; in attributes.
+  
+  * Use precompiled headers to speed up compilation on GNUstep.
+
+  * Tidied up alloc/init methods of GSMarkupTagObject.
+
+  * Fixed setting autolayout flags for views directly embedded into an
+    NSBox.
+
+  * Fixed &lt;vspace /&gt; and &lt;hspace /&gt;
+
+  * Simplified compilation on Apple Mac OS X.
+
+  * Updated DTD.
+
+  * Added methods to remove views from boxes.
+
+  * Extended warnings for errors in gsmarkup files such as
+    non-existing actions.
+
+  * Fixed overfull LaTeX boxes in the documentation.
+
+
+XML Format Changes in version `0.9.0&#39;
+=====================================
+
+This is a 0.x release so the XML tags and attributes are still subject
+to some minor changes while we work towards a 1.0.0 release.
+
+ * the &#39;align&#39; attribute of the &lt;label&gt; and &lt;textField&gt; class has been
+   renamed to &#39;textAlignment&#39;.  The &#39;alignment&#39; attribute of &lt;image&gt;
+   has been renamed to &#39;imageAlignment&#39;.  &#39;textAlignment&#39; and &#39;font&#39;
+   have been made more widely available in all controls with
+   consistent names and no conflicts.
+
+ * the &#39;color&#39; attribute of &lt;label&gt; has been changed to &#39;textColor&#39; to
+   be consistent with attributes used in other tags.
+
+ * the &#39;key&#39; attribute of &lt;button&gt;, &lt;menuItem&gt; and &lt;popUpButtonItem&gt;
+   has been changed to &#39;keyEquivalent&#39; to be consistent with other
+   attributes.
+
+ * the &#39;span&#39; attribute of &lt;hbox&gt; and &lt;vbox&gt; has been replaced by a
+   &#39;proportion&#39; attribute.
+
+ * the proportional boxes no longer automatically expand all the
+   views.  Make sure you specify the alignment flags you want for each
+   view.
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>0.8 - 2003-11-27<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/gnustep/libs-renaissance/commit/4da2f1bbddd5efacfd6f33cba71c56ff7117a330">Commit <code class="docutils literal notranslate"><span class="pre">4da2f1</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagImage</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Implement</span> <span class="n">hasFrame</span> <span class="ow">and</span> <span class="n">frameStyle</span> <span class="n">attributes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagBox</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">gsAutoLayoutVAlignment</span><span class="p">],</span>
+	<span class="p">[</span><span class="o">-</span><span class="n">gsAutoLayoutHAlignment</span><span class="p">]):</span> <span class="n">New</span> <span class="n">methods</span> <span class="n">fixing</span> <span class="n">computing</span>
+	<span class="n">autolayout</span> <span class="n">flags</span> <span class="n">when</span> <span class="n">the</span> <span class="n">box</span> <span class="n">content</span> <span class="n">has</span> <span class="n">autolayout</span> <span class="n">flags</span>
+	<span class="n">manually</span> <span class="n">specified</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">XML</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">autolayout</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Added</span> <span class="n">missing</span> <span class="n">autolayout</span><span class="o">-</span><span class="n">flags</span>
+	<span class="n">label</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">INSTALL</span><span class="o">.</span><span class="n">OSX</span><span class="p">:</span> <span class="n">Updated</span> <span class="k">for</span> <span class="n">new</span> <span class="n">filesystem</span> <span class="n">layout</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">INSTALL</span><span class="o">.</span><span class="n">OSX</span><span class="p">:</span> <span class="n">Updated</span><span class="p">,</span> <span class="n">including</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">using</span> <span class="n">the</span> <span class="o">.</span><span class="n">pbproj</span>
+	<span class="n">files</span> <span class="n">provided</span> <span class="n">by</span> <span class="n">Chris</span> <span class="n">Hanson</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">DecoderBackend</span><span class="o">/</span><span class="n">GSMarkupDecoderBackendCFXML</span><span class="o">.</span><span class="n">m</span><span class="p">:</span>
+	<span class="n">Fixed</span> <span class="n">typo</span> <span class="ow">in</span> <span class="n">instance</span> <span class="n">variable</span> <span class="n">declaration</span><span class="p">:</span> <span class="n">should</span> <span class="n">be</span>
+	<span class="n">CFXMLParserRef</span><span class="p">,</span> <span class="ow">not</span> <span class="n">CFXMLParserRef</span> <span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="p">(</span><span class="n">Reported</span> <span class="n">by</span> <span class="n">Chris</span>
+	<span class="n">Hanson</span> <span class="o">&lt;</span><span class="n">cmh</span><span class="nd">@mac</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span><span class="p">)</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupApplicationMain</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Include</span> <span class="n">GNUstep</span><span class="o">.</span><span class="n">h</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">DecoderBackend</span><span class="o">/</span><span class="n">GSMarkupDecoderBackendGSXML</span><span class="o">.</span><span class="n">m</span><span class="p">:</span>
+	<span class="n">Update</span> <span class="n">to</span> <span class="n">new</span> <span class="n">header</span> <span class="n">structure</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupApplicationMain</span><span class="o">.</span><span class="n">h</span><span class="p">,</span>
+	<span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupApplicatonMain</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">files</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="o">.</span><span class="n">files</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">include</span> <span class="n">GSMarkupApplicationMain</span><span class="o">.</span><span class="n">h</span><span class="o">.</span>
+	<span class="p">(</span><span class="k">with</span> <span class="n">minor</span> <span class="n">changes</span> <span class="n">by</span> <span class="n">Nicola</span> <span class="n">Pero</span> <span class="o">&lt;</span><span class="n">n</span><span class="o">.</span><span class="n">pero</span><span class="nd">@mi</span><span class="o">.</span><span class="n">flashnet</span><span class="o">.</span><span class="n">it</span><span class="o">&gt;</span><span class="p">)</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupConnector</span><span class="o">.</span><span class="n">h</span><span class="p">,</span> <span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupConnector</span><span class="o">.</span><span class="n">m</span><span class="p">:</span>
+	<span class="n">Reorganized</span> <span class="n">GSMarkupConnector</span> <span class="ow">and</span> <span class="n">subclasses</span> <span class="n">so</span> <span class="n">that</span> <span class="n">advanced</span>
+	<span class="n">connectors</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">associations</span><span class="p">,</span> <span class="n">can</span> <span class="n">be</span> <span class="n">implemented</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupCoder</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">GSMarkupCoder</span>
+	<span class="o">-</span><span class="n">encodeConnector</span><span class="p">:]):</span> <span class="n">XML</span><span class="o">-</span><span class="n">escape</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="n">of</span> <span class="n">attributes</span><span class="o">.</span>  <span class="n">Encode</span>
+	<span class="n">connector</span> <span class="n">contents</span> <span class="k">as</span> <span class="n">well</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">GSMarkupCoder</span> <span class="o">-</span><span class="n">encodeObject</span><span class="p">:]):</span> <span class="n">Added</span> <span class="n">cast</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupDecoder</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">GSMarkupDecoder</span>
+	<span class="o">-</span><span class="n">processParsedTag</span><span class="p">:]):</span> <span class="n">Fixed</span> <span class="n">memory</span> <span class="n">leak</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Documented</span> <span class="n">the</span> <span class="o">&lt;</span><span class="n">view</span><span class="o">&gt;</span> <span class="n">tag</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">title</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Updated</span> <span class="n">dates</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Updated</span><span class="o">/</span><span class="n">simplified</span> <span class="n">documentation</span> <span class="n">on</span>
+	<span class="n">NSDocument</span><span class="o">-</span><span class="n">based</span> <span class="n">applications</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">INSTALL</span><span class="o">.</span><span class="n">OSX</span><span class="p">:</span> <span class="n">Updated</span> <span class="n">instructions</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">Applications</span><span class="o">/</span><span class="n">Ink</span><span class="o">/</span><span class="p">:</span> <span class="n">New</span> <span class="n">example</span> <span class="n">contributed</span> <span class="n">by</span> <span class="n">Rodolfo</span>
+	<span class="n">W</span><span class="o">.</span> <span class="n">Zitellini</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTextView</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Added</span> <span class="n">richText</span><span class="p">,</span> <span class="n">usesFontPanel</span><span class="p">,</span> <span class="n">allowsUndo</span><span class="p">,</span> <span class="n">usesRuler</span><span class="p">,</span>
+	<span class="n">importsGraphics</span> <span class="n">attributes</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagScrollView</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Added</span> <span class="n">borderType</span> <span class="n">attribute</span><span class="o">.</span>  <span class="n">Use</span> <span class="n">no</span> <span class="n">border</span> <span class="n">by</span> <span class="n">default</span> <span class="n">on</span> <span class="n">Apple</span> <span class="n">Mac</span>
+	<span class="n">OS</span> <span class="n">X</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">Classes</span><span class="o">/</span><span class="p">:</span> <span class="n">New</span> <span class="n">directory</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagOutlineView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagOutlineView</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTableView</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTableView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTableColumn</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTableColumn</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagScrollView</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Explicitly</span> <span class="n">require</span> <span class="n">bezel</span> <span class="n">border</span> <span class="nb">type</span> <span class="n">on</span> <span class="n">GNUstep</span> <span class="n">since</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">no</span>
+	<span class="n">longer</span> <span class="n">the</span> <span class="n">default</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">NSViewSize</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">NSSplitView</span>
+	<span class="o">-</span><span class="n">sizeToFitContent</span><span class="p">]):</span> <span class="n">New</span> <span class="n">implementation</span> <span class="n">computing</span> <span class="n">size</span> <span class="kn">from</span>
+	<span class="nn">subviews</span> <span class="ow">and</span> <span class="n">dividers</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">splitView2</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupBrowser</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupBrowser</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">secureTextField</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagSecureTextField</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagSecureTextField</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>	
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">splitView</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagSplitView</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagSplitView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSAutoLayoutDefaults</span><span class="o">.</span><span class="n">m</span>
+	<span class="p">([</span><span class="n">NSSplitView</span> <span class="o">-</span><span class="n">autolayoutDefaultHorizontalAlignment</span><span class="p">]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">NSSplitView</span> <span class="o">-</span><span class="n">autolayoutDefaultVerticalAlignment</span><span class="p">]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">NSViewSize</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">NSSplitView</span> <span class="o">-</span><span class="n">sizeToFitContent</span><span class="p">]):</span> <span class="n">New</span>
+	<span class="n">method</span><span class="o">.</span>
+		<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Updated</span> <span class="n">description</span> <span class="n">of</span> <span class="n">the</span>
+	<span class="nb">type</span><span class="o">=</span><span class="s2">&quot;font&quot;</span> <span class="n">attribute</span> <span class="n">of</span> <span class="n">menu</span> <span class="n">tags</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMenu</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Renamed</span> <span class="n">predefined</span><span class="o">=</span><span class="s2">&quot;font&quot;</span>
+	<span class="n">to</span> <span class="n">be</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;font&quot;</span><span class="p">;</span> <span class="n">dropped</span> <span class="n">old</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;font&quot;</span> <span class="n">code</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMenu</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Recognize</span> <span class="n">predefined</span><span class="o">=</span><span class="s2">&quot;font&quot;</span>
+	<span class="n">attribute</span><span class="p">,</span> <span class="ow">and</span> <span class="n">create</span> <span class="n">the</span> <span class="n">menu</span> <span class="k">as</span> <span class="n">the</span> <span class="n">font</span> <span class="n">menu</span> <span class="n">using</span> <span class="n">the</span>
+	<span class="n">NSFontManager</span> <span class="n">fontMenu</span><span class="p">:</span> <span class="n">API</span> <span class="ow">in</span> <span class="n">that</span> <span class="n">case</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="p">:</span> <span class="n">All</span> <span class="n">files</span><span class="p">:</span> <span class="n">include</span> <span class="n">local</span> <span class="n">files</span> <span class="n">using</span> <span class="n">include</span>
+	<span class="s2">&quot;xxx&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="n">include</span> <span class="o">&lt;</span><span class="n">xxx</span><span class="o">&gt;.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>0.7 - 2003-01-31<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<div class="highlight-* notranslate"><div class="highlight"><pre><span></span>	examples to use the new &lt;menu&gt; grammar for submenus.  Added a
+	short paragraph explaining that you only need separate gsmarkup
+	files for menus, not for windows.
+	* Documentation/Tutorials/Renaissance/Pregenerated/: Regenerated.
+	* Documentation/gsmarkup.tex: Updated documentation on menus for
+	the new &lt;menu&gt;, &lt;menuItem&gt; syntax.
+	* Documentation/Pregenerated/: Regenerated.
+	* Documentation/gsmarkup.tex: Removed reference to no longer
+	existing &lt;separator&gt; tag for menu separators.
+	* Examples/menu.gsmarkup, menu1.gsmarkup: Updated for new &lt;menu&gt;,
+	&lt;menuItem&gt; grammar.
+		* Documentation/gsmarkup.dtd: &lt;menu&gt; can now have a &lt;menu&gt; in its
+	contents; &lt;menuItem&gt; is now empty.
+	* Examples/Applications/Templates/: New directory.
+
+	* Source/GNUmakefile (VERSION): Version 0.7.0
+
+	Warning: change in .gsmarkup format.  To create a submenu, you now
+	embed directly a &lt;menu&gt; tag in another &lt;menu&gt; tag.
+	* Source/TagLibrary/GSMarkupTagMenu.m ([-platformObjectInit]):
+	Manage &lt;menu&gt; tags in the content: silently create a NSMenuItem,
+	and put the NSMenu from the &lt;menu&gt; inside it.
+	* Source/TagLibrary/GSMarkupTagMenuItem.m ([-platformObjectInit]):
+	Emit a deprecation warning if a &lt;menuItem&gt; has a content.  But
+	keep the old gsmarkup files working still for a while. :-)
+
+	* Source/TagLibrary/GSMarkupWindowController.m: Include GNUstep.h
+	on Apple Mac OS X.
+	* Source/TagLibrary/GSMarkupDocument.m: Same change.
+
+	* Source/TagLibrary/GSMarkupTagPopUpButtonItem.m ([-platformObjectInit]):
+	Recognize key attribute.
+	* Documentation/Tutorials/Renaissance/Renaissance.tex: Fixed a few
+	typos reported by Peter Cooper (&lt;comrade@obverse.com.au&gt;).
+	* Documentation/Tutorials/Renaissance/Pregenerated/: Regenerated.
+	* Documentation/gsmarkup.dtd: Changed &#39;class&#39; attribute of
+	&lt;instance&gt; to &#39;instanceOf&#39;; added &#39;instanceOf&#39; attribute for
+	&lt;window&gt;, &lt;panel&gt; and &lt;image&gt;.
+	* Documentation/macros.tex: New file, documenting the GNUstep
+	macros provided by Renaissance.
+	* Documentation/GNUmakefile (manual_LATEX_FILES): Added the new file.
+	* Documentation/manual.tex: Include the new file.
+	* Documentation/Pregenerated/: Regenerated.
+	* Documentation/gsmarkup.tex: Updated and extended documentation
+	on accessing the top-level objects.
+	* Documentation/Pregenerated/: Regenerated.
+	* Documentation/gsmarkup.tex (Integrating Renaissance in your
+	application): New documentation on how to integrate/use
+	Renaissance in practice in an application.  Includes new section
+	on the new GSMarkupDocument and GSMarkupWindowController classes,
+	which allow to use Renaissance in NSDocument-based applications.
+	* Documentation/title.tex: Updated copyright dates.
+	* Documentation/Pregenerated/: Regenerated.
+	* Examples/Applications/SimpleEditor/: New example.
+	* Tools/GSMarkupBrowser.m: Use the new API -bundleDidLoadGSMarkup: to
+	access the top-level objects to set the display autolayout
+	containers flag.
+	* Source/Markup/GSMarkupBundleAdditions.h,
+	Markup/GSMarkupBundleAdditions.m: Implemented sending a
+	GSMarkupBundleDidLoadGSMarkup notification, with the top-level
+	objects in the user info dictionary, after the file is loaded;
+	automatically call the -bundleDidLoadGSMarkup: method of the file
+	owner if it implements it.
+
+	* Source/TagLibrary/GSMarkupDocument.h: New file.
+	* Source/TagLibrary/GSMarkupDocument.m: New file.
+	* Source/TagLibrary/GSMarkupWindowController.h: New file.
+	* Source/TagLibrary/GSMarkupWindowController.m: New file.
+	* Source/TagLibrary/GNUmakefile: Added the new files.
+	* Source/Renaissance.h: Include GSMarkupDocument.h and
+	GSMarkupWindowController.h.
+
+	* Source/TagLibrary/GSMarkupTagWindow.m ([-platformObjectInit]):
+	Small code reorganization: read resizable flag before computing
+	resizability from autolayout flags, avoiding the computation if
+	not needed.
+
+	Change in API: &#39;class&#39; attribute renamed to &#39;instanceOf&#39; to
+	prevent possible confusion with CSS usage of the same attribute.
+	* Source/Markup/GSMarkupTagObject.h ([-useClassAttribute]):
+	Renamed to useInstanceOfAttribute.
+	* Source/Markup/GSMarkupTagObject.m ([-useClassAttribute]):
+	Renamed to useInstanceOfAttribute.  ([-platformObjectAlloc]): Use
+	instanceOf attribute instead of class attribute; call
+	useInstanceOfAttribute instead of useClassAttribute.
+	* Source/Markup/GSMarkupTagInstance.m ([-platformObjectAlloc]):
+	Use instanceOf attribute instead of class attribute.
+	* Source/TagLibrary/GSMarkupTagWindow.m ([-useClassAttribute]):
+	Renamed to useInstanceOfAttribute.
+	* Source/TagLibrary/GSMarkupTagView.m ([-useClassAttribute]):
+	Renamed to useInstanceOfAttribute.
+		* Tools/GSMarkupBrowser.m: Implemented turning on display of
+	autolayout containers if user defaults DisplayAutoLayout
+	is set to YES.
+		* Documentation/gsmarkup.tex: Updated the window tag
+	documentation.
+	* Documentation/Pregenerated/: Regenerated.
+	* Documentation/gsmarkup.tex: Updated - renamed &#39;class&#39; attribute
+	to &#39;instanceOf&#39;.
+	* Documentation/Pregenerated/: Regenerated.
+	* Examples/calculator.gsmarkup: Updated to use instanceOf
+	attribute instead of class.
+	* Examples/class.gsmarkup: Same change.
+	* Examples/class2.gsmarkup: Same change.
+	* Examples/instance.gsmarkup: Same change.
+		* Documentation/gsmarkup.tex (subsection{The \texttt{&lt;gsmarkup&gt;}
+	tag}): Added missing parenthesis.
+	* Documentation/gsmarkup.tex: Documented the class attribute.
+	Fixed some small overfull TeX boxes.
+	* Documentation/Pregenerated/: Regenerated.	
+	* Source/Markup/DecoderBackend/GSMarkupDecoderBackendLibXML.m ([-parse]):
+	Updated a little to set features, in particular the &#39;substitute
+	entities&#39; feature, so that &amp;gt; and similar basic entities are
+	automatically substituted.
+		* INSTALL.OSX: Changed &#39;Apple OSX&#39; to be &#39;Apple Mac OS X&#39;.
+	
+	* Source/Markup/DecoderBackend/GSMarkupDecoderBackendLibXML.m: New
+	file implementing a direct libxml2 based backend, for future use
+	on OpenStep 4.x systems (adapted to new decoder backend
+	organization by Nicola).
+	* Source/Markup/GSMarkupDecoderBackend.h,
+	* Source/Markup/GSMarkupDecoderBackend.m: Rewritten to have a very
+	general public API with no reference whatsoever to
+	backend-specific implementation details.
+	* Source/Markup/DecoderBackend/: New directory.
+	* Source/Markup/DecoderBackend/GSMarkupDecoderBackendCFXML.m: New
+	file, with CFXML code taken from GSMarkupDecoderBackend.m.
+	* Source/Markup/DecoderBackend/GSMarkupDecoderBackendGSXML.m: New
+	file, with GSXML code taken from GSMarkupDecoderBackend.m.
+	* Source/Markup/GSMarkupDecoder.m ([-initWithData:]): Get the
+	decoder backend using the new API.
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>0.6 - 2003-01-12<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">button1</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">Use</span> <span class="n">NSApplicationIcon</span><span class="p">,</span> <span class="ow">not</span> <span class="n">GNUstep</span>
+	<span class="n">image</span><span class="p">,</span> <span class="n">so</span> <span class="n">it</span> <span class="n">works</span> <span class="n">on</span> <span class="nb">all</span> <span class="n">systems</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">image</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">Idem</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">panel4</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">Idem</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">button</span><span class="o">-</span><span class="n">types</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">Added</span> <span class="n">image</span> <span class="n">buttons</span><span class="p">,</span> <span class="n">tidied</span> <span class="n">up</span>
+	<span class="n">layout</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagButton</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Manually</span> <span class="n">fix</span> <span class="n">font</span> <span class="k">for</span> <span class="n">buttons</span> <span class="n">on</span> <span class="n">Apple</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="o">.</span>  <span class="n">Use</span>
+	<span class="n">NSSquaredBezelStyle</span> <span class="k">for</span> <span class="n">buttons</span> <span class="k">with</span> <span class="n">images</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSAutoLayoutDefaults</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Hack</span> <span class="n">to</span> <span class="n">roughly</span> <span class="n">adjust</span>
+	<span class="n">borders</span> <span class="n">of</span> <span class="n">buttons</span> <span class="n">on</span> <span class="n">Apple</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">Include</span> <span class="n">GSAutoLayoutDefaults</span><span class="o">.</span><span class="n">h</span><span class="o">.</span>	
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSAutoLayoutDefaults</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">NSView</span>
+	<span class="o">-</span><span class="n">setDisplayAutoLayoutContainers</span><span class="p">:]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">NSWindow</span> <span class="o">-</span><span class="n">setDisplayAutoLayoutContainers</span><span class="p">:]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSAutoLayoutDefaults</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">Declare</span> <span class="ow">and</span> <span class="n">comment</span>
+	<span class="n">the</span> <span class="n">new</span> <span class="n">methods</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSHBox</span><span class="o">.</span><span class="n">h</span> <span class="p">(</span><span class="n">_displayAutoLayoutContainers</span><span class="p">):</span> <span class="n">New</span> <span class="n">ivar</span><span class="o">.</span>	
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSVBox</span><span class="o">.</span><span class="n">h</span> <span class="p">(</span><span class="n">_displayAutoLayoutContainers</span><span class="p">):</span> <span class="n">New</span> <span class="n">ivar</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSHBox</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">setDisplayAutoLayoutContainers</span><span class="p">:]):</span>
+	<span class="n">New</span> <span class="n">method</span><span class="o">.</span>  <span class="p">([</span><span class="o">-</span><span class="n">drawRect</span><span class="p">:]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSVBox</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">setDisplayAutoLayoutContainers</span><span class="p">:]):</span>
+	<span class="n">New</span> <span class="n">method</span><span class="o">.</span>  <span class="p">([</span><span class="o">-</span><span class="n">drawRect</span><span class="p">:]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">button</span><span class="o">-</span><span class="n">types</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagButton</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span> 
+	<span class="n">On</span> <span class="n">Apple</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="p">,</span> <span class="nb">set</span> <span class="n">bezel</span> <span class="n">style</span> <span class="o">/</span> <span class="n">bordered</span> <span class="n">to</span> <span class="k">try</span> <span class="n">match</span> <span class="n">the</span>
+	<span class="n">default</span> <span class="n">native</span> <span class="n">look</span> <span class="o">&amp;</span> <span class="n">feel</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagButton</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Implemented</span> <span class="nb">type</span> <span class="n">attribute</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">INSTALL</span><span class="p">,</span> <span class="n">NOTES</span><span class="o">.</span><span class="n">OSX</span><span class="p">,</span> <span class="n">README</span><span class="p">:</span> <span class="n">Changed</span> <span class="s1">&#39;Apple OSX&#39;</span> <span class="n">to</span> <span class="n">be</span> <span class="s1">&#39;Apple Mac</span>
+	<span class="n">OS</span> <span class="n">X</span><span class="s1">&#39;.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">autolayout</span><span class="o">.</span><span class="n">tex</span><span class="p">,</span> <span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Use</span> <span class="s1">&#39;Apple Mac OS</span>
+	<span class="n">X</span><span class="s1">&#39;, not &#39;</span><span class="n">Apple</span> <span class="n">OSX</span><span class="s1">&#39;.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Use</span> <span class="s1">&#39;Apple</span>
+	<span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="s1">&#39;, not &#39;</span><span class="n">Apple</span> <span class="n">OSX</span><span class="s1">&#39;.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Updated</span> <span class="n">documentation</span> <span class="n">on</span>
+	<span class="n">awakeFromGSMarkup</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">README</span><span class="p">:</span> <span class="n">Explain</span> <span class="n">that</span> <span class="n">this</span> <span class="n">directory</span> <span class="n">contains</span> <span class="n">many</span> <span class="n">files</span>
+	<span class="n">which</span> <span class="n">are</span> <span class="n">actually</span> <span class="n">tests</span><span class="p">,</span> <span class="ow">not</span> <span class="n">examples</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">form</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">,</span> <span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupDecoderBackend</span><span class="o">.</span><span class="n">h</span><span class="p">,</span>
+	<span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagBox</span><span class="o">.</span><span class="n">m</span><span class="p">,</span> <span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMenuItem</span><span class="o">.</span><span class="n">m</span><span class="p">:</span>
+	<span class="n">Replaced</span> <span class="s1">&#39;Apple OSX&#39;</span> <span class="k">with</span> <span class="s1">&#39;Mac OS X&#39;</span> <span class="ow">in</span> <span class="n">comments</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupBundleAdditions</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">NSBundle</span>
+	<span class="o">+</span><span class="n">registerStaticObject</span><span class="p">:</span><span class="n">withName</span><span class="p">:]):</span> <span class="n">Declare</span> <span class="n">to</span> <span class="n">prevent</span> <span class="n">warnings</span> <span class="n">on</span>
+	<span class="n">Apple</span><span class="o">.</span>
+
+	<span class="n">Fixed</span> <span class="n">decoder</span> <span class="n">so</span> <span class="n">that</span> <span class="n">it</span> <span class="n">sends</span> <span class="n">awakeFromGSMarkup</span> <span class="n">to</span> <span class="nb">all</span> <span class="n">platform</span>
+	<span class="n">objects</span> <span class="n">created</span><span class="p">,</span> <span class="n">plus</span> <span class="n">on</span> <span class="n">the</span> <span class="n">NSOwner</span><span class="p">;</span> <span class="ow">not</span> <span class="n">just</span> <span class="n">to</span> <span class="n">the</span> <span class="n">top</span><span class="o">-</span><span class="n">level</span>
+	<span class="n">objects</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupAwaker</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupAwaker</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="o">.</span><span class="n">files</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupBundleAdditions</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">+</span><span class="n">loadGSMarkupData</span><span class="p">:</span><span class="n">withName</span><span class="p">:</span>
+	<span class="n">externalNameTable</span><span class="p">:</span><span class="n">withZone</span><span class="p">:</span><span class="n">localizableStringsTable</span><span class="p">:</span><span class="n">inBundle</span><span class="p">:</span>
+	<span class="n">tagMapping</span><span class="p">:]):</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">awaker</span><span class="p">,</span> <span class="ow">and</span> <span class="n">use</span> <span class="n">it</span> <span class="n">to</span> <span class="n">awake</span> <span class="n">the</span> <span class="n">objects</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupTagObject</span><span class="o">.</span><span class="n">h</span> <span class="p">(</span><span class="n">_awaker</span><span class="p">):</span> <span class="n">New</span> <span class="n">instance</span>
+	<span class="n">variable</span><span class="o">.</span>
+	<span class="p">([</span><span class="o">-</span><span class="n">setAwaker</span><span class="p">:],</span> <span class="p">[</span><span class="o">-</span><span class="n">setPlatformObject</span><span class="p">:]):</span> <span class="n">New</span> <span class="n">methods</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupTagObject</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Implemented</span> <span class="n">the</span> <span class="n">new</span> <span class="n">methods</span><span class="p">,</span>
+	<span class="ow">and</span> <span class="n">use</span> <span class="n">them</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">new</span> <span class="n">instance</span> <span class="n">variables</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">existing</span> <span class="n">ones</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupTagInstance</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectAlloc</span><span class="p">]):</span>
+	<span class="n">Use</span> <span class="n">setPlatformObject</span><span class="p">:</span> <span class="n">rather</span> <span class="n">than</span> <span class="n">assigning</span> <span class="n">to</span> <span class="n">_platformObject</span>
+	<span class="n">directly</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagBox</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Everywhere</span><span class="p">,</span> <span class="n">use</span>
+	<span class="n">setPlatformObject</span><span class="p">:</span> <span class="n">rather</span> <span class="n">than</span> <span class="n">assigning</span> <span class="n">to</span> <span class="n">_platformObject</span>
+	<span class="n">directly</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagBoxSeparator</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagControl</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagHbox</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMatrixCell</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMatrixRow</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMenu</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMenuItem</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMenuSeparator</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagScrollView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagVbox</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagWindow</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagFormItem</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">Removed</span> <span class="n">obsolete</span>
+	<span class="n">declaration</span> <span class="n">of</span> <span class="n">setPlatformObject</span><span class="p">:</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagPopUpButtonItem</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagFormItem</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Removed</span> <span class="n">obsolete</span>
+	<span class="n">implementation</span> <span class="n">of</span> <span class="n">setPlatformObject</span><span class="p">:</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagPopUpButtonItem</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>	
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagForm</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Push</span> <span class="n">the</span> <span class="n">form</span> <span class="n">item</span> <span class="n">platform</span> <span class="nb">object</span> <span class="n">into</span> <span class="n">the</span> <span class="n">form</span> <span class="n">item</span><span class="p">,</span> <span class="n">so</span> <span class="n">that</span> <span class="n">the</span>
+	<span class="n">form</span> <span class="n">items</span> <span class="n">can</span> <span class="n">be</span> <span class="n">connected</span> <span class="n">via</span> <span class="n">outlets</span><span class="o">.</span>  <span class="n">Localize</span> <span class="n">titles</span> <span class="n">of</span> <span class="n">form</span>
+	<span class="n">items</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagFormItem</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">setPlatformObject</span><span class="p">:]):</span>
+	<span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="o">+</span><span class="n">localizableAttributes</span><span class="p">]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagFormItem</span><span class="o">.</span><span class="n">h</span> <span class="p">([</span><span class="o">-</span><span class="n">setPlatformObject</span><span class="p">:]):</span>
+	<span class="n">Declare</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">class2</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">Workaround</span> <span class="n">problem</span> <span class="n">on</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">class</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">class2</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span> <span class="p">(</span><span class="n">Advanced</span> <span class="n">embedded</span> <span class="n">outlets</span> <span class="n">using</span> <span class="n">key</span>
+	<span class="n">value</span> <span class="n">paths</span><span class="p">):</span> <span class="n">Expanded</span> <span class="ow">and</span> <span class="n">made</span> <span class="n">more</span> <span class="n">friendly</span> <span class="n">documentation</span> <span class="n">on</span>
+	<span class="n">advanced</span> <span class="n">embedded</span> <span class="n">outlets</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="n">Implemented</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;Xxx&quot;</span> <span class="n">attribute</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">view</span> <span class="ow">and</span> <span class="n">window</span> <span class="n">tags</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupTagObject</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectAlloc</span><span class="p">]):</span>
+	<span class="n">Modified</span> <span class="n">to</span> <span class="n">support</span><span class="p">,</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">appropriate</span> <span class="n">cases</span><span class="p">,</span> <span class="n">a</span> <span class="s1">&#39;class=&quot;xxx&quot;&#39;</span>
+	<span class="n">attribute</span> <span class="n">customizing</span> <span class="n">the</span> <span class="k">class</span> <span class="nc">used</span> <span class="n">to</span> <span class="n">allocate</span> <span class="n">the</span> <span class="n">instance</span><span class="o">.</span>
+	<span class="p">([</span><span class="o">+</span><span class="n">useClassAttribute</span><span class="p">]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="o">+</span><span class="n">defaultPlatformObjectClass</span><span class="p">]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupTagObject</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">Declared</span> <span class="n">the</span> <span class="n">new</span> <span class="n">methods</span><span class="p">,</span> <span class="ow">and</span>
+	<span class="n">documented</span> <span class="n">the</span> <span class="n">new</span> <span class="n">behaviour</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagBox</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">+</span><span class="n">defaultPlatformObjectClass</span><span class="p">]):</span>
+	<span class="n">Added</span><span class="o">.</span>
+	<span class="p">([</span><span class="o">-</span><span class="n">platformObjectAlloc</span><span class="p">]):</span> <span class="n">Removed</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagButton</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagColorWell</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagControl</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagForm</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagHbox</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagHspace</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagImage</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagLabel</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>	
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMatrix</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagMatrixCell</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagPanel</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagPopUpButton</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagScrollView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTextField</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTextView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagVbox</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagVspace</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagWindow</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Similar</span> <span class="n">changes</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagView</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">+</span><span class="n">useClassAttribute</span><span class="p">]):</span> <span class="n">Added</span><span class="p">,</span>
+	<span class="k">return</span> <span class="n">YES</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagWindow</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">+</span><span class="n">useClassAttribute</span><span class="p">]):</span> <span class="n">Added</span><span class="p">,</span>
+	<span class="k">return</span> <span class="n">YES</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">advancedOutlet</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span> <span class="p">(</span><span class="n">Attributes</span> <span class="n">referring</span> <span class="n">to</span> <span class="n">other</span>
+	<span class="n">objects</span><span class="p">):</span> <span class="n">More</span> <span class="n">documentation</span> <span class="n">about</span> <span class="n">having</span> <span class="c1">#NSApp always available</span>
+	<span class="k">as</span> <span class="n">the</span> <span class="n">shared</span> <span class="n">application</span> <span class="nb">object</span><span class="o">.</span>
+	<span class="p">(</span><span class="n">The</span> <span class="nb">id</span> <span class="n">attribute</span><span class="p">):</span> <span class="n">Document</span> <span class="n">the</span> <span class="n">fact</span> <span class="n">that</span> <span class="n">ids</span> <span class="n">should</span> <span class="ow">not</span> <span class="n">contain</span>
+	<span class="n">dots</span><span class="o">.</span>
+	<span class="p">(</span><span class="n">Advanced</span> <span class="n">embedded</span> <span class="n">outlets</span> <span class="n">using</span> <span class="n">key</span> <span class="n">value</span> <span class="n">paths</span><span class="p">):</span> <span class="n">New</span> <span class="n">section</span><span class="o">.</span>
+
+	<span class="n">Updated</span> <span class="n">documentation</span> <span class="ow">in</span> <span class="n">various</span> <span class="n">places</span> <span class="n">to</span> <span class="n">explain</span> <span class="n">shortly</span> <span class="n">about</span>
+	<span class="n">the</span> <span class="n">new</span> <span class="c1">#NSApp.delegate syntax in connectors.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupDecoder</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">processParsedTag</span><span class="p">:]):</span> <span class="n">Ignore</span>
+	<span class="n">dots</span> <span class="ow">and</span> <span class="n">everything</span> <span class="n">following</span> <span class="n">dots</span> <span class="ow">in</span> <span class="n">ids</span><span class="o">.</span>
+
+	<span class="n">Implemented</span> <span class="n">support</span> <span class="k">for</span> <span class="n">the</span> <span class="n">syntax</span> <span class="c1">#NSApp.delegate in connectors</span>
+	<span class="ow">and</span> <span class="n">embedded</span> <span class="n">outlets</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupConnector</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">GSMarkupConnector</span>
+	<span class="o">-</span><span class="n">getObjectForIdString</span><span class="p">:</span><span class="n">usingNameTable</span><span class="p">:]):</span> <span class="n">New</span> <span class="n">private</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">GSMarkupOutletConnector</span> <span class="o">-</span><span class="n">establishConnectionUsingNameTable</span><span class="p">:]):</span>
+	<span class="n">Use</span> <span class="n">the</span> <span class="n">new</span> <span class="n">method</span> <span class="n">to</span> <span class="n">look</span> <span class="n">up</span> <span class="n">ids</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">GSMarkupControlConnector</span> <span class="o">-</span><span class="n">establishConnectionUsingNameTable</span><span class="p">:]):</span>
+	<span class="n">Idem</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span> <span class="p">(</span><span class="n">subsection</span><span class="p">{</span><span class="n">How</span> <span class="n">objects</span> <span class="n">are</span> <span class="n">given</span>
+	<span class="n">ids</span><span class="p">}):</span> <span class="n">Removed</span> <span class="n">comment</span> <span class="n">about</span> <span class="n">having</span> <span class="c1">#NSApp always available being</span>
+	<span class="n">a</span> <span class="n">potential</span> <span class="n">idea</span> <span class="o">-</span> <span class="n">I</span><span class="s1">&#39;ve now implemented it.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">GNUmakefile</span> <span class="p">(</span><span class="n">SUBPROJECTS</span><span class="p">):</span> <span class="n">Do</span> <span class="ow">not</span> <span class="n">include</span> <span class="n">Documentation</span> <span class="n">on</span>
+	<span class="n">GNUstep</span><span class="p">,</span> <span class="k">for</span> <span class="n">safer</span> <span class="n">compilation</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">popUpButton2</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">Set</span> <span class="n">target</span> <span class="n">of</span> <span class="n">terminate</span> <span class="n">item</span> <span class="n">to</span>
+	<span class="c1">#NSApp.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">NSApp</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagPopUpButtonItem</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">setPlatformObject</span><span class="p">:]):</span>
+	<span class="n">Fixed</span> <span class="n">memory</span> <span class="n">bug</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupBundleAdditions</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Implemented</span>
+	<span class="n">automatically</span> <span class="n">adding</span> <span class="n">NSApp</span> <span class="k">with</span> <span class="nb">id</span> <span class="n">NSApp</span> <span class="n">to</span> <span class="n">the</span> <span class="n">name</span> <span class="n">table</span> <span class="k">if</span>
+	<span class="n">running</span> <span class="k">with</span> <span class="n">a</span> <span class="n">GUI</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">vbox2</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">popUpButton</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">popUpButton2</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">button2</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">image</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">panel4</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">new</span> <span class="n">image</span> <span class="n">tag</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">NSViewSize</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">NSImageView</span>
+	<span class="o">-</span><span class="n">sizeToFitContent</span><span class="p">]):</span> <span class="n">Added</span> <span class="n">a</span> <span class="n">hack</span> <span class="n">implementation</span> <span class="n">of</span>
+	<span class="n">sizeToFitContent</span> <span class="k">for</span> <span class="n">NSImageView</span> <span class="n">on</span> <span class="n">Mac</span> <span class="n">OS</span> <span class="n">X</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagPopUpButtonItem</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Sort</span> <span class="n">of</span>
+	<span class="n">hackishly</span> <span class="n">rewritten</span> <span class="n">to</span> <span class="n">store</span> <span class="n">a</span> <span class="n">platform</span> <span class="nb">object</span><span class="p">,</span> <span class="n">so</span> <span class="n">that</span> <span class="n">outlets</span>
+	<span class="n">such</span> <span class="k">as</span> <span class="n">target</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">on</span> <span class="n">it</span><span class="p">;</span> <span class="n">added</span> <span class="n">tag</span> <span class="ow">and</span> <span class="n">action</span> <span class="n">attributes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagPopUpButtonItem</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">Corresponding</span>
+	<span class="n">update</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagPopUpButton</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Localize</span> <span class="n">titles</span><span class="p">;</span> <span class="n">updated</span> <span class="n">code</span> <span class="k">for</span> <span class="n">new</span> <span class="n">popup</span> <span class="n">button</span> <span class="n">items</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagControl</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Removed</span> <span class="n">editable</span> <span class="ow">and</span>
+	<span class="n">selectable</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">added</span> <span class="n">enabled</span> <span class="n">attribute</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagImage</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Added</span> <span class="n">editable</span> <span class="n">attribute</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTextField</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Added</span> <span class="n">editable</span> <span class="ow">and</span>
+	<span class="n">selectable</span> <span class="n">attributes</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagTextView</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">The</span> <span class="n">same</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagImage</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagImage</span><span class="o">.</span><span class="n">h</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Added</span> <span class="n">the</span> <span class="n">new</span> <span class="n">files</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Documented</span> <span class="n">the</span> <span class="n">image</span> <span class="n">tag</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">dtd</span><span class="p">:</span> <span class="n">Added</span> <span class="n">some</span> <span class="n">code</span> <span class="k">for</span> <span class="n">the</span> <span class="n">image</span> <span class="n">tag</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">gsmarkup</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">When</span> <span class="n">talking</span> <span class="n">about</span> <span class="n">portability</span> <span class="n">of</span>
+	<span class="o">&lt;</span><span class="n">menu</span><span class="o">&gt;</span> <span class="n">tags</span><span class="p">,</span> <span class="n">explain</span> <span class="n">that</span> <span class="n">on</span> <span class="n">OSX</span> <span class="n">there</span> <span class="n">should</span> <span class="n">be</span> <span class="n">a</span> <span class="n">single</span>
+	<span class="nb">type</span><span class="o">=</span><span class="s2">&quot;apple&quot;</span> <span class="n">submenu</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">.</span><span class="n">tex</span> <span class="p">(</span><span class="n">Adding</span> <span class="n">a</span>
+	<span class="n">menu</span><span class="p">):</span> <span class="n">Explain</span> <span class="n">that</span> <span class="n">there</span> <span class="n">should</span> <span class="n">be</span> <span class="n">a</span> <span class="n">single</span> <span class="n">menu</span> <span class="k">with</span>
+	<span class="nb">type</span><span class="o">=</span><span class="s2">&quot;apple&quot;</span> <span class="n">on</span> <span class="n">Apple</span> <span class="n">OSX</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>0.5 - 2002-12-31<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+	<span class="o">*</span> <span class="n">README</span><span class="p">:</span> <span class="n">Added</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">GNUstep</span> <span class="n">Renaissance</span> <span class="n">homepage</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">GNUmakefile</span> <span class="p">(</span><span class="n">CVS_MODULE_NAME</span><span class="p">,</span> <span class="n">CVS_FLAGS</span><span class="p">,</span> <span class="n">RELEASE_DIR</span><span class="p">):</span> <span class="n">Added</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">ANNOUNCE</span><span class="p">:</span> <span class="n">Cut</span> <span class="n">down</span> <span class="n">the</span> <span class="n">last</span> <span class="n">few</span> <span class="n">sentences</span><span class="p">,</span> <span class="n">which</span> <span class="n">do</span>
+	<span class="ow">not</span> <span class="n">really</span> <span class="n">explain</span> <span class="n">much</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">README</span><span class="p">:</span> <span class="n">Expanded</span><span class="p">;</span> <span class="n">rewritten</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">GNUmakefile</span> <span class="p">(</span><span class="n">VERSION</span><span class="p">):</span> <span class="n">Version</span> <span class="ow">is</span> <span class="n">now</span> <span class="mf">0.5.0</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Use</span> <span class="n">apple</span><span class="p">,</span> <span class="ow">not</span> <span class="n">nx</span> <span class="n">library</span><span class="o">-</span><span class="n">combo</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Check</span> <span class="n">that</span> <span class="n">FOUNDATION_LIB</span> <span class="ow">is</span> <span class="n">apple</span><span class="p">,</span> <span class="ow">not</span> <span class="n">nx</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">INSTALL</span><span class="o">.</span><span class="n">OSX</span><span class="p">:</span> <span class="n">Updated</span> <span class="n">configure</span> <span class="n">instructions</span> <span class="o">--</span> <span class="n">the</span> 
+	<span class="o">--</span><span class="k">with</span><span class="o">-</span><span class="n">library</span><span class="o">-</span><span class="n">combo</span><span class="o">=</span><span class="n">nx</span> <span class="n">flag</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">needed</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Updated</span> <span class="n">to</span>
+	<span class="n">latest</span> <span class="n">gnustep</span><span class="o">-</span><span class="n">make</span> <span class="kn">from</span> <span class="nn">CVS</span><span class="p">:</span> <span class="n">use</span> <span class="n">apple</span><span class="p">,</span> <span class="ow">not</span> <span class="n">nx</span> <span class="n">library</span><span class="o">-</span><span class="n">combo</span> <span class="ow">in</span>
+	<span class="n">makefiles</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">.</span><span class="n">tex</span> <span class="p">(</span><span class="n">section</span><span class="p">{</span><span class="n">Adding</span>
+	<span class="n">a</span> <span class="n">menu</span><span class="p">}):</span> <span class="n">Fixed</span> <span class="n">typo</span><span class="p">:</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;menu&quot;</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;main&quot;</span> <span class="p">(</span><span class="n">Reported</span>
+	<span class="n">by</span> <span class="n">b</span><span class="o">.</span><span class="n">gohla</span><span class="nd">@gmx</span><span class="o">.</span><span class="n">de</span><span class="p">)</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">Added</span> <span class="n">Tutorials</span> <span class="n">subproject</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="p">:</span> <span class="n">New</span> <span class="n">directory</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span> 
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="p">:</span> <span class="n">New</span> <span class="n">directory</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/.</span><span class="n">latex2html</span><span class="o">-</span><span class="n">init</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">GNUmakefile</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">New</span> <span class="n">directory</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Tutorials</span><span class="o">/</span><span class="n">Renaissance</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/*</span><span class="p">:</span> <span class="n">New</span> <span class="n">files</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/.</span><span class="n">latex2html</span><span class="o">-</span><span class="n">init</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">ANNOUNCE</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span> <span class="n">added</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">TagLibrary</span><span class="o">/</span><span class="n">GSMarkupTagWindow</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">platformObjectInit</span><span class="p">]):</span>
+	<span class="n">Do</span> <span class="ow">not</span> <span class="n">defer</span> <span class="n">the</span> <span class="n">window</span> <span class="o">--</span> <span class="n">deferred</span> <span class="n">windows</span> <span class="n">are</span> <span class="n">somewhat</span> <span class="n">fragile</span>
+	<span class="n">on</span> <span class="n">GNUstep</span> <span class="o">--</span> <span class="n">better</span> <span class="n">keep</span> <span class="n">the</span> <span class="n">code</span> <span class="n">robust</span> <span class="k">for</span> <span class="n">now</span><span class="o">.</span>
+	
+	<span class="o">*</span> <span class="n">TODO</span><span class="p">:</span> <span class="n">Marked</span> <span class="n">fixing</span> <span class="n">comments</span> <span class="k">as</span> <span class="n">done</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">autolayout</span><span class="o">.</span><span class="n">tex</span> <span class="p">(</span><span class="n">Renaissance</span> <span class="n">AutoLayout</span> <span class="n">support</span> <span class="k">for</span>
+	<span class="n">minimum</span> <span class="n">sizes</span><span class="p">):</span> <span class="n">Fixed</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">example</span> <span class="n">code</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">autolayout</span><span class="o">.</span><span class="n">tex</span><span class="p">:</span> <span class="n">Minor</span> <span class="n">spelling</span> <span class="n">fixes</span> <span class="ow">and</span> <span class="n">small</span>
+	<span class="n">tidyups</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Documentation</span><span class="o">/</span><span class="n">Pregenerated</span><span class="o">/</span><span class="p">:</span> <span class="n">Regenerated</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">comment</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">comment2</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Examples</span><span class="o">/</span><span class="n">comment3</span><span class="o">.</span><span class="n">gsmarkup</span><span class="p">:</span> <span class="n">New</span> <span class="n">file</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupDecoderBackend</span><span class="o">.</span><span class="n">m</span> <span class="p">(</span><span class="n">GSMarkupCreateStructure</span><span class="p">):</span>
+	<span class="n">Copy</span> <span class="n">the</span> <span class="n">CFXML</span> <span class="n">text</span> <span class="n">of</span> <span class="n">a</span> <span class="n">node</span> <span class="n">before</span> <span class="n">using</span> <span class="n">it</span><span class="o">.</span>  <span class="n">Fixes</span> <span class="n">weird</span>
+	<span class="n">decoding</span> <span class="n">bugs</span> <span class="n">on</span> <span class="n">Apple</span> <span class="n">OSX</span><span class="o">.</span>
+
+	<span class="n">Fixed</span> <span class="n">processing</span> <span class="n">comments</span><span class="p">,</span> <span class="ow">and</span> <span class="n">implemented</span> <span class="n">collapsing</span> <span class="n">whitespaces</span><span class="p">,</span>
+	<span class="n">newlines</span> <span class="ow">and</span> <span class="n">tabs</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">HTML</span> <span class="n">way</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupDecoder</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="n">NSString</span>
+	<span class="o">-</span><span class="n">stringByStrippingWhitespaces</span><span class="p">]):</span> <span class="n">New</span> <span class="n">auxiliary</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">GSMarkupTag</span> <span class="o">-</span><span class="n">addStringToContent</span><span class="p">:]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">GSMarkupTag</span> <span class="o">-</span><span class="n">finalizeStrings</span><span class="p">]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">GSMarkupDecoder</span> <span class="o">+</span><span class="n">initialize</span><span class="p">]):</span> <span class="n">New</span> <span class="n">method</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">GSMarkupDecoder</span> <span class="o">-</span><span class="n">foundFreeString</span><span class="p">:</span><span class="n">name</span><span class="p">]):</span> <span class="n">Use</span> <span class="n">the</span> <span class="n">new</span> <span class="n">methods</span> <span class="n">of</span>
+	<span class="n">GSMarkupTag</span><span class="p">;</span> <span class="n">updated</span> <span class="k">for</span> <span class="n">changes</span><span class="o">.</span>
+	<span class="p">([</span><span class="n">GSMarkupDecoder</span> <span class="o">-</span><span class="n">processParsedTag</span><span class="p">:]):</span> <span class="n">Call</span> <span class="n">finalizeStrings</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">Markup</span><span class="o">/</span><span class="n">GSMarkupDecoderBackend</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Do</span> <span class="ow">not</span> <span class="n">trim</span> <span class="n">manually</span> <span class="n">the</span>
+	<span class="n">free</span> <span class="n">strings</span> <span class="n">when</span> <span class="n">found</span><span class="o">.</span>  <span class="n">That</span> <span class="n">stage</span> <span class="n">has</span> <span class="n">been</span> <span class="n">moved</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">upper</span>
+	<span class="n">layer</span><span class="p">,</span> <span class="n">the</span> <span class="n">decoder</span><span class="p">,</span> <span class="n">where</span> <span class="n">it</span> <span class="n">can</span> <span class="n">be</span> <span class="n">done</span> <span class="n">more</span> <span class="n">intelligently</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSHBox</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">sizeToFitContent</span><span class="p">]):</span> <span class="n">Implemented</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSVBox</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">sizeToFitContent</span><span class="p">]):</span> <span class="n">Implemented</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSHBox</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">For</span> <span class="n">simplicity</span> <span class="n">use</span> <span class="nb">int</span> <span class="ow">not</span> <span class="n">unsigned</span>
+	<span class="nb">int</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSVBox</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">change</span><span class="o">.</span>
+
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSHBox</span><span class="o">.</span><span class="n">m</span> <span class="p">([</span><span class="o">-</span><span class="n">setHorizontalAlignment</span><span class="p">:</span><span class="n">forView</span><span class="p">:]):</span>
+	<span class="n">Recompute</span> <span class="n">the</span> <span class="n">_hExpand</span> <span class="ow">and</span> <span class="n">_hWeakExpand</span> <span class="n">flags</span> <span class="n">properly</span><span class="o">.</span>
+	<span class="p">([</span><span class="o">-</span><span class="n">setVerticalAlignment</span><span class="p">:</span><span class="n">forView</span><span class="p">:]):</span> <span class="n">The</span> <span class="n">same</span> <span class="k">for</span> <span class="n">the</span> <span class="n">_vExpand</span> <span class="ow">and</span>
+	<span class="n">_vWeakExpand</span> <span class="n">flags</span><span class="o">.</span>
+	<span class="o">*</span> <span class="n">Source</span><span class="o">/</span><span class="n">AutoLayout</span><span class="o">/</span><span class="n">GSVBox</span><span class="o">.</span><span class="n">m</span><span class="p">:</span> <span class="n">Same</span> <span class="n">changes</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>0.1 - 2002-12-26<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>I am very excited to announce the first public release of GNUstep
+Renaissance.</p>
+<p>GNUstep Renaissance is meant to provide us with a new, revolutionary way
+of writing GNUstep applications.</p>
+<p>In a few words, GNUstep Renaissance replaces .nib (and .gorm and .gmodel)
+files with .gsmarkup files.</p>
+<p>.gsmarkup files are plain XML files with a syntax designed to be very
+easily edited by hand.  Rather than encoding all the internal details of
+objects to disk, in the way that .nib and .gorm (and, in a similar way,
+.gmodel do), .gsmarkup files contain a simple logical description of what
+the user interface is meant to be.</p>
+<p>That way, .gsmarkup files are easy to edit, and avoid completely the
+portability problems that affect all previous technologies (.nib, .gorm,
+.gmodel).</p>
+<p>.gsmarkup do not encode absolute positions and sizes of widgets in the way
+.nib, .gorm and .gmodel do.  GNUstep Renaissance provides box objects and
+intelligent default autolayout behaviour.  All widgets positions and sizes
+are automatically computed at run time.</p>
+<p>As another beneficial side effect, .gsmarkup are very easily translated.<br />
+You just provide a .strings file with the translations, and GNUstep
+Renaissance automatically replacese the strings with their translations at
+run time.  No need to generate a separate interface for each language!</p>
+<p>There is more than this :-) but I’m trying to make a very short summary
+(and easy to grasp).</p>
+<p>Just a last thing - outlets and connectors have been integrated really
+neatly in the XML files.</p>
+<p>I have personally ported GNUstep Renaissance to run on Apple OSX 10.2.3.<br />
+This means that <em>any</em> application using .gsmarkup files for its interfaces
+will compile and run exactly the same on GNUstep and Apple OSX.  GNUstep
+Renaissance finally smashes down the .nib portability barrier!! :-)</p>
+<p>As demonstrators, GNUstep Renaissance includes a few applications -
+CurrencyConverter, Calculator, Finger - which use .gsmarkup files for
+their interfaces, and compile, build and run without changes in source
+code between GNUstep and Apple OSX.  I also ported Gomoku to run in the
+same way, but I’d like to keep it separate.</p>
+<p>Portability works - there is only one real tweak - menus need to be build
+from separate files for the two platforms.  The reason is that the menu
+layouts and conventions differ so much between the two platforms, that to
+have your menus look &amp; feel ‘native’, you really have to have
+platform-specific menus.</p>
+<p>The future of GNUstep Renaissance will include a graphical .gsmarkup
+editor.  A clone of IB/Gorm if you want, possibly derived from Gorm.  The
+application itself will be written using GNUstep Renaissance, and so will
+hopefully run on both GNUstep and Apple OSX, putting a final end of the
+story to any .nib portability problem.</p>
+<p>Before starting work on the IB clone, I want to finalize the .gsmarkup and
+autolayout API and documentation.</p>
+<p>Last, I want to point out that GNUstep Renaissance is experimental
+software, and the internals (and probably part of the public APIs too) are
+bound to change a lot still.  Keep in mind that it’s alpha software,
+experimental, and I’m making it public not because it’s finished but
+because … well because it’s enough powerful and usable that it really
+makes no longer sense to keep it locked inside my laptop(s). :-)</p>
+<p>GNUstep Renaissance is free software (LGPL), and it’s part of the GNUstep
+suite; it is available on gnustep’s CVS, under</p>
+<p>dev-libs/Renaissance</p>
+<p>I suppose the CVS command to get it should be something like</p>
+<p>cvs -d:pserver:anoncvs&#64;subversions.gnu.org:/cvsroot/gnustep login</p>
+<p>cvs -z3 -d:pserver:anoncvs&#64;subversions.gnu.org:/cvsroot/gnustep co dev-libs/Renaissance</p>
+<p>If you want to try it out on Apple OSX, you need gnustep-make from CVS in
+order to compile GNUstep Renaissance from sources (you don’t need it to
+use the framework, but I don’t provide a binary distribution at the
+moment).  Full instructions inside Renaissance.</p>
+<p>If you want to try it out on GNUstep, just grab Renaissance.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Ethan C
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Release Notes</a><ul>
+<li><a class="reference internal" href="#id1">0.9</a></li>
+<li><a class="reference internal" href="#id2">0.8 - 2003-11-27</a></li>
+<li><a class="reference internal" href="#id3">0.7 - 2003-01-31</a></li>
+<li><a class="reference internal" href="#id4">0.6 - 2003-01-12</a></li>
+<li><a class="reference internal" href="#id5">0.5 - 2002-12-31</a></li>
+<li><a class="reference internal" href="#id6">0.1 - 2002-12-26</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=37d1907c"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

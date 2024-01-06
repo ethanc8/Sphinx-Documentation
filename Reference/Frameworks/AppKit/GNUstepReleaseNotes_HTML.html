@@ -1,0 +1,1178 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="NSImageName" href="NSImageName.html" /><link rel="prev" title="Apple Release Notes" href="AppleReleaseNotes.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>GNUstep Gui Release Notes - GNUstep 2021 December documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">GNUstep 2021 December documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">GNUstep 2021 December documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/index.html">Getting Started Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Getting Started Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/index.html">1 - First Steps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1 - First Steps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.1.html">1.1 - What is GNUstep?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.2.html">1.2 - Installing GNUstep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/1_FirstSteps/1.3.html">1.3 - Configuring your System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/index.html">2 - Convertor</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2 - Convertor</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.1.html">2.1 - Designing the UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.2.html">2.2 - Outlets and Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/2_Convertor/2.3.html">2.3 - Adding the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/index.html">3 - TimeMachine - a single window application</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 3 - TimeMachine - a single window application</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.1.html">3.1 - A Basic Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.2.html">3.2 - Analog Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.3.html">3.3 - New Time Zone Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tutorials/GettingStarted/3_TimeMachine/3.4.html">3.4 - Multiple Clocks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/HelpfulWebsites.html">Helpful Websites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/GettingStarted/WhatsNext.html">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tutorials/Other/Roard/index.html">Roard Vallon Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Roard Vallon Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%201/Tutorial%201.html">1 - Programming under GNUstep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tutorials/Other/Roard/Tutorial%202/Tutorial%202.html">2 - NSWindowController and Design Pattern MVC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Reference Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Frameworks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../index_Core.html">Basic Frameworks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Basic Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 current has-children"><a class="reference internal" href="index.html">Application Kit</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Application Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5 current current-page"><a class="current reference internal" href="#"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a></li>
+<li class="toctree-l5"><a class="reference internal" href="NSImageName.html"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../Foundation/index.html">Foundation Kit</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Foundation Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../Foundation/CocoaCompatibility.html">Cocoa Compatibility</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Foundation/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../Foundation/GNUstepReleaseNotes.html">GNUstep Base Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../CoreData/index.html">Core Data</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../CoreFoundation/index.html">Core Foundation</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Core Foundation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../CoreFoundation/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../CoreFoundation/ObjectModel.html">Core Foundation Object Model</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/index.html">Apple Release Notes</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Apple Release Notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/SwiftReleaseNotes.html">10.11 and later</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.9.html">CF-855.11 - 10.9 Mavericks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.8.html">CF-744 - 10.8 “Mountain Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/iOS5.html">CF-675 - iOS 5</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.7.html">CF-635 - 10.7 “Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.6.html">CF-550 - 10.6 Snow Leopard</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.5.html">CF-476 - 10.5 “Leopard”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/Historical-GeneralNotes.html">General Notes</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.2.html">CF-263 - 10.2 “Jaguar”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.1.html">CF-226 - 10.1 “Puma”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10.0.html">CF-196 - 10.0 “Cheetah”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_PB.html">Mac OS X Public Beta “Kodiak”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP4.html">Mac OS X Developer Preview 4</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP3.html">Mac OS X Developer Preview 3</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../CoreFoundation/AppleReleaseNotes/10_DP2.html">Mac OS X Developer Preview 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Miscellaneous.html">Miscellaneous Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Miscellaneous Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../AddressBook/index.html">AddressBook</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of AddressBook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../AddressBook/GNUstep%20Readme.html">GNUstep Readme</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../CFNetwork/index.html">CFNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../DBusKit/index.html">DBusKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ECCL/index.html">Enterprise Control Configuration and Logging (ECCL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PDFKit/index.html">PDFKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../WebKit/index.html">WebKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Xcode/index.html">GNUstep Xcode Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Pantomime/index.html">Pantomime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../GWorkspace/index.html">GWorkspace frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Renaissance/index.html">Renaissance</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_Quartz.html">Quartz Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Quartz Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CoreAnimation/index.html">Core Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CoreGraphics/index.html">Core Graphics / Quartz 2D</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../index_WebObjects.html">WebObjects 4 Stack</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of WebObjects 4 Stack</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../EnterpriseObjects/index.html">Enterprise Objects Framework</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Enterprise Objects Framework</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../EnterpriseObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../WebObjects/index.html">WebObjects</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of WebObjects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../WebObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Tools/index.html">Developer Tools</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Developer Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Tools/Make/index.html">GNUstep Make</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of GNUstep Make</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../Tools/Make/GNUstepReleaseNotes.html">Release Notes</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/index.html">New Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of New Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Introduction.html">Introduction</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Topics/index.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/Topics/ParallelBuilding.html">Parallel Building</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/index.html">Project Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Project Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Project/Reference.html">Project Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/ResourceSet/Reference.html">Resource Set Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Tool/Reference.html">Tool Reference</a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Library/index.html">Library</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../Tools/Make/NewDocumentation/ProjectTypes/Library/Introduction.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Gorm%20ProjectCenter.html">Gorm + ProjectCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Buildtool.html">Buildtool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/BaseTools.html">Base Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Tools/HeaderDoc.html">HeaderDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../Languages/index.html">Languages</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Languages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../Languages/ObjC/index.html">Objective-C</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Objective-C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Languages/ObjC/Reference/index.html">Objective-C Language Reference</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Objective-C Language Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Attributes.html">Attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/BasicTypes.html">Basic Types</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/index.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> macros</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of NS_ENUM macros</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_CLOSED_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_CLOSED_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_CLOSED_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../Languages/ObjC/Reference/NS_ENUM/NS_ERROR_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ERROR_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ERROR_ENUM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Classes.html">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/LightweightGenerics.html">Lightweight Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Exceptions.html">Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/FastEnumeration.html">Fast enumeration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/StringLiterals.html">String literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/DynamicLiterals.html">Dynamic literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/TraditionalMessageForwarding.html">Traditional Message Forwarding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Modules.html">Modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/EnvInformation.html">Getting Environment Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Languages/ObjC/Reference/Versions.html">Language Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../HIG.html">Human Interface Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../Contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Contributing/Documentation/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Domains/index.html">Sphinx Domains</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Sphinx Domains</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Domains/SCDT-API.html">Sphinxcontrib-DomainTools API refeerence</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/index.html">Tests</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/index.html">API Reference Tests</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of API Reference Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/WrongNesting.html">Wrong nesting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Contributing/Documentation/Tests/APIReference/MakeDomain.html">Make domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Contributing/Documentation/Todo/index.html">Todo</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Todo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../Contributing/Documentation/Todo/ReleaseNotes.html">Release Notes and API Diffs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/Dependencies.html">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/DocC.html">DocC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/PandocNotes.html">Pandoc Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Contributing/Documentation/StyleGuide.html">Style Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="gnustep-gui-release-notes">
+<h1><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span><a class="headerlink" href="#gnustep-gui-release-notes" title="Permalink to this heading">#</a></h1>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="http://www.gnustep.org/developers/whoiswho.html">Adam Fedor</a> (<a class="reference external" href="mailto:fedor&#37;&#52;&#48;gnu&#46;org"><code class="docutils literal notranslate"><span class="pre">fedor&#64;gnu.org</span></code></a>)</p>
+<!-- **Version:** $Revision$
+
+**Date:** $Date$ -->
+<p><strong>Copyright:</strong> (C) 2005 Free Software Foundation, Inc.</p>
+<!-- <span id="001000000000">Gui Release Notes</span>
+================================================ -->
+<p>The release notes include descriptions of API changes, behavior changes
+and other information that might help developers and users migrate to
+using a newer version of the library.</p>
+</section>
+<section id="id1">
+<h2><span id="001001000000">0.29.0</span><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>This version adds support for modern XIB files and many new classes.
+Plus the usual bunch of bug fixes.</p>
+<p>storyboards<br />
+Support loading of storyboard files.</p>
+<p>new classes<br />
+Add classes NSSwitch, NSFontAssetRequest,
+NSMediaLibraryBrowserController, NSScrubberItemView, NSScrubberLayout,
+NSScrubber, NSSharingServicePickerToolbarItem, NSPathCell,
+NSPathComponentCell, NSPathControl, NSPathControlItem,
+NSPersistentDocument, NSAccessibilityCustomAction,
+NSAccessibilityCustomRotor, NSAccessibilityElement, NSStoryboard,
+NSStoryboardSegue, NSPageController, NSSplitViewController,
+NSSplitViewItem, NSTabViewController, NSLayoutAnchor,
+NSLayoutConstraint, NSLayoutGuide, NSStatusBarButton,
+NSTextCheckingController, NSTextFinder, NSTextInputContext,
+NSGridView.</p>
+<p>Some of these classes are still skeletons.</p>
+<p>text layout<br />
+Fix extraline fragment in text layout.</p>
+<p>RTF<br />
+Better encoding handling in RTF files.</p>
+<p>localization<br />
+Add more italian translations.</p>
+<p>compatibility<br />
+Add MacOSX methods to NSNib, NSMenu and NSWindow.</p>
+<p>window management compatibility<br />
+Focus handling fixes for WindowMaker.<br />
+Stop NSWindow from handling windows that are gone, but possibly returned
+by a slow window manager.</p>
+<p>bugfix<br />
+Fix missing colours when loading old colour lists.<br />
+Fix memory leak in NSPopupButtonCell.<br />
+Fix toolbar flickering.<br />
+Fix int decoding to get it working on 64 bit big endian machines.<br />
+Add tab stops after last defined at default intervals.<br />
+Fix NSTableView/NSTableColumn bindings.</p>
+<p>JPEG export improvements<br />
+Support JPEG export as greyscale image.</p>
+<p>theming<br />
+NSSearchFieldCell use code from GSTheme to display popup.</p>
+</section>
+<section id="id2">
+<h2><span id="001002000000">0.28.0</span><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>This version adds support for modern XIB files and many new classes.
+Plus the usual bunch of bug fixes.</p>
+<p>XIB<br />
+Support loading XIB5 files.</p>
+<p>key-value binding<br />
+Improve Key Value Binding for NSArrayController and add more bindings.</p>
+<p>multi-monitor support<br />
+Better support for multi monitor usage and other improvement in the
+backend integration.</p>
+<p>new classes<br />
+NSFontCollection, NSColorSampler, NSSpeechRecognizer, NSAppearance,
+NSPDFInfo, NSPICTImageRep, NSCIImageRep, NSPDFImageRep, NSPDFPanel,
+NSDataAsset, NSDatePicker, NSDatePickerCell, NSPredicateEditor,
+NSPredicateEditorRowTemplate, NSRuleEditor, NSGestureRecognizer,
+NSButtonTouchBarItem, NSCandidateListTouchBarItem,
+NSClickGestureRecognizer, NSColorPickerTouchBarItem,
+NSCustomTouchBarItem, NSGroupTouchBarItem,
+NSMagnificationGestureRecognizer, NSPanGestureRecognizer,
+NSPickerTouchBarItem, NSPopoverTouchBarItem, NSPressGestureRecognizer,
+NSRotationGestureRecognizer, NSSharingServicePickerTouchBarItem,
+NSSliderTouchBarItem, NSStepperTouchBarItem, NSTouchBarItem, NSTouchBar,
+NSTouch, NSDockTile</p>
+<p>formats<br />
+Implement NSEPSImageRep. Marked GSImageMagickImageRep public. PICT.
+Better encoding handling in RTF files.</p>
+<p>theming and drawing<br />
+Increase small font size to 10. New cursor and stepper images. Various
+improvements.Lowered NSFloatingWindowLevel by one to distinguish
+floating panels from menus.</p>
+<p>NSFileWrapper move<br />
+Move NSFileWrapper to Foundation.</p>
+<p>platform compatibility<br />
+Fixed build on Debian GNU/kFreeBSD. Improvements to WindowMaker
+compatibility (e.g. WMFHideApplication support).</p>
+<p>command line arguments<br />
+With command line argument -autolaunch YES, do not activate the
+application when -activateIgnoringOtherApps: is invoked.</p>
+</section>
+<section id="id3">
+<h2><span id="001003000000">0.27.0</span><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>This version includes numerous bugfixes, compatibility improvements and
+other changes accumulated over the last year. It also enables work to be
+done on integrating NSViews with a Core Animation renderer.</p>
+<p>NSApplication<br />
+Make targetForAction safer.</p>
+<p>NSMenu<br />
+Speed up menu updates.</p>
+<p>Tools/speech<br />
+Clean up speech tool compilation and switch to newer interface.</p>
+<p>printing<br />
+Fix bug in CUPS subclassing introduced in last release.</p>
+<p>typesetting<br />
+Minor improvments to typesetting.</p>
+<p>NSKeyValueBinding<br />
+Add NSIsControllerMarker.</p>
+<p>NSSegmentedCell<br />
+Fix tracking on segmented cell.</p>
+<p>NSSliderCell<br />
+Bring slider cell closer to Cocoa implementation.</p>
+<p>NSView<br />
+Add ivar for Core Animation in NSView.</p>
+<p>printing<br />
+Improve border calculation on printing.</p>
+<p>NSApplication<br />
+Lazy load app icon.</p>
+<p>NSWorkspace<br />
+Better detection of removable volumes.</p>
+<p>translations<br />
+Polish translations.</p>
+<p>translations<br />
+Japanese translations.</p>
+<p>other<br />
+Lots of bug fixes.</p>
+</section>
+<section id="id4">
+<h2><span id="001004000000">0.26.2</span><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>This version is a small, but important bugfix release.</p>
+<p>printing<br />
+Fix allocation of the CUPS printing classes.</p>
+<p>installation<br />
+Fix the configure script.</p>
+</section>
+<section id="id5">
+<h2><span id="001005000000">0.26.1</span><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>This version is released to conincide with version 1.25.1 of
+gnustep-base, which contains changes required for this version of
+gnustep-gui and gnustep-back.</p>
+<p>It includes an important workaround for users of GNUstep Objective-C
+Runtime (libobjc2) and non-fragile ABI to avoid a bug in interaction
+between the clang compiler and the runtime when non-fragile ABI is in
+use. Specifically, Clang and the runtime may disagree on what is the
+offset of an ivar in a class’s RAM. This manifested in a crash at
+application startup due to misalignment of _gcontext inside NSThread.
+See the <a class="reference external" href="http://lists.gnu.org/archive/html/discuss-gnustep/2017-12/msg00129.html">mailing list
+discussion</a>
+for more information.</p>
+<p>It also contains the following changes:</p>
+<p>tests<br />
+Cleanup of warnings.</p>
+<p>tests<br />
+Fix text system deallocation test.</p>
+<p>printing<br />
+Undefine __BLOCKS__ before including cups.h, as some versions of the
+header expect that libdispatch is present and used if __BLOCKS__ is
+defined.</p>
+<p>graphics context<br />
+Workaround for Clang+libobjc2+nonfragile ABI issue.</p>
+</section>
+<section id="id6">
+<h2><span id="001006000000">0.26.0</span><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>Bumped due to binary incompatibilities between 0.25.0 and 0.25.1. Also
+including numerous compatibility improvements from the Summer of Code
+project, and a wide variety of other fixes. Fixes the use of
+cupsGetPPD() in the printing system.</p>
+<p>printing<br />
+Add an include to get deprecated function cupsGetPPD() on newer CUPS
+systems.</p>
+<p>chore<br />
+Bump required base version.</p>
+<p>tiff<br />
+Support for writing resolution.</p>
+<p>jpeg<br />
+Save resolution information if it is different from 72 dpi.</p>
+<p>save panel<br />
+Fix return type of sorting function.</p>
+<p>events<br />
+Add some newer Cocoa enums and one method with dummy implementation.</p>
+<p>speech synthesis<br />
+NSSpeechSynthesizerDelegate is now a &#64;protocol on runtimes that support
+it.</p>
+<p>pasteboard<br />
+New type identifiers.</p>
+<p>translations<br />
+Some work on Polish, Russian and German translations</p>
+<p>cell<br />
+Improvements to mouse tracking logic on NSCell.</p>
+<p>image<br />
+If an unknown named image is unarchived with a coder or keyed coder,
+keep the name.</p>
+<p>screen<br />
+Add backingScaleFactor and return 1.0.</p>
+<p>window<br />
+Return 1.0 from -backingScaleFactor.</p>
+<p>compatibility<br />
+Numerous stub implementations of constants, classes and methods to
+improve source-level compatibility.</p>
+<p>other bugfixes<br />
+Numerous other bugfixes.</p>
+</section>
+<section id="id7">
+<h2><span id="001007000000">0.25.1</span><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>New release.</p>
+<p>Image library fixes.<br />
+JPEG (saving) alpha channel fixes and size with resolution != 72. JPEG
+resolution read support. TIFF saving fixes.</p>
+<p>Mounting.<br />
+Improved volumes mounting and support. Portability improvements in
+volume mounting and support</p>
+<p>Text layout.<br />
+Corrected layout of empty strings.</p>
+<p>Optimizations.<br />
+Only update visible menus.</p>
+</section>
+<section id="id8">
+<h2><span id="001008000000">0.25.0</span><a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>New release. Bumped due to detected binary incompatibility between
+0.24.0 and 0.24.1.</p>
+<p>GIF library update<br />
+Fixes for new GIF library versions</p>
+<p>Theming improvements<br />
+Theming of named images for specific applications by the use of the
+CFBundleIdentifier in the theme. New icons and corresponding constants
+for special folders, recycler and others.</p>
+<p>NSWorkspace<br />
+Improvements in NSWorkspace icon lookup. Improvements in removable media
+commands, imported and cleaned from GWorkspace.</p>
+<p>Other<br />
+Numerous bug fixes and improvements in Cocoa compatibility. Spanish
+locale.</p>
+</section>
+<section id="id9">
+<h2><span id="001009000000">0.24.1</span><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>From a look through ChangeLog, we can see a lot of bugfixes for this
+release, with the main focus on avoiding display glitches and improving
+OSX compatibility.</p>
+<p>NSColorListChangedNotification<br />
+Removed.</p>
+<p>NSColorPanelColorChangedNotification<br />
+Removed.</p>
+<p>NSImageInterpolation{Default,High,Low,None}<br />
+Removed.</p>
+<p>NSPrintHorizonalPagination<br />
+Removed.</p>
+</section>
+<section id="id10">
+<h2><span id="001010000000">0.24.0</span><a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>This is a major new stable release of GUI. Require newer base release as
+we moved the -replaceObject:withObject: of NSKeyedUnarchiver there.<br />
+New features include:</p>
+<p>GIF library update<br />
+Newer versions of the GIF library (5.0) have an incompatible interface
+change. We now support the new interface as well as the old one and
+detect at configure time which one to use.</p>
+<p>NSTabView flipped<br />
+NSTabView was the last view class that still had its flipped state
+defined incorrectly. This finally got corrected.</p>
+<p>Theme improvements<br />
+A lot more of the gui appearance is now changable by a theme. The way
+image names get mapped to real file names when loading has been
+clearified.Better support for 9-patch images.</p>
+<p>Additional Cocoa classes<br />
+NSTreeController, NSTreeNode, NSStatusBar, NSStatusItem, NSTrackingArea</p>
+<p>Many bugfixes and tweaks to improve look and feel<br />
+Cursor display is a lot more consistent.</p>
+</section>
+<section id="id11">
+<h2><span id="001011000000">0.23.1</span><a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<p>This is a bugfix release containint many minor bugfixes, but most
+importantly fixing some coding/archiving bugs introduced in in the
+NSInteger,NSUInteger,CGFloat changes.</p>
+</section>
+<section id="id12">
+<h2><span id="001012000000">0.23.0</span><a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<p>This is a major new stable release of GUI. Note that this version is
+binary incompatible with previous versions on 64-bit systems due to
+changes in some variables based on changes in GNUstep base to the type
+of NSNotFound.<br />
+New features include:</p>
+<p>NSInteger,NSUInteger,CGFloat<br />
+API and internals updated to use new types</p>
+<p>NSBezierPath<br />
+Keyed encoding/decoding added</p>
+<p>Many bugfixes and tweaks to improve look and feel<br />
+Most of the changes in this release are individually small changes
+fixing UI layout issues, responsiveness etc. The accumulated result
+should be a significantly smoother look and feel.</p>
+</section>
+<section id="id13">
+<h2><span id="001013000000">0.22.0</span><a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
+<p>This is a major new stable release of GUI. Note that to improve
+stability, some features that were in previous releases have been
+removed. Newer and better implementation of these features will be added
+back soon. These include use of ghostscript and ImageMagic to
+automatically translate image formats, and an implementation of
+copy-on-scroll in NSClipView. Also note that this version is binary
+incompatible with previous versions on 64-bit systems due to changes in
+some variables based on changes in GNUstep base to the type of
+NSNotFound. New features include:</p>
+<p>Support for drawing the GUI with a scale factor, for high-DPI monitors.<br />
+This is enabled automatically on Windows when the system DPI setting is
+changed from its default of 96 in the Windows control panel. It can be
+enabled on X11 (or the default overridden on Windows) by setting the
+GSScaleFactor user default. For example, setting this to 1.5 would make
+everything appear 50% larger.</p>
+<p>The scale factor is implemented in GSWindowDecorationView; we use
+NSView’s built-in scaling support and call -[NSWindow
+userSpaceScaleFactor] to determine how to manipulate the bounds and
+frame rect of the window decoration view. NSUnscaledWindowMask is
+respected, if it is part of a window’s style mask. Note that changing
+the scale factor without restarting applications is currently
+unsupported, and all screens currently share the same scale factor. Both
+of these limitations should be reasonably easy to fix in a future
+release, however.</p>
+<p>Character panel<br />
+There is a character panel accessible from a button in the standard Font
+panel. It requires libicu.</p>
+<p>Color picker “Magnifier” tool, for grabbing the color of arbitrary parts of the screen<br />
+Currently only implemented on X11/cairo.</p>
+<p>Many new image formats supported for reading using Ghostscript and ImageMagick<br />
+The Ghostscript image rep provides PS/EPS/PDF support, however it has
+some limitations. It is quite slow. Only the first page is rendered,
+because we use the pngalpha Ghostscript device, which is the only device
+supporting 8-bit alpha.</p>
+<p>Other improvements:</p>
+<p>NSImage<br />
+Mac OS X 10.6 drawing methods (-[NSImage
+drawInRect:fromRect:operation:fraction:respectFlipped:hints:]). The rep
+selection code was completely overhauled, and it should work much better
+with images containing many reps. In particular, the DPI metadata in
+images is now respected, and TIFF images containing multiple resolutions
+are now fully supported.</p>
+<p>Icons are now better supported. By icon, we mean an NSImage whose
+representations are not all of the same point size. Icons are usually
+ICNS or TIFF files. (Note that we aren’t talking about a TIFF containing
+sub-images with different pixel sizes but the same point sizes.) The
+important thing about icons is -[NSImage size] should not be called,
+because the icon doesn’t have one single size in points, but many sizes,
+so it’s not clear which will be returned from this method. Similarly,
+-[NSImage drawAtPoint:fromRect:operation:fraction:] should be avoided,
+as should the -compositeToPoint: family of methods, since these use
+-[NSImage size] to determine how big to draw the image. The benefit of
+icons is that when -[NSImage drawInRect:fromRect:operation:fraction:]
+is called, the rep with the largest point size smaller than or equal to
+the rect to be drawn in will be chosen, resulting in better looking
+output. For best results, call drawInRect: with a point size you expect
+the icons to have, like 16x16 or 64x64.</p>
+<p>NSCursor<br />
+Support for creating 32-bit ARGB cursors on X11 (with the Xcursor
+library)</p>
+<p>NSView<br />
+Autoresizing algorithm reimplemented to be closer to OS X. View frames
+generated by autoresizing are now rounded to lie on pixel boundaries.</p>
+</section>
+<section id="version-0-20-0">
+<h2><span id="001014000000">Version 0.20.0</span><a class="headerlink" href="#version-0-20-0" title="Permalink to this heading">#</a></h2>
+<p>A new stable release. Many improvments with Nib loading, documents and
+document controllers. Fixed many drawing issues, particularly ones
+related to flipping. Much improved theming.</p>
+<p>NSOutlineView<br />
+Use NSInteger and CGFloat in method names where appropriate.</p>
+<p>NSDocument<br />
+Change result type of
+method-saveToURL:ofType:forSaveOperation:delegate:didSaveSelector:contextInfo:
+from BOOL to void.</p>
+<p>NSView<br />
+New 10.5 methods.</p>
+<p>NSCursor<br />
+New 10.6 methods.</p>
+</section>
+<section id="version-0-18-0">
+<h2><span id="001015000000">Version 0.18.0</span><a class="headerlink" href="#version-0-18-0" title="Permalink to this heading">#</a></h2>
+<p>A new stable release that has had many improvements. Many new Mac OS X
+methods (10.5 and newer) were added. Many Windows specific improvements
+were made (particularly with the use of the Windows theme). There is
+also better compatibility with Mac OS X in terms of usage of NSInteger
+and other definitions.</p>
+<p>NSSliderCell<br />
+Initial implementaiton of circular sliders.</p>
+<p>Spanish Translation<br />
+Added spanish translations in various places.</p>
+<p>NSDrawers<br />
+They now work.</p>
+<p>NSTableColumn<br />
+New 10.6 methods and constants.</p>
+<p>Themes<br />
+Usage of themes to draw UI elements is almost completely implemented.</p>
+</section>
+<section id="version-0-17-1">
+<h2><span id="001016000000">Version 0.17.1</span><a class="headerlink" href="#version-0-17-1" title="Permalink to this heading">#</a></h2>
+<p>Bug fixes.</p>
+<p>NSFont<br />
+Add some missing interface methods from 10.5</p>
+<p>NSSplitView<br />
+Add live resize (can be turned off with GSUseGhostResize default)</p>
+</section>
+<section id="version-0-17-0">
+<h2><span id="001017000000">Version 0.17.0</span><a class="headerlink" href="#version-0-17-0" title="Permalink to this heading">#</a></h2>
+<p>Many many bug fixes and almost complete reorganization of NSToolbar
+code.</p>
+<p>NSBezierPath, NSAttributedString, NSLayoutManager<br />
+New Mac OS X 10.5 methods.</p>
+<p>NSSpeechSynthesizer<br />
+New class.</p>
+<p>NSSplitView<br />
+Added new Mac OS X 10.5 methods and some ivars</p>
+<p>Toolbars<br />
+Many improvements. NSToolbar methods rearragned and ivar removed.</p>
+<p>Menus<br />
+MS Window-stype menus inside a window implemented</p>
+<p>Garbage Collection<br />
+Several improvements to work better with GC</p>
+<p>HelpViewer<br />
+GSHelpViewer use default added.</p>
+</section>
+<section id="version-0-16-0">
+<h2><span id="001018000000">Version 0.16.0</span><a class="headerlink" href="#version-0-16-0" title="Permalink to this heading">#</a></h2>
+<p>This is an stable release. A lot of improvements and bug fixes went into
+this release. Thanks to Wolfgang Lux for fixing plenty of bugs. Note
+that gnustep-core is now installed in the LOCAL domain by default
+instead of the SYSTEM domain. You may want to remove old installations
+in the SYSTEM domain to avoid any incompatibility problems. Or you can
+force installation in SYSTEM using make
+GNUSTEP_INSTALLATION_DOMAIN=SYSTEM install.</p>
+<p>Nib Loading<br />
+Several methods were added and Nib loading in general was refactored and
+improved.</p>
+<p>NSDocument<br />
+Document autosaving was implemented.</p>
+<p>NSSavePanel<br />
+Several methods were added to implement support for document types with
+multiple allowed file extensions.</p>
+<p>NSWindow<br />
+Definitions and skeleton implementation of attachedSheet.</p>
+<p>NSTextView<br />
+Renamed and changed types of attributes related to drag and drop.</p>
+<p>NSLayoutManager<br />
+New methods added to handle temporary attributes.</p>
+<p>NSWindowController<br />
+NSWindowController was made a subclass of NSResponder.</p>
+<p>NSCell<br />
+Rearranged somewhat to use GSTheme implemetations.</p>
+<p>NSTokenField, NSTokenFieldCell<br />
+New classes added.</p>
+</section>
+<section id="version-0-14-0">
+<h2><span id="001019000000">Version 0.14.0</span><a class="headerlink" href="#version-0-14-0" title="Permalink to this heading">#</a></h2>
+<p>This is an stable release.</p>
+<p>NSGlyphGenerator<br />
+New class for glyph generation (separated from other classes).</p>
+<p>NSControl -mouseDownFlags<br />
+Added old NeXT method for compatibility.</p>
+<p>NSSplitView<br />
+setAutosaveName: implemented and new instance variable added.</p>
+<p>NSOpenGLView<br />
+Added some Mac OS X 10.3 methods.</p>
+</section>
+<section id="version-0-13-2">
+<h2><span id="001020000000">Version 0.13.2</span><a class="headerlink" href="#version-0-13-2" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release.</p>
+<p>NSPopUpButtonCell<br />
+The encoding of this object was changed (which is backwards compatible,
+but not forwards compatible.</p>
+<p>NSTextView<br />
+Add new X secondary selection behavior. Other Mac OS X methods added.</p>
+<p>NSWindow<br />
+Device interaction with backend has changed. This release of gui
+requires the coresponding gnustep-back release 0.13.2.</p>
+<p>NSSegmentedCell<br />
+New class added to draw and render text in segments.</p>
+<p>NSDrawer<br />
+Implemented.</p>
+</section>
+<section id="version-0-13-1">
+<h2><span id="001021000000">Version 0.13.1</span><a class="headerlink" href="#version-0-13-1" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release. Changes to error handling and key-value
+coding require an update to at least the base library version 1.15.1.</p>
+<p>NSMenu<br />
+Added more MacOS X methods and an ivar.</p>
+<p>NSView<br />
+Added support for hiding views.</p>
+<p>Key-Value bindings<br />
+Added Key-Value bindings implementation (NSKeyValueBinding) with support
+in several classes (NSControl, NSTextField, NSView, etc).</p>
+<p>NSTableView<br />
+Added some MacOS X 10.4 methods.</p>
+<p>NSCursor<br />
+Changed hot point to 0,0 for MacOS X compatibility.</p>
+</section>
+<section id="version-0-13-0">
+<h2><span id="001022000000">Version 0.13.0</span><a class="headerlink" href="#version-0-13-0" title="Permalink to this heading">#</a></h2>
+<p>This is an unstable release. Changes to error handling and key-value
+coding require an update to at least the base library version 1.15.1.</p>
+<p>Licence<br />
+Switched to use LGPL 3 and GPL 3.</p>
+<p>New Methods added<br />
+Added new methods from Mac OS X 10.4 for NSDragging, NSFontDescriptor,
+NSAttributedString, NSImageView, NSStringDrawing, NSParagraphStyle,
+NSView, NSCell, NSActionCell, NSAlert, NSApplication, NSBitmapImageRep,
+NSBox, NSColor, NSColorSpace, NSComboBox, NSComboBoxCell,
+NSDocumentController, NSEvent, NSScreen, NSFont, NSFontManager,
+NSFormCell, NSForm, NSWindow, NSTextField, NSTextFieldCell. Some ivar
+names were changed also.</p>
+<p>Printing<br />
+Moved Postscript printing methods from NSView to NSGraphicsContext.</p>
+<p>View drawing<br />
+Rewrote the NSView drawing mechanism to always use
+[displayRectIgnoringOpacity:inContext].</p>
+<p>Flipped Controls<br />
+Report more controls as being flipped. (NSTextField, NSTableHeaderView,
+NSSlider, NSProgressIndicator, NSButton) NSTabView is still missing.</p>
+<p>Font Attribute<br />
+Add font attribute fixing to NSAttributedString. To allow for the output
+of glyphs not present in the current font.</p>
+<p>Optimization<br />
+In NSAffineTransform use optimized primitive methods from base.
+Optimized the validation of edited cells.</p>
+<p>Key-Value Binding<br />
+Implementation of special connectors for Key-Value binding.</p>
+</section>
+<section id="version-0-12-0">
+<h2><span id="001023000000">Version 0.12.0</span><a class="headerlink" href="#version-0-12-0" title="Permalink to this heading">#</a></h2>
+<p>It has been a long time since the last release and many things have been
+added and changed, including new classes, new ivars, and new methods.</p>
+<p>Tooltips<br />
+A Tooltip implementation was added.</p>
+<p>NSBitmapImage Improvements<br />
+Lots of improvements to the NSBitmapImage subclasses.</p>
+<p>Theming Improvements<br />
+GSTheme and other classes were added to improve support of theming.</p>
+<p>New Methods added<br />
+Added new methods from Mac OS X 10.4 for NSControl, NSResponder,
+NSDocument, NSPrintOperation, NSWindowController, NSCell, NSMenuItem,
+NSView. Some ivar names were changed also.</p>
+<p>New ivars added<br />
+Added new ivars for NSMenuItem, NSPrintOperation, NSTableView, NSDrawer,
+NSScrollView, NSAlert, NSTextView.</p>
+<p>New Classes Added<br />
+New classes from Mac OS X 10.4 and earlier were added including
+NSLevelIndicator, NSObjectController, NSUserDefaultsController,
+NSKeyValueBinding, NSArrayController, NSController.</p>
+<p>NSSpellServer moved to base<br />
+NSSpellServer was moved to GNUstep base for Mac OS X compatibility.</p>
+<p>NSTabViewType enumerations<br />
+Enumerations were changed to match values from Mac OS X.</p>
+<p>GNUstep GUI updated for Make 2.0<br />
+GNUstep GUI was updated to work with GNUstep Make 2.0. This includes
+versioned resources.</p>
+<p>NSAffineTransform moved to base<br />
+Much of NSAffineTransform was moved to gnustep-base to match with Mac
+OS X. Many older methods were marked as deprecated in favor of the more
+recent Mac OS X methods.</p>
+<p>NSAlert in alternate threads<br />
+NSAlerts are performed in the main thread even if called from another
+thread.</p>
+<p>NSAnimation Class Added<br />
+Preliminary code for the NSAnimation class has been added. Only
+NSAnimationNonBlocking mode implemented.</p>
+</section>
+<section id="version-0-11-0">
+<h2><span id="001024000000">Version 0.11.0</span><a class="headerlink" href="#version-0-11-0" title="Permalink to this heading">#</a></h2>
+<p>Keyed Encoding/Archiving<br />
+Support for keyed encoding has been added to all gui classes.</p>
+<p>Nib loading<br />
+Nib loading has been implemented. For the most part, nibs are (or should
+be) compatible between GNUstep and Mac OS X.</p>
+<p>Color schemes and Themes<br />
+Better support for color schemes and themes has been added. In the near
+future theming should be integrated into gui itself.</p>
+<p>RTFD<br />
+Loading and writing of RTFD format was implemented.</p>
+</section>
+<section id="version-0-10-3">
+<h2><span id="001025000000">Version 0.10.3</span><a class="headerlink" href="#version-0-10-3" title="Permalink to this heading">#</a></h2>
+<p>Horizontal menus<br />
+Horizontal (mac)-style menus should now work. Horizontal menus are
+activated by setting the ‘NSMenuInterfaceStyle’ user default to
+‘NSMacintoshInterfaceStyle’.</p>
+<p>Active applications<br />
+Better support for tracking active applications was added. Normally a
+workspace manager should handle this, but the GUI library can handle it
+on its own if it is not handled any other way.</p>
+</section>
+<section id="version-0-10-2">
+<h2><span id="001026000000">Version 0.10.2</span><a class="headerlink" href="#version-0-10-2" title="Permalink to this heading">#</a></h2>
+<p>Power Off<br />
+The notification center posts a power off notification before sending a
+terminate: method sent from another app on the assumption that the
+terminate: is from a session manager.</p>
+</section>
+<section id="version-0-10-1">
+<h2><span id="001027000000">Version 0.10.1</span><a class="headerlink" href="#version-0-10-1" title="Permalink to this heading">#</a></h2>
+<p>Sound library<br />
+GNUstep now uses v19 of portaudio for the sound daemon. Version v19
+hasn’t been officially released, but it is still used in several
+distributions (SuSE, etc) as v18 is very old.</p>
+</section>
+<section id="version-0-10-0">
+<h2><span id="001028000000">Version 0.10.0</span><a class="headerlink" href="#version-0-10-0" title="Permalink to this heading">#</a></h2>
+<p>The interface version of the gui library has changed in this release.
+Applications, libraries and tools that wish to use this new version must
+be recompiled (otherwise, they’ll use the older version of the library).</p>
+<p>Nib window autopositioning<br />
+Nib loading has been improved to handle auto-positioning of windows.</p>
+<p>NSFont<br />
+An ivar was added to NSFont to cache flipped fonts.</p>
+<p>NSApplication<br />
+An ivar was added to track application launch.</p>
+<p>Keyed Encoding<br />
+Work was done in many classes to support keyed encoding. It may not be
+fully implemented in every class, however.</p>
+<p>Backend Versioning<br />
+The GUI library now looks for the backend bundle with the corrent
+interface version. Thus there should not be any problems with the GUI
+using the wrong backend.</p>
+</section>
+<section id="version-0-9-5">
+<h2><span id="001029000000">Version 0.9.5</span><a class="headerlink" href="#version-0-9-5" title="Permalink to this heading">#</a></h2>
+<p>NSColor colors<br />
+Added new control colors and methods from 10.3 version of Cocoa.</p>
+<p>NSFont methods<br />
+Added new font methods from 10.3 version of Cocoa</p>
+<p>NSApplication -runModalSession<br />
+Behavior of this method was changed. In particular it deviates from
+Cocoa documentation. See the GNUstep GUI documentation for specifics.</p>
+<p>Runtime version discovery of library<br />
+A developer can discover the version of the gui library that is loaded
+using the NSBundle methods
+<code class="docutils literal notranslate"><span class="pre">[[NSBundle</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">bundleForLibrary:</span> <span class="pre">&#64;&quot;gnustep-gui&quot;]</span> <span class="pre">infoDictionary]</span></code>
+and retrieving the <code class="docutils literal notranslate"><span class="pre">GSBundleVersion</span></code> key.</p>
+</section>
+<section id="version-0-9-4">
+<h2><span id="001030000000">Version 0.9.4</span><a class="headerlink" href="#version-0-9-4" title="Permalink to this heading">#</a></h2>
+<p>Interface version change<br />
+The interface version of the gui library has changed in this release.
+There is no single reason for this change. Arguably, it should have been
+done long ago. In the future the interface version will only change with
+releases that have a new minor version number (that’s the second number
+in the release number). Applications, libraries and tools that wish to
+use this new version must be recompiled (otherwise, they’ll use the
+older version of the library).</p>
+<p>PPD’s removed<br />
+All the PPD’s have been removed from the gui library into a separate
+package (gnustep-ppd). There still exists a single Generic Postscript
+Printer PPD which should work in many cases for printing using the
+standard <code class="docutils literal notranslate"><span class="pre">lpr</span></code> interface. In the future, a <code class="docutils literal notranslate"><span class="pre">CUPS</span></code> interface should be
+available that provides all the necessary printer information
+automatically. If you still want use of the PPD’s, you must install the
+gnustep-ppd package, although this is not required for use of
+gnustep-gui.</p>
+<p>Printing framework<br />
+The printing framework was generalized to allow for various types of
+native printing systems. The lpr system is the only complete one,
+although CUPS printing is in the works. As such, the printing classes
+were revamped to handle this, and the actual system-specific code is
+loaded from a bundle.</p>
+<p>NSScroller, NSScrollView class size change<br />
+A new ivar was added to the NSScroller and NSScrollView classes.</p>
+</section>
+<section id="version-0-9-3">
+<h2><span id="001031000000">Version 0.9.3</span><a class="headerlink" href="#version-0-9-3" title="Permalink to this heading">#</a></h2>
+<p>Spell checker daemon reimplemented using libaspell<br />
+If the optional library libaspell is found, the spell checker will use
+it (otherwise spell checking will not work).</p>
+<p>New NSComboBox implementation<br />
+NSComboBox and related classes have been re-implemented and documented.</p>
+<p>NSToolbar code redone<br />
+A lot of changes where made to the NSToolbar class to make it more
+functional.</p>
+<p>Binary Incompatibilities<br />
+New ivars were added NSTableView, NSView, NSSavePanel. Applications that
+use this class and subclasses (e.g. NSOutlineView) may need to be
+recompiled to work properly.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="NSImageName.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="AppleReleaseNotes.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Apple Release Notes</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Ethan C
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a><ul>
+<li><a class="reference internal" href="#authors">Authors</a></li>
+<li><a class="reference internal" href="#id1"><span id="001001000000">0.29.0</span></a></li>
+<li><a class="reference internal" href="#id2"><span id="001002000000">0.28.0</span></a></li>
+<li><a class="reference internal" href="#id3"><span id="001003000000">0.27.0</span></a></li>
+<li><a class="reference internal" href="#id4"><span id="001004000000">0.26.2</span></a></li>
+<li><a class="reference internal" href="#id5"><span id="001005000000">0.26.1</span></a></li>
+<li><a class="reference internal" href="#id6"><span id="001006000000">0.26.0</span></a></li>
+<li><a class="reference internal" href="#id7"><span id="001007000000">0.25.1</span></a></li>
+<li><a class="reference internal" href="#id8"><span id="001008000000">0.25.0</span></a></li>
+<li><a class="reference internal" href="#id9"><span id="001009000000">0.24.1</span></a></li>
+<li><a class="reference internal" href="#id10"><span id="001010000000">0.24.0</span></a></li>
+<li><a class="reference internal" href="#id11"><span id="001011000000">0.23.1</span></a></li>
+<li><a class="reference internal" href="#id12"><span id="001012000000">0.23.0</span></a></li>
+<li><a class="reference internal" href="#id13"><span id="001013000000">0.22.0</span></a></li>
+<li><a class="reference internal" href="#version-0-20-0"><span id="001014000000">Version 0.20.0</span></a></li>
+<li><a class="reference internal" href="#version-0-18-0"><span id="001015000000">Version 0.18.0</span></a></li>
+<li><a class="reference internal" href="#version-0-17-1"><span id="001016000000">Version 0.17.1</span></a></li>
+<li><a class="reference internal" href="#version-0-17-0"><span id="001017000000">Version 0.17.0</span></a></li>
+<li><a class="reference internal" href="#version-0-16-0"><span id="001018000000">Version 0.16.0</span></a></li>
+<li><a class="reference internal" href="#version-0-14-0"><span id="001019000000">Version 0.14.0</span></a></li>
+<li><a class="reference internal" href="#version-0-13-2"><span id="001020000000">Version 0.13.2</span></a></li>
+<li><a class="reference internal" href="#version-0-13-1"><span id="001021000000">Version 0.13.1</span></a></li>
+<li><a class="reference internal" href="#version-0-13-0"><span id="001022000000">Version 0.13.0</span></a></li>
+<li><a class="reference internal" href="#version-0-12-0"><span id="001023000000">Version 0.12.0</span></a></li>
+<li><a class="reference internal" href="#version-0-11-0"><span id="001024000000">Version 0.11.0</span></a></li>
+<li><a class="reference internal" href="#version-0-10-3"><span id="001025000000">Version 0.10.3</span></a></li>
+<li><a class="reference internal" href="#version-0-10-2"><span id="001026000000">Version 0.10.2</span></a></li>
+<li><a class="reference internal" href="#version-0-10-1"><span id="001027000000">Version 0.10.1</span></a></li>
+<li><a class="reference internal" href="#version-0-10-0"><span id="001028000000">Version 0.10.0</span></a></li>
+<li><a class="reference internal" href="#version-0-9-5"><span id="001029000000">Version 0.9.5</span></a></li>
+<li><a class="reference internal" href="#version-0-9-4"><span id="001030000000">Version 0.9.4</span></a></li>
+<li><a class="reference internal" href="#version-0-9-3"><span id="001031000000">Version 0.9.3</span></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js?v=37d1907c"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

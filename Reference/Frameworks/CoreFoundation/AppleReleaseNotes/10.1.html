@@ -1,0 +1,643 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="CF-196 - 10.0 “Cheetah”" href="10.0.html" /><link rel="prev" title="CF-263 - 10.2 “Jaguar”" href="10.2.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
+        <title>CF-226 - 10.1 “Puma” - GNUstep 2021 December documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">GNUstep 2021 December documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">GNUstep 2021 December documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../Tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../Tutorials/GettingStarted/index.html">Getting Started Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Getting Started Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../Tutorials/GettingStarted/1_FirstSteps/index.html">1 - First Steps</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 1 - First Steps</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/1_FirstSteps/1.1.html">1.1 - What is GNUstep?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/1_FirstSteps/1.2.html">1.2 - Installing GNUstep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/1_FirstSteps/1.3.html">1.3 - Configuring your System</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../Tutorials/GettingStarted/2_Convertor/index.html">2 - Convertor</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 2 - Convertor</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/2_Convertor/2.1.html">2.1 - Designing the UI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/2_Convertor/2.2.html">2.2 - Outlets and Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/2_Convertor/2.3.html">2.3 - Adding the Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../Tutorials/GettingStarted/3_TimeMachine/index.html">3 - TimeMachine - a single window application</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 3 - TimeMachine - a single window application</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/3_TimeMachine/3.1.html">3.1 - A Basic Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/3_TimeMachine/3.2.html">3.2 - Analog Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/3_TimeMachine/3.3.html">3.3 - New Time Zone Dialog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Tutorials/GettingStarted/3_TimeMachine/3.4.html">3.4 - Multiple Clocks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/GettingStarted/HelpfulWebsites.html">Helpful Websites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/GettingStarted/WhatsNext.html">What’s Next?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../Tutorials/Other/Roard/index.html">Roard Vallon Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Roard Vallon Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Other/Roard/Tutorial%201/Tutorial%201.html">1 - Programming under GNUstep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Tutorials/Other/Roard/Tutorial%202/Tutorial%202.html">2 - NSWindowController and Design Pattern MVC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../index.html">Reference Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Reference Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../index.html">Frameworks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../../index_Core.html">Basic Frameworks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Basic Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../AppKit/index.html">Application Kit</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Application Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../AppKit/Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../AppKit/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../AppKit/GNUstepReleaseNotes_HTML.html"><span id="title$ReleaseNotes">GNUstep Gui Release Notes</span></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../AppKit/NSImageName.html"><code class="docutils literal notranslate"><span class="pre">NSImageName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../Foundation/index.html">Foundation Kit</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Foundation Kit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../Foundation/CocoaCompatibility.html">Cocoa Compatibility</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Foundation/AppleReleaseNotes.html">Apple Release Notes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../Foundation/GNUstepReleaseNotes.html">GNUstep Base Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../CoreData/index.html">Core Data</a></li>
+<li class="toctree-l4 current has-children"><a class="reference internal" href="../index.html">Core Foundation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Core Foundation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="../Missing.html">Missing features</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ObjectModel.html">Core Foundation Object Model</a></li>
+<li class="toctree-l5 current has-children"><a class="reference internal" href="index.html">Apple Release Notes</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Apple Release Notes</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l6"><a class="reference internal" href="SwiftReleaseNotes.html">10.11 and later</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10.9.html">CF-855.11 - 10.9 Mavericks</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10.8.html">CF-744 - 10.8 “Mountain Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="iOS5.html">CF-675 - iOS 5</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10.7.html">CF-635 - 10.7 “Lion”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10.6.html">CF-550 - 10.6 Snow Leopard</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10.5.html">CF-476 - 10.5 “Leopard”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="Historical-GeneralNotes.html">General Notes</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10.2.html">CF-263 - 10.2 “Jaguar”</a></li>
+<li class="toctree-l6 current current-page"><a class="current reference internal" href="#">CF-226 - 10.1 “Puma”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10.0.html">CF-196 - 10.0 “Cheetah”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10_PB.html">Mac OS X Public Beta “Kodiak”</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10_DP4.html">Mac OS X Developer Preview 4</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10_DP3.html">Mac OS X Developer Preview 3</a></li>
+<li class="toctree-l6"><a class="reference internal" href="10_DP2.html">Mac OS X Developer Preview 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../index_Miscellaneous.html">Miscellaneous Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Miscellaneous Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../AddressBook/index.html">AddressBook</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of AddressBook</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../AddressBook/GNUstep%20Readme.html">GNUstep Readme</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../CFNetwork/index.html">CFNetwork</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../DBusKit/index.html">DBusKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../ECCL/index.html">Enterprise Control Configuration and Logging (ECCL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../PDFKit/index.html">PDFKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../WebKit/index.html">WebKit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Xcode/index.html">GNUstep Xcode Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Pantomime/index.html">Pantomime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../GWorkspace/index.html">GWorkspace frameworks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../Renaissance/index.html">Renaissance</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../index_Quartz.html">Quartz Frameworks</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Quartz Frameworks</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../CoreAnimation/index.html">Core Animation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../CoreGraphics/index.html">Core Graphics / Quartz 2D</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../index_WebObjects.html">WebObjects 4 Stack</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of WebObjects 4 Stack</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../EnterpriseObjects/index.html">Enterprise Objects Framework</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of Enterprise Objects Framework</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../EnterpriseObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../WebObjects/index.html">WebObjects</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of WebObjects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../WebObjects/AppleReleaseNotes.html">Apple Release Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Tools/index.html">Developer Tools</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of Developer Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Tools/Make/index.html">GNUstep Make</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of GNUstep Make</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../Tools/Make/GNUstepReleaseNotes.html">Release Notes</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/index.html">New Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of New Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/Introduction.html">Introduction</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/Topics/index.html">Topics</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of Topics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/Topics/ParallelBuilding.html">Parallel Building</a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/ProjectTypes/index.html">Project Types</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of Project Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/ProjectTypes/Project/Reference.html">Project Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/ProjectTypes/ResourceSet/Reference.html">Resource Set Reference</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/ProjectTypes/Tool/Reference.html">Tool Reference</a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/ProjectTypes/Library/index.html">Library</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of Library</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../../Tools/Make/NewDocumentation/ProjectTypes/Library/Introduction.html">Libraries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tools/Gorm%20ProjectCenter.html">Gorm + ProjectCenter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tools/Buildtool.html">Buildtool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tools/BaseTools.html">Base Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tools/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../Tools/HeaderDoc.html">HeaderDoc</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../Languages/index.html">Languages</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle navigation of Languages</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../Languages/ObjC/index.html">Objective-C</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle navigation of Objective-C</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../Languages/ObjC/Reference/index.html">Objective-C Language Reference</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Objective-C Language Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/Attributes.html">Attributes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/BasicTypes.html">Basic Types</a></li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../../Languages/ObjC/Reference/NS_ENUM/index.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> macros</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of NS_ENUM macros</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../../Languages/ObjC/Reference/NS_ENUM/NS_CLOSED_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_CLOSED_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_CLOSED_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Languages/ObjC/Reference/NS_ENUM/NS_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ENUM</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../../Languages/ObjC/Reference/NS_ENUM/NS_ERROR_ENUM.html"><code class="docutils literal notranslate"><span class="pre">NS_ERROR_ENUM</span></code> / <code class="docutils literal notranslate"><span class="pre">CF_ERROR_ENUM</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/Classes.html">Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/LightweightGenerics.html">Lightweight Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/Exceptions.html">Exceptions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/FastEnumeration.html">Fast enumeration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/StringLiterals.html">String literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/DynamicLiterals.html">Dynamic literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/TraditionalMessageForwarding.html">Traditional Message Forwarding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/Modules.html">Modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/EnvInformation.html">Getting Environment Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../Languages/ObjC/Reference/Versions.html">Language Versions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../HIG.html">Human Interface Guidelines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../Contributing/index.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle navigation of Contributing</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../Contributing/Documentation/index.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../Contributing/Documentation/Domains/index.html">Sphinx Domains</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle navigation of Sphinx Domains</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Contributing/Documentation/Domains/SCDT-API.html">Sphinxcontrib-DomainTools API refeerence</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../Contributing/Documentation/Tests/index.html">Tests</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle navigation of Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../../Contributing/Documentation/Tests/APIReference/index.html">API Reference Tests</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle navigation of API Reference Tests</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Contributing/Documentation/Tests/APIReference/WrongNesting.html">Wrong nesting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../Contributing/Documentation/Tests/APIReference/MakeDomain.html">Make domain</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../../Contributing/Documentation/Todo/index.html">Todo</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle navigation of Todo</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Contributing/Documentation/Todo/Autogsdoc.html">Autogsdoc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Contributing/Documentation/Todo/Miscellaneous.html">Miscellaneous</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../Contributing/Documentation/Todo/ReleaseNotes.html">Release Notes and API Diffs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Contributing/Documentation/Dependencies.html">Dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Contributing/Documentation/DocC.html">DocC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Contributing/Documentation/PandocNotes.html">Pandoc Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../Contributing/Documentation/StyleGuide.html">Style Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <p><span id="X10_1Notes"></span></p>
+<section id="cf-226-10-1-puma">
+<h1>CF-226 - 10.1 “Puma”<a class="headerlink" href="#cf-226-10-1-puma" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>The following came from the <a class="reference external" href="https://web.archive.org/web/20030604123839if_/http://developer.apple.com/techpubs/macosx/ReleaseNotes/CoreFoundation.html">ADC release notes page</a>.</p>
+</div></blockquote>
+<section id="cfbundlegetfunctionpointerforname-from-cfm-apps">
+<h2>CFBundleGetFunctionPointerForName from CFM Apps<a class="headerlink" href="#cfbundlegetfunctionpointerforname-from-cfm-apps" title="Permalink to this heading">#</a></h2>
+<p>Due to a bug in Mac OS 10.0.x, in some cases CFBundleGetFunctionPointerForName, when called on a bundle corresponding to a Mach-o framework, would return a non-NULL result for a symbol defined in a framework other than the one specified. Some CFM apps incorrectly relied on this behavior. For backward compatibility, when CFBundleGetFunctionPointerForName is called on a Mach-o framework bundle from a CFM executable, it will continue to return function pointers for symbols defined in other frameworks. The same applies to CFBundleGetFunctionPointersForNames. Calls to either function from Mach-o executables will now return only those symbols actually defined in the specified framework.</p>
+<p>Note that there is a significant performance penalty whenever CFBundleGetFunctionPointerForName must look up a symbol defined in a framework other than the one specified. We strongly recommend that CFBundleGetFunctionPointerForName be called with a bundle argument corresponding to the framework in which the desired symbol is actually defined. If the desired symbol is defined in one of the subframeworks of an umbrella framework, we recommend that CFBundleGetFunctionPointerForName be called with a bundle argument corresponding to the umbrella framework.</p>
+<p>If a CFM executable wishes to use a version of CFBundleGetFunctionPointerForName without the backward compatibility behavior described above, there is a simple workaround. Using CFBundleGetFunctionPointerForName on a bundle corresponding to the CoreFoundation framework, look up CFBundleGetFunctionPointerForName itself. The resulting function pointer can be used to call the version of the function that would ordinarily be used by Mach-o callers.</p>
+<p>None of the above applies to the case in which the bundle argument refers to a bundle whose executable is a Mach-o loadable bundle or a CFM executable. In these cases CFBundleGetFunctionPointerForName has always returned, and will continue to return, only those symbols actually defined in the specified bundle.</p>
+</section>
+<section id="cfbundledevelopmentregion-for-unbundled-applications">
+<h2>CFBundleDevelopmentRegion for Unbundled Applications<a class="headerlink" href="#cfbundledevelopmentregion-for-unbundled-applications" title="Permalink to this heading">#</a></h2>
+<p>Some unbundled CFM applications may specify their development localization using both a traditional ‘vers’ resource and a CFBundleDevelopmentRegion key in a ‘plst’ resource. In this case the two resources should specify the same localization. If they do not, the behavior of the application may be undefined or inconsistent in certain situations. In most cases, the CFBundleDevelopmentRegion will take precedence, but for backward compatibility with Mac OS 10.0.x there are some cases in which the region specified in the ‘vers’ resource will take precedence. In addition, there may be existing tools developed prior to the advent of CFBundle, that understand only the ‘vers’ resource, and so would not necessarily give correct results if the CFBundleDevelopmentRegion and the ‘vers’ resource disagreed.</p>
+<p>Some unbundled applications may be able, through mechanisms of their own, to support multiple localizations. In this case, it is possible to specify to CFBundle what localizations the application will support, by supplying an array of localization names for the key “CFBundleLocalizations” in the ‘plst’ resource. This is not a recommended solution; it should be used only under exceptional circumstances in which it is not possible to make use of the normal CFBundle localization mechanisms, namely bundling the application and supplying .lproj folders.</p>
+</section>
+<section id="generating-uuids">
+<h2>Generating UUIDs<a class="headerlink" href="#generating-uuids" title="Permalink to this heading">#</a></h2>
+<p>There is now a command-line tool, /usr/bin/uuidgen, for generating UUIDs.</p>
+</section>
+<section id="new-standard-headers-included">
+<h2>New Standard Headers Included<a class="headerlink" href="#new-standard-headers-included" title="Permalink to this heading">#</a></h2>
+<p>CFBase.h now includes &lt;stdint.h&gt; and &lt;stdbool.h&gt;.</p>
+</section>
+<section id="standard-headers-no-longer-included">
+<h2>Standard Headers No Longer Included<a class="headerlink" href="#standard-headers-no-longer-included" title="Permalink to this heading">#</a></h2>
+<p>CoreFoundation.h no longer includes &lt;assert.h&gt;.</p>
+</section>
+<section id="missing-cfm-exports">
+<h2>Missing CFM Exports<a class="headerlink" href="#missing-cfm-exports" title="Permalink to this heading">#</a></h2>
+<p>Some CarbonLib 1.3 functions were missing from the CFM stub library in Mac OS X 10.0. You cannot use these from a CFM app brought to Mac OS X.</p>
+<p>CFBundleCopyLocalizationForLocalizationInfo<br />
+CFBundleGetDataPointerForName<br />
+CFBundleGetDataPointersForNames<br />
+CFBundleGetLocalizationInfoForLocalization<br />
+CFURLCreateStringByAddingPercentEscapes<br />
+CFXMLParserGetTypeID</p>
+</section>
+<section id="kcfpropertylistimmutable-ignored">
+<h2>kCFPropertyListImmutable Ignored<a class="headerlink" href="#kcfpropertylistimmutable-ignored" title="Permalink to this heading">#</a></h2>
+<p>CFPropertyListCreateFromXMLData() ignores the kCFPropertyListImmutable flag, and gives you the effect of kCFPropertyListMutableContainers in 10.0 and 10.1. In the next release, we intend to change this so that this flag will NOT be ignored, so you should not depend on this behavior. You can test for this by setting the environment variable “CFPropertyListAllowImmutableCollections” (to any value) in your (Terminal) shell’s environment, exporting the variable if the semantics of your shell require that, and running your application from the shell.</p>
+</section>
+<section id="cfstringgetnameofencoding">
+<h2>CFStringGetNameOfEncoding()<a class="headerlink" href="#cfstringgetnameofencoding" title="Permalink to this heading">#</a></h2>
+<p>Despite what the documentation has described in earlier releases, the function CFStringGetNameOfEncoding() does not and will not localize the string encoding names that are returned. We will look into providing additional CoreFoundation API for localized encoding names; but in the meantime, Cocoa’s Foundation framework offers the NSString method +localizedNameOfStringEncoding:.</p>
+</section>
+<section id="crasher-in-cftimezone-fixed">
+<h2>Crasher in CFTimeZone Fixed<a class="headerlink" href="#crasher-in-cftimezone-fixed" title="Permalink to this heading">#</a></h2>
+<p>A potential crasher bug related to getting the abbreviation from a time zone object that doesn’t have any in has been fixed.</p>
+</section>
+<section id="equality-tests-for-some-run-loop-types-changed">
+<h2>Equality Tests for Some Run Loop Types Changed<a class="headerlink" href="#equality-tests-for-some-run-loop-types-changed" title="Permalink to this heading">#</a></h2>
+<p>Equality testing of CFRunLoopSourceRefs now includes the criterion that the info pointers of the two objects must be the same.</p>
+<p>Equality comparison of CFRunLoopObserverRefs and CFRunLoopTimerRefs has been changed to report true only when the two compared objects are the same object (reference equality). The previous comparison algorithms were broken in that they did not satisfy the hash-equals invariant, and when we went to fix this we realized that it doesn’t have a lot of meaning/value for two distinct observer or timer objects to be equal. So the problem was fixed by changing these types to use reference equality.</p>
+</section>
+<section id="cftimezonecreatewithname-with-the-default-allocator-parameter">
+<h2>CFTimeZoneCreateWithName() with the Default Allocator Parameter<a class="headerlink" href="#cftimezonecreatewithname-with-the-default-allocator-parameter" title="Permalink to this heading">#</a></h2>
+<p>CFTimeZoneCreateWithName() no longer complains and aborts when running against the debug CoreFoundation library and given NULL or the kCFAllocatorDefault as the allocator parameter.</p>
+</section>
+<section id="global-variable-added">
+<h2>Global variable added<a class="headerlink" href="#global-variable-added" title="Permalink to this heading">#</a></h2>
+<p>A declaration for the global variable kCFCoreFoundationVersionNumber has been added to CFBase.h. This variable existed with the same type in Mac OS X 10.0, so no special handling should be required to use it.</p>
+<p>There are also two symbolic constants to declare the version numbers of shipping CoreFoundation frameworks, one for 10.0, other for the CoreFoundation shipping with Tier 2 language package version:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#define kCFCoreFoundationVersionNumber10_0 196.4
+#define kCFCoreFoundationVersionNumber10_0_3 196.5
+</pre></div>
+</div>
+<p>In general you should compare against a version number which you know fixes the problem you are checking for, rather than the exact version of the last external release. As you can see above, since 10.0 there was a very minor update to CoreFoundation with a bump in the version number.</p>
+</section>
+<section id="notification-center">
+<h2>Notification Center<a class="headerlink" href="#notification-center" title="Permalink to this heading">#</a></h2>
+<p>In 10.0.x, if you register to receive all notifications sent to a particular object (that is, with name parameter nil for global matching), you will not be able to remove that registration unless the remove operation also uses name == nil. This has been fixed.</p>
+</section>
+<section id="cfcharacterset">
+<h2>CFCharacterSet<a class="headerlink" href="#cfcharacterset" title="Permalink to this heading">#</a></h2>
+<p>CFCharacterSet now internally supports UCS-4 non-BMP ranges that is accessible using Unicode surrogate pairs in UTF-16. That is, the supported Unicode range is from 0x00000 to 0x1FFFFF. We’re not publicizing any new API to query the membership of characters outside of the currently supported 16-bit range (planned for Jaguar), but this internal surrogate support results in some semantic changes in the existing API. The functions that take CFRange arguments interprets the range in 32-bit. For example, the CFCharacterSet created with CFCharacterSetCreateWithCharactersInRange(NULL, CFRangeMake(0x20000, 0xA6D7)) covers the new Unicode 3.1 CJK Ideograph Extension-B. The format of the bitmap representation used by CFCharacterSetCreateWithBitmapRepresentation and CFCharacterSetCreateBitmapRepresentation is also extended to support non-BMP ranges. The format of the first 8K bytes is not changed from the previous release, it represents the characters in BMP range. It now can be followed by 0 to 31 addition 8K bitmaps. Each 8K bitmap is preceded by a plane index byte. For example, the bitmap representation for Plane 2 (0x20000 ~ 0x2FFFF) is the plane index byte 2 followed by the 8K bitmap.</p>
+</section>
+<section id="cfreadstream-and-cfwritestream">
+<h2>CFReadStream and CFWriteStream<a class="headerlink" href="#cfreadstream-and-cfwritestream" title="Permalink to this heading">#</a></h2>
+<p>Two new CFTypes have been added to CoreFoundation, CFReadStream and CFWriteStream, which allow clients to use data providers (CFReadStreams) or data consumers (CFWriteStreams) without loading the entire data into memory at once. Both types are non-seekable, one-way streams; once the data has been provided or consumed, it cannot be retrieved from the streams. CFRead/WriteStreams can be created from any of a number of different sources including files, sockets, or memory, and can either be used directly (blocking) or be scheduled on a run loop (non-blocking via client callback).</p>
+<p>In general, you use CFRead/WriteStreams in much the same way as UNIX file descriptors; you first instantiate the stream from any of a number of possible sources, then you set any special configuration options you require. Next, you open the stream, read or write any number of times, then ultimately close and dispose of the stream. At any point during the stream’s lifetime, you can ask it for information about its properties, where a property is any interesting information about the stream or its source or destination that is not part of the actual data being transferred. If you are using the stream without blocking, you would set the stream’s client and schedule the stream with a CFRunLoop (note that it is your responsibility to make sure the run loop is being run), probably before opening the stream.</p>
+<p>Using a stream (blocking):</p>
+<p>To use a stream in a blocking fashion, first create the stream via one of the CFReadStreamCreate or CFWriteStreamCreate calls:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    CFReadStreamRef myStream = CFReadStreamCreateWithFile(NULL, sourceFileURL);
+</pre></div>
+</div>
+<p>You may then want to do some extra configuration on the stream; if the stream is on a socket, for instance, you may want to set the size of the socket’s buffers. There’s no configuration available on file streams; see CFHTTPStream.h in the CoreServices framework for an example of a configurable stream.</p>
+<p>After instantiating the stream, you open it; this is when the stream reserves any system resources required, like the file descriptor needed to read from a file. CFReadStreamOpen and CFWriteStreamOpen return FALSE if the open fails for any reason; they will return TRUE either if the open fully succeeded or if opening the stream is being done asynchronously (for instance, if completing the open requires a response from a remote server). In the blocking case, the difference between these possibilities does not matter - when you attempt to read to or write from the stream, the stream will block until the open has fully completed. If you wish to know whether the open has fully completed, you can retrieve the stream’s current status with CFReadStreamGetStatus or CFWriteStreamGetStatus; the returned value will be kCFStreamStatusOpening if the open is still on-going, kCFStreamStatusOpen if the stream has successfully opened, or kCFStreamStatusError if the open has failed.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    if (!CFReadStreamOpen(myStream)) {
+        CFStreamError error = CFReadStreamGetError(myStream);
+        reportError(error);
+    }
+</pre></div>
+</div>
+<p>Once the stream is open, you can begin reading and writing bytes. CFReadStreamRead() and CFWriteStreamWrite() parallel the UNIX read() and write() functions - they take a byte buffer and length, and return the number of bytes read/written, 0 if at end-of-stream, or -1 if an error has occurred. (Note: there is a known bug in MacOS X 10.1 such that occasionally CFReadStreamRead will return 0 although the stream is not at its end; you can work around by checking the stream’s status after receiving the 0 return. The status code will be kCFStreamStatusAtEnd if the stream has truly been exhausted.) They also both block until at least one byte can be produced or consumed, at which point as many bytes as can be produced or consumed without blocking are handled (this matches the default behavior of UNIX read(), but differs from that of UNIX write(), which blocks until the entire user-provided buffer is consumed).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    while (!done) {
+        UInt8 buffer[BUFSIZE];
+        CFIndex bytesRead = CFReadStreamRead(myStream, buffer, BUFSIZE);
+        if (bytesRead &lt; 0) {
+            CFStreamError error = CFReadStreamGetError(myStream);
+            reportError(error);
+            done = TRUE;
+        } else if (bytesRead == 0) {
+            // work around bug in MacOS X 10.1
+            if (CFReadStreamGetStatus(myStream) == kCFStreamStatusAtEnd) {
+                done = TRUE;
+            }
+        } else {
+            handleBytes(buffer, bytesRead);
+        }
+    }
+</pre></div>
+</div>
+<p>Finally, close (which releases all system resources) and release the stream.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    CFReadStreamClose(myStream);
+    CFRelease(myStream);
+    myStream = NULL;
+</pre></div>
+</div>
+<p>Using a stream (non-blocking, event-based):</p>
+<p>To use a stream without blocking, you use exactly the same calls as in the blocking case. However, you will also set a client on the stream, then schedule the stream on a run loop; your client will be informed when key events during the stream’s lifetime occur, so you will know when calls like CFReadStreamRead() can be made without blocking. Note: not all streams support event-driven usage; you must check the return value from CFRead/WriteStreamSetClient() to determine whether the stream provides the necessary support. At this writing, only socket streams (and the streams derived from them, like HTTP streams) provide support for event-driven usage.</p>
+<p>Instantiate your stream as above. However, before opening the stream, set a client on the stream, and install it on at least one run loop. Your client will be sent its callback as the stream’s state changes.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    CFStreamClientContext myContext = {0, myPtr, myRetain, myRelease, myCopyDesc};
+    if (!CFReadStreamSetClient(myStream,
+        kCFStreamEventHasBytesAvailable | kCFStreamEventErrorOccurred | kCFStreamEventEndEncountered,
+        myCallBack, &amp;myContext) {
+        // stream does not support event-driven model; fallback to blocking model or fail
+        ....
+    } else {
+        CFReadStreamScheduleWithRunLoop(myStream, CFRunLoopGetCurrent(), kCFRunLoopCommonModes);
+    }
+</pre></div>
+</div>
+<p>Once the client has been set and the stream has been scheduled on a run loop, you open the stream and wait to receive your callback. In your callback, you can examine what event has occurred and react accordingly.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>void myCallBack(CFReadStreamRef stream, CFStreamEventType event, void *myPtr) {
+    switch(event) {
+        case kCFStreamEventHasBytesAvailable: {
+            // it is safe to call CFReadStreamRead; it won&#39;t block
+            UInt8 buffer[BUF_SIZE];
+            CFIndex bytesRead = CFReadStreamRead(stream, buffer, BUF_SIZE);
+            if (bytesRead &gt; 0) {
+                handleBytes(buffer, bytesRead);
+            }
+            // it is safe to ignore bytesRead &lt;= 0 because these cases will generate other events
+            break;
+        }
+        case kCFStreamEventErrorOccurred: {
+            CFStreamError error = CFReadStreamGetError(stream);
+            reportError(error);
+            CFReadStreamClose(stream);
+            CFRelease(stream);
+            break;
+        }
+        case kCFStreamEventEndEncountered:
+            reportCompletion(...);
+            CFReadStreamClose(stream);
+            CFRelease(stream);
+            break;
+    }
+}
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="10.0.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">CF-196 - 10.0 “Cheetah”</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="10.2.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">CF-263 - 10.2 “Jaguar”</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Ethan C
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">CF-226 - 10.1 “Puma”</a><ul>
+<li><a class="reference internal" href="#cfbundlegetfunctionpointerforname-from-cfm-apps">CFBundleGetFunctionPointerForName from CFM Apps</a></li>
+<li><a class="reference internal" href="#cfbundledevelopmentregion-for-unbundled-applications">CFBundleDevelopmentRegion for Unbundled Applications</a></li>
+<li><a class="reference internal" href="#generating-uuids">Generating UUIDs</a></li>
+<li><a class="reference internal" href="#new-standard-headers-included">New Standard Headers Included</a></li>
+<li><a class="reference internal" href="#standard-headers-no-longer-included">Standard Headers No Longer Included</a></li>
+<li><a class="reference internal" href="#missing-cfm-exports">Missing CFM Exports</a></li>
+<li><a class="reference internal" href="#kcfpropertylistimmutable-ignored">kCFPropertyListImmutable Ignored</a></li>
+<li><a class="reference internal" href="#cfstringgetnameofencoding">CFStringGetNameOfEncoding()</a></li>
+<li><a class="reference internal" href="#crasher-in-cftimezone-fixed">Crasher in CFTimeZone Fixed</a></li>
+<li><a class="reference internal" href="#equality-tests-for-some-run-loop-types-changed">Equality Tests for Some Run Loop Types Changed</a></li>
+<li><a class="reference internal" href="#cftimezonecreatewithname-with-the-default-allocator-parameter">CFTimeZoneCreateWithName() with the Default Allocator Parameter</a></li>
+<li><a class="reference internal" href="#global-variable-added">Global variable added</a></li>
+<li><a class="reference internal" href="#notification-center">Notification Center</a></li>
+<li><a class="reference internal" href="#cfcharacterset">CFCharacterSet</a></li>
+<li><a class="reference internal" href="#cfreadstream-and-cfwritestream">CFReadStream and CFWriteStream</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=37d1907c"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base (Foundation Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSPropertyListSerialization class documentation</h2>NSPropertyListSerialization : <a href="NSObject.html#NSObject">NSObject</a><div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>Foundation/NSPropertyList.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> The <a href="NSPropertyListSerialization.html#NSPropertyListSerialization">NSPropertyListSerialization</a> class provides facilities for serialising and deserializing property list data in a number of formats. A property list is roughly an <a href="NSArray.html#NSArray">NSArray</a> or <a href="NSDictionary.html#NSDictionary">NSDictionary</a> object, with these or <a href="NSNumber.html#NSNumber">NSNumber</a> , <a href="NSData.html#NSData">NSData</a> , <a href="NSString.html#NSString">NSString</a> , or <a href="NSDate.html#NSDate">NSDate</a> objects as members. (See below.) </p> <p> You do not work with instances of this class, instead you use a small number of class methods to serialize and deserialize property lists. </p> <br></br> A <em>property list</em> may only be one of the following classes - <dl> <dt> <a href="NSArray.html#NSArray">NSArray</a> </dt> <dd> An array which is either empty or contains only <em>property list</em> objects. <br></br> An array is delimited by round brackets and its contents are comma <em>separated</em> (there is no comma after the last array element). 
+<pre>
+       ( "one", "two", "three" )
+     </pre>
+          In XML format, an array is an element whose name is
+          <var>array</var> and whose content is the array
+          content.
+ 
+<pre>
+       &lt;array&gt;&lt;string&gt;one&lt;/string&gt;&lt;string&gt;two&lt;/string&gt;&lt;string&gt;three&lt;/string&gt;&lt;/array&gt;
+     </pre>
+        </dd>
+        <dt>
+          NSData
+          </dt>
+          <dd>
+            A data object is represented as a series of pairs of
+            hexadecimal characters (each pair representing
+            a byte of data) enclosed in angle brackets. (Spaces are
+            ignored).
+ 
+<pre>
+       &lt; 54637374 696D67 &gt;
+     </pre>
+          Base64 can be used since Base 1.24.9:
+ 
+<pre>
+       &lt;[VGNzdGltZw==]&gt;
+     </pre>
+          In XML format, a data object is an element whose name is
+          <var>data</var> and whose content is a stream of
+          base64 encoded bytes.
+        </dd>
+        <dt>
+          NSDate
+          </dt>
+          <dd>
+            Date objects were not traditionally allowed in
+            <em>property lists</em> but were added when the XML
+            format was introduced. GNUstep provides an extension
+            to the traditional <em>property list</em> format to
+            support date objects, but older code will not read
+            <em>property lists</em> containing this extension.
+            <br></br> This format consists of an asterisk followed
+            by the letter 'D' then a date/time in YYYY-MM-DD
+            HH:MM:SS +/-ZZZZ format, all enclosed within angle
+            brackets.
+ 
+<pre>
+       &lt;*D2002-03-22 11:30:00 +0100&gt;
+     </pre>
+          In XML format, a date object is an element whose name is
+          <var>date</var> and whose content is a date in the
+          format YYYY-MM-DDTHH:MM:SSZ (or the above dfate
+          format).
+ 
+<pre>
+       &lt;date&gt;2002-03-22T11:30:00Z&lt;/date&gt;
+     </pre>
+        </dd>
+        <dt>
+          NSDictionary
+          </dt>
+          <dd>
+            A dictionary which is either empty or contains only
+            <em>string</em> keys and <em>property list</em>
+            objects. <br></br> A dictionary is delimited by curly
+            brackets and its contents are semicolon
+            <em>terminated</em> (there is a semicolon after each
+            value). Each item in the dictionary is a key/value
+            pair with an equals sign after the key and before the
+            value.
+ 
+<pre>
+       {
+         "key1" = "value1";
+       }
+     </pre>
+          In XML format, a dictionary is an element whose name is
+          <var>dict</var> and whose content consists of pairs
+          of string <var>key</var> and other
+          <em>property list</em> objects.
+ 
+<pre>
+       &lt;dict&gt;
+         &lt;key&gt;key1&lt;/key&gt;
+         &lt;string&gt;value1&lt;/string&gt;
+       &lt;/dict&gt;
+     </pre>
+        </dd>
+        <dt>
+          NSNumber
+          </dt>
+          <dd>
+            Number objects were not traditionally allowed in
+            <em>property lists</em> but were added when the XML
+            format was introduced. GNUstep provides an extension
+            to the traditional <em>property list</em> format to
+            support number objects, but older code will not
+            read <em>property lists</em> containing this
+            extension. <br></br> Numbers are stored in a
+            variety of formats depending on their values.
+            <ul>
+              <li>
+                boolean... either <var>&lt;*BY&gt;</var> for
+                <var>YES</var> or <var>&lt;*BN&gt;</var> for
+                <var>NO</var>. <br></br> In XML format this is
+                either <var>&lt;true /&gt;</var> or
+                <var>&lt;false /&gt;</var>
+              </li>
+              <li>
+                integer... <var>&lt;*INNN&gt;</var> where NNN
+                is an integer. <br></br> In XML format this is
+                <var>&lt;integer&gt;NNN&lt;integer&gt;</var>
+              </li>
+              <li>
+                real... <var>&lt;*RNNN&gt;</var> where NNN is a
+                real number. <br></br> In XML format this is
+                <var>&lt;real&gt;NNN&lt;real&gt;</var>
+              </li>
+            </ul>
+          </dd>
+          <dt>
+            NSString
+            </dt>
+            <dd>
+              A string is either stored literally (if it contains no
+              spaces or special characters), or is stored as a
+              quoted string with special characters escaped
+              where necessary. <br></br> Escape conventions are
+              similar to those normally used in ObjectiveC
+              programming, using a backslash followed by -
+              <ul>
+                <li>
+                  <strong>\</strong> a backslash character
+                </li>
+                <li>
+                  <strong>"</strong> a quote character
+                </li>
+                <li>
+                  <strong>b</strong> a backspace character
+                </li>
+                <li>
+                  <strong>n</strong> a newline character
+                </li>
+                <li>
+                  <strong>r</strong> a carriage return
+                  character
+                </li>
+                <li><strong>t</strong> a tab character</li>
+                <li>
+                  <strong>OOO</strong> (three octal digits) an
+                  arbitrary ascii character
+                </li>
+                <li>
+                  <strong>UXXXX</strong> (where X is a
+                  hexadecimal digit) a an arbitrary unicode
+                  character
+                </li>
+              </ul>
+ 
+<pre>
+       "hello world & others"
+     </pre>
+          In XML format, the string is simply stored in UTF8 format
+          as the content of a <var>string</var> element, and the
+          only character escapes required are those used by XML
+          such as the '&lt;' markup representing a '&lt;'
+          character.
+ 
+<pre>
+       &lt;string&gt;hello world &amp; others&lt;/string&gt;"
+     </pre>
+        </dd>
+      </dl>
+</p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="+[NSPropertyListSerialization_dataFromPropertyList:format:errorDescription:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSData.html#NSData">NSData</a> *)</span><span class="selector"> dataFromPropertyList: </span><span class="parameter"><span class="type">(id)</span><span class="arg">aPropertyList</span></span><span class="selector"> format: </span><span class="parameter"><span class="type">(NSPropertyListFormat)</span><span class="arg">aFormat</span></span><span class="selector"> errorDescription: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> **)</span><span class="arg">anErrorString</span></span></span></dt>
+<dd><div class="methodDescription">
+Creates and returns a data object containing a serialized representation of plist. The argument <var>aFormat</var> is used to determine the way in which the data is serialised, and the <var>anErrorString</var> argument is a pointer in which an error message is returned on failure ( <var>nil</var> is returned on success).<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSPropertyListSerialization_propertyList:isValidForFormat:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> propertyList: </span><span class="parameter"><span class="type">(id)</span><span class="arg">aPropertyList</span></span><span class="selector"> isValidForFormat: </span><span class="parameter"><span class="type">(NSPropertyListFormat)</span><span class="arg">aFormat</span></span></span></dt>
+<dd><div class="methodDescription">
+Returns a flag indicating whether it is possible to serialize <var>aPropertyList</var> in the format <var>aFormat</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSPropertyListSerialization_propertyListFromData:mutabilityOption:format:errorDescription:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> propertyListFromData: </span><span class="parameter"><span class="type">(<a href="NSData.html#NSData">NSData</a> *)</span><span class="arg">data</span></span><span class="selector"> mutabilityOption: </span><span class="parameter"><span class="type">(NSPropertyListMutabilityOptions)</span><span class="arg">anOption</span></span><span class="selector"> format: </span><span class="parameter"><span class="type">(NSPropertyListFormat *)</span><span class="arg">aFormat</span></span><span class="selector"> errorDescription: </span><span class="parameter"><span class="type">(<a href="NSString.html#NSString">NSString</a> **)</span><span class="arg">anErrorString</span></span></span></dt>
+<dd><div class="methodDescription">
+Deserialises dataItem and returns the resulting property list (or <var>nil</var> if the <var>data</var> does not contain a property list serialised in a supported format). <br></br> The argument <var>anOption</var> is used to control whether the objects making up the deserialized property list are mutable or not. <br></br> The argument <var>aFormat</var> is either null or a pointer to a location in which the format of the serialized property list will be returned. <br></br> Either <var>nil</var> or an error message will be returned in <var>anErrorString</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSPropertyListSerialization_dataWithPropertyList:format:options:error:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSData.html#NSData">NSData</a> *)</span><span class="selector"> dataWithPropertyList: </span><span class="parameter"><span class="type">(id)</span><span class="arg">aPropertyList</span></span><span class="selector"> format: </span><span class="parameter"><span class="type">(NSPropertyListFormat)</span><span class="arg">aFormat</span></span><span class="selector"> options: </span><span class="parameter"><span class="type">(NSPropertyListWriteOptions)</span><span class="arg">anOption</span></span><span class="selector"> error: </span><span class="parameter"><span class="type">(out  <a href="NSError.html#NSError">NSError</a> **)</span><span class="arg">error</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSPropertyListSerialization_propertyListWithData:options:format:error:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> propertyListWithData: </span><span class="parameter"><span class="type">(<a href="NSData.html#NSData">NSData</a> *)</span><span class="arg">data</span></span><span class="selector"> options: </span><span class="parameter"><span class="type">(NSPropertyListReadOptions)</span><span class="arg">anOption</span></span><span class="selector"> format: </span><span class="parameter"><span class="type">(NSPropertyListFormat *)</span><span class="arg">aFormat</span></span><span class="selector"> error: </span><span class="parameter"><span class="type">(out  <a href="NSError.html#NSError">NSError</a> **)</span><span class="arg">error</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSPropertyListSerialization_propertyListWithStream:options:format:error:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(id)</span><span class="selector"> propertyListWithStream: </span><span class="parameter"><span class="type">(<a href="NSInputStream.html#NSInputStream">NSInputStream</a> *)</span><span class="arg">stream</span></span><span class="selector"> options: </span><span class="parameter"><span class="type">(NSPropertyListReadOptions)</span><span class="arg">anOption</span></span><span class="selector"> format: </span><span class="parameter"><span class="type">(NSPropertyListFormat *)</span><span class="arg">aFormat</span></span><span class="selector"> error: </span><span class="parameter"><span class="type">(out  <a href="NSError.html#NSError">NSError</a> **)</span><span class="arg">error</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSPropertyListSerialization_writePropertyList:toStream:format:options:error:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSInteger)</span><span class="selector"> writePropertyList: </span><span class="parameter"><span class="type">(id)</span><span class="arg">aPropertyList</span></span><span class="selector"> toStream: </span><span class="parameter"><span class="type">(<a href="NSOutputStream.html#NSOutputStream">NSOutputStream</a> *)</span><span class="arg">stream</span></span><span class="selector"> format: </span><span class="parameter"><span class="type">(NSPropertyListFormat)</span><span class="arg">aFormat</span></span><span class="selector"> options: </span><span class="parameter"><span class="type">(NSPropertyListWriteOptions)</span><span class="arg">anOption</span></span><span class="selector"> error: </span><span class="parameter"><span class="type">(out  <a href="NSError.html#NSError">NSError</a> **)</span><span class="arg">error</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base (Foundation Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSAffineTransform.html#NSAffineTransform">NSAffineTransform</a></li><li><a href="NSArchiver.html#NSArchiver">NSArchiver</a></li><li><a href="NSArray.html#NSArray">NSArray</a></li><li><a href="NSAssertionHandler.html#NSAssertionHandler">NSAssertionHandler</a></li><li><a href="NSAttributedString.html#NSAttributedString">NSAttributedString</a></li><li><a href="NSAutoreleasePool.html#NSAutoreleasePool">NSAutoreleasePool</a></li><li><a href="NSBundle.html#NSBundle">NSBundle</a></li><li><a href="NSCachedURLResponse.html#NSCachedURLResponse">NSCachedURLResponse</a></li><li><a href="NSCalendarDate.html#NSCalendarDate">NSCalendarDate</a></li><li><a href="NSCharacterSet.html#NSCharacterSet">NSCharacterSet</a></li><li><a href="NSClassDescription.html#NSClassDescription">NSClassDescription</a></li><li><a href="NSCoder.html#NSCoder">NSCoder</a></li><li><a href="NSCondition.html#NSCondition">NSCondition</a></li><li><a href="NSConditionLock.html#NSConditionLock">NSConditionLock</a></li><li><a href="NSConnection.html#NSConnection">NSConnection</a></li><li><a href="NSCountedSet.html#NSCountedSet">NSCountedSet</a></li><li><a href="NSData.html#NSData">NSData</a></li><li><a href="NSDate.html#NSDate">NSDate</a></li><li><a href="NSDateFormatter.html#NSDateFormatter">NSDateFormatter</a></li><li><a href="NSDecimalNumber.html#NSDecimalNumber">NSDecimalNumber</a></li><li><a href="NSDecimalNumberHandler.html#NSDecimalNumberHandler">NSDecimalNumberHandler</a></li><li><a href="NSDeserializer.html#NSDeserializer">NSDeserializer</a></li><li><a href="NSDictionary.html#NSDictionary">NSDictionary</a></li><li><a href="NSDirectoryEnumerator.html#NSDirectoryEnumerator">NSDirectoryEnumerator</a></li><li><a href="NSDistantObject.html#NSDistantObject">NSDistantObject</a></li><li><a href="NSDistributedLock.html#NSDistributedLock">NSDistributedLock</a></li><li><a href="NSDistributedNotificationCenter.html#NSDistributedNotificationCenter">NSDistributedNotificationCenter</a></li><li><a href="NSEnumerator.html#NSEnumerator">NSEnumerator</a></li><li><a href="NSError.html#NSError">NSError</a></li><li><a href="NSException.html#NSException">NSException</a></li><li><a href="NSFileHandle.html#NSFileHandle">NSFileHandle</a></li><li><a href="NSFileManager.html#NSFileManager">NSFileManager</a></li><li><a href="NSFormatter.html#NSFormatter">NSFormatter</a></li><li><a href="NSHashTable.html#NSHashTable">NSHashTable</a></li><li><a href="NSHost.html#NSHost">NSHost</a></li><li><a href="NSHTTPCookie.html#NSHTTPCookie">NSHTTPCookie</a></li><li><a href="NSHTTPCookieStorage.html#NSHTTPCookieStorage">NSHTTPCookieStorage</a></li><li><a href="NSHTTPURLResponse.html#NSHTTPURLResponse">NSHTTPURLResponse</a></li><li><a href="NSIndexPath.html#NSIndexPath">NSIndexPath</a></li><li><a href="NSIndexSet.html#NSIndexSet">NSIndexSet</a></li><li><a href="NSInputStream.html#NSInputStream">NSInputStream</a></li><li><a href="NSInvocation.html#NSInvocation">NSInvocation</a></li><li><a href="NSKeyedArchiver.html#NSKeyedArchiver">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiver.html#NSKeyedUnarchiver">NSKeyedUnarchiver</a></li><li><a href="NSLock.html#NSLock">NSLock</a></li><li><a href="NSMapTable.html#NSMapTable">NSMapTable</a></li><li><a href="NSMessagePort.html#NSMessagePort">NSMessagePort</a></li><li><a href="NSMessagePortNameServer.html#NSMessagePortNameServer">NSMessagePortNameServer</a></li><li><a href="NSMethodSignature.html#NSMethodSignature">NSMethodSignature</a></li><li><a href="NSMutableArray.html#NSMutableArray">NSMutableArray</a></li><li><a href="NSMutableAttributedString.html#NSMutableAttributedString">NSMutableAttributedString</a></li><li><a href="NSMutableCharacterSet.html#NSMutableCharacterSet">NSMutableCharacterSet</a></li><li><a href="NSMutableData.html#NSMutableData">NSMutableData</a></li><li><a href="NSMutableDictionary.html#NSMutableDictionary">NSMutableDictionary</a></li><li><a href="NSMutableIndexSet.html#NSMutableIndexSet">NSMutableIndexSet</a></li><li><a href="NSMutableSet.html#NSMutableSet">NSMutableSet</a></li><li><a href="NSMutableString.html#NSMutableString">NSMutableString</a></li><li><a href="NSMutableURLRequest.html#NSMutableURLRequest">NSMutableURLRequest</a></li><li><a href="NSNetService.html#NSNetService">NSNetService</a></li><li><a href="NSNetServiceBrowser.html#NSNetServiceBrowser">NSNetServiceBrowser</a></li><li><a href="NSNotification.html#NSNotification">NSNotification</a></li><li><a href="NSNotificationCenter.html#NSNotificationCenter">NSNotificationCenter</a></li><li><a href="NSNotificationQueue.html#NSNotificationQueue">NSNotificationQueue</a></li><li><a href="NSNull.html#NSNull">NSNull</a></li><li><a href="NSNumber.html#NSNumber">NSNumber</a></li><li><a href="NSNumberFormatter.html#NSNumberFormatter">NSNumberFormatter</a></li><li><a href="NSObject.html#NSObject">NSObject</a></li><li><a href="NSOutputStream.html#NSOutputStream">NSOutputStream</a></li><li><a href="NSPipe.html#NSPipe">NSPipe</a></li><li><a href="NSPointerArray.html#NSPointerArray">NSPointerArray</a></li><li><a href="NSPointerFunctions.html#NSPointerFunctions">NSPointerFunctions</a></li><li><a href="NSPort.html#NSPort">NSPort</a></li><li><a href="NSPortCoder.html#NSPortCoder">NSPortCoder</a></li><li><a href="NSPortMessage.html#NSPortMessage">NSPortMessage</a></li><li><a href="NSPortNameServer.html#NSPortNameServer">NSPortNameServer</a></li><li><a href="NSProcessInfo.html#NSProcessInfo">NSProcessInfo</a></li><li><a href="NSPropertyListSerialization.html#NSPropertyListSerialization">NSPropertyListSerialization</a></li><li><a href="NSProtocolChecker.html#NSProtocolChecker">NSProtocolChecker</a></li><li><a href="NSProxy.html#NSProxy">NSProxy</a></li><li><a href="NSRecursiveLock.html#NSRecursiveLock">NSRecursiveLock</a></li><li><a href="NSRunLoop.html#NSRunLoop">NSRunLoop</a></li><li><a href="NSScanner.html#NSScanner">NSScanner</a></li><li><a href="NSSerializer.html#NSSerializer">NSSerializer</a></li><li><a href="NSSet.html#NSSet">NSSet</a></li><li><a href="NSSocketPort.html#NSSocketPort">NSSocketPort</a></li><li><a href="NSSocketPortNameServer.html#NSSocketPortNameServer">NSSocketPortNameServer</a></li><li><a href="NSStream.html#NSStream">NSStream</a></li><li><a href="NSString.html#NSString">NSString</a></li><li><a href="NSTask.html#NSTask">NSTask</a></li><li><a href="NSThread.html#NSThread">NSThread</a></li><li><a href="NSTimer.html#NSTimer">NSTimer</a></li><li><a href="NSTimeZone.html#NSTimeZone">NSTimeZone</a></li><li><a href="NSTimeZoneDetail.html#NSTimeZoneDetail">NSTimeZoneDetail</a></li><li><a href="NSUnarchiver.html#NSUnarchiver">NSUnarchiver</a></li><li><a href="NSUndoManager.html#NSUndoManager">NSUndoManager</a></li><li><a href="NSURL.html#NSURL">NSURL</a></li><li><a href="NSURLAuthenticationChallenge.html#NSURLAuthenticationChallenge">NSURLAuthenticationChallenge</a></li><li><a href="NSURLCache.html#NSURLCache">NSURLCache</a></li><li><a href="NSURLComponents.html#NSURLComponents">NSURLComponents</a></li><li><a href="NSURLConnection.html#NSURLConnection">NSURLConnection</a></li><li><a href="NSURLCredential.html#NSURLCredential">NSURLCredential</a></li><li><a href="NSURLCredentialStorage.html#NSURLCredentialStorage">NSURLCredentialStorage</a></li><li><a href="NSURLDownload.html#NSURLDownload">NSURLDownload</a></li><li><a href="NSURLHandle.html#NSURLHandle">NSURLHandle</a></li><li><a href="NSURLProtectionSpace.html#NSURLProtectionSpace">NSURLProtectionSpace</a></li><li><a href="NSURLProtocol.html#NSURLProtocol">NSURLProtocol</a></li><li><a href="NSURLQueryItem.html#NSURLQueryItem">NSURLQueryItem</a></li><li><a href="NSURLRequest.html#NSURLRequest">NSURLRequest</a></li><li><a href="NSURLResponse.html#NSURLResponse">NSURLResponse</a></li><li><a href="NSUserDefaults.html#NSUserDefaults">NSUserDefaults</a></li><li><a href="NSValue.html#NSValue">NSValue</a></li><li><a href="NSValueTransformer.html#NSValueTransformer">NSValueTransformer</a></li><li><a href="NSXMLDocument.html#NSXMLDocument">NSXMLDocument</a></li><li><a href="NSXMLDTD.html#NSXMLDTD">NSXMLDTD</a></li><li><a href="NSXMLDTDNode.html#NSXMLDTDNode">NSXMLDTDNode</a></li><li><a href="NSXMLElement.html#NSXMLElement">NSXMLElement</a></li><li><a href="NSXMLNode.html#NSXMLNode">NSXMLNode</a></li><li><a href="NSXMLParser.html#NSXMLParser">NSXMLParser</a></li><li><a href="NXConstantString.html#NXConstantString">NXConstantString</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSLogDelegate.html#GSLogDelegate">GSLogDelegate</a></li><li><a href="_NSCoding.html#NSCoding">NSCoding</a></li><li><a href="_NSCopying.html#NSCopying">NSCopying</a></li><li><a href="_NSDecimalNumberBehaviors.html#NSDecimalNumberBehaviors">NSDecimalNumberBehaviors</a></li><li><a href="_NSDiscardableContent.html#NSDiscardableContent">NSDiscardableContent</a></li><li><a href="_NSFastEnumeration.html#NSFastEnumeration">NSFastEnumeration</a></li><li><a href="_NSFileManagerDelegate.html#NSFileManagerDelegate">NSFileManagerDelegate</a></li><li><a href="_NSLocking.html#NSLocking">NSLocking</a></li><li><a href="_NSMutableCopying.html#NSMutableCopying">NSMutableCopying</a></li><li><a href="_NSNetServiceBrowserDelegate.html#NSNetServiceBrowserDelegate">NSNetServiceBrowserDelegate</a></li><li><a href="_NSNetServiceDelegate.html#NSNetServiceDelegate">NSNetServiceDelegate</a></li><li><a href="_NSObjCTypeSerializationCallBack.html#NSObjCTypeSerializationCallBack">NSObjCTypeSerializationCallBack</a></li><li><a href="_NSObject.html#NSObject">NSObject</a></li><li><a href="_NSSecureCoding.html#NSSecureCoding">NSSecureCoding</a></li><li><a href="_NSStreamDelegate.html#NSStreamDelegate">NSStreamDelegate</a></li><li><a href="_NSURLAuthenticationChallengeSender.html#NSURLAuthenticationChallengeSender">NSURLAuthenticationChallengeSender</a></li><li><a href="_NSURLConnectionDelegate.html#NSURLConnectionDelegate">NSURLConnectionDelegate</a></li><li><a href="_NSURLDownloadDelegate.html#NSURLDownloadDelegate">NSURLDownloadDelegate</a></li><li><a href="_NSURLHandleClient.html#NSURLHandleClient">NSURLHandleClient</a></li><li><a href="_NSURLProtocolClient.html#NSURLProtocolClient">NSURLProtocolClient</a></li><li><a href="_NSXMLParserDelegate.html#NSXMLParserDelegate">NSXMLParserDelegate</a></li><li><a href="_RunLoopEvents.html#RunLoopEvents">RunLoopEvents</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSArchiverCategories.html#NSArchiver(GNUstep)">NSArchiver</a></li><li><a href="NSArrayCategories.html#NSArray(NSKeyValueObserverRegistration)">NSArray</a></li><li><a href="NSBundleCategories.html#NSBundle(GNUstep)">NSBundle</a></li><li><a href="NSCalendarDateCategories.html#NSCalendarDate(GregorianDate)">NSCalendarDate</a></li><li><a href="NSCoderCategories.html#NSCoder(NSGeometryKeyedCoding)">NSCoder</a></li><li><a href="NSCountedSetCategories.html#NSCountedSet(GNU_Uniquing)">NSCountedSet</a></li><li><a href="NSDataCategories.html#NSData(GNUstepExtensions)">NSData</a></li><li><a href="NSDeserializerCategories.html#NSDeserializer(GNUstep)">NSDeserializer</a></li><li><a href="NSDictionaryCategories.html#NSDictionary(NSFileAttributes)">NSDictionary</a></li><li><a href="NSFileHandleCategories.html#NSFileHandle(GNUstepExtensions)">NSFileHandle</a></li><li><a href="NSHostCategories.html#NSHost(GNUstep)">NSHost</a></li><li><a href="NSInvocationCategories.html#NSInvocation(GNUstep)">NSInvocation</a></li><li><a href="NSKeyedArchiverCategories.html#NSKeyedArchiver(Internal)">NSKeyedArchiver</a></li><li><a href="NSKeyedUnarchiverCategories.html#NSKeyedUnarchiver(Internal)">NSKeyedUnarchiver</a></li><li><a href="NSMutableDataCategories.html#NSMutableData(GNUstepExtensions)">NSMutableData</a></li><li><a href="NSMutableURLRequestCategories.html#NSMutableURLRequest(GNUstep)">NSMutableURLRequest</a></li><li><a href="NSNumberCategories.html#NSNumber(NSDecimalNumber)">NSNumber</a></li><li><a href="NSObjectCategories.html#NSObject(GNUstep)">NSObject</a></li><li><a href="NSPointerArrayCategories.html#NSPointerArray(NSArrayConveniences)">NSPointerArray</a></li><li><a href="NSProcessInfoCategories.html#NSProcessInfo(GNUstep)">NSProcessInfo</a></li><li><a href="NSRunLoopCategories.html#NSRunLoop(GNUstepExtensions)">NSRunLoop</a></li><li><a href="NSSerializerCategories.html#NSSerializer(GNUstep)">NSSerializer</a></li><li><a href="NSThreadCategories.html#NSThread(CallStackSymbols)">NSThread</a></li><li><a href="NSUnarchiverCategories.html#NSUnarchiver(GNUstep)">NSUnarchiver</a></li><li><a href="NSURLCacheCategories.html#NSURLCache(NSURLSessionTaskAdditions)">NSURLCache</a></li><li><a href="NSURLConnectionCategories.html#NSURLConnection(NSURLConnectionSynchronousLoading)">NSURLConnection</a></li><li><a href="NSURLProtocolCategories.html#NSURLProtocol(Subclassing)">NSURLProtocol</a></li><li><a href="NSURLRequestCategories.html#NSURLRequest(NSHTTPURLRequest)">NSURLRequest</a></li><li><a href="NSValueCategories.html#NSValue(Subclassing)">NSValue</a></li><li><a href="NSXMLParserCategories.html#NSXMLParser(NSXMLParserLocatorAdditions)">NSXMLParser</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

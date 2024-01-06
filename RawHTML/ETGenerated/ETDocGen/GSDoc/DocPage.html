@@ -1,0 +1,639 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocPage class documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocPage">DocPage class documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Nicolas Roard</dt>
+      <dd>
+      </dd>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      
+      DocPage represents a documentation page.
+    
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2008 Nicolas Roard</p>
+
+        <div>
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocPage class
+      </a></h1>
+    <h2><a name="class$DocPage">DocPage</a> : <a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSObject.html#class$NSObject">NSObject</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocPage.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Page Generation
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            A documentation page that weaves various HTML, GSDoc,
+            Markdown, plist, and ObjC files (usually provided
+            on the command-line), into a new HTML representation
+            based on the template tags embedded in the HTML or
+            Markdown content.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            You usually don&apos;t instantiate this class, but give the
+            documentation input files to DocPageWeaver
+            which will create new DocPage instances and return
+            them. <br /> The returned pages can then be written
+            to disk with
+            <a rel="gsdoc" href="#method$DocPage-writeToURL$">
+              -writeToURL:
+            </a>
+
+            or their HTML representation retrieved with
+            <a rel="gsdoc" href="#method$DocPage-HTMLString">
+              -HTMLString
+            </a>
+
+            .
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            Subclasses can be written to customize the
+            presentation and how the various elements
+            (methods, macros, menu etc.) are laid out.
+            Subclassing support is experimental and
+            untested.
+              </p>
+    <p>
+      
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_DocPage_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-HTMLOverviewRepresentationForGroupNamed$">-HTMLOverviewRepresentationForGroupNamed:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-HTMLRepresentationForHeader$">-HTMLRepresentationForHeader:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-HTMLRepresentationWithTitle$elements$HTMLRepresentationSelector$groupSeparator$">-HTMLRepresentationWithTitle:elements:HTMLRepresentationSelector:groupSeparator:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-HTMLString">-HTMLString</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-addConstant$">-addConstant:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-addFunction$">-addFunction:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-addIVar$">-addIVar:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-addMacro$">-addMacro:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-addMethod$">-addMethod:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-addOtherDataType$">-addOtherDataType:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-addProperty$">-addProperty:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-addSubheader$">-addSubheader:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-header">-header</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-initWithDocumentFile$templateFile$menuFile$">-initWithDocumentFile:templateFile:menuFile:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-mainContentHTMLRepresentations">-mainContentHTMLRepresentations</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-name">-name</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-setHeader$">-setHeader:</a></li>
+      <li><a rel="gsdoc" href="DocPage.html#method$DocPage-writeToURL$">-writeToURL:</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocPage-HTMLOverviewRepresentationForGroupNamed$">HTMLOverviewRepresentationForGroupNamed:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHTMLElement.html#class$DocHTMLElement">DocHTMLElement</a>*) <b>HTMLOverviewRepresentationForGroupNamed:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aGroup;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-HTMLRepresentationForHeader$">HTMLRepresentationForHeader:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHTMLElement.html#class$DocHTMLElement">DocHTMLElement</a>*) <b>HTMLRepresentationForHeader:</b> (<a rel="gsdoc" href="DocHeader.html#class$DocHeader">DocHeader</a>*)aHeader;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the HTML element tree into which the main
+              header should be rendered.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              By default, returns the -[DocHeader
+              HTMLRepresentation].
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Can be overriden to return a custom representation.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-HTMLRepresentationWithTitle$elements$HTMLRepresentationSelector$groupSeparator$">HTMLRepresentationWithTitle:&nbsp;elements:&nbsp;HTMLRepresentationSelector:&nbsp;groupSeparator:&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHTMLElement.html#class$DocHTMLElement">DocHTMLElement</a>*) <b>HTMLRepresentationWithTitle:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aTitle<b> elements:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*)elementsByGroup<b> HTMLRepresentationSelector:</b> (SEL)repSelector<b> groupSeparator:</b> (<a rel="gsdoc" href="DocHTMLElement.html#class$DocHTMLElement">DocHTMLElement</a>*)aSeparator;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the given doc elements rendered as a HTML
+              element tree.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              The array argument must contain ETKeyValuePair and
+              not DocElement objects. <br /> For -[ETKeyValuePair
+              value], every pairs must return a mutable array
+              that contains DocElement objects only.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Doc elements are sorted by their -[ETKeyValuePair
+              key] such as task or group name, before being
+              rendered to HTML.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Group or task names are output with a &lt;h4&gt;
+              header (&lt;h3&gt; when the title is
+              <code>nil</code>). <br /> A title is also added,
+              which uses a &lt;h3&gt; header.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              <var>repSelector</var> should usually be
+              
+                -HTMLRepresentation
+              
+
+              . Additional representations can be added to the
+              DocElement subclasses such as -[DocHeader
+              HTMLTOCRepresentation]. You can
+              pass such a selector in argument to use a custom
+              representation in the output.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See also DocElement.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-HTMLString">HTMLString&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>HTMLString</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit HTML Generation
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns a string representation of the whole page
+              by weaving the input files.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-addConstant$">addConstant:&nbsp;</a></h3>
+    - (void) <b>addConstant:</b> (<a rel="gsdoc" href="DocCDataType.html#class$DocConstant">DocConstant</a>*)aConstant;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Adds a constant documentation to the page.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-addFunction$">addFunction:&nbsp;</a></h3>
+    - (void) <b>addFunction:</b> (<a rel="gsdoc" href="DocFunction.html#class$DocFunction">DocFunction</a>*)aFunction;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Adds a function documentation to the page.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-addIVar$">addIVar:&nbsp;</a></h3>
+    - (void) <b>addIVar:</b> (<a rel="gsdoc" href="DocIVar.html#class$DocIVar">DocIVar</a>*)anIVar;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Adds an ivar documentation to the page.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-addMacro$">addMacro:&nbsp;</a></h3>
+    - (void) <b>addMacro:</b> (<a rel="gsdoc" href="DocMacro.html#class$DocMacro">DocMacro</a>*)aMacro;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Adds a macro documentation to the page.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-addMethod$">addMethod:&nbsp;</a></h3>
+    - (void) <b>addMethod:</b> (<a rel="gsdoc" href="DocMethod.html#class$DocMethod">DocMethod</a>*)aMethod;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Adds a method documentation to the page.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-addOtherDataType$">addOtherDataType:&nbsp;</a></h3>
+    - (void) <b>addOtherDataType:</b> (<a rel="gsdoc" href="DocCDataType.html#class$DocCDataType">DocCDataType</a>*)anotherDataType;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Adds another data type documentation to the page.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-addProperty$">addProperty:&nbsp;</a></h3>
+    - (void) <b>addProperty:</b> (<a rel="gsdoc" href="DocProperty.html#class$DocProperty">DocProperty</a>*)aProperty;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Adds a property documentation to the page.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-addSubheader$">addSubheader:&nbsp;</a></h3>
+    - (void) <b>addSubheader:</b> (<a rel="gsdoc" href="DocHeader.html#class$DocHeader">DocHeader</a>*)aHeader;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Adds a subheader to the page.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Subheaders are expected to be positioned under
+              the main header. <br /> A subheader can be used to
+              regroup related documentation tree elements.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-header">header&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="DocHeader.html#class$DocHeader">DocHeader</a>*) <b>header</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the page header.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-initWithDocumentFile$templateFile$menuFile$">initWithDocumentFile:&nbsp;templateFile:&nbsp;menuFile:&nbsp;</a></h3>
+    - (id) <b>initWithDocumentFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aDocumentPath<b> templateFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aTemplatePath<b> menuFile:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*)aMenuPath;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Initialization and Identity
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Initialises and returns a new documentation
+              page that combines the given input files.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-mainContentHTMLRepresentations">mainContentHTMLRepresentations&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSArray.html#class$NSArray">NSArray</a>*) <b>mainContentHTMLRepresentations</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the main page content rendered as an
+              DocHTMLElement array, including elements
+              such as <em>Instance Methods</em>, <em>Macros</em>
+              etc.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Menu, navigation bar etc. are not present in the
+              returned HTML representation unlike
+              <a rel="gsdoc" href="#method$DocPage-HTMLString">
+                -HTMLString
+              </a>
+
+              which does include them in its ouput.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-name">name&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>name</b>;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns the page name.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Can be used as a file name when saving the page, as
+              <em>etdocgen</em> does.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-setHeader$">setHeader:&nbsp;</a></h3>
+    - (void) <b>setHeader:</b> (<a rel="gsdoc" href="DocHeader.html#class$DocHeader">DocHeader</a>*)aHeader;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Page Building
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Sets the page header.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocPage-writeToURL$">writeToURL:&nbsp;</a></h3>
+    - (void) <b>writeToURL:</b> (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSURL.html#class$NSURL">NSURL</a>*)outputURL;<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit Writing to File
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Writes the page to the given URL atomically.
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_DocPage_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for DocPage Class</h2>
+    <h3><a name="ivariable$DocPage*constants">constants</a></h3>
+    @protected NSMutableArray* <b>constants</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocPage*functions">functions</a></h3>
+    @protected NSMutableArray* <b>functions</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocPage*ivars">ivars</a></h3>
+    @protected NSMutableArray* <b>ivars</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocPage*macros">macros</a></h3>
+    @protected NSMutableArray* <b>macros</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocPage*methods">methods</a></h3>
+    @protected NSMutableArray* <b>methods</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocPage*otherDataTypes">otherDataTypes</a></h3>
+    @protected NSMutableArray* <b>otherDataTypes</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocPage*properties">properties</a></h3>
+    @protected NSMutableArray* <b>properties</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <h3><a name="ivariable$DocPage*subheaders">subheaders</a></h3>
+    @protected NSMutableArray* <b>subheaders</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+    <br />
+    </font>
+</body>
+</html>

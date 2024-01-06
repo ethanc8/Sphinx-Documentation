@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Overridable Flags (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Overridable Flags (GNUstep Makefile Package)">
+<meta name="keywords" content="Overridable Flags (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Common-Variables.html" rel="up" title="Common Variables">
+<link href="Other-Variables.html" rel="next" title="Other Variables">
+<link href="Library-Combination.html" rel="prev" title="Library Combination">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Overridable-Flags"></span><div class="header">
+<p>
+Previous: <a href="Library-Combination.html" accesskey="p" rel="prev">Library Combination</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Overridable-Flags-1"></span><h4 class="subsection">1.7.5 Overridable Flags</h4>
+
+<dl>
+<dt id="index-OBJCFLAGS-1">Variable: <strong>OBJCFLAGS</strong></dt>
+<dd><p><code>OBJCFLAGS</code> are flags that are passed to the compiler when
+compiling Objective-C files.  The user can override this variable when
+running make and specify different flags as the following command
+illustrates:
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">make OBJCFLAGS=&quot;-Wno-implicit -Wno-protocol&quot;
+</pre></div>
+
+<dl>
+<dt id="index-CFLAGS-1">Variable: <strong>CFLAGS</strong></dt>
+<dd><p><code>CFLAGS</code> are flags that are passed to the compiler when compiling
+C files.  The user can override this variable when running make and
+specify different flags as the following command illustrates:
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">make CFLAGS=&quot;-Wall&quot;
+</pre></div>
+
+<dl>
+<dt id="index-OPTFLAG">Variable: <strong>OPTFLAG</strong></dt>
+<dd><p><code>OPTFLAG</code> is the flag used to indicate the optimization level
+that the compiler should perform when compiling Objective-C and C
+files; this flag is set to &lsquo;<samp>-O2</samp>&rsquo; by default, but the user can
+override this setting when running make as the following command
+illustrates:
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">make OPTFLAG=
+</pre></div>
+
+<p>This command sets the optimization flag to be empty so that no
+optimization will be performed by the compiler.
+</p>
+<dl>
+<dt id="index-GNUSTEP_005fINSTALLATION_005fDOMAIN-2">Variable: <strong>GNUSTEP_INSTALLATION_DOMAIN</strong></dt>
+<dd><p><code>GNUSTEP_INSTALLATION_DOMAIN</code> is the domain where the package
+will install its files; overriding this variable when running make
+will change all of the variables within the Makefile Package that
+depend upon it; the following command illustrates the use of this
+variable:
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">make GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
+</pre></div>
+
+<p>This command states that the <code>SYSTEM</code> domain should be used as
+the installation root directory; in particular applications in the
+package will be installed in the <samp>$GNUSTEP_SYSTEM_APPS</samp>
+directory, libraries in the package will be installed under the
+<samp>$GNUSTEP_SYSTEM_LIBRARIES</samp> directory, command line tools will be
+installed under the <samp>$GNUSTEP_SYSTEM_TOOLS</samp> directory, etc.
+Depending on the filesystem layout, the various directories may be
+located anywhere, which is why it&rsquo;s important to also refer to them by
+using variables such as <code>GNUSTEP_APPS</code>, <code>GNUSTEP_LIBRARIES</code>
+and <code>GNUSTEP_TOOLS</code>, which automatically point to the right
+directory on disk for this filesystem layout and installation domain.
+</p>
+<p>By default the Makefile Package sets
+<code>GNUSTEP_INSTALLATION_DOMAIN</code> to <code>LOCAL</code>.
+</p>
+<dl>
+<dt id="index-messages">Variable: <strong>messages</strong></dt>
+<dd><p><code>messages</code> can be set to &lsquo;<samp>yes</samp>&rsquo; in order to increase the
+verbosity and see all the commands the make is executing.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">make messages=yes
+</pre></div>
+
+<dl>
+<dt id="index-documentation">Variable: <strong>documentation</strong></dt>
+<dd><p><code>documentation</code> controls whether the documentation targets in
+a project will be executed. If you don&rsquo;t desire building the
+documentation (which might require a working LaTeX installation, etc.)
+you can set this to &lsquo;<samp>no</samp>&rsquo;. Otherwise the documentation will
+be built.
+</p></dd></dl>
+
+<div class="example">
+<pre class="example">make documentation=no
+</pre></div>
+
+<hr>
+<div class="header">
+<p>
+Previous: <a href="Library-Combination.html" accesskey="p" rel="prev">Library Combination</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

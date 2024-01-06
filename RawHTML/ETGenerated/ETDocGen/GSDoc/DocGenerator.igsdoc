@@ -1,0 +1,1248 @@
+{
+    categories = {
+	DocHTMLElement = {
+	    CommonUseCases = DocHTMLElement;
+	};
+	NSString = {
+	    DocGenerator = DocDescriptionParser;
+	};
+    };
+    category = {
+	"DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	"NSString(DocGenerator)" = DocDescriptionParser;
+    };
+    class = {
+	DocCDataType = DocCDataType;
+	DocCategoryPage = DocCategoryPage;
+	DocConstant = DocCDataType;
+	DocDeclarationReorderer = DocDeclarationReorderer;
+	DocDescriptionParser = DocDescriptionParser;
+	DocElement = DocElement;
+	DocElementGroup = DocElement;
+	DocFunction = DocFunction;
+	DocGraphWriter = DocGraphWriter;
+	DocHTMLElement = DocHTMLElement;
+	DocHTMLIndex = DocIndex;
+	DocHeader = DocHeader;
+	DocIVar = DocIVar;
+	DocIndex = DocIndex;
+	DocMacro = DocMacro;
+	DocMethod = DocMethod;
+	DocMethodGroupDescriptionParser = DocDescriptionParser;
+	DocPage = DocPage;
+	DocPageWeaver = DocPageWeaver;
+	DocParameter = DocParameter;
+	DocProperty = DocProperty;
+	DocSourceCodeParser = DocSourceCodeParser;
+	DocSubroutine = DocElement;
+	DocTOCPage = DocTOCPage;
+	DocVariable = DocCDataType;
+	GSDocParser = GSDocParser;
+    };
+    classvars = {
+	DocCDataType = {
+	    type = DocCDataType;
+	};
+	DocGraphWriter = {
+	    mEdges = DocGraphWriter;
+	    mGraph = DocGraphWriter;
+	    mGraphContext = DocGraphWriter;
+	    mNodes = DocGraphWriter;
+	};
+	DocHTMLElement = {
+	    attributes = DocHTMLElement;
+	    blockElementNames = DocHTMLElement;
+	    children = DocHTMLElement;
+	    elementName = DocHTMLElement;
+	};
+	DocHeader = {
+	    abstract = DocHeader;
+	    adoptedProtocolNames = DocHeader;
+	    authors = DocHeader;
+	    categoryName = DocHeader;
+	    className = DocHeader;
+	    declaredIn = DocHeader;
+	    fileOverview = DocHeader;
+	    group = DocHeader;
+	    isInformalProtocol = DocHeader;
+	    overview = DocHeader;
+	    protocolName = DocHeader;
+	    superclassName = DocHeader;
+	    title = DocHeader;
+	};
+	DocPage = {
+	    constants = DocPage;
+	    functions = DocPage;
+	    ivars = DocPage;
+	    macros = DocPage;
+	    methods = DocPage;
+	    otherDataTypes = DocPage;
+	    properties = DocPage;
+	    subheaders = DocPage;
+	};
+	DocParameter = {
+	    className = DocParameter;
+	    description = DocParameter;
+	    name = DocParameter;
+	    protocolName = DocParameter;
+	    type = DocParameter;
+	    typePrefix = DocParameter;
+	    typeSuffix = DocParameter;
+	};
+    };
+    function = {
+	checkOptions = etdocgen;
+	generateClassMapping = etdocgen;
+	indexFileInDirectory = etdocgen;
+	orderedSymbolDeclarationsFileInDirectory = etdocgen;
+	printHelp = etdocgen;
+	sourceFilesByAddingSupportFilesFromDirectory = etdocgen;
+    };
+    ivariable = {
+	abstract = {
+	    DocHeader = DocHeader;
+	};
+	adoptedProtocolNames = {
+	    DocHeader = DocHeader;
+	};
+	attributes = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	authors = {
+	    DocHeader = DocHeader;
+	};
+	blockElementNames = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	categoryName = {
+	    DocHeader = DocHeader;
+	};
+	children = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	className = {
+	    DocHeader = DocHeader;
+	    DocParameter = DocParameter;
+	};
+	constants = {
+	    DocPage = DocPage;
+	};
+	declaredIn = {
+	    DocHeader = DocHeader;
+	};
+	description = {
+	    DocParameter = DocParameter;
+	};
+	elementName = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	fileOverview = {
+	    DocHeader = DocHeader;
+	};
+	functions = {
+	    DocPage = DocPage;
+	};
+	group = {
+	    DocHeader = DocHeader;
+	};
+	isInformalProtocol = {
+	    DocHeader = DocHeader;
+	};
+	ivars = {
+	    DocPage = DocPage;
+	};
+	mEdges = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	mGraph = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	mGraphContext = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	mNodes = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	macros = {
+	    DocPage = DocPage;
+	};
+	methods = {
+	    DocPage = DocPage;
+	};
+	name = {
+	    DocParameter = DocParameter;
+	};
+	otherDataTypes = {
+	    DocPage = DocPage;
+	};
+	overview = {
+	    DocHeader = DocHeader;
+	};
+	properties = {
+	    DocPage = DocPage;
+	};
+	protocolName = {
+	    DocHeader = DocHeader;
+	    DocParameter = DocParameter;
+	};
+	subheaders = {
+	    DocPage = DocPage;
+	};
+	superclassName = {
+	    DocHeader = DocHeader;
+	};
+	title = {
+	    DocHeader = DocHeader;
+	};
+	type = {
+	    DocCDataType = DocCDataType;
+	    DocParameter = DocParameter;
+	};
+	typePrefix = {
+	    DocParameter = DocParameter;
+	};
+	typeSuffix = {
+	    DocParameter = DocParameter;
+	};
+    };
+    method = {
+	"+additionalSourceFileTypes" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"+blankElement" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"+currentIndex" = {
+	    DocIndex = DocIndex;
+	};
+	"+defaultTask" = {
+	    DocElement = DocElement;
+	};
+	"+elementWithName:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"+forthcomingDescription" = {
+	    DocElement = DocElement;
+	};
+	"+markdownFileTypes" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"+parameterWithName:type:" = {
+	    DocParameter = DocParameter;
+	};
+	"+parserClassForFileType:" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"+setCurrentIndex:" = {
+	    DocIndex = DocIndex;
+	};
+	"-GSDocElementName" = {
+	    DocCDataType = DocCDataType;
+	    DocConstant = DocCDataType;
+	    DocElement = DocElement;
+	    DocFunction = DocFunction;
+	    DocMacro = DocMacro;
+	    DocVariable = DocCDataType;
+	};
+	"-HTMLAddendumRepresentation" = {
+	    DocSubroutine = DocElement;
+	};
+	"-HTMLDescriptionWithDocIndex:" = {
+	    DocElement = DocElement;
+	};
+	"-HTMLOverviewRepresentation" = {
+	    DocHeader = DocHeader;
+	};
+	"-HTMLOverviewRepresentationForGroupNamed:" = {
+	    DocPage = DocPage;
+	};
+	"-HTMLRepresentation" = {
+	    DocElement = DocElement;
+	    DocHeader = DocHeader;
+	};
+	"-HTMLRepresentationForHeader:" = {
+	    DocPage = DocPage;
+	};
+	"-HTMLRepresentationWithParentheses:" = {
+	    DocParameter = DocParameter;
+	};
+	"-HTMLRepresentationWithTitle:elements:HTMLRepresentationSelector:groupSeparator:" = {
+	    DocPage = DocPage;
+	};
+	"-HTMLRepresentationWithTitleBlockElement:" = {
+	    DocHeader = DocHeader;
+	};
+	"-HTMLString" = {
+	    DocPage = DocPage;
+	};
+	"-HTMLTOCRepresentation" = {
+	    DocHeader = DocHeader;
+	};
+	"-abstract" = {
+	    DocMethodGroupDescriptionParser = DocDescriptionParser;
+	};
+	"-add:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-addAdoptedProtocolName:" = {
+	    DocHeader = DocHeader;
+	};
+	"-addAuthor:" = {
+	    DocHeader = DocHeader;
+	};
+	"-addConstant:" = {
+	    DocPage = DocPage;
+	};
+	"-addEdge:to:" = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	"-addElement:" = {
+	    DocElementGroup = DocElement;
+	};
+	"-addFunction:" = {
+	    DocPage = DocPage;
+	};
+	"-addIVar:" = {
+	    DocPage = DocPage;
+	};
+	"-addInformationFrom:" = {
+	    DocElement = DocElement;
+	};
+	"-addMacro:" = {
+	    DocPage = DocPage;
+	};
+	"-addMethod:" = {
+	    DocPage = DocPage;
+	};
+	"-addMethodGroup:" = {
+	    DocCategoryPage = DocCategoryPage;
+	};
+	"-addNode:" = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	"-addOtherDataType:" = {
+	    DocPage = DocPage;
+	};
+	"-addParameter:" = {
+	    DocSubroutine = DocElement;
+	};
+	"-addProperty:" = {
+	    DocPage = DocPage;
+	};
+	"-addSubheader:" = {
+	    DocPage = DocPage;
+	};
+	"-addText:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-and:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-appendToRawDescription:" = {
+	    DocElement = DocElement;
+	};
+	"-argTypeFromArgsAttributes:" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-class:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-class:with:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-class:with:and:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-class:with:and:and:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-cleanupGraph" = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	"-content" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-currentAttributes" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-currentClassName" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-currentHeader" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-currentPage" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-currentSourceFile" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-description" = {
+	    DocDescriptionParser = DocDescriptionParser;
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-descriptionForParameter:" = {
+	    DocDescriptionParser = DocDescriptionParser;
+	};
+	"-elementClassForName:" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-elementForSymbolName:ofKind:" = {
+	    DocIndex = DocIndex;
+	};
+	"-finishWeaving" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-generateFile:withFormat:" = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	"-generateWithFormat:" = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	"-group" = {
+	    DocMethodGroupDescriptionParser = DocDescriptionParser;
+	};
+	"-header" = {
+	    DocPage = DocPage;
+	};
+	"-id:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-id:with:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-id:with:and:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-id:with:and:and:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-indentSpaces" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-init" = {
+	    DocIndex = DocIndex;
+	};
+	"-initWithDocumentFile:templateFile:menuFile:" = {
+	    DocPage = DocPage;
+	};
+	"-initWithHeader:subgroupKey:" = {
+	    DocElementGroup = DocElement;
+	};
+	"-initWithName:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-initWithName:type:" = {
+	    DocParameter = DocParameter;
+	};
+	"-initWithParserSourceDirectory:fileTypes:rawSourceDirectories:additionalSourceFiles:templateFile:" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-initWithSourceFile:additionalParserFiles:" = {
+	    "(DocSourceParsing)" = DocPageWeaver;
+	    GSDocParser = GSDocParser;
+	};
+	"-initWithSourceFiles:templateFile:" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-initWithWeaver:orderedSymbols:" = {
+	    DocDeclarationReorderer = DocDeclarationReorderer;
+	};
+	"-insertLinksWithDocIndex:forString:" = {
+	    DocElement = DocElement;
+	};
+	"-isClassMethod" = {
+	    DocMethod = DocMethod;
+	};
+	"-isInformalProtocolSymbolName:" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-layout" = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	"-linkForClassName:" = {
+	    DocIndex = DocIndex;
+	};
+	"-linkForGSDocRef:" = {
+	    DocIndex = DocIndex;
+	};
+	"-linkForLocalMethodRef:relativeTo:" = {
+	    DocIndex = DocIndex;
+	};
+	"-linkForProtocolName:" = {
+	    DocIndex = DocIndex;
+	};
+	"-linkForSymbolName:ofKind:" = {
+	    DocIndex = DocIndex;
+	};
+	"-linkWithName:forSymbolName:ofKind:" = {
+	    DocIndex = DocIndex;
+	};
+	"-linkWithName:ref:anchor:" = {
+	    DocIndex = DocIndex;
+	};
+	"-mainContentHTMLRepresentations" = {
+	    DocPage = DocPage;
+	};
+	"-name" = {
+	    DocPage = DocPage;
+	};
+	"-name:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-newContent" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-parameters" = {
+	    DocSubroutine = DocElement;
+	};
+	"-parse:" = {
+	    DocDescriptionParser = DocDescriptionParser;
+	};
+	"-parseAndWeave" = {
+	    "(DocSourceParsing)" = DocPageWeaver;
+	    GSDocParser = GSDocParser;
+	};
+	"-parseProgramComponent:" = {
+	    DocConstant = DocCDataType;
+	    DocFunction = DocFunction;
+	    DocIVar = DocIVar;
+	    DocMacro = DocMacro;
+	    DocMethod = DocMethod;
+	    DocProperty = DocProperty;
+	    DocVariable = DocCDataType;
+	};
+	"-parseType:" = {
+	    DocParameter = DocParameter;
+	};
+	"-parser:endElement:withContent:" = {
+	    "(GSDocParserDelegate)" = GSDocParser;
+	};
+	"-parser:startElement:withAttributes:" = {
+	    "(GSDocParserDelegate)" = GSDocParser;
+	};
+	"-parserDelegate" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-pathForRawSourceFileNamed:" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-popParserDelegate" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-projectSymbolNamesOfKind:" = {
+	    DocIndex = DocIndex;
+	};
+	"-pushParserDelegate:" = {
+	    GSDocParser = GSDocParser;
+	};
+	"-rawDescription" = {
+	    DocElement = DocElement;
+	};
+	"-refFileExtension" = {
+	    DocIndex = DocIndex;
+	};
+	"-refMarkup" = {
+	    DocMethod = DocMethod;
+	};
+	"-refMarkupWithClassName:" = {
+	    DocMethod = DocMethod;
+	};
+	"-refMarkupWithProtocolName:" = {
+	    DocMethod = DocMethod;
+	};
+	"-regenerate" = {
+	    DocIndex = DocIndex;
+	};
+	"-returnDescription" = {
+	    DocDescriptionParser = DocDescriptionParser;
+	};
+	"-returnParameter" = {
+	    DocSubroutine = DocElement;
+	};
+	"-setAttribute:with:on:" = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	"-setElement:forSymbolName:ofKind:" = {
+	    DocIndex = DocIndex;
+	};
+	"-setExternalMappingFile:" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-setGraphAttribute:with:" = {
+	    DocGraphWriter = DocGraphWriter;
+	};
+	"-setHeader:" = {
+	    DocPage = DocPage;
+	};
+	"-setMenuFile:" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-setProjectRef:forSymbolName:ofKind:" = {
+	    DocIndex = DocIndex;
+	};
+	"-setWeaver:" = {
+	    "(DocSourceParsing)" = DocPageWeaver;
+	    GSDocParser = GSDocParser;
+	};
+	"-stringByTrimmingWhitespacesAndNewlinesByLine" = {
+	    "NSString(DocGenerator)" = DocDescriptionParser;
+	};
+	"-symbolKinds" = {
+	    DocIndex = DocIndex;
+	};
+	"-task" = {
+	    DocDescriptionParser = DocDescriptionParser;
+	};
+	"-taskUnit" = {
+	    DocDescriptionParser = DocDescriptionParser;
+	};
+	"-templateFileForSourceFile:" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-trimmedString" = {
+	    "NSString(DocGenerator)" = DocDescriptionParser;
+	};
+	"-validTagsAfterMainDescription" = {
+	    DocDescriptionParser = DocDescriptionParser;
+	};
+	"-validTagsBeforeMainDescription" = {
+	    DocDescriptionParser = DocDescriptionParser;
+	};
+	"-weaveAllPages" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-weaveCategoryNamed:className:isInformalProtocol:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveClassNamed:superclassName:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveConstant:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveCurrentSourcePages" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-weaveFunction:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveHeader:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveIVar:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveMacro:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveMethod:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveNewPage" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-weaveOtherDataType:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveOverviewFile" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-weavePageForCategoryNamed:className:" = {
+	    DocPageWeaver = DocPageWeaver;
+	};
+	"-weaveProperty:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveProtocolNamed:" = {
+	    "(DocWeaving)" = DocPageWeaver;
+	};
+	"-weaveSelector" = {
+	    DocCDataType = DocCDataType;
+	    DocConstant = DocCDataType;
+	    DocElement = DocElement;
+	    DocFunction = DocFunction;
+	    DocMacro = DocMacro;
+	    DocVariable = DocCDataType;
+	};
+	"-weaver" = {
+	    "(DocSourceParsing)" = DocPageWeaver;
+	    GSDocParser = GSDocParser;
+	};
+	"-with:" = {
+	    DocHTMLElement = DocHTMLElement;
+	};
+	"-with:and:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-with:and:and:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-with:and:and:and:" = {
+	    "DocHTMLElement(CommonUseCases)" = DocHTMLElement;
+	};
+	"-writeToURL:" = {
+	    DocPage = DocPage;
+	};
+    };
+    output = {
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCDataType.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocCDataType.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCategoryPage.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocCategoryPage.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCategoryPage.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocCategoryPage.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDeclarationReorderer.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocDeclarationReorderer.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDeclarationReorderer.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocDeclarationReorderer.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDescriptionParser.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocDescriptionParser.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDescriptionParser.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocDescriptionParser.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocElement.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocElement.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocElement.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocElement.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocFunction.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocFunction.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocFunction.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocFunction.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocGraphWriter.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocGraphWriter.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocGraphWriter.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocGraphWriter.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHTMLElement.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocHTMLElement.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHTMLElement.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocHTMLElement.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHeader.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocHeader.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHeader.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocHeader.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIVar.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocIVar.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIndex.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocIndex.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIndex.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocIndex.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMacro.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocMacro.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMacro.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocMacro.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMethod.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocMethod.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMethod.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocMethod.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPage.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocPage.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPageWeaver.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocPageWeaver.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPageWeaver.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocPageWeaver.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocParameter.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocParameter.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocParameter.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocParameter.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocProperty.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocProperty.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocProperty.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocProperty.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocSourceCodeParser.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocSourceCodeParser.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocSourceCodeParser.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocSourceCodeParser.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocTOCPage.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocTOCPage.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocTOCPage.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/DocTOCPage.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/GSDocParser.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/GSDocParser.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/GSDocParser.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/GSDocParser.gsdoc"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/etdocgen.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/GSDoc/etdocgen.gsdoc"
+	);
+    };
+    protocol = {
+	"(DocSourceParsing)" = DocPageWeaver;
+	"(DocWeaving)" = DocPageWeaver;
+	"(GSDocParserDelegate)" = GSDocParser;
+    };
+    source = {
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCDataType.h" = (
+	    "DocCDataType.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCategoryPage.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCategoryPage.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCategoryPage.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCategoryPage.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCategoryPage.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocCategoryPage.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDeclarationReorderer.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDeclarationReorderer.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDeclarationReorderer.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDeclarationReorderer.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDeclarationReorderer.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDeclarationReorderer.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDescriptionParser.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDescriptionParser.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDescriptionParser.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDescriptionParser.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDescriptionParser.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocDescriptionParser.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocElement.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocElement.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocElement.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocElement.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocElement.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocElement.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocFunction.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocFunction.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocFunction.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocFunction.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocFunction.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocFunction.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocGraphWriter.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocGraphWriter.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocGraphWriter.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocGraphWriter.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocGraphWriter.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocGraphWriter.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHTMLElement.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHTMLElement.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHTMLElement.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHTMLElement.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHTMLElement.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHTMLElement.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHeader.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHeader.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHeader.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHeader.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHeader.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocHeader.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIVar.h" = (
+	    "DocIVar.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIndex.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIndex.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIndex.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIndex.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIndex.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocIndex.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMacro.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMacro.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMacro.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMacro.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMacro.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMacro.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMethod.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMethod.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMethod.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMethod.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMethod.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocMethod.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPage.h" = (
+	    "DocPage.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPageWeaver.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPageWeaver.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPageWeaver.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPageWeaver.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPageWeaver.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocPageWeaver.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocParameter.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocParameter.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocParameter.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocParameter.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocParameter.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocParameter.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocProperty.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocProperty.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocProperty.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocProperty.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocProperty.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocProperty.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocSourceCodeParser.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocSourceCodeParser.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocSourceCodeParser.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocSourceCodeParser.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocSourceCodeParser.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocSourceCodeParser.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocTOCPage.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocTOCPage.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocTOCPage.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocTOCPage.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocTOCPage.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/DocTOCPage.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/GSDocParser.h" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/GSDocParser.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/GSDocParser.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/GSDocParser.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/GSDocParser.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/GSDocParser.m"
+	);
+	"/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/etdocgen.m" = (
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/etdocgen.m",
+	    "/home/pi/Projects/GNUstep/Install/Etoile/Developer/Services/DocGenerator/Documentation/ObjC/etdocgen.m"
+	);
+    };
+    super = {
+	DocCDataType = DocElement;
+	DocCategoryPage = DocPage;
+	DocConstant = DocCDataType;
+	DocDeclarationReorderer = NSObject;
+	DocDescriptionParser = NSObject;
+	DocElement = NSObject;
+	DocElementGroup = DocElement;
+	DocFunction = DocSubroutine;
+	DocGraphWriter = NSObject;
+	DocHTMLElement = NSObject;
+	DocHTMLIndex = DocIndex;
+	DocHeader = DocElement;
+	DocIVar = DocElement;
+	DocIndex = NSObject;
+	DocMacro = DocFunction;
+	DocMethod = DocSubroutine;
+	DocMethodGroupDescriptionParser = DocDescriptionParser;
+	DocPage = NSObject;
+	DocPageWeaver = NSObject;
+	DocParameter = NSObject;
+	DocProperty = DocElement;
+	DocSourceCodeParser = NSObject;
+	DocSubroutine = DocElement;
+	DocTOCPage = DocPage;
+	DocVariable = DocCDataType;
+	GSDocParser = NSObject;
+    };
+    title = {
+	DocCDataType = "DocCDataType documentation";
+	DocCategoryPage = "DocCategoryPage class documentation";
+	DocDeclarationReorderer = "DocDeclarationReorderer class documentation";
+	DocDescriptionParser = "DocDescriptionParser documentation";
+	DocElement = "DocElement documentation";
+	DocFunction = "DocFunction class documentation";
+	DocGraphWriter = "DocGraphWriter class documentation";
+	DocHTMLElement = "DocHTMLElement class documentation";
+	DocHeader = "DocHeader class documentation";
+	DocIVar = "DocIVar class documentation";
+	DocIndex = "DocIndex documentation";
+	DocMacro = "DocMacro class documentation";
+	DocMethod = "DocMethod class documentation";
+	DocPage = "DocPage class documentation";
+	DocPageWeaver = "DocPageWeaver class documentation";
+	DocParameter = "DocParameter class documentation";
+	DocProperty = "DocProperty class documentation";
+	DocSourceCodeParser = "DocSourceCodeParser class documentation";
+	DocTOCPage = "DocTOCPage class documentation";
+	GSDocParser = "GSDocParser class documentation";
+	etdocgen = "etdocgen documentation";
+    };
+    tool = {
+	etdocgen = etdocgen;
+    };
+    unitmethods = {
+	"(DocSourceParsing)" = {
+	    "-initWithSourceFile:additionalParserFiles:" = DocPageWeaver;
+	    "-parseAndWeave" = DocPageWeaver;
+	    "-setWeaver:" = DocPageWeaver;
+	    "-weaver" = DocPageWeaver;
+	};
+	"(DocWeaving)" = {
+	    "-currentHeader" = DocPageWeaver;
+	    "-finishWeaving" = DocPageWeaver;
+	    "-weaveCategoryNamed:className:isInformalProtocol:" = DocPageWeaver;
+	    "-weaveClassNamed:superclassName:" = DocPageWeaver;
+	    "-weaveConstant:" = DocPageWeaver;
+	    "-weaveFunction:" = DocPageWeaver;
+	    "-weaveHeader:" = DocPageWeaver;
+	    "-weaveIVar:" = DocPageWeaver;
+	    "-weaveMacro:" = DocPageWeaver;
+	    "-weaveMethod:" = DocPageWeaver;
+	    "-weaveOtherDataType:" = DocPageWeaver;
+	    "-weaveProperty:" = DocPageWeaver;
+	    "-weaveProtocolNamed:" = DocPageWeaver;
+	};
+	"(GSDocParserDelegate)" = {
+	    "-parser:endElement:withContent:" = GSDocParser;
+	    "-parser:startElement:withAttributes:" = GSDocParser;
+	};
+	DocCDataType = {
+	    "-GSDocElementName" = DocCDataType;
+	    "-weaveSelector" = DocCDataType;
+	};
+	DocCategoryPage = {
+	    "-addMethodGroup:" = DocCategoryPage;
+	};
+	DocConstant = {
+	    "-GSDocElementName" = DocCDataType;
+	    "-parseProgramComponent:" = DocCDataType;
+	    "-weaveSelector" = DocCDataType;
+	};
+	DocDeclarationReorderer = {
+	    "-initWithWeaver:orderedSymbols:" = DocDeclarationReorderer;
+	};
+	DocDescriptionParser = {
+	    "-description" = DocDescriptionParser;
+	    "-descriptionForParameter:" = DocDescriptionParser;
+	    "-parse:" = DocDescriptionParser;
+	    "-returnDescription" = DocDescriptionParser;
+	    "-task" = DocDescriptionParser;
+	    "-taskUnit" = DocDescriptionParser;
+	    "-validTagsAfterMainDescription" = DocDescriptionParser;
+	    "-validTagsBeforeMainDescription" = DocDescriptionParser;
+	};
+	DocElement = {
+	    "+defaultTask" = DocElement;
+	    "+forthcomingDescription" = DocElement;
+	    "-GSDocElementName" = DocElement;
+	    "-HTMLDescriptionWithDocIndex:" = DocElement;
+	    "-HTMLRepresentation" = DocElement;
+	    "-addInformationFrom:" = DocElement;
+	    "-appendToRawDescription:" = DocElement;
+	    "-insertLinksWithDocIndex:forString:" = DocElement;
+	    "-rawDescription" = DocElement;
+	    "-weaveSelector" = DocElement;
+	};
+	DocElementGroup = {
+	    "-addElement:" = DocElement;
+	    "-initWithHeader:subgroupKey:" = DocElement;
+	};
+	DocFunction = {
+	    "-GSDocElementName" = DocFunction;
+	    "-parseProgramComponent:" = DocFunction;
+	    "-weaveSelector" = DocFunction;
+	};
+	DocGraphWriter = {
+	    "-addEdge:to:" = DocGraphWriter;
+	    "-addNode:" = DocGraphWriter;
+	    "-cleanupGraph" = DocGraphWriter;
+	    "-generateFile:withFormat:" = DocGraphWriter;
+	    "-generateWithFormat:" = DocGraphWriter;
+	    "-layout" = DocGraphWriter;
+	    "-setAttribute:with:on:" = DocGraphWriter;
+	    "-setGraphAttribute:with:" = DocGraphWriter;
+	};
+	DocHTMLElement = {
+	    "+blankElement" = DocHTMLElement;
+	    "+elementWithName:" = DocHTMLElement;
+	    "-add:" = DocHTMLElement;
+	    "-addText:" = DocHTMLElement;
+	    "-and:" = DocHTMLElement;
+	    "-class:" = DocHTMLElement;
+	    "-content" = DocHTMLElement;
+	    "-description" = DocHTMLElement;
+	    "-id:" = DocHTMLElement;
+	    "-initWithName:" = DocHTMLElement;
+	    "-name:" = DocHTMLElement;
+	    "-with:" = DocHTMLElement;
+	};
+	"DocHTMLElement(CommonUseCases)" = {
+	    "-class:with:" = DocHTMLElement;
+	    "-class:with:and:" = DocHTMLElement;
+	    "-class:with:and:and:" = DocHTMLElement;
+	    "-id:with:" = DocHTMLElement;
+	    "-id:with:and:" = DocHTMLElement;
+	    "-id:with:and:and:" = DocHTMLElement;
+	    "-with:and:" = DocHTMLElement;
+	    "-with:and:and:" = DocHTMLElement;
+	    "-with:and:and:and:" = DocHTMLElement;
+	};
+	DocHeader = {
+	    "-HTMLOverviewRepresentation" = DocHeader;
+	    "-HTMLRepresentation" = DocHeader;
+	    "-HTMLRepresentationWithTitleBlockElement:" = DocHeader;
+	    "-HTMLTOCRepresentation" = DocHeader;
+	    "-addAdoptedProtocolName:" = DocHeader;
+	    "-addAuthor:" = DocHeader;
+	};
+	DocIVar = {
+	    "-parseProgramComponent:" = DocIVar;
+	};
+	DocIndex = {
+	    "+currentIndex" = DocIndex;
+	    "+setCurrentIndex:" = DocIndex;
+	    "-elementForSymbolName:ofKind:" = DocIndex;
+	    "-init" = DocIndex;
+	    "-linkForClassName:" = DocIndex;
+	    "-linkForGSDocRef:" = DocIndex;
+	    "-linkForLocalMethodRef:relativeTo:" = DocIndex;
+	    "-linkForProtocolName:" = DocIndex;
+	    "-linkForSymbolName:ofKind:" = DocIndex;
+	    "-linkWithName:forSymbolName:ofKind:" = DocIndex;
+	    "-linkWithName:ref:anchor:" = DocIndex;
+	    "-projectSymbolNamesOfKind:" = DocIndex;
+	    "-refFileExtension" = DocIndex;
+	    "-regenerate" = DocIndex;
+	    "-setElement:forSymbolName:ofKind:" = DocIndex;
+	    "-setProjectRef:forSymbolName:ofKind:" = DocIndex;
+	    "-symbolKinds" = DocIndex;
+	};
+	DocMacro = {
+	    "-GSDocElementName" = DocMacro;
+	    "-parseProgramComponent:" = DocMacro;
+	    "-weaveSelector" = DocMacro;
+	};
+	DocMethod = {
+	    "-isClassMethod" = DocMethod;
+	    "-parseProgramComponent:" = DocMethod;
+	    "-refMarkup" = DocMethod;
+	    "-refMarkupWithClassName:" = DocMethod;
+	    "-refMarkupWithProtocolName:" = DocMethod;
+	};
+	DocMethodGroupDescriptionParser = {
+	    "-abstract" = DocDescriptionParser;
+	    "-group" = DocDescriptionParser;
+	};
+	DocPage = {
+	    "-HTMLOverviewRepresentationForGroupNamed:" = DocPage;
+	    "-HTMLRepresentationForHeader:" = DocPage;
+	    "-HTMLRepresentationWithTitle:elements:HTMLRepresentationSelector:groupSeparator:" = DocPage;
+	    "-HTMLString" = DocPage;
+	    "-addConstant:" = DocPage;
+	    "-addFunction:" = DocPage;
+	    "-addIVar:" = DocPage;
+	    "-addMacro:" = DocPage;
+	    "-addMethod:" = DocPage;
+	    "-addOtherDataType:" = DocPage;
+	    "-addProperty:" = DocPage;
+	    "-addSubheader:" = DocPage;
+	    "-header" = DocPage;
+	    "-initWithDocumentFile:templateFile:menuFile:" = DocPage;
+	    "-mainContentHTMLRepresentations" = DocPage;
+	    "-name" = DocPage;
+	    "-setHeader:" = DocPage;
+	    "-writeToURL:" = DocPage;
+	};
+	DocPageWeaver = {
+	    "+additionalSourceFileTypes" = DocPageWeaver;
+	    "+markdownFileTypes" = DocPageWeaver;
+	    "+parserClassForFileType:" = DocPageWeaver;
+	    "-currentClassName" = DocPageWeaver;
+	    "-currentHeader" = DocPageWeaver;
+	    "-currentPage" = DocPageWeaver;
+	    "-currentSourceFile" = DocPageWeaver;
+	    "-initWithParserSourceDirectory:fileTypes:rawSourceDirectories:additionalSourceFiles:templateFile:" = DocPageWeaver;
+	    "-initWithSourceFiles:templateFile:" = DocPageWeaver;
+	    "-pathForRawSourceFileNamed:" = DocPageWeaver;
+	    "-setExternalMappingFile:" = DocPageWeaver;
+	    "-setMenuFile:" = DocPageWeaver;
+	    "-templateFileForSourceFile:" = DocPageWeaver;
+	    "-weaveAllPages" = DocPageWeaver;
+	    "-weaveCurrentSourcePages" = DocPageWeaver;
+	    "-weaveNewPage" = DocPageWeaver;
+	    "-weaveOverviewFile" = DocPageWeaver;
+	    "-weavePageForCategoryNamed:className:" = DocPageWeaver;
+	};
+	DocParameter = {
+	    "+parameterWithName:type:" = DocParameter;
+	    "-HTMLRepresentationWithParentheses:" = DocParameter;
+	    "-initWithName:type:" = DocParameter;
+	    "-parseType:" = DocParameter;
+	};
+	DocProperty = {
+	    "-parseProgramComponent:" = DocProperty;
+	};
+	DocSubroutine = {
+	    "-HTMLAddendumRepresentation" = DocElement;
+	    "-addParameter:" = DocElement;
+	    "-parameters" = DocElement;
+	    "-returnParameter" = DocElement;
+	};
+	DocVariable = {
+	    "-GSDocElementName" = DocCDataType;
+	    "-parseProgramComponent:" = DocCDataType;
+	    "-weaveSelector" = DocCDataType;
+	};
+	GSDocParser = {
+	    "-argTypeFromArgsAttributes:" = GSDocParser;
+	    "-currentAttributes" = GSDocParser;
+	    "-elementClassForName:" = GSDocParser;
+	    "-indentSpaces" = GSDocParser;
+	    "-initWithSourceFile:additionalParserFiles:" = GSDocParser;
+	    "-isInformalProtocolSymbolName:" = GSDocParser;
+	    "-newContent" = GSDocParser;
+	    "-parseAndWeave" = GSDocParser;
+	    "-parserDelegate" = GSDocParser;
+	    "-popParserDelegate" = GSDocParser;
+	    "-pushParserDelegate:" = GSDocParser;
+	    "-setWeaver:" = GSDocParser;
+	    "-weaver" = GSDocParser;
+	};
+	"NSString(DocGenerator)" = {
+	    "-stringByTrimmingWhitespacesAndNewlinesByLine" = DocDescriptionParser;
+	    "-trimmedString" = DocDescriptionParser;
+	};
+    };
+}

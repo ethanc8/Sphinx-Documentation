@@ -1,0 +1,498 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui (Application Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>Functions</h2><div class="meta">
+<p class="metadesc"><em>All the public Functions in GNUstep Gui (Application Kit)</em></p><table></table></div>
+</div>
+
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div class="functions">
+<h3>Functions</h3><h4>Default</h4><div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">id </span><span class="selector"> GSContactApplication</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">appName</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">port</span></span>, <span class="parameter"><span class="type">NSDate * </span><span class="arg">expire</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Establishes an NSConnection to the application listening at <var>port</var> (by convention usually the application name), launching <var>appName</var> if necessary. Returns the proxy to the remote application, or <var>nil</var> on failure. </p> <p> The value of <var>port</var> specifies the name of the distributed objects service to which the connection is to be made. If this is <var>nil</var> it will be inferred from <var>appName</var>... by convention, applications use their own name (minus any path or extension) for this. </p> <p> If <var>appName</var> is <var>nil</var> or cannot be launched, this attempts to locate any application in a standard location whose name matches <var>port</var> and launch that application. </p> <p> The value of <var>expire</var> provides a timeout in case the application cannot be contacted promptly. If it is omitted, a thirty second timeout is used. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">int </span><span class="selector"> NSApplicationMain</span>(<span class="parameter"><span class="type">int </span><span class="arg">argc</span></span>, <span class="parameter"><span class="type">const char** </span><span class="arg">argv</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> NSPerformService</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">serviceItem</span></span>, <span class="parameter"><span class="type">NSPasteboard * </span><span class="arg">pboard</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Given the name of a <var>serviceItem</var>, and some data in a pasteboard this function sends the data to the service provider (launching another application if necessary) and retrieves the result of the service in the pastebaord. </p> Returns <var>YES</var> on success, <var>NO</var> otherwise.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSRegisterServicesProvider</span>(<span class="parameter"><span class="type">id </span><span class="arg">provider</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">name</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Registers a services providing object using the specified port <var>name</var>. <br></br> Applications should not need to use this, as they can use the [NSApplication -setServicesProvider:] method instead. The NSApplication method will use the <var>name</var> of the application rather than an other port <var>name</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">int </span><span class="selector"> NSSetShowsServicesMenuItem</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">name</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">enabled</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Controls whether the item <var>name</var> should be included in the services menu. </p> <p> If <var>enabled</var> is <var>YES</var> then the services menu for each application will include the named item, if <var>enabled</var> is <var>NO</var> then the service will not be shown in application services menus. </p> <p> Returns 0 if the setting is successfuly changed. Non-zero otherwise. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSShowSystemInfoPanel</span>(<span class="parameter"><span class="type">NSDictionary * </span><span class="arg">options</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">BOOL </span><span class="selector"> NSShowsServicesMenuItem</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">name</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns a flag indicating whether the named service is supposed to be displayed in application services menus.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSUnRegisterServicesProvider</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">name</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSUpdateDynamicServices</span>()</span></dt>
+<dd><div class="methodDescription">
+A services providing application may use this to update the list of services it provides. <br></br> In order to update the services advertised, the application must create a <em>.service</em> bundle and place it in <var>~/Library/Services</var> before invoking this function.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSFrameLinkRect</span>(<span class="parameter"><span class="type">NSRect </span><span class="arg">aRect</span></span>, <span class="parameter"><span class="type">BOOL </span><span class="arg">isDestination</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">float </span><span class="selector"> NSLinkFrameThickness</span>()</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSEventMask </span><span class="selector"> NSEventMaskFromType</span>(<span class="parameter"><span class="type">NSEventType </span><span class="arg">type</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">int </span><span class="selector"> NSConvertGlyphsToPackedGlyphs</span>(<span class="parameter"><span class="type">NSGlyph * </span><span class="arg">glBuf</span></span>, <span class="parameter"><span class="type">int </span><span class="arg">count</span></span>, <span class="parameter"><span class="type">NSMultibyteGlyphPacking </span><span class="arg">packing</span></span>, <span class="parameter"><span class="type">char* </span><span class="arg">packedGlyphs</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType"><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a> * </span><span class="selector"> GSCurrentContext</span>()</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSInterfaceStyle </span><span class="selector"> NSInterfaceStyleForKey</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">key</span></span>, <span class="parameter"><span class="type"><a href="NSResponder.html#NSResponder">NSResponder</a> * </span><span class="arg">responder</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Returns the interface style the <var>responder</var> should use, which affects how a UI element (such as a button or menu) is displayed. If the <var>responder</var> has an interface style set, the <var>key</var> is ignored and the responder's interface style is returned. Otherwise the style associated with the <var>key</var> is returned (if set), otherwise the default style is returned. In no case will the style <var>NSNoInterfaceStyle</var> be returned. </p> <p> Styles can be set using the user defaults system. Currently available styles are </p> <ul> <li>NSNextStepInterfaceStyle</li> <li>NSMacintoshInterfaceStyle</li> <li>NSWindows95InterfaceStyle</li> <li>GSWindowMakerInterfaceStyle</li> </ul> <p> You can set a default style for all UI elements using the <var>NSInterfaceStyleDefault</var> key: </p> 
+<pre>
+   defaults write NSGlobalDomain NSInterfaceStyleDefault GSWindowMakerInterfaceStyle 
+   </pre>
+<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSInteger </span><span class="selector"> GSRunExceptionPanel</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSException * </span><span class="arg">exception</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSBeginAlertSheet</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>, <span class="parameter"><span class="type"><a href="NSWindow.html#NSWindow">NSWindow</a> * </span><span class="arg">docWindow</span></span>, <span class="parameter"><span class="type">id </span><span class="arg">modalDelegate</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">willEndSelector</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">didEndSelector</span></span>, <span class="parameter"><span class="type">void* </span><span class="arg">contextInfo</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSBeginCriticalAlertSheet</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>, <span class="parameter"><span class="type"><a href="NSWindow.html#NSWindow">NSWindow</a> * </span><span class="arg">docWindow</span></span>, <span class="parameter"><span class="type">id </span><span class="arg">modalDelegate</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">willEndSelector</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">didEndSelector</span></span>, <span class="parameter"><span class="type">void* </span><span class="arg">contextInfo</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSBeginInformationalAlertSheet</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>, <span class="parameter"><span class="type"><a href="NSWindow.html#NSWindow">NSWindow</a> * </span><span class="arg">docWindow</span></span>, <span class="parameter"><span class="type">id </span><span class="arg">modalDelegate</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">willEndSelector</span></span>, <span class="parameter"><span class="type">SEL </span><span class="arg">didEndSelector</span></span>, <span class="parameter"><span class="type">void* </span><span class="arg">contextInfo</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">id </span><span class="selector"> NSGetAlertPanel</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">id </span><span class="selector"> NSGetCriticalAlertPanel</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">id </span><span class="selector"> NSGetInformationalAlertPanel</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">void </span><span class="selector"> NSReleaseAlertPanel</span>(<span class="parameter"><span class="type">id </span><span class="arg">panel</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSInteger </span><span class="selector"> NSRunAlertPanel</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSInteger </span><span class="selector"> NSRunCriticalAlertPanel</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSInteger </span><span class="selector"> NSRunInformationalAlertPanel</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSInteger </span><span class="selector"> NSRunLocalizedAlertPanel</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">table</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">title</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">msg</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">defaultButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">alternateButton</span></span>, <span class="parameter"><span class="type">NSString * </span><span class="arg">otherButton</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> NSCreateFileContentsPboardType</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">fileType</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Returns a standardised pasteboard type for file contents, formed from the supplied file extension. </p> <p> Data written to a pasteboard with a file contents type should be written using the [NSPasteboard -writeFileContents:] or [NSPasteboard -writeFileWrapper:] method. Similarly, the data should be read using the [NSPasteboard -readFileContentsType:toFile:] or [NSPasteboard -readFileWrapper] method. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> NSCreateFilenamePboardType</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">fileType</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<p> Returns a standardised pasteboard type for file names, formed from the supplied file extension. </p> <p> Data written to a pasteboard with a file names type should be a single name written using [NSPasteboard -setString:forType:] or an array of strings written using [NSPasteboard -setPropertyList:forType:]. <br></br> Similarly, the data should be read using the [NSPasteboard -stringForType:] or [NSPasteboard -propertyListForType:] method. </p> <p> See also the  NSGetFileType()  and  NSGetFileTypes()  functions. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSString * </span><span class="selector"> NSGetFileType</span>(<span class="parameter"><span class="type">NSString * </span><span class="arg">pboardType</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns the file type (fileType extension) corresponding to the pasteboard type given. <br></br> This is a counterpart to the  NSCreateFilenamePboardType()  function.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> NSGetFileTypes</span>(<span class="parameter"><span class="type">NSArray * </span><span class="arg">pboardTypes</span></span>)</span></dt>
+<dd><div class="methodDescription">
+Returns the file types (filename extensions) corresponding to the pasteboard types given.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> PlaybackDeviceIdentifiers</span>()</span></dt>
+<dd><div class="methodDescription">
+Function used to retrieve all available playback devices. <p> This function is the only way to retrieve possible playback device identifiers understood by [<a href="NSSound.html#NSSound">NSSound</a> -setPlaybackDeviceIdentifier:]. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="returnType">NSArray * </span><span class="selector"> GSGetDragTypes</span>(<span class="parameter"><span class="type"><a href="NSView.html#NSView">NSView</a> * </span><span class="arg">aView</span></span>)</span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui (Application Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSActionCell.html#NSActionCell">NSActionCell</a></li><li><a href="NSBezierPath.html#NSBezierPath">NSBezierPath</a></li><li><a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a></li><li><a href="NSBox.html#NSBox">NSBox</a></li><li><a href="NSBrowser.html#NSBrowser">NSBrowser</a></li><li><a href="NSBrowserCell.html#NSBrowserCell">NSBrowserCell</a></li><li><a href="NSButton.html#NSButton">NSButton</a></li><li><a href="NSButtonCell.html#NSButtonCell">NSButtonCell</a></li><li><a href="NSCachedImageRep.html#NSCachedImageRep">NSCachedImageRep</a></li><li><a href="NSCell.html#NSCell">NSCell</a></li><li><a href="NSClipView.html#NSClipView">NSClipView</a></li><li><a href="NSColor.html#NSColor">NSColor</a></li><li><a href="NSColorList.html#NSColorList">NSColorList</a></li><li><a href="NSColorPanel.html#NSColorPanel">NSColorPanel</a></li><li><a href="NSColorPicker.html#NSColorPicker">NSColorPicker</a></li><li><a href="NSColorWell.html#NSColorWell">NSColorWell</a></li><li><a href="NSComboBox.html#NSComboBox">NSComboBox</a></li><li><a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a></li><li><a href="NSControl.html#NSControl">NSControl</a></li><li><a href="NSCursor.html#NSCursor">NSCursor</a></li><li><a href="NSCustomImageRep.html#NSCustomImageRep">NSCustomImageRep</a></li><li><a href="NSDataLink.html#NSDataLink">NSDataLink</a></li><li><a href="NSDataLinkManager.html#NSDataLinkManager">NSDataLinkManager</a></li><li><a href="NSDataLinkPanel.html#NSDataLinkPanel">NSDataLinkPanel</a></li><li><a href="NSDocument.html#NSDocument">NSDocument</a></li><li><a href="NSDocumentController.html#NSDocumentController">NSDocumentController</a></li><li><a href="NSDrawer.html#NSDrawer">NSDrawer</a></li><li><a href="NSDrawerDelegate.html#NSDrawerDelegate">NSDrawerDelegate</a></li><li><a href="NSEPSImageRep.html#NSEPSImageRep">NSEPSImageRep</a></li><li><a href="NSEvent.html#NSEvent">NSEvent</a></li><li><a href="NSFont.html#NSFont">NSFont</a></li><li><a href="NSFontManager.html#NSFontManager">NSFontManager</a></li><li><a href="NSFontPanel.html#NSFontPanel">NSFontPanel</a></li><li><a href="NSForm.html#NSForm">NSForm</a></li><li><a href="NSFormCell.html#NSFormCell">NSFormCell</a></li><li><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a></li><li><a href="NSHelpManager.html#NSHelpManager">NSHelpManager</a></li><li><a href="NSHelpPanel.html#NSHelpPanel">NSHelpPanel</a></li><li><a href="NSImage.html#NSImage">NSImage</a></li><li><a href="NSImageCell.html#NSImageCell">NSImageCell</a></li><li><a href="NSImageRep.html#NSImageRep">NSImageRep</a></li><li><a href="NSImageView.html#NSImageView">NSImageView</a></li><li><a href="NSInputManager.html#NSInputManager">NSInputManager</a></li><li><a href="NSInputServer.html#NSInputServer">NSInputServer</a></li><li><a href="NSLayoutManager.html#NSLayoutManager">NSLayoutManager</a></li><li><a href="NSMatrix.html#NSMatrix">NSMatrix</a></li><li><a href="NSMenu.html#NSMenu">NSMenu</a></li><li><a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a></li><li><a href="NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="NSMutableParagraphStyle.html#NSMutableParagraphStyle">NSMutableParagraphStyle</a></li><li><a href="NSNib.html#NSNib">NSNib</a></li><li><a href="NSOpenGLContext.html#NSOpenGLContext">NSOpenGLContext</a></li><li><a href="NSOpenGLPixelFormat.html#NSOpenGLPixelFormat">NSOpenGLPixelFormat</a></li><li><a href="NSOpenGLView.html#NSOpenGLView">NSOpenGLView</a></li><li><a href="NSOpenPanel.html#NSOpenPanel">NSOpenPanel</a></li><li><a href="NSOutlineView.html#NSOutlineView">NSOutlineView</a></li><li><a href="NSPageLayout.html#NSPageLayout">NSPageLayout</a></li><li><a href="NSPanel.html#NSPanel">NSPanel</a></li><li><a href="NSParagraphStyle.html#NSParagraphStyle">NSParagraphStyle</a></li><li><a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a></li><li><a href="NSPopUpButtonCell.html#NSPopUpButtonCell">NSPopUpButtonCell</a></li><li><a href="NSPrinter.html#NSPrinter">NSPrinter</a></li><li><a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a></li><li><a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a></li><li><a href="NSPrintPanel.html#NSPrintPanel">NSPrintPanel</a></li><li><a href="NSProgressIndicator.html#NSProgressIndicator">NSProgressIndicator</a></li><li><a href="NSResponder.html#NSResponder">NSResponder</a></li><li><a href="NSRulerMarker.html#NSRulerMarker">NSRulerMarker</a></li><li><a href="NSRulerView.html#NSRulerView">NSRulerView</a></li><li><a href="NSSavePanel.html#NSSavePanel">NSSavePanel</a></li><li><a href="NSScreen.html#NSScreen">NSScreen</a></li><li><a href="NSScroller.html#NSScroller">NSScroller</a></li><li><a href="NSScrollView.html#NSScrollView">NSScrollView</a></li><li><a href="NSSecureTextField.html#NSSecureTextField">NSSecureTextField</a></li><li><a href="NSSecureTextFieldCell.html#NSSecureTextFieldCell">NSSecureTextFieldCell</a></li><li><a href="NSSelection.html#NSSelection">NSSelection</a></li><li><a href="NSSlider.html#NSSlider">NSSlider</a></li><li><a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a></li><li><a href="NSSound.html#NSSound">NSSound</a></li><li><a href="NSSpellChecker.html#NSSpellChecker">NSSpellChecker</a></li><li><a href="NSSplitView.html#NSSplitView">NSSplitView</a></li><li><a href="NSStepper.html#NSStepper">NSStepper</a></li><li><a href="NSStepperCell.html#NSStepperCell">NSStepperCell</a></li><li><a href="NSTableColumn.html#NSTableColumn">NSTableColumn</a></li><li><a href="NSTableHeaderCell.html#NSTableHeaderCell">NSTableHeaderCell</a></li><li><a href="NSTableHeaderView.html#NSTableHeaderView">NSTableHeaderView</a></li><li><a href="NSTableView.html#NSTableView">NSTableView</a></li><li><a href="NSTabView.html#NSTabView">NSTabView</a></li><li><a href="NSTabViewItem.html#NSTabViewItem">NSTabViewItem</a></li><li><a href="NSText.html#NSText">NSText</a></li><li><a href="NSTextAttachment.html#NSTextAttachment">NSTextAttachment</a></li><li><a href="NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="NSTextContainer.html#NSTextContainer">NSTextContainer</a></li><li><a href="NSTextField.html#NSTextField">NSTextField</a></li><li><a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a></li><li><a href="NSTextStorage.html#NSTextStorage">NSTextStorage</a></li><li><a href="NSTextTab.html#NSTextTab">NSTextTab</a></li><li><a href="NSTextView.html#NSTextView">NSTextView</a></li><li><a href="NSToolbar.html#NSToolbar">NSToolbar</a></li><li><a href="NSToolbarItem.html#NSToolbarItem">NSToolbarItem</a></li><li><a href="NSView.html#NSView">NSView</a></li><li><a href="NSWindow.html#NSWindow">NSWindow</a></li><li><a href="NSWindowController.html#NSWindowController">NSWindowController</a></li><li><a href="NSWorkspace.html#NSWorkspace">NSWorkspace</a></li></ul></div>
+
+<ul>
+    <li><a href="NSPasteboard.html">NSPasteboard (buggy documentation)</a></li>
+    <li><a href="NSApplication.html">NSApplication (buggy documentation)</a></li>
+</ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSImageDelegateProtocol.html#GSImageDelegateProtocol">GSImageDelegateProtocol</a></li><li><a href="_NSComboBoxCellDataSource.html#NSComboBoxCellDataSource">NSComboBoxCellDataSource</a></li><li><a href="_NSControlTextEditingDelegate.html#NSControlTextEditingDelegate">NSControlTextEditingDelegate</a></li><li><a href="_NSInputServerMouseTracker.html#NSInputServerMouseTracker">NSInputServerMouseTracker</a></li><li><a href="_NSInputServiceProvider.html#NSInputServiceProvider">NSInputServiceProvider</a></li><li><a href="_NSMatrixDelegate.html#NSMatrixDelegate">NSMatrixDelegate</a></li><li><a href="_NSMenuDelegate.html#NSMenuDelegate">NSMenuDelegate</a></li><li><a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="_NSMenuValidation.html#NSMenuValidation">NSMenuValidation</a></li><li><a href="_NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="_NSOpenSavePanelDelegate.html#NSOpenSavePanelDelegate">NSOpenSavePanelDelegate</a></li><li><a href="_NSOutlineViewDataSource.html#NSOutlineViewDataSource">NSOutlineViewDataSource</a></li><li><a href="_NSOutlineViewDelegate.html#NSOutlineViewDelegate">NSOutlineViewDelegate</a></li><li><a href="_NSPrintPanelAccessorizing.html#NSPrintPanelAccessorizing">NSPrintPanelAccessorizing</a></li><li><a href="_NSTableViewDataSource.html#NSTableViewDataSource">NSTableViewDataSource</a></li><li><a href="_NSTableViewDelegate.html#NSTableViewDelegate">NSTableViewDelegate</a></li><li><a href="_NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="_NSTextFieldDelegate.html#NSTextFieldDelegate">NSTextFieldDelegate</a></li><li><a href="_NSTextInput.html#NSTextInput">NSTextInput</a></li><li><a href="_NSTextViewDelegate.html#NSTextViewDelegate">NSTextViewDelegate</a></li><li><a href="_NSWindowDelegate.html#NSWindowDelegate">NSWindowDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSAffineTransformCategories.html#NSAffineTransform(GNUstep)">NSAffineTransform</a></li><li><a href="NSApplicationCategories.html#NSApplication(NSColorPanel)">NSApplication</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(AppKit)">NSAttributedString</a></li><li><a href="NSBitmapImageRepCategories.html#NSBitmapImageRep(GNUstepExtension)">NSBitmapImageRep</a></li><li><a href="NSBundleCategories.html#NSBundle(NSHelpManager)">NSBundle</a></li><li><a href="NSCellCategories.html#NSCell(PrivateMethods)">NSCell</a></li><li><a href="NSCoderCategories.html#NSCoder(NSCoderAdditions)">NSCoder</a></li><li><a href="NSColorCategories.html#NSColor(GSQuartz)">NSColor</a></li><li><a href="NSFontCategories.html#NSFont(GNUstep)">NSFont</a></li><li><a href="NSGraphicsContextCategories.html#NSGraphicsContext(GNUstep)">NSGraphicsContext</a></li><li><a href="NSImageCategories.html#NSImage(GSQuartz)">NSImage</a></li><li><a href="NSImageRepCategories.html#NSImageRep(GSQuartz)">NSImageRep</a></li><li><a href="NSImageViewCategories.html#NSImageView(GNUstep)">NSImageView</a></li><li><a href="NSLayoutManagerCategories.html#NSLayoutManager(drawing)">NSLayoutManager</a></li><li><a href="NSMenuCategories.html#NSMenu(GNUstepExtra)">NSMenu</a></li><li><a href="NSMenuItemCategories.html#NSMenuItem(GNUstepExtra)">NSMenuItem</a></li><li><a href="NSMutableAttributedStringCategories.html#NSMutableAttributedString(AppKit)">NSMutableAttributedString</a></li><li><a href="NSObjectCategories.html#NSObject(NSComboBoxCellDataSource)">NSObject</a></li><li><a href="NSPrinterCategories.html#NSPrinter(PPDParsing)">NSPrinter</a></li><li><a href="NSPrintOperationCategories.html#NSPrintOperation(Private)">NSPrintOperation</a></li><li><a href="NSPrintPanelCategories.html#NSPrintPanel(Private)">NSPrintPanel</a></li><li><a href="NSProgressIndicatorCategories.html#NSProgressIndicator(GNUstepExtensions)">NSProgressIndicator</a></li><li><a href="NSResponderCategories.html#NSResponder(OptionalActionMethods)">NSResponder</a></li><li><a href="NSSplitViewCategories.html#NSSplitView(GNUstepExtra)">NSSplitView</a></li><li><a href="NSStringCategories.html#NSString(NSStringDrawing)">NSString</a></li><li><a href="NSTableViewCategories.html#NSTableView(GNUPrivate)">NSTableView</a></li><li><a href="NSTabViewItemCategories.html#NSTabViewItem(GNUstep)">NSTabViewItem</a></li><li><a href="NSTextCategories.html#NSText(GNUstepExtensions)">NSText</a></li><li><a href="NSTextFieldCellCategories.html#NSTextFieldCell(PrivateMethods)">NSTextFieldCell</a></li><li><a href="NSTextStorageCategories.html#NSTextStorage(Scripting)">NSTextStorage</a></li><li><a href="NSTextViewCategories.html#NSTextView(GSTextViewSync)">NSTextView</a></li><li><a href="NSViewCategories.html#NSView(PrivateMethods)">NSView</a></li><li><a href="NSWindowCategories.html#NSWindow(GNUstepBackend)">NSWindow</a></li><li><a href="NSWorkspaceCategories.html#NSWorkspace(GNUstep)">NSWorkspace</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

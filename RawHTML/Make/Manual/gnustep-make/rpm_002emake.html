@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>rpm.make (GNUstep Makefile Package)</title>
+
+<meta name="description" content="rpm.make (GNUstep Makefile Package)">
+<meta name="keywords" content="rpm.make (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Project-Types.html" rel="up" title="Project Types">
+<link href="service_002emake.html" rel="next" title="service.make">
+<link href="palette_002emake.html" rel="prev" title="palette.make">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="rpm_002emake"></span><div class="header">
+<p>
+Next: <a href="service_002emake.html" accesskey="n" rel="next">service.make</a>, Previous: <a href="palette_002emake.html" accesskey="p" rel="prev">palette.make</a>, Up: <a href="Project-Types.html" accesskey="u" rel="up">Project Types</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="RPMs-_0028rpm_002emake_0029"></span><h4 class="subsection">1.4.13 RPMs (<samp>rpm.make</samp>)</h4>
+
+<p>The RPM project provides rules for automatically generating RPM spec
+files in order to make RPM distributions. Note that this project
+makefile is included automatically when you include any other project
+type in your GNUmakefile. It is non necessary to include
+<samp>rpm.make</samp>.
+</p>
+<p>Except for <code>PACKAGE_NAME</code>, which is required, all the following
+variables are optional. It is recommended that you set them anyway in
+order to provide the standard information that is present in most RPM
+distributions.
+</p>
+<dl>
+<dt id="index-PACKAGE_005fNAME-1">RPM: <strong>PACKAGE_NAME</strong></dt>
+<dd><p><code>PACKAGE_NAME</code> defines the name of the RPM distribution. In most
+cases this will be the same as the name of your project type. For
+instance, if you are creating a application, and have set
+<code>APP_NAME</code> to &lsquo;<samp>MyApplication</samp>&rsquo;, Then set <code>PACKAGE_NAME</code> to
+the same thing, or just use <code>PACKAGE_NAME=$(APP_NAME)</code>.  if 
+<code>PACKAGE_NAME</code> is not set, it defaults to <code>unnamed-package</code>
+</p></dd></dl>
+
+<dl>
+<dt id="index-PACKAGE_005fVERSION-1">RPM: <strong>PACKAGE_VERSION</strong></dt>
+<dd><p>Set <code>PACKAGE_VERSION</code> to the release version number of your package. If not
+set, it defaults to 0.0.1
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fINSTALLATION_005fDOMAIN-1">RPM: <strong>GNUSTEP_INSTALLATION_DOMAIN</strong></dt>
+<dd><p>Set <code>GNUSTEP_INSTALLATION_DOMAIN</code> to the domain where you want to install
+the software. This should be either <code>SYSTEM</code>), <code>LOCAL</code>, or <code>USER</code>.
+If not set it defaults to <code>LOCAL</code>.
+</p></dd></dl>
+
+<dl>
+<dt id="index-PACKAGE_005fNEEDS_005fCONFIGURE">RPM: <strong>PACKAGE_NEEDS_CONFIGURE</strong></dt>
+<dd><p>Set this to <code>YES</code> if a configure script needs to be run before
+compilation
+</p></dd></dl>
+
+<p>In addition you need to provide a stub spec file named for the package
+name, such as this example <samp>libobjc.spec.in</samp> file:
+</p>
+<div class="example">
+<pre class="example">Release:        1
+Source:         ftp://ftp.gnustep.org/pub/gnustep/libs/%{gs_name}-%{gs_version}.
+tar.gz
+Copyright:      GPL
+Group:          Development/Libraries
+Summary:        Objective-C Runtime Library
+Packager:       Adam Fedor &lt;fedor@gnu.org&gt;
+Vendor:         The GNUstep Project
+URL:            http://www.gnustep.org/
+
+%description
+Library containing the Objective-C runtime.
+</pre></div>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="service_002emake.html" accesskey="n" rel="next">service.make</a>, Previous: <a href="palette_002emake.html" accesskey="p" rel="prev">palette.make</a>, Up: <a href="Project-Types.html" accesskey="u" rel="up">Project Types</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

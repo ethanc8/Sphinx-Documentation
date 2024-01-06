@@ -1,0 +1,15 @@
+# 1.3 - Configuring your System
+
+Now that you've installed GNUstep, you need to configure it. You should have installed `SystemPreferences.app`. Go ahead and open it up. If you installed GNUstep from your distribution, you might have an app called "SystemPreferences" in your app list. If not, you can type in the terminal:
+
+```bash
+openapp SystemPreferences
+```
+
+SystemPreferences looks like this:
+
+% Insert picture of SystemPreferences.app
+
+## Changing the theme
+
+By default, GNUstep looks pretty ugly (at least to people who are used to flat design or the glassy Aqua style). However, there're many themes available for GNUstep. To see them, please look at the [Theme Gallery](/Reference/Configuration/ThemeGallery.md).

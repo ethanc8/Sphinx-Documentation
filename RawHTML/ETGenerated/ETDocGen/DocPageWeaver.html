@@ -1,0 +1,341 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>DocGenerator</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>DocPageWeaver class documentation</h2>DocPageWeaver : NSObject &lt;<a href="_DocWeaving.html#DocWeaving">DocWeaving</a>&gt;<div class="meta">
+<p class="metadesc"><em>A documentation builder that produce pages based on the input       content.</em></p><table><tr><th>Authors</th><td>Quentin Mathe </td></tr><tr><th>Declared in</th><td>DocPageWeaver.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> is DocGenerator core class that controls the documentation generation process. <br></br> <em>etdocgen</em> tool creates a new page weaver based on the options and arguments the user provides on the command-line, then triggers the page generation with  <a href="DocPageWeaver.html#-[DocPageWeaver_weaveAllPages]">-weaveAllPages</a>  which in turn returns the final pages. See <a href="DocPage.html#DocPage">DocPage</a> API to understand how these pages can be turned into HTML. </p> <p> You initialize a new page weaver with various input documentation source files and an optional template file. Based on the source file types, <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> looks up a parser. When no parser is available, it hands the file content directly to a new documentation page (see <a href="DocPage.html#DocPage">DocPage</a> that provides a template-based substitution mechanism). Otherwise it delegates the source file parsing to the right parser e.g. <a href="GSDocParser.html#GSDocParser">GSDocParser</a>, which will instantiate new doc elements and weave them through the <a href="_DocWeaving.html#DocWeaving">DocWeaving</a> protocol as the parsing goes. </p> <p> <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> is free to weave multiple pages from a single source file, or gather doc elements and consolidate them onto a common page. <br></br> So in addition to act as coordinator in the doc generation process, <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> implements a strategy to organize the doc elements into a book-like structure. </p> <p> By invoking  <a href="DocPageWeaver.html#-[DocPageWeaver_weaveNewPage]">-weaveNewPage</a>  based on some precise criterias (e.g.  <a href="_DocWeaving.html#-[(DocWeaving)_weaveClassNamed:superclassName:]">-weaveClassNamed:superclassName:</a>  was called), <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> defines page generation rules which correspond to a precise book-like structure. <br></br> The doc element arrangement on each weaved page is delegated to <a href="DocPage.html#DocPage">DocPage</a> class and subclasses. </p> <p> Subclassing altough experimental and untested, can be used to customize the existing page generation strategy or implement a new one. </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Parser Choice</h3><div class="method">
+<a name="+[DocPageWeaver_parserClassForFileType:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(Class)</span><span class="selector"> parserClassForFileType: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aFileExtension</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the right parser class or Nil for the given file type. </p> <p> For <em>gsdoc</em>, returns <a href="GSDocParser.html#GSDocParser">GSDocParser</a>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[DocPageWeaver_markdownFileTypes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSArray *)</span><span class="selector"> markdownFileTypes </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns all the supported Markdown file extensions (.md and.text). </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[DocPageWeaver_additionalSourceFileTypes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSArray *)</span><span class="selector"> additionalSourceFileTypes </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns all the supported file extensions for additional documentation files. </p> <p> This includes  <a href="DocPageWeaver.html#+[DocPageWeaver_markdownFileTypes]">+markdownFileTypes</a>  plus.html. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Initialization</h3><div class="method">
+<a name="-[DocPageWeaver_initWithParserSourceDirectory:fileTypes:rawSourceDirectories:additionalSourceFiles:templateFile:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithParserSourceDirectory: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aParserDirPath</span></span><span class="selector"> fileTypes: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">fileExtensions</span></span><span class="selector"> rawSourceDirectories: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">otherDirPaths</span></span><span class="selector"> additionalSourceFiles: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">additionalSourceFiles</span></span><span class="selector"> templateFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aTemplatePath</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Initializes and returns a new weaver, which will attempt to gather and parse every files from the first directory argument that matches the given file types, and will look up additional files in HTML or Markdown to be directly inserted without parsing in the second directory argument. </p> <p> A page template file, usually in HTML can be passed as the last argument. Each <a href="DocPage.html#DocPage">DocPage</a> class or subclass instantiated by <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> will be initialized with this template, unless  <a href="DocPageWeaver.html#-[DocPageWeaver_templateFileForSourceFile:]">-templateFileForSourceFile:</a>  returns a custom one. </p> <p> TODO: Specify the argument constraints precisely and clarify the template file use (it is currently ignored all the time). </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_initWithSourceFiles:templateFile:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initWithSourceFiles: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">paths</span></span><span class="selector"> templateFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aTemplatePath</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Initializes and returns a new weaver that will attempt to process and parse the given source file <var>paths</var> based on their file types. </p> <p> A page template file, usually in HTML can be passed as the last argument. Each <a href="DocPage.html#DocPage">DocPage</a> class or subclass instantiated by <a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a> will be initialized with this template, unless templateFileForSourceFile: returns a custom one. </p> <p> TODO: Specify the argument constraints precisely and clarify the template file use (it is currently ignored all the time). </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Additional Sources</h3><div class="method">
+<a name="-[DocPageWeaver_setMenuFile:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMenuFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aMenuPath</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the menu template file path. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_setExternalMappingFile:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setExternalMappingFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aMappingPath</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the external index file path. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_pathForRawSourceFileNamed:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> pathForRawSourceFileNamed: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aName</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the first source file path that matches the given file name. </p> <p> The source paths are the ones passed to <a href="DocPageWeaver.html#-[DocPageWeaver_initWithSourceFiles:templateFile:]">-initWithSourceFiles:templateFile:</a>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_templateFileForSourceFile:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> templateFileForSourceFile: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aSourceFile</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the page template file path to be used to initialize new <a href="DocPage.html#DocPage">DocPage</a> objects when processing the given source file. </p> <p> By default, returns the path to <em>etoile-documentation-template.html</em> for a <em>gsdoc</em> file, otherwise returns the path to <em>etoile-documentation-markdown-template.html</em> . </p> <p> Can be overriden to return custom page templates based on the file types or even some other criterias (for example the page weaver state). </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Weaving Pages</h3><div class="method">
+<a name="-[DocPageWeaver_weaveAllPages]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> weaveAllPages </span></span></dt>
+<dd><div class="methodDescription">
+<p> Weaves one or more pages from all the source files. </p> <p> The number of weaved pages is unrelated to the number of source files. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_weaveCurrentSourcePages]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> weaveCurrentSourcePages </span></span></dt>
+<dd><div class="methodDescription">
+<p> Weaves one or more pages for the current source file. </p> <p> You should usually call  <a href="DocPageWeaver.html#-[DocPageWeaver_weaveAllPages]">-weaveAllPages</a>  rather than this method directly. </p> <p> See also  <a href="DocPageWeaver.html#-[DocPageWeaver_currentSourceFile]">-currentSourceFile</a>  . </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_weaveNewPage]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> weaveNewPage </span></span></dt>
+<dd><div class="methodDescription">
+<p> Starts a new page into which doc elements can be weaved. </p> <p> Each time,  <a href="DocPageWeaver.html#-[DocPageWeaver_weaveNewPage]">-weaveNewPage</a>  is called,  <a href="DocPageWeaver.html#-[DocPageWeaver_currentPage]">-currentPage</a>  changes. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_weaveOverviewFile]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> weaveOverviewFile </span></span></dt>
+<dd><div class="methodDescription">
+<p> Inserts an overview from a file if available, into the current page. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Consolidated Symbol Pages</h3><div class="method">
+<a name="-[DocPageWeaver_weavePageForCategoryNamed:className:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> weavePageForCategoryNamed: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aCategoryName</span></span><span class="selector"> className: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aClassName</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Looks up the page on which the given category should be consolidated, if needed creates it, then makes it the current page. </p> <p> By default, looks up the page that regroups the categories on the class that appears in the category symbol. </p> <p> The category symbol syntax is <em>ClassName(CategoryName)</em>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<h3>Progress and Status</h3><div class="method">
+<a name="-[DocPageWeaver_currentSourceFile]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> currentSourceFile </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the documentation source file currently parsed. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_currentPage]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="DocPage.html#DocPage">DocPage</a> *)</span><span class="selector"> currentPage </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the documentation page currently weaved. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_currentClassName]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> currentClassName </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the name of the class whose documentation is currently parsed from  <a href="DocPageWeaver.html#-[DocPageWeaver_currentSourceFile]">-currentSourceFile</a>  . </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[DocPageWeaver_currentHeader]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="DocHeader.html#DocHeader">DocHeader</a> *)</span><span class="selector"> currentHeader </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the header of the page currently weaved. See  <a href="DocPageWeaver.html#-[DocPageWeaver_currentPage]">-currentPage</a>  . </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>DocGenerator</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="DocCategoryPage.html#DocCategoryPage">DocCategoryPage</a></li><li><a href="DocCDataType.html#DocCDataType">DocCDataType</a></li><li><a href="DocConstant.html#DocConstant">DocConstant</a></li><li><a href="DocDeclarationReorderer.html#DocDeclarationReorderer">DocDeclarationReorderer</a></li><li><a href="DocDescriptionParser.html#DocDescriptionParser">DocDescriptionParser</a></li><li><a href="DocElement.html#DocElement">DocElement</a></li><li><a href="DocElementGroup.html#DocElementGroup">DocElementGroup</a></li><li><a href="DocFunction.html#DocFunction">DocFunction</a></li><li><a href="DocGraphWriter.html#DocGraphWriter">DocGraphWriter</a></li><li><a href="DocHeader.html#DocHeader">DocHeader</a></li><li><a href="DocHTMLElement.html#DocHTMLElement">DocHTMLElement</a></li><li><a href="DocHTMLIndex.html#DocHTMLIndex">DocHTMLIndex</a></li><li><a href="DocIndex.html#DocIndex">DocIndex</a></li><li><a href="DocIVar.html#DocIVar">DocIVar</a></li><li><a href="DocMacro.html#DocMacro">DocMacro</a></li><li><a href="DocMethod.html#DocMethod">DocMethod</a></li><li><a href="DocMethodGroupDescriptionParser.html#DocMethodGroupDescriptionParser">DocMethodGroupDescriptionParser</a></li><li><a href="DocPage.html#DocPage">DocPage</a></li><li><a href="DocPageWeaver.html#DocPageWeaver">DocPageWeaver</a></li><li><a href="DocParameter.html#DocParameter">DocParameter</a></li><li><a href="DocProperty.html#DocProperty">DocProperty</a></li><li><a href="DocSourceCodeParser.html#DocSourceCodeParser">DocSourceCodeParser</a></li><li><a href="DocSubroutine.html#DocSubroutine">DocSubroutine</a></li><li><a href="DocTOCPage.html#DocTOCPage">DocTOCPage</a></li><li><a href="DocVariable.html#DocVariable">DocVariable</a></li><li><a href="GSDocParser.html#GSDocParser">GSDocParser</a></li></ul></div>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_DocSourceParsing.html#DocSourceParsing">DocSourceParsing</a></li><li><a href="_DocWeaving.html#DocWeaving">DocWeaving</a></li><li><a href="_GSDocParserDelegate.html#GSDocParserDelegate">GSDocParserDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="DocHTMLElementCategories.html#DocHTMLElement(CommonUseCases)">DocHTMLElement</a></li><li><a href="NSStringCategories.html#NSString(DocGenerator)">NSString</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

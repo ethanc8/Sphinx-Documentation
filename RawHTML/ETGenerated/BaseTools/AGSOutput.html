@@ -1,0 +1,299 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Base Tools Internals</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>AGSOutput... a class to output gsdoc source</h2>AGSOutput : NSObject<div class="meta">
+<p class="metadesc"><em></em></p><table><tr><th>Authors</th><td>Richard Frith-Macdonald </td></tr><tr><th>Declared in</th><td>AGSOutput.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p>And finally, here is the actual class description... outside the chapter. This is the class description for <var>AGSOutput</var>, including some sample uses of GSDoc, such as cross-references (see NSString ). Functions, like  escapeType()  , are automatically referenced (if they are found).</p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="-[AGSOutput_checkComment:unit:info:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> checkComment: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">comment</span></span><span class="selector"> unit: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">unit</span></span><span class="selector"> info: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">d</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_fitWords:from:to:maxSize:output:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> fitWords: </span><span class="parameter"><span class="type">(NSArray *)</span><span class="arg">a</span></span><span class="selector"> from: </span><span class="parameter"><span class="type">(unsigned)</span><span class="arg">start</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(unsigned)</span><span class="arg">end</span></span><span class="selector"> maxSize: </span><span class="parameter"><span class="type">(unsigned)</span><span class="arg">limit</span></span><span class="selector"> output: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_output:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> output: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">d</span></span></span></dt>
+<dd><div class="methodDescription">
+Return an array containing the names of any files modified as a result of outputing the specified data structure.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_outputDecl:kind:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputDecl: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">d</span></span><span class="selector"> kind: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">kind</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">str</span></span></span></dt>
+<dd><div class="methodDescription">
+Uses <a href="AGSOutput.html#-[AGSOutput_split:]">-split:</a> and  <a href="AGSOutput.html#-[AGSOutput_reformat:withIndent:to:]">-reformat:withIndent:to:</a>  .<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_outputFunction:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputFunction: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">d</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">str</span></span></span></dt>
+<dd><div class="methodDescription">
+Uses <a href="AGSOutput.html#-[AGSOutput_split:]">-split:</a> and  <a href="AGSOutput.html#-[AGSOutput_reformat:withIndent:to:]">-reformat:withIndent:to:</a>  . <br></br> Place the names of function arguments in a temporary array 'args' so that they will be highlighted if they appear in the function description.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_outputInstanceVariable:to:for:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputInstanceVariable: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">d</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">str</span></span><span class="selector"> for: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">unit</span></span></span></dt>
+<dd><div class="methodDescription">
+Output the gsdoc code for an instance variable.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_outputMacro:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputMacro: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">d</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">str</span></span></span></dt>
+<dd><div class="methodDescription">
+Uses <a href="AGSOutput.html#-[AGSOutput_split:]">-split:</a> and  <a href="AGSOutput.html#-[AGSOutput_reformat:withIndent:to:]">-reformat:withIndent:to:</a>  .<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_outputMethod:to:for:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputMethod: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">d</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">str</span></span><span class="selector"> for: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">unit</span></span></span></dt>
+<dd><div class="methodDescription">
+Uses <a href="AGSOutput.html#-[AGSOutput_split:]">-split:</a> and  <a href="AGSOutput.html#-[AGSOutput_reformat:withIndent:to:]">-reformat:withIndent:to:</a>  . Also has fun with <var>YES</var>, <var>NO</var>, and <var>nil</var>. <br></br> Check special markup which should be removed from the text actually placed in the gsdoc method documentation... the special markup is included in the gsdoc markup differently.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_outputUnit:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> outputUnit: </span><span class="parameter"><span class="type">(NSMutableDictionary *)</span><span class="arg">d</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">str</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_reformat:withIndent:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(unsigned)</span><span class="selector"> reformat: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">str</span></span><span class="selector"> withIndent: </span><span class="parameter"><span class="type">(unsigned)</span><span class="arg">ind</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSMutableString *)</span><span class="arg">buf</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_split:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> split: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">str</span></span></span></dt>
+<dd><div class="methodDescription">
+Split comment text into an array of words (to be reformatted) and insert markup for cross referencing and highlighting. <br></br> Phase 1... we take the supplied string and check for white space. Any white space sequence is deleted and treated as a word separator except within xml element markup. The format of element start and end marks is tidied for consistency. The resulting data is made into an array of strings, each containing either an element start or end tag, or one of the whitespace separated words. What about str?<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[AGSOutput_informalProtocols]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSArray *)</span><span class="selector"> informalProtocols </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Base Tools Internals</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>Tools</h3>
+<ul>
+    <li><a href="autogsdoc.html">autogsdoc</a></li>
+    <li><a href="cvtenc.html">cvtenc</a></li>
+    <li><a href="defaults.html">defaults</a></li>
+    <li><a href="gdnc.html">gdnc</a></li>
+    <li><a href="gdomap.html">gdomap</a></li>
+    <li><a href="gsdoc.html">gsdoc</a></li>
+    <li><a href="gspath.html">gspath</a></li>
+    <li><a href="pldes.html">pldes</a></li>
+    <li><a href="plmerge.html">plmerge</a></li>
+    <li><a href="plparse.html">plparse</a></li>
+    <li><a href="plser.html">plser</a></li>
+    <li><a href="sfparse.html">sfparse</a></li>
+    <li><a href="xmlparse.html">xmlparse</a></li>
+</ul>
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="AGSHtml.html#AGSHtml">AGSHtml</a></li><li><a href="AGSIndex.html#AGSIndex">AGSIndex</a></li><li><a href="AGSOutput.html#AGSOutput">AGSOutput</a></li><li><a href="AGSParser.html#AGSParser">AGSParser</a></li><li><a href="GDNCClient.html#GDNCClient">GDNCClient</a></li><li><a href="GDNCNotification.html#GDNCNotification">GDNCNotification</a></li><li><a href="GDNCObserver.html#GDNCObserver">GDNCObserver</a></li><li><a href="GDNCServer.html#GDNCServer">GDNCServer</a></li><li><a href="GSXMLParse.html#GSXMLParse">GSXMLParse</a></li><li><a href="NSDistributedNotificationCenterGDNCDummy.html#NSDistributedNotificationCenterGDNCDummy">NSDistributedNotificationCenterGDNCDummy</a></li></ul></div>
+
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

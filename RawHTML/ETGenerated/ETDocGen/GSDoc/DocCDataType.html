@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+    <head>
+    <title>DocCDataType documentation</title>
+  </head>
+  <body>
+    <font face="serif">
+    <h1><a name="title$DocCDataType">DocCDataType documentation</a></h1>
+    <h3>Authors</h3>
+    <dl>
+      <dt>Quentin Mathe (<a href="mailto:quentin.mathe@gmail.com"><code>quentin.mathe@gmail.com</code></a>)</dt>
+      <dd>
+      </dd>
+    </dl>
+    <blockquote>
+      
+      C data types in the doc element tree.
+    
+    </blockquote>
+    <p><b>Copyright:</b> (C) 2010 Quentin Mathe</p>
+
+        <div>
+      <hr width="50%" align="left" />
+      <h3>Contents -</h3>
+      <ol>
+        <li>
+          <a href="#001000000000">Software documentation for the DocCDataType class</a>
+        </li>
+        <li>
+          <a href="#002000000000">Software documentation for the DocConstant class</a>
+        </li>
+        <li>
+          <a href="#003000000000">Software documentation for the DocVariable class</a>
+        </li>
+      </ol>
+      <hr width="50%" align="left" />
+    </div>
+
+          <h1><a name="001000000000">
+        Software documentation for the DocCDataType class
+      </a></h1>
+    <h2><a name="class$DocCDataType">DocCDataType</a> : <a rel="gsdoc" href="DocElement.html#class$DocElement">DocElement</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocCDataType.h</dd>
+      </dl>
+    </blockquote>
+    <blockquote>
+      <dl>
+        <dt><b>Conforms to:</b></dt>
+        <dd><a rel="gsdoc" href="GSDocParser.html#protocol$(GSDocParserDelegate)">GSDocParserDelegate</a></dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Doc Element Tree
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocCDataType objects are used to represent
+            various C data types:
+              </p>
+    <p>
+      
+          
+      <ul>
+        <li>
+          structure
+        </li>
+        <li>
+          function pointer
+        </li>
+      </ul>
+      
+          
+    </p>
+    <p>
+
+            Enum and union are represented with DocConstant
+            <a rel="gsdoc" href="#method$DocCDataType-weaveSelector">
+              -weaveSelector
+            </a>
+
+            .
+              </p>
+    <p>
+      
+        
+    </div>
+    <hr width="50%" align="left" />
+    <a href="#_DocCDataType_ivars">Instance Variables</a>
+    <br/><br/>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocCDataType.html#method$DocCDataType-GSDocElementName">-GSDocElementName</a></li>
+      <li><a rel="gsdoc" href="DocCDataType.html#method$DocCDataType-weaveSelector">-weaveSelector</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocCDataType-GSDocElementName">GSDocElementName&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>GSDocElementName</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit GSDoc Parsing
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns <em>type</em>.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See -[DocElement GSDocElementName].
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocCDataType-weaveSelector">weaveSelector&nbsp;</a></h3>
+    - (SEL) <b>weaveSelector</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns
+              <a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveOtherDataType$">
+                -weaveOtherDataType:
+              </a>
+
+              .
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See -[DocElement weaveSelector].
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<a name="_DocCDataType_ivars"/>    <br/><hr width="50%" align="left" />
+    <h2>Instance Variables for DocCDataType Class</h2>
+    <h3><a name="ivariable$DocCDataType*type">type</a></h3>
+    @protected NSString* <b>type</b>;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+    <br/><hr width="50%" align="left" /><br/>
+
+          <h1><a name="002000000000">
+        Software documentation for the DocConstant class
+      </a></h1>
+    <h2><a name="class$DocConstant">DocConstant</a> : <a rel="gsdoc" href="#class$DocCDataType">DocCDataType</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocCDataType.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Doc Element Tree @abstract C constant-like
+            types in the doc element tree.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocConstant objects are used to represent
+            various constant-like C data types:
+              </p>
+    <p>
+      
+          
+      <ul>
+        <li>
+          const variable or pointer
+        </li>
+        <li>
+          enum
+        </li>
+        <li>
+          union
+        </li>
+      </ul>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocCDataType.html#method$DocConstant-GSDocElementName">-GSDocElementName</a></li>
+      <li><a rel="gsdoc" href="DocCDataType.html#method$DocConstant-parseProgramComponent$">-parseProgramComponent:</a></li>
+      <li><a rel="gsdoc" href="DocCDataType.html#method$DocConstant-weaveSelector">-weaveSelector</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocConstant-GSDocElementName">GSDocElementName&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>GSDocElementName</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit GSDoc Parsing
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns <em>constant</em>.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See -[DocElement GSDocElementName].
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocConstant-parseProgramComponent$">parseProgramComponent:&nbsp;</a></h3>
+    - (void) <b>parseProgramComponent:</b> (id)aConstant;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocConstant-weaveSelector">weaveSelector&nbsp;</a></h3>
+    - (SEL) <b>weaveSelector</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns
+              <a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveConstant$">
+                -weaveConstant:
+              </a>
+
+              .
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See -[DocElement weaveSelector].
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+
+          <h1><a name="003000000000">
+        Software documentation for the DocVariable class
+      </a></h1>
+    <h2><a name="class$DocVariable">DocVariable</a> : <a rel="gsdoc" href="#class$DocCDataType">DocCDataType</a></h2>
+    <blockquote class="declared">
+      <dl>
+        <dt><b>Declared in:</b></dt>
+        <dd>DocCDataType.h</dd>
+      </dl>
+    </blockquote>
+    <div class="desc">
+      
+          
+    </p>
+    <p>
+
+            @group Doc Element Tree @abstract Global variables
+            in the doc element tree.
+              </p>
+    <p>
+      
+          
+    </p>
+    <p>
+
+            DocVariable objects are used to represent
+            global variables not declared as constants (in that
+            DocConstant would be used).
+              </p>
+    <p>
+      
+        
+    </div>
+    <b>Method summary</b>
+    <ul>
+      <li><a rel="gsdoc" href="DocCDataType.html#method$DocVariable-GSDocElementName">-GSDocElementName</a></li>
+      <li><a rel="gsdoc" href="DocCDataType.html#method$DocVariable-parseProgramComponent$">-parseProgramComponent:</a></li>
+      <li><a rel="gsdoc" href="DocCDataType.html#method$DocVariable-weaveSelector">-weaveSelector</a></li>
+    </ul>
+    <hr width="50%" align="left" />
+<div class="method">
+    <h3><a name="method$DocVariable-GSDocElementName">GSDocElementName&nbsp;</a></h3>
+    - (<a rel="gsdoc" href="/usr/GNUstep/Local/Library/Documentation/Developer/Base/Reference/NSString.html#class$NSString">NSString</a>*) <b>GSDocElementName</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              @taskunit GSDoc Parsing
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              Returns <em>variable</em>.
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See -[DocElement GSDocElementName].
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocVariable-parseProgramComponent$">parseProgramComponent:&nbsp;</a></h3>
+    - (void) <b>parseProgramComponent:</b> (SCKGlobal*)aVariable;<br />
+    <div class="desc">
+      
+            <em>Description forthcoming.</em>
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+<div class="method">
+    <h3><a name="method$DocVariable-weaveSelector">weaveSelector&nbsp;</a></h3>
+    - (SEL) <b>weaveSelector</b>;<br />
+An empty method provided for subclasses to override.<br />
+    <div class="desc">
+      
+            
+    </p>
+    <p>
+
+              Returns
+              <a rel="gsdoc" href="DocPageWeaver.html#method$(DocWeaving)-weaveConstant$">
+                -weaveConstant:
+              </a>
+
+              .
+                </p>
+    <p>
+      
+            
+    </p>
+    <p>
+
+              See -[DocElement weaveSelector].
+                </p>
+    <p>
+      
+          
+    </div>
+    <hr width="25%" align="left" />
+</div>
+    <br />
+    </font>
+</body>
+</html>

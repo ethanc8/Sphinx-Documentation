@@ -1,0 +1,1586 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>&Eacute;toil&eacute;</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width = 680" />
+		<link rel="stylesheet" href="../_includes/css/reset-fonts-grids.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/global.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/prettify.css" type="text/css" />
+		<link rel="stylesheet" href="../_includes/css/documentation.css" type="text/css" />
+		
+		<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="/feeds/news/atom/" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<script type="text/javascript" src="../_includes/js/prettify.js"></script>
+		<script type="text/javascript" src="../_includes/js/swfobject.js"></script>
+		<script type="text/javascript" src="../_includes/js/collapser.js"></script>
+	</head>
+	<body class="developer" onload="prettyPrint();hideAll();">
+	
+		<div id="doc3" class="yui-t7">
+			
+			<div id="hd">
+				<div id="nav">
+					<ul>
+						<!-- <li><a href="/"><img src="../images/global/flower.png" alt="&Eacute;toil&eacute; Logo" /></a></li>
+						<li><a href="/etoile/">Overview</a></li>
+						<li><a href="/downloads/">Downloads</a></li>
+						<li><a href="/support/">Support</a></li>
+						<li><a href="/news/">News</a></li>
+						<li><a href="/dev/">Development</a></li> -->
+						<li><a href="../../../../Reference/Frameworks/index.html">&larr; Return to GNUstep Documentation</a></li>
+					</ul>
+				</div>  
+			</div> 
+			
+			<div id="bd" class="team">
+			
+				<div class="yui-gc" id="masthead">
+					<div class="yui-u first">
+						<h1><strong>GNUstep Gui (Application Kit)</strong></h1><p></p>	  
+					</div>
+				</div>
+				
+				<div class="yui-gc" id="content">
+				
+					<div class="yui-u first">
+						<div id="main">
+							<div id="documentation">
+								
+								<div class="header">
+<h2>NSCell</h2>NSCell : NSObject &lt;NSCopying, NSCoding&gt;<div class="meta">
+<p class="metadesc"><em>The abstract cell class</em></p><table><tr><th>Authors</th><td>Scott Christley </td></tr><tr><th>Declared in</th><td>AppKit/NSCell.h</td></tr></table></div>
+<div class="overview">
+<h3>Overview</h3><p><p> TODO Desctiption </p></p></div>
+</div>
+<hr></hr>
+								
+								<div id="toggler">
+									<p id="shower">
+									<a href="javascript:void()" onClick="showAll()">&plus; Expand all</a>
+									</p>
+									<p id="hider">
+									<a href="javascript:void()" onClick="hideAll()">&minus; Collapse all</a>
+									</p>
+								</div>
+								
+								<div>
+<h3>Default</h3><div class="method">
+<a name="+[NSCell_defaultFocusRingType]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(NSFocusRingType)</span><span class="selector"> defaultFocusRingType </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSCell_defaultMenu]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> defaultMenu </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="+[NSCell_prefersTrackingUntilMouseUp]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">+ </span><span class="returnType">(BOOL)</span><span class="selector"> prefersTrackingUntilMouseUp </span></span></dt>
+<dd><div class="methodDescription">
+<p> This class method returns <var>NO</var>. This method should be overrided by subclasses. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_initImageCell:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initImageCell: </span><span class="parameter"><span class="type">(<a href="NSImage.html#NSImage">NSImage</a> *)</span><span class="arg">anImage</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Initializes and returns a new <a href="NSCell.html#NSCell">NSCell</a> with a <a href="NSImage.html#NSImage">NSImage</a> <var>anImage</var>. This method sets the image position to  NSImageOnly  and the cell's type to  NSImageCellType  . </p> <p> See Also:  <a href="NSCell.html#-[NSCell_initTextCell:]">-initTextCell:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_initTextCell:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> initTextCell: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Initializes and returns a new <a href="NSCell.html#NSCell">NSCell</a> with a NSString <var>aString</var>. This method sets the cell's type to  NSTextCellType  . </p> <p> See Also:  <a href="NSCell.html#-[NSCell_initImageCell:]">-initImageCell:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_objectValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> objectValue </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_hasValidObjectValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> hasValidObjectValue </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_doubleValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(double)</span><span class="selector"> doubleValue </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the NSCell's value as a <strong>double</strong>. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setDoubleValue:]">-setDoubleValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_floatValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(float)</span><span class="selector"> floatValue </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell's value as a <strong>float</strong>. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setFloatValue:]">-setFloatValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_intValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(int)</span><span class="selector"> intValue </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell's value as an <strong>int</strong>. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setIntValue:]">-setIntValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_stringValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> stringValue </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell's value as a NSString. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setStringValue:]">-setStringValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setObjectValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setObjectValue: </span><span class="parameter"><span class="type">(id)</span><span class="arg">object</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setDoubleValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setDoubleValue: </span><span class="parameter"><span class="type">(double)</span><span class="arg">aDouble</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's value to <var>aDouble</var>. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_doubleValue]">-doubleValue</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setFloatValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFloatValue: </span><span class="parameter"><span class="type">(float)</span><span class="arg">aFloat</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's value to a <var>aFloat</var>. This used for example in <a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a> </p> <p> See Also:  <a href="NSCell.html#-[NSCell_floatValue]">-floatValue</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setIntValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setIntValue: </span><span class="parameter"><span class="type">(int)</span><span class="arg">anInt</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's value to <var>anInt</var>. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_intValue]">-intValue</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setStringValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setStringValue: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the cell's value to a NSString. The NSCell's type is set to NSTextCellType if needed </p> <p> See Also:  <a href="NSCell.html#-[NSCell_stringValue]">-stringValue</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_integerValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> integerValue </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell's value as an NSInteger. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setIntegerValue:]">-setIntegerValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setIntegerValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setIntegerValue: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">anInt</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's value to <var>anInt</var>. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_integerValue]">-integerValue</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_takeIntegerValueFrom:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> takeIntegerValueFrom: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's NSInteger value to sender's NSInteger value </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setIntegerValue:]">-setIntegerValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_cellAttribute:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> cellAttribute: </span><span class="parameter"><span class="type">(NSCellAttribute)</span><span class="arg">aParameter</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns some NSCell's attributes for the specified  NSCellAttribute  </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setCellAttribute:to:]">-setCellAttribute:to:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setCellAttribute:to:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setCellAttribute: </span><span class="parameter"><span class="type">(NSCellAttribute)</span><span class="arg">aParameter</span></span><span class="selector"> to: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">value</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO </p> <p> See Also:  <a href="NSCell.html#-[NSCell_cellAttribute:]">-cellAttribute:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setType:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setType: </span><span class="parameter"><span class="type">(NSCellType)</span><span class="arg">aType</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's type. See  NSCellType  .If the cell is set to NSTextCellType, the cell is given a default title and is reset to the default system font. </p> <p> See Also: <a href="NSCell.html#-[NSCell_type]">-type</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_type]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSCellType)</span><span class="selector"> type </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the cell's type. Returns NSNullCellType if the cell's type flag is set to NSImageCellType and if the cell's image is <var>nil</var>. See  NSCellType  for more information. </p> <p> See Also  <a href="NSCell.html#-[NSCell_setType:]">-setType:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isEnabled]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isEnabled </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the <a href="NSCell.html#NSCell">NSCell</a> can respond to mouse events. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setEnabled:]">-setEnabled:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setEnabled:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setEnabled: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the <a href="NSCell.html#NSCell">NSCell</a> can respond to mouse events </p> <p> See Also:  <a href="NSCell.html#-[NSCell_isEnabled]">-isEnabled</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isBezeled]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isBezeled </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the <a href="NSCell.html#NSCell">NSCell</a> has a bezeled border. By default a <a href="NSCell.html#NSCell">NSCell</a> has no bezeled border </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setBezeled:]">-setBezeled:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isBordered]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isBordered </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the <a href="NSCell.html#NSCell">NSCell</a> has a border. By default a <a href="NSCell.html#NSCell">NSCell</a> has border </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setBordered:]">-setBordered:</a>   <a href="NSCell.html#-[NSCell_setBezeled:]">-setBezeled:</a>   <a href="NSCell.html#-[NSCell_isBezeled]">-isBezeled</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isOpaque]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isOpaque </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the cell is opaque. Return <var>NO</var> by default </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setBezeled:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBezeled: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the cell has a bezeled border. If this method is called, the bordered <var>flag</var> is turn off. By default a <a href="NSCell.html#NSCell">NSCell</a> has no bezeled border </p> <p> See Also:  <a href="NSCell.html#-[NSCell_isBezeled]">-isBezeled</a>   <a href="NSCell.html#-[NSCell_setBordered:]">-setBordered:</a>   <a href="NSCell.html#-[NSCell_isBordered]">-isBordered</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setBordered:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBordered: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the cell has a border. If this method is called, the bezeled <var>flag</var> is turn off. By default a <a href="NSCell.html#NSCell">NSCell</a> has no border </p> <p> See Also:  <a href="NSCell.html#-[NSCell_isBordered]">-isBordered</a>   <a href="NSCell.html#-[NSCell_setBezeled:]">-setBezeled:</a>   <a href="NSCell.html#-[NSCell_isBezeled]">-isBezeled</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_focusRingType]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSFocusRingType)</span><span class="selector"> focusRingType </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setFocusRingType:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFocusRingType: </span><span class="parameter"><span class="type">(NSFocusRingType)</span><span class="arg">type</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_userInterfaceLayoutDirection]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUserInterfaceLayoutDirection)</span><span class="selector"> userInterfaceLayoutDirection </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setUserInterfaceLayoutDirection:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setUserInterfaceLayoutDirection: </span><span class="parameter"><span class="type">(NSUserInterfaceLayoutDirection)</span><span class="arg">dir</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setState:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setState: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">value</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's state. Please use always symbolic constants when calling this method. The integer values could be changed in the this implementation. (Currently they match the Cocoa values but they are quite strange) </p> <p> See Also: <a href="NSCell.html#-[NSCell_state]">-state</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_state]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> state </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the NSCell's state </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setState:]">-setState:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_allowsMixedState]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> allowsMixedState </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setAllowsMixedState:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAllowsMixedState: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_nextState]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> nextState </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setNextState]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setNextState </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_alignment]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSTextAlignment)</span><span class="selector"> alignment </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the alignment of the text used in the <a href="NSCell.html#NSCell">NSCell</a>. See  NSTextAlignment  for more informations. By default the text alignment is  NSJustifiedTextAlignment  </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setAlignment:]">-setAlignment:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_font]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSFont.html#NSFont">NSFont</a> *)</span><span class="selector"> font </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the font of the text used in the <a href="NSCell.html#NSCell">NSCell</a> </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setFont:]">-setFont:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isEditable]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isEditable </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the cell is editable.By default a <a href="NSCell.html#NSCell">NSCell</a> is not editable. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setEditable:]">-setEditable:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isSelectable]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isSelectable </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the cell is selectable. This method returns <var>YES</var> if the cell is selectable or editable. <var>NO</var> otherwise </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setSelectable:]">-setSelectable:</a>   <a href="NSCell.html#-[NSCell_isEditable]">-isEditable</a>   <a href="NSCell.html#-[NSCell_setEditable:]">-setEditable:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isScrollable]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isScrollable </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the <a href="NSCell.html#NSCell">NSCell</a> is scrollable. By default a <a href="NSCell.html#NSCell">NSCell</a> is not scrollable </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setScrollable:]">-setScrollable:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setAlignment:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAlignment: </span><span class="parameter"><span class="type">(NSTextAlignment)</span><span class="arg">mode</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the alignment of the text. See  NSTextAlignment  . </p> <p> See Also:  <a href="NSCell.html#-[NSCell_alignment]">-alignment</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setEditable:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setEditable: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the NSCell's text is editable. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_isEditable]">-isEditable</a>   <a href="NSCell.html#-[NSCell_setSelectable:]">-setSelectable:</a>   <a href="NSCell.html#-[NSCell_isSelectable]">-isSelectable</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setFont:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFont: </span><span class="parameter"><span class="type">(<a href="NSFont.html#NSFont">NSFont</a> *)</span><span class="arg">fontObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the text font. The NSCell's type is set to NSTextCellType if needed </p> <p> See Also: <a href="NSCell.html#-[NSCell_font]">-font</a>  <a href="NSCell.html#-[NSCell_setType:]">-setType:</a>   <a href="NSCell.html#-[NSCell_type]">-type</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setSelectable:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setSelectable: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the cell selectable. Making a cell unselectable also makes it uneditable until a  <a href="NSCell.html#-[NSCell_setEditable:]">-setEditable:</a>  re-enables it. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_isSelectable]">-isSelectable</a>   <a href="NSCell.html#-[NSCell_setEditable:]">-setEditable:</a>   <a href="NSCell.html#-[NSCell_isEditable]">-isEditable</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setScrollable:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setScrollable: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the NCell is scrollable. By default a <a href="NSCell.html#NSCell">NSCell</a> is not scrollable </p> <p> See Also:  <a href="NSCell.html#-[NSCell_isSelectable]">-isSelectable</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setWraps:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setWraps: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_wraps]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> wraps </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setUpFieldEditorAttributes:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSText.html#NSText">NSText</a> *)</span><span class="selector"> setUpFieldEditorAttributes: </span><span class="parameter"><span class="type">(<a href="NSText.html#NSText">NSText</a> *)</span><span class="arg">textObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setAttributedStringValue:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAttributedStringValue: </span><span class="parameter"><span class="type">(NSAttributedString *)</span><span class="arg">attribStr</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_attributedStringValue]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSAttributedString *)</span><span class="selector"> attributedStringValue </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setAllowsEditingTextAttributes:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAllowsEditingTextAttributes: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_allowsEditingTextAttributes]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> allowsEditingTextAttributes </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setImportsGraphics:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setImportsGraphics: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_importsGraphics]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> importsGraphics </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setTitle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTitle: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_title]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> title </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_baseWritingDirection]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSWritingDirection)</span><span class="selector"> baseWritingDirection </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setBaseWritingDirection:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBaseWritingDirection: </span><span class="parameter"><span class="type">(NSWritingDirection)</span><span class="arg">direction</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_lineBreakMode]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSLineBreakMode)</span><span class="selector"> lineBreakMode </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setLineBreakMode:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setLineBreakMode: </span><span class="parameter"><span class="type">(NSLineBreakMode)</span><span class="arg">mode</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setUsesSingleLineMode:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setUsesSingleLineMode: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_usesSingleLineMode]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> usesSingleLineMode </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_action]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(SEL)</span><span class="selector"> action </span></span></dt>
+<dd><div class="methodDescription">
+<p> Implemented by subclasses to return the action method. The <a href="NSCell.html#NSCell">NSCell</a> implementaiton returns NULL. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setAction:]">-setAction:</a>   <a href="NSCell.html#-[NSCell_setTarget:]">-setTarget:</a>   <a href="NSCell.html#-[NSCell_target]">-target</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isContinuous]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isContinuous </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the cell can continuously send its action messages. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setContinuous:]">-setContinuous:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_sendActionOn:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> sendActionOn: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">mask</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO Explain </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setAction:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAction: </span><span class="parameter"><span class="type">(SEL)</span><span class="arg">aSelector</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Implemented by subclasses to set the action method. The <a href="NSCell.html#NSCell">NSCell</a> implementation raises a NSInternalInconsistencyException </p> <p> See Also:  <a href="NSCell.html#-[NSCell_action]">-action</a>   <a href="NSCell.html#-[NSCell_setTarget:]">-setTarget:</a>   <a href="NSCell.html#-[NSCell_target]">-target</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setContinuous:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setContinuous: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the cell can continuously send its action messages. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_isContinuous]">-isContinuous</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setTarget:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTarget: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Implemented by subclasses to set the target object. The <a href="NSCell.html#NSCell">NSCell</a> implementation raises a NSInternalInconsistencyException </p> <p> See Also:  <a href="NSCell.html#-[NSCell_target]">-target</a>   <a href="NSCell.html#-[NSCell_setAction:]">-setAction:</a>   <a href="NSCell.html#-[NSCell_action]">-action</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_target]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> target </span></span></dt>
+<dd><div class="methodDescription">
+<p> Implemented by subclass to return the target object. The <a href="NSCell.html#NSCell">NSCell</a> implementation returns <var>nil</var> </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setTarget:]">-setTarget:</a>   <a href="NSCell.html#-[NSCell_setAction:]">-setAction:</a>   <a href="NSCell.html#-[NSCell_action]">-action</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_image]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSImage.html#NSImage">NSImage</a> *)</span><span class="selector"> image </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the NSCell's image if the NSCell's type is  NSImageCellType  , returns <var>nil</var> otherwise. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setImage:]">-setImage:</a>   <a href="NSCell.html#-[NSCell_setType:]">-setType:</a>   <a href="NSCell.html#-[NSCell_type]">-type</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setImage:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setImage: </span><span class="parameter"><span class="type">(<a href="NSImage.html#NSImage">NSImage</a> *)</span><span class="arg">anImage</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's image to <var>anImage</var>. This method sets the cell's type to NSImageCellType if needed. Raises an NSInvalidArgumentException if the <var>anImage</var> is not an <a href="NSImage.html#NSImage">NSImage</a> (sub)class. The new image is retained and the old one is released </p> <p> See Also: <a href="NSCell.html#-[NSCell_image]">-image</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setTag:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTag: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">anInt</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Implemented by sublclasses to assigns the tag <var>anInt</var>. The <a href="NSCell.html#NSCell">NSCell</a> implementation raises an NSInvalidArgumentException. </p> <p> See Also: <a href="NSCell.html#-[NSCell_tag]">-tag</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_tag]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> tag </span></span></dt>
+<dd><div class="methodDescription">
+<p> Implemented by subclasses to Return the tag. The <a href="NSCell.html#NSCell">NSCell</a> implementation returns -1 </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setTag:]">-setTag:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setFormatter:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFormatter: </span><span class="parameter"><span class="type">(NSFormatter *)</span><span class="arg">newFormatter</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_formatter]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> formatter </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_entryType]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> entryType </span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isEntryAcceptable:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isEntryAcceptable: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setEntryType:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setEntryType: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">aType</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setFloatingPointFormat:left:right:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setFloatingPointFormat: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">autoRange</span></span><span class="selector"> left: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">leftDigits</span></span><span class="selector"> right: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">rightDigits</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setMenu:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMenu: </span><span class="parameter"><span class="type">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="arg">aMenu</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_menu]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> menu </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_menuForEvent:inRect:ofView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSMenu.html#NSMenu">NSMenu</a> *)</span><span class="selector"> menuForEvent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">anEvent</span></span><span class="selector"> inRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> ofView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">aView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_compare:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSComparisonResult)</span><span class="selector"> compare: </span><span class="parameter"><span class="type">(id)</span><span class="arg">otherCell</span></span></span></dt>
+<dd><div class="methodDescription">
+Compares the reciever to another to another <a href="NSCell.html#NSCell">NSCell</a>. The argument must be an <a href="NSCell.html#NSCell">NSCell</a> sublclass and have the NSCellType NSTextCellType. Returns the result of the comparison of each cell's stringValue.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_acceptsFirstResponder]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> acceptsFirstResponder </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setShowsFirstResponder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setShowsFirstResponder: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_showsFirstResponder]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> showsFirstResponder </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setTitleWithMnemonic:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setTitleWithMnemonic: </span><span class="parameter"><span class="type">(NSString *)</span><span class="arg">aString</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_mnemonic]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> mnemonic </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setMnemonicLocation:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setMnemonicLocation: </span><span class="parameter"><span class="type">(NSUInteger)</span><span class="arg">location</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_mnemonicLocation]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> mnemonicLocation </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_refusesFirstResponder]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> refusesFirstResponder </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setRefusesFirstResponder:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setRefusesFirstResponder: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_performClick:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> performClick: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+Simulates a single click in the cell (only works with controls which have no more than one cell). This method is deprecated, performClickWithFrame:inView: is the right method to use now.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_performClickWithFrame:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> performClickWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+Simulates a single click in the cell. The display of the cell with this event occurs in the area delimited by <var>cellFrame</var> within <var>controlView</var>.<div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_takeObjectValueFrom:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> takeObjectValueFrom: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_takeDoubleValueFrom:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> takeDoubleValueFrom: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's <strong>double</strong> value to sender's <strong>double</strong> value </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setDoubleValue:]">-setDoubleValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_takeFloatValueFrom:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> takeFloatValueFrom: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's <strong>float</strong> value to sender's <strong>float</strong> value </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setFloatValue:]">-setFloatValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_takeIntValueFrom:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> takeIntValueFrom: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's <strong>int</strong> value to sender's <strong>int</strong> value </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setIntValue:]">-setIntValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_takeStringValueFrom:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> takeStringValueFrom: </span><span class="parameter"><span class="type">(id)</span><span class="arg">sender</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's NSString value to sender's NSSting value </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setStringValue:]">-setStringValue:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_representedObject]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(id)</span><span class="selector"> representedObject </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the NSCell's represented object </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setRepresentedObject:]">-setRepresentedObject:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setRepresentedObject:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setRepresentedObject: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets the NSCell's represented object to <var>anObject</var>. <var>anObject</var> will be retain. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_representedObject]">-representedObject</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_continueTracking:at:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> continueTracking: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">lastPoint</span></span><span class="selector"> at: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">currentPoint</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the mouse dragging should continue for the cell. Subclasses should overrided this method if you want stop tracking the mouse. This method is call in the <a href="NSCell.html#-[NSCell_trackMouse:inRect:ofView:untilMouseUp:]">-trackMouse:inRect:ofView:untilMouseUp:</a> main loop. </p> <p> See Also: <a href="NSCell.html#-[NSCell_trackMouse:inRect:ofView:untilMouseUp:]">-trackMouse:inRect:ofView:untilMouseUp:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_mouseDownFlags]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSInteger)</span><span class="selector"> mouseDownFlags </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns the mouse flags. This flags are usally sets in the <a href="NSCell.html#-[NSCell_trackMouse:inRect:ofView:untilMouseUp:]">-trackMouse:inRect:ofView:untilMouseUp:</a> method </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_getPeriodicDelay:interval:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> getPeriodicDelay: </span><span class="parameter"><span class="type">(float*)</span><span class="arg">delay</span></span><span class="selector"> interval: </span><span class="parameter"><span class="type">(float*)</span><span class="arg">interval</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Gets the NSCell's <var>delay</var> and the <var>interval</var> parameters used when <a href="NSCell.html#NSCell">NSCell</a> sends continouly action messages. The <a href="NSCell.html#NSCell">NSCell</a> implementation sets <var>delay</var> to 0.2 and <var>interval</var> to 0.025. </p> <p> See Also: <a href="NSCell.html#-[NSCell_trackMouse:inRect:ofView:untilMouseUp:]">-trackMouse:inRect:ofView:untilMouseUp:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_startTrackingAt:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> startTrackingAt: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">startPoint</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether tracking starts. The <a href="NSCell.html#NSCell">NSCell</a> implementation returns <var>YES</var> when the <var>startPoint</var> is into the control view retangle, <var>NO</var> otherwise. This method is call at the early stage of <a href="NSCell.html#-[NSCell_trackMouse:inRect:ofView:untilMouseUp:]">-trackMouse:inRect:ofView:untilMouseUp:</a> </p> <p> See Also:  [<a href="NSView.html#NSView">NSView</a> -mouse:inRect:]  <a href="NSCell.html#-[NSCell_trackMouse:inRect:ofView:untilMouseUp:]">-trackMouse:inRect:ofView:untilMouseUp:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_stopTracking:at:inView:mouseIsUp:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> stopTracking: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">lastPoint</span></span><span class="selector"> at: </span><span class="parameter"><span class="type">(NSPoint)</span><span class="arg">stopPoint</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span><span class="selector"> mouseIsUp: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Default implementation of this method in <a href="NSCell.html#NSCell">NSCell</a> does nothing. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_trackMouse:inRect:ofView:untilMouseUp:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> trackMouse: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span><span class="selector"> inRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> ofView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span><span class="selector"> untilMouseUp: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_backgroundStyle]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSBackgroundStyle)</span><span class="selector"> backgroundStyle </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setBackgroundStyle:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setBackgroundStyle: </span><span class="parameter"><span class="type">(NSBackgroundStyle)</span><span class="arg">backgroundStyle</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_hitTestForEvent:inRect:ofView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSUInteger)</span><span class="selector"> hitTestForEvent: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">event</span></span><span class="selector"> inRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> ofView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_resetCursorRect:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> resetCursorRect: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_keyEquivalent]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSString *)</span><span class="selector"> keyEquivalent </span></span></dt>
+<dd><div class="methodDescription">
+<p> Implemented by subclasses to returns the key equivalent. The <a href="NSCell.html#NSCell">NSCell</a> implementation returns an empty NSString. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_calcDrawInfo:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> calcDrawInfo: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Does nothing. This method is used by subclasses to recalculate sizes </p> <p> It is usally called from a <a href="NSControl.html#NSControl">NSControl</a> object </p> <p> See Also:  [<a href="NSControl.html#NSControl">NSControl</a> -calcSize]  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_cellSize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> cellSize </span></span></dt>
+<dd><div class="methodDescription">
+Returns the minimun size needed to display the <a href="NSCell.html#NSCell">NSCell</a>. This size is calculate by adding : <ul> <li>the borders (plain or bezeled) size</li> <li> the spacing between the border and inside the cell </li> <li> the TODO... if the cell is type of NSTextCellType or the image size if the cell has a NSImageCellType type. </li> </ul> <p> This method returns NSZeroSize if the cell has a NSNullCellType type (Cocoa returns a very big size instead). </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_cellSizeForBounds:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSSize)</span><span class="selector"> cellSizeForBounds: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO. Currently the GNUstep implementation returns  <a href="NSCell.html#-[NSCell_cellSize]">-cellSize</a>  </p> <p> See Also:  <a href="NSCell.html#-[NSCell_cellSize]">-cellSize</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_drawingRectForBounds:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> drawingRectForBounds: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">theRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_imageRectForBounds:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> imageRectForBounds: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">theRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Frame the image gets drawn in </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_titleRectForBounds:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSRect)</span><span class="selector"> titleRectForBounds: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">theRect</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Frame the title gets drawn in </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setControlSize:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setControlSize: </span><span class="parameter"><span class="type">(NSControlSize)</span><span class="arg">controlSize</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_controlSize]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSControlSize)</span><span class="selector"> controlSize </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_controlView]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="selector"> controlView </span></span></dt>
+<dd><div class="methodDescription">
+<p> This method is used by subclasses to get the control view. This method returns <var>nil</var>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_drawInteriorWithFrame:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> drawInteriorWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> This drawing is minimal and with no background, to make it easier for subclass to customize drawing. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_drawWithFrame:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> drawWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Draws the cell in <var>controlView</var> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_highlight:withFrame:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> highlight: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">lit</span></span><span class="selector"> withFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> TODO explain </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_isHighlighted]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> isHighlighted </span></span></dt>
+<dd><div class="methodDescription">
+<p> Returns whether the cell is highlighted. By default <var>NO</var> </p> <p> See Also:  <a href="NSCell.html#-[NSCell_setHighlighted:]">-setHighlighted:</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setHighlighted:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setHighlighted: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Sets whether the <a href="NSCell.html#NSCell">NSCell</a> is highlighted. </p> <p> See Also:  <a href="NSCell.html#-[NSCell_isHighlighted]">-isHighlighted</a>  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_highlightColorWithFrame:inView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(<a href="NSColor.html#NSColor">NSColor</a> *)</span><span class="selector"> highlightColorWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">cellFrame</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setControlTint:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setControlTint: </span><span class="parameter"><span class="type">(NSControlTint)</span><span class="arg">controlTint</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_controlTint]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(NSControlTint)</span><span class="selector"> controlTint </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setControlView:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setControlView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">view</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> This method is used by subclasses to specify the control <var>view</var>. </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_editWithFrame:inView:editor:delegate:event:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> editWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span><span class="selector"> editor: </span><span class="parameter"><span class="type">(<a href="NSText.html#NSText">NSText</a> *)</span><span class="arg">textObject</span></span><span class="selector"> delegate: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span><span class="selector"> event: </span><span class="parameter"><span class="type">(<a href="NSEvent.html#NSEvent">NSEvent</a> *)</span><span class="arg">theEvent</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> .This method does nothing if a the <var>controlView</var> is <var>nil</var>, if text object does not exist or if the cell's type is not  NSTextCellType  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_selectWithFrame:inView:editor:delegate:start:length:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> selectWithFrame: </span><span class="parameter"><span class="type">(NSRect)</span><span class="arg">aRect</span></span><span class="selector"> inView: </span><span class="parameter"><span class="type">(<a href="NSView.html#NSView">NSView</a> *)</span><span class="arg">controlView</span></span><span class="selector"> editor: </span><span class="parameter"><span class="type">(<a href="NSText.html#NSText">NSText</a> *)</span><span class="arg">textObject</span></span><span class="selector"> delegate: </span><span class="parameter"><span class="type">(id)</span><span class="arg">anObject</span></span><span class="selector"> start: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">selStart</span></span><span class="selector"> length: </span><span class="parameter"><span class="type">(NSInteger)</span><span class="arg">selLength</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> This method does nothing if the <var>controlView</var> is <var>nil</var>, if text object does not exist or if the cell's type is not  NSTextCellType  </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_endEditing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> endEditing: </span><span class="parameter"><span class="type">(<a href="NSText.html#NSText">NSText</a> *)</span><span class="arg">textObject</span></span></span></dt>
+<dd><div class="methodDescription">
+<p> Ends any text editing. This method sets the text object's delegate to <var>nil</var>, and remove the <a href="NSClipView.html#NSClipView">NSClipView</a> and the text object used for editing </p> <p> See Also: <a href="NSCell.html#-[NSCell_editWithFrame:inView:editor:delegate:event:]">-editWithFrame:inView:editor:delegate:event:</a> </p><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_sendsActionOnEndEditing]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> sendsActionOnEndEditing </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setSendsActionOnEndEditing:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setSendsActionOnEndEditing: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_allowsUndo]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(BOOL)</span><span class="selector"> allowsUndo </span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+<div class="method">
+<a name="-[NSCell_setAllowsUndo:]"></a><dl class="collapsable">
+<dt>
+<span class="methodSignature"><span class="methodScope">- </span><span class="returnType">(void)</span><span class="selector"> setAllowsUndo: </span><span class="parameter"><span class="type">(BOOL)</span><span class="arg">flag</span></span></span></dt>
+<dd><div class="methodDescription">
+<em>Description forthcoming.</em><div class="paramsList">
+<ul></ul></div>
+</div>
+</dd></dl>
+</div>
+</div>
+
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="yui-u">
+						<div id="sidebar">
+							
+							<h2>GNUstep Gui (Application Kit)</h2>
+<ul>
+<li><a href="README.html">Presentation</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="NEWS.html">Revision History</a></li>
+</ul>
+
+<h3>Main</h3>
+<ul>
+<!-- Guides should be added here -->
+<li><a href="APIOverview.html">API Overview</a></li>
+</ul>
+
+<!-- Uncomment if you want to add implementation or design notes here
+
+<h3>Implementation</h3>
+<ul>
+<li><a href="DESIGN.html">Design</a></li>
+<li><a href="TODO.html">Todo</a></li>
+</ul> 
+
+-->
+
+<h3>C Symbols</h3>
+<ul>
+<li><a href="Functions.html">Functions</a></li>
+<li><a href="Constants.html">Constants &amp; Global Variables</a></li>
+<li><a href="Macros.html">Macros</a></li>
+<li><a href="OtherDataTypes.html">Other Data Types</a></li>
+</ul>
+
+<h3>Classes</h3>
+<div id="project-classes-list">
+<ul><li><a href="NSActionCell.html#NSActionCell">NSActionCell</a></li><li><a href="NSBezierPath.html#NSBezierPath">NSBezierPath</a></li><li><a href="NSBitmapImageRep.html#NSBitmapImageRep">NSBitmapImageRep</a></li><li><a href="NSBox.html#NSBox">NSBox</a></li><li><a href="NSBrowser.html#NSBrowser">NSBrowser</a></li><li><a href="NSBrowserCell.html#NSBrowserCell">NSBrowserCell</a></li><li><a href="NSButton.html#NSButton">NSButton</a></li><li><a href="NSButtonCell.html#NSButtonCell">NSButtonCell</a></li><li><a href="NSCachedImageRep.html#NSCachedImageRep">NSCachedImageRep</a></li><li><a href="NSCell.html#NSCell">NSCell</a></li><li><a href="NSClipView.html#NSClipView">NSClipView</a></li><li><a href="NSColor.html#NSColor">NSColor</a></li><li><a href="NSColorList.html#NSColorList">NSColorList</a></li><li><a href="NSColorPanel.html#NSColorPanel">NSColorPanel</a></li><li><a href="NSColorPicker.html#NSColorPicker">NSColorPicker</a></li><li><a href="NSColorWell.html#NSColorWell">NSColorWell</a></li><li><a href="NSComboBox.html#NSComboBox">NSComboBox</a></li><li><a href="NSComboBoxCell.html#NSComboBoxCell">NSComboBoxCell</a></li><li><a href="NSControl.html#NSControl">NSControl</a></li><li><a href="NSCursor.html#NSCursor">NSCursor</a></li><li><a href="NSCustomImageRep.html#NSCustomImageRep">NSCustomImageRep</a></li><li><a href="NSDataLink.html#NSDataLink">NSDataLink</a></li><li><a href="NSDataLinkManager.html#NSDataLinkManager">NSDataLinkManager</a></li><li><a href="NSDataLinkPanel.html#NSDataLinkPanel">NSDataLinkPanel</a></li><li><a href="NSDocument.html#NSDocument">NSDocument</a></li><li><a href="NSDocumentController.html#NSDocumentController">NSDocumentController</a></li><li><a href="NSDrawer.html#NSDrawer">NSDrawer</a></li><li><a href="NSDrawerDelegate.html#NSDrawerDelegate">NSDrawerDelegate</a></li><li><a href="NSEPSImageRep.html#NSEPSImageRep">NSEPSImageRep</a></li><li><a href="NSEvent.html#NSEvent">NSEvent</a></li><li><a href="NSFont.html#NSFont">NSFont</a></li><li><a href="NSFontManager.html#NSFontManager">NSFontManager</a></li><li><a href="NSFontPanel.html#NSFontPanel">NSFontPanel</a></li><li><a href="NSForm.html#NSForm">NSForm</a></li><li><a href="NSFormCell.html#NSFormCell">NSFormCell</a></li><li><a href="NSGraphicsContext.html#NSGraphicsContext">NSGraphicsContext</a></li><li><a href="NSHelpManager.html#NSHelpManager">NSHelpManager</a></li><li><a href="NSHelpPanel.html#NSHelpPanel">NSHelpPanel</a></li><li><a href="NSImage.html#NSImage">NSImage</a></li><li><a href="NSImageCell.html#NSImageCell">NSImageCell</a></li><li><a href="NSImageRep.html#NSImageRep">NSImageRep</a></li><li><a href="NSImageView.html#NSImageView">NSImageView</a></li><li><a href="NSInputManager.html#NSInputManager">NSInputManager</a></li><li><a href="NSInputServer.html#NSInputServer">NSInputServer</a></li><li><a href="NSLayoutManager.html#NSLayoutManager">NSLayoutManager</a></li><li><a href="NSMatrix.html#NSMatrix">NSMatrix</a></li><li><a href="NSMenu.html#NSMenu">NSMenu</a></li><li><a href="NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="NSMenuItemCell.html#NSMenuItemCell">NSMenuItemCell</a></li><li><a href="NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="NSMutableParagraphStyle.html#NSMutableParagraphStyle">NSMutableParagraphStyle</a></li><li><a href="NSNib.html#NSNib">NSNib</a></li><li><a href="NSOpenGLContext.html#NSOpenGLContext">NSOpenGLContext</a></li><li><a href="NSOpenGLPixelFormat.html#NSOpenGLPixelFormat">NSOpenGLPixelFormat</a></li><li><a href="NSOpenGLView.html#NSOpenGLView">NSOpenGLView</a></li><li><a href="NSOpenPanel.html#NSOpenPanel">NSOpenPanel</a></li><li><a href="NSOutlineView.html#NSOutlineView">NSOutlineView</a></li><li><a href="NSPageLayout.html#NSPageLayout">NSPageLayout</a></li><li><a href="NSPanel.html#NSPanel">NSPanel</a></li><li><a href="NSParagraphStyle.html#NSParagraphStyle">NSParagraphStyle</a></li><li><a href="NSPopUpButton.html#NSPopUpButton">NSPopUpButton</a></li><li><a href="NSPopUpButtonCell.html#NSPopUpButtonCell">NSPopUpButtonCell</a></li><li><a href="NSPrinter.html#NSPrinter">NSPrinter</a></li><li><a href="NSPrintInfo.html#NSPrintInfo">NSPrintInfo</a></li><li><a href="NSPrintOperation.html#NSPrintOperation">NSPrintOperation</a></li><li><a href="NSPrintPanel.html#NSPrintPanel">NSPrintPanel</a></li><li><a href="NSProgressIndicator.html#NSProgressIndicator">NSProgressIndicator</a></li><li><a href="NSResponder.html#NSResponder">NSResponder</a></li><li><a href="NSRulerMarker.html#NSRulerMarker">NSRulerMarker</a></li><li><a href="NSRulerView.html#NSRulerView">NSRulerView</a></li><li><a href="NSSavePanel.html#NSSavePanel">NSSavePanel</a></li><li><a href="NSScreen.html#NSScreen">NSScreen</a></li><li><a href="NSScroller.html#NSScroller">NSScroller</a></li><li><a href="NSScrollView.html#NSScrollView">NSScrollView</a></li><li><a href="NSSecureTextField.html#NSSecureTextField">NSSecureTextField</a></li><li><a href="NSSecureTextFieldCell.html#NSSecureTextFieldCell">NSSecureTextFieldCell</a></li><li><a href="NSSelection.html#NSSelection">NSSelection</a></li><li><a href="NSSlider.html#NSSlider">NSSlider</a></li><li><a href="NSSliderCell.html#NSSliderCell">NSSliderCell</a></li><li><a href="NSSound.html#NSSound">NSSound</a></li><li><a href="NSSpellChecker.html#NSSpellChecker">NSSpellChecker</a></li><li><a href="NSSplitView.html#NSSplitView">NSSplitView</a></li><li><a href="NSStepper.html#NSStepper">NSStepper</a></li><li><a href="NSStepperCell.html#NSStepperCell">NSStepperCell</a></li><li><a href="NSTableColumn.html#NSTableColumn">NSTableColumn</a></li><li><a href="NSTableHeaderCell.html#NSTableHeaderCell">NSTableHeaderCell</a></li><li><a href="NSTableHeaderView.html#NSTableHeaderView">NSTableHeaderView</a></li><li><a href="NSTableView.html#NSTableView">NSTableView</a></li><li><a href="NSTabView.html#NSTabView">NSTabView</a></li><li><a href="NSTabViewItem.html#NSTabViewItem">NSTabViewItem</a></li><li><a href="NSText.html#NSText">NSText</a></li><li><a href="NSTextAttachment.html#NSTextAttachment">NSTextAttachment</a></li><li><a href="NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="NSTextContainer.html#NSTextContainer">NSTextContainer</a></li><li><a href="NSTextField.html#NSTextField">NSTextField</a></li><li><a href="NSTextFieldCell.html#NSTextFieldCell">NSTextFieldCell</a></li><li><a href="NSTextStorage.html#NSTextStorage">NSTextStorage</a></li><li><a href="NSTextTab.html#NSTextTab">NSTextTab</a></li><li><a href="NSTextView.html#NSTextView">NSTextView</a></li><li><a href="NSToolbar.html#NSToolbar">NSToolbar</a></li><li><a href="NSToolbarItem.html#NSToolbarItem">NSToolbarItem</a></li><li><a href="NSView.html#NSView">NSView</a></li><li><a href="NSWindow.html#NSWindow">NSWindow</a></li><li><a href="NSWindowController.html#NSWindowController">NSWindowController</a></li><li><a href="NSWorkspace.html#NSWorkspace">NSWorkspace</a></li></ul></div>
+
+<ul>
+    <li><a href="NSPasteboard.html">NSPasteboard (buggy documentation)</a></li>
+    <li><a href="NSApplication.html">NSApplication (buggy documentation)</a></li>
+</ul>
+
+
+<h3>Protocols</h3>
+<div id="project-protocols-list">
+<ul><li><a href="_GSImageDelegateProtocol.html#GSImageDelegateProtocol">GSImageDelegateProtocol</a></li><li><a href="_NSComboBoxCellDataSource.html#NSComboBoxCellDataSource">NSComboBoxCellDataSource</a></li><li><a href="_NSControlTextEditingDelegate.html#NSControlTextEditingDelegate">NSControlTextEditingDelegate</a></li><li><a href="_NSInputServerMouseTracker.html#NSInputServerMouseTracker">NSInputServerMouseTracker</a></li><li><a href="_NSInputServiceProvider.html#NSInputServiceProvider">NSInputServiceProvider</a></li><li><a href="_NSMatrixDelegate.html#NSMatrixDelegate">NSMatrixDelegate</a></li><li><a href="_NSMenuDelegate.html#NSMenuDelegate">NSMenuDelegate</a></li><li><a href="_NSMenuItem.html#NSMenuItem">NSMenuItem</a></li><li><a href="_NSMenuValidation.html#NSMenuValidation">NSMenuValidation</a></li><li><a href="_NSMenuView.html#NSMenuView">NSMenuView</a></li><li><a href="_NSOpenSavePanelDelegate.html#NSOpenSavePanelDelegate">NSOpenSavePanelDelegate</a></li><li><a href="_NSOutlineViewDataSource.html#NSOutlineViewDataSource">NSOutlineViewDataSource</a></li><li><a href="_NSOutlineViewDelegate.html#NSOutlineViewDelegate">NSOutlineViewDelegate</a></li><li><a href="_NSPrintPanelAccessorizing.html#NSPrintPanelAccessorizing">NSPrintPanelAccessorizing</a></li><li><a href="_NSTableViewDataSource.html#NSTableViewDataSource">NSTableViewDataSource</a></li><li><a href="_NSTableViewDelegate.html#NSTableViewDelegate">NSTableViewDelegate</a></li><li><a href="_NSTextAttachmentCell.html#NSTextAttachmentCell">NSTextAttachmentCell</a></li><li><a href="_NSTextFieldDelegate.html#NSTextFieldDelegate">NSTextFieldDelegate</a></li><li><a href="_NSTextInput.html#NSTextInput">NSTextInput</a></li><li><a href="_NSTextViewDelegate.html#NSTextViewDelegate">NSTextViewDelegate</a></li><li><a href="_NSWindowDelegate.html#NSWindowDelegate">NSWindowDelegate</a></li></ul></div>
+
+
+<h3>Categories</h3>
+<div id="project-categories-list">
+<ul><li><a href="NSAffineTransformCategories.html#NSAffineTransform(GNUstep)">NSAffineTransform</a></li><li><a href="NSApplicationCategories.html#NSApplication(NSColorPanel)">NSApplication</a></li><li><a href="NSAttributedStringCategories.html#NSAttributedString(AppKit)">NSAttributedString</a></li><li><a href="NSBitmapImageRepCategories.html#NSBitmapImageRep(GNUstepExtension)">NSBitmapImageRep</a></li><li><a href="NSBundleCategories.html#NSBundle(NSHelpManager)">NSBundle</a></li><li><a href="NSCellCategories.html#NSCell(PrivateMethods)">NSCell</a></li><li><a href="NSCoderCategories.html#NSCoder(NSCoderAdditions)">NSCoder</a></li><li><a href="NSColorCategories.html#NSColor(GSQuartz)">NSColor</a></li><li><a href="NSFontCategories.html#NSFont(GNUstep)">NSFont</a></li><li><a href="NSGraphicsContextCategories.html#NSGraphicsContext(GNUstep)">NSGraphicsContext</a></li><li><a href="NSImageCategories.html#NSImage(GSQuartz)">NSImage</a></li><li><a href="NSImageRepCategories.html#NSImageRep(GSQuartz)">NSImageRep</a></li><li><a href="NSImageViewCategories.html#NSImageView(GNUstep)">NSImageView</a></li><li><a href="NSLayoutManagerCategories.html#NSLayoutManager(drawing)">NSLayoutManager</a></li><li><a href="NSMenuCategories.html#NSMenu(GNUstepExtra)">NSMenu</a></li><li><a href="NSMenuItemCategories.html#NSMenuItem(GNUstepExtra)">NSMenuItem</a></li><li><a href="NSMutableAttributedStringCategories.html#NSMutableAttributedString(AppKit)">NSMutableAttributedString</a></li><li><a href="NSObjectCategories.html#NSObject(NSComboBoxCellDataSource)">NSObject</a></li><li><a href="NSPrinterCategories.html#NSPrinter(PPDParsing)">NSPrinter</a></li><li><a href="NSPrintOperationCategories.html#NSPrintOperation(Private)">NSPrintOperation</a></li><li><a href="NSPrintPanelCategories.html#NSPrintPanel(Private)">NSPrintPanel</a></li><li><a href="NSProgressIndicatorCategories.html#NSProgressIndicator(GNUstepExtensions)">NSProgressIndicator</a></li><li><a href="NSResponderCategories.html#NSResponder(OptionalActionMethods)">NSResponder</a></li><li><a href="NSSplitViewCategories.html#NSSplitView(GNUstepExtra)">NSSplitView</a></li><li><a href="NSStringCategories.html#NSString(NSStringDrawing)">NSString</a></li><li><a href="NSTableViewCategories.html#NSTableView(GNUPrivate)">NSTableView</a></li><li><a href="NSTabViewItemCategories.html#NSTabViewItem(GNUstep)">NSTabViewItem</a></li><li><a href="NSTextCategories.html#NSText(GNUstepExtensions)">NSText</a></li><li><a href="NSTextFieldCellCategories.html#NSTextFieldCell(PrivateMethods)">NSTextFieldCell</a></li><li><a href="NSTextStorageCategories.html#NSTextStorage(Scripting)">NSTextStorage</a></li><li><a href="NSTextViewCategories.html#NSTextView(GSTextViewSync)">NSTextView</a></li><li><a href="NSViewCategories.html#NSView(PrivateMethods)">NSView</a></li><li><a href="NSWindowCategories.html#NSWindow(GNUstepBackend)">NSWindow</a></li><li><a href="NSWorkspaceCategories.html#NSWorkspace(GNUstep)">NSWorkspace</a></li></ul></div>
+
+
+							
+						</div>
+					</div>
+					
+				</div> <!-- yui-gc-content -->
+				
+			</div> <!--bd-team -->
+			
+			<div id="ft">
+				<!-- <div id="bottom_nav">
+					<a href="/store/">Store</a> | 
+					<a href="/feeds/">RSS Feeds</a> | 
+					<a href="/media/">Media Kit</a> | 
+					<a href="/contact/">Contact Us</a>
+				</div>
+				<div id="legal">Copyright &copy; 2011 &Eacute;toil&eacute; Project. All rights reserved.</div> -->
+				Part of the GNUstep documentation project.
+			</div>
+			
+		</div> <!-- doc3-yui-t7 -->
+		
+		<div>
+			<img src="/images/community/diagonals.gif" class="hidden"/>
+			<img src="../images/developer/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/news/diagonals.gif" class="hidden"/>
+			<img src="/images/system/diagonals.gif" class="hidden"/>
+			
+			<img src="/images/community/growth.png" class="hidden"/>
+			<img src="../images/developer/growth.png" class="hidden"/>
+			<img src="/images/news/growth.png" class="hidden"/>
+			<img src="/images/system/growth.png" class="hidden"/>
+		</div>
+		
+	</body>
+</html>

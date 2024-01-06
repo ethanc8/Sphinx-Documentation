@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Scripts (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Scripts (GNUstep Makefile Package)">
+<meta name="keywords" content="Scripts (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Common-Variables.html" rel="up" title="Common Variables">
+<link href="Platform-Information.html" rel="next" title="Platform Information">
+<link href="Directory-Paths.html" rel="prev" title="Directory Paths">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Scripts"></span><div class="header">
+<p>
+Next: <a href="Platform-Information.html" accesskey="n" rel="next">Platform Information</a>, Previous: <a href="Directory-Paths.html" accesskey="p" rel="prev">Directory Paths</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Scripts-1"></span><h4 class="subsection">1.7.2 Scripts</h4>
+
+<dl>
+<dt id="index-CONFIG_005fGUESS_005fSCRIPT">Variable: <strong>CONFIG_GUESS_SCRIPT</strong></dt>
+<dd><p><code>CONFIG_GUESS_SCRIPT</code> is the absolute path to the
+<samp>config.guess</samp> script within the Makefile Package; this script is
+used to determine host and target platform information.  The Makefile
+Package executes this script to determine the values of the host
+platform variables: <code>GNUSTEP_HOST</code>, <code>GNUSTEP_HOST_CPU</code>,
+<code>GNUSTEP_HOST_VENDOR</code>, <code>GNUSTEP_HOST_OS</code>, and the target
+platform variables: <code>GNUSTEP_TARGET</code>, <code>GNUSTEP_TARGET_CPU</code>,
+<code>GNUSTEP_TARGET_VENDOR</code>, <code>GNUSTEP_TARGET_OS</code>; generally the
+user does not need to execute this script because the Makefile Package
+executes it automatically.
+</p></dd></dl>
+
+<dl>
+<dt id="index-CONFIG_005fSUB_005fSCRIPT">Variable: <strong>CONFIG_SUB_SCRIPT</strong></dt>
+<dd><p><code>CONFIG_SUB_SCRIPT</code> is the absolute path to the <samp>config.sub</samp>
+script within the Makefile Package; this script takes a platform name
+and canonicalizes it, i.e. it puts the name in a standard form.  The
+Makefile Package uses this script when the user specifies a target
+platform for compilation; the target platform name is canonicalized so
+that the Makefile Package can properly parse the name into its
+different components.  Generally the user does not execute this
+script.
+</p></dd></dl>
+
+<dl>
+<dt id="index-CONFIG_005fCPU_005fSCRIPT">Variable: <strong>CONFIG_CPU_SCRIPT</strong></dt>
+<dd><p><code>CONFIG_CPU_SCRIPT</code> is the absolute path to the <samp>cpu.sh</samp>
+script within the Makefile Package; this script extracts the CPU name
+from a canonicalized platform name.  Generally the user does not
+execute this script; it is used internally by the Makefile Package.
+</p></dd></dl>
+
+<dl>
+<dt id="index-CONFIG_005fVENDOR_005fSCRIPT">Variable: <strong>CONFIG_VENDOR_SCRIPT</strong></dt>
+<dd><p><code>CONFIG_VENDOR_SCRIPT</code> is the absolute path to the
+<samp>vendor.sh</samp> script within the Makefile Package; this script
+extracts the vendor name from a canonicalized platform name.
+Generally the user does not execute this script; it is used internally
+by the Makefile Package.
+</p></dd></dl>
+
+<dl>
+<dt id="index-CONFIG_005fOS_005fSCRIPT">Variable: <strong>CONFIG_OS_SCRIPT</strong></dt>
+<dd><p><code>CONFIG_OS_SCRIPT</code> is the absolute path to the <samp>os.sh</samp>
+script within the Makefile Package; this script extracts the operating
+system name from a canonicalized platform name.  Generally the user
+does not execute this script; it is used internally by the Makefile
+Package.
+</p></dd></dl>
+
+<dl>
+<dt id="index-CLEAN_005fCPU_005fSCRIPT">Variable: <strong>CLEAN_CPU_SCRIPT</strong></dt>
+<dd><p><code>CLEAN_CPU_SCRIPT</code> is the absolute path to the
+<samp>clean_cpu.sh</samp> script within the Makefile Package; this script
+takes a platform CPU name and <em>cleans</em> it for use by the Makefile
+Package.  The process of cleaning refers to the situation where
+numerous equivalent processors, which have different names, are mapped
+to a single name.  For example, the Intel line of processors: i386,
+i486, Pentium, all have different CPU names, but the Makefile Package
+considers them equivalent and cleans those names so that the single
+name <samp>ix86</samp> is used.  Generally the user does not execute this
+script; it is used internally by the Makefile Package.
+</p></dd></dl>
+
+<dl>
+<dt id="index-CLEAN_005fVENDOR_005fSCRIPT">Variable: <strong>CLEAN_VENDOR_SCRIPT</strong></dt>
+<dd><p><code>CLEAN_VENDOR_SCRIPT</code> is the absolute path to the
+<samp>clean_vendor.sh</samp> script within the Makefile Package; this script
+takes a platform vendor name and <em>cleans</em> it for use by the
+Makefile Package.  The process of cleaning refers to the situation
+where numerous equivalent vendors, which have different names, are
+mapped to a single name.  Generally the user does not execute this
+script; it is used internally by the Makefile Package.
+</p></dd></dl>
+
+<dl>
+<dt id="index-CLEAN_005fOS_005fSCRIPT">Variable: <strong>CLEAN_OS_SCRIPT</strong></dt>
+<dd><p><code>CLEAN_OS_SCRIPT</code> is the absolute path to the <samp>clean_os.sh</samp>
+script within the Makefile Package; this script takes a platform
+operating system name and <em>cleans</em> it for use by the Makefile
+Package.  The process of cleaning refers to the situation where
+numerous equivalent operating systems, which have different names, are
+mapped to a single name.  Generally the user does not execute this
+script; it is used internally by the Makefile Package.
+</p></dd></dl>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Platform-Information.html" accesskey="n" rel="next">Platform Information</a>, Previous: <a href="Directory-Paths.html" accesskey="p" rel="prev">Directory Paths</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>

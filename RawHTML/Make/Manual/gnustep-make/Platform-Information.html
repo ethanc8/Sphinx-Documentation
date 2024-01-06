@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.7, http://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Platform Information (GNUstep Makefile Package)</title>
+
+<meta name="description" content="Platform Information (GNUstep Makefile Package)">
+<meta name="keywords" content="Platform Information (GNUstep Makefile Package)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<link href="index.html" rel="start" title="Top">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Common-Variables.html" rel="up" title="Common Variables">
+<link href="Library-Combination.html" rel="next" title="Library Combination">
+<link href="Scripts.html" rel="prev" title="Scripts">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<span id="Platform-Information"></span><div class="header">
+<p>
+Next: <a href="Library-Combination.html" accesskey="n" rel="next">Library Combination</a>, Previous: <a href="Scripts.html" accesskey="p" rel="prev">Scripts</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+<hr>
+<span id="Host-and-Target-Platform-Information"></span><h4 class="subsection">1.7.3 Host and Target Platform Information</h4>
+
+<dl>
+<dt id="index-GNUSTEP_005fHOST">Variable: <strong>GNUSTEP_HOST</strong></dt>
+<dd><p><code>GNUSTEP_HOST</code> is the canonical host platform name; i.e. the name
+of the platform which is performing compilation of programs.  For
+example, a SPARC machine by Sun Microsystems running the Solaris 2.5.1
+operating system has the name <code>sparc-sun-solaris2.5.1</code>.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fHOST_005fCPU">Variable: <strong>GNUSTEP_HOST_CPU</strong></dt>
+<dd><p><code>GNUSTEP_HOST_CPU</code> is the CPU name for the canonical host
+platform name; i.e. the name of the CPU platform which is performing
+compilation of programs.  The Makefile Package cleans this CPU name
+with the <code>CLEAN_CPU_SCRIPT</code> script before using it internally.
+For example, the canonical host platform name of
+<code>i586-pc-linux-gnu</code> has a CPU name of <code>ix86</code>.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fHOST_005fVENDOR">Variable: <strong>GNUSTEP_HOST_VENDOR</strong></dt>
+<dd><p><code>GNUSTEP_HOST_VENDOR</code> is the vendor name for the canonical host
+platform; i.e. the name of the vendor platform which is performing
+compilation of programs.  The Makefile Package cleans this vendor name
+with the <code>CLEAN_VENDOR_SCRIPT</code> script before using it internally.
+For example, the canonical host platform name of
+<code>sparc-sun-solaris2.5.1</code> has a vendor name of <code>sun</code>.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fHOST_005fOS">Variable: <strong>GNUSTEP_HOST_OS</strong></dt>
+<dd><p><code>GNUSTEP_HOST_OS</code> is the operating system name for the canonical
+host platform; i.e. the name of the operating system platform which is
+performing compilation of programs.  The Makefile Package cleans this
+operating system name with the <code>CLEAN_OS_SCRIPT</code> script before
+using it internally.  For example, the canonical host platform name of
+<code>i586-pc-linux-gnu</code> has an operating system name of
+<code>linux-gnu</code>.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fTARGET">Variable: <strong>GNUSTEP_TARGET</strong></dt>
+<dd><p><code>GNUSTEP_TARGET</code> is the canonical target platform name;
+i.e. compilation of programs generate object code for this platform.
+By default the target platform is the same as the host platform unless
+the user specifies a different target when running make, see Cross
+Compiling.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fTARGET_005fCPU">Variable: <strong>GNUSTEP_TARGET_CPU</strong></dt>
+<dd><p><code>GNUSTEP_TARGET_CPU</code> is the CPU name for the canonical target
+platform; i.e. compilation of programs generate object code for this
+CPU platform.  The Makefile Package cleans this operating system name
+with the <code>CLEAN_CPU_SCRIPT</code> script before using it internally.
+By default the target CPU platform is the same as the host CPU
+platform, <code>GNUSTEP_HOST_CPU</code>, unless the user specifies a
+different target platform when running make, see Cross Compiling.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fTARGET_005fVENDOR">Variable: <strong>GNUSTEP_TARGET_VENDOR</strong></dt>
+<dd><p><code>GNUSTEP_TARGET_VENDOR</code> is the vendor name for the canonical
+target platform; i.e. compilation of programs generate object code for
+this vendor platform.  The Makefile Package cleans this vendor name
+with the <code>CLEAN_VENDOR_SCRIPT</code> script before using it internally.
+By default the target vendor platform is the same as the host vendor
+platform, <code>GNUSTEP_HOST_VENDOR</code>, unless the user specifies a
+different target platform when running make, see Cross Compiling.
+</p></dd></dl>
+
+<dl>
+<dt id="index-GNUSTEP_005fTARGET_005fOS">Variable: <strong>GNUSTEP_TARGET_OS</strong></dt>
+<dd><p><code>GNUSTEP_TARGET_OS</code> is the operating system name for the
+canonical target platform; i.e. compilation of programs generate
+object code for this operating system platform.  The Makefile Package
+cleans this operating system name with the <code>CLEAN_OS_SCRIPT</code>
+script before using it internally.  By default the target operating
+system platform is the same as the host operating system platform,
+<code>GNUSTEP_HOST_OS</code>, unless the user specifies a different target
+platform, see Cross Compiling.
+</p></dd></dl>
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Library-Combination.html" accesskey="n" rel="next">Library Combination</a>, Previous: <a href="Scripts.html" accesskey="p" rel="prev">Scripts</a>, Up: <a href="Common-Variables.html" accesskey="u" rel="up">Common Variables</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>]</p>
+</div>
+
+
+
+</body>
+</html>
